@@ -1,0 +1,340 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Komodo and the Perl Dev Kit</title>
+</head>
+
+<body>
+  <h1><a name="pdk_top" id="pdk_top">Komodo and the Perl Dev
+  Kit</a> <span class="version_alert">Komodo IDE only</span></h1>
+
+  <p>Komodo integrates with ActiveState's <a class="doc" href=
+  "http://www.activestate.com/Products/Perl_Dev_Kit/">Perl Dev Kit
+  (PDK)</a>, a suite of tools for creating and deploying
+  applications in Perl.</p>
+
+  <h2><a name="pdk_v6" id="pdk_v6">Perl Dev Kit 6 and 7</a></h2>
+
+  <p>Users of the Perl Dev Kit 6.x and 7.x can access PDK tools via the
+  Tools menu (<strong>Tools|Perl Dev Kit</strong>) or the <a href=
+  "workspace.html#Toolbars">Perl Dev Kit Toolbar</a>.
+  The VBScript Converter, Filter Builder and Visual Package Manager
+  options are displayed by default. The other options (described
+  below) are only available if a Perl file is open in the Editor
+  Pane. Select the feature from the menu, or click the toolbar, to
+  launch a graphical user interface for the chosen PDK tool.</p>
+
+  <ul class="icon-list">
+    <li style="background: URL(img/PerlApp-16-16-8.gif) no-repeat">
+    <strong>PerlApp</strong> - Build an executable file from Perl
+    scripts.</li>
+
+    <li style=
+    "background: URL(img/PerlCtrl-16-16-8.gif) no-repeat">
+    <strong>PerlCtrl</strong> - Build Active X controls from Perl
+    scripts.</li>
+
+    <li style="background: URL(img/PerlNET-16-16-8.png) no-repeat">
+    <strong>PerlNET</strong> - Create Perl components and
+    applications that are compliant with Microsoft's .NET
+    Framework.</li>
+
+    <li style="background: URL(img/PerlSvc-16-16-8.gif) no-repeat">
+    <strong>PerlSvc</strong> - Convert Perl programs to Windows
+    services.</li>
+
+    <li style=
+    "background: URL(img/PerlTray-16-16-8.gif) no-repeat">
+    <strong>PerlTray</strong> - Write system tray applications in
+    Perl.</li>
+
+    <li style= "background: URL(img/PerlCov-16-16-8.png) no-repeat">
+    <strong>PerlTray</strong> - Analyse code coverage and hotspot information
+    for your perl programs. (PDK 7)</li>
+    
+    <li style=
+    "background: URL(img/FilterBuilder-16-16-8.png) no-repeat">
+    <strong>Filter Builder</strong> - Easily construct perl regular
+    expressions and package them as filters.</li>
+
+    <li style="background: URL(img/VBSPerl-16-16-8.png) no-repeat">
+    <strong>VBScript Converter</strong> - Convert VBScript code to
+    its functional equivalent in Perl.</li>
+    <!--  <li style="background: URL(img/PerlCov-16-16-8.png)
+  no-repeat"><strong>Coverage and Hotspot Analyzer</strong> - </li> -->
+  </ul>
+
+  <p>Instructions for using these tools can be found in the
+  <a href="http://aspn.activestate.com/ASPN/docs/PerlDevKit">Perl
+  Dev Kit documentation</a>.</p>
+
+  <h2><a name="pdk_v3-5" id="pdk_v3-5">Perl Dev Kit 3.1 to
+  5.3</a></h2>
+
+  <p>Integration with earlier versions of the PDK is available
+  through an optional package installer which adds the
+  <strong>Build Standalone Perl Application</strong> option to the
+  <strong>Tools</strong> menu. To install this extension:</p>
+
+  <ol>
+    <li>Click <strong>File|Open|File...</strong></li>
+
+    <li>Navigate to the <em>/lib/support/modules/</em> subdirectory
+    of your Komodo installation.</li>
+
+    <li>Select the <em>perlapp.xpi</em> package and click
+    <strong>Open</strong>.</li>
+
+    <li>The Software Installation dialog will appear. Click
+    <strong>Install</strong> to add the extension.</li>
+  </ol>
+
+  <p>To use this extension, select <strong>Tools|Build Standalone
+  Perl Application</strong> with a Perl script open in Komodo's
+  Editor Pane.</p>
+
+  <p>After configuring options using the tabs in the Build
+  Standalone Perl Application dialog box, use the buttons at the
+  bottom of the dialog box to:</p>
+
+  <ul>
+    <li><strong>Add to Toolbox</strong> - Once you have created a
+    new script, click this button to add it to the <a class="doc"
+    href="toolbox.html#toolbox_top">Toolbox</a> as a run
+    command.</li>
+
+    <li><strong>Build</strong> - Create a new build or overwrite an
+    existing build.</li>
+
+    <li><strong>Debug</strong> - If the Komodo debugging option is
+    selected on the <a class="doc" href="#General">General</a> tab,
+    click this button to start the debugger.</li>
+  </ul>
+
+  <p><strong>Note:</strong> When using the <strong>Build Standalone
+  Application</strong> feature with Perl 5.8.0 on a Linux
+  installation where the environment is set to use UTF-8, you must
+  add the module 'utf8' on the <strong>Modules</strong> tab. This
+  is the equivalent of <code>perlapp --add utf8</code>. The module
+  is not required for Perl 5.8.1 or higher.</p>
+
+  <h3><a name="General" id="General">Configuring the General
+  Tab</a></h3>
+
+  <p>The build options for the Perl Dev Kit correspond with the
+  tools described in the documentation included with your version
+  of Perl Dev Kit.</p>
+
+  <ul>
+    <li><strong>Enter the name of the script to build using the
+    PDK</strong> - Specify the path and filename of the source Perl
+    script. This option is equivalent to the <code>-script</code>
+    command-line argument.</li>
+
+    <li><strong>Build the script using</strong> - Select the type
+    of output to generate. 
+    <!--See <a class="doc" href="#build_options">Build Options</a> to learn
+        more about the choices for building your script.--></li>
+
+    <li><strong>Enter the name of the target executable or
+    control</strong> - Specify the path and name of the output
+    file. This option is equivalent to the <code>-exe</code>
+    command-line argument.</li>
+
+    <li>
+      <strong>Dependencies</strong>
+
+      <ul>
+        <li><strong>None</strong> - Include all necessary files in
+        the output file, so that it can be run on systems that do
+        not have Perl56.dll or ActivePerl. This option is
+        equivalent to the <code>-freestanding</code> command-line
+        argument.</li>
+
+        <li><strong>Perl Dll required on target</strong> - Reduce
+        the size of the generated executable by excluding
+        Perl56.dll from the output file. Target systems must have
+        the Perl56.dll installed. This setting corresponds with the
+        <code>-xclude</code> command-line argument.</li>
+
+        <li><strong>ActivePerl required on target</strong> - Create
+        an output file to run on systems where ActivePerl and any
+        modules included via <code>use</code> and
+        <code>require</code> statements are installed. This option
+        is equivalent to the <code>-dependent</code> command-line
+        argument.</li>
+      </ul>
+    </li>
+
+    <li><strong>Verbose build information</strong> - Generate
+    detailed output messages while the output file is being built.
+    This option corresponds to the <code>-verbose</code>
+    command-line argument.</li>
+
+    <li><strong>Hide console (for GUI applications)</strong> -
+    Similar to running wperl.exe, this option is useful for
+    building applications that run in the background. This setting
+    corresponds with the PerlApp <code>-gui</code> command-line
+    argument and is only available for the PerlApp tool.</li>
+
+    <li><strong>Overwrite existing build</strong> - Replace the
+    existing build with a new build. If you attempt to overwrite a
+    build without selecting this option, a pop-up dialog box warns
+    that the .exe file already exists. You can then choose to
+    overwrite the file, overwrite the file and enable the check
+    box, or cancel the command. This option is equivalent to the
+    <code>-force</code> command-line argument.</li>
+
+    <li><strong>Delete temp files after each run</strong> -
+    Freestanding Perl applications, services and controls sometimes
+    contain embedded DLLs that are extracted and cached in the host
+    system's temporary directory. Select this check box to delete
+    these files after each run. This setting corresponds with the
+    <code>-clean</code> command-line argument.</li>
+
+    <li><strong>Debugging</strong> - To debug the Perl executable,
+    control or service as it is being built, select the desired
+    debugger from the drop-down list. If you are not using either
+    the Komodo or PDK debugger, specify a <strong>Hostname</strong>
+    and <strong>Port</strong> for another debugger in the fields
+    provided.</li>
+  </ul>
+
+  <h3><a name="Modules" id="Modules">Configuring the Modules
+  Tab</a></h3>
+
+  <p>Use the <strong>Modules</strong> tab to add external modules
+  to the build, and trim unwanted modules.</p>
+
+  <h4><a name="pdk_exmodules" id="pdk_exmodules">Specifying Extra
+  Modules For Your Script</a></h4>
+
+  <p>To add a module to the output program, enter the name of the
+  module in the <strong>Module name</strong> field, and click
+  <strong>Add</strong>. The module to be added is displayed in the
+  list box above. Remove modules from the list box using the
+  <strong>Delete</strong> and <strong>Delete All</strong>
+  buttons.</p>
+
+  <p>This option corresponds with the <code>-add</code>
+  command-line argument.</p>
+
+  <h4><a name="pdk_trimmod" id="pdk_trimmod">Specifying Modules to
+  Trim from the Package</a></h4>
+
+  <p>To remove an unwanted module from the build, enter the name of
+  the module in the <strong>Modules</strong> field, and click
+  <strong>Add</strong>. The module to be trimmed is displayed in
+  the list box above. Remove modules from the list box using the
+  <strong>Delete</strong> and <strong>Delete All</strong>
+  buttons.</p>
+
+  <p>This option corresponds with the <code>-trim</code>
+  command-line argument.</p>
+
+  <h3><a name="Files" id="Files">Configuring the Files Tab</a></h3>
+
+  <p>Use the <strong>Files</strong> tab to add additional files
+  (typically data files used by the embedded program) to the output
+  file that is extracted when the program runs.</p>
+
+  <p>This option corresponds with the <code>-bind</code>
+  command-line argument.</p>
+
+  <h4><a name="pdk_addfiles" id="pdk_addfiles">Adding
+  Files</a></h4>
+
+  <p>To add a file to the output program, click
+  <strong>Add</strong>. In the pop-up dialog box, enter the source
+  location of the file on your system, and the location where the
+  file should be extracted when the output file runs.</p>
+
+  <h4><a name="pdk_editingfiles" id="pdk_editingfiles">Editing
+  Files</a></h4>
+
+  <p>To edit a file that has been added to the output program,
+  click <strong>Edit</strong>. In the dialog box, as required,
+  alter the source location of the file on your system, and the
+  location where the file should be extracted when the output file
+  runs.</p>
+
+  <h4><a name="pdk_delfiles" id="pdk_delfiles">Deleting
+  Files</a></h4>
+
+  <p>To remove a file that was to be added to the output program,
+  click the file, then click <strong>Delete</strong>.</p>
+
+  <h3><a name="Version" id="Version">Configuring the Version
+  Tab</a></h3>
+
+  <p>Use the <strong>Version</strong> tab to embed version
+  information in the output program. It corresponds to the
+  <code>-info</code> command-line argument.</p>
+
+  <p>To alter any of the version options, select the desired option
+  in the <strong>Version field</strong> column, and enter the
+  desired value in the field below. This information is assembled
+  as a version information (VERINFO) resource and displayed to
+  users if they view the properties for the script in Windows
+  Explorer.</p>
+
+  <h3><a name="Library" id="Library">Configuring the Library Paths
+  Tab</a></h3>
+
+  <p>Use the <strong>Library Paths</strong> tab to add directories
+  to your build. The options on this tab correspond with the
+  command-line arguments <code>-lib</code> and
+  <code>-blib</code>.</p>
+
+  <h4><a name="pdk_libblib" id="pdk_libblib">Specifying "lib" and
+  "blib" Directories to Include</a></h4>
+
+  <p>To add a lib or blib directory to include in an output file,
+  click <strong>Add</strong>. In the <strong>Browse for
+  Folder</strong> dialog box, select the directory path to include,
+  and click <strong>OK</strong>. The path can contain multiple
+  directories that are separated in the same way as in the PATH
+  environment variable.</p>
+
+  <p>Use <strong>Delete</strong> and <strong>Delete All</strong> to
+  remove directories that you do not want to add from the "lib" and
+  "blib" list boxes.</p>
+
+  <h3><a name="Extra" id="Extra">Configuring the Extra Tab</a></h3>
+
+  <p>The <strong>Extra</strong> tab is for adding icon files as
+  well as manually specifying any additional command-line
+  arguments.</p>
+
+  <h4><a name="pdk_icons" id="pdk_icons">Specifying Icon
+  files</a></h4>
+
+  <p>To include .ico files in a build, click <strong>Add</strong>.
+  From the <strong>Add Icon</strong> dialog box, select the icon(s)
+  you want to add, and click <strong>Open</strong>. The complete
+  path for the icon file is displayed in the <strong>Icon
+  File</strong> list box.</p>
+
+  <p>This option is equivalent to the <code>-icon</code>
+  command-line argument.</p>
+
+  <h4><a name="pdk_cmdparams" id="pdk_cmdparams">Specifying
+  Additional Command Line Parameters</a></h4>
+
+  <p>If you want to specify any command-line parameters in addition
+  to those selected using the options in the Build Standalone Perl
+  Application dialog box, enter them in the field provided.</p>
+  <hr />
+</body>
+</html>

@@ -1,0 +1,680 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc.-->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Troubleshooting</title>
+</head>
+
+<body>
+  <h1><a name="trouble_top" id="trouble_top">Komodo FAQ</a></h1>
+
+  <ul>
+    <li><a class="doc" href="#install_dir">Where is Komodo
+    installed?</a></li>
+
+    <li><a class="doc" href="#appdata_dir">Where does Komodo keep
+    settings data?</a></li>
+
+    <li><a class="doc" href="#host_dir">Where does Komodo save log
+    files?</a></li>
+
+    <li><a class="doc" href="#cannot_start">Komodo doesn't
+    start</a></li>
+
+    <li><a class="doc" href="#Projects_and_Files_panes">I can't see
+    my Left or Right Pane</a></li>
+
+    <li><a class="doc" href="#Output_pane">I can't see my Bottom
+    Pane</a></li>
+
+    <li><a class="doc" href="#Editor_pane">I want to maximize my
+    Editor Pane</a></li>
+
+    <li><a class="doc" href="#Debug_mode">How do I know if I'm
+    debugging?</a></li>
+
+    <li><a class="doc" href="#Edit_mode">How do I know if I'm
+    editing?</a></li>
+
+    <li><a class="doc" href="#arguments_to_my_program">How can I
+    add command-line arguments to my program for
+    debugging?</a></li>
+
+    <li><a class="doc" href="#Komodo_crashes">Komodo crashes. What
+    can I do?</a></li>
+
+    <li><a class="doc" href="#Komodo_big">Why is Komodo so
+    big?</a></li>
+
+    <li><a class="doc" href="#mozilla">I already have Mozilla. Why
+    do I need to have two versions?</a></li>
+
+    <li><a class="doc" href="#php_debug">I'm having trouble
+    debugging PHP. What do I do?</a></li>
+
+    <li><a class="doc" href="#trouble_php_sessions">How do I
+    emulate sessions in PHP debugging?</a></li>
+
+    <li><a class="doc" href="#virtual_host_apache">How do I
+    configure Virtual Hosting on an Apache Web server?</a></li>
+
+    <li><a class="doc" href="#linux_reloc">I moved my Komodo
+    installation on Linux, and am now getting Perl debugging
+    errors.</a></li>
+
+    <li><a class="doc" href="#debug_dialog">How do I prevent the
+    dialog from displaying every time I start the
+    debugger?</a></li>
+
+    <li><a class="doc" href="#cgi_alert">Why do I get a CGI
+    security alert when debugging PHP?</a></li>
+
+    <li><a class="doc" href="#lang_unavail">The Check Configuration
+    window reports that a language installed on my system is not
+    available. Why?</a></li>
+
+    <li><a class="doc" href="#black_screen">My screen goes black
+    for a second or two whenever I open files for which Komodo
+    performs background syntax checking. Why?</a></li>
+
+    <li><a class="doc" href="#cvs_commands">How can I run additonal
+    CVS commands from within Komodo?</a></li>
+
+    <li><a class="doc" href="#ruby_debug_x64">Why doesn't Ruby
+    debugging work on my Linux x64 system?</a></li>
+  </ul>
+
+  <h2><a name="install_dir" id="install_dir">Where is Komodo
+  installed?</a></h2>
+
+  <p>The Komodo installer will prompt for an installation
+  directory; you can choose any directory you have permissions to
+  install to. The default location varies by platform, and the name
+  of the directory corresponds to the version of Komodo you are
+  running ("IDE" or "Edit" plus the version number - e.g.
+  "Komodo-IDE-4.0"):</p><strong>Windows</strong>
+  <pre class="code">
+C:\Program Files\ActiveState Komodo [IDE|Edit] &lt;version&gt;\
+</pre><strong>Linux</strong>
+  <pre class="code">
+/opt/Komodo-[IDE|Edit]-&lt;version&gt;/
+</pre><strong>OS X</strong>
+  <pre class="code">
+/Applications/Komodo-[IDE|Edit]-&lt;version&gt;.app
+</pre>
+
+  <h2><a name="appdata_dir" id="appdata_dir">Where does Komodo keep
+  settings data?</a></h2>
+
+  <p>Komodo stores preferences, macros, templates, keybinding
+  schemes and other settings in a user-specific directory called
+  the <strong>user data</strong> directory. The name and location
+  of this directory varies depending on the operating system and
+  Komodo version:</p><strong>Windows 2000 and XP</strong>
+  <pre class="code">
+C:\Documents and Settings\&lt;user&gt;\Application Data\ActiveState\Komodo[IDE|Edit]\&lt;version&gt;
+</pre><strong>Windows Vista</strong>
+  <pre class="code">
+C:\Users\&lt;user&gt;\AppData\Roaming\ActiveState\Komodo[IDE|Edit]\&lt;version&gt;
+</pre><strong>Linux</strong>
+  <pre class="code">
+/home/&lt;user&gt;/.komodo[ide|edit]/&lt;version&gt;
+</pre><strong>Mac OS X</strong>
+  <pre class="code">
+/Users/&lt;user&gt;/Library/Application Data/Komodo[IDE|Edit]/&lt;version&gt;
+</pre>
+
+  <p>The location of this directory can be overridden using the
+  <code>KOMODO_USERDATADIR</code> environment variable.</p>
+
+  <h2><a name="host_dir" id="host_dir">Where does Komodo log output
+  and errors?</a></h2>
+
+  <p>Within the <a href="#appdata_dir">user data</a> directory is
+  the host data directory (<code>host-&lt;hostname&gt;</code>). It
+  contains <code>pystderr.log</code> and <code>pystdout.log</code>,
+  which can be useful for troubleshooting problems with Komodo.</p>
+
+  <h2><a name="cannot_start" id="cannot_start">Komodo doesn't
+  start. Why?</a></h2>
+
+  <p>If Komodo doesn't start, there could be one of several
+  issues.</p>
+
+  <ul>
+    <li>
+      <p>Do you have a license installed?</p>
+
+      <p>Komodo needs a license to become functional. If you have a
+      Beta release, we include a trial license with the package. If
+      you have a final release (non-Beta), you can download a
+      license from <a class="doc" href=
+      "http://www.ActiveState.com/Products/Komodo/license_get.plex">
+      ActiveState</a>.</p>
+    </li>
+
+    <li>
+      <p>Do you have Norton Anti-Virus (NAV) installed, or more
+      specifically, the File System Realtime Protection feature
+      enabled?</p>
+
+      <p>The problematic relationship between Komodo and Norton
+      Anti-Virus' File System Realtime Protection feature is a
+      known issue, which we are working to remedy. In the meantime,
+      you can disable <code>NAV Corp 7.5 FSRP</code> before running
+      Komodo, and then re-enable it after Komodo starts.</p>
+    </li>
+  </ul>
+
+  <p>If none of these seem to apply to you, please follow the
+  instructions in <a href="#Komodo_crashes">this FAQ entry</a> to
+  log a bug in Komodo's bug database.</p>
+
+  <h2><a name="Projects_and_Files_panes" id=
+  "Projects_and_Files_panes">Why can't I see my Left or Right
+  Pane</a></h2>
+
+  <p>One or more panes may be hidden.</p>
+
+  <p>To view the Left Pane, click the <strong>Show/Hide Left
+  Pane</strong> button on the toolbar, use the options on the
+  <strong>View</strong> menu, or use the associated <a href=
+  "prefs.html#Config_Key_Bindings">key binding</a>.</p>
+
+  <h2><a name="Output_pane" id="Output_pane">I can't see my Bottom
+  Pane</a></h2>
+
+  <p>The Bottom Pane appears below the Editor Pane during
+  debugging. If you can't see your Bottom Pane, it may be
+  hidden.</p>
+
+  <p>To view the Bottom Pane, click the <strong>Show/Hide Bottom
+  Pane</strong> button on the toolbar, use the options on the
+  <strong>View</strong> menu, or use the associated <a href=
+  "prefs.html#Config_Key_Bindings">key binding</a>.</p>
+
+  <p>For more information, see <a class="doc" href=
+  "debugger.html#debugger_top">Debugging
+  Programs</a></p>
+
+  <h2><a name="Editor_pane" id="Editor_pane">I want to maximize the
+  Editor Pane</a></h2>
+
+  <p>I like to see the Left and Right Panes and the Bottom Pane,
+  but right now I want to maximize my Editor Pane to get some
+  coding done. How can I maximize my Editor Pane?</p>
+
+  <p>To maximize your Editor Pane, hide the other panes in the
+  Komodo workspace:</p>
+
+  <ol>
+    <li>Click the close arrow button that appears in the top right
+    corner of each of these panes.</li>
+  </ol>
+
+  <h2><a name="Debug_mode" id="Debug_mode">How do I know if I'm
+  debugging?</a></h2>
+
+  <p>When Komodo is debugging, the title of the Komodo workspace
+  includes an indication of the state of the debugger. If the
+  debugger is running, the title looks similar to
+  <strong>[pathname\filename] - ActiveState Komodo - Debugger is
+  running</strong>. If the debugger has hit a breakpoint, the title
+  looks similar to <strong>[pathname\filename] - ActiveState Komodo
+  - Debugger is in Break Mode</strong>.</p>
+
+  <h2><a name="Edit_mode" id="Edit_mode">How do I know if I'm
+  editing?</a></h2>
+
+  <p>You are editing any time you're not formally debugging. When
+  Komodo is editing, the title of the Komodo workspace is
+  <strong>[pathname\filename] - ActiveState Komodo</strong>.</p>
+
+  <h2><a name="arguments_to_my_program" id=
+  "arguments_to_my_program">How can I add command-line arguments to
+  my program for debugging?</a></h2>
+
+  <p>If you want to send add command-line arguments to your program
+  for debugging, you can add these using the Debugger Launch
+  Options dialog:</p>
+
+  <ol>
+    <li>On the <strong>Debug</strong> menu, click
+    <strong>Start</strong>.</li>
+
+    <li>In the Debugger Launch Options dialog, select the directory
+    you want to begin debugging your program in. Click
+    <strong>Browse</strong> and navigate to the appropriate
+    directory.</li>
+
+    <li>In the same Debugger Launch Options dialog, enter your
+    command-line arguments. These are sent to the script and not to
+    the interpreter. Separate the arguments with spaces.</li>
+
+    <li>Click <strong>OK</strong>.</li>
+  </ol>
+
+  <h2><a name="Komodo_crashes" id="Komodo_crashes">Komodo crashes.
+  What can I do?</a></h2>
+
+  <p>As Komodo is running it updates a few log files with debugging
+  and error information. If Komodo crashes, you can help us best
+  determine the issue by sending us those log files, along with
+  information on how you came across the crash. On some operating
+  systems the system creates a crash log as well, which you should
+  also send to us. The log files may include:</p>
+
+  <ul>
+    <li><strong>startup.log</strong> (in your Komodo user data
+    dir)</li>
+
+    <li><strong>pystderr.log</strong> (in your Komodo user data
+    dir)</li>
+
+    <li><strong>pystdout.log</strong> (in your Komodo user data
+    dir)</li>
+
+    <li><strong>console.log</strong> (in your Komodo user data
+    dir)</li>
+
+    <li><strong>komodo-bin.crash.log</strong> (Mac OS X only, in
+    <em>~/Library/Logs/CrashReporter</em>)</li>
+  </ul>
+
+  <p>Please use the following steps to send us your crash
+  information:</p><strong>Step 1: Ensure the logs are for the time
+  Komodo crashed</strong>
+
+  <p>Komodo's log files are only for the last time Komodo was run.
+  If you have restarted Komodo since the time it crashed on you,
+  you must reproduce the crash so that the log files are
+  relevant.</p>
+
+  <p><strong>Note:</strong> If Komodo is hung (i.e. won't
+  shutdown), you may need to manually stop the
+  <code>komodo-bin</code> process:</p>
+
+  <dl>
+    <dt>Windows</dt>
+
+    <dd>Press <kbd>'Ctrl'+'Shift'+'Esc'</kbd> to open "Windows Task
+    Manager". Select the "Processes" tab. Right-click on the
+    "komodo.exe" entry and select "End Process".</dd>
+
+    <dt>Mac OS X</dt>
+
+    <dd>Right-click (or 'Option'+click) on the Komodo head icon in
+    the Dock and select the "Force Quit" option.</dd>
+
+    <dt>Linux</dt>
+
+    <dd>At the terminal run <code>ps ux | grep komodo-bin</code> to
+    determine the Komodo process id (or "pid"). Then run <code>kill
+    -9 PID</code> where "PID" is the process id from the previous
+    command.</dd>
+  </dl><strong>Step 2: Locating the error log files</strong>
+
+  <p>Komodo stores its log files in the <a href="#host_dir">host
+  data</a> subdirectory of the <a href="#userdata_dir">user
+  data</a> directory.</p>
+
+  <p>On Mac OS X, an additional <code>komodo-bin.crash.log</code>
+  is created by the system in
+  <code>~/Library/Logs/CrashReporter/</code>.</p><strong>Step 3:
+  Verifying and <a name="Sending" id="Sending">sending the files to
+  ActiveState</a></strong>
+
+  <p>To send the error log files to ActiveState:</p>
+
+  <ol>
+    <li>Locate the files.</li>
+
+    <li>Verify that the files are not blank by viewing them with a
+    text editor.</li>
+
+    <li>Create a bug describing what happened just before the crash
+    in the ActiveState <a href=
+    "http://bugs.activestate.com/query.cgi?set_product=Komodo">bug
+    database</a>. (If you do not already have an ASPN or
+    ActiveState bug database account, you can open one by selecting
+    "<strong><a href=
+    "http://bugs.activestate.com/join.cgi">join</a></strong>".)</li>
+
+    <li>Once the bug has been created, add the error log files by
+    selecting <strong>Create</strong> in the <strong>Attachments
+    and Dependencies</strong> section of the bug report.</li>
+  </ol>
+
+  <h2><a name="Komodo_big" id="Komodo_big">Why is Komodo so
+  big?</a></h2>
+
+  <p>Because Komodo is built on the Mozilla framework, it is
+  necessary for us to include the Mozilla build that exactly
+  matches the development version of Komodo. For that reason, even
+  if you have Mozilla on your system, Komodo installs the Mozilla
+  version that it requires.</p>
+
+  <p>Another sizeable component of Komodo is language support.
+  Komodo is so tightly integrated with Perl, Python, Ruby and PHP
+  that it is necessary to include components of those languages, at
+  specific version levels, for debugger and editor support.</p>
+
+  <h2><a name="mozilla" id="mozilla">I already have Mozilla. Why do
+  I need to have two versions?</a></h2>
+
+  <p>When ActiveState develops a Komodo release, the work is based
+  upon a specific version of Mozilla. During the development
+  process, we upgrade the level of Mozilla used by Komodo, but this
+  process requires considerable testing to ensure that no
+  functionality is lost. Additionally, we add some custom
+  components to the Mozilla tree that are used by Komodo. For these
+  reasons, we recommend that you do not replace the Mozilla version
+  included with Komodo with a later Mozilla version.</p>
+
+  <h2><a name="php_debug" id="php_debug">I'm having trouble
+  debugging PHP. What do I do?</a></h2>
+
+  <p>If you receive an error message when attempting to debug a PHP
+  program or if the debugging process does not proceed as expected,
+  verify that you have installed PHP and the Xdebug extension as
+  per the instructions in the <a href=
+  "debugphp.html#debugphp_top">Debugging PHP</a>
+  documentation, then check the following:</p><strong>Confirm PHP
+  Configuration</strong>
+
+  <ol>
+    <li><strong>xdebug:</strong> in the command or shell window,
+    enter <code>php -m</code>. "xdebug" should be listed as both a
+    regular module and a zend extension. If this is not the case,
+    your configuration is incorrect. See "Common PHP Configuration
+    Problems" below.</li>
+
+    <li>
+      <strong>Syntax Checking:</strong> in Komodo, select
+      <strong>Edit|Preferences</strong>. Click on <strong>Smart
+      Editing</strong>, and ensure that "Enable background syntax
+      checking" is checked. Open a PHP file and enter something
+      that is syntactically incorrect, such as:
+      <pre class="code">
+&lt;?
+asdf
+echo test;
+?&gt;
+</pre>Komodo should display a red squiggly line under <code>echo
+test;</code>. If it does not, it indicates that Komodo is not able
+to communicate with the PHP interpreter.
+    </li>
+
+    <li><strong>Debug:</strong> if steps one and two were
+    successful, ensure that the debugger is functioning by opening
+    a PHP program and debugging it. Ensure that the correct
+    <a class="doc" href="prefs.html#PHP">Preferences</a>
+    are configured for PHP.</li>
+  </ol>
+
+  <p>If any of the steps above were unsuccessful, proceed to the
+  next section.</p><strong>Common PHP Configuration
+  Problems</strong>
+
+  <ul>
+    <li><strong>Multiple PHP executables on one machine:</strong>
+    in Komodo's <a class="doc" href=
+    "prefs.html#PHP">Preferences</a>, explicitly specify
+    the PHP interpreter configured in your php.ini file. The
+    location of the php.ini file can also be explicitly set.</li>
+
+    <li><strong>Verify the PHP version:</strong> PHP 4.0.5 or
+    greater is required for PHP syntax checking. PHP 4.3.1 or
+    greater is required to debug PHP programs.</li>
+
+    <li>
+      <strong>Verify Xdebug library specification:</strong> The
+      location of <em>xdebug.dll</em> (Windows) or
+      <em>xdebug.so</em> (Linux) must be defined the
+      <em>php.ini</em> file, for example:<br />
+      <br />
+
+      <ul>
+        <li><strong>Windows:</strong>
+        zend_extension_ts=C:\php-4.3.7\extensions\php_xdebug.dll</li>
+
+        <li><strong>Linux:</strong>
+        zend_extension=/php-4.3.7/extensions/php_xdebug.dll</li>
+      </ul><br />
+    </li>
+
+    <li>Ensure that the Xdebug extension is configured correctly in
+    the <em>php.ini</em> file as per the <a href=
+    "debugphp.html#debugphp_edit_php_ini">Remote PHP
+    Debugging</a> instructions.</li>
+  </ul><strong>Windows-Specific Configuration Issues</strong>
+
+  <ul>
+    <li><strong>Windows 2000 upgrade:</strong> if you upgraded to
+    Windows 2000 from an earlier version of Windows, check the
+    value of the "COMSPEC" variable in the "System variables" (as
+    described above). It should point to
+    <code>C:\WINNT\system32\cmd.exe</code>, and not
+    <code>command.com</code>. If you must change the variable,
+    reboot your system.</li>
+
+    <li>There are known issues regarding the installation of PHP on
+    Windows Millennium systems; please refer to the <a class="doc"
+    href="http://www.php.net">PHP site</a> for installation
+    information.</li>
+  </ul><strong>Version Error Messages</strong>
+
+  <p>If you receive a dialog with the following text:</p>
+  <pre class="code">
+Warning
+xdebug: Unable to initialize module
+Module compiled with debug=0, thread-safety=1 module API=20001222
+PHP compiled with debug=0, thread-safety=1 module API=20001222
+These options need to match
+</pre>
+
+  <p>... download an updated version of <code>xdebug.dll
+  (Windows)</code> or <code>xdebug.so (Linux)</code> from the
+  <a class="doc" href="http://www.xdebug.org">Xdebug.org</a>
+  site.</p>
+
+  <h2><a name="trouble_php_sessions" id="trouble_php_sessions">How
+  do I emulate sessions in PHP debugging?</a></h2>
+
+  <p>Though it is possible to emulate sessions in <a href=
+  "debugphp.html#local_debug_PHP">local debugging</a>
+  mode, this requires pre-knowledge of session keys, and how those
+  session keys are communicated to PHP.</p>
+
+  <p>It is easier to debug sessions using <a href=
+  "debugphp.html#remote_debug_PHP">remote debugging</a>.
+  Run the script under a web server and start the debugging session
+  from a web browser. Komodo intercepts the session and debugs it.
+  All session data is available and modifiable through the Variable
+  tabs.</p>
+
+  <h2><a name="virtual_host_apache" id="virtual_host_apache">How do
+  I configure Virtual Hosting on an Apache Web server?</a></h2>
+
+  <p>Virtual Hosting is an Apache feature for maintaining multiple
+  servers on the same machine, differentiating them by their
+  apparent hostname. For example, a single machine could contain
+  two servers, "www.yourdomain.com" and "debug.yourdomain.com".</p>
+
+  <p>If you have configured your Apache installation to use Virtual
+  Hosting (see <a class="doc" target="_blank" href=
+  "http://httpd.apache.org/docs/1.3/vhosts/">httpd.apache.org/docs/1.3/vhosts/</a>),
+  you can add directives to your VirtualHost sections to specify
+  how Komodo's PHP debugger extension operates for those hosts. Use
+  the "php_admin_value" to set specific debugger settings for that
+  virtual host. Here is an example:</p>
+  <pre class="code">
+NameVirtualHost *
+&lt;VirtualHost *&gt;
+php_admin_value xdebug.enabled 0
+DocumentRoot "/Apache/htdocs/"
+ErrorLog logs/www.error.log
+Servername www.yourdomain.com
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost *&gt;
+php_admin_value xdebug.enabled 1
+DocumentRoot "/Apache/htdocs/"
+ErrorLog logs/debug.error.log
+Servername debug.yourdomain.com
+&lt;/VirtualHost&gt;
+</pre>
+
+  <p>This will enable debugging under debug.yourdomain.com, but not
+  under www.yourdomain.com. You can additionally configure the
+  Virtual Host to use a specific machine for remote debugging:</p>
+  <pre class="code">
+&lt;VirtualHost *&gt;
+php_admin_value xdebug.enabled 1
+php_admin_value xdebug.host komodo.yourdomain.com
+DocumentRoot "/Apache/htdocs/"
+ErrorLog logs/debug.error.log
+Servername debug.yourdomain.com
+&lt;/VirtualHost&gt;
+</pre>
+
+  <p>For more information on configuring Virtual Hosting under
+  Apache, see the Apache documentation at <a class="doc" href=
+  "http://httpd.apache.org/docs/">httpd.apache.org/docs/</a>.</p>
+
+  <h2><a name="linux_reloc" id="linux_reloc">I moved my Komodo
+  installation on Linux, and am now getting Perl debugging
+  errors.</a></h2>
+
+  <p>On Linux, you cannot relocate an existing Komodo installation
+  to a new directory. You must uninstall Komodo from the existing
+  location and reinstall it in the new location. See <a class="doc"
+  href="readme.html#Uninstalling_Komodo_Lin">Uninstalling Komodo on
+  Linux</a> for instructions.</p>
+
+  <h2><a name="debug_dialog" id="debug_dialog">How do I prevent the
+  dialog from displaying every time I start the debugger?</a></h2>
+
+  <p>To prevent the debugger dialog from appearing each time you
+  start the debugger, hold down the 'Ctrl' key when you start the
+  debugger. For example, on Windows and Linux, press 'Ctrl'+'F5'
+  rather than 'F5' to start debugging. Click <strong>Help|List Key
+  Bindings</strong> to find the equivalent key binding for the
+  Emacs and OS X default key binding schemes.</p>
+
+  <h2><a name="cgi_alert" id="cgi_alert">Why do I get a CGI
+  security alert when debugging PHP?</a></h2>
+
+  <p>The CGI security alert only occurs when you compile PHP with
+  --enable-cgi-force-redirect. That compilation directive forces
+  PHP to check if it is being run as a CGI by looking at
+  environment variables commonly available only under a CGI
+  environment. If they exist, it looks for another environment
+  variable that is reliably available ONLY under Apache,
+  REDIRECT_STATUS (or HTTP_REDIRECT_STATUS under Netscape/iPlanet).
+  If that environment variable does not exist, the security alert
+  is generated.</p>
+
+  <p>To run your compilation of PHP under Komodo with CGI
+  emulation, you have to add a CGI environment variable called
+  REDIRECT_STATUS with any value.</p>
+
+  <h2><a name="lang_unavail" id="lang_unavail">When I click Check
+  Configuration on the Start Page, Komodo reports that a language
+  that is installed on my system is not available. Why?</a></h2>
+
+  <p>In order for Komodo to detect the presence of a language
+  installed on your system, the location of the language
+  interpreter must be specified in your system's <code>PATH</code>
+  environment variable. If the Komodo Start Page states that a
+  language is "Not Functional", or if the Komodo Preferences say
+  that the language interpreter is not found on your system, check
+  that the interpreter is specified in your <code>PATH</code>.</p>
+
+  <h2><a name="black_screen" id="black_screen">My screen goes black
+  for a second or two whenever I open files for which Komodo
+  performs background syntax checking. Why?</a></h2>
+
+  <p>Komodo launches a process as part of the background syntax
+  checking that can cause a full screen command prompt to
+  momentarily appear on some Windows systems. You can make the
+  process invisible by editing the properties for the command
+  prompt window. On the Windows <strong>Start</strong> menu,
+  right-click the <strong>Command Prompt</strong> item, and select
+  <strong>Properties</strong>. Select the <strong>Options</strong>
+  tab, and change the Display options to
+  <strong>Window</strong>.</p>
+
+  <h2><a name="cvs_commands" id="cvs_commands">How can I run
+  additonal CVS commands from within Komodo?</a></h2>
+
+  <p>Komodo can be used to check out, add, remove, compare, submit
+  and revert files in a CVS repository. CVS offers additional
+  commands such as import, checkout, history, annotate, rdiff and
+  watch which can be put into <a href=
+  "run.html#run_top">Run Commands</a> and saved to a
+  project or the Toolbox. For example, the following <code>cvs
+  import</code> command prompts for the User, Host, Module, Project
+  and Version to import:</p><code>cvs -d
+  :ext:%(ask:User)@%(ask:Host):%(ask:Path) import %(ask:Module:)
+  %(ask:Project:) %(ask:Version:)</code>
+
+  <p>Alternatively, the <code>%(ask:...)</code> <a href=
+  "shortcuts.html#shortcuts_top">interpolation
+  shortcut</a> could be populated with defaults or replaced with
+  static values:</p>
+
+  <p><code>cvs -d :ext:%(ask:User:jdoe)@myhost:/var/cvsroot import
+  %(ask:Module:) %(ask:Project:MyProject)</code></p>
+
+  <p>CVS reqires a real terminal for adding change descriptions. Be
+  sure to set <strong>Run in: New Console</strong> in the command's
+  properties.</p>
+
+  <h2><a name="ruby_debug_x64" id="ruby_debug_x64">Why doesn't Ruby
+  debugging work on my Linux x64 system?</a></h2>
+
+  <p>Linux users trying to debug a Ruby application on AMD 64bit
+  systems may see the following error:</p>
+
+  <blockquote>
+    The Komodo ruby debugger couldn't load the ruby-debug-base
+    component.<br />
+    This library ships with Komodo, but also can be installed by
+    running `gem install ruby-debug-base'
+  </blockquote>
+
+  <p>Komodo ships with a 32-bit version of ruby-debug-base, which
+  will not work with 64-bit versions of Ruby. To fix this:</p>
+
+  <ol>
+    <li>Delete the installed <code>ruby-debug</code> libraries by
+    removing the <code><a href="#install_dir" install_dir=
+    ""></a>/lib/support/dbgp/rubylib/1.8/</code> directory.</li>
+
+    <li>Download the latest ruby-debug-base gem from <a target=
+    "_blank" href=
+    "http://rubyforge.org/frs/?group_id=1900">http://rubyforge.org/frs/?group_id=1900</a></li>
+
+    <li>Install the downloaded file using <code>gem</code>:
+      <pre class="code">
+sudo gem install ruby-debug-base-0.9.x.gem
+</pre>
+    </li>
+  </ol>
+
+  <p>Komodo will automatically find and use the new version of the
+  debugging library.</p>
+  <hr />
+</body>
+</html>

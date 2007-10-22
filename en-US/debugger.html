@@ -1,0 +1,1857 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Debugging Programs</title>
+</head>
+
+<body>
+  <h1><a name="debugger_top">Debugging Programs</a> <span class=
+  "version_alert">Komodo IDE only</span></h1>
+
+  <div class="right-float-box">
+    <p><strong>Tutorials</strong></p>
+
+    <ul>
+      <li><a href="tutorial/perltut.html#perltut_top">Perl</a>
+      tutorial</li>
+
+      <li><a href=
+      "tutorial/pythontut.html#pythontut_top">Python</a>
+      tutorial</li>
+
+      <li><a href="tutorial/phptut.html#phptut_top">PHP</a>
+      tutorial</li>
+
+      <li><a href="tutorial/rubytut.html#rubytut_top">Ruby</a>
+      tutorial</li>
+
+      <li><a href="tutorial/xslttut.html#xslttut_top">XSLT</a>
+      tutorial</li>
+    </ul>
+
+    <p><strong>Feature Showcases</strong></p>
+
+    <ul>
+      <li>conditional <a href=
+      "tutorial/tourlet_condbreak.html#condbreak_top">breakpoints</a></li>
+
+      <li>XSLT debug <a href=
+      "tutorial/tourlet_debug_xslt.html#debug_xslt_top">view</a></li>
+    </ul>
+  </div>
+
+  <p>The Komodo debugger is a tool for analyzing programs on a
+  line-by-line basis, monitoring and altering variables, and
+  watching output as it is generated. Debugging features
+  include:</p>
+
+  <ul>
+    <li>breakpoint and spawnpoint control</li>
+
+    <li>remote debugging</li>
+
+    <li>stepping</li>
+
+    <li>watching variables</li>
+
+    <li>viewing the call stack</li>
+
+    <li>sending input</li>
+
+    <li>adding command-line arguments</li>
+
+    <li>interactive shell</li>
+  </ul>
+
+  <p>The sections that follow contain general information about the
+  debugger that is applicable to each language. Komodo provides
+  debugging support for JavaScript, Perl, Python, PHP, XSLT and
+  Tcl. For information about configuring languages and
+  language-specific debugger functions, see:</p>
+
+  <ul>
+    <li><a class="doc" href=
+    "debugjs.html#debugjs_top">Debugging
+    JavaScript</a></li>
+
+    <li><a class="doc" href=
+    "debugperl.html#debugperl_top">Debugging
+    Perl</a></li>
+
+    <li><a class="doc" href=
+    "debugpython.html#debugpython_top">Debugging
+    Python</a></li>
+
+    <li><a class="doc" href=
+    "debugphp.html#debugphp_top">Debugging PHP</a></li>
+
+    <li><a class="doc" href=
+    "debugruby.html#debugruby_top">Debugging
+    Ruby</a></li>
+
+    <li><a class="doc" href=
+    "debugtcl.html#debugtcl_top">Debugging Tcl</a></li>
+
+    <li><a class="doc" href=
+    "debugxslt.html#debugxslt_top">Debugging
+    XSLT</a></li>
+  </ul>
+
+  <p><strong>Notes</strong></p>
+
+  <ul>
+    <li>Perl Debugging on Windows 98/Me requires <a href=
+    "http://www.activestate.com/Products/ActivePerl/">ActivePerl</a>
+    Build 623 or higher. Restart your machine after you install
+    ActivePerl to be sure that your system's <code>PATH</code>
+    variable is updated with the location of Perl.</li>
+
+    <li>Be sure you meet the software prerequisites for debugging,
+    as described in the <a class="doc" href=
+    "readme.html#readme_top">Installation Guide</a>.</li>
+  </ul>
+
+  <h2><a name="Starting_the_Debugger">Starting the
+  Debugger</a></h2>
+
+  <p>To start the debugger, do one of the following:</p>
+
+  <ul>
+    <li><strong>Debug Toolbar</strong>: Select
+    <strong>Go/Continue</strong> or <strong>Step In</strong>.</li>
+
+    <li><strong>Keyboard</strong>: Use the associated <a href=
+    "prefs.html#Config_Key_Bindings">key
+    binding</a>.</li>
+
+    <li><strong>Debug Menu</strong>: Click
+    <strong>Go/Continue</strong> or <strong>Step In</strong>.</li>
+  </ul>
+
+  <p>By default, the <a href="#Debugging_Options">Debugging
+  Options</a> dialog box is displayed (unless the <a href=
+  "prefs.html#Debugger">debugger preference</a> has been
+  configured to start without displaying the dialog box). To
+  override the debugger preference on Windows and Linux systems,
+  hold down the 'Ctrl' key while invoking the key binding for
+  starting the debug session. (Select <strong>Help|List Key
+  Bindings</strong> to view the current key bindings; use the
+  <a href="prefs.html#Config_Key_Bindings">key bindings
+  preference</a> to configure custom key bindings.) Alternatively,
+  the 'Ctrl' key can be used to suppress the display of the
+  <strong>Debugging Options</strong> dialog box.</p>
+
+  <p>If multiple files are open in the <a class="doc" href=
+  "workspace.html#Editor_Pane">Editor Pane</a>, the
+  program that is currently displayed is debugged. If no
+  breakpoints are set, <strong>Go/Continue</strong> causes the
+  debugger to run to the end without stopping. <strong>Step
+  In</strong> moves through the program one line at a time.</p>
+
+  <p>If the <a class="doc" href=
+  "workspace.html#Output_Pane">Bottom Pane</a> is
+  hidden, Komodo automatically shows it.</p>
+
+  <p>To run a program without debugging, do one of the
+  following:</p>
+
+  <ul>
+    <li><strong>Debug Menu</strong>: Select <strong>Run without
+    debugging</strong>.</li>
+
+    <li><strong>Keyboard</strong>: Use the associated <a href=
+    "prefs.html#Config_Key_Bindings">key
+    binding</a>.</li>
+  </ul>
+
+  <p>To run a program to the current cursor position, do one of the
+  following:</p>
+
+  <ul>
+    <li><strong>Debug Menu</strong>: Select <strong>Run to
+    Cursor</strong>.</li>
+
+    <li><strong>Keyboard</strong>: Use the associated <a href=
+    "prefs.html#Config_Key_Bindings">key
+    binding</a>.</li>
+  </ul>
+
+  <p>By default, the debugger will break on the first line of
+  executable code when it starts. This is useful for adding
+  <a href="#breakpoints_and_spawnpoints">breakpoints</a> if none
+  have been set yet. To change this behavior, set <strong>Initial
+  break behavior</strong> to <strong>Run to first
+  breakpoint</strong> in the <a href=
+  "prefs.html#Debugger">debugger preferences</a>
+  (<strong>Edit|Preferences|Debugger</strong>).</p>
+
+  <h3><a name="multi_session_debug">Multi-Session
+  Debugging</a></h3>
+
+  <p>Komodo supports the concurrent debugging of multiple
+  applications, or multi-session debugging. With multi-session
+  debugging, Komodo debugs more than one project at a time,
+  regardless of the supported languages used in the programs being
+  debugged.</p>
+
+  <p>When debugging multiple sessions, each session has a unique
+  <strong>Debug</strong> tab (located in the Bottom Pane) for
+  controlling the debug actions specific to that process. A
+  <strong>Debug</strong> tab is created each time a new debugger
+  session is started. To close a <strong>Debug</strong> tab, click
+  the X button at the top right corner.</p>
+
+  <p>To start multiple debugging sessions, do one of the
+  following:</p>
+
+  <ul>
+    <li><strong>Debug Menu</strong>: Click <strong>Start New
+    Session</strong>.</li>
+
+    <li><strong>Keyboard</strong>: Use the associated <a href=
+    "prefs.html#Config_Key_Bindings">key
+    binding</a>.</li>
+  </ul>
+
+  <h2><a name="Debugging_Options">Debugging Options</a></h2>
+
+  <p>When the debugger is invoked, the Debugging Options dialog box
+  is displayed. Use this to configure the system environment,
+  command-line arguments, CGI environment, and other debugging
+  options.</p>
+
+  <p>Not all of the debugging options described below apply to all
+  languages. The available tabs and fields depend on the
+  interpreter used to debug the file. The interpreter is determined
+  by the <a class="doc" href=
+  "prefs.html#File_Associations">File Associations</a>
+  configured for the active file in the <a class="doc" href=
+  "workspace.html#Editor_Pane">Editor Pane</a>.</p>
+
+  <p>To suppress the display of the Debugging Options dialog box on
+  Windows and Linux systems, hold down the 'Ctrl' key while
+  clicking the desired debugging button on the Debug Toolbar, or
+  use the desired keyboard shortcut. Change the default display by
+  selecting <strong>Skip debug options dialog</strong> from
+  <strong>Edit|Preferences|Debugger</strong>.</p>
+
+  <h3><a name="Debugging_Options_Global">Global Options</a></h3>
+
+  <p>These options are displayed regardless of which configuration
+  tabs are available.</p>
+
+  <ul>
+    <li><strong>Language</strong>: The language of the file being
+    debugged.</li>
+
+    <li><strong>Simulate CGI Environment</strong>: Select this
+    check box to display two additional CGI option tabs - <a class=
+    "doc" href="#Debugging_Options_CGI_Environment">CGI
+    Environment</a> and <a class="doc" href=
+    "#Debugging_Options_CGI_Input">CGI Input</a>.</li>
+
+    <li><strong>Debug in separate console</strong>: Select this
+    check box to display the debug process in a separate console
+    window rather than the <strong>Output</strong> tab. As
+    applicable, the console window displays program output and
+    prompts for program input.</li>
+  </ul>
+
+  <h3><a name="Debugging_Options_General">General Tab</a></h3>
+
+  <ul>
+    <li><strong>Interpreter Arguments</strong>: As required, enter
+    command line options and arguments for the interpreter in this
+    field. Use the <strong>Shortcut</strong> button to the right of
+    the input field to select common language-specific
+    options.</li>
+
+    <li><strong>Script</strong>: Enter the name of the script to be
+    debugged. By default, this field contains the full path and
+    name of the program displayed in the Editor pane. When manually
+    specifying a script, UNC or SMB paths (which identify remote
+    machines on a local area network via the "\\" prefix) are not
+    supported. Instead, map the network share to a drive letter
+    (Windows) or mount the share on the filesystem (OS X and
+    Linux). When set as a <a href=
+    "project.html#project_props">Project setting</a>,
+    this is the script that Komodo opens for debugging when a
+    session is started from <em>any</em> file in the project. This
+    is useful when working in modules which are called by a 'main'
+    program.</li>
+
+    <li><strong>Script Arguments</strong>: As required, enter
+    arguments for the script in this field as they would appear on
+    the command line. Multiple Arguments must be separated with
+    spaces. If the <strong>Simulate CGI Environment</strong> box is
+    selected, and CGI Input variables of the type
+    <strong>GET</strong> are set, the contents of this field are
+    ignored.</li>
+
+    <li><strong>Directory</strong>: Specify the directory to start
+    the program in. If unset, the program starts in the directory
+    where it resides.</li>
+
+    <li><strong>Select the input XML file</strong>: (XSLT only)
+    Specify the name and location of the input XML file.</li>
+
+    <li><strong>Select the interpreter to use for
+    debugging</strong>: (PHP and Tcl only) For Tcl programs, select
+    <strong>tclsh</strong> or the <strong>wish</strong>
+    interpreter, depending on whether you are debugging a console
+    or a GUI application. For PHP programs, select the CLI (Command
+    Line Interface) or CGI (Common Gateway Interface) interpreter.
+    These selections reference the interpreters configured under
+    <strong>Edit|Preferences...</strong> in the <a href=
+    "prefs.html#lang_config">Language Configuration</a>
+    section.</li>
+
+    <li><strong>Select the directory that contains the php.ini
+    file</strong>: (PHP only) If more than one version of PHP
+    exists on the system, specify the directory that contains the
+    php.ini file you wish to use.</li>
+
+    <li><strong>Disable Output Buffering (PHP only)</strong>:
+    Output from the PHP interpreter is not buffered (it is
+    displayed as it occurs) if this option is enabled. This option
+    has no effect when <strong>Simulate CGI Environment</strong> is
+    selected. To disable output buffering in CGI emulation mode,
+    comment out the <code>output_buffering</code> setting in
+    <em>php.ini</em> with a ";" character, or set it to
+    "<code>off</code>".</li>
+
+    <li><strong>Enable Implicit Flush (PHP only)</strong>: The PHP
+    output layer flushes itself automatically after every output
+    block. If this option is not enabled, output is buffered by the
+    operating system and is flushed periodically by the operating
+    system, or when the application is finished. This option has no
+    effect when <strong>Simulate CGI Environment</strong> is
+    selected.</li>
+  </ul>
+
+  <h3><a name="Debugging_Options_Environment">Environment
+  Tab</a></h3>
+
+  <p>The <strong>Environment</strong> tab displays all environment
+  variables set on the system. Use this tab to add new variables or
+  change the values of existing variables for the duration of the
+  debug session. The <strong>Default Environment Variables</strong>
+  pane displays environment variables that have been declared on
+  your system. The <strong>User Environment Variables</strong> pane
+  displays environment variables set in the saved configuration
+  which override the <strong>Default Environment
+  Variables</strong>.</p>
+
+  <p>Change variables by adding a new variable with the same name
+  and a new value. These changes have no effect outside of the
+  Komodo debugger and are stored in each saved configuration.</p>
+
+  <ul>
+    <li><strong>To Add New Variables</strong>: Click
+    <strong>New</strong> and enter the <strong>Variable
+    Name</strong> and <strong>Variable Value</strong> in the
+    Environment Variable dialog box. To add one or more directories
+    to the <strong>Variable Value</strong> field, click <strong>Add
+    Path</strong> and navigate to the desired directory.</li>
+
+    <li><strong>To Edit Existing Variables</strong>: Select the
+    variable, click <strong>Edit</strong>, then change as desired.
+    This creates a new variable with the same name and the desired
+    value. (User Environment Variables take precedence over Default
+    Environment Variables.)</li>
+
+    <li><strong>To Delete a Variable</strong>: Select the variable
+    from the <strong>User Environment Variables</strong> pane and
+    click <strong>Delete</strong>. <strong>Default Environment
+    Variables</strong> cannot be deleted, but can be set to an
+    empty value.</li>
+  </ul>
+
+  <h3><a name="Debugging_Options_CGI_Environment">CGI Environment
+  Tab</a></h3>
+
+  <p>The <strong>CGI Environment</strong> tab is only displayed if
+  the <strong>Simulate CGI Environment</strong> check box is
+  selected on the <a class="doc" href=
+  "#Debugging_Options_General">General tab</a>. It displays CGI
+  Environment Variables commonly configured on a web server. Use
+  this tab to alter existing variables and add new variables.
+  Variable changes have no effect outside of the Komodo debugger
+  and are stored in each saved configuration.</p>
+
+  <ul>
+    <li><strong>To Add New Variables</strong>: Click
+    <strong>New</strong>, and enter the <strong>Variable
+    Name</strong> and <strong>Variable Value</strong> in the
+    Environment Variable dialog box. To add one or more directories
+    to the <strong>Variable Value</strong> field, click <strong>Add
+    Path</strong> and navigate to the desired directory.</li>
+
+    <li><strong>To Edit Existing Variables</strong>: Select the
+    variable, click <strong>Edit</strong>, then change as desired.
+    This creates a new variable with the same name and the desired
+    value. (<strong>User CGI Environment Variables</strong> take
+    precedence over <strong>Default CGI Environment
+    Variables</strong>.)</li>
+
+    <li><strong>To Delete a Variable</strong>: Select the variable
+    from the <strong>User CGI Environment Variables</strong> pane
+    and click <strong>Delete</strong>.</li>
+  </ul>
+
+  <h3><a name="Debugging_Options_CGI_Input">CGI Input Tab</a></h3>
+
+  <p>The <strong>CGI Input</strong> tab is only displayed if the
+  <strong>Simulate CGI Environment</strong> check box is selected
+  on the <a class="doc" href=
+  "#Debugging_Options_Global"><strong>Global Options</strong></a>
+  tab. It is used to configure the CGI form type and variables for
+  the purpose of simulating CGI input. Note that Komodo's CGI
+  emulation does not generate HTTP Request Headers; rather, it
+  executes the CGI directly by emulating a web server
+  environment.</p>
+
+  <ul>
+    <li><strong>Request Method</strong>: Select the request method
+    that has been assigned to the form in the CGI program.</li>
+
+    <li><strong>Post Type</strong>: Select the format in which data
+    is sent from the browser to the server.</li>
+  </ul>
+
+  <p>Use the <strong>Request Variable</strong> section of the
+  dialog box to create variables that are processed by your CGI
+  program. These variables are displayed in the <strong>Browser
+  Arguments</strong> section of the dialog box.</p>
+
+  <ul>
+    <li><strong>Type</strong>: Specify the type of input associated
+    with the variable (GET, POST, cookie or file).</li>
+
+    <li><strong>Name</strong>: Enter the variable name as specified
+    in the CGI program.</li>
+
+    <li><strong>Value</strong>: Enter the value for the variable
+    specified in the <strong>Name</strong> field. To provide a
+    directory path and file, click the <strong>Browse
+    Files</strong> button, select the desired file and click
+    <strong>Add</strong>. (To accommodate file uploads, select
+    <strong>Multipart</strong> as the form's <strong>POST</strong>
+    method.)</li>
+  </ul>
+
+  <p><strong>To alter variables:</strong> Click on the desired
+  variable in the <strong>Browser Arguments</strong> section of the
+  dialog box, make changes in the <strong>Type</strong>,
+  <strong>Name</strong> and <strong>Value</strong> fields, then
+  click <strong>Update</strong>.</p>
+
+  <p><strong>To delete variables:</strong> click on the desired
+  variable in the <strong>Browser Arguments</strong> section of the
+  dialog box, and click <strong>Delete</strong>.</p>
+
+  <h3><a name="debugger_storingconfig">Storing Debug
+  Configurations</a></h3>
+
+  <p>Debugging options can be saved as "named configurations" in
+  the <strong>Debug Configuration</strong> panel. To save the
+  current configuration:</p>
+
+  <ol>
+    <li>Click <strong>New...</strong></li>
+
+    <li>Enter a unique <strong>Configuration Name</strong>.</li>
+
+    <li>Click <strong>OK</strong>.</li>
+  </ol>
+
+  <p>Existing saved configurations can be selected from the
+  drop-down list. If you wish to delete a saved configuration,
+  select it from the list and click <strong>Delete</strong>.</p>
+
+  <p>If the file being debugged is part of a <a href=
+  "project.html#project_top">project</a> that is
+  currently open, these preferences are <a href=
+  "project.html#Saving_a_Project">saved in that
+  project</a>. If not, this configuration is automatically saved as
+  part of the file's <a href=
+  "files.html#files_settings">Properties and
+  Settings</a> (although they cannot be altered via the file's
+  <strong>Properties</strong> dialog box).</p>
+
+  <h2><a name="breakpoints_and_spawnpoints">Breakpoints and Tcl
+  Spawnpoints</a></h2>
+
+  <p>Breakpoints are set at lines in the program where you want
+  program execution to pause. Enabled breakpoints appear as solid
+  red circles in the left margin of the Editor pane and are also
+  listed on the <strong>Breakpoints</strong> tab during debugging.
+  Disabled breakpoints appear as white circles with a red outline.
+  Double-clicking on an enabled or disabled breakpoint from the
+  <strong>Breakpoints</strong> tab opens the associated file in the
+  Editor Pane and shifts focus to the line number for that break
+  location.</p>
+
+  <p>Spawnpoints are set at points in a Tcl script where you want
+  an external application to execute (spawn). When a spawnpoint is
+  encountered during the debugging process, Komodo configures the
+  spawned application to start as a new debugger session. Both the
+  initial and spawned debugger sessions run concurrently. Enabled
+  spawnpoints appear as solid green arrows in the left margin of
+  the Editor pane and are also listed on the
+  <strong>Breakpoints</strong> tab during debugging. Disabled
+  spawnpoints appear as white arrows with a green outline.
+  Double-clicking an enabled or disabled spawnpoint from the
+  <strong>Breakpoints</strong> tab opens the associated file in the
+  Editor pane and shifts focus to the line number coinciding with
+  that spawnpoint location.</p>
+
+  <h3><a name="breakpoint_management">Breakpoint and Spawnpoint
+  Management</a></h3>
+
+  <p>Breakpoints and spawnpoints can be monitored and managed on
+  the <strong>Breakpoints</strong> tab in the Bottom pane
+  (displayed during debugging or invoked by selecting
+  <strong>View|Tabs|Command Output</strong>). This tab lists all
+  breakpoints and spawnpoints set in the program. Use the
+  <strong>Breakpoints</strong> tab to:</p>
+
+  <ul>
+    <li><a class="doc" href="#toggle_breakpoint">toggle
+    breakpoints</a></li>
+
+    <li><a class="doc" href="#toggle_spawnpoint">toggle
+    spawnpoints</a></li>
+
+    <li><a class="doc" href="#go_source">go to source code</a></li>
+
+    <li><a class="doc" href="#set_breakpoint_prop">set breakpoint
+    properties</a></li>
+  </ul>
+
+  <h4><a name="toggle_breakpoint">Toggling Breakpoints</a></h4>
+
+  <p>Breakpoints and Spawnpoints can be toggled between enabled,
+  disabled and deleted. To toggle a breakpoint, do one of the
+  following:</p>
+
+  <ul>
+    <li><strong>Breakpoint Margin</strong>: Click on the line you
+    wish to break at once to enable a breakpoint, a second time to
+    disable it, and a third time to delete it.</li>
+
+    <li><strong>Debug Menu</strong>: Click <strong>Enable/Disable
+    Breakpoint</strong> once to enable a breakpoint on the current
+    line, a second time to disable it, and a third time to delete
+    it.</li>
+
+    <li><strong>Keyboard:</strong> Press 'F9' ('Meta'+'\' on Mac OS
+    X) once to enable a breakpoint on the current line, a second
+    time to disable it, and a third time to delete it.</li>
+  </ul>
+
+  <p>To create a new breakpoint in the <strong>Breakpoints</strong>
+  tab:</p>
+
+  <ol>
+    <li>Click the <strong>New</strong> button and then select
+    <strong>New Breakpoint</strong> or right-click in the
+    Breakpoints pane and select <strong>Add|New Breakpoint</strong>
+    on the context menu.</li>
+
+    <li>The following <a href="#set_breakpoint_prop">Breakpoint
+    Properties</a> are required:</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li><strong>Language</strong>: By default, the language of
+        the program being debugged.</li>
+
+        <li><strong>File</strong>: The location of the file where
+        the breakpoint is being set.</li>
+
+        <li><strong>Line</strong>: The line number in the file
+        where the spawnpoint is to be set.</li>
+
+        <li><strong>Enable</strong>: Select the check box to enable
+        the breakpoint.</li>
+      </ul>
+    </li>
+
+    <li>Click <strong>OK</strong>.</li>
+  </ol>
+
+  <p>To delete a breakpoint in the <strong>Breakpoints</strong>
+  tab, do one of the following:</p>
+
+  <ul>
+    <li>Select the breakpoint and click the <strong>Delete
+    Breakpoint</strong> button</li>
+
+    <li>Right-click on the breakpoint and select
+    <strong>Delete</strong>.</li>
+  </ul>
+
+  <p>To clear or remove multiple breakpoints, do one of the
+  following:</p>
+
+  <ul>
+    <li><strong>Debug Menu</strong>: Click <strong>Clear All
+    Breakpoints</strong>.</li>
+
+    <li><strong>Breakpoint Tab</strong>: Click the <strong>Delete
+    All Breakpoints</strong> button.</li>
+
+    <li><strong>Keyboard</strong>: Use the associated <a href=
+    "prefs.html#Config_Key_Bindings">key
+    binding</a>.</li>
+  </ul>
+
+  <p>To disable or enable all breakpoints:</p>
+
+  <ul>
+    <li>On the <strong>Breakpoints</strong> tab, click the
+    <strong>Disable/Enable All Breakpoints</strong> button. All
+    breakpoints are disabled if previously enabled, or enabled if
+    previously disabled.</li>
+  </ul>
+
+  <h4><a name="toggle_spawnpoint">Toggling Spawnpoints</a></h4>
+
+  <p>To add a Tcl spawnpoint, use the <strong>Breakpoints</strong>
+  tab:</p>
+
+  <ol>
+    <li>Click the <strong>New</strong> button and then select
+    <strong>New Tcl Spawnpoint</strong> or right-click in the
+    Breakpoints list and select <strong>Add|New Tcl
+    Spawnpoint</strong> on the context menu.</li>
+
+    <li>The following properties are configurable in the Spawnpoint
+    Properties dialog box:</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li><strong>Language</strong>: Tcl</li>
+
+        <li><strong>File</strong>: The location of the file where
+        the spawnpoint is to be set (for example,
+        <code>C:\samples\tcl_sample.tcl</code>).</li>
+
+        <li><strong>Line</strong>: The line number in the file
+        where the spawnpoint is to be set.</li>
+
+        <li><strong>Enable</strong>: Select the check box to enable
+        the spawnpoint. Deselect the check box to disable the
+        spawnpoint.</li>
+      </ul>
+    </li>
+
+    <li>Click <strong>OK</strong>.</li>
+  </ol>
+
+  <p>To delete a spawnpoint in the <strong>Breakpoints</strong>
+  tab, do one of the following:</p>
+
+  <ul>
+    <li>Select the spawnpoint and click the <strong>Delete
+    Breakpoint</strong> button</li>
+
+    <li>Right-click on the spawnpoint and select
+    <strong>Delete</strong>.</li>
+  </ul>
+
+  <p>To clear or remove multiple spawnpoints, do one of the
+  following:</p>
+
+  <ul>
+    <li><strong>Debug Menu</strong>: Click <strong>Clear All
+    Breakpoints</strong>.</li>
+
+    <li><strong>Breakpoint Tab</strong>: Click the <strong>Delete
+    All Breakpoints</strong> button.</li>
+
+    <li><strong>Keyboard</strong>: Use the associated <a href=
+    "prefs.html#Config_Key_Bindings">key
+    binding</a>.</li>
+  </ul>
+
+  <p>To disable or enable all spawnpoints:</p>
+
+  <ul>
+    <li>On the <strong>Breakpoints</strong> tab, click the
+    <strong>Disable/Enable All Breakpoints</strong> button. All
+    spawnpoints are disabled if previously enabled, or enabled if
+    previously disabled.</li>
+  </ul>
+
+  <p><strong>Note:</strong> Breakpoints and spawnpoints added or
+  modified while a program is running are not necessarily updated
+  in the breakpoint manager. To add breakpoints while debugging,
+  interrupt the debugging session using the <strong>Break</strong>
+  button to ensure that the new breakpoint is properly updated.</p>
+
+  <h4><a name="go_source">Go to the Source Code</a></h4>
+
+  <p>To open the source code in the Editor Pane at the line number
+  where the breakpoint or spawnpoint is set, do one of the
+  following:</p>
+
+  <ul>
+    <li><strong>Breakpoints Tab</strong>: Double-click the
+    breakpoint to view the associated source code.<br /></li>
+
+    <li><strong>Breakpoints Tab</strong>: Select the desired
+    breakpoint and click the <strong>Go to the Source Code</strong>
+    button.</li>
+  </ul>
+
+  <h4><a name="set_breakpoint_prop">Breakpoint Properties</a></h4>
+
+  <p>When adding or editing a breakpoint in the
+  <strong>Breakpoint</strong> tab, a <strong>Breakpoint
+  Properties</strong> dialog box appears. This dialog box contains
+  a tab for each available breakpoint type. Change the breakpoint
+  type by switching to a different tab.</p>
+
+  <p>Each tab is split into two parts, separated by a horizontal
+  line. The top section contains configuration items that are
+  required; the bottom section contains configuration options that
+  are optional. The last item on this tab is the Enable
+  checkbox.</p>
+
+  <ul>
+    <li><strong>Language</strong>: The language of the file where
+    the breakpoint is to be set.</li>
+
+    <li><strong>File</strong>: The line number on which to
+    break.</li>
+
+    <li><strong>Condition</strong>: Evaluate some code and break if
+    it evaluates to true. For example, <code>0==0</code>, as the
+    condition would always evaluate to true and cause the debugger
+    to break. The condition should be specified in the syntax of
+    the language selected in the <strong>Language</strong>
+    drop-down list.</li>
+
+    <li><strong>Watch</strong>: Break when the value of the
+    specified variable (or expression) is set or changed.</li>
+
+    <li><strong>Function Call</strong>: Break after the specified
+    function is called.</li>
+
+    <li><strong>Function Return</strong>: Break after the specified
+    function has finished executing.</li>
+
+    <li><strong>Exception</strong>: Break when the specified
+    exception is caught.</li>
+
+    <li><strong>Line</strong>: Break on the specified line.</li>
+
+    <li>
+      <strong>Hit Counts</strong>: Break when the condition
+      specified in any of the above has been met a certain number
+      of times. Each time the debugger engine reaches a breakpoint,
+      it adds one to the count. It then looks at the hit count
+      setting to see if the evaluation allows for a break at that
+      moment. There are two configuration items related to hit
+      counts, the condition and the count. There are three types of
+      conditions:
+
+      <ul>
+        <li>Break when hit count is greater than or equal to</li>
+
+        <li>Break when hit count is equal to</li>
+
+        <li>Break when hit count is a multiple of</li>
+      </ul>
+
+      <p>For example:</p>
+
+      <ol>
+        <li>Set a breakpoint on line 2 of a script.
+          <pre class="code">
+for 1 in range(256):
+print 'hello'
+</pre>
+        </li>
+
+        <li>Define a hit condition 'Break when hit count is a
+        multiple of'.</li>
+
+        <li>Enter the value 5. The debugger breaks every 5th time
+        it passes the line with the print statement.</li>
+      </ol>
+    </li>
+  </ul>
+
+  <p>Not all breakpoint types are supported for all languages. The
+  following table shows breakpoint support by language:</p>
+
+  <table align="center" border="1" cellspacing="2" cellpadding="4">
+    <tr>
+      <td><strong>Type</strong></td>
+
+      <td><strong>Tcl</strong></td>
+
+      <td><strong>Perl</strong></td>
+
+      <td><strong>PHP</strong></td>
+
+      <td><strong>XSLT</strong></td>
+
+      <td><strong>Python</strong></td>
+    </tr>
+
+    <tr>
+      <td>Line Number</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td>Function Call</td>
+
+      <td>No</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td>Function Return</td>
+
+      <td>No</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td>Exception</td>
+
+      <td>No</td>
+
+      <td>No</td>
+
+      <td>No</td>
+
+      <td>No</td>
+
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td>Conditional</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+
+      <td>No</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+    </tr>
+
+    <tr>
+      <td>Watch</td>
+
+      <td>Yes</td>
+
+      <td>Yes</td>
+
+      <td>No</td>
+
+      <td>No</td>
+
+      <td>Yes</td>
+    </tr>
+  </table><br />
+
+  <h4><a name="debug_break">Forcing a Break</a></h4>
+
+  <p>Use the <strong>Break Now</strong> function to stop debugging
+  an application at the current execution point, and then continue
+  debugging from that point. For example, use this control when
+  debugging applications running long processes. To force a break
+  while debugging an application, do one of the following:</p>
+
+  <ul>
+    <li><strong>Debug Menu</strong>: Select <strong>Break
+    Now</strong>.</li>
+
+    <li><strong>Debug Toolbar</strong>: Click the <strong>Break
+    Now</strong> button.</li>
+  </ul>
+
+  <h2><a name="remote_debugging">Remote Debugging</a></h2>
+
+  <p>Remote debugging usually involves executing code on a remote machine while
+  observing and controlling the debugging process from within Komodo. Remote
+  debugging sessions are initiated from the command line or from code in the
+  program itself. This approach is useful for debugging applications in
+  the environments where they are ultimately run (e.g. CGI programs on a live
+  web server), and for client/server applications.</p>
+
+  <p>Komodo can be set to <a href="#set_remote_debug">Listen for
+  Debugger Connections</a> continuously. Additionally, you can set
+  remote debugger preferences and <a class="doc" href=
+  "#check_listener_status">check listener status</a> of the current
+  listener configuration. For instructions on configuring specific
+  languages for remote debugging, see:</p>
+
+  <ul>
+    <li><a class="doc" href=
+    "debugperl.html#debugperl_top">Debugging
+    Perl</a></li>
+
+    <li><a class="doc" href=
+    "debugpython.html#debugpython_top">Debugging
+    Python</a></li>
+
+    <li><a class="doc" href=
+    "debugphp.html#debugphp_top">Debugging PHP</a></li>
+
+    <li><a class="doc" href=
+    "debugxslt.html#debugxslt_top">Debugging
+    XSLT</a></li>
+
+    <li><a class="doc" href=
+    "debugtcl.html#debugtcl_top">Debugging Tcl</a></li>
+  </ul>
+
+  <h3><a name="when_to_remote_debug">When to use Remote Debugging</a></h3>
+  
+  <p>Remote debugging is most commonly used to debug programs on a remote
+  server, but there are other instances where it is useful or necessary:</p>
+  
+  <ul>
+    <li>Running programs on an unsupported platform/OS: Some interpreters
+    running in an embedded environment or on an operating system that Komodo
+    itself does not run on can use the debugging libraries provided by Komodo:
+      <ul>
+        <li>PHP: <a target="_blank" href="http://xdebug.org/">Xdebug</a> can be
+        compiled or cross-compiled for the target platform.</li>
+        <li>Perl: The "pure-Perl" remote debugging libraries should work on most platforms.</li>
+        <li>Python: The remote debugging libraries have "pure-Python" fallbacks if
+        the binaries cannot be run.</li>
+        <li>Ruby: The remote debugging libraries use <a target="_blank"
+        href="http://rubyforge.org/projects/ruby-debug/">ruby-debug</a>. This
+        platform and
+        version-specific component can be compiled separately or <a
+        href="trouble.html#ruby_debug_x64">installed as a gem</a>.</li>
+      </ul>
+    </li>
+    
+    <li>Post-mortem debugging: Error trapping code in a program can be used to
+    initiate a remote debugging session before exiting (also called
+    "just-in-time" debugging).</li>
+    
+    <li>Running programs in <a target="_blank"
+    href="http://www.cygwin.com/">Cygwin</a>: The language interpreters in
+    Cygwin are not stand-alone Win32 applications; they need to be run from
+    within the Cygwin shell. Komodo cannot use these interpreters directly for
+    local debugging, but can accept remote debugging connections from them.</li>
+  </ul>
+  
+  <p>Consult the language-specific debugging documentation listed above for
+  configuration instructions.</p>
+  
+  <h3><a name="set_remote_debug">Listen for Debugger
+  Connections</a></h3>
+
+  <p>To toggle continuous listening for remote debugging, do one of
+  the following:</p>
+
+  <ul>
+    <li><strong>Debug Menu</strong>: select <strong>Listen for
+    Debugger Connections</strong>.</li>
+
+    <li><strong>Keyboard</strong>: Use the associated <a href=
+    "prefs.html#Config_Key_Bindings">key
+    binding</a>.</li>
+  </ul>
+
+  <p><strong>Note:</strong> A check mark appears when
+  <strong>Listen for Debugger Connections</strong> is enabled.
+  Otherwise, this feature is disabled.</p>
+
+  <h3><a name="check_listener_status">Check Listener
+  Status</a></h3>
+
+  <p>To check the status and current configuration of the Komodo
+  debugger:</p>
+
+  <ol>
+    <li>On the <strong>Debug</strong> menu, select <strong>Listener
+    Status</strong>. The <strong>Debugger Listener</strong> status
+    screen appears.</li>
+
+    <li>Click <strong>OK</strong> after reviewing listener status,
+    or use the associated <a href=
+    "prefs.html#Config_Key_Bindings">key
+    binding</a>.</li>
+  </ol>
+
+  <h3><a name="multi_user_debugging">Multi-User Debugging</a></h3>
+
+  <p>When multiple users are running Komodo session, configure
+  Komodo's <strong>Debugger Connection Options</strong> to listen
+  for debug connections on port "0" (see <a class="doc" href=
+  "prefs.html#Debugger">Set Debugger Preferences</a>).
+  The system provides Komodo with a unique port each time Komodo is
+  started, allowing multiple users on the system to debug
+  applications simultaneously. In remote debugging, this requires
+  the remote debugger application to be manually set to connect on
+  the system-allocated port unless the <strong>Debugger
+  Proxy</strong> is used.</p>
+
+  <h3><a name="remote_uri_mapping">Mapped URIs for Remote Debugging</a></h3>
+  
+  <p>By default, Komodo recieves a read-only copy of the program from
+  the debugger. You can set breakpoints in this copy to control how it executes,
+  but you cannot make changes to it or have the breakpoints persist across
+  debugging sessions. For Komodo to open an editable copy of the file (i.e. the
+  original program file), a <a href="prefs.html#mapped_uris">URI
+  mapping</a> must be created to link the file on the remote filesystem with the
+  URI Komodo receives from the remote debugger.</p>
+  
+  <p>The incoming URI for a remote debugging session is in the form:</p>
+  
+  <pre class="code">
+  file://<em>server name or ip address</em>/path/to/file</pre>
+
+  <p>For example, the file '<code>/www/htdocs/php/info.php</code>' on a server
+  named '<code>myserver</code>', would send the following URI to Komodo:</p>
+  <pre class="code">
+  file://myserver/www/htdocs/php/info.php</pre>
+
+  <p>If '<code>myserver</code>' was accessible via SFTP, you could add the
+  following mapping in Komodo's <a
+  href="prefs.html#mapped_uris">Preferences</a>:</p>
+  
+  <p style="margin-left: 3em">
+  <strong>URI</strong>: file://myserver/www<br />
+  <strong>Path</strong>: sftp://user@myserver/apache/www
+  </p>
+
+  <p>This mapping would apply to all files in <em>www</em> and it's
+  subdirectories.</p>
+  
+  <p>The <strong>Path</strong> can include remote files accessed via FTP, SFTP
+  or SCP as well as files on the local filesystem.</p>
+  
+  <p>Mapped URIs can also be specified by right-clicking on the editor tab and
+  selecting <strong>Create Mapped URI</strong> from the context menu. By
+  default, the <strong>Path</strong> field will show the full path of the file
+  in that editor tab. This path can be shortened to include more files and
+  directories in the mapping (as above).</p>
+  
+  <h3><a name="dbgp_proxy">Debugger Proxy</a></h3>
+
+  <p>Remote debugger processes can communicate with Komodo through
+  the <strong>DBGP proxy</strong> (debugger protocol proxy). The
+  proxy allows Komodo to use a system-allocated listener port for
+  debugging without the user having to manually configure the same
+  port number on the remote debugger. This is useful for running
+  multiple remote debugging sessions and on networks where a remote
+  debugging process can not connect to Komodo directly. The proxy
+  can run on the local machine, the remote machine, or a separate
+  machine.</p>
+
+  <p>A typical DBGP Proxy connection is established as follows:</p>
+
+  <ol>
+    <li>Komodo contacts the DBGP proxy and identifies itself
+    with:</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li><strong>Hostname or IP</strong>: The hostname or IP
+        address of the machine Komodo is running on. This is set to
+        <code>localhost</code> or 127.0.0.1 if the debugger is
+        running locally.</li>
+
+        <li><strong>Port Number</strong>: The port configured in
+        <strong>Preferences|Debugger</strong> or the
+        system-assigned port.</li>
+
+        <li><strong>Proxy Key</strong>: The <strong>Proxy
+        Key</strong> configured in
+        <strong>Preferences|Debugger</strong>. If unset, Komodo
+        will use the USER or USERNAME environment variable
+        value.</li>
+      </ul>
+    </li>
+
+    <li>The DBGP Proxy stores this information.</li>
+
+    <li>The remote debugging process contacts the DBGP Proxy,
+    providing an IDE Key which corresponds to the Proxy Key
+    specified in Komodo. By default, this connection happens on
+    port 9000 but can be configured to use another port (see
+    language-specific debugging instructions and "-d" option
+    below).</li>
+
+    <li>DBGP Proxy uses the IDE Key value to match the connection
+    to the appropriate instance of Komodo.</li>
+
+    <li>The remote debugger connects to Komodo on the
+    system-assigned or user-specified port.</li>
+  </ol>
+
+  <p>To start the proxy on Windows:</p>
+  <pre class="code">
+set PYTHONPATH="&lt;<em>Komodo install directory</em>&gt;\lib\support\dbgp\pythonlib;%PYTHONPATH%"
+cd &lt;<em>Komodo install directory</em>&gt;\lib\support\dbgp\bin
+pydbgpproxy
+</pre>
+
+  <p>To start the proxy on Linux (requires Python 2.2 or
+  later):</p>
+  <pre class="code">
+export PYTHONPATH=&lt;<em>Komodo install directory</em>&gt;/lib/support/dbgp/pythonlib;$PYTHONPATH
+cd &lt;<em>Komodo install directory</em>&gt;/lib/support/dbgp/bin
+python pydbgpproxy
+</pre>
+
+  <p>To start the proxy on OS X:</p>
+  <pre class="code">
+export PYTHONPATH=&lt;<em>Komodo install directory</em>&gt;/Contents/SharedSupport/dbgp/pythonlib;$PYTHONPATH
+cd &lt;<em>Komodo install directory</em>&gt;/Contents/SharedSupport/dbgp/bin
+python pydbgpproxy
+</pre>
+
+  <p>The following options are available:</p>
+
+  <ul>
+    <li><strong>-d &lt;hostname:port&gt;</strong>: Listener port
+    for debugger processes.</li>
+
+    <li><strong>-i &lt;hostname:port&gt;</strong>: Listener port
+    for Komodo instances.</li>
+
+    <li><strong>-l &lt;log_level&gt;</strong>: Logging level.
+    Logging is dumped to <code>stout</code> and can be set to
+    CRITICAL, ERROR, WARN, INFO or DEBUG.</li>
+  </ul>
+
+  <p><strong>Example</strong></p>
+
+  <p>If you are debugging scripts on a remote web server that
+  cannot connect to Komodo directly because of a firewall, you can
+  run dbgpProxy on an intermediary server (e.g. a gateway) which
+  can connect to Komodo and the web server on specified ports. The
+  three servers in this example are:</p>
+
+  <ol>
+    <li>
+      <strong>workstation</strong>: The machine running Komodo. The
+      following preferences are set:
+
+      <ul>
+        <li><strong>Listen for Debugger Connections</strong> is
+        enabled.</li>
+
+        <li><strong>Enable Debugger Proxy</strong> is
+        selected.</li>
+
+        <li><strong>Listen for debug connections on port</strong>
+        is set to '0' (use system-assigned port)</li>
+
+        <li><strong>Proxy Listener Address</strong> is set to
+        <code>gateway:9001</code></li>
+
+        <li><strong>Proxy Key</strong> is set to "jdoe"</li>
+      </ul><strong>Debug|Listener Status</strong> displays a
+      system-assigned <strong>Host Port</strong> of 37016.<br />
+    </li>
+
+    <li style="list-style: none"><br /></li>
+
+    <li>
+      <strong>gateway</strong>: A gateway server with access to the
+      internal and external networks. The proxy is running with the
+      following options:
+      <pre class="code">
+dbgpProxy -i gateway:9001 -d gateway:9000
+</pre>
+    </li>
+
+    <li><strong>webserver</strong>: The machine running a Python
+    CGI script called test.py.</li>
+  </ol>
+
+  <p>The debugging process on 'webserver' is launched with the
+  following command:</p>
+  <pre class="code">
+python dbgpClient.py -d gateway:9000 -k "jdoe" test.py
+</pre>
+
+  <p>The remote debugger running on 'webserver' (dbgpClient.py in
+  this case) connects to the proxy (dbgpProxy.py) running on
+  'gateway'. The proxy uses the <strong>IDE Key</strong> "jdoe" to
+  connect the debugger process to the Komodo instance listening
+  with a <strong>Proxy Key</strong> of "jdoe". The proxy continues
+  to communicate with the remote debugger on port 9000, but routes
+  the debugging session to Komodo on port 37016.</p>
+
+  <h2><a name="Sending_Input">Sending Input to the Program</a></h2>
+
+  <p>When a program prompts for input, enter the desired input in
+  the console window or <strong>Output</strong> tab (depending on
+  the <a class="doc" href="#Debugging_Options_Global">Debugging
+  Options</a> configuration), and press <strong>Enter</strong> to
+  continue.</p>
+
+  <h2>Using <a name="Debugging_Commands">Debugger Commands</a></h2>
+
+  <h3><a name="How_use_Debugger">Debugger Command
+  Description</a></h3>
+
+  <p>This table lists common tasks and their Komodo commands.</p>
+
+  <table border="1" width="94%" height="377" cellpadding="5">
+    <tr>
+      <td width="50%" height="17"><strong>To do this</strong></td>
+
+      <td width="50%" height="17"><strong>Press this</strong></td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="44" valign="top"><strong>Run</strong>
+      a program<br />
+      <br />
+      The debugger runs until the program ends.</td>
+
+      <td width="50%" height="72" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select <strong>Run
+          Without Debugging</strong></li>
+
+          <li><strong>Windows/Linux Keyboard</strong>: Press
+          'F7'</li>
+
+          <li><strong>Mac OS X Keyboard</strong>: Press
+          'Meta'+'Ctrl'+'R'</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="44" valign="top">
+      <strong>Start</strong> the debugger<br />
+      <br />
+      The debugger runs until it encounters a breakpoint, or until
+      the program ends.</td>
+
+      <td width="50%" height="72" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select
+          <strong>Go/Continue</strong></li>
+
+          <li><strong>Windows/Linux Keyboard</strong>: Press
+          'F5'</li>
+
+          <li><strong>Mac OS X Keyboard</strong>: Press
+          'Meta'+'&gt;'</li>
+
+          <li><strong>Debug Toolbar</strong>: Click the
+          <strong>Go/Continue</strong> button</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="66" valign="top"><strong>Step
+      In</strong><br />
+      <br />
+      The debugger executes the next unit of code, and then stops
+      at the subsequent line.</td>
+
+      <td width="50%" height="72" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select <strong>Step
+          In</strong></li>
+
+          <li><strong>Windows/Linux Keyboard</strong>: Press
+          'F11'</li>
+
+          <li><strong>Mac OS X Keyboard</strong>: Press
+          'Meta'+'Shift'+'I'</li>
+
+          <li><strong>Debug Toolbar</strong>: Click the
+          <strong>Step In</strong> button</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="72" valign="top"><strong>Step
+      Over</strong><br />
+      <br />
+      Like <strong>Step In</strong>, Step Over executes the next
+      unit of code. However, if the next unit contains a function
+      call, Step Over executes the entire function then stops at
+      the first unit outside of the function.</td>
+
+      <td width="50%" height="72" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select <strong>Step
+          Over</strong></li>
+
+          <li><strong>Windows/Linux Keyboard</strong>: Press
+          'F10'</li>
+
+          <li><strong>Mac OS X Keyboard</strong>: Press
+          'Meta'+'Shift'+'O'</li>
+
+          <li><strong>Debug Toolbar</strong>: Click the
+          <strong>Step Over</strong> button</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="72" valign="top"><strong>Step
+      Out</strong><br />
+      <br />
+      The debugger executes the remainder of the current function
+      and then stops at the first unit outside of the
+      function.</td>
+
+      <td width="50%" height="72" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select <strong>Step
+          Out</strong></li>
+
+          <li><strong>Windows/Linux Keyboard</strong>: Press
+          'Shift'+'F11'</li>
+
+          <li><strong>Mac OS X Keyboard</strong>: Press
+          'Meta'+'Shift'+'T'</li>
+
+          <li><strong>Debug Toolbar</strong>: Click the
+          <strong>Step Out</strong> button</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="72" valign="top"><strong>Run to
+      Cursor</strong><br />
+      <br />
+      The debugger runs until it reaches the line where the cursor
+      is currently located.</td>
+
+      <td width="50%" height="72" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select <strong>Run to
+          Cursor</strong>.</li>
+
+          <li><strong>Windows/Linux Keyboard</strong>: Press
+          'Shift'+'F10'</li>
+
+          <li><strong>Mac OS X Keyboard</strong>: Press
+          'Meta'+'Ctrl'+'I'</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="54" valign="top"><strong>Break
+      Now</strong><br />
+      <br />
+      Pause debugging an application at the current execution
+      point. <strong>Go/Continue</strong> continues debugging from
+      that point.</td>
+
+      <td width="50%" height="54" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select <strong>Break
+          Now</strong></li>
+
+          <li><strong>Debug Toolbar</strong>: Click the
+          <strong>Break Now</strong> button</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="54" valign="top">
+      <strong>Stop</strong><br />
+      <br />
+      Stop the debugging session. <strong>Go/Continue</strong>
+      restarts debugging from the beginning of the program.</td>
+
+      <td width="50%" height="54" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select
+          <strong>Stop</strong></li>
+
+          <li><strong>Windows/Linux Keyboard</strong>: Press
+          'Shift'+'F5'</li>
+
+          <li><strong>OS X Keyboard</strong>: Press
+          'Meta'+'Ctrl'+'P'</li>
+
+          <li><strong>Debug Toolbar</strong>: Click the
+          <strong>Stop</strong> button</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="54" valign="top"><strong>Toggle
+      breakpoint</strong><br />
+      <br />
+      Enables, disables, or deletes a breakpoint on the current
+      line.</td>
+
+      <td width="50%" height="54" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select
+          <strong>Disable/Enable Breakpoint</strong></li>
+
+          <li><strong>Windows/Linux Keyboard</strong>: Press
+          'F9'</li>
+
+          <li><strong>Mac OS X Keyboard</strong>: Press
+          'Meta'+'\'</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="54" valign="top"><strong>Show Current
+      Statement</strong><br />
+      <br />
+      Moves the editing cursor from any position in the file to the
+      statement at which the debugger is stopped.</td>
+
+      <td width="50%" height="54" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select <strong>Show
+          Current Statement</strong></li>
+
+          <li><strong>Windows/Linux Keyboard</strong>:
+          'Alt'+'*'</li>
+
+          <li><strong>Mac OS X Keyboard</strong>: 'Alt'+'*'</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%" height="54" valign="top">
+      <strong>Detach</strong><br />
+      <br />
+      Stop the debugging process but continue application process
+      execution.</td>
+
+      <td width="50%" height="54" valign="top">
+        <ul>
+          <li><strong>Debug Menu</strong>: Select
+          <strong>Detach</strong></li>
+
+          <li><strong>Debug Toolbar</strong>: Click the
+          <strong>Detach</strong> button</li>
+        </ul>
+      </td>
+    </tr>
+  </table><br />
+
+  <h3><a name="Debugger_Stepping_Behavior">Debugger Stepping
+  Behavior</a></h3>
+
+  <p>Instead of running to the end of a program or to the next
+  breakpoint, the debugger can also step through code one statement
+  at a time. The following Debug menu items and toolbar buttons
+  control stepping behavior:</p>
+
+  <ul>
+    <li><strong>Step In</strong>: Executes the current statement
+    and pauses at the following statement.</li>
+
+    <li><strong>Step Over</strong>: Executes the current statement.
+    If the line of code calls a function or method, the function or
+    method is executed in the background and the debugger pauses at
+    the statement that follows the original one.</li>
+
+    <li><strong>Step Out</strong>: When the debugger is within a
+    function or method, <strong>Step Out</strong> will execute the
+    code without stepping through the code line by line. The
+    debugger will stop on the line of code following the function
+    or method call in the calling program.</li>
+  </ul>
+
+  <p>When stepping through a program which calls a function or
+  method from an external program (e.g. a module or package) the
+  debugger steps into the external program at the point where the
+  function or method is called, opening it in a new tab. Stepping
+  continues in the external program until the function call is
+  completed.</p>
+
+  <p><strong>Note</strong>: Perl operators <code>sort</code>,
+  <code>map</code>, and <code>grep</code> behave like other looping
+  constructs with respect to stepping behavior in the debugger.
+  When Komodo has stopped at one of these operators, <strong>Step
+  Over</strong> stops at the first statement or expression used
+  within the first argument of these operators.</p>
+
+  <p>For example, if the debugger steps over a statement containing
+  a <code>foreach</code>, <code>while</code>, <code>map</code>,
+  <code>grep</code>, or <code>sort</code> looping construct that
+  evaluates its body five times, the debugger remains inside that
+  loop for five iterations. When it steps over on the sixth
+  iteration, the debugger exits the loop and stops at the next
+  statement.</p>
+
+  <p>To skip execution of such looping constructs, set a breakpoint
+  on the statement following the construct, and continue until
+  Komodo reaches that breakpoint.</p>
+
+  <h2><a name="debug_session">Viewing the Debugging
+  Session</a></h2>
+
+  <p>When the Komodo debugger is started, the
+  <strong>Debug</strong> tab opens in the Bottom Pane. This tab
+  consolidates views of the debugger output, call stack, program
+  variables (local and global), and watch variables. The
+  <strong>Debug</strong> tab also contains a Debug Toolbar for
+  stepping in, out, over, and running functions while
+  debugging.</p>
+
+  <p>When debugging more than one session at a time (<a class="doc"
+  href="#multi_session_debug">multi-session debugging</a>), a
+  <strong>Debug</strong> tab for each session is accessible in the
+  Bottom Pane. The <strong>Debug</strong> tab selected is the
+  session currently being debugged. To change to another debug
+  session, select the <strong>Debug</strong> tab for that session
+  (identified by the filename of the program). When a new session
+  is started, a new <strong>Debug</strong> tab is created and
+  Komodo automatically switches to that new session.</p>
+
+  <p>The <strong>Debug</strong> tab is divided into two sub-panes,
+  which have tabs of their own. The <a href="#output_tab">right
+  sub-pane</a> contains the <strong>Output</strong>, <strong>Call
+  Stack</strong>, and <strong>HTML Preview</strong> tabs. The
+  <a href="#viewing_variables">left sub-pane</a> contains variable
+  tabs.</p>
+
+  <h3><a name="viewing_variables">Viewing Variables</a></h3>
+
+  <p>The variables section of the <strong>Debug</strong> tab is
+  divided into tabs that vary according to the language of the
+  program being debugged. (Language variations are described
+  below.) Variables with multiple values (such as arrays) are
+  indicated by plus and minus symbols to the left of the variable
+  name.</p>
+
+  <p><strong>To Expand or Collapse Variables</strong>: Plus symbols
+  indicate variables with multiple values that can be expanded;
+  minus symbols indicate variables that can be collapsed. Click on
+  the plus or minus symbol to expand or collapse the variable
+  list.</p>
+
+  <p><strong>To Change Variable Values</strong>: Double-click in
+  the variable's <strong>Value</strong> field and enter the desired
+  value. (The value of nodes in XML documents cannot be
+  changed.)</p>
+
+  <h4><a name="debugger_python_var_obj">Python Variables and
+  Objects</a></h4>
+
+  <p>While debugging Python programs, variables and objects are
+  displayed on the <strong>Locals</strong>,
+  <strong>Globals</strong>, and <strong>Code Objects</strong>
+  tabs:</p>
+
+  <ul>
+    <li><strong>Locals</strong>: Displays variables referenced
+    within the current function. If the program is currently
+    outside of a function, all variables are displayed.</li>
+
+    <li><strong>Globals</strong>: Displays all used program
+    variables.</li>
+
+    <li><strong>Code Objects</strong>: Displays an expandable tree
+    view of all classes, functions, and their attributes.</li>
+  </ul>
+
+  <p>During Python debugging sessions, click the <strong>Show
+  Hidden Variables</strong> <img src=
+  "img/intshell_hidden_variables.gif" /> button to display special
+  Python variables prefixed with double underscores, such as
+  <code>__doc__</code>, <code>__dict__</code>, etc.</p>
+
+  <h4><a name="debugger_pyphptcl">PHP and Tcl Variables</a></h4>
+
+  <p>While debugging PHP and Tcl programs, variables are displayed
+  on the <strong>Locals</strong> and <strong>Globals</strong>
+  tabs:</p>
+
+  <ul>
+    <li><strong>Locals</strong>: Displays variables referenced
+    within the current function. If the program is currently
+    outside of a function, all variables are displayed.</li>
+
+    <li><strong>Globals</strong>: Displays all used program
+    variables. <strong>Note</strong>: PHP "Super Globals" ($_POST,
+    $_GET, etc.) are hidden by default. The <strong>Show Hidden
+    Variables</strong> button will toggle them on and off.</li>
+  </ul>
+
+  <h4><a name="debugger_perl_tabs">Perl Variables</a></h4>
+
+  <p>While debugging Perl programs, <strong>Argument</strong> and
+  <strong>Special</strong> tabs are displayed in addition to the
+  <strong>Locals</strong> and <strong>Globals</strong> tabs listed
+  above.</p>
+
+  <ul>
+    <li><strong>Argument</strong>: Displays parameters for the
+    current subroutine (i.e. @_).</li>
+
+    <li><strong>Special</strong>: Displays current Perl special
+    variables (i.e. @ARGV, %ENV, @INC, $0, etc.)</li>
+  </ul>
+
+  <h4><a name="debugger_varsxslt">XSLT Variables</a></h4>
+
+  <p>While debugging XSLT programs, data nodes and variables are
+  displayed on the <strong>Locals</strong> and
+  <strong>Globals</strong> tabs:</p>
+
+  <ul>
+    <li><strong>Locals</strong>: Displays data nodes from the input
+    XML document. Only nodes contained in the context of the
+    template specified in the <strong>Call Stack</strong> are
+    displayed.</li>
+
+    <li><strong>Globals</strong>: Displays <code>xsl:param</code>
+    and <code>xsl:variable</code> elements declared at the top
+    level of the program.</li>
+  </ul>
+
+  <h3><a name="Watching_Variables">Setting Watched
+  Variables</a></h3>
+
+  <p>The <strong>Watch</strong> variable tab monitors selected
+  variables and expressions. Use the <strong>Watch</strong>
+  variable tab to watch variables, or expressions based on
+  variables, by <a class="doc" href="#enter_expressions">typing
+  expressions</a>, dragging and dropping expressions from an
+  editor, or selecting variables from one of the other variable
+  tabs. Also, use the <strong>Watch</strong> tab to <a class="doc"
+  href="#change_the_values_of_variables">change the value of a
+  variable</a> or <a class="doc" href=
+  "#remove_a_watched_variable">remove a variable</a> from the
+  <strong>Watch</strong> tab.</p>
+
+  <p>Watched variables can be added, manipulated and removed
+  regardless of whether the debugger is currently running.</p>
+
+  <p>To watch one or more variables during program execution:</p>
+
+  <ul>
+    <li>Click the <strong>Add</strong> button on the
+    <strong>Watch</strong> variables tab and type a variable name
+    in the dialog box</li>
+
+    <li>Select the variable in the editor (or any other
+    drag-and-drop aware application), then drag and drop the
+    variable into the <strong>Watch</strong> tab</li>
+
+    <li>Right-click a variable in one of the other variable tabs
+    and select <strong>Add to Watch</strong> from the context
+    menu.</li>
+  </ul>
+
+  <p>The <strong>Watch</strong> variable tab supports viewing the
+  results of expressions made with watched variables. For example,
+  in a Perl program with scalar variables <code>$base</code> and
+  <code>$height</code> the following expression could be
+  entered:</p>
+  <pre class="code">
+($base / 2) * $height
+</pre>
+
+  <p>To <a name="enter_expressions">enter arbitrary expressions</a>
+  on the <strong>Watch</strong> variable tab:</p>
+
+  <ol>
+    <li>Click the <strong>Add</strong> button above the
+    <strong>Watch</strong> variable tab.</li>
+
+    <li>Enter an arbitrary expression in the dialog box.</li>
+
+    <li>Click <strong>OK</strong>.</li>
+  </ol>
+
+  <p>To <a name="change_the_values_of_variables">change the values
+  of variables</a>:</p>
+
+  <ul>
+    <li>Double-click the variable on the <strong>Watch</strong>
+    variable tab and specify a value. Currently, only the values of
+    simple variables can be changed. For example, values of
+    variables such as 'a.b[3]' (in Python) or '$a{b}-&gt;[3]' (in
+    Perl) cannot be changed.</li>
+
+    <li style="list-style: none">
+      <p><strong>Note</strong>: This function is not available for
+      arbitrary expressions.</p>
+    </li>
+
+    <li>Double-click the variable on the <strong>Locals</strong> or
+    <strong>Globals</strong> pane and specify a value in the dialog
+    box.</li>
+  </ul>
+
+  <p>To <a name="remove_a_watched_variable">remove a variable from
+  the <strong>Watch</strong> variable tab</a>, select the variable
+  and click <strong>Delete</strong> on the bottom right toolbar.
+  Alternatively, right-click the desired variable and select
+  <strong>Remove Watch</strong> on the context menu.</p>
+
+  <h3><a name="output_tab">Output Tab</a></h3>
+
+  <p>The <strong>Output</strong> tab is used to view program output
+  and to <a class="doc" href="#Sending_Input">send input</a> to the
+  program being debugged. The following standard data streams are
+  handled in the <strong>Output</strong> tab:</p>
+
+  <ul>
+    <li><code>stderr</code>: program output</li>
+
+    <li><code>stderr</code>: errors</li>
+
+    <li><code>stdin</code>: program input (not supported for Perl
+    or PHP during remote debugging)</li>
+  </ul>
+
+  <p>When debugging Tcl and Python, if <code>stdin</code> is
+  requested by the program, a red percent character is shown in the
+  margin of the <strong>Output</strong> tab.</p>
+
+  <h3><a name="html_tab">HTML Preview Tab</a></h3>
+
+  <p>If the program produces HTML output, select the
+  <strong>HTML</strong> tab to preview the rendered output. Unlike
+  the <strong>Output</strong> tab, the HTML preview is not
+  constantly updated. Use the <strong>Reload HTML View</strong>
+  button in the bottom-pane toolbar to update the preview.</p>
+
+  <h3><a name="Call_Stack">Viewing the Call Stack</a></h3>
+
+  <p>The call stack is a data area or buffer used for storing
+  requests that need to be handled by the program. Komodo's stack
+  stores temporary data such as variables and parameters and
+  operates as a push-down list. New data moves to the top of the
+  stack and pushes the older data down in a "last-in, first-out"
+  arrangement.</p>
+
+  <p>To view the call stack in a current debugging session, select
+  the <strong>Call Stack</strong> tab in the right pane of the
+  <strong>Debug</strong> tab.</p>
+
+  <p>There is one line in this tab per stack frame at any point in
+  the execution of a program. The calling frame contains the
+  information about a function call, including the filename, the
+  line number, and any parameters or local variables.</p>
+
+  <h2><a name="Watching_Files">Watching Files</a></h2>
+
+  <p>When debugging a program that writes output to another file,
+  or when watching programs execute, you can watch the output or
+  the log file using Komodo's File Watcher.</p>
+
+  <p>The <strong>Watch File</strong> tool shows a file as the file
+  is being updated on disk. It has no relationship with <a class=
+  "doc" href="#viewing_variables">variable viewing</a>, except
+  that, while debugging, it is often useful to watch variables
+  change state and files change content.</p>
+
+  <p>To use the File Watcher:</p>
+
+  <ol>
+    <li>On the <strong>Tools</strong> menu, select <strong>Watch
+    File</strong>.</li>
+
+    <li>Browse to the desired file and click
+    <strong>OK</strong>.</li>
+
+    <li>Run the program.</li>
+  </ol>
+
+  <h2><a name="Detaching_the_Debugger">Detaching the
+  Debugger</a></h2>
+
+  <p>Use the Detach control to stop the debugging process but
+  continue running the application. When application execution is
+  detached from the debugging process, output continues to print on
+  the <strong>Debug</strong> tab until the application finishes
+  running.</p>
+
+  <p>To detach application execution from the debugging process, do
+  one of the following:</p>
+
+  <ul>
+    <li><strong>Debug Menu</strong>: Select
+    <strong>Detach</strong>.</li>
+
+    <li><strong>Debug Toolbar</strong>: Click the
+    <strong>Detach</strong> button.</li>
+  </ul>
+
+  <h2><a name="Stopping_the_Debugger">Stopping the
+  Debugger</a></h2>
+
+  <p>To stop the Komodo debugger, do one of the following:</p>
+
+  <ul>
+    <li><strong>Debug Menu</strong>: Select
+    <strong>Stop</strong>.</li>
+
+    <li><strong>Keyboard</strong>: Use the associated <a href=
+    "prefs.html#Config_Key_Bindings">key
+    binding</a>.</li>
+
+    <li><strong>Debug Toolbar</strong>: Click the
+    <strong>Stop</strong> button.</li>
+  </ul>
+
+  <p>The debug session ends.</p><!-- Footer Start -->
+  <hr />
+</body>
+</html>

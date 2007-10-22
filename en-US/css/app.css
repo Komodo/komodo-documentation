@@ -1,0 +1,46 @@
+
+/* Styling for app-specific sections.
+ *
+ * Customarily, sections of the Komodo docs that are specific to a
+ * particular app/flavour are maked with:
+ *      class="app-NAME"
+ * For example:
+ *      <div class="app-ide">
+ *          ...
+ *      </div>
+ * or:
+ *      <li class="app-snapdragon">
+ *          ...
+ *      </li>
+ *
+ * TODO: add subtle background text (via bg img perhaps?) that says
+ *       when specific to an app
+ */
+
+div.app-snapdragon {
+    /*border: 2px solid #ddd;*/
+    padding: 2px 0px;
+    margin: 2px 0px;
+    background: url(../img/app-snapdragon.png) no-repeat right top;
+}
+
+div.app-edit {
+    /*border: 2px solid #ddd;*/
+    padding: 2px 0px;
+    margin: 2px 0px;
+    background: url(../img/app-edit.png) no-repeat right top;
+}
+
+div.app-ide {
+    /*border: 2px solid #ddd;*/
+    padding: 2px 0px;
+    margin: 2px 0px;
+    background: url(../img/app-ide.png) no-repeat right top;
+}
+
+div.app-ide-edit {
+    /*border: 2px solid #ddd;*/
+    padding: 2px 0px;
+    margin: 2px 0px;
+    background: url(../img/app-ide-edit.png) no-repeat right top;
+}

@@ -1,0 +1,569 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Debugging Perl</title>
+</head>
+
+<body>
+  <h1><a name="debugperl_top" id="debugperl_top">Debugging Perl</a>
+  <span class="version_alert">Komodo IDE only</span></h1>
+
+  <div class="right-float-box">
+    <p><strong>Tutorial</strong></p>
+
+    <ul>
+      <li><a href="tutorial/perltut.html#perltut_top">Perl
+      Tutorial</a></li>
+    </ul>
+  </div>
+
+  <p>Komodo can debug Perl programs locally or remotely, including
+  debugging in CGI and mod_perl environments. The instructions
+  below describe how to configure Komodo and Perl for debugging.
+  For general information about using the Komodo debugger, see
+  <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a>.</p>
+
+  <p>Debugger commands can be accessed from the
+  <strong>Debug</strong> menu, by shortcut keys, or from the Debug
+  Toolbar. For a summary of debugger commands, see the <a class=
+  "doc" href="debugger.html#How_use_Debugger">Debugger
+  Command List</a>.</p>
+
+  <h2><a name="Configuring_Perl_Debugger" id=
+  "Configuring_Perl_Debugger">Configuring the Perl
+  Debugger</a></h2>
+
+  <p>To specify which Perl interpreter Komodo uses to debug and run
+  Perl programs:</p>
+
+  <ol>
+    <li>On the <strong>Edit</strong> menu, click
+    <strong>Preferences</strong>.</li>
+
+    <li>In the Preferences dialog box under
+    <strong>Languages</strong>, click <strong>Perl</strong>. Komodo
+    searches for Perl interpreters on your system and displays them
+    in the drop-down list.</li>
+
+    <li>If the preferred interpreter is in this list, click to
+    select it. If not, click <strong>Browse</strong> to locate
+    it.</li>
+
+    <li>Click <strong>OK</strong>.</li>
+  </ol>
+
+  <p>To start a local Perl debugging session:</p>
+
+  <p>On the <strong>Debug</strong> menu or Debug Toolbar, click
+  <strong>Go/Continue</strong> or <strong>Step In</strong> to
+  invoke the debugging session. See <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a> for full instructions on using Komodo's debugging
+  functionality.</p>
+
+  <h3><a name="Enabling_Break_Now" id="Enabling_Break_Now">Enabling
+  "Break Now"</a></h3>
+
+  <p>By default, the <strong>Break Now</strong> function is
+  disabled for Perl debugging because some programs and modules
+  (e.g. LWP and WWW::Mechanize) are not compatible with
+  asynchronous breaking.</p>
+
+  <p>To enable <strong>Break Now</strong>, include the setting
+  '<code>async=1</code>' in the <code>PERLDB_OPTS</code>
+  environment variable. This can be done in Komodo's <a href=
+  "prefs.html#Environment">Environment</a> preferences
+  (<strong>Edit|Preferences...|Environment</strong>).</p>
+
+  <h2><a name="Perl_Remote_Debugger" id=
+  "Perl_Remote_Debugger">Debugging Perl Remotely</a></h2>
+
+  <p>When debugging a Perl program remotely, the program is
+  executed on the remote system and the debug output is sent to
+  Komodo. Komodo controls the debugging session (e.g. stepping and
+  breakpoints) once the session starts on the remote system.</p>
+
+  <p>Perl remote debugging works on any system that can run the
+  version of <em>perl5db.pl</em> distributed with Komodo. <a class=
+  "doc" target="_blank" href=
+  "http://www.activestate.com/Products/ActivePerl/">ActivePerl</a>
+  and most other distributions of Perl (version 5.6 or greater)
+  will work.</p>
+
+  <p><strong>Note</strong>: If you have the ActiveState Perl
+  Development Kit (PDK) installed, follow the instructions
+  <a class="doc" href="#Abling_PDK_Debugger">for PDK users</a> to
+  disable the PDK debugger before continuing.</p>
+
+  <p>To debug Perl programs remotely:</p>
+
+  <p><strong>Step One: Configure the Remote Machine</strong></p>
+
+  <ol>
+    <li>Copy Komodo's perl debugger and its associated libraries to
+    the remote machine by copying the entire <em>dbgp/perllib</em>
+    sub-directory of the Komodo installation to the new machine, or
+    download a package from the <a class="doc" target="_blank"
+    href="http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
+    Komodo Remote Debugging</a> page.<br />
+    <br />
+    <strong>Note</strong>: Do not copy <em>perl5db.pl</em> to the
+    standard "lib" directory of the Perl installation on the remote
+    machine, as this will overwrite the standard
+    <em>perl5db.pl</em> file.</li>
+
+    <li style="list-style: none"><br />
+    <br /></li>
+
+    <li>On the remote machine, set the <code>PERL5LIB</code>
+    environment variable to the location of the new
+    <em>perl5db.pl</em> and its libraries. For example, if the
+    remote machine is running Windows and <em>perllib</em>
+    directory was copied to <em>C:\misc\perllib</em>, set the
+    variable as follows:
+
+      <blockquote>
+        <code>set PERL5LIB=C:\misc\perllib</code>
+      </blockquote>
+
+      <p>For example, if the remote machine is running Linux or Mac
+      OS X and <em>perllib</em> was copied to the
+      <em>/home/me/perl/komodo_perl_debugging</em> directory, set
+      the variable as follows:</p>
+
+      <blockquote>
+        <code>export
+        PERL5LIB=/home/me/perl/komodo_perl_debugging/perllib</code>
+      </blockquote>
+    </li>
+
+    <li>On the remote machine, set the <code>PERLDB_OPTS</code> and
+    <code>DBGP_IDEKEY</code> variables. This tells the Perl
+    interpreter on the remote machine where to connect to Komodo or
+    the <a href="debugger.html#dbgp_proxy">DBGP
+    Proxy</a> and how to identify itself.<br />
+      <br />
+      <pre class="code">
+PERLDB_OPTS=RemotePort=&lt;hostname&gt;:&lt;port&gt;
+DBGP_IDEKEY=&lt;ide_key&gt;
+</pre>
+
+      <ul>
+        <li>The port number must match the port number specified in
+        <strong>Edit|Preferences|Debugger</strong>. Click
+        <strong>Debug|Listener Status</strong> to check the current
+        port.</li>
+
+        <li>Replace <code>&lt;hostname&gt;</code> with the name or
+        IP address of the machine running Komodo.</li>
+
+        <li>If DBGP_IDEKEY is unset, the USER or USERNAME
+        environment variable is used as the IDE Key.</li>
+
+        <li>The variable definitions must be on one line.</li>
+      </ul><br />
+
+      <p>For example:<br /></p>
+
+      <p><strong>Windows 2000, NT, XP</strong></p>
+      <pre class="code">
+set PERLDB_OPTS=RemotePort=127.0.0.1:9000
+set DBGP_IDEKEY=jdoe
+</pre>
+
+      <p><strong>Windows Me</strong></p>
+
+      <p>Use the MSCONFIG utility
+      (<strong>Start|Run|MSCONFIG</strong>). Select the
+      <strong>Environment</strong> tab, and create a new variable
+      with the Variable Name of <code>PERLDB_OPTS</code>, and the
+      Variable Value of <code>RemotePort=127.0.0.1:9000</code>.</p>
+
+      <p><strong>Linux and Mac OS X Systems</strong></p>
+      <pre class="code">
+export PERLDB_OPTS="RemotePort=127.0.0.1:9000"
+export DBGP_IDEKEY="jdoe"
+</pre>
+
+      <p><strong>Note:</strong> As with local debugging, the
+      <strong>Break Now</strong> function is <a href=
+      "#Enabling_Break_Now">disabled</a> by default. To enable this
+      button and functionality, add the option
+      '<code>async=1</code>' to the <code>PERLDB_OPTS</code>
+      environment variable. For example, on Windows:</p>
+      <pre class="code">
+set PERLDB_OPTS=RemotePort=127.0.0.1:9000 async=1
+</pre>
+    </li>
+  </ol>
+
+  <p><strong>Step Two: Listen for Debugger Connections</strong></p>
+
+  <p>In Komodo, on the <strong>Debug</strong> menu, click
+  <strong>Listen for Debugger Connections</strong>.</p>
+
+  <p><strong>Step Three: Start the Perl Program on the Remote
+  Machine</strong></p>
+
+  <p>Start the debugging process using the "-d" flag:</p>
+
+  <blockquote>
+    <code>perl -d program_name.pl</code>
+  </blockquote>
+
+  <p>A Perl <strong>Debug</strong> tab is displayed in Komodo.</p>
+
+  <p><strong>Step Four: Debug the Perl Program using
+  Komodo</strong></p>
+
+  <p>Click <strong>Step In</strong>, or
+  <strong>Go/Continue</strong> to run to the first breakpoint. See
+  <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a> for full instructions on using Komodo's debugging
+  functionality.</p>
+
+  <h2><a name="Abling_PDK_Debugger" id=
+  "Abling_PDK_Debugger">Disabling and Enabling the Perl Dev Kit
+  (PDK) Debugger</a></h2>
+
+  <p>If you have installed the ActiveState Perl Development Kit
+  (PDK) on the remote machine, the system may be configured to use
+  the PDK debugger when a Perl debug session (<code>perl -d</code>)
+  is launched. To use Komodo's debugger, <a class="doc" href=
+  "#To_disable_the_PDK_debugger:">disable the PDK debugger</a> on
+  the remote machine first. If necessary, you can re-enable the PDK
+  debugger on the remote machine later.</p>
+
+  <h3><a name="To_disable_the_PDK_debugger:" id=
+  "To_disable_the_PDK_debugger:">Disabling the PDK Debugger on the
+  Remote Machine</a></h3>
+
+  <p>To disable the PDK debugger on the remote machine, perform one
+  of the following procedures:</p>
+
+  <p><strong>Option 1:</strong></p>
+
+  <p>At the command shell, enter the following command:</p>
+
+  <p>Windows</p>
+  <pre class="code">
+set PERL5DB=BEGIN { require 'perl5db.pl'; }
+set PERLDB_OPTS=
+</pre>
+
+  <p>Linux</p>
+  <pre class="code">
+export PERLDB_OPTS=
+</pre>
+
+  <p>To re-enable the PDK debugger, set the <code>PERL5DB</code>
+  variable to an empty string.</p>
+
+  <p><strong>Option 2:</strong> (Windows)</p>
+
+  <ol>
+    <li>Open <strong>System Properties</strong>:</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>On Windows 9x/NT/2000, right-click the <strong>My
+        Computer</strong> icon and select
+        <strong>Properties</strong>.</li>
+
+        <li>On Windows XP, click <strong>Start</strong> |
+        <strong>Control Panel</strong> |
+        <strong>System</strong></li>
+
+        <li style="list-style: none">
+          <ul>
+            <li>Click the <strong>Advanced</strong> tab.</li>
+
+            <li>Click <strong>Environment Variables</strong>.</li>
+
+            <li>In the <strong>System variables</strong> section,
+            click <strong>New</strong>.</li>
+
+            <li>Set the <strong>Variable Name</strong> field to
+            <code>PERL5DB</code>.</li>
+
+            <li>Set the <strong>Variable Value</strong> field to
+            <code>BEGIN { require 'perl5db.pl'}</code>.</li>
+
+            <li>Select the <code>PERLDB_OPTS</code> variable, click
+            <strong>Edit</strong>.</li>
+
+            <li>Delete the contents of the <strong>Variable
+            Value</strong> field.</li>
+
+            <li>Click <strong>OK</strong> three times to exit.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>These changes take effect in new Command Prompt windows. To
+  re-enable the PDK debugger, delete the <code>PERL5DB</code>
+  variable, and change the <code>PERLDB_OPTS</code> variable back
+  to it's original value.</p>
+
+  <h2><a name="Configuring_Perl_CGI" id=
+  "Configuring_Perl_CGI">Configuring Perl for CGI
+  Debugging</a></h2>
+
+  <p>Debugging CGI programs on live production servers can
+  seriously impair performance. We recommend using a test server
+  for CGI debugging. Instructions for configuring Microsoft IIS and
+  Apache servers are shown below; for other web servers, use these
+  examples and the web server software documentation as a guide for
+  modifying the server environment.</p>
+
+  <p>The settings and paths listed are examples only. Substitute
+  these with the specific paths, hostnames and port numbers of your
+  server as necessary</p>
+
+  <h3><a name="CGI_Config_IIS" id="CGI_Config_IIS">Configuring a
+  Microsoft IIS Web Server</a></h3>
+
+  <ul>
+    <li>
+      <strong>Modify the Server's Environment Variables</strong>:
+      Right-click the <strong>My Computer</strong> icon on the
+      desktop, and select <strong>Properties</strong>. On the
+      <strong>Advanced</strong> tab, click the <strong>Environment
+      Variables</strong> button. Add the following items to the
+      <strong>System Variables</strong> pane:<br />
+      <pre class="code">
+PERL5LIB=C:\Program Files\ActiveState Komodo <em>x.x</em>\lib\support\dbgp\perllib
+PERLDB_OPTS=RemotePort=&lt;hostname&gt;:&lt;port&gt;
+DBGP_IDEKEY="&lt;ide_key&gt;"
+</pre><strong>Note:</strong> The path for the PERL5LIB directory
+shown above is the correct path in a default installation. That
+path must be changed if you have installed Komodo in a different
+location. Also, the debugger doesn't seem to be able to find the
+libraries if any directories in the path contain spaces. You should
+copy the perllib directory to another location in which there are
+no spaces in the path to overcome this problem and use that path in
+the PERL5LIB system variable described above.
+    </li>
+
+    <li><strong>Modify the Internet Information Services
+    Configuration</strong>: A "-d" option must be added to the
+    Executable Path for the Perl CGI script mapping.</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>IIS 4 and 5:
+
+          <ol>
+            <li>Open the <strong>Internet Information
+            Services</strong> manager.</li>
+
+            <li>Select one web site or the entire <strong>Web
+            Sites</strong> node as desired.</li>
+
+            <li>Click <strong>Action|Properties</strong></li>
+
+            <li>On the <strong>Home Directory</strong> tab, click
+            the <strong>Configuration</strong> button.</li>
+
+            <li>Add (or modify) an entry for Perl with the
+            following characteristics:<br />
+              <pre class="code">
+Extension = .pl
+Executable Path = c:\perl\bin\perl.exe -d "%s" %s
+</pre>
+            </li>
+          </ol>
+        </li>
+
+        <li>IIS 6:
+
+          <ol>
+            <li>Open the <strong>Internet Information
+            Services</strong> manager.</li>
+
+            <li>Select the <strong>Web Service Extensions</strong>
+            node.</li>
+
+            <li>Add (or modify) the Web Service Extension for Perl
+            CGI as above.</li>
+          </ol>
+        </li>
+      </ul>
+    </li>
+
+    <li><strong>Reboot</strong>: The system must be rebooted for the changes to
+    take effect. Environment variables are not updated by restarting the IIS
+    service.</li>
+  </ul>
+
+  <h3><a name="CGI_Config_Apache" id=
+  "CGI_Config_Apache">Configuring an Apache Web Server</a></h3>
+
+  <p>Ensure that Perl CGI scripts are operating correctly on the
+  Apache server before proceeding with CGI debugger configuration.
+  If you are running Apache under Windows, disable the
+  <code>ScriptInterpreterSource</code> registry in the
+  <em>httpd.conf</em> file. Use a stand-alone Perl interpreter for
+  remote debugging.</p>
+
+  <ul>
+    <li>
+      <strong>Modify the <em>httpd.conf</em> file</strong>: The
+      following values can be configured for a specific virtual
+      host or all hosts. Add the following values in the
+      appropriate sections:<br />
+      <pre class="code">
+SetEnv PERL5LIB "C:\Program Files\ActiveState Komodo <em>x.x</em>\lib\support\dbgp\perllib"
+SetEnv PERLDB_OPTS "RemotePort=&lt;hostname&gt;:&lt;port&gt;"
+SetEnv DBGP_IDEKEY "&lt;ide_key&gt;"
+</pre><strong>Note:</strong> You must enable the
+<code>mod_env</code> Apache module (see <a class="doc" href=
+"http://httpd.apache.org/docs/mod/mod_env.html">httpd.apache.org/docs/mod/mod_env.html</a>)
+for the SetEnv directive to function.<br />
+      <br />
+    </li>
+
+    <li>
+      <strong>Modify the Perl Script</strong>: Add the
+      "<code>-d</code>" flag to the "shebang" line:
+      <pre class="code">
+#!/perl/bin/perl -d
+</pre>
+    </li>
+  </ul>
+
+  <h3><a name="debugperl_cgi_start" id=
+  "debugperl_cgi_start">Starting a CGI Debugging Session</a></h3>
+
+  <p>After the configuration is complete, debug programs as
+  follows:</p>
+
+  <ul>
+    <li>In Komodo, on the <strong>Debug</strong> menu, click
+    <strong>Listen for Debugger Connections</strong>.</li>
+
+    <li>Using a web browser, access your CGI script.</li>
+
+    <li>A Perl <strong>Debug</strong> tab is displayed in Komodo.
+    See <a class="doc" href=
+    "debugger.html#debugger_top">Komodo Debugger
+    Functions</a> for full instructions on using Komodo's debugging
+    functionality.</li>
+  </ul>
+
+  <h2><a name="Debugging_Mod_Perl" id=
+  "Debugging_Mod_Perl">Debugging mod_perl</a></h2>
+
+  <p>Debugging mod_perl handlers is similar to debugging any Perl
+  program remotely (see <a href="#Perl_Remote_Debugger">Debugging
+  Perl Remotely</a> to familiarize yourself with the terminology).
+  Debugging mod_perl is different in that you'll typically invoke
+  the code indirectly with a web browser, and that the Perl code is
+  running inside an Apache web server.
+  <!-- Successfully debugging mod_perl
+code is a matter of correctly setting a few environment
+variables.--></p>
+
+  <p>To configure Komodo debugging in mod_perl:</p>
+
+  <ol>
+    <li>Copy the entire <em>dbgp/perllib</em> sub-directory of the
+    Komodo installation to a convenient directory on the server, or
+    download and unpack the Perl Remote Debugging package from the
+    <a class="doc" target="_blank" href=
+    "http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
+    Komodo Remote Debugging</a> page. If you are running Apache on
+    your local workstation, you can use Komodo's copy directly
+    (e.g.
+    <em>&lt;Komodo-install-dir&gt;/lib/support/dbgp/perllib</em> )
+    for the following steps. <strong>Note</strong>: Do not copy
+    <em>perl5db.pl</em> to the standard "lib" directory of the Perl
+    installation on the remote machine, as this will overwrite the
+    standard <em>perl5db.pl</em> file.</li>
+
+    <li style="list-style: none"><br /></li>
+
+    <li>In the directory containing <em>perl5db.pl</em>, create a
+    new directory called <em>Apache</em>. For example:
+      <pre class="code">
+$ cd Komodo/lib/support/dbgp/perllib
+$ mkdir Apache
+</pre>
+    </li>
+
+    <li>Create a symlink or shortcut to <em>perl5db.pl</em> within
+    the new <em>Apache</em> directory. For example:
+      <pre class="code">
+$ cd Apache
+$ ln -s ../perl5db.pl .
+</pre>
+    </li>
+
+    <li>Install the Apache::DB perl module on the server:
+      <pre class="code">
+$ cpan Apache::DB
+</pre>
+    </li>
+
+    <li>Add the following snippet to your <em>httpd.conf</em> file
+    (replace "<em>/path/to/dbgp/perllib</em>" with the full path to
+    the directory containing <em>perl5db.pl</em>):
+      <pre class="code">
+&lt;Perl&gt; 
+  use ModPerl::Registry;
+  use lib qw(/path/to/dbgp/perllib);
+  $ENV{PERLDB_OPTS} = "RemotePort=localhost:9000 LogFile=stderr";
+  use Apache::DB ();
+  Apache::DB-&gt;init;
+&lt;/Perl&gt; 
+</pre>
+
+      <p>Make sure that <code>RemotePort</code> is set to the
+      hostname and port Komodo using to listen for debugger
+      connections (see the PERLDB_OPTS setting in the "Configure
+      the Remote Machine" section of <a href=
+      "#Perl_Remote_Debugger">Debugging Perl Remotely</a>).</p>
+    </li>
+
+    <li>You will probably already have a
+    <code>&lt;Location&gt;</code> section in <em>httpd.conf</em>
+    (or <em>apache.conf</em>) for your perl scripts. Add the
+    following line to that section:
+      <pre class="code">
+PerlFixupHandler Apache::DB
+</pre>
+
+      <p>For example:</p>
+      <pre class="code">
+&lt;Location /perl-bin&gt; 
+  SetHandler perl-script
+  PerlHandler ModPerl::Registry
+  Options +ExecCGI
+  PerlOptions +ParseHeaders
+  PerlFixupHandler Apache::DB
+&lt;/Location&gt;
+</pre>
+    </li>
+
+    <li>Restart Apache in debug mode (e.g. <code>apache -X</code>),
+    and open the page you wish to debug in a browser.</li>
+  </ol>
+  <hr />
+</body>
+</html>

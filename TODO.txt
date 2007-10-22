@@ -1,0 +1,24 @@
+- solution for deployment of mk
+- ask on blog/mozplanet for how (if at all) firefox docs translations are
+  coordinated
+- breadcrumbs to all files
+- kill 'class="doc"' on everything (it *is* a style in aspn.css)
+- flavorification:
+    - install notes ("installing the Komodo license")
+- links:
+    - fix linkcheck (does it check toc.xml?)
+    - add a target for checking for unused files (imgs, css, etc)
+    - check/update links in Komodo sources into help (also the installers)
+- feedback page should be updated for openkomodo (its own bugdb),
+  use the forums instead of komodo-feedback@activestate.com
+- put mk and komododoc in openkomodo tree
+- integrate with Komodo build somehow
+- regular builds up
+- better css placement (drop the "ASPN" css thing?)
+- make it skinnable via a styles/$name/{css|img} tree
+- check:manifest (check for missing files, non-existant files)
+- Either *drop* the text versions of some of the HTML files (e.g.
+  RELNOTES.txt) or find a way to produce them via the build. Personally I
+  don't think they have enough value. --TM
+- the linux "supported oses" are waay out of date
+- mv preprocess.py to google code and use externals from there

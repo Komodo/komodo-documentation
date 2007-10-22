@@ -1,0 +1,734 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Debugging PHP</title>
+</head>
+
+<body>
+  <h1><a name="debugphp_top" id="debugphp_top">Debugging PHP</a>
+  <span class="version_alert">Komodo IDE only</span></h1>
+
+  <div class="right-float-box">
+    <p><strong>Tutorial</strong></p>
+
+    <ul>
+      <li><a href="tutorial/phptut.html#phptut_top">PHP
+      Tutorial</a></li>
+    </ul>
+  </div>
+
+  <p>Komodo can be used to debug PHP programs <a href=
+  "#local_debug_PHP">locally</a> or <a href=
+  "#remote_debug_PHP">remotely</a>. Remote PHP debugging encompases
+  all types of PHP debugging not initiated from within Komodo,
+  including debugging PHP scripts running under a local web
+  server.</p>
+
+  <p>The instructions below describe how to configure Komodo and
+  PHP for debugging. For general information about using the Komodo
+  debugger, see <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a>.</p>
+
+  <p>Debugger commands can be accessed from the
+  <strong>Debug</strong> menu, by shortcut keys, or from the Debug
+  Toolbar. For a summary of debugger commands, see the <a class=
+  "doc" href="debugger.html#How_use_Debugger">Debugger
+  Command List</a>.</p>
+
+  <p>Komodo uses a PHP debugger extension called
+  <strong>Xdebug</strong> that must be installed for Komodo to
+  debug PHP scripts. This can be done manually or with the PHP
+  Configuration Wizard. Pre-built binaries named "php_xdebug.dll"
+  (for Windows) or "xdebug.so" (for Linux and Mac OS X) are
+  provided with Komodo and are also available for download from the
+  <a class="doc" href=
+  "http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
+  Komodo Remote Debugging</a> page.</p>
+
+  <p>See <a class="doc" target="_blank" href=
+  "http://www.xdebug.org/install.php">www.xdebug.org/install.php</a>
+  for instructions on compiling Xdebug from source on other
+  platforms.</p>
+
+  <h2><a name="install_PHP" id="install_PHP">Installing
+  PHP</a></h2>
+
+  <p>PHP debugging in Komodo will work with PHP 4.3.10 or later,
+  with the exception of versions 5.0.0 through 5.0.2. If you are
+  using PHP 5.0, you will need at least 5.0.3 or greater. Download
+  PHP from <a class="doc" target="_blank" href=
+  "http://www.php.net/downloads.php">http://www.php.net/downloads.php</a>.</p>
+
+  <p>Refer to the <a class="doc" target="_blank" href=
+  "http://www.php.net/manual/en/">PHP website</a> for detailed
+  information on installing PHP.</p>
+
+  <p>To debug PHP scripts in a web environment, be sure PHP is
+  operating correctly with your web server before configuring the
+  debugger extension. Consult the <a href=
+  "http://www.php.net/manual/en/installation.php">PHP
+  documentation</a> for details on configuring PHP with various web
+  servers.</p>
+
+  <h3>Windows</h3>
+
+  <p>If you are unfamiliar with the installation of PHP, we
+  recommend using the Windows InstallShield package. To install the
+  PHP executable or SAPI module manually, see <a class="doc"
+  target="_blank" href=
+  "http://www.php.net/manual/en/install.windows.php#install.windows.manual">
+  the PHP website</a>. Be sure that the PHP directory is included
+  in your system's PATH.</p>
+
+  <h3>Linux</h3>
+
+  <p>Your Linux system may already have PHP installed. Login and
+  type 'php -v' to determine the version of your current PHP
+  interpreter. If it is earlier than version 4.3.1 (or 5.0.0
+  through 5.0.2) you must upgrade. PHP must also support loading
+  dynamic extensions (the default for PHP under Linux). If it does
+  not, reinstall PHP as per the instructions on the <a class="doc"
+  target="_blank" href=
+  "http://www.php.net/manual/en/install.linux.php">PHP
+  website</a>.</p>
+
+  <ul>
+    <li>RPMs are available for Red Hat from <a class="doc" target=
+    "_blank" href=
+    "http://www.redhat.com/apps/support/updates.html">www.redhat.com/apps/support/updates.html</a></li>
+
+    <li>RPMs for for other distributions are available from
+    <a class="doc" target="_blank" href=
+    "http://rpmfind.net/">http://rpmfind.net/</a>.</li>
+  </ul>
+
+  <p>When installing PHP to a non-default directory, you must add
+  the following argument to the <code>./configure</code>
+  command:</p>
+  <pre class="code">
+--with-config-file-path=/path/to/php.ini
+</pre>
+
+  <p>where <em>/path/to/php.ini</em> is the full path to the
+  directory where the <em>php.ini</em> file is located.</p>
+
+  <h3>Mac OS X</h3>
+
+  <p>Although both the Jaguar and Tiger releases of OS X include a
+  version of PHP, it is recommended that you obtain a more recent
+  version. Either build from <a class="doc" target="_blank" href=
+  "http://www.php.net/downloads.php">source code</a>, or download a
+  PHP module for OS X's Apache web server from <a class="doc"
+  target="_blank" href=
+  "http://www.entropy.ch/software/macosx/php/">www.entropy.ch/software/macosx/php/</a>.</p>
+
+  <h2><a name="local_debug_PHP" id="local_debug_PHP">Local PHP
+  Debugging</a></h2>
+
+  <p>In local debugging mode, Komodo executes PHP directly. While
+  this is convenient for quickly debugging a PHP script, if your
+  script depends on the availability of a web server, use <a class=
+  "doc" href="#remote_debug_PHP">Remote PHP Debugging</a> even if
+  the script is running on the same machine as Komodo. This makes
+  it possible to test the script in its true environment.</p>
+
+  <p>When debugging locally, certain environment variables are not
+  available, such as those provided by the CGI environment.
+  However, it is possible to simulate a CGI environment by
+  specifying <a href=
+  "debugger.html#Debugging_Options_CGI_Environment">CGI
+  environment variables</a> and <a href=
+  "debugger.html#Debugging_Options_CGI_Input">CGI
+  input</a> in the Debugging Options dialog box. It is is not
+  necessary to install a web server to use Komodo's local debugging
+  features. Once you have configured PHP to use the debugger
+  extension as described below, you can debug your scripts by
+  opening a PHP file and using <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a>.</p>
+
+  <p>If you receive an error message when attempting to debug a PHP
+  script, check the <a class="doc" href=
+  "trouble.html#php_debug">PHP troubleshooting</a>
+  section of the Komodo FAQ.</p>
+
+  <h3><a name="config_local_PHP" id="config_local_PHP">Configuring
+  Local PHP Debugging</a></h3>
+
+  <p>Komodo configures itself automatically for local PHP debugging
+  by launching the default PHP interpreter (i.e. the first in your
+  <code>PATH</code>) and attempting to load the Xdebug extension
+  (<code>php_xdebug.dll</code> or <code>xdebug.so</code>). If this
+  is successful, a new copy of <code>php.ini</code> is created
+  automatically with debugging enabled which Komodo will use when
+  debugging PHP scripts locally.</p>
+
+  <h4><a name="PHP_debugger_config_wizard" id=
+  "PHP_debugger_config_wizard">PHP Debugger Config Wizard</a></h4>
+
+  <p>If the automatic configuration of PHP debugging is not
+  successful, try configuring PHP debugging manually using the
+  <strong>PHP Configuration Wizard</strong>.</p>
+
+  <p>To start the wizard:</p>
+
+  <ol>
+    <li>On the <strong>Edit</strong> menu, click
+    <strong>Preferences</strong>.</li>
+
+    <li>Under <strong>Languages</strong>, select
+    <strong>PHP</strong>.</li>
+
+    <li>Click the <strong>Debugger Configuration Wizard</strong>
+    button to display the wizard's introductory window.</li>
+
+    <li>Click <strong>Next</strong> to begin configuring PHP for
+    debugging.</li>
+  </ol>
+
+  <p>The wizard will guide you through the steps necessary to
+  configure the debugging extension.</p>
+
+  <ol>
+    <li>
+      <strong>Choose Installation</strong>:
+
+      <p>The first step assumes that you have already <a class=
+      "doc" href="#install_PHP">installed PHP</a>. If you have more
+      than one version of PHP installed, choose the version to
+      configure. Browse to the directory containing the PHP
+      executable or enter the directory path in the <strong>Set up
+      this installation</strong> field, and then click
+      <strong>Next</strong>.</p>
+    </li>
+
+    <li>
+      <strong>Choose PHP INI Path</strong>:
+
+      <p>Next, choose the <em>php.ini</em> file to be copied and
+      its destination directory. Subsequent changes to the original
+      file will not be available in the new copy. Modify the new
+      file directly, or rerun the wizard to copy the changes. Click
+      <strong>Next</strong>.</p>
+
+      <ul>
+        <li>On Windows, the <em>php.ini</em> file is generally
+        located in <code>c:\windows</code>, or
+        <code>c:\winnt</code>, depending on your operating system.
+        It may also be located in the same directory as your
+        php.exe executable.</li>
+
+        <li>On Linux, the default location is
+        <code>/usr/local/lib</code>. It may also be located in the
+        same directory as your PHP executable.</li>
+      </ul>
+    </li>
+
+    <li style="list-style: none"><br /></li>
+
+    <li>
+      <strong>Choose PHP Extension Directory</strong>:
+
+      <p>Many PHP installations already include a default
+      "extensions" directory. This is where the debugger extension
+      should be installed. If you have specified an extensions
+      directory in the .ini file, you do not need to change the
+      path that appears in the <strong>Use this extensions
+      directory</strong> field. It is important that the extensions
+      are installed in the same directory as your PHP installation.
+      If you choose a different location, some extensions may not
+      work. Once the desired path is set, click
+      <strong>Next</strong>.</p>
+    </li>
+
+    <li>
+      <strong>Ready to Install</strong>:
+
+      <p>The final window in the wizard displays the installation
+      options. Confirm that the selections are correct and click
+      <strong>Next</strong>. To change any of the selections, click
+      <strong>Back</strong>.</p>
+    </li>
+  </ol>
+
+  <p>The PHP Configuration Wizard is only used to configure local
+  debugging. To debug PHP remotely on a web server, see <a class=
+  "doc" href="#config_remote_PHP">Configuring Remote PHP
+  Debugging</a>.</p>
+
+  <p>If the wizard does not successfully enable local PHP
+  debugging, refer to <a class="doc" href=
+  "#config_remote_PHP">Configuring Remote PHP Debugging</a> for
+  more information on manual configuration and <a href=
+  "#config_local_PHP_problems">Common Local PHP Debugging
+  Problems</a> for information on common problems.</p>
+
+  <h3><a name="debugphp_start_stop_local_PHP" id=
+  "debugphp_start_stop_local_PHP">Starting and Stopping a PHP Local
+  Debugging Session</a></h3>
+
+  <p>To step through the script, from <strong>Debug</strong> menu,
+  select <strong>Step In</strong>.</p>
+
+  <p>To run the script to the first breakpoint, from the
+  <strong>Debug</strong> menu, select
+  <strong>Go/Continue</strong>.</p>
+
+  <p>To stop the debugger, from the <b>Debug</b> menu, select
+  <b>Stop</b>.</p>
+
+  <p>See <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a> for full instructions on using Komodo's debugging
+  functionality.</p>
+
+  <h2><a name="remote_debug_PHP" id="remote_debug_PHP">Remote PHP
+  Debugging</a></h2>
+
+  <p>Remote PHP debugging encompases all types of PHP debugging not
+  initiated from within Komodo, including debugging PHP scripts
+  running under a local web server.</p>
+
+  <p>When a PHP script is run through a web browser, the web server
+  uses the PHP interpreter to execute the script. If PHP is
+  configured for remote debugging, the server contacts Komodo to
+  start a debugging session. Komodo controls the debugging (e.g.
+  stepping and breakpoints) once the session starts. CGI variables
+  are available, as are all other variables that are available when
+  running PHP under a web server.</p>
+
+  <p>Though remote PHP debugging allows PHP scripts to be run in
+  their true environment, it may be slower than local PHP
+  debugging.</p>
+
+  <h3><a name="config_remote_PHP" id=
+  "config_remote_PHP">Configuring Remote PHP Debugging</a></h3>
+
+  <p>Remote debugging of PHP in Komodo is set up differently
+  depending on how many people will be debugging scripts on the
+  same web server:</p>
+
+  <p><strong>Single User Remote PHP Debugging</strong>: In single
+  user remote debugging, PHP is configured to always look for a
+  specific instance of Komodo on a specific machine. This
+  configuration requires no changes to the PHP script. Your web
+  server and your instance of Komodo can be on one machine or two
+  machines</p>
+
+  <p><strong>Multi-User Remote PHP Debugging</strong>: When
+  multiple users need to debug PHP scripts on a single web server,
+  use the <a href="debugger.html#dbgp_proxy">DBGP
+  Proxy</a> with the remote PHP debugging instructions below. While
+  it is possible to configure Apache with <a class="doc" href=
+  "trouble.html#virtual_host_apache">Virtual
+  Hosting</a>, it is easier to configure multi-user remote PHP
+  debugging with the proxy.</p>
+
+  <p>Remote PHP debugging must be configured manually. The
+  following procedure assumes that you have already <a class="doc"
+  href="#install_PHP">installed PHP</a>.</p>
+
+  <h4><a name="debugphp_copy_xdebug" id="debugphp_copy_xdebug">Step
+  1 - Copy the Debugging Extension to the Web Server</a></h4>
+
+  <p>Before debugging PHP scripts in Komodo, PHP must be configured
+  to use the <a target="_blank" href=
+  "http://www.xdebug.org">Xdebug</a> extension (php_xdebug.dll or
+  xdebug.so).</p>
+
+  <p>Find the appropriate extension for the version of PHP you are
+  running and manually copy it into a directory on the server that
+  the PHP interpreter and web server can access. The Xdebug files
+  can be found in the <em>php</em> sub-directory of the Komodo
+  installation. For example:</p>
+
+  <p><strong>Windows</strong></p>
+
+  <ul>
+    <li><strong>File required</strong>:
+    <code>php_xdebug.dll</code></li>
+
+    <li><strong>Source location</strong>:
+    <code><em>&lt;komodo-install-directory&gt;</em>\lib\support\php\debugging\<em>&lt;PHP-version&gt;</em></code>
+    or the <a class="doc" target="_blank" href=
+    "http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
+    Komodo Remote Debugging</a> page.</li>
+
+    <li><strong>Destination</strong>: the
+    <code>extension_dir</code> as defined in the <em>php.ini</em>
+    file.</li>
+  </ul>
+
+  <p><strong>Linux</strong></p>
+
+  <ul>
+    <li><strong>File required</strong>: <code>xdebug.so</code></li>
+
+    <li><strong>Source location</strong>:
+    <code><em>&lt;komodo-install-directory&gt;</em>/lib/support/php/debugging/<em>&lt;PHP-version&gt;</em>/</code>
+    or the <a class="doc" target="_blank" href=
+    "http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
+    Komodo Remote Debugging</a> page.</li>
+
+    <li><strong>Destination</strong>: the
+    <code>extension_dir</code> as defined in the <em>php.ini</em>
+    file.</li>
+  </ul>
+
+  <p><strong>Mac OS X</strong></p>
+
+  <ul>
+    <li><strong>File required</strong>: <code>xdebug.so</code></li>
+
+    <li><strong>Source location</strong>:
+    <code><em>&lt;komodo-install-directory&gt;</em>/Contents/SharedSupport/lib/support/php/debugging/<em>&lt;PHP-version&gt;</em>/</code>
+    or the <a class="doc" target="_blank" href=
+    "http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
+    Komodo Remote Debugging</a> page.</li>
+
+    <li><strong>Destination</strong>: the
+    <code>extension_dir</code> as defined in the <em>php.ini</em>
+    file.</li>
+  </ul>
+
+  <p>In the downloadable packages, the extensions are found in
+  version-specific subdirectories of the unpacked archive.</p>
+
+  <p>We recommend installing Xdebug in the existing PHP extensions
+  directory on the web server (specified by the
+  <code>extension_dir</code> variable in the <em>php.ini</em>
+  file). If you are installing PHP for the first time, the
+  <code>extension_dir</code> may be set to "./". You should change
+  this to a full, direct path, such as
+  <code>C:\php\extensions</code> under Windows, or
+  <code>/usr/local/lib/php/extensions</code> under Linux and Mac OS
+  X.</p>
+
+  <h4><a name="debugphp_edit_php_ini" id=
+  "debugphp_edit_php_ini">Step 2 - Edit the Web Server's PHP
+  Configuration</a></h4>
+
+  <p>Open the <em>php.ini</em> configuration file on the web
+  server. In the "<code>Dynamic Extension</code>" section, add the
+  lines specified below.</p>
+
+  <table align="center" width="60%">
+    <tbody>
+      <tr>
+        <td class="startupBox">
+          <p><strong>Note</strong>: Xdebug is incompatible with the
+          <strong>Zend Optimizer</strong> and <strong>Zend Studio
+          Debugger</strong> extensions. These extensions should be
+          commented out in <em>php.ini</em> when configuring PHP
+          for remote debugging with Komodo.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul>
+    <li>
+      <p><strong>Windows</strong></p>
+      <pre class="code">
+; xdebug config for Windows
+zend_extension_ts=c:\path\to\php_xdebug.dll
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9000
+xdebug.idekey=&lt;idekey&gt;
+</pre>
+
+      <p>The <em>php.ini</em> configuration file should be in your
+      operating system directory (e.g. C:\WINDOWS or C:\WINNT), or
+      in the same directory as <code>php.exe</code> (e.g. C:\PHP).
+      If you used the PHP Windows installer, this file should be in
+      the correct location.</p>
+    </li>
+
+    <li>
+      <p><strong>Linux and Mac OS X</strong></p>
+      <pre class="code">
+; xdebug config for Linux and Mac OS X
+zend_extension=/path/to/xdebug.so
+xdebug.remote_enable=1
+xdebug.remote_handler=dbgp
+xdebug.remote_mode=req
+xdebug.remote_host=127.0.0.1
+xdebug.remote_port=9000
+xdebug.idekey=&lt;idekey&gt;
+</pre>
+    </li>
+  </ul>
+
+  <p>Set <code>remote_port</code> to the same value as the
+  debugging listener port configured in
+  <strong>Edit|Preferences|Debugger</strong> (or the system
+  assigned <strong>Host Port</strong> displayed under
+  <strong>Debug|Listener Status</strong>). If Komodo is not running
+  on the same machine as the web server, you also need to set
+  <code>remote_host</code> to the correct IP address for
+  Komodo.</p>
+
+  <p>Restart the web server to load the new configuration.</p>
+
+  <h4><a name="debugphp_verify_php_ini" id=
+  "debugphp_verify_php_ini">Step 3 - Verify the Web Server's PHP
+  Configuration</a></h4>
+
+  <p>Once the <em>php.ini</em> file is updated, verify that Xdebug
+  is configured by running the following command:</p>
+  <pre class="code">
+php -m
+</pre>
+
+  <p>If your command-line PHP interpreter uses a different
+  <em>php.ini</em> file (this is often the case) or if you're not
+  sure which file it uses, create a <em>phpinfo.php</em> file
+  containting the line '<code>&lt;?php phpinfo(); ?&gt;</code>' in
+  a web server directory to display the configuration in a web
+  browser.</p>
+
+  <p>Make sure Xdebug appears in the Zend module lists, but not in the PHP
+  module list.</p>
+
+  <p><strong>Note</strong>: Recent versions of PHP are set to
+  buffer program output by default. While debugging, it is useful
+  to disable output buffering so that results of <code>print</code>
+  and <code>echo</code> statements can be seen immediately when
+  stepping through code. To disable output buffering, comment out
+  the <code>output_buffering</code> setting in <em>php.ini</em>
+  with a ";" character, or set it to "<code>off</code>".</p>
+
+  <h3><a name="debugphp_start_stop_remote_PHP" id=
+  "debugphp_start_stop_remote_PHP">Starting and Stopping a PHP
+  Remote Debugging Session</a></h3>
+
+  <p>Once remote PHP debugging is <a class="doc" href=
+  "#config_remote_PHP">configured</a>, the PHP interpreter can
+  contact Komodo and initiate a remote debugging session when a PHP
+  script is executed on the web server.</p>
+
+  <p>To initiate remote debugging from a web browser:</p>
+
+  <ol>
+    <li>Ensure you have configured PHP for your web server, have it
+    properly working, and have configured PHP and Komodo as
+    described in <a class="doc" href=
+    "#config_remote_PHP">Configuring Remote PHP Debugging</a>.</li>
+
+    <li>On the <strong>Debug</strong> menu, click <strong>Listen
+    for Debugger Connections</strong>.</li>
+
+    <li>Open your web browser and access the script you want to
+    debug. Append "?XDEBUG_SESSION_START=&lt;idekey&gt;" to the end
+    of the URL as a GET argument. The IDE Key should match the
+    <strong>Proxy Key</strong> value shown in
+    <strong>Debug|Listener Status</strong>. For example:<br />
+      <pre class="code">
+http://example.org/sample.php?XDEBUG_SESSION_START=jdoe
+</pre>
+
+      <p><strong>Note</strong>: This is only required for the first
+      request. After that, Xdebug tracks the debugging session with
+      a cookie. For more information on how this works, see
+      <a target="_blank" href=
+      "http://www.xdebug.org/docs-debugger.php#browser_session">www.xdebug.org/docs-debugger.php#browser_session</a></p>
+    </li>
+
+    <li>A PHP debugging session starts in Komodo. On the
+    <strong>Debug</strong> menu, click <strong>Step In</strong> or
+    <strong>Go/Continue</strong> to run to the first
+    breakpoint.</li>
+  </ol>
+
+  <p>It is also possible to call <code>XDEBUG_SESSION_START</code>
+  by adding it in an <code>input</code> element of an HTML form.
+  For example:</p>
+  <pre class="code">
+&lt;input type="hidden" name="XDEBUG_SESSION_START" value="jdoe" /&gt;
+</pre>
+
+  <p>To initiate remote debugging from the command line:</p>
+
+  <ol>
+    <li>On the <strong>Debug</strong> menu, click <strong>Listen
+    for Debugger Connections</strong>.</li>
+
+    <li>Set the XDEBUG_CONFIG environment variable. Use the port
+    specified in <strong>Edit|Preferences|Debugger</strong> or
+    listed in <strong>Debug|Listener Status</strong>.<br />
+      <br />
+      On Windows:
+      <pre class="code">
+set XDEBUG_CONFIG=remote_port=9000 remote_enable=1
+</pre>On Linux/Mac OS X:
+      <pre class="code">
+export XDEBUG_CONFIG="remote_port=9000 remote_enable=1"
+</pre>
+    </li>
+
+    <li style="list-style: none"><br /></li>
+
+    <li>Run the script using the PHP interpreter:<br />
+      <pre class="code">
+php -f sample.php
+</pre>
+    </li>
+
+    <li>A PHP debugging session will start in Komodo. Click
+    <strong>Step In</strong> to start stepping through the script
+    or <strong>Go/Continue</strong> to run to the first
+    breakpoint.</li>
+  </ol>
+
+  <p>To initiate remote debugging using the <a href=
+  "debugger.html#dbgp_proxy">DBGP Proxy</a>:</p>
+
+  <ol>
+    <li>From the <strong>Debug</strong> menu, select <strong>Listen
+    for Debugger Connections</strong>.</li>
+
+    <li>Set the XDEBUG_CONFIG environment variable as above. Use
+    the port specified in
+    <strong>Edit|Preferences|Debugger</strong> or listed in
+    <strong>Debug|Listener Status</strong>. Add an IDE Key value to
+    the XDEBUG_CONFIG environment variable that matches the
+    <strong>Proxy Key</strong> value shown in
+    <strong>Debug|Listener Status</strong>.<br />
+      <br />
+      On Windows:
+      <pre class="code">
+$set XDEBUG_CONFIG=remote_port=9000 remote_enable=1 idekey=&lt;USERNAME&gt;
+</pre>On Linux/Mac OS X:
+      <pre class="code">
+export XDEBUG_CONFIG="remote_port=9000 remote_enable=1 idekey=&lt;USER&gt;"
+</pre>
+    </li>
+
+    <li>Run the script using the PHP interpreter:<br />
+      <pre class="code">
+php -f sample.php
+</pre>
+    </li>
+
+    <li>A PHP debugging session will start in Komodo. On the
+    <strong>Debug</strong> menu, Click <strong>Step In</strong> to
+    start stepping through the script or
+    <strong>Go/Continue</strong> to run to the first
+    breakpoint.</li>
+  </ol>
+
+  <p>Output from the debug session appears in the Bottom Pane of
+  the Komodo Workspace. Komodo does not support a console for
+  remote debugging. The browser will not show the script output
+  until debugging is complete.</p>
+
+  <p>To stop the debugger:</p>
+
+  <p>On the <strong>Debug</strong> menu, select
+  <strong>Stop</strong> or pass the
+  <code>XDEBUG_SESSION_STOP</code> variable by appending it to the
+  URL or adding it to a form (as with
+  <code>XDEBUG_SESSION_START</code> above).</p>
+
+  <p>See <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a> for full instructions on using Komodo's debugging
+  functionality.</p>
+
+  <p>If you receive an error message while debugging a PHP script
+  that is not caused by the errors in the script itself, check the
+  <a class="doc" href="trouble.html#php_debug">PHP
+  troubleshooting</a> section of the Komodo FAQ.</p>
+
+  <h3><a name="using_xdebug_break" id="using_xdebug_break">Using
+  xdebug_break()</a></h3>
+
+  <p>The <code>xdebug_break()</code> function is used to hard-code
+  a break in a PHP program. It can be used instead of a Komodo
+  breakpoint. For example:</p>
+  <pre class="code">
+&lt;?php
+echo "&lt;p&gt;Breaks after this line.&lt;/p&gt;";
+xdebug_break();
+echo "&lt;p&gt;Breaks before this line.&lt;p&gt;";
+?&gt;
+</pre>
+
+  <p>This function breaks the code during a debugging session but
+  will not initiate a new session. Use <code>xdebug_break()</code>
+  in conjunction with the methods described above for starting
+  debugging sessions.</p>
+
+  <h3><a name="xdebug_logging" id="xdebug_logging">Xdebug
+  Logging</a></h3>
+
+  <p>To log xdebug sessions on the server, add the following line
+  to the xdebug config section of the <em>php.ini</em>
+  configuration file:</p>
+  <pre class="code">
+xdebug.remote_log=/tmp/xdebug.log
+</pre>
+
+  <p>...or add <code>remote_log</code> to the
+  <code>XDEBUG_CONFIG</code> environment variable. For example:</p>
+  <pre class="code">
+export XDEBUG_CONFIG="remote_port=9000 remote_enable=1 remote_log=/tmp/xdebug.org"
+</pre>
+
+  <p>You can replace "<code>/tmp/xdebug.org</code>" with any
+  writable directory and the filename of your choice.</p>
+
+  <h2><a name="config_PHP_problems" id="config_PHP_problems">Common
+  PHP Debugging Problems</a></h2>
+
+  <h3><a name="config_PHP_os_x" id="config_PHP_os_x">Debugging PHP
+  on OS X</a></h3>
+
+  <p>The version of PHP supplied with <strong>Mac OS X</strong> is
+  not complied with loadable extension support, so it is not
+  compatible with Komodo's debugger (Xdebug). For PHP debugging on
+  OS X, either build PHP from source with loadable extension
+  support or use binaries from <a href=
+  "http://www.entropy.ch/software/macosx/php/">http://www.entropy.ch/software/macosx/php/</a>.
+  The 4.3.11 or 5.0.4 for Apache 1 packages have been found to work
+  well with Komodo PHP debugging.</p>
+
+  <h3><a name="config_PHP_amd64" id="config_PHP_amd64">Debugging
+  PHP on 64-bit Linux</a></h3>
+
+  <p>The version of <code>xdebug.so</code> for Linux provided by
+  Komodo is not compatible with 64-bit versions of PHP. To
+  configure PHP debugging on 64-bit Linux systems, <a href=
+  "http://xdebug.org/install.php">compile Xdebug from source</a>,
+  replace
+  <em>Komodo-&lt;version&gt;/lib/support/php/debugging/&lt;PHP
+  version&gt;/xdebug.so</em> with the new 64-bit version, and run
+  the <strong>PHP Configuration Wizard</strong>.</p>
+
+  <h3><a name="config_PHP_zend" id="config_PHP_zend">Zend Optimizer
+  and Zend Studio Debugger</a></h3>
+
+  <p>Xdebug is incompatible with the Zend Optimizer and Zend Studio
+  Debugger extensions. If these extensions are enabled in
+  <em>php.ini</em>, they will not be imported into the copy created
+  by Komodo for debugging. When configuring <a class="doc" href=
+  "#remote_debug_PHP">Remote PHP Debugging</a>, these extensions
+  should be manually commented out in <em>php.ini</em>.</p>
+  <hr />
+</body>
+</html>

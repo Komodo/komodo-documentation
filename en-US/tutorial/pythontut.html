@@ -1,0 +1,1161 @@
+<!-- Copyright (c) 2001-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Python Tutorial</title>
+</head>
+
+<body>
+  <h1><a name="pythontut_top" id="pythontut_top">Python
+  Tutorial</a></h1>
+
+  <h2><a name="pythontut_overview" id=
+  "pythontut_overview">Overview</a></h2>
+
+  <h3><a name="pythontut_assumptions" id=
+  "pythontut_assumptions">Before You Start</a></h3>
+
+  <p>This tutorial assumes:</p>
+
+  <ul>
+    <li><a class="doc" href=
+    "http://aspn.ActiveState.com/ASPN/Downloads/ActivePython/">Python
+    2.3</a> or greater is installed on your system. ActivePython is
+    a free distribution of the core Python language. See the Komodo
+    <a class="doc" href="../readme.html#readme_top">Installation
+    Guide</a> for configuration instructions.</li>
+
+    <li>You are interested in learning about Komodo functionality,
+    including the debugger and the interactive shell.</li>
+
+    <li>You are interested in Python and have some programming
+    experience either in Python or another language.</li>
+  </ul>
+
+  <h3><a name="pythontut_scenario" id="pythontut_scenario">Python
+  Tutorial Scenario</a></h3>
+
+  <p>The Python Tutorial demonstrates how to use the Komodo
+  debugger and interactive shell to explore a Python program. In
+  particular, this tutorial examines a Python script that
+  preprocesses files (similar to the C preprocessor). In this
+  tutorial you will:</p>
+
+  <ol>
+    <li><a class="doc" href="#pythontut_open"><strong>Open the
+    Python Tutorial Project</strong></a>.</li>
+
+    <li><a class="doc" href=
+    "#pythontut_analyze_preprocess"><strong>Analyze
+    preprocess.py</strong></a> the Python program included in the
+    Tutorial Project.</li>
+
+    <li><a class="doc" href=
+    "#pythontut_analyze_contenttype"><strong>Analyze
+    contenttype.py</strong></a> the Python module included in the
+    Tutorial Project.</li>
+
+    <li><a class="doc" href="#pythontut_run"><strong>Run the
+    program</strong></a> and generate program output.</li>
+
+    <li><a class="doc" href="#pythontut_debug"><strong>Debug the
+    program</strong></a> using the Komodo debugger.</li>
+
+    <li><strong><a class="doc" href=
+    "#pythontut_interactive_shell">Explore Python</a></strong>
+    using the Komodo interactive shell.</li>
+  </ol>
+
+  <p>See <a class="doc" href=
+  "../intshell.html#intshell_top">Interactive Shell</a>
+  and <a class="doc" href=
+  "../debugger.html#debugger_top">Debugging Programs</a>
+  for more information on this Komodo functionality.</p>
+
+  <h2><a name="pythontut_open" id="pythontut_open">Opening the
+  Tutorial Project</a></h2>
+
+  <p>On the <strong>File</strong> menu, click
+  <strong>Open|Project</strong> and select
+  <em>python_tutorial.kpf</em> from the <em>python_tutorials</em>
+  subdirectory. The location differs depending on your operating
+  system.</p>
+
+  <p><strong>Windows</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>\lib\support\samples\python_tutorials
+</pre>
+
+  <p><strong>Linux</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>/lib/support/samples/python_tutorials
+</pre>
+
+  <p><strong>Mac OS X</strong></p>
+  <pre class="code">
+&lt;<em>User-home-directory</em>&gt;/Library/Application Support/Komodo/3.x/samples/python_tutorials
+</pre>
+
+  <p>All files included in the tutorial project are displayed on
+  the <a class="doc" href=
+  "../top.html#Project_Pane">Projects tab</a> in the
+  Left Pane.</p>
+
+  <h3><a name="pythontut_analyzefiles" id=
+  "pythontut_analyzefiles">Overview of the Tutorial Files</a></h3>
+
+  <p>The following components are included in the
+  <em>python_tutorial.kpf</em> project file:</p>
+
+  <ul>
+    <li><strong>preprocess.py</strong>: The main program. This
+    Python program parses input source files and produces output
+    filtered on a set of rules and statements embedded in the
+    original input source.</li>
+
+    <li><strong>preprocess current file</strong>: A run command for
+    executing <em>preprocess.py</em> on the file currently open in
+    Komodo.</li>
+
+    <li><strong>contenttype.py</strong>: A Python module used by
+    the main program (<em>preprocess.py</em>) to identify the
+    language of a given file.</li>
+
+    <li><strong>content.types</strong>: A support file used by the
+    Python module <em>contenttype.py</em>.</li>
+
+    <li><strong>helloworld.html</strong> and
+    <strong>helloworld.py</strong>: Sample files to process using
+    <em>preprocess.py</em>.</li>
+  </ul>
+
+  <h3><a name="pythontut_openfile" id="pythontut_openfile">Open the
+  Python Tutorial File</a></h3>
+
+  <p>On the <a class="doc" href=
+  "../top.html#Project_Pane">Projects tab</a>,
+  double-click the <em>preprocess.py</em> file. This file opens in
+  the Editor Pane; a tab at the top of the pane displays the
+  filename.</p>
+
+  <h2><a name="pythontut_analyze" id="pythontut_analyze">Analyzing
+  the Python Files</a></h2>
+
+  <p>This section reviews the code in <a class="doc" href=
+  "#pythontut_analyze_preprocess">preprocess.py</a> and <a class=
+  "doc" href="#pythontut_setup_module">contenttype.py</a>.</p>
+
+  <h3><a name="pythontut_analyze_preprocess" id=
+  "pythontut_analyze_preprocess">Analyzing preprocess.py</a></h3>
+
+  <p>In this step, you will analyze the Python program
+  <em>preprocess.py</em> in sections. This program is an advanced
+  Python script that is best addressed by focusing on certain areas
+  within the code. Be sure that line numbers are enabled in Komodo
+  (<strong>View|View Line Numbers</strong>) and that
+  <em>preprocess.py</em> is displayed in the Komodo Editor.</p>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>About Preprocessors</strong>: A preprocessor is
+        a program that examines a file for specific statements
+        called "directive statements". These directive statements
+        are interpreted, and the resulting program output is
+        conditional based on those statements. In languages like
+        C/C++, preprocessing is a common step applied to source
+        files before compilation. The Python
+        <em>preprocessor.py</em> program mimics a C/C++
+        preprocessor using similar directive statements.</p>
+      </td>
+    </tr>
+  </table><br />
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>About Directive Statements</strong>:
+        Preprocessor directive statements are dependent on the
+        preprocessor program they are used within. In the
+        <em>preprocessor.py</em> program, a directive is preceded
+        with a pound sign (#), and is located alone on a line of
+        code. Placing a directive on a unique line ensures the
+        statement is included in a file without breaking file
+        syntax rules. Valid <em>preprocessor.py</em> directives
+        include:</p>
+        <pre>
+ 
+    #define &lt;var&gt;[=&lt;value&gt;]
+    #undef &lt;var&gt;
+    #if &lt;expr&gt;
+    #elif &lt;expr&gt;
+    #else
+    #endif
+    #error &lt;error string&gt;
+  
+</pre>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="pythontut_setup_program" id=
+  "pythontut_setup_program">Setting Up the preprocess.py
+  Program</a></h3>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Notice that syntax elements
+        are displayed in different colors. You can adjust the
+        display options for language elements in the <a class="doc"
+        href="../prefs.html#prefs_top">Preferences</a>
+        dialog box.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 3 to 57 - Defining a Module Docstring</h4>
+
+  <ul>
+    <li>help is defined in a module docstring</li>
+
+    <li>docstrings are contained in triple-quoted strings
+    (""")</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: See <a class="doc" href=
+        "#pythontut_interactive_shell">Explore Python with the
+        Interactive Shell</a> to examine these docstrings, and
+        other Python elements, using the Komodo interactive
+        shell.</p>
+      </td>
+    </tr>
+  </table>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Click on the minus symbol
+        to the left of line 3. The entire section of nested help
+        code is collapsed. This is called <a class="doc" href=
+        "../editor.html#Folding">Code Folding</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 59 to 65 - Importing Standard Python Modules</h4>
+
+  <ul>
+    <li>Imports the following six modules:</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li><strong><code>os</code></strong>: operating system
+        dependant helper routines</li>
+
+        <li><strong><code>sys</code></strong>: functions for
+        interacting with the Python interpreter</li>
+
+        <li><strong><code>getopt</code></strong>: parses command
+        line options</li>
+
+        <li><strong><code>types</code></strong>: defines names for
+        all type symbols in the standard Python interpreter</li>
+
+        <li><strong><code>re</code></strong>: evaluates regular
+        expressions</li>
+
+        <li><strong><code>pprint</code></strong>: supports
+        pretty-print output</li>
+
+        <li><strong><code>logging</code></strong>: writes errors to
+        a log file</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Line 67 - Importing the contenttype Module</h4>
+
+  <p>The custom <code>contenttype</code> module is used by the
+  <em>preprocess.py</em> program and is not included in a standard
+  Python installation.</p>
+
+  <ul>
+    <li>loads the <code>contenttype</code> module and imports the
+    <code>getContentType</code> method</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: To interact directly with
+        the <code>contenttype.py</code> module, see <a class="doc"
+        href="#pythontut_interactive_shell">Explore Python with the
+        Interactive Shell</a> for more information.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="pythontut_define_class" id=
+  "pythontut_define_class">Defining an Exception Class</a></h3>
+
+  <h4>Lines 72 to 88 - Declaring an Exception</h4>
+
+  <ul>
+    <li><code>PreprocessError</code> class inherits from the Python
+    <code>Exception</code> class</li>
+
+    <li>an instance of the <code>PreprocessError</code> class is
+    thrown by the <code>preprocess</code> module when an error
+    occurs</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Click the mouse pointer on
+        the closing parenthesis ")" on line 72. Notice that its
+        color changes to a bold red. The opening brace is displayed
+        the same way. This is called "Brace Matching". Related
+        features in Komodo are <strong>Jump to Matching
+        Brace</strong> and <strong>Select to Matching
+        Brace</strong>, available via the <strong>Code</strong>
+        menu.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="pythontut_init_object" id=
+  "pythontut_init_object">Initializing Global Objects</a></h3>
+
+  <h4>Line 93 - Initializing log</h4>
+
+  <ul>
+    <li><code>log</code> is a global object used to log debug
+    messages and error messages</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: On line 95, enter:
+        <code>log = logging.</code><br />
+        When you type the period, Komodo displays a list of the
+        members in the <code>log</code> package. This is called
+        <a class="doc" href=
+        "../editor.html#AutoComplete">AutoComplete</a>.
+        If the default <a href=
+        "../prefs.html#Config_Key_Bindings">key
+        binding</a>scheme is in effect Pressing 'Ctrl'+'J'
+        (Windows/Linux) or 'Meta'+'J' (Mac OS X) also displays the
+        AutoComplete list. Delete the contents of line 95.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 98 to 111 - Mapping Language Comments</h4>
+
+  <ul>
+    <li><code>_commentGroups</code> is a mapping of file type (as
+    returned by <code>content.types</code>) to opening and closing
+    comments delimiters</li>
+
+    <li>mapping is private to the <code>preprocess.py</code> module
+    (<code>_commentGroups</code> is prefixed with an underscore to
+    indicate that it is private to the <code>preprocess.py</code>
+    module). This is a common technique used in variable, function,
+    and class naming in Python coding).</li>
+  </ul>
+
+  <p>Note that preprocessor directives recognized by the
+  <code>preprocess.py</code> module are hidden in programming
+  language-specific comments.</p>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Use the
+        <strong>Code</strong> tab, located in the Left Pane, to
+        browse the general program structure of all currently open
+        files. For each file, the code browser shows a tree of
+        classes, functions, methods and imported modules. Python
+        instance attributes are also displayed.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="pythontut_define_private" id=
+  "pythontut_define_private">Defining a Private Method</a></h3>
+
+  <h4>Lines 116 to 123 - Expression Evaluation</h4>
+
+  <ul>
+    <li><code>_evaluate method</code> is private to the
+    <code>preprocess</code> module</li>
+
+    <li>evaluates the given expression string with the given
+    context</li>
+  </ul>
+
+  <h3><a name="pythontut_process_sourcecode" id=
+  "pythontut_process_sourcecode">Preprocessing a File</a></h3>
+
+  <p>The <code>preprocess</code> method examines the directives in
+  the sample source file and outputs the modified processed
+  text.</p>
+
+  <h4>Lines 129 to 140 - The preprocess Method Interface</h4>
+
+  <p>The <code>preprocess</code> method takes three parameters as
+  input:</p>
+
+  <ul>
+    <li>first parameter is the filename, <code>infile</code></li>
+
+    <li>second parameter specifies the output file (defaults to
+    <code>stdout</code>); <code>outfile=sys.stdout</code></li>
+
+    <li>third parameter is an optional list of definitions for the
+    preprocessor; <code>defines={}</code></li>
+  </ul>
+
+  <h4>Lines 145 to 156 - Identifying the File Type</h4>
+
+  <p>Examines how programming comments are delimited (started and
+  ended) based on the type of file (for example, HTML, C++,
+  Python).</p>
+
+  <ul>
+    <li><code>getContentType</code> is called (imported earlier
+    from the <code>contenttype.py</code> module) to determine the
+    language type of the file</li>
+
+    <li>file type is used to look up all comment delimiters
+    (opening and closing language comment characters) in
+    <code>_commentGroups</code></li>
+  </ul>
+
+  <h4>Lines 159 to 166 - Defining Patterns for Recognized
+  Directives</h4>
+
+  <p>This section defines advanced regular expressions for finding
+  preprocessor directives in the input file.</p>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Use the Komodo <a class=
+        "doc" href="../regex.html#regex_top">Rx
+        Toolkit</a> to build, edit, or test regular expressions.
+        New to regular expressions? The <a class="doc" href=
+        "../regex-intro.html#regex-intro_top">Regular
+        Expressions Primer</a> is a tutorial for those wanting to
+        learn more about regex syntax.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 178 to 303 - Scanning the File to Generate Output</h4>
+
+  <p>This block of code implements a basic state machine. The input
+  file is scanned line by line looking for preprocessor directives
+  with the patterns defined above (<code>stmtRes</code>). This code
+  determines whether each line should be skipped or written to the
+  output file.</p>
+
+  <ul>
+    <li>source file is processed</li>
+
+    <li>output is generated by a state machine implemented in
+    Python</li>
+  </ul>
+  <!--<h3><a name="pythontut_interpret_arguments">Running the Program</a></h3>-->
+
+  <h4>Lines 311 to 349 - Interpreting Command Line Arguments</h4>
+
+  <p>The <code>main</code> method takes the text entered at the
+  command line and uses the <code>getopt</code> module to parse the
+  data into arguments. These arguments are then passed into the
+  "preprocess" method.</p>
+
+  <ul>
+    <li>runs when <em>preprocess.py</em> is executed as a program
+    rather than loaded as a module</li>
+
+    <li>parses the filename and any defines (<code>-D</code>) set
+    as command line arguments</li>
+
+    <li>passes all data to the <code>preprocess</code> method</li>
+  </ul>
+
+  <h4>Lines 351 to 352 - Running the Main Method</h4>
+
+  <ul>
+    <li>runs the <code>main</code> method when
+    <em>preprocess.py</em> is executed as a program</li>
+  </ul>
+
+  <h3><a name="pythontut_analyze_contenttype" id=
+  "pythontut_analyze_contenttype">Analyzing contenttype.py</a></h3>
+
+  <p>In this step, you will analyze the Python program
+  <em>contenttype.py</em> in sections. This Python script is best
+  addressed by focusing on certain areas within the code. Be sure
+  that line numbers are enabled in Komodo (<strong>View|View Line
+  Numbers</strong>) and that <em>contenttype.py</em> is displayed
+  in the Komodo Editor Pane.</p>
+
+  <h3><a name="pythontut_open_contenttype" id=
+  "pythontut_open_contenttype">Open contenttype.py</a></h3>
+
+  <p>On the <a class="doc" href=
+  "../top.html#Project_Pane">Projects tab</a>,
+  double-click the <em>contenttype.py</em> file. This file opens in
+  the Editor Pane; a tab at the top of the pane displays the
+  filename.</p>
+
+  <h3><a name="pythontut_setup_module" id=
+  "pythontut_setup_module">Setting Up the contenttype.py
+  Module</a></h3>
+
+  <p>The <code>contenttype.py</code> module is used by the main
+  program, <em>preprocess.py</em>, to identify what programming
+  language a particular file is written in based on the file
+  extension and several other tests.</p>
+
+  <h4>Lines 16 to 19 - Importing External Modules</h4>
+
+  <ul>
+    <li>imports external modules used in this file
+    (<code>re</code>, <code>os</code>, <code>sys</code>,
+    <code>logging</code>)</li>
+
+    <li><code>logging</code> is not a standard module; it is new in
+    Python 2.3</li>
+  </ul>
+
+  <h3><a name="pythontut_getting_data" id=
+  "pythontut_getting_data">Getting Data from content.types</a></h3>
+
+  <h4>Lines 29 to 31 - Finding the Helper File (content.types)</h4>
+
+  <p>This section outlines the usage of the private
+  <code>_getContentTypesFile</code> method located in the
+  <code>contenttype</code> module.</p>
+
+  <ul>
+    <li>returns the complete path to the <code>content.types</code>
+    file</li>
+
+    <li>assumes the file is in the same directory as
+    <em>contenttype.py</em></li>
+
+    <li><code>_getContentTypesFile</code> is a private method that
+    cannot be accessed from outside of the <code>contenttype</code>
+    module</li>
+  </ul>
+
+  <h4>Lines 33 to 80 - Loading the Content Types from
+  content.types</h4>
+
+  <p>This section outlines the usage of the private
+  <code>_getContentTypesRegistry</code> method located in the
+  <code>contenttype</code> module.</p>
+
+  <ul>
+    <li>locates the <code>content.types</code> file and scans it to
+    calculate three mappings to return, as follows:</li>
+  </ul>
+  <pre class="code">
+file suffix -&gt; content type (i.e. ".cpp", a C++ implementation file)
+regex -&gt; content type (i.e. ".*\.html?", an HTML file)
+filename -&gt; content type (i.e. "Makefile", a Makefile)
+</pre>
+
+  <ul>
+    <li><code>_getContentTypesRegistry</code> is a private method
+    that cannot be accessed from outside of the
+    <code>contenttype</code> module.</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li><strong>Lines 44 to 45</strong>: gets the
+        <code>content.types</code> file; if none is specified in
+        the parameter for the method,
+        <code>_getContentTypesFile</code> is called to find the
+        system default</li>
+
+        <li><strong>Lines 47 to 49</strong>: lists the three
+        mappings to return (empty mappings are created here)</li>
+
+        <li><strong>Lines 51 to 79</strong>: opens and processes
+        the <code>content.types</code> file on a line-by-line
+        basis</li>
+
+        <li style="list-style: none">
+          <ul>
+            <li>scanning of the file stops when the last line is
+            found, line 57</li>
+
+            <li style="list-style: none">
+              <ul>
+                <li><strong>Lines 58 to 78</strong>: each line is
+                parsed to determine which of the three mappings it
+                contains</li>
+
+                <li>an entry is made in the matching one</li>
+
+                <li>commented lines (starts with #) are
+                ignored</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><strong>Lines 79 to 80</strong>: closes the
+        <code>content.types</code> file and returns the
+        mappings</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Lines 85 to 118 - Determining a File's Content Type</h4>
+
+  <p>This section outlines the usage of the public
+  <code>getContentType</code> method located in the
+  <code>contenttype</code> module.</p>
+
+  <ul>
+    <li>takes one parameter (the name of the file to determine the
+    content)</li>
+
+    <li>returns a string specifying the content type (for
+    example,<br />
+    <code>getContentType("my_web_page.htm")</code> returns "HTML"
+    )</li>
+
+    <li><code>getContentType</code> is the only publicly accessible
+    method in the module</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li><strong>Line 92</strong>:
+        <code>_getContentTypesRegistry</code> is called to load the
+        <code>content.types</code> file and to load the
+        mappings</li>
+
+        <li><strong>Lines 96 to 99</strong>:
+        <code>filenameMap</code> is first checked to determine if
+        the whole filename can be used to find a match</li>
+
+        <li><strong>Lines 101 to 109</strong>: if the filename has
+        a suffix (contains a '.'), the suffix map is then used to
+        find a match</li>
+
+        <li><strong>Lines 111 to 117</strong>: each regex in the
+        regex map is then used to determine if it matches the
+        filename</li>
+
+        <li><strong>Line 118</strong>: returns the content type for
+        the file (returns an empty string if no match was found by
+        the above three mappings)</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2><a name="pythontut_run" id="pythontut_run">Running the
+  Program</a></h2>
+
+  <p>This section reviews how to run the <em>preprocess.py</em>
+  program using both a <a class="doc" href=
+  "#pythontut_run_command">run command</a> and the Komodo <a class=
+  "doc" href="#pythontut_run_debugger">debugger</a>.</p>
+
+  <h3><a name="pythontut_run_command" id=
+  "pythontut_run_command">Using a Run Command</a></h3>
+
+  <p>To start, generate simple output by running the program with
+  the <em>preprocess current file</em> run command, included in the
+  <em>python_tutorial.kpf</em> project.</p>
+
+  <ol>
+    <li><strong>Open the Source File</strong>: On the
+    <strong>Projects</strong> tab, double-click the
+    <strong>helloworld.html</strong> file. The file opens in the
+    Editor Pane.</li>
+
+    <li><strong>Open the Run Command</strong>: On the
+    <strong>Projects</strong> tab, double-click the
+    <strong>preprocess current file</strong> run command. A
+    Preprocess Current File dialog box appears.</li>
+
+    <li><strong>Preprocess Current File</strong>: In the
+    <strong>Preprocessor Options</strong> text area, enter:<br />
+    <code>-D SAY_BYE</code><br />
+    Click <strong>OK</strong> to run the program.</li>
+
+    <li><strong>View Output</strong>: The <em>helloworld.html</em>
+    file output is displayed on the <strong>Command Output</strong>
+    tab as follows:<br />
+    <code>['path_to_file\\python_tutorials\\helloworld.html']<br />
+    &lt;html&gt;<br />
+    &lt;head&gt; &lt;title&gt;Hello World&lt;/title&gt;
+    &lt;/head&gt;<br />
+    &lt;body&gt;<br />
+    &lt;p&gt;Hello, World!&lt;/p&gt;<br />
+    &lt;/body&gt;<br />
+    &lt;/html&gt;<br /></code></li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Python Tutorial Tip</strong>: For more
+        information about the <code>-D SAY_BYE</code> command, see
+        <a class="doc" href="#pythontut_run_debugger">Using the
+        Debugger</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: For more infomation on
+        using run commands in Komodo, see the <a class="doc" href=
+        "runcmdtut.html#runcmdtut_top">Run Command
+        Tutorial</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="pythontut_run_debugger" id=
+  "pythontut_run_debugger">Using the Debugger</a></h3>
+
+  <p>Generate output by running the program through the debugger
+  without setting any breakpoints.</p>
+
+  <ol>
+    <li><strong>Run the debugger</strong>: Select the
+    <em>preprocess.py</em> tab in the editor. From the menu, select
+    <strong>Debug|Go/Continue</strong>. In the <a class="doc" href=
+    "../debugger.html#Debugging_Options">Debugging
+    Options</a> dialog box, click <strong>OK</strong> to accept the
+    defaults.</li>
+
+    <li><strong>View the Debug Output Tab</strong>: Notice the
+    messages in the bottom left corner of the Komodo screen; these
+    inform you of the status of the debugger. When the program has
+    finished, program output is displayed in the Bottom Pane, on
+    the right side. If necessary, click the <strong>Debug
+    Output</strong> tab to display it.</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Troubleshooting</strong>: "Why is this error
+        message displayed?"</p>
+        <pre class="code">
+preprocess: error: incorrect number of arguments:
+argv=['C:\\path_to_tutorial\\preprocess.py']
+</pre>
+
+        <p>This error message is the expected output by the
+        <em>preprocess.py</em> program when no source file or
+        arguments are specified before it is run. The following
+        instructions explain how to specify a file at the command
+        line.</p>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="3">
+    <li><strong>Specify a File to Process</strong>: On the
+    <strong>Projects</strong> tab in the Left Pane, double-click
+    the file <em>helloworld.html</em>. Note the preprocessor
+    directives inside the comments (#) in this file. Select the
+    <strong>preprocess.py</strong> tab in the editor. From the menu
+    select <strong>Debug|Go/Continue</strong>. In the
+    <strong>Script Arguments</strong> text box on the Debugging
+    Options dialog box, enter <code>helloworld.html</code>. Click
+    <strong>OK</strong>.</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Troubleshooting</strong>: "Why is this error
+        message displayed?"</p>
+        <pre class="code">
+&lt;html&gt;
+&lt;head&gt; &lt;title&gt;Hello World&lt;/title&gt; &lt;/head&gt;
+&lt;body&gt;
+preprocess: error: helloworld.html:5: #error: "SAY_BYE is not
+defined, use '-D' option"
+</pre>
+
+        <p>This error message is the expected output by the
+        <em>preprocess.py</em> program when no command-line
+        arguments are specified with the source file
+        <em>helloworld.html</em>. The following instructions
+        explain how to specify a command-line argument with the
+        source file to be processed.</p>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="4">
+    <li><strong>Specify an Argument with the Source File</strong>:
+    Select <strong>Debug|Go/Continue</strong>. In the
+    <strong>Script Arguments</strong> text box in the Debugging
+    Options dialog box, enter the following source file and
+    argument: <code>-D SAY_BYE helloworld.html</code>. Click
+    <strong>OK</strong>.</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Troubleshooting</strong>: Specifying <code>-D
+        SAY_BYE helloword.html</code> outputs the following:</p>
+        <pre class="code">
+&lt;html&gt;
+&lt;head&gt; &lt;title&gt;Hello World&lt;/title&gt; &lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;Hello, World!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+        <p>In the <em>helloworld.html</em> file, if
+        <code>SAY_BYE</code> is not defined, preprocessing
+        generates an error. If <code>SAY_BYE</code> is defined, the
+        preprocessor includes the line <code>&lt;p&gt;Hello,
+        World!&lt;/p&gt;</code> in the body of the output of the
+        HTML. This demonstrates how a Python preprocessor can be
+        used to conditionally include blocks of a source file being
+        processed.</p>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="5">
+    <li><strong>View the Debug Output Tab</strong>: Notice the HTML
+    output and compare the result to the actual file
+    <em>helloworld.html</em>.</li>
+
+    <li><strong>View Rendered HTML</strong>: On the right side of
+    the Bottom Pane, click the <strong>HTML</strong> tab. The
+    rendered HTML for the <em>helloworld.html</em> file is
+    displayed in the Bottom Pane. Click the <strong>Output</strong>
+    tab to return to the HTML code.</li>
+
+    <li><strong>Create New File</strong>: To create a new HTML file
+    that will later contain the HTML code in the Bottom Pane,
+    select <strong>File|New|New File</strong>. In the New File
+    dialog box, select the HTML Category. Click
+    <strong>Open</strong>.</li>
+
+    <li><strong>Save the Output</strong>: Delete the contents of
+    the new HTML file tab in the Editor Pane, and then select the
+    contents of the <strong>Output</strong> tab on the Bottom Pane.
+    Copy the contents to the new HTML file tab in the Editor Pane.
+    Select <strong>File|Save As</strong> to save the file with a
+    unique name.</li>
+
+    <li><strong>Specify Another Source File</strong>: Go through
+    steps 3 to 5 using the file <em>helloworld.py</em> in place of
+    <em>helloworld.html</em>. Notice how the output displayed is
+    now in Python, (for example, <code>print "Hello,
+    World!"</code>). This demonstrates how the
+    <em>preprocess.py</em> program can be used to process files
+    written in different language types.</li>
+  </ol>
+
+  <h2><a name="pythontut_debug" id="pythontut_debug">Debugging the
+  Program</a></h2>
+
+  <p>In this step you will add breakpoints to the program and
+  "debug" it. Adding breakpoints lets you run the program in
+  sections, making it easier to watch variables and view the output
+  as it is generated.</p>
+
+  <ol>
+    <li><strong>Set a breakpoint</strong>: On the
+    <strong>preprocessor.py</strong> tab, click on the gray margin
+    immediately to the left of the code on line 347 of the program.
+    This sets a breakpoint, indicated by a red circle.</li>
+
+    <li><strong>Run the debugger</strong>: Select
+    <strong>Debug|Go/Continue</strong>. In the <strong>Script
+    Arguments</strong> text box on the <a class="doc" href=
+    "../debugger.html#Debugging_Options">Debugging
+    Options</a> dialog box, enter the following source file and
+    argument (if not there from a recent run): <code>-D "SAY_BYE"
+    helloworld.html</code>. Click <strong>OK</strong>.</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Debugger commands can be
+        accessed from the <strong>Debug</strong> menu, by shortcut
+        keys, or from the Debug Toolbar. For a summary of debugger
+        commands, see the <a class="doc" href=
+        "../debugger.html#How_use_Debugger">Debugger
+        Command List</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="3">
+    <li><strong>Watch the debug process</strong>: Notice that the
+    line where the breakpoint is set (line 347) turns pink. Also, a
+    yellow arrow appears on the breakpoint. This arrow indicates
+    the position at which the debugger has halted.</li>
+
+    <li><strong>View variables</strong>: On the <a class="doc"
+    href="../top.html#Output_Pane">Debug tab</a>, click
+    the <strong>Locals</strong> tab. If necessary, <a class="doc"
+    href="../top.html#Resizing_Panes">resize the
+    pane</a> by clicking and dragging the upper margin. On the
+    <strong>Locals</strong> tab, notice the declared variables are
+    assigned values. Examine the <code>infile</code> variable. This
+    variable contains the name of the file specified above
+    (<em>helloworld.html</em>).</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: What do the debugger
+        commands do?</p>
+
+        <ul>
+          <li><strong>Step In</strong>: Executes the current line
+          of code and pauses at the following line.</li>
+
+          <li><strong>Step Over</strong>: Executes the current line
+          of code. If the line of code calls a function or method,
+          the function or method is executed in the background and
+          the debugger pauses at the line that follows the original
+          line.</li>
+
+          <li><strong>Step Out</strong>: When the debugger is
+          within a function or method, Step Out executes the code
+          without stepping through the code line-by-line. The
+          debugger stops on the line of code following the function
+          or method call in the calling program.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="5">
+    <li><strong>Step In</strong>: Select <strong>Debug|Step
+    In</strong> until the debugger stops at line 129, the
+    <code>preprocess</code> method. "Step In" is a debugger command
+    that causes the debugger to enter a function called from the
+    current line.</li>
+
+    <li><strong>Set another breakpoint</strong>: Click on the gray
+    margin immediately to the left of the code in line 145 to set
+    another breakpoint. Line 145 is where
+    <code>getContentType</code> is called.</li>
+
+    <li><strong>Run the debugger</strong>: Select
+    <strong>Debug|Go/Continue</strong>.</li>
+
+    <li><strong>Step Over</strong>: When line 145 is processed, the
+    variable <code>contentType</code> is assigned the source file's
+    (<em>helloworld.html</em>) type (HTML). "Step Over" is a
+    debugger command that executes the current line of code. If the
+    line of code calls a function or method, the function or method
+    is executed in the background and the debugger pauses at the
+    line that follows the original line.</li>
+
+    <li><strong>View variables</strong>: On the
+    <strong>Debug</strong> tab, click the <strong>Locals</strong>
+    tab. Examine the <code>contentType</code> variable. This
+    variable contains the type of the source file; the type is
+    "HTML" for <em>helloworld.html</em>.</li>
+
+    <li><strong>Set another breakpoint</strong>: Click on the gray
+    margin immediately to the left of the code in line 197 to set
+    another breakpoint. Line 197 is inside of the loop where the
+    source file <em>helloworld.html</em> is being processed.</li>
+
+    <li><strong>Run the debugger</strong>: Select
+    <strong>Debug|Go/Continue</strong>.</li>
+
+    <li><strong>Add Watches for Variables</strong>: On the
+    <strong>Debug</strong> tab, click the <strong>Watch</strong>
+    tab. Click the <strong>New</strong> button in the lower-right
+    corner of the <strong>Debug</strong> tab. An <strong>Add
+    Variable</strong> dialog box appears. In the <strong>Add
+    Variable</strong> dialog box, enter <code>lineNum</code> in the
+    text box. Click <strong>OK</strong>. Notice that the
+    <code>lineNum</code> variable and its value are displayed in
+    the <strong>Watch</strong> tab. The <code>lineNum</code>
+    variable is the line number of the line currently being
+    processed in the source file <em>helloworld.html</em>. Follow
+    the above steps again to enter a watch for the variable
+    <code>line</code>. The <code>line</code> variable contains the
+    actual text of the line currently being processed.</li>
+
+    <li><strong>Run the debugger</strong>: Select
+    <strong>Debug|Go/Continue</strong>. Notice how the variables in
+    the <strong>Watch</strong> tab change every time the debugger
+    stops at the breakpoint set at line 197. Also, notice the
+    output in the right side of the <strong>Debug</strong> tab.
+    This output changes as new lines are displayed.</li>
+
+    <li><strong>Disable and Delete a breakpoint</strong>: Click on
+    the red breakpoint at line 197. The red beakpoint is now white
+    with a red outline. This breakpoint is now disabled. Click on
+    the disabled white breakpoint. This removes the breakpoint, but
+    does not stop the debugger.</li>
+
+    <li><strong>Stop the Debugger</strong>: On the
+    <strong>Debug</strong> menu, click <strong>Stop</strong>.</li>
+  </ol><!--add stop debugging-->
+
+  <h2><a name="pythontut_interactive_shell" id=
+  "pythontut_interactive_shell">Explore Python with the Interactive
+  Shell</a></h2>
+
+  <p>In this step you will use the interactive shell to explore the
+  <code>contenttype</code> module. The Komodo interactive shell
+  helps you test, debug, and examine your program. See <a class=
+  "doc" href="../intshell.html#intshell_top">Interactive
+  Shell</a> for more information.</p>
+
+  <p>If starting this section of the tutorial with currently open
+  Python shells, please follow the steps below to ensure the Python
+  shell's current directory is the Python Tutorial directory.</p>
+
+  <ol>
+    <li><strong>Close any Current Python Shells</strong>: Click the
+    "X" button, located in the upper-right corner of the
+    <strong>Shell</strong> tab, for each open Python shell.</li>
+
+    <li><strong>Make <em>python_tutorial.kpf</em> the Active
+    Project</strong>: On the <strong>Project</strong> menu, select
+    <strong>Make Active Project|preprocess</strong>.</li>
+  </ol>
+
+  <p>Start using the interactive shell with the Python Tutorial
+  project files:</p>
+
+  <ol>
+    <li><strong>Start the Interactive Shell</strong>: On the
+    <strong>Tools</strong> menu, select <strong>Interactive
+    Shell|Start New Python Shell</strong>. A <strong>Python
+    Shell</strong> tab is displayed in the Bottom Pane.</li>
+
+    <li><strong>Import a Module</strong>: At the "&gt;&gt;&gt;"
+    Python prompt in the interactive shell, enter: <code>import
+    contenttype</code><br />
+    Notice that another "&gt;&gt;&gt;" Python prompt appears after
+    the import statment. This indicates that the
+    <code>contenttype</code> module imported successfully.</li>
+
+    <li><strong>Get Help for a Module</strong>: At the prompt,
+    enter: <code>help (contenttype)</code><br />
+    The help instructions embedded in the <em>contenttype.py</em>
+    file are printed to the interactive shell screen. This is
+    useful for easily accessing Python documentation without
+    installing external help files.</li>
+
+    <li><strong>Get Help for a Method in a Module</strong>: At the
+    prompt, press the up arrow to redisplay previously entered
+    commands. When <code>help (contenttype)</code> is redisplayed,
+    enter <code>.getContentType</code> at the end of the command.
+    The entire command is as follows:<br />
+    <code>help (contenttype.getContentType)</code><br />
+    Press <strong>Enter</strong>. The help instructions for the
+    <code>getContentType</code> method are printed to the shell
+    screen. The ability to instantly access help on specific Python
+    functions is a powerful use for the interactive shell.</li>
+
+    <li><strong>Run a Method</strong>: At the prompt, enter:
+    <code>contenttype.getContentType("helloworld.html")</code><br />
+
+    Notice the output identifies the file type as
+    <code>HTML</code>.</li>
+
+    <li><strong>Run Another Method</strong>: At the prompt, enter:
+    <code>contenttype.getContentType("helloworld.py")</code><br />
+    Notice the output identifies the file type as
+    <code>Python</code>.</li>
+
+    <li><strong>Run a Final Method</strong>: At the prompt, enter:
+    <code>contenttype.getContentType("test.txt")</code><br />
+    Notice the output identifies the file type as
+    <code>Text</code>. The <code>contenttype</code> module uses
+    several tests to determine the data type used within a file.
+    The test that determined that <em>test.txt</em> is a text file
+    simply analyzed the file extension.</li>
+  </ol>
+
+  <h2><a name="pythontut_preprocess_resources" id=
+  "pythontut_preprocess_resources">More Python Resources</a></h2>
+
+  <h3>ASPN, the ActiveState Programmer Network</h3>
+
+  <p><a class="doc" target="_blank" href=
+  "http://aspn.ActiveState.com/ASPN">ASPN</a>, the ActiveState
+  Programmer Network, a source of numerous resources for Python
+  programmers, including:</p>
+
+  <ul>
+    <li>Free downloads of <strong>ActivePython</strong>,
+    ActiveState's Python distribution.</li>
+
+    <li>Searchable <strong>Python documentation</strong>.</li>
+
+    <li>The <strong>Python Cookbook</strong>, a collaborative
+    library of regular expressions for Python.</li>
+  </ul>
+
+  <h3>Tutorials and Reference Sites</h3>
+
+  <p>There are many Python tutorials and beginner Python sites on
+  the Internet, including:</p>
+
+  <ul>
+    <li><a class="doc" target="_blank" href=
+    "http://www.python.org">The Python Home Page</a>, the home of
+    all that is Python.</li>
+
+    <li><a class="doc" target="_blank" href=
+    "http://www.onlamp.com/python/">Python DevCenter</a>, run by
+    O'Reilly Networks, which provides access to tips, articles and
+    other Python related items.</li>
+  </ul>
+
+  <h3>Preprocessor Reference</h3>
+
+  <p>The <em>preprocess.py</em> program in this tutorial is a
+  simplified version of another Python <em>preprocess.py</em>
+  script available via <a class="doc" target="_blank" href=
+  "http://starship.python.net/crew/tmick/#preprocess">http://starship.python.net/crew/tmick/#preprocess</a>.
+  The version available on <em>starship.python.net</em> is an
+  advanced portable multi-language file preprocessor.</p>
+  <hr />
+</body>
+</html>

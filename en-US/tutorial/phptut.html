@@ -1,0 +1,885 @@
+<!--Copyright (c) 2001-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../favicon.ico" type=
+  "image/x-icon" />
+
+  <title>PHP Tutorial</title>
+</head>
+
+<body>
+  <h1><a name="phptut_top" id="phptut_top">PHP
+  Tutorial</a></h1><br />
+
+  <h2><a name="phptut_over" id="phptut_over">Overview</a></h2>
+
+  <h3><a name="phptutassumptions" id="phptutassumptions">Before You
+  Start</a></h3>
+
+  <p>This tutorial assumes:</p>
+
+  <ul>
+    <li><a class="doc" href="http://www.php.net/downloads.php">PHP
+    4.3.1</a> or greater is installed on your system. See Komodo's
+    <a class="doc" href="../readme.html#readme_top">Installation
+    Guide</a> for configuration instructions.</li>
+
+    <li>You are interested in PHP. You don't need previous
+    knowledge of PHP; the tutorial will walk you through a simple
+    program and suggest some resources for further
+    information.</li>
+  </ul>
+
+  <h3><a name="phptut_scenario" id="phptut_scenario">PHP Tutorial
+  Scenario</a></h3>
+
+  <p>This tutorial examines a PHP program that implements a form on
+  a website - in this case, a guest book where site visitors can
+  log comments. In addition to providing an overview and working
+  example of PHP, the tutorial introduces Komodo's <a class="doc"
+  href=
+  "../debugger.html#Debugging_Options_CGI_Input">CGI
+  Debugging</a> functionality. In this tutorial you will:</p>
+
+  <ol>
+    <li><a class="doc" href="#phptut_open"><strong>Open the PHP
+    Tutorial Project</strong></a> and associated files.</li>
+
+    <li><a class="doc" href="#phptut_analyze"><strong>Analyze
+    guestbook.php</strong></a>, the PHP program included in the PHP
+    Tutorial Project.</li>
+
+    <li><a class="doc" href="#phptut_run"><strong>Run the program
+    and generate HTML output</strong></a> by running the
+    program.</li>
+
+    <li><a class="doc" href="#phptut_debug"><strong>Debug the
+    program</strong></a> using the Komodo debugger.</li>
+  </ol>
+
+  <p>See <a class="doc" href=
+  "../debugger.html#debugger_top">Debugging Programs</a>
+  for more information on this Komodo functionality.</p>
+
+  <h2><a name="phptut_open" id="phptut_open">Opening the Tutorial
+  Project</a></h2>
+
+  <p>On the <strong>File</strong> menu, click
+  <strong>Open|Project</strong> and select
+  <em>php_tutorial.kpf</em> from the <em>php_tutorials</em>
+  subdirectory. The location differs depending on your operating
+  system.</p>
+
+  <p><strong>Windows</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>\lib\support\samples\php_tutorials
+</pre>
+
+  <p><strong>Linux</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>/lib/support/samples/php_tutorials
+</pre>
+
+  <p><strong>Mac OS X</strong></p>
+  <pre class="code">
+&lt;<em>User-home-directory</em>&gt;/Library/Application Support/Komodo/3.x/samples/php_tutorials
+</pre>
+
+  <p>All files included in the tutorial project are displayed on
+  the <a class="doc" href=
+  "../top.html#Project_Pane">Projects tab</a> in the
+  Left Pane.</p>
+
+  <h3><a name="phptut_analyzefiles" id=
+  "phptut_analyzefiles">Overview of the Tutorial Files</a></h3>
+
+  <p>The following components are included in the
+  <em>php_tutorial.kpf</em> project file:</p>
+
+  <ul>
+    <li><strong>guestbook.php</strong>: This PHP program writes
+    data from an HTML form to a data file, then extracts the
+    contents of the data file and formats it as HTML.</li>
+  </ul>
+
+  <h3><a name="phptut_openfile" id="phptut_openfile">Open the PHP
+  Tutorial File</a></h3>
+
+  <p>On the <a class="doc" href=
+  "../top.html#Project_Pane">Projects tab</a>,
+  double-click the file <em>guestbook.php</em>. The file opens in
+  the Editor Pane; a tab at the top of the pane displays the
+  filename.</p>
+
+  <h2><a name="phptut_analyzefiles" id=
+  "phptut_analyzefiles">Analyzing the PHP Tutorial File</a></h2>
+
+  <p>This section reviews the code in <em>guestbook.php</em>.</p>
+
+  <h2><a name="phptut_analyze" id="phptut_analyze">Analyzing
+  guestbook.php</a></h2>
+
+  <h3><a name="phptut_intro" id=
+  "phptut_intro">Introduction</a></h3>
+
+  <p>In this step, you will analyze the PHP program on a
+  line-by-line basis. Ensure that line numbers are enabled in
+  Komodo (<strong>View|View Line Numbers</strong>) and that the
+  file <em>guestbook.php</em> is displayed in the Komodo
+  editor.</p>
+
+  <h3><a name="html_header" id="html_header">HTML Header</a></h3>
+
+  <h4>Lines 1 to 8 - HTML Header</h4>
+
+  <ul>
+    <li>a standard HTML header is written to the program
+    output</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Notice that syntax elements
+        are displayed in different colors. Adjust the display
+        options for language elements in the <a class="doc" href=
+        "../prefs.html#prefs_top">Preferences</a><br />
+        dialog box.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="php_declaration" id="php_declaration">PHP
+  Declaration and Datafile</a></h3>
+
+  <h4>Line 9 - PHP Declaration</h4>
+
+  <ul>
+    <li>PHP programs are embedded in HTML</li>
+
+    <li>the characters <code>&lt;?php</code> indicate the start of
+    the PHP program</li>
+  </ul>
+
+  <h4>Lines 10 to 18 - Comments</h4>
+
+  <ul>
+    <li>the <code>//</code> characters indicate a single-line
+    comment in PHP programs; the <code>#</code> symbol can also be
+    used. Multi-line comments are nested in <code>/*</code> and
+    <code>*/</code> characters, as shown on lines 27 to 30</li>
+  </ul>
+
+  <h4>Line 22 - Datafile</h4>
+
+  <ul>
+    <li>the file <em>guestbook.dat</em> is created if it does not
+    exist</li>
+
+    <li>the <code>tmp</code> directory must exist beneath the root
+    of the drive where the program resides (unless a different
+    location is specified in the <a class="doc" href=
+    "../debugger.html#Debugging_Options_General">Debugging
+    Options</a>).</li>
+
+    <li>PHP statements are terminated with semicolons</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: On line 23, type
+        <code>$da</code>. Komodo displays a list of the variables
+        declared above the cursor position that begin with the
+        letters <code>da</code>. This is <a class="doc" href=
+        "../editor.html#AutoComplete">AutoComplete</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="guestbook_class" id="guestbook_class">GuestBook
+  Class</a></h3>
+
+  <h4>Lines 25 to 28 - Class Declaration</h4>
+
+  <ul>
+    <li>a <code>class</code> is a collection of variables and
+    functions</li>
+
+    <li><code>class GuestBook</code> contains the functions
+    <code>GuestBook</code>, <code>_getData"</code>,
+    <code>outputData</code>, etc</li>
+
+    <li>the <code>var</code> statement declares variables as class
+    members, thus making them portable across functions contained
+    in the class</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Click the mouse pointer at
+        the end of line 25. Notice that the brace changes to a bold
+        red font. The closing brace on line 144 is displayed the
+        same way. In this case, the braces mark the beginning and
+        end of a class. See Editing Files in the Komodo User Guide
+        for more about <a href=
+        "../editor.html#matching_brace">matching
+        braces</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="guestbook_function" id=
+  "guestbook_function">GuestBook Function</a></h3>
+
+  <h4>Lines 34 to 37 - GuestBook Function</h4>
+
+  <ul>
+    <li>a function is a discrete block of code</li>
+
+    <li>the <code>$datafile</code> argument is passed to the
+    function <code>GuestBook</code>; multiple arguments are
+    separated by commas</li>
+
+    <li>the contents of a function are enclosed in braces</li>
+
+    <li><code>$_SERVER</code> is a pre-defined PHP variable; it is
+    passed to the script from the web server</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>in PHP, global variables must be declared to be global
+        inside a function if they are going to be used in that
+        function</li>
+      </ul>
+    </li>
+
+    <li>a local variable is defined for the current function by use
+    of the term <code>$this</code>; notice that the same syntax is
+    used to call another function</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li><code>gb_dat</code> variable is declared on line
+        27</li>
+
+        <li><code>gb_dat</code> variable is assigned the value of
+        <code>$datafile</code></li>
+
+        <li><code>$this-&gt;data</code> variable is cleared of any
+        prior value</li>
+
+        <li><code>$this-&gt;_getData</code> variable calls the
+        <code>_getData</code> function that begins on line 53; when
+        the <code>_getData</code> function is complete, processing
+        returns to line 40</li>
+      </ul>
+    </li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: On line 38, type
+        <code>function GuestBook(</code>. When you type the left
+        parenthesis, Komodo displays a pop-up hint that describes
+        parameters for the function <code>GuestBook</code>. This is
+        a <a class="doc" href=
+        "../editor.html#AutoComplete">CallTip</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 40 to 44 - Check for Valid Form Entry</h4>
+
+  <ul>
+    <li>if the <code>REQUEST_METHOD</code> contained in
+    <code>$_SERVER</code> is equal to <code>POST</code>, processing
+    passes to the <code>addGuestBookEntry</code> function on line
+    120</li>
+
+    <li>if the <code>REQUEST_METHOD</code> is not equal to
+    <code>POST</code>, a redirect message is displayed to the
+    user</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>the <code>echo</code> command generates output</li>
+
+        <li>the characters <code>\"</code> are not included inside
+        the double quotation marks that follow, so that the message
+        can be displayed as output</li>
+
+        <li>the PHP variable <code>PHP_SELF</code> is the filename
+        of the current script</li>
+
+        <li><code>$_SERVER["PHP_SELF"]</code> extracts the
+        <code>PHP_SELF</code> variable from the
+        <code>$_SERVER</code> variable</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Lines 45 to 46 - Check for Variable Value</h4>
+
+  <ul>
+    <li>the <code>if ($this-&gt;data)</code> statement tests if the
+    variable <code>$this-&gt;data</code> has a value</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>the program executes the <code>outputData</code>
+        function and then the <code>outputForm</code> function</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3><a name="getdata_function" id="getdata_function">_getData
+  Function</a></h3>
+
+  <h4>Lines 53 to 58 - _getData Function</h4>
+
+  <ul>
+    <li>the "file" statement parses the contents of the file stored
+    in the <code>gb_dat</code> variable into the
+    <code>$lines</code> array</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>the <code>@</code> symbol suppresses warnings; in this
+        case, if the data file is empty, the program generates a
+        non-fatal error</li>
+      </ul>
+    </li>
+
+    <li>the <code>if ($lines)</code> statement checks to see if the
+    <code>$lines</code> variable has data</li>
+
+    <li>the "join" statement converts the <code>$lines</code> array
+    to a string and places it in the variable
+    <code>$this-&gt;data</code></li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>PHP Pointer</strong>: Use the "@" operator with
+        care; you could disable error messages for critical errors
+        that terminate the execution of the script.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="outputdata_function" id=
+  "outputdata_function">outputData Function</a></h3>
+
+  <h4>Lines 64 to 66 - outputData Function</h4>
+
+  <ul>
+    <li>the contents of the <code>$this-&gt;data</code> variable
+    are written to the standard output using the <code>echo</code>
+    statement</li>
+  </ul>
+
+  <h3><a name="createEntryHTML_function" id=
+  "createEntryHTML_function">_createEntryHTML Function</a></h3>
+
+  <h4>Lines 72 to 77 - Retrieve Form Data</h4>
+
+  <ul>
+    <li>the PHP variable <code>$_POST</code> is used to provide
+    data to the script via HTTP POST</li>
+
+    <li>lines 74 to 77 extract the form data and place the items in
+    variables</li>
+  </ul>
+
+  <h4>Lines 80 to 83 - Validate Form Data</h4>
+
+  <ul>
+    <li>On line 80, the validity of the name and message variables
+    is tested:</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>in <code>!$name</code> and <code>!$message</code>, "!"
+        is a "not" operator; it is <strong><em>true</em></strong>
+        if either variable is <strong><em>not
+        true</em></strong></li>
+
+        <li>The <code>||</code> symbol is an "or" operator</li>
+      </ul>
+    </li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>PHP Pointer</strong>: PHP has two "or"
+        operators: the word "or", and the symbol <code>||</code>.
+        The <code>||</code> operator has precedence over the word
+        "or", providing flexibility in logic tests.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Line 86 - Current Date and Time</h4>
+
+  <ul>
+    <li>the variable <code>$today</code> contains the result of the
+    PHP function <code>date</code>:</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>the <code>date</code> function returns a string</li>
+
+        <li>the "switches" are interpreted as follows:</li>
+
+        <li style="list-style: none">
+          <ul>
+            <li><code>F</code>: text month</li>
+
+            <li><code>j</code>: numeric day within month</li>
+
+            <li><code>y</code>: four digit year</li>
+
+            <li><code>g</code>: hour (12 hour format)</li>
+
+            <li><code>a</code>: AM / PM</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h4>Lines 89 to 94 - Interpolate Form Data with HTML</h4>
+
+  <ul>
+    <li>text and HTML tags are parsed with the <code>$today</code>
+    variable and the form data</li>
+
+    <li>the <code>return</code> statement supplies the result (true
+    or false) of a function or the value of a variable to the
+    routine from which it was called</li>
+  </ul>
+
+  <h3><a name="_writeDataFile_function">_writeDataFile
+  Function</a></h3>
+
+  <h4>Lines 100 to 106 - Open the Data File</h4>
+
+  <ul>
+    <li>the <code>fopen</code> function opens the file stored in
+    the <code>$this-&gt;gb_dat</code> variable</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>the <code>w</code> switch opens the file if it
+        exists</li>
+
+        <li>If the file does not exist, <code>fopen</code> will
+        attempt to create it</li>
+
+        <li>the file is opened for writing only, and the file
+        pointer is positioned at the top of the file</li>
+      </ul>
+    </li>
+
+    <li>the <code>if !$f</code> statement checks to see if the
+    <code>$f</code> variable contains a value</li>
+  </ul>
+
+  <h4>Lines 108 to 110 - Write to the Data Files</h4>
+
+  <ul>
+    <li>the <code>fwrite</code> function writes the contents of
+    $this-&gt;data to the file contained in the <code>$f</code>
+    variable</li>
+  </ul>
+
+  <h4>Lines 111 to 113 - Close the Data File</h4>
+
+  <ul>
+    <li>the <code>fclose</code> function closes the file stored in
+    the <code>$f</code> variable</li>
+
+    <li>the value of the <code>return</code> statement is tested on
+    line 112</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Click on the minus symbol
+        to the left of line 100. The
+        entire<code>_writeDataFile</code> function collapses. This
+        is <a class="doc" href=
+        "../editor.html#Folding">Code Folding</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="addGuestBookEntry_function" id=
+  "addGuestBookEntry_function">addGuestBookEntry Function</a></h3>
+
+  <h4>Lines 120 to 125 - Call Functions for Writing Data</h4>
+
+  <ul>
+    <li>the <code>$entry</code> variable is local to the
+    <code>addGuestBookEntry</code> function</li>
+
+    <li>the <code>$entry</code> contains the contents of the
+    <code>$data</code> variable, returned in the
+    <code>_createEntryHTML</code> function</li>
+
+    <li>on line 123, the contents of <code>$entry</code> are
+    concatenated with the contents of <code>$this-&gt;data</code>,
+    and stored in <code>$this-&gt;data</code></li>
+  </ul>
+
+  <h3><a name="outputForm_function" id=
+  "outputForm_function">outputForm Function</a></h3>
+
+  <h4>Lines 127 to 142 - The Function for HTML Form</h4>
+
+  <ul>
+    <li>these lines generate a standard HTML form</li>
+
+    <li>notice the PHP snippet on line 133 that provides the
+    program name to the HTML output</li>
+  </ul>
+
+  <h3><a name="Closing_tags" id="Closing_tags">Closing
+  Tags</a></h3>
+
+  <h4>Lines 148 to 151 - Closing Tags</h4>
+
+  <ul>
+    <li>the <code>$gb</code> variable creates a new instance of the
+    <code>GuestBook</code> class using the file specified in the
+    <code>$datafile</code> variable</li>
+
+    <li>when the functions in the <code>GuestBook</code> class are
+    complete, the PHP program is closed using the syntax
+    <code>?&gt;</code></li>
+
+    <li>closing HTML tags are written as output</li>
+  </ul>
+
+  <h2><a name="phptut_run" id="phptut_run">Running the
+  Program</a></h2>
+
+  <p>This section reviews how to run the <em>guestbook.php</em>
+  program using the Komodo <a class="doc" href=
+  "../debugger.html#debugger_top">debugger</a>.</p>
+
+  <ol>
+    <li><strong>Run the debugger</strong>: Select
+    <strong>Debug|Start</strong>.</li>
+
+    <li><strong>Configure debugging options</strong>: In the
+    <a class="doc" href=
+    "../debugger.html#Debugging_Options">Debugging
+    Options</a> dialog box, configure the following options:</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li><strong>General tab:</strong> Select the
+        <strong>Simulate CGI Environment</strong> check box.</li>
+
+        <li>
+          <strong>CGI Input tab:</strong>
+
+          <ul>
+            <li>Set the <strong>Request Method</strong> option
+            button to <strong>Post</strong>.</li>
+
+            <li>On the <strong>Post Type</strong> drop-down list,
+            select <strong>URL encoded</strong>.</li>
+
+            <li>On the <strong>Type</strong> drop-down list, select
+            the variable type <strong>Post</strong>.</li>
+
+            <li>Enter the following names in the
+            <strong>Name</strong> text box, adding a meaningful
+            value for each in the <strong>Value</strong> text box.
+            For example, the value for "name" could be your own
+            name. Click the <strong>Add</strong> button after each
+            entry to add it to the <strong>Browser
+            Arguments</strong>.</li>
+
+            <li style="list-style: none">
+              <ul>
+                <li>"name"</li>
+
+                <li>"email"</li>
+
+                <li>"company"</li>
+
+                <li>"message"</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><strong>Run the debugger</strong>: Click
+    <strong>OK</strong> to run the debugger with the selected
+    options.</li>
+
+    <li><strong>View the Command Output tab</strong>: Notice the
+    messages in the bottom left corner of the Komodo screen; these
+    inform you of the status of the debugger.</li>
+
+    <li><strong>View the rendered HTML</strong>: Click the
+    <strong>HTML</strong> tab on the right side of the
+    <strong>Debug</strong> tab. The HTML is displayed in the Bottom
+    Pane; previous guestbook entries are displayed at the top of
+    the output, and the HTML form is displayed at the bottom. Click
+    the <strong>Output</strong> tab to return to the HTML
+    code.</li>
+
+    <li><strong>Create New File</strong>: To create a new HTML file
+    that contains the HTML code on the <strong>Output</strong> tab,
+    select <strong>File|New|New File</strong>. In the New File
+    dialog box, select the <strong>Common</strong> Category, and
+    the <strong>HTML</strong> template. Click
+    <strong>Open</strong>.</li>
+
+    <li><strong>Save the Output</strong>: Delete the contents of
+    the new HTML file tab in the Editor Pane, then select the HTML
+    code on the <strong>Output</strong> tab. Copy the contents to
+    the new HTML file tab in the Editor Pane using the <a href=
+    "../prefs.html#Config_Key_Bindings">key binding</a>
+    associated with your selected scheme. Select <strong>File|Save
+    As</strong> to save the file with a unique name.</li>
+  </ol>
+
+  <h2><a name="phptut_debug" id="phptut_debug">Debugging the
+  Program</a></h2>
+
+  <p>In this step you will add breakpoints to the program and debug
+  it. Adding breakpoints lets you run the program in chunks, making
+  it possible to watch variables and view output as it is
+  generated. Before beginning, ensure that line numbering is
+  enabled in Komodo (<strong>View|View Line Numbers</strong>).</p>
+
+  <ol>
+    <li><strong>Set breakpoints</strong>: On the
+    <strong>guestbook.php</strong> tab in the editor, click on the
+    gray margin immediately to the left of the code in line 9 of
+    the program. This sets a breakpoint, indicated by a red circle.
+    Set a second breakpoint on line 148.</li>
+
+    <li><strong>Run the debugger</strong>: Select
+    <strong>Go|Continue</strong>. In the <a class="doc" href=
+    "../debugger.html#Debugging_Options">Debugging
+    Options</a> dialog box, click <strong>OK</strong> to accept the
+    defaults (assuming that you created the CGI variables in the
+    previous step, <a class="doc" href="#phptut_run">Running the
+    Program</a>).</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Notice that the <a class=
+        "doc" href=
+        "../debugger.html#Debugging_Options">Debugger
+        Options</a> have been saved from the last time a PHP
+        program was run or debugged.</p>
+      </td>
+    </tr>
+  </table><br />
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Debugger commands can be
+        accessed from the <strong>Debug</strong> menu, by shortcut
+        keys, or from the Debug Toolbar. For a summary of debugger
+        commands, see <a class="doc" href=
+        "../debugger.html#How_use_Debugger">Debugger
+        Command List</a>.</p>
+      </td>
+    </tr>
+  </table><br />
+
+  <ol start="3">
+    <li><strong>Watch the debug process</strong>: A yellow arrow on
+    the breakpoint indicates the position at which the debugger has
+    halted.</li>
+
+    <li><strong>Line 9: Step In</strong>: Select <strong>Debug|Step
+    In</strong>. "Step In" is a debugger command that causes the
+    debugger to execute the current line and then stop at the next
+    processing line (line 19). The lines between line 9 and line 19
+    are comments, not processing statements, and are therefore
+    ignored by the debugger.</li>
+
+    <li><strong>View Variables</strong>: Expand the Bottom Pane (if
+    necessary) by clicking and dragging the bottom margin of the
+    Komodo workspace. Variables defined in the program are
+    displayed on the <strong>Locals</strong> tab.</li>
+    <!--<li><strong>View Output</strong>: Click the <strong>Debug</strong> tab. Notice
+    that the HTML tags from lines 1 to 8 have been written to the Bottom Pane.</li>-->
+
+    <li><strong>Line 19</strong>: Select
+    <strong>Go|Continue</strong>. The debugger moves to line 148.
+    The <code>GuestBook</code> class is called from line 148.</li>
+
+    <li><strong>Line 148: Step In</strong>: The debugger is now
+    processing the <code>GuestBook</code> function.</li>
+
+    <li><strong>View Variables</strong>: 
+    <!--Only variables declared in
+                the scope of the <code>GuestBook</code> function are displayed.-->
+The <strong>Locals</strong> tab displays all variables.</li>
+<!--<li><strong>Line 35: Step In</strong>: The "global" statement adds the variable
+                <code>$HTTP_SERVER_VARS</code> to the scope of the <code>GuestBook</code>
+                function. It is now displayed on the <strong>Locals</strong> tab (on the
+    <strong>Debug Variables</strong> tab).</li>-->
+
+    <li><strong>Line 35: Step In</strong>: Expand the
+    <code>$this</code> variable on the <strong>Locals</strong> tab
+    in the Bottom Pane. Notice that it now has a sub-variable
+    <code>gb_dat</code>, which stores the value of the data
+    file.</li>
+
+    <li><strong>Line 36: Step In</strong>: Continue to step in
+    until the debugger stops at the <code>_getData</code> function.
+    Continue to select <strong>Step In</strong> to process each
+    statement in the function. After line 57 has been processed and
+    the debugger is stopped at line 58, the <code>$lines</code>
+    variable can be expanded on the <strong>Locals</strong>
+    tab.</li>
+
+    <li><strong>Line 58: Step Out</strong>: On line 58, select
+    <strong>Step Out</strong> to process the rest of the
+    <code>_getData</code> function. The debugger will proceed to
+    line 40, which follows the line where <code>_getData</code> was
+    called.</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: What do the debugger
+        commands do?</p>
+
+        <ul>
+          <li><b>Step In</b>: Executes the current line of code and
+          pauses at the following line.</li>
+
+          <li><b>Step Over</b>: Executes the current line of code.
+          If the line of code calls a function or method, the
+          function or method is executed in the background and the
+          debugger pauses at the line that follows the original
+          line.</li>
+
+          <li><b>Step Out</b>: Executes the code without stepping
+          through the code line by line (when the debugger is
+          within a function or method). The debugger stops on the
+          line of code following the function or method call in the
+          calling program.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="14">
+    <li><strong>Line 40: Step In</strong>: Continue to select
+    <strong>Step In</strong> until the debugger is on line 121, in
+    the <code>addGuestBookEntry</code> function. On line 121, the
+    <code>addGuestBookEntry</code> function calls the
+    <code>_createEntryHTML</code> function.</li>
+
+    <li><strong>Line 121: Step In</strong>: In the
+    <code>_createEntryHTML</code> function, the program assigns
+    variables to the CGI input data configured in the <a class=
+    "doc" href=
+    "../debugger.html#Debugging_Options">Debugging
+    Options</a>.</li>
+
+    <li><strong>Line 74: Step Out</strong>: The
+    <code>_createEntryHTML</code> function completes, and
+    processing returns to line 122.</li>
+
+    <li><strong>Line 122: Step In</strong>: Use <strong>Step
+    In</strong> to process each line of the
+    <code>addGuestBookEntry</code> function, until processing moves
+    to the <code>_writeDataFile</code> function on line 102.</li>
+
+    <li><strong>Line 102: Step In</strong>: Process line 102.</li>
+
+    <li><strong>Open Watch Window</strong>: On line 102, the
+    program opened the datafile (by default,
+    <em>\tmp\guestbook.dat</em>). To watch the activity in the
+    datafile, select <strong>Tools|Watch File</strong>, then
+    specify the datafile.</li>
+
+    <li><strong>Line 103: Step In</strong>: Continue to select
+    <strong>Step In</strong> until line 108 has been processed.
+    After line 108 is processed, the contents of the
+    <code>$this-&gt;data</code> variable are written to the
+    datafile, as displayed in the <strong>Watch</strong> tab.</li>
+
+    <li><strong>Line 111: Step In</strong>: <strong>Step
+    In</strong> until processing returns to line 45 of the
+    <code>GuestBook</code> function.</li>
+
+    <li><strong>Line 45: Step Over</strong>: The <strong>Step
+    Over</strong> debugger command executes the current line,
+    including any functions called by the current line. When the
+    debugger returns to line 46, notice that the contents of the
+    <code>$this-&gt;data</code> variable have been written to the
+    Bottom Pane.</li>
+
+    <li><strong>Line 46: Step Over</strong>: The debugger executes
+    the <code>outputForm</code> function, which writes the HTML
+    form to the Bottom Pane.</li>
+
+    <li><strong>Continue</strong>: Select
+    <strong>Debug|Continue</strong> to run the debugger to the end
+    of the program.</li>
+  </ol>
+
+  <h2><a name="phptut_resources" id="phptut_resources">More PHP
+  Resources</a></h2>
+
+  <h3>ASPN, the ActiveState Programmer Network</h3>
+
+  <p><a class="doc" href=
+  "http://aspn.ActiveState.com/ASPN">ASPN</a>, the ActiveState
+  Programmer Network, provides resources for PHP programmers:</p>
+
+  <ul>
+    <li><strong>Mailing lists</strong> with many PHP topics.</li>
+  </ul>
+
+  <h3>Tutorials and Reference Sites</h3>
+
+  <p>There are many PHP tutorials and beginner PHP sites on the
+  Internet, including:</p>
+
+  <ul>
+    <li><a class="doc" href="http://php.resourceindex.com">The PHP
+    Resource Index</a>, a collection of resources dealing with
+    PHP.</li>
+
+    <li><a class="doc" href="http://www.php.net">www.PHP.net</a>,
+    the home of all that is PHP-related.</li>
+  </ul>
+  <hr />
+</body>
+</html>

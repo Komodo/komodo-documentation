@@ -1,0 +1,641 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Interactive Shell</title>
+</head>
+
+<body>
+  <h1><a name="intshell_top" id="intshell_top">Interactive
+  Shell</a> <span class="version_alert">Komodo IDE only</span></h1>
+
+  <div class="right-float-box">
+    <p><strong>Tutorial</strong></p>
+
+    <ul>
+      <li><a href="tutorial/pythontut.html#pythontut_top">Python
+      Tutorial</a></li>
+    </ul>
+    <p><strong>Feature Showcase</strong></p>
+
+    <ul>
+      <li><a href=
+      "tutorial/tourlet_intshell.html#intshell_top">interactive
+      shell</a></li>
+    </ul>
+  </div>
+
+  <p>Komodo's interactive shell implements individual language
+  shells within Komodo. Shells are used to directly communicate
+  with the specified language interpreter.</p>
+
+  <p>Statements, expressions, and code fragments can be entered
+  independent of program files. The shell can be used as a
+  stand-alone interactive tool or as a shell that interacts from
+  within a debugging session.</p>
+
+  <h2><a name="intshell_standalone" id=
+  "intshell_standalone">Stand-Alone Interactive Shell</a></h2>
+
+  <p>When the interactive shell is <a class="doc" href=
+  "#starting_shell">started</a> as a stand-alone tool, use the
+  shell to help test modules and experiment with new languages or
+  programs. Other uses for a stand-alone interactive shell
+  include:</p>
+
+  <ul>
+    <li>prototyping code</li>
+
+    <li>identifying bugs</li>
+
+    <li>experimenting with a library</li>
+
+    <li>programming interactively</li>
+
+    <li>learning new syntax</li>
+  </ul>
+
+  <p>The interactive shell supports <a class="doc" href=
+  "#history">history recall</a>, <a class="doc" href=
+  "#code_completion">AutoComplete and CallTips</a> (Tcl only), and
+  <a class="doc" href="#custom_colors">custom colors and
+  fonts</a>.</p>
+
+  <h2><a name="intshell_debug" id="intshell_debug">Debugging with
+  an Interactive Shell</a></h2>
+
+  <p>When the interactive shell is <a class="doc" href=
+  "#starting_shell">started</a> from within a debug session, use
+  the shell to access all functions and code being debugged. When
+  the shell is closed from within a debug session, continue the
+  debug process where you left off. Depending on the language used,
+  changes made in the shell remain in effect for the duration of
+  the debug session. Other uses for an interactive shell within a
+  debug session include:</p>
+
+  <ul>
+    <li>exploring and debugging a program</li>
+
+    <li>adding new code to the program being debugged
+    (language-dependent)</li>
+
+    <li>modifying existing variables using complex expressions</li>
+
+    <li>adding new variables with code</li>
+  </ul>
+
+  <p>The interactive shell supports <a class="doc" href=
+  "#history">history recall</a>, <a class="doc" href=
+  "#code_completion">AutoComplete and CallTips</a> (Tcl only), and
+  <a class="doc" href="#custom_colors">custom colors and
+  fonts</a>.</p>
+
+  <h2><a name="using_interactive_shell" id=
+  "using_interactive_shell">Using the Interactive Shell</a></h2>
+
+  <p>Each Komodo interactive shell is associated with a
+  corresponding interpreter and is thus language-specific. Each
+  time a command or multi-line string is entered into the Shell
+  tab, that code is sent to the corresponding interpreter for
+  evaluation. The interpreter evaluates the command, and then
+  returns output and error text.</p>
+
+  <h3><a name="intshell_prefs" id="intshell_prefs">Setting Shell
+  Preferences</a></h3>
+
+  <p>Use the Preferences dialog box to specify the default language
+  to use within an interactive shell. Other shells can still be
+  accessed via <strong>Tools|Interactive Shell</strong>.</p>
+
+  <p>To set the default shell preference:</p>
+
+  <ol>
+    <li>On the <strong>Tools</strong> menu, select
+    <strong>Interactive Shell|Configure</strong></li>
+
+    <li>On the <strong>Preferred Interactive Shell</strong>
+    drop-down list, select the desired language (Python, Perl,
+    Tcl).</li>
+
+    <li>Click <strong>OK</strong>.</li>
+  </ol>
+
+  <h3><a name="starting_shell" id="starting_shell">Starting the
+  Interactive Shell</a></h3>
+
+  <p>The interactive shell can be opened as a stand-alone tool or
+  as a shell inside of a debugging session.</p>
+
+  <p>To start the shell as a stand-alone tool:</p>
+
+  <ul>
+    <li>Select <strong>Tools|Interactive Shell</strong>, and then select the
+    desired language (Python, Tcl, Perl, or Ruby). Alternatively, click the down
+    arrow for the <strong>Shell</strong> button on the Workspace toolbar and
+    select the desired language.</li>
+  </ul>
+
+  <p>The interactive shell opens in a Shell tab in the Bottom Pane
+  beside the <a href="debugger.html#output_tab">Command
+  Output</a> and <a href=
+  "debugger.html#breakpoints_and_spawnpoints">Breakpoint</a>
+  tabs.</p>
+
+  <p>To start the shell from within a debug session:</p>
+
+  <ul>
+    <li>On the active <strong>Debug</strong> tab, click the
+    <strong>Interact</strong> (<strong>&gt;&gt;</strong>) button on
+    the Debug toolbar, or select <strong>Debug|Interact</strong>.
+    The <strong>Debug</strong> tab toggles to a Shell tab. Enter
+    code as desired. To toggle back to the <strong>Debug</strong>
+    tab, click the <strong>Interact</strong> button on the Debug
+    Toolbar.</li>
+  </ul>
+
+  <p>View debugging and code inspection functions by clicking the
+  "Collapse/Expand Pane" button at the left side of the Bottom
+  Pane. This splits the shell into a left and right pane. The left
+  pane performs debugging functions while the right pane contains
+  the interactive shell.</p>
+
+  <h3><a name="intshell_mult" id="intshell_mult">Using Multiple
+  Shells</a></h3>
+
+  <p>Open multiple interactive shells to interact with various code
+  snippets from a single language or use many shells to
+  simultaneously explore a different language in each shell.</p>
+
+  <h3><a name="code_completion" id="code_completion">Using
+  AutoComplete and CallTips</a></h3>
+
+  <p>The Tcl interactive shell displays <a class="doc" href=
+  "editor.html#AutoComplete">AutoComplete and
+  CallTips</a> when recognized code and commands are entered into
+  the shell. Use autocomplete and calltips to limit the amount of
+  typing in each session. To select a suggested item, press
+  <strong>Enter</strong>. Use the up and down arrow keys to scroll
+  through the various options on the screen. To cancel or ignore
+  the suggested autocomplete or calltip, press
+  <strong>Esc</strong>.</p>
+
+  <p>Komodo can also detect when further data is required at the
+  command prompt. When insufficient programming data is entered at
+  the prompt, Komodo displays a language-dependent "more" prompt.
+  This prompt indicates that the language interpreter requires more
+  information before the code can run. Once enough data is entered,
+  Komodo executes the code and the standard language-dependent
+  input prompt returns.</p>
+
+  <h3><a name="custom_colors" id="custom_colors">Customizing Colors
+  and Fonts</a></h3>
+
+  <p>The Shell tab displays commands, variables, error messages,
+  and all language syntax in the same scheme as specified in
+  <strong>Edit|Preferences|Fonts and Colors</strong>. See <a class=
+  "doc" href="prefs.html#Customizing_Fonts">Customizing
+  Fonts and Colors</a> for more information.</p>
+
+  <h3><a name="history" id="history">Viewing Shell History</a></h3>
+
+  <p>The code history consists of the ordered, numbered sets of
+  commands entered in the lifetime of the shell, including
+  interleaved output and error messages. Use the up and down arrow
+  keys to cycle through the history of all entered commands. When
+  viewing a multi-line command or function, use the 'Enter' key to
+  select the desired function and then use the arrow keys to cycle
+  through the multiple lines within that function.</p>
+
+  <h3><a name="intshell_stop" id="intshell_stop">Stopping a Shell
+  Session</a></h3>
+
+  <p>To stop an interactive shell session and close the Shell tab,
+  click the <strong>X</strong> button located in the upper-right
+  corner of the Shell tab. To stop the interactive shell and keep
+  the Shell tab open, click the square button, or use the
+  associated <a href=
+  "prefs.html#Config_Key_Bindings">key binding</a>.</p>
+
+  <h3><a name="intshell_clear" id="intshell_clear">Clearing the
+  Shell Buffer</a></h3>
+
+  <p>To clear the shell buffer, click the <strong>Clear
+  Buffer</strong> button. There is no limit to buffer size; unless
+  it is manually cleared, the buffer will continue to increment
+  until the interactive shell session is closed. Manually clearing
+  the buffer only removes the command history and command results,
+  and has no effect on the buffer state (such as changes to the
+  working directory, etc).</p>
+
+  <h2><a name="intshell_python" id="intshell_python">Using the
+  Python Interactive Shell</a></h2>
+
+  <p>The Python shell prompt is a group of three angle brackets
+  <strong>&gt;&gt;&gt;</strong>. A <strong>...</strong> prompt is displayed if
+  Komodo determines that more information is required before the code can
+  execute. A '<span style="color: red">%</span>' prompt is displayed when input
+  from <code>stdin</code> is required (for example, in a Python shell, enter
+  <code>help()</code>). No prompt is displayed when program output is sent to
+  the screen. Code errors are displayed in italics. When a Python interactive
+  shell session begins, a welcome message is printed stating a version number
+  and copyright notice. The first prompt is printed as follows:</p>
+  <pre class="code">
+Python 2.2.2 (#37, Nov 25 2002, 13:15:27) [MSC 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;
+</pre>
+
+  <p>The following example shows a series of Python statements with
+  resulting output:</p>
+  <pre class="code">
+&gt;&gt;&gt; # Comment: my hello world test
+&gt;&gt;&gt; print "Hello World"
+Hello World
+&gt;&gt;&gt; x=12**2
+&gt;&gt;&gt; x/2
+72
+&gt;&gt;&gt;
+</pre>
+
+  <h3><a name="intshell_debugpy" id="intshell_debugpy">Debugging
+  with the Python Shell</a></h3>
+
+  <p>To <a class="doc" href="#starting_shell">start</a> a Python
+  shell from within a debug session, click the
+  <strong>Interact</strong> button, located in the upper-right
+  corner of the <strong>Debug</strong> tab. Starting a shell within
+  a debug session enables Interact Mode. In Interact Mode, view
+  debugging and code inspection functions by clicking the
+  "Collapse/Expand Pane" button at the left side of the Bottom
+  Pane. This splits the shell into a left and right pane. The left
+  pane performs debugging functions while the right pane contains
+  the interactive shell. In Interact Mode, debugging functionality
+  (for example, Run, Step In, Step Out) is not available. To return
+  to the debugger, click the Interact button again to exit Interact
+  Mode.</p>
+
+  <h2><a name="intshell_tcl" id="intshell_tcl">Using the Tcl
+  Interactive Shell</a></h2>
+
+  <p>The Tcl interactive shell supports the tclsh interpreter. The
+  Tcl shell prompt is a percent character <strong>%</strong>. A
+  <strong>&gt;</strong> prompt is displayed if Komodo determines
+  that more information is required before the code executes. A
+  <font style="color: red">%</font> prompt is displayed when input
+  from <code>stdin</code> is required. No prompt is displayed when
+  program output is sent to the screen. Code errors are displayed
+  in italics. The following examples show how input, output, and
+  errors are displayed in the Tcl shell:</p>
+  <pre class="code">
+%puts "Hello World"
+Hello World
+%
+</pre>
+
+  <p>With an error:</p>
+  <pre class="code">
+%put "hello world"
+<em>invalid command name "put"</em>
+%puts "hello world"
+hello world
+%
+</pre>
+
+  <h3><a name="intshell_debugtcl" id="intshell_debugtcl">Debugging
+  with the Tcl Shell</a></h3>
+
+  <p>To <a class="doc" href="#starting_shell">start</a> a Tcl shell
+  from within a debug session, click the <strong>Interact</strong>
+  (<strong>&gt;&gt;</strong>)button, located in the upper-right
+  corner of the <strong>Debug</strong> tab. Starting a shell within
+  a debug session enables Interact Mode. In Interact Mode, view
+  debugging and code inspection functions by clicking the
+  "Collapse/Expand Pane" button at the left side of the Bottom
+  Pane. This splits the shell into a left and right pane. The left
+  pane performs debugging functions while the right pane contains
+  the interactive shell. In Interact Mode, debugging functionality
+  (for example, Run, Step In, Step Out) is not available. To return
+  to the debugger, click the Interact button again to exit Interact
+  Mode.</p>
+
+  <h2><a name="intshell_perl" id="intshell_perl">Using the Perl
+  Interactive Shell</a></h2>
+
+  <p>The Perl interactive shell prompt is a percent character
+  <strong>%</strong>. A <strong>&gt;</strong> prompt is displayed
+  if Komodo determines that more information is required before the
+  code executes. No prompt is displayed when program output is sent
+  to the screen. Code errors are displayed in italics. The
+  following examples show how input, output, and errors are
+  displayed in the Perl shell:</p>
+  <pre class="code">
+%print "Hello World! \n";
+Hello World!
+%
+</pre>
+
+  <p>With an error:</p>
+  <pre class="code">
+%prin "Hello World! \n";
+<em>syntax error </em>
+%print "Hello World!!! \n";
+Hello World!!!
+%
+</pre>
+
+  <p><strong>Using Strings, Function Definitions, and Multiple Line
+  Input</strong></p>
+
+  <p>Use the Perl shell to enter function definitions, long
+  strings, and specify <code>if</code> and <code>while</code>
+  blocks interactively. The Perl shell also handles multiple line
+  input delimited by braces, curly braces, single quotes, and
+  double quotes. The following examples demonstrate this usage.</p>
+
+  <p><strong>Example</strong>: Using single quotes "''" to enter
+  multiple line input.</p>
+  <pre class="code">
+% $b = 'abc
+&gt; def
+&gt; ghi
+&gt; jkl'
+abc
+def
+ghi
+jkl
+%
+</pre>
+
+  <p><strong>Example</strong>: Using curly braces "{}" to define a
+  function and enter multiple line input.</p>
+  <pre class="code">
+% sub foo {
+&gt;   my $arg = shift;
+&gt;   my $arg2 = shift;
+&gt;   return $arg + $arg2;
+&gt; }
+% foo(10, 12)
+22
+%
+</pre>
+
+  <p><strong>Example</strong>: Using braces to enter a multiple
+  line string.</p>
+  <pre class="code">
+% $name = 'Bob'
+Bob 
+% print qq(&lt;html&gt;&lt;head&gt;&lt;title&gt; 
+&gt; Browser Window Caption Text 
+&gt; &lt;/title&gt;&lt;/head&gt;&lt;body bg="white"&gt; 
+&gt; &lt;p&gt;Welcome to my fine web site, $name 
+&gt; &lt;/body&gt; 
+&gt; &lt;/html&gt;) 
+&lt;html&gt;&lt;head&gt;&lt;title&gt; 
+Browser Window Caption Text 
+&lt;/title&gt;&lt;/head&gt;&lt;body bg="white"&gt; 
+&lt;p&gt;Welcome to my fine web site, Bob 
+&lt;/body&gt; 
+&lt;/html&gt; 
+%
+</pre>
+
+  <p><strong>Example</strong>: Using a backslash to continue a
+  statement.</p>
+  <pre class="code">
+% print 'abc ', 'def ', \
+&gt; 'ghi'
+abc def ghi 
+%
+</pre>
+
+  <p><strong>Example</strong>: Using a backslash to continue a
+  statement.</p>
+  <pre class="code">
+% $first_long_variable_name = 3
+3
+% $second_long_variable_name = 4
+4
+% $third_long_variable_name_to_store_result = $first_long_variable_name + \
+&gt; $second_long_variable_name
+7
+</pre>
+
+  <p><strong>Example</strong>: Using a braced construct</p>
+  <pre class="code">
+% foreach $var (sort keys %ENV) {
+&gt;    print "$var = $ENV{$var}\n";
+&gt;    }
+ALLUSERSPROFILE = C:\Documents and Settings\All Users
+COMMONPROGRAMFILES = C:\Program Files\Common Files
+COMSPEC = C:\winnt\system32\cmd.exe
+LESS = --quit-at-eof --quit-if-one-screen --ignore-case --status-column
+--hilite-unread --no-init
+MSDEVDIR = C:\PROGRA~1\MICROS~3\Common\msdev98
+MSVCDIR = C:\PROGRA~1\MICROS~3\VC98
+NETSAMPLEPATH = C:\PROGRA~1\MICROS~1.NET\FRAMEW~1\Samples
+OS = Windows_NT
+OS2LIBPATH = C:\winnt\system32\os2\dll;
+PATH = C:\PROGRA~1\MICROS~3\Common\msdev98\BIN;
+PROCESSOR_ARCHITECTURE = x86
+PROCESSOR_IDENTIFIER = x86 Family 6 Model 7 Stepping 3, GenuineIntel
+PROCESSOR_LEVEL = 6
+PROCESSOR_REVISION = 0703
+PROGRAMFILES = C:\Program Files
+PROMPT = $P$G
+SYSTEMDRIVE = C:
+SYSTEMROOT = C:\winnt
+TEMP = C:\DOCUME~1\toto\LOCALS~1\Temp
+TMP = C:\DOCUME~1\toto\LOCALS~1\Temp
+USERNAME = toto
+USERPROFILE = C:\Documents and Settings\toto
+WINDIR = C:\winnt
+</pre>
+
+  <h3><a name="intshell_debugperl" id=
+  "intshell_debugperl">Debugging with the Perl Shell</a></h3>
+
+  <p>To <a class="doc" href="#starting_shell">start</a> a Perl
+  shell from within a debug session, click the
+  <strong>Interact</strong> button, located in the upper-right
+  corner of the <strong>Debug</strong> tab. Starting a shell within
+  a debug session enables Interact Mode. In Interact Mode, view
+  debugging and code inspection functions by clicking the
+  "Collapse/Expand Pane" button at the left side of the Bottom
+  Pane. This splits the shell into a left and right pane. The left
+  pane performs debugging functions while the right pane contains
+  the interactive shell. In Interact Mode, debugging functionality
+  (for example, Run, Step In, Step Out) is not available. To return
+  to the debugger, click the Interact button again to exit Interact
+  Mode.</p>
+
+  <h2><a name="intshell_js" id="intshell_js">Using the JavaScript
+  Interactive Shell</a></h2>
+
+  <p>The JavaScript interactive shell is currently only available
+  from within a JavaScript debugging session. To start an
+  interactive shell from within a <a href=
+  "debugjs.html">JavaScript debug session</a>, click the
+  <strong>Interact</strong> (<strong>&gt;&gt;</strong>) button.</p>
+
+  <p>In Interact Mode, the left section of the bottom pane shows
+  the variable viewer tabs while the right section contains the
+  interactive shell. Debugger stepping functionality (e.g. Run,
+  Step In, Step Out) is not available.</p>
+
+  <p>In this mode, you can enter expressions, define new local and
+  global variables, create functions, and modify the DOM of the
+  HTML document loaded in the browser.</p>
+
+  <p><strong>Example</strong>: Entering a simple expression</p>
+  <pre class="code">
+&gt; 2 + 2
+4
+&gt;
+</pre>
+
+  <p><strong>Example</strong>: Setting variables</p>
+  <pre class="code">
+&gt; a1 = "testing 123"
+  testing 123
+&gt; var a2 = "check check"
+&gt;
+</pre>
+
+  <p>When variables are declared without a <code>var</code>
+  statement, they are echoed in the shell and appear in the
+  <strong>globals</strong> variable tab on the left. When the
+  <code>var</code> statement is used, they are not echoed by the
+  shell and appear in the <strong>locals</strong> tab.</p>
+
+  <p><strong>Example</strong>: Interacting with the browser</p>
+  <pre class="code">
+&gt; alert(a1 + ", " + a2)
+</pre>
+
+  <p>This will cause the browser to spawn an alert pop-up. To
+  change the Title of the page you are viewing in the browser:</p>
+  <pre class="code">
+&gt; document.title = "My new title"
+  My new title
+&gt;
+</pre>
+
+  <p><strong>Example</strong>: Defining a function</p>
+  <pre class="code">
+&gt; function my_alert(s) {
+*   alert("Testing: " + s);
+* }
+&gt; my_alert(document.title)
+&gt;
+</pre>
+
+  <p>The "<strong>*</strong>" character in place of the
+  "<strong>&gt;</strong>" in the left margin indicates a multi-line
+  statement. The interactive shell usually doesn't need any special
+  escaping to let you enter a multi-line statement, but you can put
+  a backslash at the end of a line to explicitly specify line
+  continuation. For example:</p>
+  <pre class="code">
+&gt; var a2 = 1 \
+*         + 2 + \
+*         3
+&gt; a2
+  6
+</pre>
+
+  <h3>Using the interactive shell while not debugging</h3>
+
+  <p>While debugging, click <strong>Interact</strong> to stop the
+  interactive shell, then <strong>Go/Continue</strong> to run the
+  JavaScript event from the browser to completion. Once the
+  debugger finishes, Komodo and the JavaScript interpreter are
+  still connected, so you can resume your interactive shell.</p>
+
+  <p>Once you've established a link between Komodo and Firefox, you
+  can use the interactive shell at any time by switching to Komodo
+  and clicking the <strong>Interact</strong>
+  (<strong>&gt;&gt;</strong>) button. Press
+  <strong>Interact</strong> button to re-enter the interactive
+  shell. Variables defined in the previous session should still be
+  present.</p>
+
+  <p>You're free to keep using the browser, however, the shell does
+  not "follow" the browser as you move from window to window.</p>
+
+  <h3>Further information</h3>
+
+  <p>When using the interactive shell at a true breakpoint, you can
+  <a href=
+  "http://www-xray.ast.cam.ac.uk/~jgraham/mozilla/xpath-tutorial.html">
+  use XPath and DOM functions</a> to quickly find and manipulate
+  parts of the document. In the non-debugging interactive shell,
+  the shell has access to a subset of the DOM, such as the
+  title.</p>
+
+  <p>Subscribe to <a href=
+  "http://blogs.activestate.com/ericp/">http://blogs.activestate.com/ericp/</a>
+  for future postings on DHTML tricks in the interactive shell.</p>
+  
+  
+  <h2><a name="intshell_ruby" id="intshell_ruby">Using the
+  Ruby Interactive Shell</a></h2>
+  
+  <p>Starting a Ruby shell session displays the interpreter version and platform
+  information. The standard shell prompt for entering statements is a single
+  "&gt;" symbol:</p>
+  
+  <pre class="code">
+ Ruby 1.8.6 [powerpc-darwin8.10.0]
+&gt;</pre> 
+    
+  <p>When more information is required for execution (e.g. within any flow
+  control construct) or when requesting user input, a "*" is displayed. No
+  prompt is displayed when program output is sent to the screen.</p>
+  
+  <pre class="code">
+> mylist = []
+  []
+> for x in (0..3)
+*     puts "Enter a value:"
+*     mylist[x] = gets.chomp!
+* end
+Enter a value:
+* </pre>
+  
+  <p>Code errors are displayed in italics.</p>
+  
+  <pre class="code">
+> mylist[wrong]
+  <span style="color: blue; font-style: italic">undefined local variable or method `wrong' for main:Object</span></pre>
+  
+  
+  <h3><a name="intshell_debugrb" id="intshell_debugrb">Debugging
+  with the Ruby Shell</a></h3>
+  
+  <p>To <a class="doc" href="#starting_shell">start</a> a Ruby
+  shell from within a debug session, click the
+  <strong>Interact</strong> button, located in the upper-right
+  corner of the <strong>Debug</strong> tab. Starting a shell within
+  a debug session enables Interact Mode. In Interact Mode, view
+  debugging and code inspection functions by clicking the
+  "Collapse/Expand Pane" button at the left side of the Bottom
+  Pane. This splits the shell into a left and right pane. The left
+  pane performs debugging functions while the right pane contains
+  the interactive shell. In Interact Mode, debugging functionality
+  (for example, Run, Step In, Step Out) is not available. To return
+  to the debugger, click the Interact button again to exit Interact
+  Mode.</p>
+  
+  <hr />
+</body>
+</html>

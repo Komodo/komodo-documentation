@@ -1,0 +1,213 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Debugging Tcl</title>
+</head>
+
+<body>
+  <h1><a name="debugtcl_top" id="debugtcl_top">Debugging Tcl</a>
+  <span class="version_alert">Komodo IDE only</span></h1>
+
+  <p>Komodo can be used to debug Tcl programs locally or remotely.
+  The following instructions describe how to configure Tcl
+  debugging. For general information about using the Komodo
+  debugger, see <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a>.</p>
+
+  <p>Debugger commands can be accessed from the
+  <strong>Debug</strong> menu, by shortcut keys, or from the Debug
+  Toolbar. For a summary of debugger commands, see the <a class=
+  "doc" href="debugger.html#How_use_Debugger">Debugger
+  Command List</a>.</p>
+
+  <h2><a name="Configuring_Tcl_Debugger" id=
+  "Configuring_Tcl_Debugger">Configuring Local Tcl
+  Debugging</a></h2>
+
+  <p>Specify the Tcl interpreter Komodo uses to debug and run Tcl
+  programs:</p>
+
+  <ol>
+    <li>On the <strong>Edit</strong> menu, select
+    <strong>Preferences</strong>.</li>
+
+    <li>In the Preferences dialog box under
+    <strong>Languages</strong>, click <strong>Tcl</strong>. Komodo
+    searches for Tcl interpreters in the system <code>PATH</code>
+    and lists all <code>tclsh</code> and <code>wish</code>
+    interpreters available in separate drop-down lists. If no Tcl
+    interpreters are displayed in the list, check that the location
+    of the interpreters is specified in your <code>PATH</code>
+    environment variable.</li>
+
+    <li>If the preferred interpreters are in these lists, click to
+    select them. If they are not, click <strong>Browse</strong> to
+    locate them.</li>
+
+    <li>Click <strong>OK</strong>.</li>
+  </ol>
+
+  <p><strong>Note</strong>: Tcl Beta releases contain only
+  version-specific executables (e.g. <code>tclsh85.exe</code> and
+  <code>wish85.exe</code>). Komodo does not automatically find
+  these in the path. To use them, specify them manually in the
+  Interpreters section of the <a href=
+  "prefs.html#Tcl">Tcl language preferences</a> rather
+  than selecting <strong>Find on Path</strong>.</p>
+
+  <p>To start a local Tcl debugging session, click
+  <strong>Go/Continue</strong> or <strong>Step In</strong> on the
+  Debugger menu or toolbar. See <a href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a> for full instructions on using Komodo's debugging
+  functionality.</p>
+
+  <h2><a name="Using_the_Tcl_Remote_Debugger" id=
+  "Using_the_Tcl_Remote_Debugger">Remote Tcl Debugging</a></h2>
+
+  <p>When debugging a Tcl program remotely, the program is executed
+  on the remote machine and the debug output is sent to Komodo.
+  Komodo controls the debugging session (e.g. stepping,
+  breakpoints, and spawnpoints) once the session has been started
+  on the remote machine.</p>
+
+  <h3><a name="Installing_the_Tcl_Remote_Debugger" id=
+  "Installing_the_Tcl_Remote_Debugger">Installing the Tcl Debugger
+  Application on a Remote Machine</a></h3>
+
+  <p>To debug a Tcl program remotely, the Tcl debugger application,
+  <em>dbgp_tcldebug.exe</em> (Windows) or <em>dbgp_tcldebug</em>
+  (Linux and OS X), must be installed on the remote machine. This
+  file is installed in the <em>tcl</em> subdirectory of the Komodo
+  installation directory for your platform.</p>
+
+  <p><strong>Windows</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>\lib\support\tcl
+</pre>
+
+  <p><strong>Linux</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>/lib/support/tcl
+</pre>
+
+  <p><strong>Mac OS X</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>/Contents/SharedSupport/tcl
+</pre>
+
+  <p>This application is also available for download from the
+  <a class="doc" target="_blank" href=
+  "http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
+  Komodo Remote Debugging</a> page.</p>
+
+  <p>To install the Tcl debugger application on the remote
+  machine:</p>
+
+  <ul>
+    <li>If necessary, <a class="doc" target="_blank" href=
+    "http://www.activestate.com/Support/General/Licensing_FAQ.plex#how_install">
+    install a Komodo license</a>.</li>
+
+    <li>Copy the <em>dbgp_tcldebug</em> executable to any
+    convenient directory.</li>
+  </ul>
+
+  <h3><a name="Invoking_the_Tcl_Remote_Debugger" id=
+  "Invoking_the_Tcl_Remote_Debugger">Invoking the Tcl Debugger
+  Application</a></h3>
+
+  <p>To debug a Tcl script on a remote machine:</p>
+
+  <ol>
+    <li>In Komodo, select <strong>Listen for Debugger
+    Connections</strong> from the <strong>Debug</strong> menu.</li>
+
+    <li>Log in to the remote machine.</li>
+
+    <li>On the remote machine, run the <em>dbgp_tcldebug</em>
+    executable from the command line. To specify command line
+    arguments for the script that you are debugging, simply add
+    those arguments to the end of the command, after the
+    <em>dbgp_tcldebug</em> arguments.<br />
+      <pre class="code">
+dbgp_tcldebug -dbgp &lt;komodo_host:port&gt;
+  -app-file &lt;tcl_program&gt;
+  -app-shell &lt;/path/to/tclsh_or_wish&gt;
+</pre>
+
+      <p>The following options are available:</p>
+
+      <ul>
+        <li><strong>-dbgp</strong>: Sets the hostname (or IP
+        address) and port where Komodo or the <a href=
+        "debugger.html#dbgp_proxy">DBGP Proxy</a> is
+        running. In Komodo, select <strong>Debug|Listener
+        Status</strong> to check the current port setting.</li>
+
+        <li><strong>-app-file</strong>: Specifies the Tcl program
+        to debug. Program arguments should follow a "--" delimiter
+        after the Tcl program name (e.g. <code>... -app-file
+        test.tcl -- arg_0 arg_1</code>).</li>
+
+        <li><strong>-app-shell</strong>: Sets the path to the Tcl
+        interpreter (<code>tclsh</code> or <code>wish</code>).</li>
+
+        <li><strong>-help</strong>: Displays a complete list of
+        options.</li>
+      </ul>
+    </li>
+
+    <li>A Tcl <strong>Debug</strong> tab opens in Komodo. Click
+    <strong>Step In</strong>, or <strong>Go/Continue</strong>) to
+    run to the first breakpoint (see <a class="doc" href=
+    "debugger.html#debugger_top">Komodo Debugger
+    Functions</a> for full instructions).</li>
+  </ol>
+
+  <p><strong>Example</strong></p>
+
+  <p>Remote Machine (Windows):</p>
+
+  <ul>
+    <li>The file <em>dbgp_tcldebug.exe</em> has been copied into
+    the <code>C:\remote_debug</code> directory.</li>
+
+    <li>The Tcl file to be debugged is called <code>test.tcl</code>
+    and is located in the current working directory.</li>
+
+    <li>The Tcl interpreter is
+    <code>C:\Tcl\bin\wish.exe</code>.</li>
+  </ul>
+
+  <p>Local Machine:</p>
+
+  <ul>
+    <li>The hostname is "mybox".</li>
+
+    <li>The Komodo remote debugging <a class="doc" href=
+    "prefs.html#Debugger">listener port</a> is set to
+    9000.</li>
+  </ul>
+
+  <p>In this scenario, the following command is entered on the
+  remote machine:</p>
+  <pre class="code">
+C:\remote_debug\dbgp_tcldebug.exe -dbgp mybox:9000
+  -app-file test.tcl -app-shell C:\Tcl\bin\wish.exe
+</pre><!-- Footer Start -->
+  <hr />
+</body>
+</html>

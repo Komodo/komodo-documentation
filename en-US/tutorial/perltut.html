@@ -1,0 +1,728 @@
+<!-- Copyright (c) 2001-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Perl Tutorial</title>
+</head>
+
+<body>
+  <h1><a name="perltut_top" id="perltut_top">Perl
+  Tutorial</a></h1><br />
+
+  <h2><a name="perltut_over" id="perltut_over">Perl Tutorial
+  Overview</a></h2>
+
+  <h3><a name="perltut_assumptions" id="perltut_assumptions">Before
+  You Start</a></h3>
+
+  <p>This tutorial assumes...</p>
+
+  <ul>
+    <li>...that <a target="_blank" href=
+    "http://www.ActiveState.com/Products/ActivePerl">ActivePerl
+    build 623</a> or greater is installed on your system.
+    ActivePerl is a free distribution of the core Perl language.
+    See Komodo's <a class="doc" href=
+    "../readme.html#readme_top">Installation Guide</a> for
+    configuration instructions.</li>
+
+    <li>...that you have a connection to the Internet.</li>
+
+    <li>...that you are interested in Perl. You don't need to have
+    previous knowledge of Perl; the tutorial will walk you through
+    a simple program and suggest some resources for further
+    information.</li>
+  </ul>
+
+  <h3><a name="perltut_scenario" id="perltut_scenario">Perl
+  Tutorial Scenario</a></h3>
+
+  <p>You have exported a number of email messages to a text file.
+  You want to extract the name of the sender and the contents of
+  the email, and convert it to XML format. You intend to eventually
+  transform it to HTML <a class="doc" href=
+  "xslttut.html#xslttut_top">using XSLT</a>. To create an XML file
+  from a text source file, you will use a Perl program that parses
+  the data and places it within XML tags. In this tutorial you
+  will:</p>
+
+  <ol>
+    <li><a class="doc" href="#perltut_modules"><strong>Install a
+    Perl module</strong></a> for parsing text files containing
+    comma-separated values.</li>
+
+    <li><a class="doc" href="#perltut_open"><strong>Open the Perl
+    Tutorial Project</strong></a> and associated files.</li>
+
+    <li><a class="doc" href="#perltut_analyze"><strong>Analyze
+    parse.pl</strong></a> the Perl program included in the Tutorial
+    Project.</li>
+
+    <li><a class="doc" href="#perltut_run"><strong>Generate
+    output</strong></a> by running the program.</li>
+
+    <li><a class="doc" href="#perltut_debug"><strong>Debug the
+    program</strong></a> using the Komodo debugger.</li>
+  </ol>
+
+  <h2><a name="perltut_modules" id="perltut_modules">Installing
+  Perl Modules Using PPM</a></h2>
+
+  <p>One of the great strengths of Perl is the wealth of free
+  modules available for extending the core Perl distribution.
+  ActivePerl includes the Perl Package Manger (PPM) that makes it
+  easy to browse, download and update Perl modules from module
+  repositories on the internet. These modules are added to the core
+  ActivePerl installation.</p>
+
+  <h3><a name="perltut_runppm" id="perltut_runppm">Running the Perl
+  Package Manager</a></h3>
+
+  <p>The Text::CSV_XS Perl module is necessary for this tutorial.
+  To install it using PPM:</p>
+
+  <ol>
+    <li>Open the Run Command dialog box. Select <strong>Tools|Run
+    Command</strong>.</li>
+
+    <li>In the <strong>Run</strong> field, enter the command:<br />
+    <br />
+    <code>ppm install Text::CSV_XS</code><br />
+    <br /></li>
+
+    <li>Click the <strong>Run</strong> button to run the command.
+    PPM connects to the default repository, downloads the necessary
+    files and installs them.</li>
+  </ol>
+
+  <h3><a name="ppmnotes" id="ppmnotes">About PPM</a></h3>
+
+  <ul>
+    <li>PPM can be run directly from the command line with the
+    <code>ppm</code> command. Enter <code>ppm help</code> for more
+    information on command-line options.</li>
+
+    <li>By default, PPM accesses the Perl Package repository at
+    <a href=
+    "http://ppm.activestate.com">http://ppm.activestate.com</a>.
+    The ActiveState repository contains binary versions of most
+    packages available from <a target="_blank" href=
+    "http://www.perl.com/CPAN-local/">CPAN</a>, the Comprehensive
+    Perl Archive Network.</li>
+
+    <li>More information about PPM is available on <a target=
+    "_blank" href=
+    "http://aspn.ActiveState.com/ASPN/Perl/Products/ActivePerl/faq/ActivePerl-faq2.html">
+    ASPN</a>. PPM documentation is also included with your
+    ActivePerl distribution.</li>
+
+    <li>On Linux systems where ActivePerl has been installed by the
+    super-user (i.e. <code>root</code>), most users will not have
+    permissions to install packages with PPM. Run <code>ppm</code>
+    as root at the command line to install packages.</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Perl Pointer</strong> It is also possible to
+        install Perl modules without PPM using the CPAN shell. See
+        the <a target="_blank" href=
+        "http://www.cpan.org/misc/cpan-faq.html#How_install_Perl_modules">
+        CPAN FAQ</a> for more information.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="perltut_open" id="perltut_open">Opening
+  Files</a></h2>
+
+  <h3><a name="perltut_openproject" id="perltut_openproject">Open
+  the Perl Tutorial Project</a></h3>
+
+  <p>Select <strong>File|Open|Project</strong> and choose
+  <code>perl_tutorial.kpf</code> from the <em>perl_tutorials</em>
+  subdirectory. The location differs depending on your operating
+  system.</p>
+
+  <p><strong>Windows</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>\lib\support\samples\perl_tutorials
+</pre>
+
+  <p><strong>Linux</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>/lib/support/samples/perl_tutorials
+</pre>
+
+  <p><strong>Mac OS X</strong></p>
+  <pre class="code">
+&lt;<em>User-home-directory</em>&gt;/Library/Application Support/Komodo/3.x/samples/perl_tutorials
+</pre>
+
+  <p>The files included in the tutorial project are displayed on
+  the <a class="doc" href=
+  "../top.html#Project_Pane">Projects tab</a> in the
+  Left Pane. No files open automatically in the <a class="doc"
+  href="../top.html#Editor_Pane">Editor Pane</a>.</p>
+
+  <h3><a name="perltut_openfile" id="perltut_openfile">Open the
+  Perl Tutorial Files</a></h3>
+
+  <p>On the <a class="doc" href=
+  "../top.html#Project_Pane">Projects tab</a>,
+  double-click the files <code>parse.pl</code>,
+  <code>mailexport.xml</code> and <code>mailexport.txt</code>.
+  These files will open in the Editor Pane; a tab at the top of the
+  pane displays their names.</p>
+
+  <h3><a name="perltut_analyzefiles" id=
+  "perltut_analyzefiles">Overview of the Tutorial Files</a></h3>
+
+  <ul>
+    <li><strong>mailexport.txt</strong> This file was generated by
+    exporting the contents of an email folder (using the email
+    program's own Export function) to a comma-separated text file.
+    Notice that the key to the file contents are listed on the
+    first line. The Perl program will use this line as a reference
+    when parsing the email messages.</li>
+
+    <li><strong>parse.pl</strong> This is the Perl program that
+    will parse mailexport.txt and generate mailexport.xml.</li>
+
+    <li><strong>mailexport.xml</strong> This file was generated by
+    parse.pl, using mailexport.txt as input. When you run parse.pl
+    (in <a class="doc" href="#perltut_run">Generating Output</a>),
+    this file will be regenerated.</li>
+  </ul>
+
+  <h2><a name="perltut_analyze" id="perltut_analyze">Analyzing the
+  Program</a></h2>
+
+  <h3><a name="perltut_intro" id=
+  "perltut_intro">Introduction</a></h3>
+
+  <p>In this step, you will examine the Perl program on a
+  line-by-line basis. Ensure that Line Numbers are enabled in
+  Komodo (<strong>View|View Line Numbers</strong>). Ensure that the
+  file "parse.pl" is displayed in the Komodo Editor Pane.</p>
+
+  <h3><a name="perltut_setup" id="perltut_setup">Setting Up the
+  Program</a></h3>
+
+  <h4>Line 1 - Shebang Line</h4>
+
+  <ul>
+    <li>Komodo analyzes this line for hints about what language the
+    file contains</li>
+
+    <li>warning messages are enabled with the "-w" switch</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong> notice that syntax elements
+        are displayed in different colors. You can adjust the
+        display options for language elements in the <a class="doc"
+        href="../prefs.html#prefs_top">Preferences</a>
+        dialog box.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 2 to 4 - External Modules</h4>
+
+  <ul>
+    <li>these lines load external Perl modules used by the
+    program</li>
+
+    <li>Perl module files have a ".pm" extension; "use strict" uses
+    the "strict.pm" module, part of the core Perl distribution</li>
+
+    <li>"use Text::CSV_XS" refers to the module installed in Step
+    One</li>
+  </ul>
+
+  <h3><a name="perlut_write_header" id=
+  "perlut_write_header">Writing the Output Header</a></h3>
+
+  <h4>Lines 6 to 7 - Open Files</h4>
+
+  <ul>
+    <li>input and output files are opened; if the output file does
+    not exist, it is created</li>
+
+    <li>scalar variables, indicated by the "$" symbol, store the
+    files</li>
+
+    <li>"strict" mode (enabled by loading "strict.pm" in line 2)
+    requires that variables be declared using the format "my
+    $variable"</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Perl Pointer</strong> scalar variables store
+        "single" items; their symbol ("$") is shaped like an "s",
+        for "<strong>s</strong>calar".</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 9 to 13 - Print the Header to the Output File</h4>
+
+  <ul>
+    <li>"&lt;&lt;" is a "here document" indicator that defines the
+    string to be printed</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>the text "EOT" is arbitrary and user-defined, and
+        defines the beginning and end of the string</li>
+
+        <li>the second EOT on line 13 indicates the end of
+        output</li>
+      </ul>
+    </li>
+
+    <li>lines 10 and 11 are data that will be printed to the output
+    file</li>
+  </ul>
+
+  <h3><a name="perltut_setup_variables" id=
+  "perltut_setup_variables">Setting Up Input Variables</a></h3>
+
+  <h4>Lines 15 to 16 - Assign Method Call to Scalar Variable</h4>
+
+  <ul>
+    <li>the result of the method call "new" is assigned to the
+    scalar variable $csv</li>
+
+    <li>the method "new" is contained in the module
+    Text::CSV_XS</li>
+
+    <li><code>({binary =&gt; 1})</code> tells the method to treat
+    the data as binary</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Perl Pointer</strong> good Perl code is
+        liberally annotated with comments (indicated by the "#"
+        symbol).</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 18 to 19 - Method "getline"</h4>
+
+  <ul>
+    <li>the method "getline" is contained in the module
+    Text::CSV_XS, referenced in the $csv scalar variable</li>
+
+    <li>"getline" reads the first line of mailexport.txt
+    (referenced in the $in variable), parses the line into fields,
+    and returns a reference to the resulting array to the $fields
+    variable</li>
+  </ul>
+
+  <h3><a name="perltut_process_loop" id=
+  "perltut_process_loop">Starting the Processing Loop</a></h3>
+
+  <h4>Line 21 - "while" Loop</h4>
+
+  <ul>
+    <li>the "while" statement is conditional</li>
+
+    <li style="list-style: none">
+      <ul>
+        <li>the condition is "1', so the program endlessly repeats
+        the loop because the condition is always met</li>
+
+        <li>the logic for breaking out of the loop is on line
+        25</li>
+
+        <li>the loop is enclosed in braces; the opening brace is on
+        line 21, the closing brace on line 51</li>
+      </ul>
+    </li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong> Click on the minus symbol to
+        the left of line 21. The entire section of nested code will
+        be collapsed. This is <a class="doc" href=
+        "../editor.html#Folding">Code Folding</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong> click the mouse pointer on
+        line 21. Notice that the opening brace changes to a bold
+        red font. The closing brace on line 51 is displayed the
+        same way.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 22 to 25 - Extracting a Line of Input Data</h4>
+
+  <ul>
+    <li>the "getline" function extracts one line of data from the
+    input file and places it in the $record scalar variable</li>
+
+    <li>if "getline" returns an empty array, the input file has
+    been fully processed and the program exits the loop and
+    proceeds to line 52</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Perl Pointer</strong> variable arrays store
+        lists of items indexed by number; their symbol ("@") is
+        shaped like an "a", for "<strong>a</strong>rray".</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="perltut_reg_exp" id="perltut_reg_exp">Converting
+  Characters with a Regular Expression</a></h3>
+
+  <h4>Lines 27 to 31 - "foreach"</h4>
+
+  <ul>
+    <li>"foreach" cycles through the elements stored in the
+    @$record array</li>
+
+    <li>the regular expressions on lines 29 and 30 find the
+    characters "&lt;" and "&amp;", and replace them with their
+    character entity values ("&lt;" and "&amp;" are reserved
+    characters in XML)</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong> Komodo's <a class="doc"
+        href="../regex.html#regex_top">Rx Toolkit</a> is
+        a powerful tool for creating and debugging regular
+        expressions. See <a class="doc" href=
+        "../regex-intro.html#regex-intro_top">Regular
+        Expressions Primer</a> for more information.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="perltut_hash_slice" id=
+  "perltut_hash_slice">Combining Field Reference and Field
+  Data</a></h3>
+
+  <h4>Lines 33 to 35 - hash slice</h4>
+
+  <ul>
+    <li>line 35 combines the @$record array with the field
+    reference generated in line 19</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Perl Pointer</strong> variable hashes are
+        indicated by the symbol "%", and store lists of items
+        indexed by string.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h3><a name="write_data" id="write_data">Writing Data to the
+  Output File</a></h3>
+
+  <h4>Lines 37 to 50 - Writing Data to the Output File</h4>
+
+  <ul>
+    <li>one line at a time, lines from the input file are processed
+    and written to the output file</li>
+
+    <li>portions of the data line (stored in the $record scalar
+    variable) are extracted based on the corresponding text in the
+    field reference (the first line in the input file, stored in
+    the $fields variable)</li>
+  </ul>
+
+  <h3><a name="close_loop" id="close_loop">Closing the
+  Program</a></h3>
+
+  <h4>Line 51 - Closing the Processing Loop</h4>
+
+  <ul>
+    <li>at line 51, processing will loop back to the opening brace
+    on line 21</li>
+
+    <li>the logic to exit the loop is on line 25</li>
+  </ul>
+
+  <h4>Lines 52 to 54 - Ending the Program</h4>
+
+  <ul>
+    <li>line 52 prints the closing tag to the XML file</li>
+
+    <li>line 53 closes the output file or, if it cannot, fails with
+    the error "Can't write mailexport.xml"</li>
+
+    <li>line 54 closes the input file (it is not necessary to check
+    the status when closing the input file because this only fails
+    if the program contains a logic error.)</li>
+  </ul>
+
+  <h2><a name="perltut_run" id="perltut_run">Run the Program to
+  Generate Output</a></h2>
+
+  <p>To start, you will simply generate the output by running the
+  program through the debugger without setting any breakpoints.</p>
+
+  <ol>
+    <li><strong>Clear the contents of mailexport.xml</strong> Click
+    on the "mailexport.xml" tab in the Editor Pane. Delete the
+    contents of the file - you will regenerate it in the next step.
+    Save the file.</li>
+
+    <li><strong>Run the Debugger</strong> Click on the "parse.pl"
+    tab in the editor. From the menu, select
+    <strong>Debug|Go/Continue</strong>. In the <a class="doc" href=
+    "../debugger.html#Debugging_Options">Debugging
+    Options</a> dialog box,<br />
+    click <strong>OK</strong> to accept the defaults.</li>
+
+    <li><strong>View the contents of mailexport.xml</strong> Click
+    on the "mailexport.xml" tab in the editor. Komodo informs you
+    that the file has changed. Click <strong>OK</strong> to reload
+    the file.</li>
+  </ol>
+
+  <h2><a name="perltut_debug" id="perltut_debug">Debugging the
+  Program</a></h2>
+
+  <p>In this step you'll add breakpoints to the program and "debug"
+  it. Adding breakpoints lets you to run the program in chunks,
+  making it possible to watch variables and view output as it is
+  generated. Before you begin, ensure that line numbering is
+  enabled in Komodo (<strong>View|View Line Numbers</strong>).</p>
+
+  <ol>
+    <li><strong>Set a breakpoint</strong>: On the "parse.pl" tab,
+    click in the grey margin immediately to the left of the code on
+    line 9 of the program. This will set a breakpoint, indicated by
+    a red circle.</li>
+
+    <li><strong>Run the Debugger</strong>: Select
+    <strong>Debug|Go/Continue</strong>. In the <a class="doc" href=
+    "../debugger.html#Debugging_Options">Debugging
+    Options</a> dialog box, click <strong>OK</strong> to accept the
+    defaults. The debugger will process the program until it
+    encounters the first breakpoint.</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong> Debugger commands can be
+        accessed from the Debug menu, by shortcut keys, or from the
+        Debug Toolbar. For a summary of debugger commands, see
+        <a class="doc" href=
+        "../debugger.html#How_use_Debugger">Debugger
+        Command List</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="3">
+    <li><strong>Watch the debug process</strong>: A yellow arrow on
+    the breakpoint indicates the position at which the debugger has
+    halted. Click on the "mailexport.xml" tab. Komodo informs you
+    that the file has changed. Click <strong>OK</strong> to reload
+    the file.</li>
+
+    <li><strong>View variables</strong>: In the <a class="doc"
+    href="../top.html#Output_Pane">Bottom Pane</a>, see
+    the <strong>Debug</strong> tab. The variables "$in" and "$out"
+    appear in the <strong>Locals</strong> tab.</li>
+
+    <li><strong>Line 9 - Step In</strong>: Select
+    <strong>Debug|Step In</strong>. "Step In" is a debugger command
+    that causes the debugger to execute the current line and then
+    stop at the next processing line (notice that the lines between
+    9 and 13 are raw output indicated by "here" document
+    markers).</li>
+
+    <li><strong>Line 16 - Step In</strong>: On line 16, the
+    processing transfers to the module Text::CSV_XS. Komodo opens
+    the file CSV_XS.pm and stops the debugger at the active line in
+    the module.</li>
+
+    <li><strong>Line 61 - Step Out</strong>: Select
+    <strong>Debug|Step Out</strong>. The Step Out command will make
+    the debugger execute the function in Text::CSV_XS and pause at
+    the next line of processing, which is back in parse.pl on line
+    19.</li>
+
+    <li><strong>Line 19 - Step Over</strong>: Select
+    <strong>Debug|Step Over</strong>. The debugger will process the
+    function in line 19 without opening the module containing the
+    "getline" function.</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong> What do the debugger
+        commands do?</p>
+
+        <ul>
+          <li><b>Step In</b> executes the current line of code and
+          pauses at the following line.</li>
+
+          <li><b>Step Over</b> executes the current line of code.
+          If the line of code calls a function or method, the
+          function or method is executed in the background and the
+          debugger pauses at the line that follows the original
+          line.</li>
+
+          <li><b>Step Out</b> when the debugger is within a
+          function or method, Step Out will execute the code
+          without stepping through the code line by line. The
+          debugger will stop on the line of code following the
+          function or method call in the calling program.</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="9">
+    <li><strong>Line 22 - Set Another Breakpoint</strong>: After
+    the debugger stops at line 21, click in the grey margin
+    immediately to the left of the code on line 22 to set another
+    breakpoint.</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Perl Pointer</strong> The perl debugger will not
+        break on certain parts of control structures, such as lines
+        containing only braces ( <code>{</code>
+        <code>}</code>).<br />
+        With Perl 5.6 and earlier, the debugger will also not break
+        at the start of <code>while</code>, <code>until</code>,
+        <code>for</code>, or <code>foreach</code> statements.</p>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="10">
+    <li><strong>Line 22 - Step Out</strong>: It appears that
+    nothing happened. However, the debugger actually completed one
+    iteration of the "while loop" (from lines 21 to 51). To see how
+    this works, set another breakpoint at line 37, and Step Out
+    again. The debugger will stop at line 37. On the Debug Session
+    tab, look at the data assigned to the $record variable. Then
+    Step Out, and notice that $record is no longer displayed, and
+    the debugger is back on line 21. Step Out again, and look at
+    the $record variable - it now contains data from the next
+    record in the input file.</li>
+
+    <li><strong>Line 37 - Stop the Debugger</strong>: Select
+    <strong>Debug|Stop</strong> to stop the Komodo debugger.</li>
+
+    <li style="list-style: none"><br /></li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Perl Pointer</strong> Did you notice that output
+        wasn't written to mailexport.xml after every iteration of
+        the while loop?<br />
+        This is because Perl maintains an internal buffer for
+        writing to files. You can set the buffer to "autoflush"
+        using the special Perl variable "$|".</p>
+      </td>
+    </tr>
+  </table>
+
+  <h2><a name="perltut_resources" id="perltut_resources">More Perl
+  Resources</a></h2>
+
+  <h3>ASPN, the ActiveState Programmer Network</h3>
+
+  <p><a target="_blank" href=
+  "http://aspn.ActiveState.com/ASPN">ASPN</a>, the ActiveState
+  Programmer Network, provides extensive resources for Perl
+  programmers:</p>
+
+  <ul>
+    <li>Free downloads of <strong>ActivePerl</strong>,
+    ActiveState's Perl distribution</li>
+
+    <li>Searchable <strong>Perl documentation</strong></li>
+
+    <li>Trial versions of <strong>Perl tools</strong>, like the
+    Perl Dev Kit and Visual Perl</li>
+
+    <li>The <strong>Rx Cookbook</strong>, a collaborative library
+    of regular expressions for Perl</li>
+  </ul>
+
+  <h3>Documentation</h3>
+
+  <p>There is a wealth of documentation available for Perl. The
+  first source for language documentation is the Perl distribution
+  installed on your system. To access the documentation contained
+  in the Perl distribution, use the following commands:</p>
+
+  <ul>
+    <li>Open the <strong>Run Command</strong> dialog box
+    (<strong>Tools|Run Command</strong>), and then type
+    <code>perldoc perldoc</code>. A description of the "perldoc"
+    command will be displayed on your screen. Perldoc is used to
+    navigate the documentation contained in your Perl
+    distribution.</li>
+  </ul>
+
+  <h3>Tutorials and Reference Sites</h3>
+
+  <p>There are many Perl tutorials and beginner Perl sites on the
+  Internet, such as:</p>
+
+  <ul>
+    <li><a target="_blank" href=
+    "http://www.cclabs.missouri.edu/things/instruction/perl/perlcourse.html">
+    Introduction to Perl</a>, a course developed by the University
+    of Missouri</li>
+
+    <li><a target="_blank" href=
+    "http://learn.perl.org/">learn.perl.org</a>, which provides
+    book reviews, tips, and access to Perl news lists and
+    books</li>
+  </ul>
+  <hr />
+</body>
+</html>

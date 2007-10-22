@@ -1,0 +1,836 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Using the Rx Toolkit</title>
+</head>
+
+<body>
+  <h1><a name="regex_top" id="regex_top">Using the Rx Toolkit</a>
+  <span class="version_alert">Komodo IDE only</span></h1>
+
+  <div class="right-float-box">
+    <p><strong>Tutorial</strong></p>
+
+    <ul>
+      <li><a href=
+      "regex-intro.html#regex-intro_top">Regular
+      Expression Primer</a></li>
+    </ul>
+
+    <p><strong>Feature Showcase</strong></p>
+
+    <ul>
+      <li>test a <a href="tutorial/tourlet_rx.html#rx_top">regular
+      expression</a></li>
+    </ul>
+  </div>
+
+  <p>Komodo's Rx Toolkit is a tool for building, editing and
+  debugging regular expressions. Build a regular expression in the
+  <strong>Regular Expression</strong> pane, and enter the sample
+  search string in the <strong>Search Text</strong> pane. Adjust
+  the regular expression as necessary to produce the desired
+  matches in the <strong>Match Results</strong> pane.</p>
+
+  <p><strong>Note</strong>: Although the Rx Toolkit has a Python
+  back end, most Perl, PHP, Ruby and Tcl regular expression syntax
+  is also supported.</p>
+
+  <p>If you are new to Regular Expressions, see the <a class="doc"
+  href="regex-intro.html#regex-intro_top">Regular
+  Expressions Primer</a>. In addition, online references for
+  Python, Perl, PHP, Ruby, and Tcl regular expressions are
+  available via the Rx Toolkit's <strong>Help</strong> menu.</p>
+
+  <p>To open the Rx Toolkit, do one of the following:</p>
+
+  <ul>
+    <li>On the Standard Toolbar, click <img class="icon" src=
+    "img/rx_button.png" border="0" />.</li>
+
+    <li style="list-style: none">&nbsp;&nbsp;or<br /></li>
+
+    <li>On the <strong>Tools</strong> menu, select <strong>Rx
+    Toolkit</strong>.</li>
+  </ul>
+
+  <p>To close the Rx Toolkit:</p>
+
+  <ul>
+    <li>Click the "X" button in the top right corner of the Rx
+    Toolkit window.</li>
+  </ul>
+
+  <p><strong>Rx Toolkit Quick Reference</strong></p>
+
+  <ul>
+    <li><a class="doc" href="#Creating_rx">Create and edit</a>
+    regular expressions in the <strong>Regular Expression</strong>
+    pane.</li>
+
+    <li>Apply one or more <a class="doc" href=
+    "#Add_Metacharacters">metacharacters</a> to a regular
+    expression by selecting them from the
+    <strong>Shortcuts</strong> menu or entering them in the
+    <strong>Regular Expression</strong> pane.</li>
+
+    <li>Select a <a class="doc" href="#Match_Type">match type</a>
+    using the buttons at the top of the Rx Toolkit window.</li>
+
+    <li>Apply <a class="doc" href="#Add_Modifiers_rx">modifiers</a>
+    to a regular expression by selecting one or more
+    <strong>Modifiers</strong> check boxes.</li>
+
+    <li>Test a regular expression against a string by entering text
+    in the <strong>Search Text</strong> pane, or by clicking the
+    <strong>Search Text</strong> pane's <strong>Open</strong>
+    button and navigating to a file.</li>
+
+    <li>Right-click a pane in the Rx Toolkit to access a context
+    menu used to <strong>Show/Hide Indentation Guides</strong>,
+    <strong>Show/Hide Line Numbers</strong>, <strong>Show/Hide EOL
+    Markers</strong>, <strong>Show/Hide Whitespace</strong> and
+    turn <strong>Word Wrap</strong> on and off. This context menu
+    is <strong><em>not</em></strong> available in the <strong>Match
+    Results</strong> pane.</li>
+
+    <li>Select <strong>Help|Load Sample Regex and Search
+    Text</strong> to reload the default regular expression and
+    search text if it has been replaced or deleted.</li>
+
+    <li>Double-click a result in the <strong>Match Results</strong>
+    pane to highlight the corresponding text in the <strong>Search
+    Text</strong> pane.</li>
+  </ul>
+
+  <h2><a name="Creating_rx" id="Creating_rx">Creating Regular
+  Expressions</a></h2>
+
+  <p>Use the Rx Toolkit to create and edit regular expressions.
+  Create regular expressions by typing them in the <strong>Regular
+  Expression</strong> pane. A regular expression can include
+  <a class="doc" href=
+  "regex-intro.html#wildcards">metacharacters</a>,
+  <a class="doc" href=
+  "regex-intro.html#anchors">anchors</a>, <a class="doc"
+  href="regex-intro.html#quantifiers">quantifiers</a>,
+  digits, and alphanumeric characters.</p>
+
+  <p>Many of the display characteristics available in the Editor
+  Pane can be enabled in the <strong>Regular Expression</strong>
+  field. However, these characteristics must be manually enabled
+  via <a href="prefs.html#Config_Key_Bindings">key
+  bindings</a>. For example, to display line numbers in the
+  <strong>Regular Expression</strong> field, press
+  'Ctrl'+'Shift'+'6' ('Meta'+'Shift'+'6' on Mac OS X) if the
+  default key binding scheme is in effect.</p>
+
+  <p><strong>Note: Do not enclose regular expressions in forward
+  slashes ("/"). The Rx Toolkit does not recognize enclosing
+  slashes.</strong></p><img src="img/rx_match.gif" />
+
+  <h3><a name="Add_Metacharacters" id="Add_Metacharacters">Adding
+  Metacharacters to a Regular Expression</a></h3>
+
+  <p>The <strong>Shortcuts</strong> menu provides a list of all of
+  the metacharacters that are valid in the Rx Toolkit.</p>
+
+  <p>To add a metacharacter to a regular expression:</p>
+
+  <ol>
+    <li>Click <strong>Shortcuts</strong> to the right of the
+    <strong>Regular Expression</strong> pane.</li>
+
+    <li>Select a metacharacter from the list. The metacharacter is
+    added to the <strong>Regular Expression</strong> pane.</li>
+  </ol>
+
+  <p>If you already know the metacharacter you need, just type it
+  in the <strong>Regular Expression</strong> pane.</p>
+
+  <h3><a name="Match_Type" id="Match_Type">Setting the Match
+  Type</a></h3>
+
+  <p>The buttons at the top of the Rx Toolkit Window determine
+  which function is used to match the regular expression to the
+  search text. The options are based on module-level functions of
+  Python's <a class="doc" href=
+  "http://aspn.activestate.com/ASPN/docs/ActivePython/2.3/python/lib/module-re.html">
+  re</a> module. Choose from the following options:</p>
+
+  <ul>
+    <li><strong>Match</strong>: Scan the search text for the first
+    instance of a match for the regular expression.</li>
+
+    <li><strong>Match All</strong>: Find all matches for the
+    regular expression in the search text and display them as a
+    series of matches in the <strong>Match Results</strong>
+    pane.</li>
+
+    <li><strong>Split</strong>: Scan the search text for regular
+    expression matches and split the string apart wherever there is
+    match. Each match is displayed on a separate line in the
+    <strong>Match Results</strong> pane.</li>
+
+    <li><strong>Replace</strong>: Scan the text for the first
+    occurrence of the regular expression and replace it with text
+    specified in the <strong>Replacement</strong> pane. The
+    <strong>Replacement</strong> pane is only displayed when either
+    the <strong>Replace</strong> or <strong>Replace All</strong> is
+    selected.</li>
+
+    <li><strong>Replace All</strong>: Scan the text for all
+    occurrences of the regular expression and replace them with the
+    text specified in the <strong>Replacement</strong> pane. The
+    <strong>Replacement</strong> pane is only displayed when either
+    the <strong>Replace</strong> or <strong>Replace All</strong> is
+    selected.</li>
+  </ul>
+
+  <h3><a name="Add_Modifiers_rx" id="Add_Modifiers_rx">Adding
+  Modifiers to a Regular Expression</a></h3>
+
+  <p>Add modifiers to regular expression by selecting one or more
+  of the check boxes to the right of the <strong>Regular
+  Expression</strong> pane:</p>
+
+  <p><strong>Note</strong>: You must use the
+  <strong>Modifiers</strong> check boxes to add modifiers to a
+  regular expression. The Rx Toolkit does not recognize modifiers
+  entered in the <strong>Regular Expression</strong> pane.</p>
+
+  <ul>
+    <li><strong>Ignore Case</strong>: Ignore alphabetic case
+    distinctions while matching. Use this to avoid specifying the
+    case in the pattern you are trying to match.</li>
+
+    <li><strong>Multi-line Mode</strong>: Let caret "^" and dollar
+    "$" match next to newline characters. Use this when a pattern
+    is more than one line long and has at least one newline
+    character.</li>
+
+    <li><strong>Single-line Mode</strong>: Let dot "." match
+    newline characters. Use this when a pattern is more than one
+    line long and has at least one newline character.</li>
+
+    <li><strong>Verbose</strong>: Permit the use of whitespace and
+    comments in regular expressions. Use this to pretty print
+    and/or add comments to regular expressions.</li>
+
+    <li><strong>Unicode (Python Only)</strong>: Make the special
+    characters "\w", "\W", "\b" and "\B" dependent on Unicode
+    character properties.</li>
+
+    <li><strong>Locale (Python Only)</strong>: Make the special
+    characters "\w", "\W", "\b" and "\B" dependent on the current
+    locale.</li>
+  </ul>
+
+  <h2><a name="Debugging_rx" id="Debugging_rx">Evaluating</a>
+  Regular Expressions</h2>
+
+  <p>A debugged regular expression correctly matches the intended
+  patterns and provides information about which variable contains
+  which pattern.</p>
+
+  <p><strong>If there is a match...</strong></p>
+
+  <ul>
+    <li>Matches are displayed in the <strong>Match Results</strong>
+    pane.</li>
+
+    <li>Komodo highlights the search text string in yellow.</li>
+  </ul>
+
+  <p><strong>If there is no match...</strong></p>
+
+  <ul>
+    <li>If a regular expression does not match the test string, an
+    error message is displayed in the <strong>Match
+    Results</strong> pane.</li>
+
+    <li>If a regular expression is invalid, the title bar of the
+    <strong>Match Results</strong> pane becomes red and details of
+    the error are displayed in that pane.</li>
+  </ul><img src="img/rx_matches.gif" />
+
+  <h3><a name="debug_output" id="debug_output">Match
+  Results</a></h3>
+
+  <p>If a regular expression collects multiple words, phrases or
+  numbers and stores them in groups, the <strong>Match
+  Results</strong> pane displays details of the contents of each
+  group.</p>
+
+  <p>The <strong>Match Results</strong> pane is displayed with as
+  many as four columns, depending on which <a class="doc" href=
+  "#Match_Type">match type</a> is selected. The
+  <strong>Group</strong> column displays a folder for each match;
+  the folders contain numbered group variables. The
+  <strong>Span</strong> column displays the length in characters of
+  each match. The <strong>Value</strong> column lists the values of
+  each variable.</p>
+
+  <h2><a name="Viewing_Sample_Rx" id="Viewing_Sample_Rx">Modifier
+  Examples</a></h2>
+
+  <p>This section shows some sample regular expressions with
+  various modifiers applied. In all examples, the default match
+  type (<strong>Match All</strong>) is assumed:</p>
+
+  <ul>
+    <!--<li><a class="doc" href="#Using_Global">Global Modifier</a></li>-->
+
+    <li><a class="doc" href="#Using_Ignore_Case">Ignore
+    Case</a></li>
+
+    <li><a class="doc" href=
+    "#Using_Multi_line_Mode">Multi-line</a></li>
+
+    <li><a class="doc" href=
+    "#Using_Single_line_Mode">Single-line</a></li>
+
+    <li><a class="doc" href="#Using_Multi_and_Single">Multi-line
+    and Single-line</a></li>
+
+    <li><a class="doc" href="#Using_Verbose">Verbose</a></li>
+    <!--<li><a class="doc" href="#Using_Unicode">Unicode</a></li>-->
+    <!--<li><a class="doc" href="#Using_Locale">Locale</a></li>-->
+    <!--<li><a class="doc" href="#Using_mig">Multi-line, Ignore Case and Global</a></li>-->
+  </ul><!--<h3><a name="Using_Global">Using Global</a></h3>
+
+<p>The Global modifier matches all occurrences of the specified regular expression. Use
+this when you want Rx Toolkit to cycle through several repetitions in your test string.</p>
+
+<p>To match the following test string</p>
+
+<pre class="code">
+testing123
+foobar75
+</pre>
+
+<p>you could use the following regular expression with Global selected</p>
+
+<pre class="code">
+(.*?)(\d+)
+</pre>
+
+<p>Click <strong>Advanced</strong> to view your Group Match Variables output, which would look like this</p>
+
+<pre class="code">
+$1 (match1)        testing
+$2 (match1)        123
+$1 (match2)        foobar
+$2 (match2)        75
+</pre>
+
+<p><strong>Discussion</strong></h4>
+
+<p>This regular expression matches the entire test string.</p>
+
+<p>The <code>.*</code> matches any character zero or more
+times, the <code>? </code>tells <code>*</code>
+to not be greedy, which means <code>(.*?)</code> matches the words "testing"
+and "foobar". The <code>(\d+)</code>
+matches any digits one or more times, which matches the numbers "123" and
+"75". The Global modifier means that Rx Toolkit matches more than the first occurrence of the
+pattern. That's why Rx Toolkit matched $1 and $2 twice.</p>-->
+
+  <h3><a name="Using_Ignore_Case" id="Using_Ignore_Case">Using
+  Ignore Case</a></h3>
+
+  <p>The <strong>Ignore case</strong> modifier ignores alphabetic
+  case distinctions while matching. Use this when you do not want
+  to specify the case in the pattern you are trying to match.</p>
+
+  <p>To match the following test string...</p>
+  <pre class="code">
+Testing123
+</pre>
+
+  <p>...you could use the following regular expression with
+  <strong>Ignore case</strong> selected:</p>
+  <pre class="code">
+^([a-z]+)(\d+)
+</pre>
+
+  <p>The following results are displayed in the <strong>Match
+  Results</strong> pane:</p><img border="1" src=
+  "img/ignore_case.gif" />
+
+  <p><strong>Discussion</strong></p>
+
+  <p>This regular expression matches the entire test string.</p>
+
+  <p>The <code>^</code> matches the beginning of a string. The
+  <code>[a-z]</code> matches any lowercase letter from "a" to "z".
+  The <code>+</code> matches any lowercase letter from "a" to "z"
+  one or more times. The <strong>Ignore case</strong> modifier lets
+  the regular expression match any uppercase or lowercase letters.
+  Therefore <code>^([a-z]+)</code> matches "Testing". The
+  <code>(\d+)</code>matches any digit one or more times, so it
+  matches "123".</p>
+
+  <h3><a name="Using_Multi_line_Mode" id=
+  "Using_Multi_line_Mode">Using Multi-Line Mode</a></h3>
+
+  <p>The <strong>Multi-line</strong> modifier allows <code>^</code>
+  and <code>$</code> to match next to newline characters. Use this
+  when a pattern is more than one line long and has at least one
+  newline character.</p>
+
+  <p>To match the subject part of the following test string...</p>
+  <pre class="code">
+"okay?"
+</pre>
+
+  <p>...you could use the following regular expression with
+  <strong>Multi-line</strong> selected:</p>
+  <pre class="code">
+^(\"okay\?\")
+</pre>
+
+  <p>The following results are displayed in the <strong>Match
+  Results</strong> pane:</p><img border="1" src=
+  "img/multiple_line.gif" />
+
+  <p><strong>Discussion</strong></p>
+
+  <p>This regular expression matches the entire test string.</p>
+
+  <p>The <code>^</code> matches the beginning of any line. The
+  <code>\"</code> matches the double quotes in the test string. The
+  string matches the literal word "okay". The <code>\?</code>
+  matches the question mark "?". The <code>\"</code> matches the
+  terminal double quotes. There is only one variable group in this
+  regular expression, and it contains the entire test string.</p>
+
+  <h3><a name="Using_Single_line_Mode" id=
+  "Using_Single_line_Mode">Using Single-Line Mode</a></h3>
+
+  <p>The <strong>Single-line</strong> modifier mode allows "." to
+  match newline characters. Use this when a pattern is more than
+  one line long, has at least one newline character, and you want
+  to match newline characters.</p>
+
+  <p>To match the following test string...</p>
+  <pre class="code">
+Subject: Why did this
+work?
+</pre>
+
+  <p>...you could use the following regular expression with
+  <strong>Single-line</strong> selected:</p>
+  <pre class="code">
+(:[\t ]+)(.*)work\?
+</pre>
+
+  <p>The following results are displayed in the <strong>Match
+  Results</strong> pane:</p><img border="1" src=
+  "img/single_line.gif" />
+
+  <p><strong>Discussion</strong></p>
+
+  <p>This regular expression matches everything in the test string
+  following the word "Subject", including the colon and the
+  question mark.</p>
+
+  <p>The <code>(\s+)</code> matches any space one or more times, so
+  it matches the space after the colon. The <code>(.*)</code>
+  matches any character zero or more times, and the
+  <strong>Single-line</strong> modifier allows the period to match
+  the newline character. Therefore <code>(.*)</code> matches "Why
+  did this &lt;newline&gt; match". The <code>\?</code> matches the
+  terminal question mark "?".</p>
+
+  <h3><a name="Using_Multi_and_Single" id=
+  "Using_Multi_and_Single">Using Multi-line Mode and Single-line
+  Mode</a></h3>
+
+  <p>To match more of the following test string...</p>
+  <pre class="code">
+Subject: Why did this
+work?
+</pre>
+
+  <p>...you would need both the <strong>Multi-line</strong> and
+  <strong>Single-line</strong> modifiers selected for this regular
+  expression:</p>
+  <pre class="code">
+([\t ]+)(.*)^work\?
+</pre>
+
+  <p>The following results are displayed in the <strong>Match
+  Results</strong> pane:</p><img border="1" src=
+  "img/multi_single.gif" />
+
+  <p><strong>Discussion</strong></p>
+
+  <p>This regular expression matches everything in the test string
+  following the word "Subject", including the colon and the
+  question mark.</p>
+
+  <p>The <code>([\t ]+)</code> matches a Tab character or a space
+  one or more times, which matches the space after the colon. The
+  <code>(.*)</code> matches any character zero or more times, which
+  matches "Why did this &lt;newline&gt;". The <code>^work</code>
+  matches the literal "work" on the second line. The
+  <code>\?</code> matches the terminal question mark "?".</p>
+
+  <p>If you used only the <strong>Single-line</strong> modifier,
+  this match would fail because the caret "<code>^</code>" would
+  only match the beginning of a string.</p>
+
+  <p>If you used only the <strong>Multi-line</strong> modifier,
+  this match would fail because the period "<code>.</code>" would
+  not match the newline character.</p>
+
+  <h3><a name="Using_Verbose" id="Using_Verbose">Using
+  Verbose</a></h3>
+
+  <p>The <strong>Verbose</strong> modifier ignores whitespace and
+  comments in the regular expression. Use this when you want to
+  pretty print and/or add comments to a regular expression.</p>
+
+  <p>To match the following test string...</p>
+  <pre class="code">
+testing123
+</pre>
+
+  <p>...you could use the following regular expression with the
+  <strong>Verbose</strong> modifier selected:</p>
+  <pre class="code">
+(.*?)  (\d+)  # this matches testing123
+</pre>
+
+  <p>The following results are displayed in the <strong>Match
+  Results</strong> pane:</p><img border="1" src=
+  "img/verbose.gif" />
+
+  <p><strong>Discussion</strong></p>
+
+  <p>This regular expression matches the entire test string.</p>
+
+  <p>The <code>.*</code> matches any character zero or more times,
+  the <code>?</code> makes the <code>*</code> not greedy, and the
+  <strong>Verbose</strong> modifier ignores the spaces after the
+  <code>(.*?)</code>. Therefore, <code>(.*?)</code> matches
+  "testing" and populates the "Group 1" variable. The
+  <code>(\d+)</code> matches any digit one or more times, so this
+  matches "123" and populates the "Group 2" variable. The
+  <strong>Verbose</strong> modifier ignores the spaces after
+  <code>(\d+)</code> and ignores the comments at the end of the
+  regular expression.</p>
+  <!--<h3><a name="Using_Unicode">Using Unicode</a></h3>-->
+  <!--<h3><a name="Using_Locale">Using Locale</a></h3>
+
+<p>The <strong>Locale</strong> modifier takes into account the locale setting on
+your system will match the appropriate language characters. Use this when you
+want to match characters in a specific language. For example, if your locale is
+French, you can use this modifier to create regular expressions that match
+French characters.</p>
+
+<p>To match the following test string...</p>
+
+<pre class="code">
+Le message s'ouvre dans une autre fen�tre du navigateur.
+</pre>
+
+<p>...you could use the following regular expression with <strong>Locale</strong>
+selected:</p>
+
+<pre class="code">
+^([a-z]+)(\d+)
+</pre>
+
+<p>The following results are displayed in the <strong>Match Results</strong> pane:</p>
+
+<img border="1" src="img/ignore_case.gif">
+
+
+<p><strong>Discussion</strong></h4>
+
+<p>This regular expression matches the entire test string.</p>
+
+<p>The <code>^</code> matches the beginning of a string.
+The <code>[a-z]</code> matches any lowercase letter from
+"a" to "z". The <code>+</code> matches any lowercase letter from
+"a" to "z" one or more times. The <strong>Ignore case</strong> modifier lets the
+regular expression match any uppercase or lowercase letters. Therefore
+<code>^([a-z]+)</code> matches "Testing". The <code>(\d+)</code>matches any digit
+one or more times, so it matches "123".</p>
+
+
+<!==<h3><a name="Using_mig">Using Multi-line Mode, Ignore Case and Global</a></h3>
+
+<p>If you want to match the contents of a standard email header, you would
+compose your regular expression and apply three modifiers: multi-line, ignore
+case, and global.</p>
+
+<p>To match more of the following test string</p>
+
+<pre class="code">
+From: joe@example.com
+To: sue@example2.com
+Cc: bob@example3.com
+Subject: Use modifiers in regular expressions
+</pre>
+
+<p>you could use for this
+regular expression with Multi-line Mode, Ignore Case, and Global selected</p>
+
+<pre class="code">
+^([a-z]+):\s+(.+?)$
+</pre>
+
+<p>Click <strong>Advanced</strong> to view your Group Match Variables output, which would look like this</p>
+
+<pre class="code">
+$1 (match1)        From
+$2 (match1)        joe@example.com
+$1 (match2)        To
+$2 (match2)        sue@example2.com
+$1 (match3)        Cc
+$2 (match3)        bob@example3.com
+$1 (match4)        Subject
+$2 (match4)        Use modifiers in regular expressions
+</pre>
+
+<p><strong>Discussion</strong></h4>
+
+<p>This regular expression matches each part of the email header.</p>
+
+<p>The <code> ^</code> matches the beginning of any line. The
+<code> ([a-z]+)</code> matches any lowercase
+letter one or more times. The <code> :</code> matches a colon and the
+<code> \s+</code> matches a space one or more times. The <code> (.+?)</code>
+matches any character one or more times. The <code> $</code>
+matches the end of a line.</p>
+
+<p>Multi-line Mode allows caret "<code>^</code>" to match the
+beginning of any line. Without the multi-line mode modifier, caret
+"<code>^</code>" matches the beginning of a string.</p>
+
+<p>Ignore Case allows Rx Toolkit to match any lower or uppercase letter.
+Without the ignore case modifier, there would be no group match variables.</p>
+
+<p>Global allows Rx Toolkit to keep matching after the first match is found.
+Without global, Rx Toolkit only matches the first line, "From:
+joe@example.com".</p>-->
+
+  <h2><a name="Using_rx" id="Using_rx">Using Regular
+  Expressions</a></h2>
+
+  <p>Once a regular expression has been built and debugged, you can
+  add it to your code by copying and pasting the regular expression
+  into the Komodo Editor Pane. Each language is a little different
+  in the way it incorporates regular expressions. The following are
+  examples of regular expressions used in Perl, Python, PHP and
+  Tcl.</p>
+
+  <h3><a name="regex_perl" id="regex_perl">Perl</a></h3>
+
+  <p>This Perl code uses a regular expression to match two
+  different spellings of the same word. In this case the program
+  prints all instances of "color" and "colour".</p>
+  <pre class="code">
+while($word = &lt;STDIN&gt;){
+    print "$word" if ($word =~ /colou?r/i );
+}
+</pre>
+
+  <p>The metacharacter "?" specifies that the preceding character,
+  "u", occurs zero or one times. The modifier "i" (ignore case)
+  that follows <code>/colou?r/</code> means that the regular
+  expression will match <code>$word</code>, regardless of whether
+  the specified characters are uppercase or lowercase (for example,
+  Color, COLOR and CoLour will all match).</p>
+
+  <h3><a name="regex_python" id="regex_python">Python</a></h3>
+
+  <p>This Python code uses a regular expression to match a pattern
+  in a string. In Python, regular expressions are available via the
+  <code>re</code> module.</p>
+  <pre class="code">
+import re
+m = re.search("Java[Ss]cript", "in the JavaScript tutorial")
+if m:
+    print "matches:", m.group()
+else:
+    print "Doesn't match."
+</pre>
+
+  <p>The <code>re.search()</code> function returns a match object
+  if the regular expression matches; otherwise, it returns none.
+  The character class "[Ss]" is used to find the word "JavaScript",
+  regardless of whether the "s" is capitalized. If there is a
+  match, the script uses the <code>group()</code> method to return
+  the matching strings. Otherwise the program prints "Doesn't
+  Match".</p>
+
+  <h3><a name="regex_tcl" id="regex_tcl">Tcl</a></h3>
+
+  <p>This Tcl code uses a regular expression to match all lines in
+  a document that contain a URL.</p>
+  <pre class="code">
+while {[gets $doc line]!=-1} {
+   if {regexp -nocase {www\..*\.com} $line} {
+       puts $line
+</pre>
+
+  <p>This <code>while</code> loop searches every line in a file for
+  any instance of a URL and displays the results. Tcl implements
+  regular expressions using the <code>regexp</code> and
+  <code>regsub</code> commands. In the example shown above, the
+  <code>regexp</code> is followed by the <code>-nocase</code>
+  option, which specifies that the following regular expression
+  should match, regardless of case. The regular expression attempts
+  to match all web addresses. Notice the use of backslashes to
+  include the literal dots (.) that follow "www" and precede
+  "com".</p>
+
+  <h3><a name="regex_php" id="regex_php">PHP</a></h3>
+
+  <p>This PHP code uses a <a class="doc" href=
+  "http://aspn.activestate.com/ASPN/docs/PHP/ref.pcre.html">Perl
+  Compatible Regular Expressions(PCRE)</a> to search for valid
+  phone numbers in the United States and Canada; that is, numbers
+  with a three-digit area code, followed by an additional seven
+  digits.</p>
+  <pre class="code">
+$numbers = array("777-555-4444",
+                  "800-123-4567",
+                 "(999)555-1111",
+                 "604.555.1212",
+                 "555-1212",
+                 "This is not a number",
+                 "1234-123-12345",
+                 "123-123-1234a",
+                 "abc-123-1234");
+
+function isValidPhoneNumber($number) {
+    return preg_match("/\(?\d{3}\)?[-\s.]?\d{3}[-\s.]\d{4}$/x", $number);
+}
+
+foreach ($numbers as $number) {
+    if (isValidPhoneNumber($number)) {
+        echo "The number '$number' is valid\n";
+    } else {
+        echo "The number '$number' is not valid\n";
+    }
+}
+</pre><!--<pre class="code">
+function isValidPhone($Number) {
+
+    echo ereg("[2-9][0-9]{2}-[1-9][0-9]{2}-[0-9]{4}$", $Number, $Invalid);
+}    else {
+    echo "Invalid phone number: $Invalid";
+}
+
+</pre>-->
+
+  <p>This PHP example uses the <code>preg_match</code> function for
+  matching regular expressions. Other <a class="doc" href=
+  "http://aspn.activestate.com/ASPN/docs/PHP/ref.pcre.html">Perl
+  compatible regular expression functions</a> are also available.
+  If the function <code>isValidPhone</code> returns true, the
+  program outputs a statement that includes the valid phone number.
+  Otherwise, it outputs a statement advising that the number is not
+  valid.</p><!--This example uses
+character classes to denote the possible range of numbers that could appear in each segment
+of a 10-digit phone number. Note that the segments are separated by hyphens
+(xxx-xxx-xxxx). The [2-9] that appears
+in the first segment ensures that the first of the three digits cannot be "1" or
+"2". Likewise, the [1-9] in the second segment excludes "0" from the possible
+range of numbers. The {2} that follows the first two segments and the {4} that
+follows the third segment determine the number of digits to which the range
+applies. For example, in the first segment (the area code), the [0-9] character
+class applies only to the second and third digits. The $ is an end-of-string
+character.</p>-->
+
+  <h3><a name="regex_ruby" id="regex_ruby">Ruby</a></h3>
+
+  <p>This Ruby code uses a regular expression that does simple
+  email addresses validation.</p>
+  <pre class="code">
+puts 'Enter your email address:'
+cmdline = gets.chomp
+addrtest = /^\w{1,30}\@\w{1,30}\.\w{2,4}$/i
+if addrtest.match(cmdline)
+  puts 'Address is valid.'
+else
+  puts 'Address is NOT valid.'
+  tries = tries - 1
+end
+</pre>
+
+  <p>The regular expression is stored in the <code>addrtest</code>
+  variable, which is compared to the <code>cmdline</code> variable
+  using the <code>match</code> method. The regular expression
+  specifies that the address must have:</p>
+
+  <ul>
+    <li>a username part of up to 30 alphanumeric characters</li>
+
+    <li>an "@"</li>
+
+    <li>a domain name of up to 30 alphanumeric characters</li>
+
+    <li>a "."</li>
+
+    <li>a top-level domain of between two and four alphanumeric
+    characters</li>
+  </ul>
+
+  <p>It will accept some addresses that are not fully RFC
+  compliant, and will not accept long user or domain names. A more
+  robust regular expression is:</p>
+  <pre class="code">
+ /^([a-z0-9]+[._]?){1,}[a-z0-9]+\@(([a-z0-9]+[-]?){1,}[a-z0-9]+\.){1,}[a-z]{2,4}$/i
+</pre>
+
+  <p>This does not limit the length of the username or domain. It
+  also enforces some additional requirements:</p>
+
+  <ul>
+    <li>only letters, numbers, "." and "_" can be used in the
+    username</li>
+
+    <li>only letters, numbers, and "-" can be used in the
+    username</li>
+
+    <li>"_" and "." cannot be used at the beginning or end of the
+    username</li>
+
+    <li>"-" cannot be used at the beginning or end of the domain
+    name</li>
+
+    <li>the top-level domain can only contain letters</li>
+  </ul>Writing a regular expression that is fully compliant with
+  RFC 822 is quite a bit <a href=
+  "http://examples.oreilly.com/regex/email-unopt.txt">more
+  complicated</a>. <!-- Footer Start  ->
+<hr>
+
+</td>
+
+</tr>
+
+</table>
+
+</body>
+</html>
+-->
+</body>
+</html>

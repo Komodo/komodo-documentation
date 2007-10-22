@@ -1,0 +1,577 @@
+<!-- Copyright (c) 2001-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../favicon.ico" type=
+  "image/x-icon" />
+
+  <title>XSLT Tutorial</title>
+</head>
+
+<body>
+  <h1><a name="xslttut_top" id="xslttut_top">XSLT Tutorial</a></h1>
+
+  <h2><a name="xslttut_over" id="xslttut_over">XSLT Tutorial
+  Overview</a></h2>
+
+  <h3><a name="xslttutassumptions" id="xslttutassumptions">Before
+  You Start</a></h3>
+
+  <p>This tutorial assumes:</p>
+
+  <ul>
+    <li>You are interested in XSLT. Previous knowledge of XSLT is
+    not required for this tutorial. The XSLT Tutorial walks you
+    through a simple program and later suggests various resources
+    for further information.</li>
+  </ul>
+
+  <h3><a name="xslttut_scenario" id="xslttut_scenario">XSLT
+  Tutorial Scenario</a></h3>
+
+  <p>In the <a class="doc" href=
+  "../tutorial/perltut.html#perltut_top">Perl Tutorial</a>, a Perl
+  program converts a text file containing exported email messages
+  to an XML file. In this tutorial, XSLT converts the XML file to
+  HTML. Note that you do not need to complete the Perl Tutorial
+  before doing the XSLT Tutorial. Each tutorial can be completed
+  independently. In this tutorial you will:</p>
+
+  <ol>
+    <li><a class="doc" href="#xslttut_openproject"><strong>Open the
+    XSLT Tutorial Project</strong></a> and associated files.</li>
+
+    <li><a class="doc" href="#xslttut_analyze"><strong>Analyze
+    mailexport.xml</strong></a> the XSLT program included in the
+    XSLT Tutorial Project.</li>
+
+    <li><a class="doc" href="#xslttut_run"><strong>Run the
+    Program</strong></a> and generate HTML output through the
+    transformation.</li>
+
+    <li><a class="doc" href="#xslttut_debug"><strong>Debug the
+    program</strong></a> using the Komodo debugger.</li>
+  </ol>
+
+  <h2><a name="xslttut_openproject" id=
+  "xslttut_openproject">Opening the Tutorial Project</a></h2>
+
+  <p>On <strong>File</strong> menu, click
+  <strong>Open|Project</strong> and navigate to the
+  <em>xslt_tutorial.kpf</em> project file on the
+  <em>xslt_tutorials</em> subdirectory. The location differs
+  depending on your operating system.</p>
+
+  <p><strong>Windows</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>\lib\support\samples\xslt_tutorials
+</pre>
+
+  <p><strong>Linux</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>/lib/support/samples/xslt_tutorials
+</pre>
+
+  <p><strong>Mac OS X</strong></p>
+  <pre class="code">
+&lt;<em>User-home-directory</em>&gt;/Library/Application Support/Komodo/3.x/samples/xslt_tutorials
+</pre>
+
+  <p>All files included in the tutorial project are displayed on
+  the <a class="doc" href=
+  "../top.html#Project_Pane">Projects tab</a> in the
+  Left Pane.</p>
+
+  <h3><a name="xslttut_openfile" id="xslttut_openfile">Opening the
+  XSLT Tutorial Files</a></h3>
+
+  <p>On the <a class="doc" href=
+  "../top.html#Project_Pane">Projects tab</a>,
+  double-click the files <em>mailexport.html</em>,
+  <em>mailexport.xml</em>, and <em>mailexport2html.xsl</em>. These
+  files open in the Editor Pane; a tab at the top of the pane
+  displays each of their names.</p>
+
+  <h3><a name="xslttut_overview" id="xslttut_overview">Overview of
+  the Tutorial Files</a></h3>
+
+  <ul>
+    <li><strong>mailexport.xml</strong>: An input file that
+    contains email messages converted to XML format. (See how this
+    was done in the <a class="doc" href=
+    "../tutorial/perltut.html#perltut_top">Perl Tutorial</a>.)</li>
+
+    <li><strong>mailexport2html.xsl</strong>: An XSLT program that
+    generates an HTML file from the <em>mailexport.xml</em> input
+    file.</li>
+
+    <li><strong>mailexport.html</strong>: A file that stores the
+    HTML output from the XSLT transformation.</li>
+  </ul>
+
+  <h2><a name="xslttut_analyze" id="xslttut_analyze">Analyzing the
+  Program</a></h2>
+
+  <p>In this step, you will analyze the XSLT program on a
+  line-by-line basis. Open the XSLT Tutorial Project and associated
+  files as described in <a class="doc" href=
+  "#xslttut_openproject">the previous step</a>. Be sure Line
+  Numbers are enabled in Komodo (<strong>View|View Line
+  Numbers</strong>). Be sure the <em>mailexport2html.xsl</em> file
+  is displayed in the Komodo Editor Pane.</p>
+
+  <h3><a name="xslttut_setup" id="xslttut_setup">XSLT
+  Header</a></h3>
+
+  <h4>Lines 1 to 3 - XML and XSLT Declarations</h4>
+
+  <ul>
+    <li>an XSLT program is an XML document - thus, the XML version
+    and character set are declared on the first line</li>
+
+    <li>the namespace declaration on the second line tells the
+    "parser" (the XSLT interpreter) that XSLT elements are prefixed
+    with <code>xsl:</code> to prevent confusion with user-defined
+    element names and non-XSLT elements</li>
+
+    <li><code>xsl:output</code> controls the appearance of the
+    generated output; for example, the presence of this line
+    generates a <code>META</code> declaration in the head of the
+    HTML output</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Notice that different types
+        of language elements are displayed in different colors.
+        Adjust the display options for language elements in the
+        <a class="doc" href=
+        "../prefs.html#prefs_top">Preferences</a> dialog
+        box.</p>
+      </td>
+    </tr>
+  </table><br />
+
+  <table align="center">
+    <tr>
+      <td class="startupBox"><strong>XSLT Pointer</strong>:
+      Processing routines in XSLT programs are enclosed in opening
+      and closing tags similar to those in XML.</td>
+    </tr>
+  </table><br />
+
+  <h3><a name="xslttut_write_header" id="xslttut_write_header">HTML
+  Header</a></h3>
+
+  <h4>Line 6 - XSLT "template"</h4>
+
+  <ul>
+    <li><code>template</code> is the main processing element in an
+    XSLT program</li>
+
+    <li>the <code>match="/"</code> attribute specifies that the
+    template is selected when the document element is
+    processed</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox"><strong>XSLT Pointer</strong>: XSLT
+      commands have (up to) four components: namespace ("xsl"),
+      element ("template"), attribute(s) ("match="), and attribute
+      value(s) ("/").</td>
+    </tr>
+  </table><br />
+
+  <table align="center">
+    <tr>
+      <td class="startupBox"><strong>XSLT Pointer</strong>: XSLT
+      uses XPath expressions to select data from XML documents. On
+      line 6, <code>match="/"</code> selects a "node" in the XML
+      document's hierarchy, rather than a specific item of
+      data.</td>
+    </tr>
+  </table>
+
+  <h4>Lines 7 to 11 - HTML Tags</h4>
+
+  <ul>
+    <li>writes standard HTML tags to the output document</li>
+  </ul>
+
+  <h4>Line 12 - XSLT apply-templates</h4>
+
+  <ul>
+    <li>processes each node of the XML document (that is, each
+    sub-section contained beneath the current position in the XML
+    document)</li>
+
+    <li>for each node, the XSLT "engine" (the internal processor)
+    checks the XSLT program for a matching template</li>
+
+    <li>the first XML tag with a corresponding template is
+    <code>&lt;EMAIL&gt;</code></li>
+  </ul>
+
+  <h4>Lines 13 to 15 - HTML Tags</h4>
+
+  <ul>
+    <li>after processing all the nodes in the XML document,
+    processing returns to line 13, where the closing tags for the
+    HTML page are written to the output</li>
+
+    <li>line 15 closes the XSLT processing routine, completing the
+    program</li>
+  </ul>
+
+  <h3><a name="email_header" id="email_header">Format Email
+  Header</a></h3>
+
+  <h4>Lines 18 to 21 - Select HEADER content</h4>
+
+  <ul>
+    <li>when line 18 is processed, content in
+    <code>&lt;HEADER&gt;</code> tags in the XML document are
+    processed</li>
+
+    <li>lines 19 and 21 write standard HTML formatting around the
+    content generated in line 20</li>
+
+    <li>on line 20, the <code>value-of</code> statement selects
+    content contained in the <code>&lt;SUBJECT&gt;</code> tag and
+    writes it to the output document</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Click the minus symbol to
+        the left of line 19. The entire section of nested code is
+        collapsed. This is called <a class="doc" href=
+        "../editor.html#Folding">Code Folding</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 22 to 29 - call-template</h4>
+
+  <ul>
+    <li>after the <code>From:</code> text, the
+    <code>call-template</code> routine causes the XSLT program to
+    proceed to the template <code>formatEmail</code> on line 51;
+    after completing the <code>formatEmail</code> routine,
+    processing returns to line 23</li>
+
+    <li><code>with-param</code> indicates that the parameter
+    <code>address</code> should be applied to the contents of the
+    <code>&lt;ORIGADDRESS&gt;</code> XML tag</li>
+
+    <li>the same selection and formatting routine is applied to the
+    contents of the <code>&lt;DESTADDRESS&gt;</code> XML tag on
+    lines 26 to 28</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>XSLT Pointer</strong>: Notice the
+        <code>&lt;BR/&gt;</code> HTML tag on line 25. XML and XSLT
+        treat all tags as container tags that have both opening and
+        closing elements. However, some HTML tags (like
+        <code>&lt;BR&gt;</code> and <code>&lt;IMG&gt;</code>) stand
+        alone, and do not require a closing tag. They are
+        represented with a closing slash. XSLT tags also use a
+        closing slash if they are not a tag pair (as shown on line
+        23).</p>
+      </td>
+    </tr>
+  </table><br />
+
+  <h3><a name="xslttut_process_loop" id=
+  "xslttut_process_loop">Process Email</a></h3>
+
+  <h4>Lines 33 to 34 - Process First Message</h4>
+
+  <ul>
+    <li>when the <code>apply-templates</code> tag in line 12 is
+    encountered, processing jumps to line 33</li>
+
+    <li>on line 34, the <code>HEADER</code> node is selected and
+    processing jumps to line 18</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>XSLT Pointer</strong>: Comments in XSLT programs
+        are enclosed in the tags <code>&lt;!--</code> and
+        <code>--&gt;</code>, the same as in HTML.</p>
+      </td>
+    </tr>
+  </table>
+
+  <h4>Lines 36 to 39 - Process Email Body</h4>
+
+  <ul>
+    <li>after processing the email header, the XSLT program
+    proceeds to line 36</li>
+
+    <li>the contents of the <code>BODY</code> tag are placed in the
+    HTML tags</li>
+  </ul>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: XSLT programs and XML input
+        documents must be "well-formed" in order to perform
+        transformations. Komodo's <a class="doc" href=
+        "../editor.html#Linting">Background Syntax
+        Checking</a> makes it easy to identify and fix coding
+        errors.</p>
+      </td>
+    </tr>
+  </table><br />
+
+  <h3><a name="format_address" id="format_address">Format Email
+  Addresses</a></h3>
+
+  <h4>Lines 45 to 52 - Format Email Addresses</h4>
+
+  <ul>
+    <li>the routine that starts on line 47 is called from lines 22
+    and 26</li>
+
+    <li><code>address</code> parameter contents are determined on
+    lines 23 and 27</li>
+
+    <li>on line 49, the contents of the <code>address</code>
+    parameter are converted to a variable and concatenated with the
+    text that constitutes a valid email address reference in
+    HTML</li>
+  </ul>
+
+  <h2><a name="xslttut_run" id="xslttut_run">Running the
+  Program</a></h2>
+
+  <p>To start, generate program output by running the program
+  through the debugger without setting any breakpoints.</p>
+
+  <ol>
+    <li><strong>Assign XML input file</strong>: On the
+    <strong>Debug</strong> menu, click
+    <strong>Go/Continue</strong>. In the <a class="doc" href=
+    "../debugger.html#Debugging_Options">Debugging
+    Options</a> dialog box, specify <em>mailexport.xml</em> as the
+    XML input file. Use the <strong>Browse</strong> button to
+    navigate to the directory containing the XSLT tutorial project
+    files.</li>
+
+    <li><strong>Run the debugger</strong>: Click
+    <strong>OK</strong> to run the debugger.</li>
+
+    <li><strong>Stop the debugger</strong>: From the
+    <strong>Debug</strong> menu, select <strong>Stop</strong> to
+    end the debugging process.</li>
+
+    <li><strong>View Debug Output</strong>: Notice the messages
+    displayed on the status bar in the bottom left corner of the
+    screen; these indicate the debugger status. The results of the
+    transformation are displayed on the <strong>Debug</strong>
+    tab.</li>
+
+    <li><strong>View the Output as HTML</strong>: On the right side
+    of the Bottom Pane, click the <strong>HTML</strong> tab. The
+    rendered HTML is displayed in the Bottom Pane. Click the
+    <strong>Output</strong> tab to return to the HTML code.</li>
+
+    <li><strong>Create New File</strong>: To create a new HTML file
+    that will later contain the HTML code in the Bottom Pane,
+    select <strong>File|New|New File</strong>. In the New File
+    dialog box, select the HTML Category. Click
+    <strong>Open</strong>.</li>
+
+    <li><strong>Save the Output</strong>: Delete the contents of
+    the new HTML file tab in the Editor Pane, and then select the
+    contents of the <strong>Output</strong> tab on the Bottom Pane.
+    Copy the contents to the new HTML file tab in the Editor Pane.
+    Select <strong>File|Save As</strong> to save the file with a
+    unique name.</li>
+  </ol>
+
+  <h2><a name="xslttut_debug" id="xslttut_debug">Debugging the
+  Program</a></h2>
+
+  <p>This section reviews how to add breakpoints to the program and
+  "debug" it. Adding breakpoints lets you to run the program in
+  parts, making it possible to watch variables and view output as
+  they are generated. Before beginning, be sure that line numbering
+  is enabled in Komodo (<strong>View|View Line
+  Numbers</strong>).</p>
+
+  <ol>
+    <li><strong>Step In/Assign the XML input file</strong>: If
+    necessary, click on the <em>mailexport2html.xsl</em> tab in the
+    editor. From the menu, select <strong>Debug|Step In</strong>.
+    In the <a class="doc" href=
+    "../debugger.html#Debugging_Options">Debugging
+    Options</a> dialog box, specify <em>mailexport.xml</em> as the
+    XML input file. This should already be set if the input file
+    was assigned in the <a class="doc" href="#xslttut_run">previous
+    step</a>. Assigning the XML input file to the XSLT program file
+    selects the XML file as the default input file when running the
+    transformation.</li>
+
+    <li><strong>Start Debugging</strong>: In the <a class="doc"
+    href="../debugger.html#Debugging_Options">Debugging
+    Options</a> dialog box, click <strong>OK</strong> to start
+    debugging.</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Debugger commands can be
+        accessed from the <strong>Debug</strong> menu, by shortcut
+        keys, or from the <strong>Debug Toolbar</strong>. For a
+        summary of debugger commands, see the <a class="doc" href=
+        "../debugger.html#How_use_Debugger">Debugger
+        Command List</a>.</p>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="3">
+    <li><strong>Watch the debug process</strong>: A yellow arrow on
+    line 7 indicates the position in the XSLT file where the
+    debugger has halted.</li>
+
+    <li><strong>View Debug tab</strong>: In the <a class="doc"
+    href="../top.html#Output_Pane">Bottom Pane</a>,
+    click the <strong>Debug</strong> tab. On the right side of the
+    <strong>Debug</strong> tab, click the <strong>Call
+    Stack</strong> tab. On the <strong>Call Stack</strong> tab,
+    notice that the current call stack is the template in line 6 of
+    the XSLT program.</li>
+
+    <li><strong>Set a breakpoint</strong>: On the
+    <strong>mailexport2html.xsl</strong> tab in the Editor Pane,
+    click the gray margin immediately to the left of the code on
+    line 12. This sets a breakpoint, indicated by a red
+    circle.</li>
+  </ol>
+
+  <table align="center">
+    <tr>
+      <td class="startupBox">
+        <p><strong>Komodo Tip</strong>: Breakpoints can be set at
+        any time. An enabled breakpoint is a solid red circle. A
+        disabled breakpoint is a white circle with a red outline.
+        Click once in the gray margin to enable a breakpoint. Click
+        an enabled breakpoint once to disable it.</p>
+      </td>
+    </tr>
+  </table>
+
+  <ol start="6">
+    <li><strong>Line 7: Continue</strong>: Select
+    <strong>Debug|Go/Continue</strong>. The debugger runs until it
+    encounters the breakpoint on line 12. If no breakpoint had been
+    set, the debugger would have run to the end of the
+    program.</li>
+
+    <li><strong>Line 12: Step In</strong>: Click <strong>Debug|Step
+    In</strong>. Notice the debugger jumps to line 33 of the XSLT
+    program, and shows a pointer in the XML file on line 3. When
+    the debugger processed line 12
+    (<code>xsl:apply-templates</code>), it looked for a template
+    that matched the top node in the XML document
+    (<code>&lt;EMAILCOMMENTS&gt;</code>). When no matching template
+    was found, it proceeded to the next node in the XML document
+    (<code>&lt;EMAIL&gt;</code>) and found a matching template on
+    line 33.</li>
+
+    <li><strong>View the Debug tab</strong>: Notice that the
+    <strong>Call Stack</strong> tab displays the current template
+    match. Previous template matches can be selected from the list;
+    double-clicking them jumps to the corresponding lines in both
+    files.</li>
+
+    <li><strong>Line 33: Step In</strong>: Use the <strong>Step
+    In</strong> command until the current-line pointer in the XSLT
+    file is on line 20.</li>
+
+    <li><strong>Line 20: Step In</strong>: Watch the Bottom Pane as
+    you Step In line 21. The <code>xsl:value-of</code> statement
+    selects the contents of the <code>&lt;SUBJECT&gt;</code> field
+    on line 7 of the XML file and places it within the HTML tags on
+    lines 19 and 21.</li>
+
+    <li><strong>Line 21: Step In</strong>: Line 22 calls the
+    template <code>formatEmail</code> on line 45. Continue to step
+    in until line 49 is processed. The <code>formatEmail</code>
+    template is processed with the <code>address</code> parameter
+    on line 46. This routine processes the contents of the
+    <code>&lt;ORIGADDRESS&gt;</code> node in the XML document. In
+    order to generate the hyperlink in the output HTML document,
+    lines 48 and 49 concatenate the string <code>mailto:</code>
+    with the contents of the <code>&lt;ORIGADDRESS&gt;</code>
+    node.</li>
+
+    <li><strong>Line 49 to end: Go/Continue</strong>: On
+    <strong>Debug</strong> menu, click <strong>Go/Continue</strong>
+    to run the rest of the XSLT program. The program's output is
+    displayed in the Bottom Pane: raw output in the Output tab and
+    rendered output in the HTML tab.</li>
+  </ol>
+
+  <h2><a name="xslttut_resources" id="xslttut_resources">More XSLT
+  Resources</a></h2>
+
+  <h3>ASPN, the ActiveState Programmer Network</h3>
+
+  <p><a class="doc" href=
+  "http://aspn.ActiveState.com/ASPN">ASPN</a>, the ActiveState
+  Programmer Network, hosts the <a class="doc" href=
+  "http://aspn.ActiveState.com/ASPN/Cookbook/XSLT"><strong>XSLT
+  Cookbook</strong></a>, a collaborative library of XSLT code.</p>
+
+  <h3>Documentation</h3>
+
+  <p>The W3C (World Wide Web Consortium) specifications are
+  available online:</p>
+
+  <ul>
+    <li><a class="doc" href=
+    "http://www.w3c.org/TR/xslt">XSLT</a></li>
+
+    <li><a class="doc" href=
+    "http://www.w3c.org/TR/xpath">XPath</a></li>
+
+    <li><a class="doc" href="http://www.w3c.org/XML/">XML</a></li>
+  </ul>
+
+  <h2>Tutorials and Reference Sites</h2>
+
+  <p>There are many XSLT tutorials and beginner XSLT sites on the
+  Internet, including:</p>
+
+  <ul>
+    <li>xml.com's <a class="doc" href=
+    "http://www.xml.com/pub/a/2000/08/holman/index.html">What is
+    XSLT?</a></li>
+
+    <li>free tutorials at <a class="doc" href=
+    "http://www.w3schools.com/default.asp">W3Schools.com</a></li>
+  </ul>
+  <hr />
+</body>
+</html>

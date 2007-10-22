@@ -1,0 +1,366 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Debugging Python</title>
+</head>
+
+<body>
+  <h1><a name="debugpython_top" id="debugpython_top">Debugging
+  Python</a> <span class="version_alert">Komodo IDE
+  only</span></h1>
+
+  <div class="right-float-box">
+    <p><strong>Tutorial</strong></p>
+
+    <ul>
+      <li><a href="tutorial/pythontut.html#pythontut_top">Python
+      Tutorial</a></li>
+    </ul>
+  </div>
+
+  <p>Komodo can be used to debug Python programs locally or
+  remotely, including debugging in CGI environments. The
+  instructions below describe how to configure Komodo and Python
+  for debugging. For general information about using the Komodo
+  debugger, see <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a>.</p>
+
+  <p>Debugger commands can be accessed from the
+  <strong>Debug</strong> menu, by shortcut keys, or from the Debug
+  Toolbar. For a summary of debugger commands, see the <a class=
+  "doc" href="debugger.html#How_use_Debugger">Debugger
+  Command List</a>.</p>
+
+  <h2><a name="Configuring_Python_Debugger" id=
+  "Configuring_Python_Debugger">Configuring the Python
+  Debugger</a></h2>
+
+  <p>To specify which Python interpreter Komodo should use to debug
+  and run Python programs locally:</p>
+
+  <ol>
+    <li>On the <strong>Edit</strong> menu, click
+    <strong>Preferences</strong>.</li>
+
+    <li>In the Preferences dialog box under
+    <strong>Languages</strong>, click <strong>Python</strong>.
+    Komodo searches for Python interpreters on your system and
+    displays them in the drop-down list.</li>
+
+    <li>If the preferred interpreter is in this list, click to
+    select the interpreter. If not, click <strong>Browse</strong>
+    to locate it.</li>
+
+    <li>Click <strong>OK</strong>.</li>
+  </ol>
+
+  <p>On the <strong>Debug</strong> menu or Debug Toolbar, click
+  <strong>Go/Continue</strong> or <strong>Step In</strong> to
+  invoke the debugging session. See <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a> for full instructions on using Komodo's debugging
+  functionality.</p>
+
+  <h2><a name="Using_the_Python_Remote_Debugger" id=
+  "Using_the_Python_Remote_Debugger">Using the Python Remote
+  Debugger</a></h2>
+
+  <p>When debugging a Python program remotely, the program is
+  executed on the remote machine, and the debug output is sent to
+  Komodo. Komodo controls the debugging session once the session
+  starts on the remote machine.</p>
+
+  <h3><a name="Installing_the_Python_Remote_Debugger" id=
+  "Installing_the_Python_Remote_Debugger">Installing the Python
+  Remote Debugger on the Remote Machine</a></h3>
+
+  <p>To debug a Python program remotely, the Python debugger client
+  package must be installed on the remote machine. Packages are
+  available for download from the <a class="doc" target="_blank"
+  href=
+  "http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
+  Komodo Remote Debugging</a> page. Alternatively, if your remote
+  machine uses the same platform as the machine on which you
+  installed Komodo, you can get the Python debugger client files
+  from the <em>pythonlib</em> and <em>bin</em> subdirectories of
+  the Komodo installation directory for your platform. The
+  locations are as follows:</p>
+
+  <p><strong>Windows</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>\lib\support\dbgp\pythonlib\
+<em>&lt;komodo-install-directory&gt;</em>\lib\support\dbgp\bin
+</pre>
+
+  <p><strong>Linux</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>/lib/support/dbgp/pythonlib/
+<em>&lt;komodo-install-directory&gt;</em>/lib/support/dbgp/bin
+</pre>
+
+  <p><strong>Mac OS X</strong></p>
+  <pre class="code">
+<em>&lt;komodo-install-directory&gt;</em>/Contents/SharedSupport/dbgp/pythonlib/
+<em>&lt;komodo-install-directory&gt;</em>/Contents/SharedSupport/dbgp/bin
+</pre>
+
+  <p>To install the Python Remote Debugger:</p>
+
+  <ol>
+    <li>The Python remote debugging package requires the
+    <code>logging</code> package, which is included in Python 2.3
+    and later. However, if you have an earlier version of Python,
+    you must <a href=
+    "http://www.red-dove.com/python_logging.html#download">download
+    and install the logging package</a>. To verify that the <code>
+      logging</code> package is installed correctly, run the
+      following command:
+      <pre class="code">
+python -c "import logging; print 'ok'"
+</pre>If this command prints the word "ok", you can move to the
+next step. If this command results in an <code>ImportError</code>,
+you need to resolve the error before continuing.
+    </li>
+
+    <li>Download and unzip the
+    <em>Komodo-PythonRemoteDebugging</em> package for your platform
+    and Komodo version from the <a class="doc" target="_blank"
+    href="http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
+    Komodo Remote Debugging</a> page.</li>
+
+    <li>Set up your Python installation so the <em>dbgp</em> Python
+    package is on your PythonPath. You can do this by copying the
+    <em>dbgp</em> directory to the <em>site-packages</em> directory
+    of your Python installation. Alternatively, you can copy the
+    <em>dbgp</em> directory to a convenient location, and then add
+    that directory to your <em>PYTHONPATH</em> environment
+    variable. For example, on Windows, if you copied the files to a
+    directory called <em>C:\debugger</em>, enter the following at
+    the command line:
+      <pre class="code">
+set PYTHONPATH=%PYTHONPATH%;C:\debugger
+</pre>To verify that the setup is correct, run the following
+command:
+      <pre class="code">
+python -c "import dbgp.client; print 'ok'"
+</pre>If this command prints the word "ok", you can move to the
+next step. If this command results in an <code>ImportError</code>
+then you need to resolve the error before continuing.
+    </li>
+
+    <li>Put the <em>bin\pydbgp.py</em> script (<em>bin/pydbgp</em>
+    on Linux and Mac OS X) somewhere convenient. This is the main
+    script that you run to start a remote debugging session.</li>
+  </ol>
+
+  <p><strong>Tip:</strong> Placing the <em>pydbgp.py</em> script in
+  a directory that is on your PATH environment variable, makes the
+  script easier to run. On Windows, also make sure that your
+  <em>PATHEXT</em> environment variable includes <em>.py</em>. On
+  Linux and Mac OS X, ensure that the <em>pydbgp</em> script is
+  executable by running this command:</p>
+  <pre class="code">
+chmod u+x <strong>path/to</strong>/pydbgp
+</pre>Now try running this command:
+  <pre class="code">
+pydbgp --help
+</pre>If the setup is correct, the internal help documentation for
+running <em>pydbgp</em> is displayed.
+
+  <p><strong>Note</strong>: The debugging client relies on certain
+  core python library files (e.g. <code>sys</code>,
+  <code>os</code>, <code>getopt</code>, <code>socket</code>,
+  <code>types</code>). If you have added custom modules to your
+  python site-packages, <code>PYTHONPATH</code> or
+  <code>sys.path</code> with the same name as those imported by
+  <code>pydbgp</code>, the debugger may not work properly.</p>
+
+  <h3><a name="Invoking_the_Python_Remote_Debugger" id=
+  "Invoking_the_Python_Remote_Debugger">Invoking the Python Remote
+  Debugger</a></h3>
+
+  <p>Python remote debugging sessions are started in one of three
+  ways:</p>
+
+  <ul>
+    <li><a href="#debugpython_dbgpclient_command_line">Running the
+    <em>pydbgp.py</em> driver script.</a></li>
+
+    <li><a href="#debugpython_dbgpclient_functions">Calling
+    <code>dbgp.client.brk()</code></a> directly from within your
+    Python program code.</li>
+
+    <li>An exception reaches the top-level in a Python script that
+    is <a href="#just_in_time">set up for just-in-time
+    debugging.</a></li>
+  </ul>All methods require that the Python remote debugger client
+  package is installed on the remote machine (see <a class="doc"
+  href="#Installing_the_Python_Remote_Debugger">Installing the
+  Python Remote Debugger</a>).
+
+  <h4><a name="debugpython_dbgpclient_command_line" id=
+  "debugpython_dbgpclient_command_line">Running <em>pydbgp.py</em>
+  from the Command Line</a></h4>
+
+  <p>To start a Python remote debugging session from the command
+  line:</p>
+
+  <ol>
+    <li>On the <strong>Debug</strong> menu, ensure that
+    <strong>Listen for Debugger Connections</strong> is
+    checked.</li>
+
+    <li>Log in to the remote machine. (<strong>Note:</strong> the
+    "remote" machine can be the same machine on which Komodo is
+    running.)</li>
+
+    <li>On the remote machine, run the <em>pydbgp.py</em> driver
+    program with the appropriate options:<br />
+      <pre class="code">
+python -S <strong>path/to/</strong>pydbgp.py -d <strong>host:port</strong> <strong>your-script.py</strong>
+</pre>where <em>host:port</em> identifies the port on which Komodo
+is listening. By default, Komodo listens for remote debugger
+connections on port 9000. For example, if the "remote" machine is
+the same machine on which Komodo is running, start a debugging
+session with this command:
+      <pre class="code">
+python -S <strong>path/to/</strong>pydbgp.py -d localhost:9000 <strong>your-script.py</strong>
+</pre>
+
+      <p>Other options for using the <em>pydbgp.py</em> driver are
+      available by running:</p>
+      <pre class="code">
+python -S <strong>path/to/</strong>pydbgp.py --help
+</pre>
+
+      <p>If you are connecting to a <a href=
+      "debugger.html#dbgp_proxy">DBGP Proxy</a>, you
+      must specify an <code>ide_key</code> value with the
+      <code>-k</code> option to <em>pydbgp.py</em>. Listener port
+      and DBGP Proxy settings are configurable via
+      <strong>Edit|Preferences|Debugger</strong>. Select
+      <strong>Debug|Listener Status</strong> to view the current
+      settings.</p>
+    </li>
+  </ol>
+
+  <p><strong>Note:</strong> If your application requires that
+  <em>sitecustomize.py</em> is loaded, you must run Python with the
+  -S argument. The debugger will load site.py at the appropriate
+  time. Komodo is unable to debug <em>sitecustomize.py</em> due to
+  how Python handles loading of that file.</p>
+
+  <p><strong>Note:</strong> If you followed the tip described in
+  <a class="doc" href=
+  "#Installing_the_Python_Remote_Debugger">Installing the Python
+  Remote Debugger</a> the basic command is:</p>
+  <pre class="code">
+pydbgp -d <strong>host:port</strong> <strong>your-script.py</strong>
+</pre>
+
+  <h4><a name="debugpython_dbgpclient_functions" id=
+  "debugpython_dbgpclient_functions">Calling
+  <code>dbgp.client.brk()</code> in your Python Programs</a></h4>
+
+  <p>To break into a remote debugging session directly from within
+  your Python code:</p>
+
+  <ol>
+    <li>On the <strong>Debug</strong> menu, ensure that
+    <strong>Listen for Debugger Connections</strong> is
+    checked</li>
+
+    <li>Import and use the <code>brk()</code> function in the
+    <code>dbgp.client</code> module to set a hard breakpoint. For
+    example, the following simple Python script will break into a
+    debugging session when execution reaches the <code>brk()</code>
+    call:
+      <pre class="code">
+from dbgp.client import brk
+def foo():
+    print "Hello, World!"
+    brk(host="<strong>mybox</strong>", port=<strong>9000</strong>)
+    print "Goodbye."
+</pre>
+    </li>
+
+    <li>Run your Python program.</li>
+  </ol>
+
+  <p>The <code>brk()</code> function supports the following
+  arguments:</p>
+
+  <ul>
+    <li><strong>host</strong>: machine running Komodo or the DBGP
+    Proxy (uses <code>localhost</code> if unspecified)</li>
+
+    <li><strong>port</strong>: port to connect on (uses 9000 if
+    unspecified)</li>
+
+    <li><strong>idekey</strong>: key used to identify the debugging
+    session to Komodo or the DBGP Proxy (uses the value of the USER
+    or USERNAME environment variable if unspecified)</li>
+  </ul>
+
+  <h4><a name="just_in_time" id="just_in_time">Just-in-Time
+  Debugging</a></h4>
+
+  <p>"Just-in-time debugging" allows the remote debugger to connect
+  to Komodo if an uncaught exception occurs during execution (i.e.
+  if a Python exception reaches the top level of your Python
+  program). By adding the following lines of code to the beginning
+  of your script, you can trap and explore the execution state of
+  your Python program when an exception reaches the top level:</p>
+  <pre class="code">
+from dbgp.client import brkOnExcept
+brkOnExcept(host='<strong>mybox</strong>', port=<strong>9000</strong>)
+</pre>
+
+  <p>If and when an exception reaches the top level of your Python
+  program, a post-mortem debugging session is started in Komodo at
+  the line at which the exception is raised. The debug session is
+  automatically placed in interactive mode so that you can inspect
+  the current program environment, exactly like a Python
+  interactive shell.</p>
+
+  <p>The <code>brkOnExcept()</code> function takes the same
+  arguments as <a href=
+  "#debugpython_dbgpclient_functions"><code>brk()</code></a>. As
+  with <code>brk()</code>, <code>brkOnExcept()</code> attempts to
+  connect to <code>localhost</code> on port 9000 with an
+  <code>idekey</code> of USER or USERNAME if no arguments are
+  specified.</p>
+
+  <h3><a name="debugpython_dbgpclient_cgi" id=
+  "debugpython_dbgpclient_cgi">CGI Debugging</a></h3>
+
+  <p>To debug CGI applications written in Python:</p>
+
+  <ul>
+    <li>Configure Python to be used as the CGI (or embedded
+    extension) for your Web server. For information on configuring
+    Python, refer to the <a class="doc" target="_blank" href=
+    "http://python.org/doc/">Python documentation</a>.</li>
+
+    <li>Follow the steps outlined in <a href=
+    "#debugpython_dbgpclient_functions">Using
+    <code>dbgp.client</code> Functions in Python Programs</a> to
+    call the Python remote debugger from within the application.
+    Start the remote application through a web browser instead of
+    running it from the command line.</li>
+  </ul>
+  <hr />
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Debugging XSLT</title>
+</head>
+
+<body>
+  <h1><a name="debugxslt_top" id="debugxslt_top">Debugging XSLT</a>
+  <span class="version_alert">Komodo IDE only</span></h1>
+
+  <div class="right-float-box">
+    <p><strong>Tutorial</strong></p>
+
+    <ul>
+      <li><a href="tutorial/xslttut.html#xslttut_top">XSLT
+      Tutorial</a></li>
+    </ul>
+  </div>
+
+  <p>Komodo does not need to be manually configured for local XSLT
+  debugging. It uses the <strong>libxslt</strong> and
+  <strong>libxml</strong> libraries directly to transform XML
+  documents into HTML, text, or other XML document types. See
+  <a target="_blank" href=
+  "http://www.libxml.org">www.libxml.org</a> for more information
+  on this XML C parser and toolkit.</p>
+
+  <p>For general information about debugging with Komodo, see
+  <a href="debugger.html#debugger_top">General Debugger
+  Functions</a>. Debugger commands can be accessed from the
+  <strong>Debug</strong> menu, by shortcut keys, or from the Debug
+  Toolbar. For a summary of debugger commands, see the <a class=
+  "doc" href="debugger.html#How_use_Debugger">Debugger
+  Command List</a>.</p>
+
+  <h2><a name="debugxslt_using" id="debugxslt_using">Using the XSLT
+  Debugger</a></h2>
+
+  <p>To debug an XSLT file:</p>
+
+  <ol>
+    <li>Open the XSLT file and <a href=
+    "debugger.html#breakpoints_and_spawnpoints">set
+    breakpoints</a>.</li>
+
+    <li>Start the debugger by clicking <strong>Go/Continue</strong>
+    or <strong>Step In</strong> on the Debug Toolbar.</li>
+
+    <li>In the <strong><a class="doc" href=
+    "debugger.html#Debugging_Options">Debugging
+    Options</a></strong> dialog, <strong>Select the input XML
+    file</strong></li>
+
+    <li>Click <strong>OK</strong> to start the debugger.</li>
+  </ol>
+
+  <p>The XSLT program, the input XML file, and the results of the
+  transformation appear simultaneously. By default, Komodo splits
+  the Editor pane horizontally.</p>
+
+  <ul>
+    <li>The XSLT program continues to appear in the top tab
+    group.</li>
+
+    <li>The XML input file appears in a new tab below the XSLT
+    program.</li>
+
+    <li>The results of the transformation are displayed in the
+    Output tab.</li>
+  </ul>
+
+  <p>A yellow arrow on the breakpoint margin shows the current line
+  of execution in both the XSLT and XML file. Breakpoints can be
+  set in the both files before starting the debugging session, or
+  while stepping through the code.</p>
+
+  <h3><a name="debugxslt_remote_xml" id=
+  "debugxslt_remote_xml">Using a Remote XML Input File</a></h3>
+
+  <p>To debug using an XML file on a remote server, enter the full
+  URL to the file in the <strong>Select the input XML file</strong>
+  field (for example, http://www.example.org/input_file.xml).</p>
+
+  <h3><a name="debugxslt_stepping" id="debugxslt_stepping">XSLT
+  Stepping Behavior</a></h3>
+
+  <p>Stepping behavior in the XSLT file is similar to the standard
+  stepping behavior described in <a href=
+  "debugger.html#Debugger_Stepping_Behavior">Debugger
+  Stepping Behavior</a>, but the terminology for describing XSLT is
+  slightly different than that used for scripting languages.</p>
+
+  <ul>
+    <li><strong>Step In</strong>: Executes the current XSL element
+    or template line and pauses at the following line.</li>
+
+    <li><strong>Step Over</strong>: Not applicable. Behaves the
+    same as <strong>Step In</strong>.</li>
+
+    <li><strong>Step Out</strong>: When the debugger is within an
+    XSL element, <strong>Step Out</strong> will execute the entire
+    block without stepping through the code line by line. The
+    debugger will stop on the line following the closing tag of the
+    element.</li>
+  </ul>
+
+  <p>Though the current line is highlighted in both the XSLT and
+  XML files, the stepping behavior is only applicable to the XSLT
+  file.</p>
+  <hr />
+</body>
+</html>

@@ -1,0 +1,5 @@
+The Komodo documentation is licensed under a Creative Commons
+Attribution-Noncommercial-Share Alike 2.5 Canada License:
+
+    http://creativecommons.org/licenses/by-nc-sa/2.5/ca/
+

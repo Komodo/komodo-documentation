@@ -1,0 +1,170 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Code Intelligence</title>
+</head>
+
+<body>
+  <h1><a name="codeintel_top" id="codeintel_top">Code
+  Intelligence</a></h1><!-- Header End -->
+
+  <p>Komodo's Code Intelligence system is a set of tools that makes
+  browsing, searching, and programming complex code easier and more
+  accessible. Use the Code Browser to view the hierarchical code
+  structure within a program file or project. The Code Intelligence
+  system includes support for Python, Perl, Tcl, PHP, Ruby, and
+  JavaScript. Code Intelligence is comprised of the following
+  tools:</p>
+
+  <ul>
+    <li><strong><a href="#codeintel_codebrowser">Code
+    Browser</a></strong>: A tab that displays a hierarchical view
+    of all code constructs (for example, variables, methods,
+    imports) in all open files. In the Code Browser, symbols can be
+    sorted and filtered; the current scope of a symbol can be
+    located. To access the Code Browser, click
+    <strong>View|Tabs|Code Browser</strong>. The Code Browser is
+    displayed on the <strong>Code</strong> tab beside the
+    <strong>Projects</strong> tab.</li>
+
+    <li style="list-style: none"><br /></li>
+
+    <li><strong><a href=
+    "editor.html#AutoComplete">AutoComplete and
+    CallTips</a></strong>: The Code Intelligence system is used to
+    drive autocomplete and calltip functionality for Perl, Python,
+    Tcl, Ruby, JavaScript, XSLT, CSS, and XML (including HTML and
+    DTD).</li>
+  </ul>The <a href="tutorial/pythontut.html#pythontut_top">Python
+  Tutorial</a> demonstrates the Code Browser and other Code
+  Intelligence tools. See the <a href=
+  "tutorial/pythontut.html#pythontut_top">Python Tutorial</a> to
+  explore a Python program in Komodo.
+
+  <h2><a name="codeintel_codebrowser" id=
+  "codeintel_codebrowser">Code Browser</a> <span class=
+  "version_alert">Komodo IDE only</span></h2>
+
+  <p>Use the <strong>Code Browser</strong> to view the general
+  program structure of all source files open in the Editor Pane.
+  For each source file, the Code Browser displays a tree of symbol
+  nodes, including modules, classes, functions, interfaces,
+  namespaces, imports and variables. In Python, instance attributes
+  are also displayed. Each node in the tree hierarchy can be
+  expanded to display further detail, acting as an index to your
+  source code. Symbols can be <a href="#codeintel_sort">sorted</a>,
+  <a href="#codeintel_filter">filtered</a>, and the <a href=
+  "#codeintel_scope">current scope</a> of a symbol can be located.
+  The Code Browser supports the following languages: Python, Perl,
+  PHP, Ruby, Tcl, and JavaScript.</p>
+
+  <p><img src="img/code_tab.gif" border="1" alt="" /></p>
+
+  <p>Use the Code Browser to:</p>
+
+  <ul>
+    <li>View program structure.</li>
+
+    <li>Browse from a listed namespace, command, or variable
+    definition and jump to the actual source code where it is
+    declared.</li>
+
+    <li>Locate all variables used within a file.</li>
+
+    <li>View a symbol definition signature.</li>
+
+    <li>Find all defined symbols matching a pattern.</li>
+  </ul>
+
+  <h3><a name="codeintel_code_browser_context" id=
+  "codeintel_code_browser_context">Context Menu</a></h3>
+
+  <p>Right-click in the <strong>Code Browser</strong> Pane to
+  access code searching options. The following options are
+  available:</p>
+
+  <p><img src="img/codeintel_code_browser_context.gif" border="1"
+  alt="" /></p>
+
+  <ul>
+    <li><strong>Go to Definition</strong>: Jumps to the definition
+    of the associated symbol in the editor. Alternatively,
+    double-click the symbol name in the Code Browser tree. Objects
+    defined within the file, in user-defined modules, and in the
+    site library are accessible in this way; objects defined in a
+    language's standard library are not. (See also <a href=
+    "editor.html#editor_nav">Editor: Navigating within
+    Files</a>)</li>
+
+    <li><strong>Copy</strong>: Copies the symbol name to the
+    clipboard.</li>
+
+    <li><strong>Sort By File Order</strong>: Sorts all symbols in
+    the tree by file order.</li>
+
+    <li><strong>Sort Alphabetically</strong>: Sorts all symbols in
+    the tree alphabetically.</li>
+  </ul>
+
+  <h3><a name="codeintel_sort" id=
+  "codeintel_sort">Sorting</a></h3><img src=
+  "img/codeintel_sort.gif" border="1" />
+
+  <p>Use the <strong>Sort By</strong> button to organize all Code
+  Browser symbols by file order or alphabetically. To sort all
+  symbols by file order, click <strong>Sort By</strong>, and then
+  select <strong>Sort By File Order</strong> from the drop-down
+  list. To sort all symbols alphabetically, click <strong>Sort
+  By</strong>, and then select <strong>Sort Alphabetically</strong>
+  from the drop-down list. Alternatively, use the <a href=
+  "#codeintel_code_browser_context">context menu</a> (right-click
+  in the Code Browser) to access sorting options.</p>
+
+  <h3><a name="codeintel_scope" id="codeintel_scope">Locating
+  Current Scope</a></h3><img src="img/codeintel_scope.gif" border=
+  "1" />
+
+  <p>Use the <strong>Locate Current Scope</strong> button to find
+  the scope of a symbol (for example, namespace, command, or
+  variable definition). To view the scope of a symbol, place the
+  cursor on the desired symbol in the source code and then click
+  the <strong>Locate Current Scope</strong> button. The Code
+  Browser tree opens to the associated scope. Alternatively, click
+  <strong>Code|Locate Current Scope in Code Browser</strong> to
+  open the Code Browser tree to the associated scope.</p>
+
+  <h3><a name="codeintel_filter" id="codeintel_filter">Filtering
+  Symbols</a></h3><img src="img/codeintel_filter.gif" border="1" />
+
+  <p>The <strong>Filter Symbols</strong> text box limits the Code Browser
+  display to matching symbols. To filter symbols in the Code Browser, enter the
+  desired symbol name, or partial name, in the text box. The filter supports
+  regular expressions (Python syntax). If there is an error in the pattern, the
+  text is highlighted and a tooltip describes the error.</p>
+  
+  <p>Press 'Tab' to switch focus between the Filter text box and the Code
+  Browser tree. Press 'Esc' to clear the current filter pattern.</p>
+
+  <h2><a name="codeintel_objectbrowser" id=
+  "codeintel_objectbrowser">Object Browser</a> <span class=
+  "version_alert">Komodo IDE only</span></h2>
+
+  <p>The <strong>Object Browser</strong> is currently being
+  re-implemented with Komodo's new Code Intelligence backend and is
+  not available in this release.</p>
+  <!-- TODO: new Object Browser documentation -->
+  <!-- Footer Start -->
+  <hr />
+</body>
+</html>

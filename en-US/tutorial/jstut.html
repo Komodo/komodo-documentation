@@ -1,0 +1,353 @@
+<!-- Copyright (c) 2001-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../favicon.ico" type=
+  "image/x-icon" />
+
+  <title>JavaScript Tutorial</title>
+</head>
+
+<body>
+  <h1><a name="jstut_top" id="jstut_top">JavaScript
+  Tutorial</a></h1>
+
+  <h2><a name="jstut_overview" id=
+  "jstut_overview">Overview</a></h2>
+
+  <h3><a name="jstut_assumptions" id="jstut_assumptions">Before You
+  Start</a></h3>
+
+  <p>This tutorial assumes:</p>
+
+  <ul>
+    <li>Some knowledge of HTML.</li>
+
+    <li>You have the <a target="_blank" href=
+    "http://www.mozilla.com/firefox/">Firefox</a> web browser
+    installed.</li>
+
+    <li>You have installed and configured the <a href=
+    "../debugjs.html#Configure_JavaScript_Debugging">Komodo
+    JavaScript Debugger</a> Firefox extension.</li>
+  </ul>
+
+  <p>Line numbers are referenced in this tutorial. To enable line
+  numbering in the editor tabs, click <strong>View Line
+  Numbers</strong> in the <strong>View</strong> menu.</p>
+
+  <h3><a name="jstut_scenario" id="jstut_scenario">JavaScript
+  Tutorial Scenario</a></h3>
+
+  <p>This tutorial examines an HTML page that uses the <a target=
+  "_blank" href="http://developer.yahoo.com/yui/">Yahoo! User
+  Interface Library</a> and some additional JavaScript to create a
+  special right-click context menu for an image map. In this
+  tutorial, you will:</p>
+
+  <ol>
+    <li><a class="doc" href="#jstut_open">Open the JavaScript
+    Tutorial Project</a>.</li>
+
+    <li><a class="doc" href="#jstut_open_demo">Open jsdemo.html</a>
+    in Komodo and Firefox.</li>
+
+    <li><a class="doc" href="#jstut_debug">Analyze
+    context-menu.js</a> using the JavaScript debugger to see how it
+    works.</li>
+
+    <li><a class="doc" href="#jstut_linkify">Add dynamically
+    generated links</a> by manipulating DOM objects with
+    JavaScript.</li>
+  </ol>
+
+  <h2><a name="jstut_open" id="jstut_open">Opening the Tutorial
+  Project</a></h2>
+
+  <p>Opening this tutorial from the <strong>Start Page</strong>
+  gives you the option to open the associated project. Otherwise,
+  click <strong>Open|Project</strong> in the <strong>File</strong>
+  menu and select <code>js_tutorial.kpf</code> from
+  <em>&lt;<a href="../trouble.html#install_dir">install_directory</a>&gt;</em><code>\samples\js_tutorials</code>.
+  All files included in the tutorial project are displayed on the
+  <a class="doc" href=
+  "../top.html#Project_Pane">Projects tab</a> in the
+  Left Pane.</p>
+
+  <h3><a name="jstut_files" id="jstut_files">Overview of the
+  Tutorial Files</a></h3>
+
+  <p>The JavaScript tutorial project contains the following:</p>
+
+  <ul>
+    <li><strong>jsdemo.html</strong>: This "City picker" demo is an
+    HTML page that uses JavaScript to display special right-click
+    context menus over an image map, and add the selected items to
+    a table on the right.</li>
+
+    <li><strong>context-menu.js</strong>: A JavaScript file
+    containing the functions used in <em>jsdemo.html</em>.</li>
+
+    <li><strong>YUI directory</strong>: A collection of Yahoo! User
+    Interface JavaScript libraries used in the demo.</li>
+  </ul>
+
+  <h3><a name="jstut_open_demo" id="jstut_open_demo">Opening the
+  City Picker</a></h3>
+
+  <p>On the <a class="doc" href=
+  "../workspace.html#Projects_Tab">Projects tab</a>,
+  double-click <em>jsdemo.html</em> to open it in the Editor Pane.
+  In the <strong>View</strong> menu, click <strong>Preview in
+  Browser</strong> ('Ctrl'+'K', 'Ctrl'+'V').</p>
+
+  <p>If Firefox is not set as your default browser in Komodo's
+  <a href="../prefs.html#web">Web Browser</a>
+  preferences, use the file URL in your browser's address bar to
+  locate the file and open it in Firefox.</p>
+
+  <p>Try the application. Right-clicking over a country in the map
+  brings up a country-specific context menu instead of Firefox's
+  default context menu. Selecting a city from the menu adds that
+  city under the appropriate country heading in the table to the
+  right and removes it from the menu. Reloading the page resets the
+  page to the initial view.</p>
+
+  <p>The context menu for Mexico is intentionally broken so that we
+  can find the problem with the debugger later in this tutorial and
+  fix it.</p>
+
+  <h2><a name="jstut_analyze" id="jstut_analyze">Analyzing the
+  JavaScript program</a></h2>
+
+  <p>Look over <em>jsdemo.html</em>. Other than some inline CSS
+  style for the YUI context menu, it's all HTML. The JavaScript
+  that makes the page work is sourced from external .js files. The
+  one we'll be working with is <em>context-menu.js</em>. Open it
+  from the tutorial project.</p>
+
+  <p>The first thing we notice is the <code>cities</code> object.
+  This is a list of the countries with nested lists of cities that
+  belong to them. Next is the <code>demo</code> function, which
+  contains the <code>onContextMenu</code> function that brings up
+  the custom context menu, and the <code>onCitySelect</code> which
+  controls the actions on that menu. The comments describe what is
+  happening in the code.</p>
+
+  <table align="center">
+    <tbody>
+      <tr>
+        <td class="startupBox">
+          <p><strong>Komodo Tip</strong>: To enable autocompletion
+          for the YUI libraries, click <a href=
+          "../prefs.html#prefs_top">Preferences...</a>
+          on the <strong>Code</strong> menu and select the YUI API
+          Catalog in the <a href=
+          "../prefs.html#code_intel">Code
+          Intelligence</a> section.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2><a name="jstut_debug" id="jstut_debug">Debugging the Page</a>
+  <span class="version_alert">Komodo IDE only</span></h2>
+
+  <p>If you have not already done so, <a href=
+  "../debugjs.html#Configure_JavaScript_Debugging">configure</a>
+  the <a href="../debugjs.html">JavaScript
+  Debugger</a>.</p>
+
+  <h3><a name="jstut_debug_start" id="jstut_debug_start">Starting
+  the Debugger</a></h3>
+
+  <p>In Firefox refresh the <strong>City Picker</strong> page,
+  click the <strong>Connect to Komodo Debugger</strong> button, and
+  move your mouse pointer over the image map.</p>
+
+  <p>If the debugger is configured correctly, the file
+  <em>event-min.js</em> should open in a Komodo tab. Though you
+  haven't set any breakpoints in this file, the debugger stops at
+  the first line of JavaScript executed by the browser (in this
+  case a YUI event handler). This gives you the opportunity to set
+  breakpoints in the file if you want to, or step through the code
+  with the <strong>Step In</strong> button.</p>
+
+  <p>To leave this event handler and start debugging
+  <em>context-menu.js</em>, click the <strong>Go/Continue
+  Debugging</strong> button in the main or debugging toolbar.
+  Select the <em>context-menu.js</em> editor tab.</p>
+
+  <p>Set a breakpoint on line 62 of <em>context-menu.js</em> by
+  clicking in the empty left margin. Breakpoints are displayed as
+  an orange-red octagonal icon in the breakpoint margin.</p>
+
+  <p>Right-click over Mexico in the City Picker map.</p>
+
+  <table align="center">
+    <tbody>
+      <tr>
+        <td class="startupBox">
+          <p><strong>Komodo Tip</strong>: While the JavaScript
+          debugger is in a break state, clicking
+          <strong>Interact</strong> on the <strong>Debug</strong>
+          menu opens up a JavaScript shell where you can interact
+          with the Firefox's JavaScript engine directly.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3><a name="jstut_debug_variables" id=
+  "jstut_debug_variables">Viewing and Changing Variables</a></h3>
+
+  <p>As soon as the browser registers a right-click over Mexico on
+  the image map, the debugger should stop on line 62 of
+  <em>context-menu.js</em>. A yellow arrow icon indicating the
+  current breakpoint will appear in the margin at that line.</p>
+
+  <p>One of the most useful things the debugger does is keep track
+  of variables in the code. In the <strong>locals</strong> tab in
+  the <strong>Output</strong> pane we can see a list of all
+  variables in the current scope (i.e. variables in the
+  <code>demo</code> function). The <strong>globals</strong> tab
+  shows everything in the <code>window</code> object; you can see
+  the DOM objects by expanding the <code>document</code> node in
+  this list. The <code>instance</code> tab shows properties of the
+  current object.</p>
+
+  <p>You may have noticed earlier that the context menu for Mexico
+  is broken. The variables list in the <strong>locals</strong> tab
+  can help us find out why.</p>
+
+  <p>The <code>curr_country</code> variable was set on line 61 and
+  appears to have the value "Mexic" which doesn't match the
+  <code>country</code> variable which is "Mexico".</p>
+
+  <p>We can modify this variable within the debugger while the it
+  is in a break state. Double click on <code>curr_country</code> in
+  the <strong>locals</strong> tab to bring up the Edit Variable
+  Value dialog box. Change "<code>Mexic</code>" to
+  "<code>Mexico</code>" and click "OK". Click the
+  <strong>Go/Continue Debugging</strong> button to resume
+  execution. The context menu for Mexico should appear in Firefox.
+  (Note: The default context menu may appear initially because of
+  how the debugger handles coming out of a break state. Clicking
+  anywhere on the Komodo or Firefox windows will clear this and
+  show the expected menu.)</p>
+
+  <p>That solved the problem for this debugging session only. We
+  need to find out where that typo came from. Since the only
+  appearance of the country's name in <em>context-menu.js</em> is
+  spelled correctly on line 7, we can assume there's a problem in
+  <em>jsdemo.html</em>. Since <code>curr_country</code> is taken
+  from <code>e.target.id</code>, we can extrapolate that the "alt="
+  attribute of the image map area for Mexico is wrong.</p>
+
+  <table align="center">
+    <tbody>
+      <tr>
+        <td class="startupBox">
+          <p><strong>Komodo Tip</strong>: If we didn't know where
+          the <code>e.target.id</code> came from, we could use
+          Komodo's <a href=
+          "../search.html#search_strings">Find...</a>
+          feature to locate the typo in <em>jsdemo.html</em></p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2><a name="jstut_linkify" id="jstut_linkify">Adding
+  Links</a></h2>
+
+  <p>The cities are added to the country lists by manpulating the
+  <acronym title="Document Object Model">DOM</acronym>. These are
+  plain text <code>&lt;LI&gt;</code> elements, but it's fairly
+  simple to turn these into useful links by creating an
+  <code>&lt;A&gt;</code> element and populating it with a URL
+  containing the selected city's name in an <code>href</code>
+  attribute.</p>
+
+  <p><a target="_blank" href="http://wikipedia.org/">Wikipedia</a>
+  has a fairly simple URL syntax for topic names, and it has
+  information on all of the cities in our lists, so we could easily
+  use it for our link targets.</p>
+
+  <p>Lines 43 to 45 in <em>context-menu.js</em> handle creating the
+  list elements and inserting the city name:</p>
+  <pre class="code">
+            var newItem = document.createElement("LI");
+            newItem.appendChild(document.createTextNode(cityName));
+            targetList.appendChild(newItem);
+</pre>
+
+  <p>Insert the following after line 43 to create an
+  <code>&lt;A&gt;</code> element:</p>
+  <pre class="code">
+            var newLink = document.createElement('A');
+</pre>
+
+  <p>Wikipedia articles can be accessed by adding the subject name
+  to the end of the base URL. To set the <code>href</code>
+  attribute to a combination of the Wikipedia base URL and the
+  selected city name, add the following line:</p>
+  <pre class="code">
+            newLink.setAttribute('href', 'http://en.wikipedia.org/wiki/' + cityName)
+</pre>
+
+  <p>To insert this link in the list, modify the subsequent two
+  lines to use <code>newLink</code> rather than
+  <code>newItem</code>:</p>
+  <pre class="code">
+            newLink.appendChild(document.createTextNode(cityName));
+            targetList.appendChild(newLink);
+</pre>
+
+  <p>Save the file and reload the page. Selected cities will now
+  appear as Wikipedia links.</p>
+
+  <h2><a name="jstut_resources" id="jstut_resources">More
+  JavaScript Resources</a></h2>
+
+  <h3>Tutorials and Reference Sites</h3>
+
+  <ul>
+    <li><a class="doc" target="_blank" href=
+    "http://www.w3schools.com/js/">W3 Schools JavaScript
+    Tutorial</a>: An easy to follow introduction to JavaScript and
+    DOM.</li>
+
+    <li><a class="doc" target="_blank" href=
+    "http://developer.mozilla.org/en/docs/About_JavaScript">Mozilla's
+    About JavaScript</a>: An overview of the language with numerous
+    links to reference material such as standards and
+    proposals.</li>
+
+    <li><a class="doc" target="_blank" href=
+    "http://www.w3.org/DOM/">W3C Document Object Model (DOM)
+    page</a>: Overview of the DOM interface with links to
+    specifications.</li>
+
+    <li><a class="doc" target="_blank" href=
+    "http://developer.mozilla.org/en/docs/A_re-introduction_to_JavaScript">
+    A re-introduction to JavaScript</a>: A concice JavaScript
+    tutorial/overview for programmers by Simon Wilson.</li>
+
+    <li><a class="doc" target="_blank" href=
+    "http://developer.yahoo.com/yui/">Yahoo! User Interface
+    Library</a>: The example in this tutorial uses several
+    "minified" versions of YUI libraries. The Yahoo! YUI pages have
+    more readable, commented versions of these and other libraries
+    along with documentation and examples.</li>
+  </ul>
+  <hr />
+</body>
+</html>

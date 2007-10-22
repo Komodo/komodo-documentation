@@ -1,0 +1,289 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Debugging Ruby</title>
+</head>
+
+<body>
+  <h1><a name="debugruby_top" id="debugruby_top">Debugging Ruby</a>
+  <span class="version_alert">Komodo IDE only</span></h1>
+
+  <div class="right-float-box">
+    <p><strong>Tutorial</strong></p>
+
+    <ul>
+      <li><a href="tutorial/rubytut.html#rubytut_top">Ruby
+      Tutorial</a></li>
+    </ul>
+  </div>
+
+  <p>Komodo can debug Ruby programs locally or remotely. The
+  instructions below describe how to configure Komodo and Ruby for
+  debugging. For general information about using the Komodo
+  debugger, see <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a>.</p>
+
+  <p>Debugger commands can be accessed from the
+  <strong>Debug</strong> menu, by shortcut keys, or from the Debug
+  Toolbar. For a summary of debugger commands, see the <a class=
+  "doc" href="debugger.html#How_use_Debugger">Debugger
+  Command List</a>.</p>
+
+  <h2><a name="Configure_Ruby_Debugger" id=
+  "Configure_Ruby_Debugger">Configuring the Ruby Debugger</a></h2>
+
+  <p>To specify which Ruby interpreter Komodo uses for debuging:</p>
+
+  <ol>
+    <li>Select <strong>Edit|Preferences</strong> (OS X:
+    <strong>Komodo|Preferences</strong>).</li>
+
+    <li>In the Preferences dialog box under
+    <strong>Languages</strong>, click <strong>Ruby</strong>. Komodo
+    searches for Ruby interpreters on your system and displays them
+    in the drop-down list.</li>
+
+    <li>If the preferred interpreter is in this list, click to
+    select it. If not, click <strong>Browse</strong> to locate
+    it.</li>
+
+    <li>Click <strong>OK</strong>.</li>
+  </ol>
+
+  <p>To start a local Ruby debugging session:</p>
+
+  <p>On the <strong>Debug</strong> menu or Debug Toolbar, click
+  <strong>Go/Continue</strong> or <strong>Step In</strong> to
+  invoke the debugging session. See <a class="doc" href=
+  "debugger.html#debugger_top">Komodo Debugger
+  Functions</a> for full instructions on using Komodo's debugging
+  functionality.</p>
+
+  <p><strong>Note:</strong> Mac OS X users may have to install a more recent
+  version of Ruby (1.8.4 or greater). Linux users on x86_64 systems will need to
+  install a 64 bit version of the <code>ruby-debug</code> library (see the <a
+  href= "trouble.html#ruby_debug_x64">Komodo FAQ entry</a> for more
+  information).</p>
+
+  <h2><a name="Ruby_Remote_Debugger" id=
+  "Ruby_Remote_Debugger">Debugging Ruby Remotely</a></h2>
+
+  <p>When debugging a Ruby program remotely, the program is
+  executed on the remote system and the debug output is sent to
+  Komodo. Komodo controls the debugging session (e.g. stepping and
+  breakpoints) once the session starts on the remote system.</p>
+
+  <ol>
+    <li>Install the Ruby debugger application and associated files
+    on the remote machine. All of these files are included in
+    <em>/lib/support/dbgp/rubylib</em> beneath the Komodo
+    installation directory
+    (<em>/Contents/SharedSupport/dbgp/rubylib</em> on ac OS X).
+    Copy <em>rdbgp.rb</em> and the contents of the <em>DB</em>
+    directory to a convenient location on the remote machine.
+    <strong>Note</strong>:Some of these files are shared library
+    files (.so), which are platform specific. If your Komodo
+    installation is on a different platform, download the
+    <em>Komodo-PythonRemoteDebugging</em> package for the
+    appropriate platform and Komodo version from the <a class="doc"
+    target="_blank" href=
+    "http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
+    Komodo Remote Debugging</a> page.</li>
+
+    <li><a href="top.html#Starting_Komodo">Start
+    Komodo</a> on the local machine.</li>
+
+    <li>On the remote machine, set the <code>dbgdir</code> variable
+    to specify the location of the remote mahcine directory where
+    you copied <em>rdbgp.rb</em> and its associated files.
+
+      <p><strong>Windows</strong></p>
+      <pre class="code">
+set dbgdir=&lt;Path_To_rbdbgp.rb&gt;
+</pre>
+
+      <p><strong>Linux/Mac OS X</strong></p>
+      <pre class="code">
+dbgdir=&lt;Path_To_rbdbgp.rb&gt;
+</pre>
+    </li>
+
+    <li>On the remote machine, set the <code>RUBYDB_OPTS</code>
+    variable his supplies the Ruby interpreter with the information
+    that is necessary to connect to the Komodo application running
+    on the local machine.
+
+      <p><strong>Windows</strong></p>
+      <pre class="code">
+set RUBYDB_OPTS=remoteport=&lt;ServerName&gt;:&lt;Port&gt;
+set RUBYOPT=
+</pre>
+
+      <p><strong>Linux/Mac OS X</strong></p>
+      <pre class="code">
+export RUBYDB_OPTS=remoteport=&lt;Server_Name&gt;:&lt;Port&gt;
+unset RUBYOPT
+</pre>
+    </li>
+
+    <li>Start the debugger and open the program that you want to
+    debug.</li>
+
+    <li style="list-style: none">
+      <p><strong>Windows</strong></p>
+      <pre class="code">
+ruby -I%dbgdir% -r %dbgdir%\rdbgp.rb &lt;Program_To_Debug.rb&gt;
+</pre>
+
+      <p><strong>Linux/Mac OS X</strong></p>
+      <pre class="code">
+ruby -I"$dbgdir" -r "$dbgdir"/rdbgp.rb &lt;Program_To_Debug.rb&gt;
+</pre>The remote file will open in Komodo with the debugger stopped
+at the first line of executable code. A yellow arrow indicates the
+current position. You can now set breakpoints in this file, step
+through, and use other Komodo debugging features as if it were a
+local file. However, you cannot modify the file.
+    </li>
+  </ol>
+
+  <h3><a name="rdbgp_stop_next" id="rdbgp_stop_next">Setting a
+  Break in your Ruby Code</a></h3>
+
+  <p>To break into a remote debugging session directly from within
+  your Ruby code, insert the following:</p>
+  <pre class="code">
+ENV['RUBYDB_OPTS'] = 'remoteport=<em>&lt;Server_Name&gt;:&lt;Port&gt;</em>'
+$:.push('<em>&lt;Path_To_rdbgp.rb&gt;</em>')
+require 'rdbgp'
+</pre>
+
+  <p>The first two lines set up the environment for remote
+  debugging (similar to steps three and four <a href=
+  "#Ruby_Remote_Debugger">above</a>). The third line loads the
+  debugger which breaks immediately by default.</p>
+
+  <p>Once the debugger has been loaded, subsequent breaks can be
+  specified in the program with the
+  <code>Debugger.current_context.stop_next</code> function. It's a
+  good idea to wrap this function in a <code>begin ... end</code>
+  block in case the module wasn't loaded:</p>
+  <pre class="code">
+begin;
+        Debugger.current_context.stop_next = 1;
+rescue Exception; 
+end
+</pre>
+
+  <p>These in-code breakpoints can be easily toggled by changing
+  the boolean value (i.e. 1 = enabled, 0 = disabled).</p>
+
+  <h3><a name="Ruby_Debugging_and_Rubygems" id=
+  "Ruby_Debugging_and_Rubygems">Rubygems and RUBYOPT</a></h3>
+
+  <p><a target="_blank" href="http://rubygems.org/">Rubygems</a> is
+  the most commonly used framework for managing third-party Ruby
+  modules.</p>
+
+  <p>Rubygems is included with the One-Click Installer (available
+  at <a target="_blank" href=
+  "http://rubyforge.org/projects/rubyinstaller/">http://rubyforge.org/projects/rubyinstaller/</a>).
+  This installer adds the environment variable
+  <code>RUBYOPT=rubygems</code> to the list of system variables.
+  This is usually correct behavior, as it automatically enables all
+  your Ruby scripts to use rubygems to find modules. However, it
+  will cause the Ruby debugger to always step into a file called
+  <code>ubygems.rb</code> (a simple wrapper around
+  <code>rubygems.rb</code>) when debugging.</p>
+
+  <p>There are three ways to avoid this:</p>
+
+  <ul>
+    <li>Set a breakpoint on the first line of the main file, and
+    start the debugger with <strong>Go</strong> instead of the
+    <strong>Step Into</strong>.</li>
+
+    <li>In Komodo's <a href=
+    "prefs.html#Environment">Environment</a>
+    preferences, set the <code>RUBYOPT</code> environment variable
+    an empty string.</li>
+
+    <li>When you start the debugger, choose the
+    <strong>Environment</strong> tab in the Debugging Options
+    dialog box, add a new entry for <code>RUBYOPT</code> in the
+    <strong>User Environment Variables</strong> box, and leave its
+    value empty.</li>
+  </ul>
+
+  <h2><a name="Ruby_Rails_Debugging" id=
+  "Ruby_Rails_Debugging">Debugging Rails Applications</a></h2>
+
+  <p>Ruby on Rails applications can be debugged locally or remotely
+  just like any other ruby application. However, since much of the
+  Rails framework has to run within the debugger, the process is
+  normally slower than with a standalone ruby program.</p>
+
+  <h3><a name="Local_Rails_Debugging" id=
+  "Local_Rails_Debugging">Local Rails Debugging</a></h3>
+
+  <ol>
+    <li>Load the pertinent <em>app</em> or <em>controllers</em>
+    files in Komodo.</li>
+
+    <li>Set breakpoints in the methods where you want to stop.</li>
+
+    <li>Load the <em>script/server</em> file that you would
+    normally run from the command-line.</li>
+
+    <li>In the Debugging Configuration dialog, set the
+    <em>Directory</em> field to the top-level directory containing
+    the <em>apps</em> folder.</li>
+
+    <li>With the <em>script/server</em> file active, start the
+    debugger.</li>
+  </ol>
+
+  <h3><a name="Remote_Rails_Debugging" id=
+  "Remote_Rails_Debugging">Remote Rails Debugging</a></h3>
+
+  <ol>
+    <li>Follow the steps described above in <a href=
+    "#Ruby_Remote_Debugger">Debugging Ruby Remotely</a> to install
+    the ruby debugger and set the environment variables
+    <code>dbgdir</code> and <code>RUBYDB_OPTS</code>.</li>
+
+    <li>Start the Rails <em>script/server</em> with the ruby
+    debugger from the top-level directory containing the
+    <em>apps</em> folder:
+
+      <p><strong>Windows</strong></p>
+      <pre class="code">
+ruby -I%dbgdir% -r %dbgdir%\rdbgp.rb script/server
+</pre>
+
+      <p><strong>Linux/Mac OS X</strong></p>
+      <pre class="code">
+ruby -I"$dbgdir" -r "$dbgdir"/rdbgp.rb script/server
+</pre>
+    </li>
+  </ol>
+
+  <p>The remote files will open in Komodo with the debugger stopped
+  at the first line of executable code. A yellow arrow indicates
+  the current position. You can now set breakpoints in this file,
+  step through, and use other Komodo debugging features as if it
+  were a local file. However, you cannot modify the file.</p>
+  <hr />
+</body>
+</html>

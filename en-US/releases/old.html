@@ -1,0 +1,3314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Komodo Release History</title>
+  <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+<h1>Komodo Release History</h1>
+
+<p>This document chronicles feature additions, product enhancements and
+bug fixes in versions of Komodo (IDE and Edit) before 4.2.</p>
+
+
+<h2><a name="ko411" id="ko411">Komodo IDE/Edit 4.1.1 (Jun 7, 2007)</a></h2>
+
+<strong>Enhancements</strong>
+<ul>
+  <li>Fixed XML completion bug. (Bug 70342)</li>
+
+  <li>Added '--dest-dir' option to Linux install script to
+  facilitate building a Komodo RPM. (Bug 70311)</li>
+
+  <li>Fix PHP completion bug preventing completions if
+  prefix happened to be a keyword. (Bug 69626)</li>
+
+  <li>Fixes and improvements to the Rails project template.
+  (Bug 69737)</li>
+
+  <li>Fixed possible install failure related to a partly
+  installed SELinux. (Bug 69969)</li>
+
+  <li>Corrected the JavaScript tutorial's YUI library
+  installation. (Bug 70129)</li>
+
+  <li>Fixed bug with "Add to Current Project" adding file
+  to the Toolbox instead. (Bug 68158)</li>
+
+  <li>Fixed problem with '?' breaking Ruby syntax folding
+  and coloring. (Bug 70326)</li>
+
+  <li>Updated "New File" dialog to remember user's "Add to
+  Current Project" preference. (Bug 66627)</li>
+
+  <li>Updated PHP completion to support autocomplete in
+  short tags -- i.e. "&lt;? ...". (Bug 70212)</li>
+
+  <li>Fixed Run Command system bugs:
+
+    <ul>
+      <li>Redraw problems on Linux for Command Output
+      parsing. (Bug 66860)</li>
+
+      <li>Scrollbar doesn't show up in parsed command
+      output. (Bug 67794)</li>
+    </ul>
+  </li>
+
+  <li>Fixed license problem in Tcl syntax checker that
+  could prevent it from working. (Bug 70054)</li>
+
+  <li>Fixed JavaScript class completion to work even if a
+  parent class is not found. (Bug 65447)</li>
+
+  <li>Many minor fixes for HTML completion in simple cases.
+  (Bug 69973)</li>
+
+  <li>Fixes for tabstops with non-word characters in the
+  default value. (Bug 69949)</li>
+</ul>
+
+
+<h2><a name="ko41" id="ko41">Komodo IDE/Edit 4.1 (May 15, 2007)</a></h2>
+
+<strong>Highlights in Komodo 4.1</strong>
+
+<h3><a name="whatsnew_rails_4_1" id="whatsnew_rails_4_1">Ruby on
+Rails</a></h3>
+
+<ul>
+  <li>Ruby on Rails project template: Makes getting started and
+  working with a Rails project much easier. Includes integration
+  for many Rails project commands.</li>
+
+  <li>Ruby completion: Added support for space-based calltips
+  (common in RHTML template code) and other Rails completion
+  improvements.</li>
+
+  <li>Re-written Ruby debugger engine: Based on ruby_debug, the
+  new engine is 50-60 times faster. See <a target="_blank" href=
+  "http://blogs.activestate.com/ericp/2007/04/rails_revisited.html">
+  Rails Revisited</a> for details.</li>
+</ul>
+
+<h3><a name="whatsnew_codintel_4_1" id=
+"whatsnew_codintel_4_1">Code Intelligence</a></h3>
+
+<ul>
+  <li>Autocomplete for the Komodo's JavaScript API (i.e. the "ko"
+  namespace) when editing JavaScript macros in an editor tab.
+  Also <a href="../komodo-js-api.html">documentation</a> for the
+  "ko" namespace in the Reference section of the Komodo
+  docs.</li>
+
+  <li>PHP 5.2: stdlib changes for autocomplete/calltips.</li>
+
+  <li>MXML/ActionScript support: Added schema-based XML
+  autocompletion for MXML files and syntax highlighting for
+  embedded ActionScript.</li>
+
+  <li>JavaScript completion: Added support for JSDoc autocomplete
+  and calltips and autocomplete on string literals.</li>
+</ul>
+
+<h3><a name="whatsnew_editing_4_1" id=
+"whatsnew_editing_4_1">Editing</a></h3>
+
+<ul>
+  <li><a href="../shortcuts.html#tab_stops">Tab
+  Stops</a></li>
+
+  <li>Vim registers</li>
+
+  <li>Add commands to fold/expand blocks of code recursively
+  (View|Fold|Expand Recursively &amp; Collapse Recursively). (Bug
+  27264)</li>
+
+  <li>Support editing macros in a full editor tab (via
+  "right-click|Edit" on a macro).</li>
+</ul>
+
+<h3><a name="whatsnew_misc_4_1" id="whatsnew_misc_4_1">Other
+Improvements</a></h3>
+
+<ul>
+  <li>Added a <a href="../tutorial/jstut.html">JavaScript
+  tutorial</a> to introduce some of Komodo's JavaScript
+  features.</li>
+
+  <li>Support editing macros in a full editor tab (via
+  "right-click|Edit" on a macro).</li>
+
+  <li>Find/Replace: Default (pre-populated) search pattern is now
+  the previous search rather than the word under the cursor.</li>
+
+  <li>Status bar: Added selection info ("Sel:") status bar
+  panel.</li>
+
+  <li>Add more icons from <a href="http://www.famfamfam.com/lab/icons/silk/">famfamfam</a> that
+  can be used for custom commands, macros, etc. in the Toolbox
+  and Projects.</li>
+
+  <li>Komodo installations now include a "Komodo SDK" with
+  Komodo's core IDL and the 'xpidl' utility necessary for
+  building PyXPCOM components for user extensions.</li>
+
+  <li>Significant refactoring of the Komodo JavaScript API under
+  the "ko" namespace (e.g. "ko.dialogs.alert(...)" instead of
+  "dialog_alert(...)"). Old APIs remain for backward
+  compatibility for JavaScript macros -- but they will eventually
+  be removed. This is an ongoing process: documentation and
+  autocomplete (when authoring macros) will be added in
+  subsequent releases.</li>
+
+  <li>Rx integration (IDE-only) and regular expression help in
+  the Find/Replace and Find in Files dialogs.</li>
+
+  <li>Several bug fixes</li>
+</ul>
+
+
+<h2><a name="ko41b3" id="ko41b3">Komodo IDE/Edit 4.1 Beta 3 (May 9, 2007)</a></h2>
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>New Ruby on Rails project template that makes getting
+  started and working with a Rails project much
+  easier.</li>
+
+  <li>Autocomplete for the Komodo JavaScript API (i.e. the
+  "ko" namespace) when editing JavaScript macros in an
+  editor tab. Also <a href="../komodo-js-api.html">documentation</a> for the "ko"
+  namespace in the Reference section of the Komodo
+  docs.</li>
+
+  <li>Komodo installations now include a "Komodo SDK" with
+  Komodo's core IDL and the 'xpidl' utility necessary for
+  building PyXPCOM components for user extensions.</li>
+
+  <li>Ruby completion: Added support for space-based
+  calltips (common in RHTML template code).</li>
+
+  <li>Add info for PHP 5.2 stdlib changes for
+  autocomplete/calltips.</li>
+</ul><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Various Ruby debugger fixes. (Bug 69405, etc.)</li>
+
+  <li>Syntax highlighting fixes for Template Toolkit. (Bug
+  69363, 69157)</li>
+
+  <li>Fixed bug with suggested upperace HTML tag
+  completions. (Bug 69523)</li>
+
+  <li>Improved autocomplete in HTML fragments to be able to
+  get autocomplete even in documents with multiple
+  top-level elements. (Bug 69521)</li>
+
+  <li>Fixed problem with snippets inserting incorrect EOL
+  characters. (Bug 69535)</li>
+
+  <li>Fixed a bug with display of custom toolbar entries.
+  (Bug 69424)</li>
+
+  <li>Fixed inconsistencies in Live Folder behaviour. (Bug
+  69045)</li>
+
+  <li>Changed the Find dialog box's default search term
+  behavior. (Bug 68431)</li>
+
+  <li>Fixed syntax checking of Tcl 8.5 code.</li>
+
+  <li>Several bug fixes for remote files:
+
+    <ul>
+      <li>'Enter' not opening selected file in the remote
+      file dialog. (Bug 67072).</li>
+
+      <li>FTP not working on Windows IIS server. (Bug
+      69434)</li>
+
+      <li>Prompt for password when not supplied in server
+      prefs. (Bug 69344)</li>
+
+      <li>paramiko (used for remote file support) missing
+      from builds (Bug 69367).</li>
+    </ul>
+  </li>
+
+  <li>Fixed recursion overflow with long sequences of Perl
+  comments. (Bug 69144)</li>
+</ul>
+
+
+<h2><a name="ko41b2" id="ko41b2">Komodo IDE/Edit 4.1 Beta 2 (April 27, 2007)</a></h2>
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>All enhancements included in <a href="#ko403">Komodo 4.0.3</a>.</li>
+
+  <li>MXML/ActionScript support: Added schema-based XML
+  autocompletion for MXML files and syntax highlighting for
+  embedded ActionScript.</li>
+
+  <li>Re-written Ruby debugger engine: Based on ruby_debug,
+  the new engine is 50-60 times faster. See <a target=
+  "_blank" href=
+  "http://blogs.activestate.com/ericp/2007/04/rails_revisited.html">
+  Rails Revisited</a> for details.</li>
+
+  <li>Many Ruby on Rails completion improvements.</li>
+
+  <li>A new Ruby on Rails project template that includes
+  integration for many rails project commands.</li>
+
+  <li>Significant refactoring of the Komodo JavaScript API
+  under the "ko" namespace (e.g. "ko.dialogs.alert(...)"
+  instead of "dialog_alert(...)"). Old APIs remain for
+  backward compatibility for JavaScript macros -- but they
+  will eventually be removed. This is an ongoing process:
+  documentation and autocomplete (when authoring macros)
+  will be added in subsequent releases.</li>
+
+  <li>Rx integration (IDE-only) and regular expression help
+  in the Find/Replace and Find in Files dialogs.</li>
+
+  <li>Add commands to fold/expand blocks of code
+  recursively (View|Fold|Expand Recursively &amp; Collapse
+  Recursively). (Bug 27264)</li>
+
+  <li>Added a <a href="../tutorial/jstut.html">JavaScript
+  tutorial</a> to introduce some of Komodo's JavaScript
+  features.</li>
+
+  <li>Support editing macros in a full editor tab (via
+  "right-click|Edit" on a macro).</li>
+
+  <li>JavaScript completion: Added support for JSDoc
+  autocomplete and calltips and autocomplete on string
+  literals (Bug 50587).</li>
+
+  <li>Autocomplete: "fill-up" characters no longer enabled
+  by default (Bug 68726).</li>
+
+  <li>Find/Replace: Default (pre-populated) search pattern
+  is now the previous search rather than the word under the
+  cursor.</li>
+
+  <li>Statusbar: Added selection info ("Sel:") statusbar
+  panel.</li>
+
+  <li>Add more icons from <a href="http://www.famfamfam.com/lab/icons/silk/">famfamfam</a>
+  that can be used for custom commands, macros, etc. in the
+  Toolbox and Projects.</li>
+</ul><strong>Bug Fixes</strong>
+
+<ul>
+  <li>All bug fixes included in <a href="#ko403">Komodo 4.0.3</a>.</li>
+
+  <li>Python completion: Catch potential recursion
+  resulting in crash. (Bug 67739)</li>
+
+  <li>JavaScript completion fixes. (Bug 67123, 60347,
+  68295, 60267, 60347)</li>
+
+  <li>PHP syntax highlighting fixes. (Bug 67678,
+  68140)</li>
+
+  <li>Perl syntax higlighting now supports "/=". (Bug
+  67729)</li>
+
+  <li>Find/Replace: Fixed problem using ctrl-tab to change
+  to "replace" tab breaking Find/Replace. (Bug 67079)</li>
+
+  <li>Fixed some PHP/JavaScript syntax coloring issues.
+  (Bug 67674)</li>
+
+  <li>Fixed problem with Cancel being ignored when shutting
+  down with dirty buffers. (Bug 67974)</li>
+
+  <li>Help: Find locally installed ActivePerl documentation
+  when it's the current preferred Perl installation. (Bug
+  67622)</li>
+
+  <li>Statusbar: Fixed width handling to show all data
+  without clipping. (Bug 66209, 67181)</li>
+
+  <li>Fix line and column numbers not updating immediately.
+  (Bug 65606)</li>
+
+  <li>Template Toolkit syntax higlighting fixes. (Bug
+  69157)</li>
+
+  <li>HTML/XML auto-indent: Check styles to avoid
+  auto-indenting in plain text when a line ends with
+  double-quotes. (Bug 66157)</li>
+
+  <li>Auto-indent fixes. (Bug 63497, 66189)</li>
+
+  <li>Fixed a crash possible with UTF16 conversion on Mac
+  OS X. (Bug 67194)</li>
+
+  <li>HTML syntax highlighting: Color style tag content as
+  CSS. (Bug 66124)</li>
+
+  <li>Support use of IE-only "comment-conditional" (Bug
+  46243)</li>
+
+  <li>Vi emulation fixes:
+
+    <ul>
+      <li>Delete not working at end of line. (Bug
+      62438)</li>
+
+      <li>Support for find/replace in visual mode. (Bug
+      66776)</li>
+
+      <li>Fix find/replace using invalid lines. (Bug 68241,
+      65619)</li>
+
+      <li>Support "set" command. (Bug 66452)</li>
+
+      <li>Support 'c' and 'C' case-sensitivity flags for
+      searching.</li>
+
+      <li>Add general toggle fold command. (Bug 66384)</li>
+    </ul>
+  </li>
+
+  <li>Autocomplete/calltips: Fixed "easy to outpace
+  completion" problem by ensuring more timely scanning of
+  current file. (Bug 57938)</li>
+
+  <li>Code Browser: Minor improvements in the hover tip for
+  interface and namespace elements. JavaScript "namespace"
+  objects are shown with a different icon than a normal
+  variable. (Bug 68633)</li>
+
+  <li>Fixed problem causing broken Open Shortcuts. (Bug
+  68666)</li>
+
+  <li>Fixed problem causing uppercasing/lowercasing with
+  rectangular selection. (Bug 68547)</li>
+
+  <li>Dragging a folder onto a project now creates a new
+  live folder. (Bug 68867)</li>
+
+  <li>Projects: Creating a project template from a project
+  with unsaved changes now prompts user to save before
+  continuing. (Bug 66958).</li>
+
+  <li>Fixed crashes in libexpat on RedHat Linux RHEL3 U6.
+  (Bug 68801)</li>
+
+  <li>Interactive shell now properly handles pasted
+  multi-line blocks. (Bug 51947)</li>
+
+  <li>Project pane now correctly keeps collapse/expand
+  state. (Bug 28603)</li>
+</ul>
+
+
+<h2><a name="ko403" id="ko403">Komodo IDE/Edit 4.0.3 (April 17, 2007)</a></h2>
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>Recursive scanning of PHP and JavaScript Directories:
+  PHP and JavaScript Directories set in global and project
+  preferences are now recursive (up to five sub-directories
+  deep). These directories, used by Komodo for gathering
+  autocomplete and calltip information, previously had to
+  be added individually.</li>
+
+  <li>Reinstated "Y" yank-command in Vi mode.</li>
+
+  <li>HTML templates now start with all lower-case
+  tags.</li>
+</ul><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Fixed problem with 'Go to Definition' on imported
+  class instance variables in PHP. (Bug 68793)</li>
+
+  <li>PHP calltips now working on inherited methods. (Bug
+  68759)</li>
+
+  <li>Better error and timeout handling of remote
+  connections (e.g. wrong port or protocol). (Bug
+  47047)</li>
+
+  <li>Better handling of certain 2.5 syntax in the code
+  browser. (Bug 68786).</li>
+
+  <li>Zero-byte remote files are now opened successfully.
+  (Bug 68783)</li>
+
+  <li>Fixed bug causing 'Replace All' to fail. (Bug
+  67547)</li>
+
+  <li>Fixed problem with missing remote files persisting in
+  the code browser. (Bug 67614)</li>
+
+  <li>Fixed problems in user data upgrades. (Bug
+  68755)</li>
+
+  <li>Fixed gtk mouse issues. (Bug 42491)</li>
+
+  <li>SVN: Add locale setting/override of LANGUAGE
+  variable. (Bug 68615)</li>
+
+  <li>Fixed conditional breakpoints for languages that
+  support them. (Bug 46327)</li>
+
+  <li>An alert is now given when projects are being
+  upgraded.</li>
+
+  <li>Fixed problem using Debian's PHP for debugging. (Bug
+  68411)</li>
+
+  <li>Run_RunEncodedCommand() macro API documentation. (Bug
+  33136)</li>
+
+  <li>Python DBGP builds for Python 2.5. (Bug 67734)</li>
+
+  <li>Fixed perl linter failure on changing output from
+  perl. (Bug 68176)</li>
+
+  <li>Fixed internal error while saving file. (Bug
+  65224)</li>
+
+  <li>Fixed crash on PyUnicodeUCS2_AsUTF16String on
+  inspection tooltip. (Bug 67194)</li>
+
+  <li>Fixed problem with macros not ending in \n failing
+  silently (Bug 68142)</li>
+
+  <li>Fixed widths of panels in status bar. (Bug 66209,
+  67181)</li>
+
+  <li>Fixed recursion crash in PHP autocomplete. (Bug
+  67774)</li>
+
+  <li>Remote sites no longer lost on upgrade to 4.0.2, but
+  username and password need to be re-entered (see Known
+  Issues). (Bug 67246)</li>
+
+  <li>Better JavaScript macro errors. (Bug 67968)</li>
+
+  <li>Fixed problem with untitled buffers causing run/debug
+  launch to fail. (Bug 67206)</li>
+
+  <li>Autosave toolbox when editing macros and snippets.
+  (Bug 66167)</li>
+
+  <li>Fixed problem with debugger skipping breakpoints in
+  multi-threaded python apps. (Bug 67863)</li>
+
+  <li>Improved auto-indent behavior in PHP. (Bug
+  59037)</li>
+
+  <li>Fixed PHP function completions after a keyword. (Bug
+  67696)</li>
+
+  <li>Find matching brace now scrolls left or right as
+  necessary. (Bug 43690)</li>
+
+  <li>Fixed PHP regex help page 404. (Bug 67728)</li>
+
+  <li>Fixed problems with executables not being found in
+  PATH on Windows Vista (Bug 66921)</li>
+
+  <li>PHP autocompletion fixes (after '@' characters and
+  large comments). (Bug 67329, 67094)</li>
+
+  <li>Run command dialog now auto-populated based on recent
+  commands. (Bug 67451)</li>
+
+  <li>SCC/Perforce integration now supports spaces in
+  filenames (Bug 67417)</li>
+
+  <li>Fixed a problem with project trees scrolling and
+  showing empty rows. (Bug 67324)</li>
+
+  <li>Fixed bug causing projects to disappear from the
+  project window. (Bug 41718)</li>
+
+  <li>Toolbar button names now appear below, not beside the
+  icon with "Show Button Text" enabled. (Bug 32934)</li>
+
+  <li>Adding a new file to a project now correctly puts it
+  in the selected sub-folder. (Bug 66501)</li>
+
+  <li>Fixed bug with snippet insertion failing with unicode
+  chars (Bug 67319:)</li>
+
+  <li>Fixed data loss problem when saving remote files</li>
+
+  <li>Emacs emulation improved on OS X.</li>
+
+  <li>SE Linux installation message downgraded from error
+  to warning if SE is disabled. (Bug 67166)</li>
+
+  <li>Handle backquote-delimited strings in PHP and Ruby
+  parts of RHTML. (Bug 67085)</li>
+
+  <li>Improved error message display when running
+  JavaScript macros. (Bug 67062)</li>
+
+  <li>Fixed bug with interpolations failing in dialogs.
+  (Bug 67494)</li>
+</ul>
+
+
+<h2><a name="ko41b1" id="ko41b1">Komodo IDE/Edit 4.1 Beta 1 (March 6, 2007)</a></h2>
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>Vi registers: Added numbered and named registers
+  similar to those in Vim.</li>
+
+  <li><a href="../shortcuts.html#tab_stops">Tab
+  Stops</a>: Special markers for use in snippets and
+  templates.</li>
+</ul><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Fixed scrolling selection to top or middle of screen
+  so it takes folded lines into account. (Bug 35063)</li>
+
+  <li>Perl: color scalar and array variables inside
+  interpolating strings. (Bug 34374)</li>
+
+  <li>Fixed confusing exit dialog when prompted to save
+  files on shutdown. (Bug 35770)</li>
+
+  <li>Preserve selection when converting EOLs. (Bug
+  34776)</li>
+
+  <li>Fixed Lua syntax highlighting. (Bug 66107)</li>
+
+  <li>Fixed a group of Emacs emulation issues. (Bug
+  33211)</li>
+
+  <li>Added here-documents to PHP. (Bug 54667)</li>
+
+  <li>Added ability to define here-document syntax in
+  UDL-based languages. (Bug 66712)</li>
+
+  <li>Fixed Ctrl+F1 and Shift+F1 in the interactive shell.
+  (Bug 37203)</li>
+
+  <li>Added content to "Samples/Python" sample template.
+  (Bug 32715)</li>
+
+  <li>Added '.lsp' extension for Lisp files. (Bug
+  32681)</li>
+
+  <li>Greater-than chars are allowed in SGML/XML quoted
+  attribute strings. (Bug 67019)</li>
+
+  <li>Offer to save macro when the contents are modified.
+  (Bug 63577)</li>
+
+  <li>vi emulation: add "tT;," find-character-in-line (Bug
+  67045)</li>
+
+  <li>vi emulation: fix bug with '.' (repeat) (Bug
+  65945)</li>
+
+  <li>vi emulation: fix bug of repeat last change/insert
+  text not recording tab keypress (Bug 65963)</li>
+
+  <li>vi emulation: fix some delete/change with direction
+  commands. (Bug 65841, 65842)</li>
+
+  <li>vi emulation: search history includes history from UI
+  as well. (Bug 65639)</li>
+
+  <li>vi emulation: support for Alt/Ctrl Tab
+  window-switching while in visual mode. (Bug 67058)</li>
+
+  <li>Removed 'url' attribute from project elements that
+  don't have one. For snippets, macros, and commands Komodo
+  was raising a "file_added" notifification that contained
+  "None" as part of the string. (Bug 67574)</li>
+
+  <li>Fixed SCC exceptions occurring due to SCC trying to
+  check status of virtual files. (Bug 67583)</li>
+
+  <li>Hover tips containing high-bit data while debugging
+  now show up with Unicode characters, not raw utf-8, or
+  high-bit characters in the wrong encoding (such as
+  programs that manipulate Cyrillic text with a global
+  cp1251 encoding). (Bug 40317)</li>
+
+  <li>Diff windows now read-only. (Bug 27910)</li>
+</ul>
+
+
+<h2><a name="ko402" id="ko402">Komodo IDE/Edit 4.0.2 (February 13, 2007)</a></h2>
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>JavaScript completion for function return types.</li>
+
+  <li>Some support for .rxml and .rjs Ruby Files.</li>
+
+  <li>Komodo IDE and Edit can now be run at the same
+  time.</li>
+
+  <li>New File dialog textboxes support some
+  autocompletion.</li>
+
+  <li>Komodo Resources toolbar.</li>
+</ul><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Added True/False keyword highlighting to Python. (Bug
+  66484)</li>
+
+  <li>Fixed some cgi emulation problems in PHP. (Bug
+  41537)</li>
+
+  <li>Fixed renaming of virtual folders in
+  projects/toolbox. (Bug 66101)</li>
+
+  <li>Fixed a problem causing focus to switch to another
+  application when dialogs are closed in Komodo. (Bug
+  51068)</li>
+
+  <li>Fixed PHP codeintel problem with heredocs. (Bug
+  66638)</li>
+
+  <li>Changed "PHP does not support debugging" message when
+  PHP is not configured (Bug 66529)</li>
+
+  <li>Fixed error importing package (.kpz) files (Bug
+  66676)</li>
+
+  <li>Fixed problems opening a large hash/arrays in
+  debugging variable viewers. (Bug 66681)</li>
+
+  <li>Fixed some sorting problem in the toolbox (Bug
+  66697)</li>
+
+  <li>Fixed problem with "New File..." for remote project
+  folders. (Bug 66595)</li>
+
+  <li>Fixed connection issues in the JavaScript debugger.
+  (Bug 66147)</li>
+
+  <li>Fixed mapped URI support in JavaScript debugger. (Bug
+  66511)</li>
+
+  <li>luddite.py can now handle filepaths containing
+  spaces. (FCSs) (Bug 66520)</li>
+
+  <li>Fixed problem with jslib File.open() creating a zero
+  byte file. (Bug 66512)</li>
+
+  <li>Fixed space-based path handling for TCLLIBPATH env
+  setting (Bug 66474)</li>
+
+  <li>Fixed a problem opening remote files via FTP. (Bug
+  66125)</li>
+
+  <li>Fixed a bug causing projects to disappear when
+  deleting many files or expanding a node. (Bug 41718)</li>
+</ul>
+
+
+<h2><a name="ko401" id="ko401">Komodo IDE 4.0.1 (January 29, 2007)</a></h2>
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>"New File" dialog revisions: added access keys to the
+  Filename, Directory, Local, and Remote buttons.</li>
+</ul><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Limited the verbosity of HTML syntax errors and
+  warnings. (Bug 66207)</li>
+
+  <li>Fixed error saving project template. (Bug 66183)</li>
+
+  <li>Fixed a problem with DOM viewer emptying and throwing
+  an exception (Bug 66166)</li>
+
+  <li>Better property-value handling in CSS. (Bug 65994,
+  65995)</li>
+
+  <li>Completion for HTML attributes with a fixed set of
+  values. (Bug 66149)</li>
+
+  <li>Komodo 3.5 projects with remote files can now be
+  properly upgraded to 4.0 projects. (Bug 66125)</li>
+
+  <li>Fixed trial licence problem on Windows XP with FAT32
+  filesystems. (Bug 66111)</li>
+
+  <li>Fixed a bug that causes Komodo IDE 4.0.0 to throw an
+  exception on the trial expiry day. (Bug 66121)</li>
+</ul>
+
+<h2><a name="ko40" id="ko40">Komodo IDE 4.0, Edit 4.0 Beta 5 (January 22, 2007)</a></h2>
+
+<strong>Highlights in Komodo 4.0</strong>
+
+<h3><a name="whatsnew_codintel_4_0" id="whatsnew_codintel_4_0">Code Intelligence</a></h3>
+
+<ul>
+  <li><strong>Redesigned Code Intelligence system</strong>: CSS,
+  JavaScript, Perl, PHP, Python, Ruby, Tcl and XML support have
+  been re-implemented with a new code intelligence system,
+  providing improvements in autocompletion, calltips, the code
+  browser, and overall performance.</li>
+
+  <li><strong><a href="../editor.html#go_to_def">Go to
+  Definition</a></strong>: A new option for quickly jumping to
+  the definition of a code object (e.g. a variable, a subroutine,
+  a module, etc.) under your cursor.</li>
+
+  <li><strong><a href="../editor.html#XML_AutoComplete">Schema-based XML
+  Autocomplete and CallTips</a></strong>: Komodo now supports
+  autocomplete and calltips support for XML and HTML based on DTD
+  or RelaxNG Schema. SGML and XML Catalogs are supported.</li>
+
+  <li><strong><a href="../prefs.html#code_intel">API
+  Catalogs</a></strong>: Autocompletion for several popular
+  JavaScript libraries can be enabled in Preferences.</li>
+
+  <li><strong><a href="../dom.html">DOM
+  Viewer</a></strong>: A new tab in the left pane shows the DOM
+  structure of XML and HTML documents in a tree view.
+  Double-clicking on a node in the DOM Viewer moves the cursor to
+  the corresponding node in the document. <span class=
+  "version_alert">Komodo IDE only</span></li>
+
+  <li><strong><a href="../udl.html">User-Defined
+  Languages</a></strong>: Komodo 4 introduces a system for adding
+  custom language support called UDL (User-Defined Languages)
+  which allows Komodo to properly syntax-color multi-language
+  files and template files common in many web programming
+  frameworks. Also included is a tool called <a href="../udl.html#udl_language-overview">Luddite</a> which
+  you can use to define custom language syntax-coloring and
+  package those into Komodo extensions.</li>
+
+  <li><strong>New languages</strong>: Support for
+  Template-Toolkit, HTML-Mason, Smarty, Django, and Luddite has
+  been added using <a href="../udl.html">UDL</a></li>
+</ul>
+
+<h3><a name="whatsnew_editing_4_0" id=
+"whatsnew_editing_4_0">Editing</a></h3>
+
+<ul>
+  <li><strong><a href="../vikeybind.html">Vi
+  emulation</a></strong>: Modal key bindings which emulate the
+  navigation, text insertion, visual selection and command-line
+  modes of Vi and Vim. Custom commands can be implemented by
+  adding Komodo macros to a <strong>Vi Commands</strong> Toolbox
+  folder.</li>
+
+  <li><strong>Configurable Background Syntax Checking</strong>:
+  The frequency of background syntax checking is now
+  configurable, improving editor responsiveness in large
+  files.</li>
+</ul>
+
+<h3><a name="whatsnew_http_4_0" id="whatsnew_http_4_0">HTTP
+Inspector</a> <span class="version_alert">Komodo IDE
+only</span></h3>
+
+<ul>
+  <li><strong><a href="../http-insp.html">HTTP
+  Inspector</a></strong>: An interface for examining HTTP
+  requests and responses as they happen. It runs a local proxy
+  which intercepts HTTP traffic and records each transaction for
+  analysis. The Inspector can break on a request or response,
+  which can then be edited and submitted in its modified
+  form.</li>
+</ul>
+
+<h3><a name="whatsnew_jsdebugging_4_0" id=
+"whatsnew_jsdebugging_4_0">JavaScript Debugging</a><span class=
+"version_alert">Komodo IDE only</span></h3>
+
+<ul>
+  <li><strong><a href="../debugjs.html">JavaScript
+  Debugging</a></strong>: Komodo now offers JavaScript debugging
+  using the <strong>Firefox</strong> web browser and the
+  <strong>JavaScript DBGP</strong> extension. With the extension
+  enabled, loading JavaScript or triggering JavaScript controls
+  in the browser window opens a debugging session in Komodo,
+  which loads the relevant JavaScript code.</li>
+
+  <li><strong><a href="../intshell.html#intshell_js">JavaScript Interactive
+  Shell</a></strong>: An interactive shell for manipulating
+  JavaScript code is available within <a href="../debugjs.html">JavaScript debugging sessions</a>.
+  This shell is similar in functionality to the other interactive
+  shells in Komodo.</li>
+</ul>
+
+<h3><a name="whatsnew_projects_4_0" id=
+"whatsnew_projects_4_0">Projects</a></h3>
+
+<ul>
+  <li><strong><a href="../folders.html">Live
+  Folders</a></strong>: Komodo projects now offer Live Folders
+  which display current filesystem contents. The previous folder
+  behavior is still available; these folders are now referred to
+  as "Virtual Folders" in the documentation. By default, new
+  projects are created with <a href="../project.html#Live_Import">Live Import</a>, making
+  the project behave as a Live Folder. Project-specific <a href="../project.html#project_impcomp">Directory Import
+  preferences</a> define which files and directories to
+  include.</li>
+
+  <li><strong><a href="../project.html#project_props">Project
+  Settings</a></strong>: All project settings are now in the
+  Project Properties dialog. This dialog box is now used for
+  files, folders and projects, displaying the appropriate
+  properties for each type.</li>
+
+  <li><strong>Project Templates</strong>: Projects templates can
+  be created and used when creating a new project.</li>
+
+  <li><strong>Additional Project functionality</strong>,
+  including:</li>
+
+  <li style="list-style: none">
+    <ul>
+      <li>Project based debugger preferences</li>
+
+      <li>Basic file management (Delete, Rename, Show in File
+      Manager)</li>
+
+      <li>Project import from remote file systems</li>
+
+      <li>New File option</li>
+    </ul>
+  </li>
+</ul>
+
+<h3><a name="whatsnew_misc_4_0" id="whatsnew_misc_4_0">Other
+Improvements</a></h3>
+
+<ul>
+  <li><strong>SCC History</strong>: A new option has been added
+  to the Source Control menu which displays the revision history
+  of a file. You can compare (diff) two selected revisions from
+  the list, or select one and compare it to the local copy.
+  <span class="version_alert">Komodo IDE only</span></li>
+
+  <li><strong>SFTP and SCP</strong>: Komodo now supports access
+  to remote files via SFTP and SCP. Saved password information
+  for all remote servers is stored securely in Mozilla's native
+  password manager.</li>
+
+  <li><strong>Help Browser</strong>: Komodo now uses Mozilla's
+  help browser for displaying Komodo help.</li>
+
+  <li><strong>PHP "Zero Configuration"</strong>: Automatic
+  configuration for PHP debugging. <span class=
+  "version_alert">Komodo IDE only</span></li>
+</ul>
+
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>Improved code completion for Perl.</li>
+
+  <li>"Go to Definition" in Perl</li>
+</ul><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Tabs: Tab order is now properly reset at
+  startup.</li>
+
+  <li>Projects: Restore open/close state of projects at
+  startup.</li>
+
+  <li>Projects: Restore the sorting order of projects at
+  startup.</li>
+
+  <li>Projects: Stop projects from sometimes disappearing
+  after update/deletion.</li>
+
+  <li>Autoindent: Better handling of and bug fixes for
+  HTML/XML auto-indenting.</li>
+
+  <li>Codeintel: Now works when some extensions are
+  disabled.</li>
+
+  <li>Codeintel: The Code Intelligence system now honours
+  "Additional Directories" settings in Project
+  preferences.</li>
+
+  <li>Editor: Improved handling for opening encoded
+  filenames.</li>
+
+  <li>Debugging: Sort list of local/global variables.</li>
+
+  <li>Mac OS X: Fixed crash caused by running mouse across
+  menus.</li>
+
+  <li>Vi emulation: Fix visual line mode to copy/paste
+  correctly.</li>
+</ul>
+
+<h2><a name="ko40b4" id="ko40b4">Komodo 4.0 Beta 4 (January 11, 2007)</a></h2>
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>A new "<a href="../editor.html#go_to_def">Go
+  to Definition</a>" option for quickly jumping to the
+  definition of a code object (e.g. a variable, a
+  subroutine, a module, etc.) under your cursor.</li>
+
+  <li>A Vim-like <a href="../vikeybind.html#vi_emulation">visual mode</a>
+  for text selection.</li>
+
+  <li>Perl autocompletion.</li>
+
+  <li>Ruby on Rails "peer" module autocompletion.</li>
+
+  <li>JavaScript autocompletion shows completion for files
+  in same directory or for directories defined in global or
+  project preferences.</li>
+
+  <li>PHP autocompletion shows completion for directories
+  defined in global or project preferences, as well as
+  those defined in <em>php.ini</em>.</li>
+
+  <li>Improved JavaScript debugging workflow.</li>
+</ul><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Remote files: Connections now timeout properly.</li>
+
+  <li>Remote files: Support for working with remote files
+  with a different encoding.</li>
+
+  <li>The PHP XDebug extension has been updated (includes
+  crash bug fixes).</li>
+
+  <li>Perl debugging over iterators now works
+  correctly.</li>
+
+  <li>The style of PHP commenting to use can now be set in
+  Preferences.</li>
+
+  <li>Tab ordering, and window sizing now restored on
+  startup.</li>
+
+  <li>PDK extension fixes and support for the recent PDK
+  Beta.</li>
+
+  <li>PHP completion has partial support for use of DEFINES
+  in include/require statements.</li>
+
+  <li>Improved support for encodings in remote
+  filenames.</li>
+
+  <li>Various Vi emulation fixes.</li>
+
+  <li>Over 100 additional bug fixes since Beta 3.</li>
+</ul>
+
+
+<h2><a name="ko40b3" id="ko40b3">Komodo 4.0 Beta 3 (December 14, 2006)</a></h2>
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>JavaScript catalog selection in preferences.
+  Autocompletion available for several popular JavaScript
+  libraries.</li>
+
+  <li>Basic Rails autocompletion for the default Rails
+  APIs. Autocompletion for custom application code not yet
+  implemented.</li>
+
+  <li>XPI support for Code intelligence catalogs.</li>
+</ul><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Codeintel (autocomplete/calltips) fixes and
+  improvements in JavaScript, XML/HTML, PHP, and Ruby.</li>
+
+  <li>Samba support for Live Folders.</li>
+
+  <li>Project level debugging preferences/dialogs
+  fixed.</li>
+
+  <li>Changing the include/exclude preferences for folders
+  fixed.</li>
+
+  <li>Some template loading errors have been fixed.</li>
+
+  <li>HTTP Inspector UI cleanup.</li>
+
+  <li>Remote files under 4K in size are now read
+  properly.</li>
+
+  <li>Fixes for opening remote files.</li>
+
+  <li>Vi emulation mode pasting fixes.</li>
+
+  <li>Better support for HTML fragements in DOM
+  Viewer.</li>
+
+  <li>Search improvements in DOM Viewer.</li>
+</ul>
+
+
+<h2><a name="ko40b2" id="ko40b2">Komodo 4.0 Beta 2 (November 27, 2006)</a></h2>
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>Ruby completion improvements</li>
+
+  <li>PHP completion improvements (notably recursive
+  include/require support)</li>
+
+  <li>Python completion improvements (notably TKinter
+  support improved)</li>
+
+  <li>JavaScript completion improvements, including
+  completion support for JavaScript libraries. Beta 2
+  includes support for the Yahoo YUI library.</li>
+
+  <li>HTML completion and DOM Viewer improvements</li>
+
+  <li>Default DTD/Namespace support. The DTD default can be
+  set globally, default namespace can be set in current
+  file settings dialog.</li>
+
+  <li>Preloading of codeintel data to provide faster
+  response in completion.</li>
+
+  <li>xdebug binaries for PHP 5.2.</li>
+
+  <li>Updated Mozilla code base (now the same as Firefox
+  2).</li>
+
+  <li>Middle-click closing for editor tabs.</li>
+</ul><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Syntax highlighting configuration fixes.</li>
+
+  <li>Fixed repeat support in VI Emulation.</li>
+
+  <li>Fixed a problem causing crashes when using unicode
+  characters in buffers.</li>
+
+  <li>PHP syntax highlighting fixes.</li>
+
+  <li>JavaScript debugger extension now installs properly
+  into Firefox 2.</li>
+
+  <li>Fixed issues with opening files via SFTP.</li>
+
+  <li>Fixed problem with changing preferences in current
+  file settings.</li>
+
+  <li>Various Preferences fixes.</li>
+
+  <li>Various fixes in the DOMViewer.</li>
+
+  <li>Fixed file reload problem in "dirty" files.</li>
+
+  <li>Drag and drop support in toolbox fixes.</li>
+
+  <li>Various cosmetic fixes.</li>
+
+  <li>Python interactive shell fixes.</li>
+
+  <li>Various code browser/completion fixes for
+  multi-language buffers.</li>
+
+  <li>DocBook DTD files are now parsed properly.</li>
+
+  <li>Fixed leaks in plugin and PyXPCOM layers.</li>
+
+  <li>Project template fixes.</li>
+</ul>
+
+
+<h2><a name="ko40b1" id="ko40b1">Komodo 4.0 Beta 1 (October 31, 2006)</a></h2>
+
+<strong>Enhancements</strong>
+
+<ul>
+  <li>Feature complete for 4.0.0</li>
+
+  <li>PHP Zero Configuration</li>
+
+  <li>Code Intel backend redesigned for performance and
+  scalability</li>
+
+  <li>Multilanguage Autocomplete/Calltips</li>
+
+  <li>JavaScript Autocomplete/Calltips</li>
+</ul>
+
+
+<h2><a name="ko40a7" id="ko40a7">Komodo 4.0 Alpha 7 (October 24, 2006)</a></h2>
+
+<ul>
+  <li>Redesign of Code Intelligence backend
+
+    <ul>
+      <li>Ruby, Python, JavaScript and PHP
+      reimplemented</li>
+
+      <li>Perl and Tcl code intel not working -- back in
+      Beta 1</li>
+    </ul>
+  </li>
+
+  <li>Multi language file support (autocomplete, help,
+  commenting, etc.)</li>
+
+  <li>XML/DTD Catalog support for adding new DTD/RelaxNG
+  Schemas</li>
+
+  <li>PHP Zero Configuration</li>
+
+  <li>Project Debugger support</li>
+
+  <li>Project File Management (Delete/Rename/Show in File
+  Manager)</li>
+
+  <li>Project import from remote file system</li>
+
+  <li>Project New File support</li>
+
+  <li>New Icons for most UI buttons</li>
+
+  <li>SCC History now shows branch information as
+  well.</li>
+
+  <li>Project and DOM Viewer performance work</li>
+
+  <li>Project preferences updates</li>
+
+  <li>Live folder/project fixes</li>
+
+  <li>Project Templates changed to packages</li>
+
+  <li>Preferences now upgrade correctly</li>
+
+  <li>Subversion no longer contacts server unless user
+  requests via "refresh"</li>
+
+  <li>more Vi keybindings and fixes</li>
+
+  <li>new "Bright" and "Medium" syntax coloring
+  schemes</li>
+
+  <li>syntax check delay is configurable in prefs</li>
+
+  <li>Pref added to ignore the reload prompt when a file is
+  changed/removed.</li>
+</ul>
+
+
+<h2><a name="ko40a6" id="ko40a6">Komodo 4.0 Alpha 6 (September 19, 2006)</a></h2>
+
+<ul>
+  <li>XML/HTML Autocomplete/Calltip support:
+
+    <ul>
+      <li>based on DTD or RelaxNG Schema</li>
+
+      <li>SGML Catalog and XML Catalog support</li>
+    </ul>
+  </li>
+</ul>
+
+
+<h2><a name="ko40a5" id="ko40a5">Komodo 4.0 Alpha 5 (September 1, 2006)</a></h2>
+
+<ul>
+  <li>More luddite languages</li>
+
+  <li>Projects: Deployment</li>
+
+  <li>Multilanguage code intel</li>
+
+  <li>JavaScript DBGP event-based breakpoints (eg.
+  onclick)</li>
+</ul>
+
+
+<h2><a name="ko40a4" id="ko40a4">Komodo 4.0 Alpha 4 (August 24, 2006)</a></h2>
+
+<ul>
+  <li>CSS autocomplete/calltips</li>
+
+  <li>HTTP Inspector rules and filters</li>
+
+  <li>Projects: live folder/projects improvements,
+  performance improvements</li>
+
+  <li>Vi Bindings: new features and improvements</li>
+
+  <li>JavaScript: Interactive Shell and debugging
+  improvements</li>
+
+  <li>Misc. other bug fixes</li>
+</ul>
+
+
+<h2><a name="ko40a3" id="ko40a3">Komodo 4.0 Alpha 3 (July 25, 2006)</a></h2>
+
+<ul>
+  <li>HTTP Inspector</li>
+
+  <li>More project work (project prefs, more prevalent live
+  folders)</li>
+
+  <li>JavaScript Interactive Shell</li>
+</ul>
+
+
+<h2><a name="ko40a2" id="ko40a2">Komodo 4.0 Alpha 2 (July 11, 2006)</a></h2>
+
+<ul>
+  <li>SFTP/SCP support in remote files system</li>
+
+  <li>JavaScript debugging improvements (crashes,
+  breakpoints, etc.)</li>
+
+  <li>SCC History</li>
+
+  <li>Vi Bindings</li>
+</ul>
+
+
+<h2><a name="ko40a1" id="ko40a1">Komodo 4.0 Alpha 1 (June 26, 2006)</a></h2>
+
+<ul>
+  <li>JS debugging in Firefox via the JS DBGP XPI.</li>
+
+  <li>Live Folders in the project viewer (backed by new
+  file notification system)</li>
+
+  <li>UDL/Luddite lexing framework to support RHTML syntax
+  coloring.</li>
+</ul>
+
+
+<h2><a name="ko353" id="ko353">Komodo 3.5.3 (May 4, 2006)</a></h2>
+
+<ul>
+  <li>Fixed some xpcom registration issues on startup</li>
+
+  <li>Some minor unicode issues on non-English systems
+  fixed</li>
+</ul>
+
+
+<h2><a name="ko353b1" id="ko353b1">Komodo 3.5.3 Beta 1 (March, 2006)</a></h2>
+
+<ul>
+  <li>[Mac OS X] Now have a build of Komodo for Mac OS X on
+  Intel.</li>
+
+  <li>[Solaris] Once again have a Komodo for Solaris
+  build.</li>
+
+  <li>Numerous locale and encoding bugs have been
+  fixed.</li>
+
+  <li>Numerous keybinding bugs have been fixed.</li>
+
+  <li>Minor FTP-support improvements to speed up browsing
+  in the "Open Remote File" dialog.</li>
+
+  <li>Improvements in the Diff Windows to properly support
+  context, unified and plain diff styles.</li>
+
+  <li>A full list of bug fixes can be obtained on <a href=
+  "http://bugs.ActiveState.com/">http://bugs.ActiveState.com/</a>.</li>
+</ul>
+
+
+<h2><a name="ko352" id="ko352">Komodo 3.5.2 (December 6, 2005)</a></h2>
+
+<ul>
+  <li>[Windows] Fix <code>AltGr+&lt;number&gt;</code>
+  keybindings for international keyboard layouts on
+  Windows. See <a href=
+  "http://bugs.activestate.com/Komodo/show_bug.cgi?id=43021">
+  bug 43021</a> for details. One side effect of this fix is
+  that the keyboard shortcut for "View Line Numbers" had to
+  be changed from <code>Ctrl+Shift+6</code> to
+  <code>Ctrl+Shift+4</code>.</li>
+
+  <li>[Windows] Fix XSLT autocomplete (<a href=
+  "http://bugs.activestate.com/Komodo/show_bug.cgi?id=41898">bug
+  41898</a>).</li>
+
+  <li>Perl syntax checking default setting change to
+  <em>not</em> use taint mode. See <a href=
+  "http://aspn.activestate.com/ASPN/Mail/Message/komodo-discuss/2920833">
+  this komodo-discuss thread</a> for details.</li>
+
+  <li>[Windows] Fix setting of Windows File associations
+  (<a href=
+  "http://bugs.activestate.com/Komodo/show_bug.cgi?id=42107">bug
+  42107</a>). Due to the nature of the bug it may be
+  necessary to first <em>remove</em> all your file
+  associations in the Windows Integration panel, press
+  "Re-apply settings to system", then reset all your file
+  associations before they will be setup properly.</li>
+
+  <li>[Linux] Fix SELinux issues that would prevent Komodo
+  from starting on Linux machines with SELinux kernel
+  extensions installed and enforcing -- the default on
+  Fedora Core 4. (<a href=
+  "http://bugs.activestate.com/Komodo/show_bug.cgi?id=43260">Bug
+  43260</a>)</li>
+
+  <li>Various bug fixes.</li>
+</ul>
+
+
+<h2><a name="ko351" id="ko351">Komodo 3.5.1 (November, 2005)</a></h2>
+
+<ul>
+  <li>Added a Ruby Interactive Shell.</li>
+
+  <li>Various bug fixes, especially for Ruby support, IME,
+  and Mac OS X keybinding issues.</li>
+</ul>
+
+
+<h2><a name="ko35" id="ko35">Komodo 3.5 (November 2, 2005)</a></h2>
+
+<ul>
+  <li>Komodo has been ported to Mac OS X</li>
+
+  <li><a target="_blank" href=
+  "http://www.ruby-lang.org/">Ruby</a> support has been
+  added, including debugging, code intelligence (including
+  Code Browser support, Object Browser support,
+  AutoComplete and CallTips), syntax checking, syntax
+  highlighting, and code folding.</li>
+
+  <li>Komodo's Mozilla source base has been upgraded to the
+  1.8 tree (same as Firefox 1.5).</li>
+
+  <li>The embedded Python has been updated to version
+  2.4.</li>
+
+  <li>Multilingual Input Method Editor (IME) support.</li>
+</ul>
+
+
+<h2><a name="ko31" id="ko31">Komodo 3.1 (February, 2005)</a></h2>
+
+<p><strong>Key Features</strong></p>
+
+<ul>
+  <li><a class="doc" target="blank" href=
+  "http://subversion.tigris.org/">Subversion</a> support
+  has been added to the Source Code Control system. Support
+  for Subversion is limited to the same features and
+  capabilities available for CVS and Perforce. For more
+  information, see <a href="../scc.html#scc_top">Source Code
+  Control</a></li>
+
+  <li>Perl AutoComplete and CallTips support is available
+  in this release. See <a href="../editor.html#AutoComplete">AutoComplete and
+  CallTips</a> for more information.</li>
+
+  <li>The Python debugger has been rewritten into a regular
+  Python package, and now includes an extension written in
+  C to provide performance boosts for large applications,
+  or applications using various GUI toolsets (eg.
+  wxPython).</li>
+
+  <li>PDK 6 support is now built into the distribution and
+  does not require a separate step to enable.</li>
+</ul>
+
+<p><strong>Enhancements</strong></p>
+
+<ul>
+  <li>Syntax coloring for many new languages, including
+  APDL, Asn1, AutoIt, Asm, Avenue, Bash, CLW, EScript,
+  Erlang, Forth, Gui4Cli, Kix, Lout, Metapost, MMIXAL, Lot,
+  MSSQL, Nsis, PowerBasic, PostScript, POV-Ray, Scriptol,
+  Specman, TeX, Verilog, and YAML.</li>
+
+  <li>Unicode and locale support has been enhanced.</li>
+
+  <li>Performance of the UI components has been
+  improved.</li>
+
+  <li>Markers that show line wrapping when the editor is in
+  wrap mode</li>
+
+  <li>Better column select support. Use 'Shift'+'Alt'+
+  arrow keys for selection.</li>
+
+  <li>TrueType fonts are available on Linux.</li>
+
+  <li>Anti-aliased fonts are available on Linux.</li>
+
+  <li>Support for copying, pasting as well as dragging and
+  dropping has been improved on Linux.</li>
+</ul>
+
+
+<h2><a name="ko31b2" id="ko31b2">Komodo 3.1 Beta 2 (January, 2005)</a></h2><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Win9x startup and runtime problems in Beta 1 (bugs
+  34939, 36202, 36207, 36208)</li>
+
+  <li>WinNT startup problems in Beta 1 (bug 36211)</li>
+
+  <li>AutoComplete: Inherited methods of HTTP::Request not
+  suggested (bug 35769)</li>
+
+  <li>AutoComplete: perlcile gets stuck scanning
+  WWW::Mechanize (bug 35788)</li>
+
+  <li>AutoComplete: PHP AutoComplete for parent:: includes
+  class members for the current class (bug 36104)</li>
+
+  <li>AutoComplete: Code intelligence doesn't supply
+  methods for an instance of an object. (bug 36128)</li>
+
+  <li>Code Browser: "Go to Definition" error with code
+  folding (bug 33495)</li>
+
+  <li>Code Browser: Perl file is shown twice in the Code
+  Browser (bug 33665)</li>
+
+  <li>Debugger: Remote Python debugging hangs on
+  non-existent file (bug 36247)</li>
+
+  <li>Debugger: Last line not recognized in remote dbg (bug
+  36265)</li>
+
+  <li>Documentation: Wording change to Perl remote
+  debugging setup docs (bug 33067)</li>
+
+  <li>Documentation: K3.1 Solaris may require OS patches
+  (for Mozilla) (bug 35873)</li>
+
+  <li>Documentation: Fixes to Tutorial docs (bugs 36073,
+  36077, 36080)</li>
+
+  <li>Editor: "updateBreakpointsFromMarkers" traceback
+  during save (bug 33150)</li>
+
+  <li>Editor: Komodo does not notice that mailexport.xml
+  has changed (bug 36078)</li>
+
+  <li>Macros: Some macro triggers don't work (bug
+  36084)</li>
+
+  <li>Object Browser: HTTP::Date.time2str looks odd (bug
+  35786)</li>
+
+  <li>Source Code Control: Offer to save file on SCC diff
+  when the file is dirty (bug 36067)</li>
+</ul>
+
+<p>To view the complete list of bugs fixed in this release,
+see <a class="doc" target="blank" href=
+"http://bugs.activestate.com">http://bugs.activestate.com</a>.</p>
+
+
+<h2><a name="ko31b1" id="ko31b1">Komodo 3.1 Beta 1 (January, 2005)</a></h2><strong>Bug Fixes</strong>
+
+<ul>
+  <li>Solaris builds available</li>
+
+  <li>Subversion documentation added</li>
+
+  <li>Further performance improvements in Python
+  debugger</li>
+
+  <li>Perl Code Intelligence improvements</li>
+
+  <li>Perl .xs file extension mapped to C++ lexer</li>
+
+  <li>* Perl .PL file extension mapped to Perl lexer</li>
+
+  <li>Fixes to Watch variables tab (bug 35808)</li>
+
+  <li>Duplicate variable names in PHP completion fixed (bug
+  34795)</li>
+
+  <li>Advanced debugger preferences added for customizing
+  amount of data returned from debug sessions for variable
+  viewers</li>
+
+  <li>Previously, projects could not import/open files with
+  colon in the filename (bug 35783)</li>
+
+  <li>Permission denied on one item in import prevented
+  importing any files/dirs (bug 30188)</li>
+
+  <li>Support extends and implements for AutoComplete in
+  PHP ( bug 35881)</li>
+
+  <li>Fixed PHP completion for remote files (bug
+  34745)</li>
+
+  <li>Support self keyword for PHP completion (bug
+  35042)</li>
+
+  <li>Python -E caused debugging/shell to fail (bug
+  35114)</li>
+
+  <li>Source Code Control add/delete status in projects was
+  broken (bug 35919)</li>
+
+  <li>Source Code Control edit command was available when
+  it shouldn't have been (bug 35927)</li>
+
+  <li>Source Code Control folder/container commands were
+  not available (bug 35925)</li>
+
+  <li>Fixed using locally installed PyDBGP</li>
+</ul>
+
+<p>To view the complete list of bugs fixed in this release,
+see <a class="doc" target="blank" href=
+"http://bugs.activestate.com">http://bugs.activestate.com</a>.</p>
+
+
+<h2><a name="ko31a4">Komodo 3.1 Alpha 4 (December, 2004)</a></h2>
+
+<p><strong>Bug Fixes and Enhancements</strong></p>
+
+<ul>
+  <li>Editor: Column select key bindings now 'Alt'+'Shift'
+  rather than 'Ctrl'+'Alt'+'Shift'</li>
+
+  <li>Debugger: No tooltips/hints for variables when
+  debugging Perl script (32875)</li>
+
+  <li>Debugger: Only 100 children of an array shown in
+  debugger variable panes (33702)</li>
+
+  <li>Python: Extreme slowness debugging large python
+  applications (33140, see new features above)</li>
+
+  <li>Python: wxPython crashes resolved (33112, see new
+  features above)</li>
+
+  <li>Python: Stepping into execfile within a method fails
+  (34767)</li>
+
+  <li>Python: Eval fails to debug (32657)</li>
+
+  <li>Python: Can't set breakpoints in Python threads
+  (34803)</li>
+
+  <li>Python: Debugger fails to display Python sets (
+  34796)</li>
+
+  <li>Python: Interactive shell hangs</li>
+
+  <li>Perl: Log file path does not expand tilde
+  (34711)</li>
+
+  <li>Perl: Debugger stops execution in extraneous .pm
+  files (34699)</li>
+
+  <li>Perl: Various remote debugger issues fixed</li>
+
+  <li>Perl: NEW break support added</li>
+
+  <li>Perl: $1 not preserved in Perl interactive shell
+  session (34528)</li>
+
+  <li>Perl: Single-quoted multi-line string failure
+  (34967)</li>
+
+  <li>PHP: Incorrect line numbers used in code browsing
+  (32499)</li>
+
+  <li>PHP: Completion of functions from include files is
+  faulty (34865)</li>
+
+  <li>PHP: Preferences report debugging is not configured
+  (34703)</li>
+
+  <li>PHP: Updated xdebug extension</li>
+
+  <li>TCL: Support for debugging incrtcl code</li>
+
+  <li>default extensions for new languages (34708)</li>
+
+  <li>Incorrect tooltip in search toolbar (33347)</li>
+
+  <li>Using tab key to indent deletes characters
+  (34695)</li>
+
+  <li>Komodo version does not show in name in Add/Remove
+  Programs (34797)</li>
+
+  <li>'View as language', display does not update syntax
+  coloring (34689)</li>
+
+  <li>Perl: Syntax color issues (34087)</li>
+
+  <li>Completion drop-down is clipped by scintilla window
+  (34392)</li>
+
+  <li>dragging/dropping multiple files fails to work
+  (34891)</li>
+
+  <li>Rectangle (column) selection failed on windows
+  (34042)</li>
+
+  <li>Print selection with tabs prints incorrect selection
+  (34739)</li>
+
+  <li>Better cvs version parsing (35428)</li>
+</ul>
+
+
+<h2><a name="ko31a3">Komodo 3.1 Alpha 3 (November, 2004)</a></h2>
+
+<p><strong>Bug Fixes</strong></p>
+
+<ul>
+  <li>fixed startup bug on Linux when using NFS mounts for
+  home directories (34041)</li>
+
+  <li>MOZ_PLUGIN_PATH would cause Komodo startup failure
+  (34779)</li>
+
+  <li>wxPython crash when debugging (33112)</li>
+
+  <li>Perl debugger uri fix (34714)</li>
+</ul>
+
+
+<h2><a name="ko31a2">Komodo 3.1 Alpha 2 (October, 2004)</a></h2>
+
+<p><strong>Bug Fixes</strong></p>
+
+<ul>
+  <li>fixed startup bug on Windows</li>
+
+  <li>Perl Interactive Shell: a few refinements relating to
+  handling of special variables ($1 .. $9, $`, $', @_)</li>
+
+  <li>Perl debugger: perl debugger fails if logfile setting
+  has spaces in the path (bug 34192)</li>
+
+  <li>Unix install script: fix expansion of "~"
+  directories</li>
+
+  <li>VPM: fix startup failure</li>
+</ul>
+
+
+<h2><a name="ko31a1">Komodo 3.1 Alpha 1 (October, 2004)</a></h2>
+
+<p><strong>Bug Fixes</strong></p>
+
+<ul>
+  <li>Overload support for the Perl debugger (33367)</li>
+
+  <li>Fixed CVS support for less used protocols or
+  protocols available with CVSNT</li>
+
+  <li>Minor fixes in Perforce support (33683)</li>
+
+  <li>"Find" functionality improvements (33698)</li>
+
+  <li>Debugger's HTML view now handles images properly
+  (33619)</li>
+
+  <li>Cyrillic (and other) keyboard support fixed
+  (34028)</li>
+
+  <li>Perl syntax coloring improvements (34087</li>
+
+  <li>General debugger improvements (32645)</li>
+
+  <li>Debugging of Tcl <code>incrtcl</code> classes now
+  possible (34090)</li>
+
+  <li>Breakpoint failures addressed for Tcl debugging
+  (34079)</li>
+
+  <li><strong>File|Revert</strong> command was previously
+  never available (33335)</li>
+
+  <li>"Repeat next" key binding ('Ctrl'+'K', 'Ctrl'+'U')
+  now stops repeating when it should (33960)</li>
+
+  <li>On Linux, dragging and dropping a file onto an open
+  file in the Editor Pane caused the name of the added file
+  to be pasted into the already-open file (32341)</li>
+
+  <li>Deleting a single custom menu from the Toolbox
+  removed all custom menus from the main menu (33202)</li>
+
+  <li>Comparing files with different line endings caused
+  Komodo to hang (32932)</li>
+
+  <li>Breakpoints in remote files were ignored (33636)</li>
+
+  <li>The Python remote debugger failed when debugging
+  local files (33079)</li>
+
+  <li>Perl Debugger - fixed "Bizarre copy of ARRAY"</li>
+
+  <li>Opening files with 'Enter' key had unintended side
+  effects (33433)</li>
+
+  <li>Non-ASCII Characters were not displayed properly in
+  the RX Toolkit (33054)</li>
+
+  <li>Remote debugger always searched for local files
+  (33116)</li>
+
+  <li>Breakpoints didn't work for filenames with
+  parentheses when debugging Perl (33968)</li>
+
+  <li>Temporary files were created and not removed when
+  debugging Perl (34308)</li>
+
+  <li>Module dependencies are now handled better during
+  Perl debugging (33771, 33255)</li>
+
+  <li>Breakpoints are now reset after saving a file for
+  Perl debugging (34267)</li>
+</ul>
+
+<p>To view the complete list of bugs fixed in this release,
+see <a class="doc" target="blank" href=
+"http://bugs.activestate.com">http://bugs.activestate.com</a>.</p>
+
+
+<h2><a name="ko301">Komodo 3.0.1 (August, 2004)</a></h2>
+
+<ul>
+  <li>On Windows, CPU usage spiked to 100% from the
+  debugger proxy at end of a debug session.</li>
+
+  <li>Custom menus disappeared when dragging macros into
+  them.</li>
+
+  <li>The "Your Toolbox has changed outside Komodo" alert
+  was being displayed unnecessarily.</li>
+
+  <li>Komodo was unable to "Save As" files in 8bit
+  encodings on Linux platforms.</li>
+
+  <li>Files could not be opened while using ShiftJIS or
+  cp936 system default encodings.</li>
+
+  <li>The debugger was hanging with a Prototype Error when
+  debugging Perl on Linux.</li>
+
+  <li>Usage of the "System defined default browser" was
+  incorrect in some cases.</li>
+
+  <li>CVS integration did not work with some versions of
+  CVS.</li>
+
+  <li>The code intelligence scanning engine hung on certain
+  file access errors.</li>
+
+  <li>Some failures with non-ascii characters in filenames
+  on Linux (such as the inability to use CVS or failures in
+  the auto-save feature) were fixed.</li>
+
+  <li>Some failures when converting document encodings were
+  fixed.</li>
+</ul>
+
+<p>To view the complete list of bugs fixed in this release,
+see <a class="doc" target="blank" href="http://bugs.activestate.com">http://bugs.activestate.com</a>.</p>
+
+<h2><a name="300">Komodo 3.0 (July, 2004)</a></h2>
+
+<h4>Code Intelligence</h4>
+
+<p>Komodo's <a href="../codeintel.html#codeintel_top">Code
+Intelligence</a> system is a set of tools that supports
+multiple languages. The Code Intelligence tools include the
+<a href="../codeintel.html#codeintel_codebrowser">Code
+Browser</a>, <a href="../codeintel.html#codeintel_objectbrowser">Object
+Browser</a> and <a href="../editor.html#Python_AutoComplete">Python
+AutoComplete and CallTips</a>. All Code Intelligence tools
+require a Code Intelligence database to operate fully.</p>
+
+<p>The Object Browser is a graphical browser that searches
+the <a href="../codeintel.html#codeintel_build_db">Code
+Intelligence database</a> for specified code symbols and
+modules. Use the Object Browser's preview pane to view code
+snippets containing the search criteria.</p>
+
+<p>The <a href="../codeintel.html#codeintel_codebrowser">Code
+Browser</a> displays on the <strong>Code</strong> tab next
+to the <strong>Projects</strong> tab in the Left Pane. The
+Code Browser displays a hierarchical tree view of all code
+constructs (for example, variables, methods, imports) in
+all open files. For Python, instance attributes are all
+displayed. The code tree, which can be navigated using
+either the keyboard or mouse, includes the following
+features:</p>
+
+<ul>
+  <li>Double-click a node to jump to that point in the
+  code.</li>
+
+  <li>When the cursor is positioned in the <a class="doc"
+  href="../workspace.html#Editor_Pane">Editor Pane</a>,
+  clicking the Locate
+  current scope button on the Code Toolbar or pressing
+  'Ctrl'+'K', 'Ctrl'+'L' causes Komodo to jump to the node
+  in the code tree that most closely matches the current
+  point in the program. Additionally, a <a href="../codeintel.html#codeintel_scope_indicator">Scope
+  Indicator</a>, located in the status bar, displays the
+  current scope of a selected code construct. Double-click
+  the Scope Indicator to open the tree hierarchy to the
+  code construct.</li>
+
+  <li>When the focus is in the Code Browser tree, pressing
+  the 'Tab' key causes Komodo to shift to the <a href="../codeintel.html#codeintel_filter">Filter</a>
+  text box. Typing any string in this text box causes the
+  Code Browser to display all of the nodes matching that
+  string. Pressing 'Tab' again shifts the focus back to the
+  tree. Clearing the <strong>Filter</strong> text box
+  returns the tree to its original state. Note that all
+  matching nodes are shown, even those that are invisible
+  because their parents were not "expanded".</li>
+
+  <li>The <a href="../codeintel.html#codeintel_sort">Sort</a> menu
+  on the Code Toolbar lets you toggle whether the nodes at
+  each level of the tree are sorted in alphabetical order
+  or according to the order they occur in the file.</li>
+
+  <li>The Code Description pane, located in the lower part of the
+  Code Browser, displays additional documentation (when
+  available) on various program components.</li>
+</ul>
+
+<p><a href="../codeintel.html">Python</a> <a href="../editor.html#AutoComplete">AutoComplete and
+CallTips</a> are enhanced with the Code Intelligence
+database.</p>
+
+<h4>Interactive Shell</h4>
+
+<p>The <a href="../intshell.html#intshell_top">interactive
+shell</a> is an implementation of Perl, Python and Tcl's
+interactive shell within Komodo. The interactive shell
+supports, AutoComplete, CallTips, debugging functions,
+customization and history recall.</p>
+
+<h4>Debugging</h4>
+
+<ul>
+  <li>A <a class="doc" href="../debugger.html#dbgp_proxy">debugger proxy</a>
+  is available that enables multiple users to debug with
+  Komodo on the same machine.</li>
+
+  <li>The <strong>Breakpoints</strong> tab in the Bottom
+  Pane of the Komodo workspace is designed for convenient
+  management of <a class="doc" href="../debugger.html#breakpoints_and_spawnpoints">breakpoints
+  and Tcl spawnpoints</a>. This tab displays enabled and
+  disabled breakpoints and spawnpoints. Double-clicking an
+  enabled or disabled breakpoint on the
+  <strong>Breakpoints</strong> tab opens the related file
+  in the <a class="doc" href="../top.html#Editor_Pane">Editor Pane</a> and
+  shifts focus to the line in the program associated with
+  that breakpoint.</li>
+
+  <li>Komodo now handles <a class="doc" href="../debugger.html#multi_session_debug">multi-session
+  debugging</a>. Komodo can debug multiple programs,
+  regardless of the supported languages used in the
+  applications being concurrently debugged.</li>
+
+  <li>The Bottom Pane of the Komodo workspace (previously
+  the Output Pane) has been reorganized and enhanced. The
+  new <a class="doc" href="../debugger.html#debug_session">Debug tab</a> is
+  displayed whenever a Komodo debugging session is
+  launched.</li>
+
+  <li>A <a class="doc" href="../debugger.html#debug_session">Debug
+  Toolbar</a> is available on the <strong>Debug</strong>
+  tab in the Bottom Pane of the Komodo workspace. It
+  includes additional controls for <a class="doc" href="../debugger.html#Detaching_the_Debugger">detaching</a>
+  from a new debugging session and <a class="doc" href="../debugger.html#debug_break">forcing a
+  break</a>.</li>
+
+  <li>New remote debugging features include the ability to
+  <a class="doc" href="../debugger.html#set_remote_debug">listen for
+  remote debugger sessions continuously</a>, <a class="doc"
+  href="../prefs.html#Debugger">set remote debugger
+  preferences</a>, and <a class="doc" href="../debugger.html#check_listener_status">check
+  the listener status</a> of the current
+  configuration.</li>
+
+  <li>The new debugger properties dialog box supports
+  multiple 'configurations' to be saved per file.</li>
+
+  <li>The new Debugger dialog box (displayed when a debug
+  session is invoked) supports configurable interpreter
+  arguments.</li>
+
+  <li>The <strong>Disable Output Buffering</strong> and
+  <strong>Enable Implicit Flush</strong> <a href="../debugger.html#Debugging_Options_General">options</a>
+  for PHP debugging have no effect when <a href="../debugger.html#Debugging_Options_Global">Simulate
+  CGI Environment</a> is selected. To disable output
+  buffering in CGI emulation mode, manually comment out the
+  output_buffering setting in <em>php.ini</em> with a ";"
+  character, or set it to "off".</li>
+</ul>
+
+<h4>Rx Toolkit</h4>
+
+<p>The Rx Toolkit has been completely overhauled. New
+features include:</p>
+
+<ul>
+  <li><a class="doc" href="../regex.html#Match_Type">Match Type</a> buttons
+  that set the match mode for the regular expression. The
+  buttons represent functions that let you
+  <strong>Match</strong>, <strong>Match All</strong>,
+  <strong>Split</strong>, <strong>Replace</strong> and
+  <strong>Replace All</strong>.</li>
+
+  <li>For Python regular expressions, there are two new
+  modifiers: <a class="doc" href="../regex.html#Add_Modifiers_rx">Unicode</a> and
+  <a class="doc" href="../regex.html#Add_Modifiers_rx">Locale</a>.</li>
+</ul>
+
+<h4>Multi-User Features</h4>
+
+<ul>
+  <li>A <a class="doc" href="../prefs.html#Shared_Support">Shared Toolbox</a>
+  with functionality similar to the standard <a class="doc" href="../toolbox.html#toolbox_top">Toolbox</a>
+  makes it possible for multiple users to share items such
+  as run commands and code snippets. The Shared Toolbox is
+  enabled via a check box on the Shared Support page of
+  Komodo Preferences.</li>
+
+  <li>Users can accept a default Common Data Directory or
+  specify a custom location via the new <a class="doc" href="../prefs.html#Config_CDD">Shared
+  Support</a> page in Komodo Preferences.</li>
+
+  <li>Multiple users can <a class="doc" href="../prefs.html#Share_Files">share .tip, .pcx and
+  .pdx files</a> and <a class="doc" href="../prefs.html#Share_Prefs">preferences</a>.</li>
+</ul>
+
+<h4>Enhanced Search Functionality</h4>
+
+<ul>
+  <li>The new <a class="doc" href="../search.html#editor_find_toolbar">Open/Find
+  Toolbar</a> makes it easier to open files and search for
+  strings in currently open files.</li>
+
+  <li>A <a class="doc" href="../search.html#find_in_files">Find in Files</a>
+  dialog box is used to search for files that are not
+  currently open.</li>
+</ul>
+
+<h4>Macro Enhancements</h4>
+
+<ul>
+  <li>A <a class="doc" href="../macros.html#macros_top">Macro Toolbar</a>
+  provides a quick and easy way to record, pause, play,
+  stop and save macros.</li>
+
+  <li>Macros are no longer stored as separate files (as
+  they were in 2.x). Because macro content is now included
+  in a macro item, it is easier to share macros between
+  multiple users.</li>
+
+  <li>The Properties dialog box for macros contains a
+  window in which macros can be <a class="doc" href="../macros.html#macros_adding_macros">coded</a>
+  in either JavaScript or Python.</li>
+
+  <li><a class="doc" href="../macros.html#triggers_macros">Triggers</a> can
+  be set so that macros execute as a result of specific
+  Komodo events.</li>
+
+  <li>The documentation includes a <a href="../macroapi.html#macroapi_top">macro
+  API</a>.</li>
+</ul>
+
+<h4>Custom Toolbars, Menus and Icons</h4>
+
+<p>Create <a class="doc" href="../custtbi.html#custtbi_top">Custom Toolbars and
+Menus</a> for frequently used components. Custom Toolbars
+are displayed beneath the existing toolbars; custom menus
+are added to Komodo's top-level menu, between the
+<strong>Tools</strong> and <strong>Windows</strong> menus.
+Custom icons can be assigned to components like
+<a href="../run.html#run_Cust_Icons">run commands</a>,
+<a href="../snippets.html#snippets_Cust_Icons">snippets</a>,
+etc.</p>
+
+<h4>Editing Enhancements</h4>
+
+<ul>
+  <li><a class="doc" href="../editor.html#reflow">Reflow Paragraph</a></li>
+
+  <li><a class="doc" href="../editor.html#join_lines">Join Lines</a></li>
+
+  <li><a class="doc" href="../editor.html#raw_keys">Enter Next Character as
+  Raw Literal</a></li>
+
+  <li><a class="doc" href="../editor.html#repeat_keystrokes">Repeat Next
+  Keystroke N Times</a></li>
+
+  <li><a class="doc" href="../editor.html#marks">Emacs-style
+  "marks"</a></li>
+
+  <li><a href="../prefs.html#prefs_editor">Clean
+  Line Endings on save</a></li>
+</ul>
+
+<h4>Miscellaneous</h4>
+
+<ul>
+  <li>PHP 5 is supported.</li>
+
+  <li>Support for Web services has been deprecated. Note
+  that this will not prevent the use of Web services in
+  applications developed in Komodo.</li>
+
+  <li>Users familiar with the Emacs editor can configure
+  Komodo to use <a class="doc" href="../prefs.html#Config_Key_Bindings">Emacs key
+  bindings</a> and set a <a href="../prefs.html#File_Associations">File
+  Associations</a> preference so that Komodo checks for an
+  embedded <a class="doc" href="../prefs.html#file_content">Emacs mode
+  specification</a>.</li>
+
+  <li>Support for Tcl has been improved to include more
+  detailed logging and additional syntax checking
+  options.</li>
+
+  <li>Two new <a class="doc" href="../shortcuts.html#shortcuts_top">interpolation
+  shortcuts</a> (%L and %P) can now be used in the Run
+  Command dialog box.</li>
+
+  <li>Users now have the option to assign custom icons to
+  Komodo components (snippets, run commands, etc).</li>
+
+  <li>Printing features for specifying
+  <a class="doc" href="../prefs.html#printing">line wrapping</a> and
+  <a class="doc" href="../prefs.html#printing">font
+  scaling</a> have been added to the Printing page in
+  Komodo Preferences. This page is now also accessible by
+  clicking <strong>Print Settings</strong> on the
+  <strong>File</strong> menu.</li>
+
+  <li>Components from Projects or the Toolbox can be
+  exported to a self-contained archive for distribution to
+  other users. The import and export wizards are invoked
+  via the right-click context menu in the Project or
+  Toolbox tab, or from the Toolbox menu.</li>
+
+  <li>Perl, Python and Tcl preferences include the ability
+  to specify import directories.</li>
+
+  <li>On the <strong>Editor|Key Bindings</strong>
+  preference page, the key bindings list can be
+  filtered.</li>
+</ul>
+
+<h4>Documentation</h4>
+
+<ul>
+  <li>The new <a href="../tutorial/tourlet_over.html#over_top">Feature
+  Showcases</a> are quick demos of Komodo features.</li>
+
+  <li>Komodo Help now displays in a selected web
+  browser.</li>
+
+  <li>Improved search capabilities, including phrase search
+  and result ranking, make it easier to locate specific
+  information.</li>
+
+  <li>The documentation includes an index.</li>
+
+  <li>Context-sensitive Help buttons have been added
+  throughout the Komodo workspace.</li>
+
+  <li>The documentation includes a <a href="../macroapi.html">macro
+  API</a>.</li>
+</ul>
+
+<h3>Komodo 3.0 Beta 4 (June, 2004)</h3>
+
+<h3>Komodo 3.0 Beta 3 (May, 2004)</h3>
+
+<h3>Komodo 3.0 Beta 2 (May, 2004)</h3>
+
+<h3>Komodo 3.0 Beta 1 (May, 2004)</h3>
+
+<h2><a name="252">Komodo 2.5.2 (January, 2004)</a></h2>
+
+<p>This release contains bug fixes for Komodo 2.5 and
+2.5.1, including:</p>
+
+<ul>
+  <li>Intermittent crashes were occurring on Linux, caused
+  by the autosave feature.</li>
+
+  <li>On Linux, the Internationalization dialog in Komodo's
+  Preferences was generating an error.</li>
+
+  <li>Perl's Visual Package Manager was not always
+  reporting a startup failure to the user.</li>
+
+  <li>AutoComplete for Perl and Python did not work.</li>
+
+  <li>Intermittently, the variable type indicator (i.e., $,
+  @, %) was not being selected when double-clicking on a
+  variable in the editor pane.</li>
+
+  <li>Umlaut characters were causing file contents to be
+  lost on save.</li>
+
+  <li>CVS source code control integration functions were
+  not available on directories or projects.</li>
+
+  <li>The Tcl statement <code>source <em>file</em></code>
+  was not finding the specified file.</li>
+
+  <li>There were errors in Tcl syntax checking.</li>
+
+  <li>CVS source code control integration was generating
+  errors on Solaris.</li>
+
+  <li>There were debugging errors when working with Tcl
+  scripts on Solaris.</li>
+
+  <li>When adding template items to a project or the Komodo
+  Toolbox, it was not possible to cancel the file selection
+  operation.</li>
+
+  <li>The CVS source code control integration now supports
+  use of a local repository.</li>
+
+  <li>The update function in Komodo's source code control
+  integration was not functioning under certain
+  circumstances.</li>
+
+  <li>On Solaris, it was not possible to create a file on
+  an NFS-mounted disk.</li>
+
+  <li>Regardless of the setting for line endings, new files
+  were created with DOS/Windows line terminators.</li>
+
+  <li>Perl brace matching could cause Komodo to lock up
+  under certain circumstances.</li>
+
+  <li>XML AutoComplete could cause Komodo to lock up.</li>
+
+  <li>During a workspace restoration, if multiple files
+  contained breakpoints, the breakpoints were not being
+  written to Komodo's breakpoint manager and would have to
+  be manually re-set.</li>
+
+  <li>After debugging, debugger arrows were still active on
+  files that had been stepped into.</li>
+
+  <li>Files names that included spaces could not be added
+  to projects.</li>
+
+  <li>Under certain circumstances, Komodo would not start
+  on Red Hat version 8.</li>
+
+  <li>Autosave functionality is now more robust.</li>
+
+  <li>Under certain circumstances, opening files resulted
+  in a blank page in the editor pane.</li>
+
+  <li>On Linux, the debug session would occasionally hang
+  due to problems with the remote debug listener.</li>
+</ul>
+
+<h2><a name="251">Komodo 2.5.1 (October, 2003)</a></h2>
+
+<p>This release contained bug fixes for Komodo 2.5. The
+only user-visible changes were:</p>
+
+<ul>
+  <li>When clickable links are displayed in the Output
+  Pane, you must double-click (rather than single click) to
+  follow the link. This allows for portions of the link to
+  be selected via single-clicks. The link is no longer
+  underlined.</li>
+
+  <li>The default Perl remote debugging port has changed
+  from 9010 to 9011 (due to a conflict with the XIM server
+  on UNIX). To use the new port, alter the PERLDB_OPTS
+  setting on the remote machine. If you are invoking the
+  Komodo debugger via the Perl Dev Kit's -debug switch,
+  ensure that the specified port number matches the
+  Komodo's port number.</li>
+
+  <li>The menu link for the Start Page has been moved from
+  the Help menu to the Windows menu.</li>
+
+  <li>The <strong>Close All</strong> menu option no longer
+  closes the Start Page.</li>
+
+  <li>The <strong>Internationalization</strong> preference
+  page for language encodings has changed.
+  Programming-language specific encodings are now used for
+  existing files, as well as new files.</li>
+</ul>
+
+<p>The following major bugs were fixed:</p>
+
+<ul>
+  <li>The highlighting of selected text was not released if
+  the mouse pointer moved outside of the editor pane.</li>
+
+  <li>Komodo Personal failed to start up properly if the
+  <strong>Show Button Text</strong> option was
+  enabled.</li>
+
+  <li>Background syntax checking would cease to
+  function.</li>
+
+  <li>Saving of remote files failed for long editing
+  sessions.</li>
+
+  <li>Remote debugging didn't honor Perl breakpoints.</li>
+
+  <li>The Rx window could hang.</li>
+
+  <li>Hotspots in the Output pane were generated for
+  spurious lines and the dialog was hard to dismiss.</li>
+
+  <li>Installing web services for Perl 5.8 is fixed.</li>
+
+  <li>The <strong>Build Standalone Perl
+  Application</strong> dialog didn't deal well with scripts
+  with UNC filenames (\\machine\drive\...).</li>
+
+  <li>Printing collapsed whitespace in the middle of
+  lines.</li>
+
+  <li>The ability to show diffs in an editor tab wasn't
+  working.</li>
+</ul>
+
+<h2><a name="250">Komodo 2.5 for Windows, Linux (September,
+2003)</a></h2>
+
+<p><strong>General</strong></p>
+
+<ul>
+  <li>Komodo's speed has been boosted through
+  re-engineering, resulting in quicker times for startup,
+  tab-switching, loading of dialogs, as well as overall
+  performance gains.</li>
+
+  <li>Menus have been re-organized, and new items have been
+  added. Every Komodo feature can now be accessed through
+  the top-level menus.</li>
+
+  <li>The Preferences pages and a number of existing
+  dialogs have been improved and reorganized for
+  ease-of-use. Changed dialogs include those associated
+  with current file settings, templates, source code
+  control, remote files, and the Perl Dev Kit.</li>
+
+  <li>Templates can now use the same interpolation
+  shortcuts as commands and snippets. Prior to Komodo
+  Version 2.5, a set of variables could be used to embed
+  the current date and time in files created from custom
+  templates. The old codes have been deprecated and will be
+  removed in the next Komodo release.</li>
+
+  <li>The Show Unsaved Changes command, previously
+  exclusive to the Editor context menu, has been added to
+  the <strong>File</strong> menu.</li>
+
+  <li>A new <strong>Compare Files</strong> feature on the
+  <strong>Tools</strong> menu provides a quick and easy way
+  to locate and "diff" two files.</li>
+
+  <li>A <strong>Word Wrap</strong> command has been added
+  to the <strong>View</strong> menu.</li>
+
+  <li>A Tcl tutorial has been added to Komodo's set of
+  language tutorials. Another new tutorial, the Komodo
+  Tour, provides an introduction to the program's key
+  features.</li>
+
+  <li>ASPN Cookbook integration is no longer
+  supported.</li>
+</ul>
+
+<p><strong>Workspace</strong></p>
+
+<ul>
+  <li>Changes have been made to make more efficient use of
+  the Komodo workspace:
+
+    <ul>
+      <li>A <strong>Full Screen</strong> command has been
+      added to the <strong>View</strong> menu.</li>
+
+      <li>The Toolbox and Project Manager, which previously
+      appeared in separate panes, are now contained in
+      single pane. You can select <strong>Projects/Toolbox
+      Pane</strong> from the <strong>View</strong> menu to
+      show or hide this pane.</li>
+
+      <li>Toolbar button text is not displayed by default.
+      Hiding the button text makes it possible for the
+      toolbars to share a single row.</li>
+    </ul>
+  </li>
+
+  <li>The functionality of Komodo's ancillary windows has
+  been enhanced. The Debug Output, Command Output, and SCC
+  Output tabs in the Output Pane offer context menus with
+  access to a subset of the top-level View menu. There are
+  key bindings for each of the context menu items. The same
+  context menu is available in the "diff" window, which is
+  invoked by either the Show Unsaved Changes command or the
+  <strong>Compare Files</strong> command. The ancillary
+  windows also support "hot-spotting". If Komodo detects a
+  file reference, it will create a hot spot that links to
+  the file itself.</li>
+
+  <li>Interpreter errors displayed in the Output Pane are
+  now hyperlinks to the relevant line.</li>
+
+  <li>'Ctrl'+'Tab' functionality is now supported in all of
+  the panes in the Komodo workspace. Earlier versions of
+  Komodo supported tab-switching in the Editor Pane
+  only.</li>
+
+  <li>The <strong>Output</strong> tab and the
+  <strong>Variables</strong> tab are now known as the Debug
+  Output tab and Debug Variables tab, respectively.</li>
+
+  <li>The "grippies" used to show and hide the panes in the
+  Komodo workspace have been abandoned in favor of "x"
+  close buttons.</li>
+</ul>
+
+<p><strong>Project Manager and Toolbox</strong></p>
+
+<ul>
+  <li>The new <strong>Toolbox menu</strong> provides
+  functionality for importing and exporting items, along
+  with other commands that were previously exclusive to the
+  Toolbox context menu. The Projects/Toolbox Pane contains
+  the Projects tab and the Toolbox tab. You can show or
+  hide the <strong>Projects</strong> and
+  <strong>Toolbox</strong> tabs by pressing
+  'Ctrl'+'Shift'+'P' and 'Ctrl'+'Shift'+'T',
+  respectively.</li>
+</ul>
+
+<p><strong>Editor</strong></p>
+
+<ul>
+  <li>Additions to the <strong>Window</strong> menu offer
+  new display options for the Editor Pane. Selecting
+  <strong>Split View</strong> divides the Editor Pane in
+  two, so that you can preview files (e.g., HTML or XML) or
+  compare two files. Select <strong>Rotate Tab
+  Groups</strong> to toggle vertical and horizontal
+  variations of the split view.</li>
+
+  <li>The View As Language item on the View menu now has a
+  submenu item called <strong>Reset to best guess</strong>.
+  Select this item to ignore the user preference, and
+  analyze the file in an attempt to determine its
+  language.</li>
+
+  <li>Change the language of an open file by right-clicking
+  the name of the language on the status bar and selecting
+  a language from the pop-up menu.</li>
+
+  <li>A new <strong>Smart Editing</strong> preference gives
+  you the choice of configuring the 'Tab' key instead of
+  'Ctrl'+'Space' to trigger Komodo's word-completion
+  feature.</li>
+
+  <li>The <strong>Go To Line</strong> dialog box now
+  supports entries that are relative to the current line.
+  For example, instead of entering a specific line number,
+  you can enter "+10" or "-10" to move ten lines forward or
+  back.</li>
+
+  <li>There are some changes to the default key bindings.
+  For a complete listing of default key bindings, select
+  <strong>Help|List Key Bindings</strong>.</li>
+
+  <li>The <strong>Ignore Hidden Text</strong> option has
+  been removed from the <strong>Find</strong> dialog
+  box.</li>
+
+  <li>Komodo now supports editing with non-English
+  characters, based on the locale specified in the regional
+  settings for Windows. See Customizing International
+  Encodings for more information.</li>
+</ul>
+
+<p><strong>Web and Browser</strong></p>
+
+<ul>
+  <li>A Preview in Browser command is now available through
+  the <strong>View</strong> menu and the main toolbar.
+  Depending on how the Web and Browser preferences are
+  configured, this command will display a preview in one of
+  three ways:</li>
+
+  <li style="list-style: none">
+    <ul>
+      <li>in the Editor Pane</li>
+
+      <li>side-by-side with the source code in a split view
+      of the Editor Pane</li>
+
+      <li>in a separate window</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>GUI Builder</strong></p>
+
+<ul>
+  <li>GUI Builder functionality has been extended to
+  include language-specific widget palettes that are
+  displayed according to the initial language selection. In
+  addition, a greater variety of widgets is available.</li>
+
+  <li>The new Dialog tab displays an interactive
+  organizational map that makes it easier to plan and
+  manage the structure of dialogs.</li>
+
+  <li>The new Menu tab is used to create drop-down menus.
+  The <strong>Menu tab</strong> features an additional
+  widget set used to create standard menu commands, as well
+  as commands with check box or radiobutton behavior.</li>
+</ul>
+
+<p><strong>Printing</strong></p>
+
+<ul>
+  <li>The new Page Setup options used to set orientation,
+  margins, and headers and footers can now be accessed from
+  the <strong>File</strong> menu.</li>
+
+  <li>A new Print Preview command has also been added to
+  the <strong>File</strong> menu. In addition to navigation
+  buttons for viewing multi-page print jobs, the preview
+  window offers access to <strong>Page Setup</strong>
+  options. As a result, printing preferences available in
+  Komodo 2.3, including <strong>Print Line Wrap
+  Markers</strong>, <strong>Characters per line</strong>
+  and <strong>Font Size Adjustment</strong>, have been
+  removed.</li>
+
+  <li>Selecting the <strong>Print to HTML</strong> command
+  now opens the generated file.</li>
+</ul>
+
+<p><strong>Fonts and Colors</strong></p>
+
+<ul>
+  <li>The Fonts and Colors preferences have been
+  streamlined to make managing these settings easier. You
+  can create new font and color schemes based on the
+  default scheme. In addition to Language-Specific
+  Coloring, you can now set Common Syntax Coloring to
+  specify the settings for elements used in multiple
+  languages.</li>
+</ul>
+
+<p><strong>Debugging</strong></p>
+
+<ul>
+  <li>A <strong>Run Without Debugging</strong> item has
+  been added to the <strong>Debug</strong> menu, providing
+  a faster way to run scripts in Komodo.</li>
+
+  <li>A new debugging preference, <strong>Try to find files
+  on the local system when remote debugging</strong>, has
+  been added. When this preference is turned on, Komodo
+  will search for the debugger file on the local system
+  instead of automatically opening a read-only version of
+  the file retrieved from the debug engine.</li>
+
+  <li>Komodo now offers full support for Tcl debugging. In
+  addition, runtime Tcl syntax checking no longer requires
+  the Tcl Dev Kit.</li>
+</ul>
+
+<p><strong>Source Code Control</strong></p>
+
+<ul>
+  <li>The <strong>Automatically check out before
+  save</strong> option has been moved from "General Source
+  Code Control Preferences" to "Perforce" Preferences,
+  where it appears as <strong>Automatically open files for
+  edit before save</strong>.</li>
+</ul>
+
+<h3>Komodo 2.5 Technology Preview 1 for Solaris (August,
+2003)</h3>
+
+<h3>Komodo 2.5 Beta 1 for Windows, Linux (August,
+2003)</h3>
+
+<h3>Komodo 2.5 Alpha 2 (July, 2003)</h3>
+
+<h2><a name="230">Komodo 2.3 (February, 2003)</a></h2>
+
+<p><strong>General</strong></p>
+
+<ul>
+  <li>Compatibility issues with ActivePerl 5.8 (VPM), PHP
+  4.3 (syntax checking) and Python 2.2.2+ (debugging) have
+  been resolved.</li>
+
+  <li>The XSLT engine has been upgraded to Xerces 2.1 and
+  Xalan 1.4, and includes built-in extensions for that
+  version. (Refer to
+  http://xml.apache.org/xalan-c/extensionslib.html for
+  information about extension support.)</li>
+
+  <li>The new Windows Integration page in the Komodo
+  Preferences is used to configure system-wide file
+  associations.</li>
+
+  <li>The Projects and Workspace page in Komodo can be used
+  to have Komodo prompt you to open recent files and
+  projects when you start the program.</li>
+
+  <li>The configuration of the Komodo workspace is restored
+  after closing and re-opening Komodo.</li>
+</ul>
+
+<p><strong>PHP Configuration Wizard</strong></p>
+
+<ul>
+  <li>The PHP Configuration Wizard simplifies the
+  previously cumbersome process of configuring PHP
+  debugging extensions in Komodo.</li>
+</ul>
+
+<p><strong>Run Command</strong></p>
+
+<ul>
+  <li>The Run Command function has been enhanced, and a new
+  Run Command Tutorial has been added.</li>
+</ul>
+
+<p><strong>Toolbox</strong></p>
+
+<ul>
+  <li>Snippets now support shortcut codes. To view the
+  supported shortcuts, right-click a snippet, select
+  <strong>Properties</strong>, and click the arrow button
+  in the Properties dialog.</li>
+
+  <li>The new <strong>Add "Open..." Shortcut...</strong>
+  item on the Toolbox menu is used to create shortcut links
+  in the Toolbox to directories. Key bindings can be
+  assigned to these links.</li>
+
+  <li>Items can be exported from the Toolbox. Select the
+  desired items, then right-click and select <strong>Export
+  as Project File...</strong>.</li>
+
+  <li>Exported Toolbox items can be imported using the
+  <strong>Import into Toolbox...</strong> menu item,
+  accessible from the Toolbox menu.</li>
+
+  <li>The new <strong>Compare File With...</strong> item on
+  the file context menus in the Toolbox and Project Manager
+  is used to compare the selected file with another file
+  selected via a file picker dialog.</li>
+</ul>
+
+<p><strong>Project Manager</strong></p>
+
+<ul>
+  <li>Projects load much faster than in previous
+  versions.</li>
+
+  <li>Snippets now support shortcut codes. To view the
+  supported shortcuts, right-click a snippet, select
+  <strong>Properties</strong>, and click the arrow button
+  in the Properties dialog.</li>
+
+  <li>The new <strong>Add "Open..." Shortcut...</strong>
+  item on the Project Manager menu is used to create
+  shortcut links in the Project Manager to directories and
+  URLs. Key bindings can be assigned to these links.</li>
+
+  <li>The new <strong>Compare File With...</strong> item on
+  the Project Manager menu is used to compare the selected
+  file with another file selected via a file picker
+  dialog.</li>
+
+  <li>When a project has been changed, it can be reverted
+  to its last saved state using the <strong>Revert
+  Project</strong> menu item.</li>
+
+  <li>Many settings now persist in Komodo's projects,
+  including debugging options and Import from File System
+  settings.</li>
+
+  <li>The <strong>Import from Filesystem</strong> function
+  prompts if you want to install all the files in a
+  filesystem, and allows you to deselect desired
+  files.</li>
+
+  <li>After using the <strong>Import from
+  Filesystem</strong> function, if you attempt to import
+  the same filesystem location into the same project, only
+  files that are new since the last import will be
+  imported.</li>
+</ul>
+
+<p><strong>SCC Integration</strong></p>
+
+<ul>
+  <li>If you are using Komodo's Perforce integration, you
+  can now specify an external "diff" tool.</li>
+
+  <li>The "diff" window displays the original content and
+  the new content in different colors.</li>
+
+  <li>The "diff" window supports function keys to navigate
+  to changes in the file.</li>
+</ul>
+
+<p><strong>Editor</strong></p>
+
+<ul>
+  <li>Select <strong>Show Unsaved Changes</strong> from the
+  Editor context menu to view the differences between the
+  version of the file currently displayed in the Editor
+  Pane and the last saved version of the file.</li>
+
+  <li>Breakpoints and code folding information is stored
+  with the file, and therefore does not need to be
+  reconfigured when the file is closed and re-opened.</li>
+
+  <li>There is a new automatic indentation style ("Indent
+  to first non-empty column") that can be configured using
+  Komodo's Indentation preferences.</li>
+
+  <li>The symbols used to indicate folded sections of code
+  (and sections of code that can be folded) can be
+  configured on the <strong>Editor|Indentation</strong>
+  page of the Komodo Preferences.</li>
+
+  <li>You can change Read Only status of a file in the
+  file's preferences. Access the file preferences by
+  right-clicking the file in the Editor Pane and selecting
+  <strong>Properties and Settings</strong>.</li>
+
+  <li>If you change and save a file with a Read Only
+  status, you will be given the option to "force" the
+  write. This will remove the Read Only flag, save the
+  changes, then reset the Read Only flag.</li>
+
+  <li>You can specify the language association for an open
+  file in the file's preferences. Access the preferences
+  for the current file by right-clicking the file in the
+  Editor Pane and selecting <strong>Properties and
+  Settings</strong>. Use the <strong>Reset</strong> button
+  to reassert the language associated with the file
+  type.</li>
+
+  <li>Various editor bugs have been fixed, including
+  intermittent failure of the paste function, periodic
+  hanging when large projects were being opened, Perl
+  syntax checking problems and lost code folding after tab
+  switching.</li>
+</ul>
+
+<p><strong>GUI Builder</strong></p>
+
+<ul>
+  <li>In Komodo's Preferences, you can specify the
+  preferred port that the GUI Builder will use.</li>
+
+  <li>There are now no constraints for user code added to
+  Python files generated by the GUI Builder.</li>
+</ul>
+
+<p><strong>PDK Support</strong></p>
+
+<ul>
+  <li>Komodo 2.3 supports version 5 of the Perl Dev Kit,
+  including the new PerlNET and PerlTray components.</li>
+
+  <li>Support for all the Perl Dev Kit tools has been
+  enhanced.</li>
+
+  <li>When the <strong>Build Standalone Perl
+  Application</strong> function is used, settings in the
+  dialog are stored with the file.</li>
+</ul>
+
+<h3>Komodo 2.3 beta 2 (February, 2003)</h3>
+
+<h3>Komodo 2.3 beta 1 (January, 2003)</h3>
+
+<h2><a name="201">Komodo 2.0.1 for Linux (November,
+2002)</a></h2>
+
+<ul>
+  <li>See <a class="doc" href="#200">Komodo 2.0 for
+  Windows</a> for a list of 2.0 features included in
+  version 2.0.1 for Linux.</li>
+
+  <li>International Encoding support now works with
+  European and Cyrillic character sets. Configure encoding
+  support on the Internationalization page of Komodo
+  Preferences.</li>
+
+  <li>a new Web Preferences page, used to specify the
+  default browser</li>
+
+  <li>additional Run Command Shortcuts</li>
+</ul>
+
+<h3>Komodo 2.0.1 for Windows (October, 2002)</h3>
+
+<h3>Komodo 2.0 beta 3 for Linux (October, 2002)</h3>
+
+<h3>Komodo 2.0 beta 2 for Linux (September, 2002)</h3>
+
+<h2><a name="200">Komodo 2.0 for Windows (September,
+2002)</a></h2>
+
+<ul>
+  <li>Project Manager</li>
+
+  <li style="list-style: none">
+    <ul>
+      <li>add Run commands to projects</li>
+
+      <li>add GUI dialogs to projects (<em>Komodo
+      Pro</em>)</li>
+
+      <li>add Web services to projects</li>
+
+      <li>add macros to projects</li>
+
+      <li>add code snippets to projects</li>
+
+      <li>organize objects into folders</li>
+
+      <li>import groups of files from the filesystem</li>
+
+      <li>organize the order of objects in projects</li>
+
+      <li>drag items to and from the Project Manager to the
+      Toolbox and Editor</li>
+    </ul>
+  </li>
+
+  <li>Toolbox</li>
+
+  <li style="list-style: none">
+    <ul>
+      <li>add Run commands to the Toolbox</li>
+
+      <li>add GUI dialogs to the Toolbox (<em>Komodo
+      Pro</em>)</li>
+
+      <li>add Web services to the Toolbox</li>
+
+      <li>add macros to the Toolbox</li>
+
+      <li>add code snippets to the Toolbox</li>
+
+      <li>add code snippets to the Toolbox</li>
+
+      <li>organize objects into folders</li>
+
+      <li>drag items to and from the Toolbox to the Project
+      Manager and Editor</li>
+    </ul>
+  </li>
+
+  <li>Customizable Key Bindings for standard Komodo
+  functions, and for macros and Run commands</li>
+
+  <li>Source Code Control integration for CVS and Perforce
+  (<em>Komodo Pro</em>)</li>
+
+  <li>Visual Package Manager integration (<em>Komodo
+  Pro</em>)</li>
+
+  <li>GUI Builder for building graphical applications
+  (<em>Komodo Pro</em>)</li>
+
+  <li>Macros for recording and repeating common keystroke
+  sequences</li>
+
+  <li>Create code snippets by selecting code in the Editor
+  Pane and dropping it into the Project Manager or
+  Toolbox</li>
+
+  <li>Enhanced "Run" Command
+
+    <ul>
+      <li>save run command to the Toolbox</li>
+
+      <li>new shortcuts, including escaped % symbol,
+      URL-escaped selection, etc</li>
+
+      <li>specify starting directory for command</li>
+
+      <li>specify run location (output window, new console,
+      no console)</li>
+
+      <li>specify environment variables</li>
+
+      <li>save advanced options (such as environment
+      variables) as Run command defaults</li>
+    </ul>
+  </li>
+
+  <li>Function Search to quickly find Perl packages and
+  subs, Python or PHP classes and functions, and Tcl
+  procs</li>
+
+  <li>Incremental Search</li>
+
+  <li>HTML Preview Tab</li>
+
+  <li>Customizable Language Help</li>
+
+  <li>Customizable Cursor, Current Line, Selection and
+  Background Colors</li>
+
+  <li>"Mark All" option in Find dialog</li>
+
+  <li>"Remove All Bookmarks" command</li>
+
+  <li>Printing enhancements</li>
+
+  <li>Background Syntax Checking</li>
+
+  <li style="list-style: none">
+    <ul>
+      <li>hover mouse over icon for total number of errors
+      and warnings</li>
+
+      <li>double-click icon to move the editing cursor to
+      the next error or warning</li>
+    </ul>
+  </li>
+
+  <li>Tip of the Day</li>
+
+  <li>'Ctrl'+'Tab' switches between the two most recently
+  opened or edited files</li>
+
+  <li>Ability to re-order open files by
+  dragging-and-dropping file tabs in the Editor Pane</li>
+
+  <li>File tab context menu with common file tasks, such as
+  saving and accessing source code control commands</li>
+
+  <li>'Ctrl'+'X' and 'Ctrl'+'C' take entire lines if no
+  text is selected, and will continue to accumulate
+  lines</li>
+
+  <li>'Ctrl'+'Shift'+'V' pastes and selects the pasted
+  text</li>
+
+  <li>Improved word wrapping</li>
+
+  <li>Partial word movement</li>
+
+  <li>Overtype / insert toggle support</li>
+
+  <li>Search through the document for the word under the
+  cursor</li>
+
+  <li>Web service proxies in Perl programs</li>
+
+  <li>Brace matching</li>
+
+  <li>Transposing characters</li>
+
+  <li>Literal characters</li>
+</ul>
+
+<h3>Komodo 2.0 beta 2 for Windows (September, 2002)</h3>
+
+<h3>Komodo 2.0 beta 1 for Linux (September, 2002)</h3>
+
+<h3>Komodo 2.0 beta 1 for Windows (August, 2002)</h3>
+
+<h2><a name="129">Komodo 1.2.9 (July, 2002)</a></h2>
+
+<p>The following issues were addressed in Komodo 1.2.x
+releases:</p>
+
+<p><strong>Editor</strong></p>
+
+<ul>
+  <li>(Windows only) Syntax checking now works properly for
+  files located on a network.</li>
+
+  <li>(Tcl, Perl and PHP) Double-clicking variables now
+  selects the variable prefix.</li>
+
+  <li>When dragging and dropping text into the Editor Pane,
+  Komodo no longer attempts to open a new file.</li>
+
+  <li>When dragging and dropping text from the Editor Pane
+  to other parts of Komodo, Komodo was crashing. This has
+  been fixed.</li>
+
+  <li>When CallTips are displayed, tip highlighting now
+  progresses as statement components are entered in the
+  editor.</li>
+
+  <li>When opening large HTML files in the editor, Komodo
+  no longer displays a syntax error warning.</li>
+
+  <li>Search and replace strings containing backslashes are
+  now handled properly.</li>
+
+  <li>The error regarding invalid regular expressions
+  during search and replace has been fixed.</li>
+
+  <li>Templates in language directories are now correctly
+  included in the language categories.</li>
+</ul>
+
+<p><strong>General Debugging</strong></p>
+
+<ul>
+  <li>Watched variables can be manipulated regardless of
+  whether the debugger is running.</li>
+
+  <li>When the debugger is running, use 'Ctrl'+'F10' to run
+  the debugger to the current cursor position.</li>
+
+  <li>When the debugger is running, the current line is now
+  highlighted. The highlighting is dimmed when a stack
+  other than the current stack is selected.</li>
+
+  <li>The debugger now positions the current line in the
+  middle of the Editor Pane.</li>
+</ul>
+
+<p><strong>Perl Editing and Debugging</strong></p>
+
+<ul>
+  <li>Socket errors in Perl debugger connections have been
+  fixed by the addition of a new configuration item. Select
+  Edit|Preferences|Debugger, and enter the socket port in
+  the Perl Listener Port field. The "CallKomodo"
+  configuration of the PERLDB_OPTS is no longer used, and
+  can be removed. See Debugging Perl Remotely for more
+  information.</li>
+
+  <li>Support for the overload.pm module has been
+  added.</li>
+
+  <li>Evals in included files no longer fail when stepping
+  into the included file.</li>
+
+  <li>"Here" doc styling is now supported.</li>
+
+  <li>When debugging Perl, the Komodo debugger does not
+  step over "require" statements.</li>
+</ul>
+
+<p><strong>PHP Editing and Debugging</strong></p>
+
+<ul>
+  <li>Komodo now fails gracefully if the php.ini file does
+  not exist in the specified location.</li>
+
+  <li>AutoComplete is now available inside strings.</li>
+
+  <li>The icon on the Komodo start page now correctly shows
+  when PHP has been enabled.</li>
+
+  <li>AutoComplete no longer fails inside certain string
+  elements.</li>
+
+  <li>Syntax checking now functions on large PHP
+  files.</li>
+
+  <li>PHP configuration is correctly reloaded if it is
+  changed.</li>
+
+  <li>AutoComplete now picks up changes in the php.ini
+  file.</li>
+
+  <li>The PHP 4.1 / 4.2 debugger extension is included with
+  the Komodo distribution. Note that the 4.1 debugger
+  extension functions with PHP version 4.2.</li>
+</ul>
+
+<p><strong>Tcl Editing and Debugging</strong></p>
+
+<ul>
+  <li>Breakpoints can now be set in included files.</li>
+
+  <li>For Tcl Dev Kit users, Prowrap was being incorrectly
+  called, rather than Procheck.</li>
+</ul>
+
+<p><strong>Other</strong></p>
+
+<ul>
+  <li>PDK version 4.0 is now supported.</li>
+
+  <li>The Rx Toolkit has better font styling.</li>
+
+  <li>To speed initial startup, sample Web services are no
+  longer added to the Komodo Preferences.</li>
+</ul>
+
+<p><strong>Web Services</strong></p>
+
+<ul>
+  <li>When parsing WSDLs, there is now schema support for
+  complex types (however, not all schema is
+  supported).</li>
+
+  <li>The WSDL parser now parses all XMethods.com WSDL
+  files.</li>
+</ul>
+
+<h3>Komodo 1.2.7 RC1 for Windows and Linux (March,
+2002)</h3>
+
+<h2><a name="120">Komodo 1.2 for Windows and Linux
+(December, 2001)</a></h2>
+
+<p><strong>Web Service Consumption</strong><br />
+<br />
+Komodo provides Web service support, bookmarks; quickly add
+Web services to Perl, Python or PHP files (including
+automatic language support like CallTips and AutoCompletion
+for Web service objects); browse your Web service bookmark
+library in the Komodo User Guide.</p>
+
+<p><strong>Share Recipes with the ASPN
+Cookbook</strong><br />
+<br />
+Komodo provides a fast, easy way to share recipes. Submit
+your favorite Perl regular expression or Python, Tcl or
+XSLT code snippet to the ASPN Cookbook.</p>
+
+<p><strong>Enhanced Editing</strong><br />
+<br />
+The Komodo editor detects files that have changed on disk,
+and gives you the option to reload. Komodo also remembers
+the "state" of each file in the Most Recently Used list,
+including cursor position, bookmarks, fold points, language
+association, and whitespace preference. Undo changes to a
+file using the Revert File function. Quickly select blocks
+of code when performing editing functions; configure text
+to auto-wrap in the editor and to auto-save at the interval
+you prefer.</p>
+
+<p><strong>Keyboard Shortcuts</strong><br />
+<br />
+New keyboard shortcuts include 'Ctrl'+Insert' (copy),
+'Shift'+'Delete' (cut), 'Shift'+'Insert' (paste) and
+'Ctrl'+&lt;debug command&gt; (suppress Debug Options
+dialog). Note that you can also use the 'Ctrl' key in
+conjunction with the Debugging Toolbar buttons to suppress
+display of the Debugging Options dialog box.</p>
+
+<p><strong>Find and Replace</strong><br />
+<br />
+Search and / or Replace a word or phrase in all documents
+open in the Komodo editor. Use the new tab on the Output
+Pane to view all results from Find or Replace
+operations.</p>
+
+<p><strong>Templates and Macros</strong><br />
+<br />
+Code faster with language-specific templates. Create custom
+templates, and embed variables for date and time
+stamps.</p>
+
+<p><strong>Perl Dev Kit Support</strong><br />
+<br />
+Use Komodo in conjunction with the Perl Dev Kit to build
+Windows executables, services and controls written in
+Perl.</p>
+
+<p><strong>Tcl Support</strong><br />
+<br />
+With a membership to ASPN Tcl, use Komodo's syntax checking
+and debugging with Tcl.</p>
+
+<p><strong>FTP Support</strong><br />
+<br />
+Edit remote files on FTP servers; add remote files to
+projects; save files to remote FTP servers. Use Komodo's
+Preferences to configure connection information for servers
+you use frequently.</p>
+
+<p><strong>Komodo User Guide</strong><br />
+<br />
+Search the User Guide or find a word or phrase in the
+current page; navigate using the Table of Contents; change
+the font size. Take a visual tour of the Komodo Workspace,
+the Komodo Debugger, the Komodo Editor or the Rx
+Toolkit.</p>
+
+<p><strong>Komodo Tutorials</strong><br />
+<br />
+Learn about new languages and language-specific Komodo
+features in the Tutorials.</p>
+
+<p><strong>PHP</strong><br />
+<br />
+Now supports AutoCompletion.</p>
+
+<p><strong>Fonts and Colors</strong><br />
+<br />
+Customize the display of fonts and colors for elements of
+every language supported by Komodo.</p>
+
+<p><strong>CGI Debugging Emulation</strong><br />
+<br />
+Emulate a CGI environment while debugging on your local
+machine by configuring server environment variables and
+form input.</p>
+
+<p><strong>Enhanced Debugging</strong><br />
+<br />
+Expanded Debugging Options remember your debug settings
+from one session to another; view HTML output on the Output
+tab; configure the Remote Debugging Listener Port; enter
+program input on the Output tab.</p>
+
+<p><strong>Run Commands</strong><br />
+<br />
+Interact with the command line using the Run Commands
+function.</p>
+
+<p><strong>Internationalization</strong><br />
+<br />
+Set the default encoding for files in Komodo's Preferences.
+While Komodo does not yet support editing outside of the
+English character set, non-English characters in existing
+files will be preserved.</p>
+
+<h3>Komodo 1.2 beta 1 for Linux (November, 2001)</h3>
+
+<h3>Komodo 1.2 beta 2 for Windows (November, 2001)</h3>
+
+<h3>Komodo 1.2 beta 1 for Windows (October, 2001)</h3>
+
+<h2><a name="110">Komodo 1.1 (June, 2001)</a></h2>
+
+<p><strong>PHP Debugging</strong> Enjoy PHP syntax checking
+and debugging with Komodo. You can configure Komodo to
+debug PHP files locally or within a Web server environment.
+For more information, see Debugging Programs in the Online
+Help.</p>
+
+<p><strong>XSLT Debugging</strong> - This release supports
+XSLT debugging. You can view your XSLT file, your XML input
+file, and your output simultaneously. You can even open an
+XML file on your Web server and transform the file while
+you debug your XSLT program. We've also improved the sample
+XSLT file in our Sample Project. For more information on
+XSLT debugging, see Debugging Programs in the Online
+Help.</p>
+
+<p><strong>Tcl support</strong> - You can now use Komodo to
+edit your Tcl files, including syntax coloring, code
+folding, AutoComplete and CallTips. We added a Tcl file to
+our Sample Project. If you have Tcl Dev Kit, you can enjoy
+Tcl syntax checking within Komodo. We plan to include
+stand-alone syntax checking that does not require Tcl Dev
+Kit in an upcoming release. Komodo does not yet support Tcl
+debugging.</p>
+
+<p><strong>Improved Performance</strong> - This release is
+based on the latest Mozilla tree, which includes an
+optimized code base. Performance improvements include
+faster installation and startup and faster response while
+you type or change files. Komodo responds much faster
+during debugging, when opening files and switching between
+files, and when loading the File Associations pane in the
+Preferences dialog.</p>
+
+<p><strong>Support for more languages</strong> - You can
+now use Komodo to edit Ruby and other languages, such as VB
+and SQL.</p>
+
+<p><strong>Improvements for Komodo on Linux</strong> - You
+can now resize the Komodo workspace, you can use
+fixed-width fonts, and you can debug Perl scripts if you
+have Perl 5.6 installed and configured.</p>
+
+<p><strong>XML AutoComplete</strong> - Komodo now features
+AutoComplete for your XML files.&nbsp;When you type an open
+angle-bracket "&lt;", Komodo lists the elements in your
+file. Komodo XML AutoComplete also lists tag attributes and
+suggests attribute values for certain values. XML
+AutoComplete also helps you close your tags.</p>
+
+<p><strong>Expanded Find and Replace dialog</strong> - You
+can now use regular expressions in your find and replace
+strings, you can search through folded text, and more.</p>
+
+<p><strong>Partial Unicode support</strong> - Komodo
+supports ASCII, Latin-1 and Unicode (UTF-8, UCS-2 or UCS-4)
+encoding. If you use Komodo to edit a file that has a
+different character encoding than those mentioned above,
+non-English characters may be removed when you save the
+file.</p>
+
+<h3>Komodo 1.0 (April, 2001)</h3>
+
+<h3>Komodo 0.1 (November, 2000)</h3>
+
+
+</body>
+</html>
