@@ -248,7 +248,8 @@ class todo(Task):
     """Print out todo's and xxx's in the docs area."""
     def make(self):
         excludes = [".svn", "*.pyc", "TO""DO.txt",
-                    "*.png", "*.gif", "build", "preprocess.py"]
+                    "*.png", "*.gif", "build", "preprocess.py",
+                    "externals"]
         for path in paths_from_path_patterns(['.'], excludes=excludes):
             self._dump_pattern_in_path("TO\DO\\|XX\X", normpath(path))
 
