@@ -12,7 +12,6 @@ from os.path import join, dirname, normpath, abspath, isabs, exists, \
 import re
 import sys
 from pprint import pprint
-from ConfigParser import SafeConfigParser
 
 from mklib import Task, Configuration, Alias, include
 from mklib import sh
@@ -21,7 +20,8 @@ from mklib.common import MkError
 sys.path.insert(0, join(_mk_makefile_.dir, "support"))
 from buildsupport import paths_from_path_patterns, \
                          app_filter_html_path_inplace, \
-                         app_filter_xml_path_inplace, _KomodoDocTask
+                         app_filter_xml_path_inplace, _KomodoDocTask, \
+                         ManifestParser
 import preprocess
 import api2html
 
@@ -174,7 +174,7 @@ class doc_files(_KomodoDocTask):
     """Build the doc set."""
     def manifest(self):
         """Generate the doc set manifest."""
-        mn = SafeConfigParser()
+        mn = ManifestParser()
         mn.read(join(self.dir, self.cfg.lang, "manifest.ini"))
         
         if self.cfg.filters:

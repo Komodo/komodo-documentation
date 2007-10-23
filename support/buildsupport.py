@@ -4,6 +4,7 @@
 import os
 from os.path import join, dirname, abspath
 import sys
+from ConfigParser import SafeConfigParser
 
 from mklib import Task
 
@@ -25,7 +26,16 @@ except ImportError:
 
 
 
+class ManifestParser(SafeConfigParser):
+    def optionxform(self, optionstr):
+        """Revert annoying base behaviour of ConfigParser to *lowercase*
+        everything. Jeesh.
+        """
+        return optionstr
+
+
 class _KomodoDocTask(Task):
+    # Base class for many Makefile.py tasks
     @property
     def htdocs_dir(self):
         return join(self.cfg.build_dir, "htdocs")

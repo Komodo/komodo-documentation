@@ -32,7 +32,8 @@ except ImportError:
             from elementtree import ElementTree as ET
             sys.path.remove(etree_dir)
 
-from buildsupport import paths_from_path_patterns, _KomodoDocTask
+from buildsupport import paths_from_path_patterns, _KomodoDocTask, \
+                         ManifestParser
 
 
 
@@ -41,7 +42,7 @@ class cfg(Configuration):
 
 
 class all(Alias):
-    deps = ["links", "toc", "unusedimgs"]
+    deps = ["links", "toc", "unusedimgs", "manifest"]
     default = True
 
 class links(_KomodoDocTask):
@@ -161,6 +162,35 @@ class unusedimgs(Task):
             else:
                 print "`%s' is unused (it should be removed)" % img_path
 
+
+class manifest(Task):
+    """Check $lang/manifest.ini"""
+    def make(self):
+        mn = ManifestParser()
+        mn_path = join(self.cfg.lang, "manifest.ini")
+        mn.read(mn_path)
+
+        paths = set()
+        for section in mn.sections():
+            for dst, src in mn.items(section):
+                paths.add(dst)
+        
+        listdir_from_dir = {}
+        for path in paths:
+            real_path = join(self.cfg.lang, path)
+            dirlist = os.listdir(dirname(real_path))
+            if basename(real_path) in dirlist:
+                pass
+            elif basename(real_path).lower() in [f.lower() for f in dirlist]:
+                dirlist_lower = [f.lower() for f in dirlist]
+                base_lower = basename(real_path).lower()
+                proper_base = dirlist[dirlist_lower.index(base_lower)]
+                print "%s: `%s' in manifest has incorrect case, " \
+                      "proper case is `%s' (this will currently " \
+                      "only work on Windows!)" \
+                      % (mn_path, path, proper_base)
+            else:
+                print "%s: `%s' does not exist" % (mn_path, path)
 
 
 #---- internal support stuff
