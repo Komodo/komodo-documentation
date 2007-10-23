@@ -41,7 +41,7 @@ class cfg(Configuration):
 
 
 class all(Alias):
-    deps = ["links", "toc"]
+    deps = ["links", "toc", "unusedimgs"]
     default = True
 
 class links(_KomodoDocTask):
@@ -140,6 +140,26 @@ class toc(links):
                     self.log.debug("skip external link: %r", href)
                     continue
                 self._check_a_link(doc, href)
+
+
+class unusedimgs(Task):
+    """Check for unused image files."""
+    def make(self):
+        content_from_path = {}
+        for path in paths_from_path_patterns(
+                        [self.cfg.lang], includes=["*.html", "*.css"],
+                        excludes=[".svn"]):
+            content_from_path[path] = open(path).read()
+
+        img_paths = list(paths_from_path_patterns(
+            [join(self.cfg.lang, "img")], excludes=[".svn"]))
+        for img_path in img_paths:
+            img_base = basename(img_path)
+            for path, content in content_from_path.items():
+                if img_base in content:
+                    break
+            else:
+                print "`%s' is unused (it should be removed)" % img_path
 
 
 
