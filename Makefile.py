@@ -21,7 +21,7 @@ sys.path.insert(0, join(_mk_makefile_.dir, "support"))
 from buildsupport import paths_from_path_patterns, \
                          app_filter_html_path_inplace, \
                          app_filter_xml_path_inplace, _KomodoDocTask, \
-                         ManifestParser
+                         ManifestParser, independentize_html_path
 import preprocess
 import api2html
 
@@ -105,7 +105,76 @@ class mozhelp(_KomodoDocTask):
             if exists(help_toc_rdf):
                 sh.rm(help_toc_rdf)
             raise
+
+
+class dmgset(_KomodoDocTask):
+    """A doc set for use in the root of a Mac OS X DMG package.
+    
+    Komodo DMGs will want the following doc files in the root:
+        install.html
+        relnotes.html
+        license.txt
+    with the associated CSS/image files hidden in '.foo' dirs.
+    
+    Which release notes HTML file do we use? We abort if
+    `self.cfg.filters' don't disambiguate.
+    """
+    @property
+    def dmgset_dir(self):
+        return join(self.cfg.build_dir, "dmg")
+    
+    def deps(self):
+        yield "doc_files"
+    def results(self):
+        yield join(self.dmgset_dir, "install.html")
+        yield join(self.dmgset_dir, "relnotes.html")
+        yield join(self.dmgset_dir, "license.txt")
+        yield join(self.dmgset_dir, ".css", "screen.css")
+        yield join(self.dmgset_dir, ".css", "aspn.css")
+
+    def make(self):
+        # Determine which release notes document to use.
+        filters = self.cfg.filters or []
+        if "snapdragon" in filters and "ide" not in filters:
+            relnotes_src_path = join(self.htdocs_dir, "releases",
+                                     "snapdragon.html")
+        elif "ide" in filters and "snapdragon" not in filters:
+            relnotes_src_path = join(self.htdocs_dir, "releases",
+                                     "ide.html")
+        else:
+            raise MkError("Ambiguity in which `releases/*.html' to use "
+                "for `relnotes.html'. This target can only be used when "
+                "filtering for a specific Komodo flavor (see --filter "
+                "configure.py option).")
+
+        # CSS
+        css_dir = join(self.dmgset_dir, ".css")
+        sh.mkdir(css_dir, log=self.log)
+        sh.cp(join(self.htdocs_dir, "css", "screen.css"),
+              dstdir=css_dir, log=self.log.info)
+        sh.cp(join(self.htdocs_dir, "css", "aspn.css"),
+              dstdir=css_dir, log=self.log.info)
         
+        # License text.
+        sh.cp(self.cfg.license_text_path,
+              join(self.dmgset_dir, "license.txt"),
+              log=self.log.info)
+
+        # Release notes and install notes.
+        # These are more difficult, because we need to update some of
+        # the links in these files.
+        manifest = [
+            #(relnotes_src_path,
+            (join(self.htdocs_dir, "releases", "ide-4.2.html"), #XXX
+             join(self.dmgset_dir, "relnotes.html")),
+            (join(self.htdocs_dir, "readme.html"),
+             join(self.dmgset_dir, "install.html")),
+        ]
+        
+        # - Bunch 'o imports.
+        for src, dst in manifest:
+            independentize_html_path(src, dst, css_dir=".css",
+                                     log=self.log)
 
 
 class htdocs(Alias):

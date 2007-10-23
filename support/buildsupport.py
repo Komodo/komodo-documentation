@@ -3,8 +3,10 @@
 
 import os
 from os.path import join, dirname, abspath
+import posixpath
 import sys
 from ConfigParser import SafeConfigParser
+from urlparse import urlparse
 
 from mklib import Task
 
@@ -23,6 +25,14 @@ except ImportError:
             sys.path.insert(0, etree_dir)
             from elementtree import ElementTree as ET
             sys.path.remove(etree_dir)
+
+html5lib_dir = join(dirname(dirname(abspath(__file__))),
+                    "externals", "html5lib")
+sys.path.insert(0, html5lib_dir)
+import html5lib
+from html5lib import treebuilders, treewalkers
+from html5lib.serializer.xhtmlserializer import XHTMLSerializer
+sys.path.remove(html5lib_dir)        
 
 
 
@@ -61,15 +71,6 @@ def app_filter_html_path_inplace(path, filters, log=None):
     if log:
         log("app-filter `%s'", path)
 
-    # Bunch 'o imports.
-    html5lib_dir = join(dirname(dirname(abspath(__file__))),
-                        "externals", "html5lib")
-    sys.path.insert(0, html5lib_dir)
-    import html5lib
-    from html5lib import treebuilders, treewalkers
-    from html5lib.serializer.xhtmlserializer import XHTMLSerializer
-    sys.path.remove(html5lib_dir)
-    
     # Parse the HTML file.
     treebuilder = treebuilders.getTreeBuilder("etree", ET)
     p = html5lib.XHTMLParser(tree=treebuilder)
@@ -182,6 +183,80 @@ def _should_drop_elem(elem, filters, attrname, prefix):
         if not matches:
             return True
     return False
+
+
+def independentize_html_path(src, dst, css_dir=None, log=None):
+    """Process the `src' HTML path to `dst' making it independent.
+    
+    - favicon links are removed
+    - CSS references are updated (if `css_dir' is given), else removed.
+    - Relative links are de-linkified.
+    """
+    if log:
+        log.info("independentize %s %s", src, dst)
+
+    # Parse the HTML file.
+    treebuilder = treebuilders.getTreeBuilder("etree", ET)
+    p = html5lib.XHTMLParser(tree=treebuilder)
+    f = open(src)
+    tree = p.parse(f)
+    f.close()
+
+    # - Drop favicon links.
+    # - Update or drop CSS links.
+    head = tree.find("head")
+    for link in head.getchildren()[:]:
+        if link.tag != "link":
+            continue
+        rel = link.get("rel", "").split()
+        if "icon" in rel: # this is a favicon link
+            if log:
+                log.debug("%s: remove <link rel='%s'/>", dst,
+                          link.get("rel"))
+            head.remove(link)
+        if "stylesheet" in rel: # this is a css ref
+            if css_dir:  # update the css dir
+                href = link.get("href")
+                href = posixpath.join(css_dir, posixpath.basename(href))
+                link.set("href", href)
+                if log:
+                    log.debug("%s: update to <link href='%s'/>", dst, href)
+            else:
+                if log:
+                    log.debug("%s: remove <link href='%s'/>", dst,
+                              link.get("href"))
+                head.remove(link)
+
+    # De-linkify local references within the full docset.
+    # TODO: Eventually would like to normalize these to point
+    # to online version of the docs.
+    body = tree.find("body")
+    for elem in body.getiterator():
+        if elem.tag != "a":
+            continue
+        if not elem.get("href"):
+            continue
+        href = elem.get("href")
+        scheme, netloc, path, params, query, fragment = urlparse(href)
+        if scheme or netloc: # externals href
+            continue
+        if path:
+            if log:
+                log.debug("%s: de-linkify <a href='%s'>", dst, href)
+            elem.tag = "span"  # de-linkify
+    
+    # Write out massaged doc.
+    walker = treewalkers.getTreeWalker("etree", ET)
+    stream = walker(tree)
+    s = XHTMLSerializer()
+    outputter = s.serialize(stream)
+    content = ''.join(list(outputter))
+    f = open(dst, 'w')
+    try:
+        f.write(content)
+    finally:
+        f.close()
+
 
 
 # Recipe: paths_from_path_patterns (0.3.7)
