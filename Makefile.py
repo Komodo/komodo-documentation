@@ -166,7 +166,7 @@ class dmgset(_KomodoDocTask):
         manifest = [
             (relnotes_src_path,
              join(self.dmgset_dir, "relnotes.html")),
-            (join(self.htdocs_dir, "readme.html"),
+            (join(self.htdocs_dir, "install.html"),
              join(self.dmgset_dir, "install.html")),
         ]
         

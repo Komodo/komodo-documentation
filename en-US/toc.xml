@@ -36,38 +36,38 @@
     <node name="Starting on Mac OS X" link="starting.html#OSX_Start"/>
     <node name="Starting on Linux" link="starting.html#Linux_Start"/>
   </node>
-  <node name="Installation Guide" link="readme.html#readme_top">
-    <node name="Installing on Windows" link="readme.html#Windows">
-      <node name="Windows Prerequisites" link="readme.html#System_Req_Win"/>
-      <node name="Installing the Komodo License on Windows" link="readme.html#License_Installation_Windows"
+  <node name="Installation Guide" link="install.html#top">
+    <node name="Installing on Windows" link="install.html#Windows">
+      <node name="Windows Prerequisites" link="install.html#System_Req_Win"/>
+      <node name="Installing the Komodo License on Windows" link="install.html#License_Installation_Windows"
             flags="ide"/>
-      <node name="Upgrading Komodo on Windows" link="readme.html#Upgrading_Win"/>
-      <node name="Installing Komodo on Windows" link="readme.html#Installing_Komodo_on_Windows"/>
-      <node name="Command Line Installation Options" link="readme.html#Command_Line_Installation_Win"/>
-      <node name="Starting Komodo on Windows" link="readme.html#Starting_Komodo_on_Windows"/>
-      <node name="Uninstalling Komodo on Windows" link="readme.html#Uninstalling_Komodo_Win"/>
+      <node name="Upgrading Komodo on Windows" link="install.html#Upgrading_Win"/>
+      <node name="Installing Komodo on Windows" link="install.html#Installing_Komodo_on_Windows"/>
+      <node name="Command Line Installation Options" link="install.html#Command_Line_Installation_Win"/>
+      <node name="Starting Komodo on Windows" link="install.html#Starting_Komodo_on_Windows"/>
+      <node name="Uninstalling Komodo on Windows" link="install.html#Uninstalling_Komodo_Win"/>
     </node>
-    <node name="Installing on Mac OS X" link="readme.html#mac_os_x">
-      <node name="OS X Prerequisites" link="readme.html#System_Req_OSX"/>
-      <node name="Installing the Komodo License on OS X" link="readme.html#License_Installation_OSX"
+    <node name="Installing on Mac OS X" link="install.html#mac_os_x">
+      <node name="OS X Prerequisites" link="install.html#System_Req_OSX"/>
+      <node name="Installing the Komodo License on OS X" link="install.html#License_Installation_OSX"
             flags="ide" />
-      <node name="Upgrading Komodo on OS X" link="readme.html#Upgrading_OSX"/>
-      <node name="Installing Komodo on OS X" link="readme.html#Installing_Komodo_on_OSX"/>
-      <node name="Starting Komodo on OS X" link="readme.html#Starting_Komodo_on_OSX"/>
-      <node name="Uninstalling Komodo on OS X" link="readme.html#Uninstalling_Komodo_OSX"/>
+      <node name="Upgrading Komodo on OS X" link="install.html#Upgrading_OSX"/>
+      <node name="Installing Komodo on OS X" link="install.html#Installing_Komodo_on_OSX"/>
+      <node name="Starting Komodo on OS X" link="install.html#Starting_Komodo_on_OSX"/>
+      <node name="Uninstalling Komodo on OS X" link="install.html#Uninstalling_Komodo_OSX"/>
     </node>
-    <node name="Installing on Linux" link="readme.html#linux">
-      <node name="Linux Prerequisites" link="readme.html#System_Req_Lin"/>
-      <node name="Installing the Komodo License on Linux" link="readme.html#License_Installation_Linux"
+    <node name="Installing on Linux" link="install.html#linux">
+      <node name="Linux Prerequisites" link="install.html#System_Req_Lin"/>
+      <node name="Installing the Komodo License on Linux" link="install.html#License_Installation_Linux"
             flags="ide" />
-      <node name="Upgrading Komodo on Linux" link="readme.html#Upgrading_Lin"/>
-      <node name="Installing Komodo on Linux" link="readme.html#Installing_Komodo_on_Linux"/>
-      <node name="Starting Komodo on Linux" link="readme.html#Starting_Komodo_on_Linux"/>
-      <node name="Uninstalling Komodo on Linux" link="readme.html#Uninstalling_Komodo_Lin"/>
+      <node name="Upgrading Komodo on Linux" link="install.html#Upgrading_Lin"/>
+      <node name="Installing Komodo on Linux" link="install.html#Installing_Komodo_on_Linux"/>
+      <node name="Starting Komodo on Linux" link="install.html#Starting_Komodo_on_Linux"/>
+      <node name="Uninstalling Komodo on Linux" link="install.html#Uninstalling_Komodo_Lin"/>
     </node>
-    <node name="Language Debugging Prerequisites" link="readme.html#Lang_Debug_Prerequisites"
+    <node name="Language Debugging Prerequisites" link="install.html#Lang_Debug_Prerequisites"
           flags="ide"/>
-    <node name="Source Code Control Integration Prerequisites" link="readme.html#SCC_Prerequisites"
+    <node name="Source Code Control Integration Prerequisites" link="install.html#SCC_Prerequisites"
           flags="ide"/>
   </node>
   <node name="The Komodo Workspace" link="workspace.html#workspace_top">
