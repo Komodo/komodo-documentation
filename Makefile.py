@@ -164,8 +164,7 @@ class dmgset(_KomodoDocTask):
         # These are more difficult, because we need to update some of
         # the links in these files.
         manifest = [
-            #(relnotes_src_path,
-            (join(self.htdocs_dir, "releases", "ide-4.2.html"), #XXX
+            (relnotes_src_path,
              join(self.dmgset_dir, "relnotes.html")),
             (join(self.htdocs_dir, "readme.html"),
              join(self.dmgset_dir, "install.html")),
