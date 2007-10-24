@@ -91,7 +91,8 @@ class mozhelp(_KomodoDocTask):
               recursive=True, log=self.log.info)
 
         junk = [join(self.locale_dir, "komodo-js-api.toc"),
-                join(self.locale_dir, "manifest.ini")]
+                join(self.locale_dir, "manifest.ini"),
+                join(self.locale_dir, "toc.xml")]
         for path in junk:
             if exists(path):
                 sh.rm(path, log=self.log)
@@ -99,7 +100,7 @@ class mozhelp(_KomodoDocTask):
         help_toc_rdf = join(self.locale_dir, "help-toc.rdf")
         try:
             sh.run("python support/tocxml2helptocrdf.py %s > %s"
-                   % (join(self.locale_dir, "toc.xml"), help_toc_rdf),
+                   % (join(self.htdocs_dir, "toc.xml"), help_toc_rdf),
                    self.log.info)
         except:
             if exists(help_toc_rdf):
