@@ -108,30 +108,26 @@ class mozhelp(_KomodoDocTask):
             raise
 
 
-class dmgset(_KomodoDocTask):
-    """A doc set for use in the root of a Mac OS X DMG package.
+class miniset(_KomodoDocTask):
+    """A mini doc set for use in the root of a Mac OS X DMG package, etc.
     
     Komodo DMGs will want the following doc files in the root:
         install.html
         relnotes.html
         license.txt
-    with the associated CSS/image files hidden in '.foo' dirs.
+    with the associated CSS/image files hidden in a '.css' dir.
     
     Which release notes HTML file do we use? We abort if
-    `self.cfg.filters' don't disambiguate.
+    `self.cfg.filters' doesn't disambiguate.
     """
-    @property
-    def dmgset_dir(self):
-        return join(self.cfg.build_dir, "dmg")
-    
     def deps(self):
         yield "doc_files"
     def results(self):
-        yield join(self.dmgset_dir, "install.html")
-        yield join(self.dmgset_dir, "relnotes.html")
-        yield join(self.dmgset_dir, "license.txt")
-        yield join(self.dmgset_dir, ".css", "screen.css")
-        yield join(self.dmgset_dir, ".css", "aspn.css")
+        yield join(self.cfg.miniset_dir, "install.html")
+        yield join(self.cfg.miniset_dir, "relnotes.html")
+        yield join(self.cfg.miniset_dir, "license.txt")
+        yield join(self.cfg.miniset_dir, ".css", "screen.css")
+        yield join(self.cfg.miniset_dir, ".css", "aspn.css")
 
     def make(self):
         # Determine which release notes document to use.
@@ -149,7 +145,7 @@ class dmgset(_KomodoDocTask):
                 "configure.py option).")
 
         # CSS
-        css_dir = join(self.dmgset_dir, ".css")
+        css_dir = join(self.cfg.miniset_dir, ".css")
         sh.mkdir(css_dir, log=self.log)
         sh.cp(join(self.htdocs_dir, "css", "screen.css"),
               dstdir=css_dir, log=self.log.info)
@@ -158,7 +154,7 @@ class dmgset(_KomodoDocTask):
         
         # License text.
         sh.cp(self.cfg.license_text_path,
-              join(self.dmgset_dir, "license.txt"),
+              join(self.cfg.miniset_dir, "license.txt"),
               log=self.log.info)
 
         # Release notes and install notes.
@@ -166,9 +162,9 @@ class dmgset(_KomodoDocTask):
         # the links in these files.
         manifest = [
             (relnotes_src_path,
-             join(self.dmgset_dir, "relnotes.html")),
+             join(self.cfg.miniset_dir, "relnotes.html")),
             (join(self.htdocs_dir, "install.html"),
-             join(self.dmgset_dir, "install.html")),
+             join(self.cfg.miniset_dir, "install.html")),
         ]
         
         # - Bunch 'o imports.

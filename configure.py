@@ -60,6 +60,24 @@ class ChromeDir(ConfigVar):
             self.value = join(build_dir, "mozhelp", "chrome")
 
 
+class MinisetDir(ConfigVar):
+    """Directory into which to build the 'miniset' target."""
+    name = "miniset_dir"
+    deps = ["build_dir"]
+
+    def add_options(self, optparser):
+        optparser.add_option("--miniset-dir",
+            help="directory into which to build the mini doc set for the "
+                 "'mozhelp' target (by default is under the `build_dir`)")
+
+    def determine(self, config_var_from_name, options):
+        if options.miniset_dir:
+            self.value = options.miniset_dir
+        else:
+            build_dir = config_var_from_name["build_dir"].value
+            self.value = join(build_dir, "miniset")
+
+
 class Lang(ConfigVar):
     name = "lang"
 
@@ -144,6 +162,7 @@ class KomodoCixPath(ConfigVar):
 config_vars = [
     BuildDir(),
     ChromeDir(),
+    MinisetDir(),
     Filters(),
     Lang(),
     LicenseTextPath(),
