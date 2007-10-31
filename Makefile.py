@@ -132,12 +132,13 @@ class miniset(_KomodoDocTask):
     def make(self):
         # Determine which release notes document to use.
         filters = self.cfg.filters or []
-        if "snapdragon" in filters and "ide" not in filters:
-            relnotes_src_path = join(self.htdocs_dir, "releases",
-                                     "snapdragon.html")
-        elif "ide" in filters and "snapdragon" not in filters:
-            relnotes_src_path = join(self.htdocs_dir, "releases",
-                                     "ide.html")
+        candidates = []
+        for filter in filters:
+            path = join(self.htdocs_dir, "releases", filter+".html")
+            if exists(path):
+                candidates.append(path)
+        if len(candidates) == 1:
+            relnotes_src_path = candidates[0]
         else:
             raise MkError("Ambiguity in which `releases/*.html' to use "
                 "for `relnotes.html'. This target can only be used when "
