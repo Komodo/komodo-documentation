@@ -17,6 +17,13 @@
  *       when specific to an app
  */
 
+div.app-openkomodo {
+    /*border: 2px solid #ddd;*/
+    padding: 2px 0px;
+    margin: 2px 0px;
+    background: url(../img/app-openkomodo.png) no-repeat right top;
+}
+
 div.app-snapdragon {
     /*border: 2px solid #ddd;*/
     padding: 2px 0px;
