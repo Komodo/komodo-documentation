@@ -101,7 +101,7 @@ directory and re-run `mk mozhelp` to update everything.
 Contributing: Editing/Typos
 ===========================
 
-http://bugs.activestate.com/enter_bug.cgi?set_product=OpenKomodo&component=Documentation
+<http://bugs.activestate.com/enter_bug.cgi?product=OpenKomodo&component=Documentation>
 
 TODO
 
