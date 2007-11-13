@@ -44,6 +44,57 @@ IDE 4.2 and Komodo Edit 4.2.</p>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit 4.2</h2>
 
+<h3>4.2.1</h3>
+
+<strong>Bug Fixes</strong>
+<ul>
+  <li>Code Intelligence:
+    <ul>
+      <li>PHP: support for constants and defines. (Bug 41700)</li>
+      <li>PHP: completions and calltips for magic methods. (Bug 69758)</li>
+      <li>PHP: fixed bug with static variables not autocompleting
+      correctly. (Bug 72527)</li>
+      <li>JavaScript: API catalog improvements. (Bug 72562)</li>
+    </ul>
+  </li>
+  <li>Editor:
+    <ul>
+      <li>Sped up lexing synchronization for UDL-based languages (PHP, HTML,
+      XML, and template languages). (Bug 72707)</li>
+      <li>Go to Definition now opens folded sections to display the target.
+      (Bug 65172)</li>
+      <li>Entering text in non-ASCII character sets now works correctly.
+      (Bug 71664)</li>
+      <li>Fixed unicode characters being lost on paragraph reflow. (Bug
+      73123)</li>
+      <li>Vi emulation: Fixed bug causing crashes when using "%s". (Bug
+      72411)</li>
+      <li>Emacs emulation: Numerous enhancements and fixes to the Emacs
+      keybinding scheme. (Bug 3321, 72903, 72897, 70468, )</li>
+    </ul>
+  </li>
+  <li>Extensions now work with micro releases (e.g. 4.2.0 to 4.2.1).
+  (Bug 73251)</li>
+  <li>Linux: Fixed segfault while scrolling up and down with mouse
+  wheel. (Bug 73165)</li>
+  <li>Fixed problem with path separator in Find in Files dialog. (Bug
+  73261)</li>
+  <li>Running a Rails project on a machine without Rails installed no
+  longer fails silently. (Bug 73107)</li>
+  <li>Fixed scrolling in large files. (Bug 72976)</li>
+  <li>Automatically expand folded blocks when they are being edited. (Bug
+  70846)</li>
+  <li>Tcl linter and debugger updated to use new basekits which work on
+  Ubuntu 7.10.</li>
+  <li>Support for the '//' operator for testing definedness in Perl
+  5.9.5/5.10.</li>
+  <li>Fixed traceback on loading PHP files when PHP not installed. (Bug
+  72972)</li>
+  <li>Better error message for 'Alternate Help on Selection' when nothing
+  is selected. (Bug 72879)</li>
+  <li>Minor documentation fixes (Bug 72086, 72269, 72269, 70139)</li>
+</ul>
+
 <h3>4.2</h3>
 
 <ul>
