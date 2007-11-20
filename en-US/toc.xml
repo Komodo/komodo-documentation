@@ -91,7 +91,7 @@
 
   <node name="Releases" link="releases/index.html"/>
   <node name="License and Copyright" link="lic_copy.html#lic_copy_top"/>
-  <node name="Feedback" link="feedback.html#feedback_top"/>
+  <node name="Feedback and Bug Reports" link="feedback.html#feedback_top"/>
 </node>
 
 <node name="Project Tab" link="project.html#project_top">
