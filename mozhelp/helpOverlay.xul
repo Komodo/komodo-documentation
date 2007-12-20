@@ -19,7 +19,7 @@ var mainWindow = window;
 function onclick_handler(event) {
     var url = event.target.getAttribute("href");
     if (url && url.match(/^\w+:\/\//)) {
-        browse_OpenUrlInDefaultBrowser(url);
+        ko.browse.openUrlInDefaultBrowser(url);
         event.stopPropagation();
         event.preventDefault();
         event.cancelBubble = true;
