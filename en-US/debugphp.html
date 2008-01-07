@@ -522,24 +522,34 @@ php -m
   contact Komodo and initiate a remote debugging session when a PHP
   script is executed on the web server.</p>
 
-  <p>To initiate remote debugging from a web browser:</p>
+  <h4>To initiate remote debugging from a web browser:</h4>
 
   <ol>
-    <li>Ensure you have configured PHP for your web server, have it
-    properly working, and have configured PHP and Komodo as
-    described in <a class="doc" href=
-    "#config_remote_PHP">Configuring Remote PHP Debugging</a>.</li>
+    <li>Ensure PHP is installed and configured properly for your web server.</li>
+    
+    <li>Ensure Komodo and PHP are configured for remote debugging (as described
+    in "<a class="doc" href= "#config_remote_PHP">Configuring Remote PHP
+    Debugging</a>").</li>
 
-    <li>On the <strong>Debug</strong> menu, click <strong>Listen
-    for Debugger Connections</strong>.</li>
+    <li>Click <strong>Debug | Listen for Debugger Connections</strong>.</li>
 
-    <li>Open your web browser and access the script you want to
-    debug. Append "?XDEBUG_SESSION_START=&lt;idekey&gt;" to the end
-    of the URL as a GET argument. The IDE Key should match the
-    <strong>Proxy Key</strong> value shown in
-    <strong>Debug|Listener Status</strong>. For example:<br />
+    <li>In your browser, enter the URL of the script you want to debug. Append
+    <code>?XDEBUG_SESSION_START=1</code> to the end of the URL (an HTTP GET with
+    a true boolean value). For example:<br />
       <pre class="code">
-http://example.org/sample.php?XDEBUG_SESSION_START=jdoe
+http://example.org/sample.php?XDEBUG_SESSION_START=1
+</pre>
+      
+    If you are using the <a href="debugger.html#dbgp_proxy">DBGP Proxy</a>, the
+    value for the GET method should match the <strong>Proxy Key</strong> value
+    shown in <strong>Debug|Listener Status</strong>. For example:<br />
+      <pre class="code">
+http://example.org/sample.php?XDEBUG_SESSION_START=jdoe </pre>
+
+    It is also possible to call <code>XDEBUG_SESSION_START</code> by adding it
+    in an <code>input</code> element of an HTML form. For example:<br />
+  <pre class="code">
+&lt;input type="hidden" name="XDEBUG_SESSION_START" value="jdoe" /&gt;
 </pre>
 
       <p><strong>Note</strong>: This is only required for the first
@@ -555,14 +565,7 @@ http://example.org/sample.php?XDEBUG_SESSION_START=jdoe
     breakpoint.</li>
   </ol>
 
-  <p>It is also possible to call <code>XDEBUG_SESSION_START</code>
-  by adding it in an <code>input</code> element of an HTML form.
-  For example:</p>
-  <pre class="code">
-&lt;input type="hidden" name="XDEBUG_SESSION_START" value="jdoe" /&gt;
-</pre>
-
-  <p>To initiate remote debugging from the command line:</p>
+  <h4>To initiate remote debugging from the command line:</h4>
 
   <ol>
     <li>On the <strong>Debug</strong> menu, click <strong>Listen
@@ -595,8 +598,8 @@ php -f sample.php
     breakpoint.</li>
   </ol>
 
-  <p>To initiate remote debugging using the <a href=
-  "debugger.html#dbgp_proxy">DBGP Proxy</a>:</p>
+  <h4>To initiate remote debugging using the <a href=
+  "debugger.html#dbgp_proxy">DBGP Proxy</a>:</h4>
 
   <ol>
     <li>From the <strong>Debug</strong> menu, select <strong>Listen
@@ -637,13 +640,13 @@ php -f sample.php
   remote debugging. The browser will not show the script output
   until debugging is complete.</p>
 
-  <p>To stop the debugger:</p>
+  <h4>To stop the debugger:</h4>
 
   <p>On the <strong>Debug</strong> menu, select
   <strong>Stop</strong> or pass the
-  <code>XDEBUG_SESSION_STOP</code> variable by appending it to the
+  <code>XDEBUG_SESSION_STOP=1</code> variable by appending it to the
   URL or adding it to a form (as with
-  <code>XDEBUG_SESSION_START</code> above).</p>
+  <code>XDEBUG_SESSION_START=1</code> above).</p>
 
   <p>See <a class="doc" href=
   "debugger.html#debugger_top">Komodo Debugger
