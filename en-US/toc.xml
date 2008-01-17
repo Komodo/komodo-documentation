@@ -92,13 +92,14 @@
   <node name="Releases" link="releases/index.html"/>
   <node name="License and Copyright" link="lic_copy.html#lic_copy_top"/>
   <node name="Support and Feedback" link="support.html#support_feedback_top">
-    <node name="Documentation" link="support.html#"/>
+    <node name="Documentation" link="support.html#support_docs"/>
     <node name="ActiveState Community Site" link="support.html#support_community"/>
     <node name="Mailing Lists" link="support.html#support_lists"/>
     <node name="Reporting Bugs" link="support.html#support_bugs"/>
     <node name="Feature Requests" link="support.html#support_feature_req"/>
     <node name="ActiveState Technical Support" link="support.html#support_email"/>
     <node name="Comments and Feedback" link="support.html#support_feedback"/>
+  </node>
 </node>
 
 <node name="Project Tab" link="project.html#project_top">
