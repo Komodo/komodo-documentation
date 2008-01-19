@@ -15,19 +15,19 @@
     <node id="knownissues_snapdragon" name="Known Issues" link="releases/snapdragon.html#knownissues" />
   </node>
 
-  <node name="Release Notes (IDE/Edit)" link="releases/ide-4.3.html"
+  <node name="Release Notes (IDE/Edit)" link="releases/ide.html"
         flags="ide edit">
-    <node id="whatsnew_ide" name="What's New" link="releases/ide-4.3.html#whatsnew" />
-    <node id="details_ide" name="Detailed Changes" link="releases/ide-4.3.html#details" />
-    <node id="knownissues_ide" name="Known Issues" link="releases/ide-4.3.html#knownissues">
-      <node name="Installation Issues" link="releases/ide-4.3.html#install_issues"/>
-      <node name="Startup Issues" link="releases/ide-4.3.html#Startup_Issues"/>
-      <node name="Editing Issues" link="releases/ide-4.3.html#Editing_Issues"/>
-      <node name="Debugging Issues" link="releases/ide-4.3.html#Debugging_Issues" flags="ide"/>
-      <node name="Interactive Shell Issues" link="releases/ide-4.3.html#Interactive_Shell_Issues" flags="ide"/>
-      <node name="Linux Issues" link="releases/ide-4.3.html#Linux_Issues"/>
-      <node name="Mac OS X Issues" link="releases/ide-4.3.html#OSX_Issues"/>
-      <node name="Other Issues" link="releases/ide-4.3.html#Other_Issues"/>
+    <node id="whatsnew_ide" name="What's New" link="releases/ide.html#whatsnew" />
+    <node id="details_ide" name="Detailed Changes" link="releases/ide.html#details" />
+    <node id="knownissues_ide" name="Known Issues" link="releases/ide.html#knownissues">
+      <node name="Installation Issues" link="releases/ide.html#install_issues"/>
+      <node name="Startup Issues" link="releases/ide.html#Startup_Issues"/>
+      <node name="Editing Issues" link="releases/ide.html#Editing_Issues"/>
+      <node name="Debugging Issues" link="releases/ide.html#Debugging_Issues" flags="ide"/>
+      <node name="Interactive Shell Issues" link="releases/ide.html#Interactive_Shell_Issues" flags="ide"/>
+      <node name="Linux Issues" link="releases/ide.html#Linux_Issues"/>
+      <node name="Mac OS X Issues" link="releases/ide.html#OSX_Issues"/>
+      <node name="Other Issues" link="releases/ide.html#Other_Issues"/>
     </node>
   </node>
 
