@@ -65,6 +65,9 @@
     <li><a class="doc" href="#trouble_php_sessions">How do I
     emulate sessions in PHP debugging?</a></li>
 
+    <li><a class="doc" href="#psyco_debug">Why don't breakpoints work
+    when I use the Psyco extension in Python?</a></li>
+    
     <li><a class="doc" href="#virtual_host_apache">How do I
     configure Virtual Hosting on an Apache Web server?</a></li>
 
@@ -504,6 +507,24 @@ These options need to match
   All session data is available and modifiable through the Variable
   tabs.</p>
 
+  <h2><a name="psyco_debug" id="psyco_debug">Why don't breakpoints work
+  when I use the Psyco extension in Python?</a></h2>
+  
+  <p>When debuging Python programs that use <a target="_blank"
+  href="http://psyco.sourceforge.net/">Psyco</a>, the breakpoints will
+  be ignored. This is due to the optimizations/changes made by the
+  psyco compiler.</p>
+  
+  <p>You can work around this problem with the following code which
+  disables Psyco while debugging:</p>
+  
+  <pre class="code">
+import logging
+if not logging.Logger.manager.loggerDict.has_key('dbgp'):
+    import psyco
+    psyco.full()
+  </pre>
+  
   <h2><a name="virtual_host_apache" id="virtual_host_apache">How do
   I configure Virtual Hosting on an Apache Web server?</a></h2>
 
@@ -676,6 +697,8 @@ sudo gem install ruby-debug-base-0.9.x.gem
 
   <p>Komodo will automatically find and use the new version of the
   debugging library.</p>
+  
+  
   <hr />
 </body>
 </html>
