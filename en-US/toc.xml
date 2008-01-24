@@ -419,6 +419,8 @@
   </node>
   <node name="Debugging Perl" link="debugperl.html">
     <node name="Configuring the Perl Debugger" link="debugperl.html#Configuring_Perl_Debugger">
+      <node name="Starting a Komodo debugging session with perl -d"
+      link="debugperl.html#using_perl_-d"/>
       <node name="Enabling Break Now" link="debugperl.html#Enabling_Break_Now"/>
     </node>
     <node name="Debugging Perl Remotely" link="debugperl.html#Perl_Remote_Debugger">
