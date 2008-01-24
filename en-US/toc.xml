@@ -298,7 +298,7 @@
       <node name="The findPart Function" link="macroapi.html#macroapi_findPart"/>
       <node name="The interpolate Function" link="macroapi.html#macroapi_interpolate"/>
       <node name="The getWordUnderCursor Function" link="macroapi.html#macroapi_getWordUnderCursor"/>
-      <node name="The runEncodedCommand Function" link="macroapi.html#macroapi_runEncodedCommand"/>
+      <node name="The runEncodedCommand Function" link="macroapi.html#macroapi_runencodedcommand"/>
     </node>
     <node name="Python Macros" link="macroapi.html#macroapi_py">
       <node name="Creating a view object (XPCOM)" link="macroapi.html#xpcom_currentView"/>
