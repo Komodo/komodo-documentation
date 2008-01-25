@@ -90,7 +90,7 @@
     for a second or two whenever I open files for which Komodo
     performs background syntax checking. Why?</a></li>
 
-    <li><a class="doc" href="#cvs_commands">How can I run additonal
+    <li><a class="doc" href="#cvs_commands">How can I run additional
     CVS commands from within Komodo?</a></li>
 
     <li><a class="doc" href="#ruby_debug_x64">Why doesn't Ruby
@@ -100,21 +100,31 @@
   <h2><a name="install_dir" id="install_dir">Where is Komodo
   installed?</a></h2>
 
-  <p>The Komodo installer will prompt for an installation
-  directory; you can choose any directory you have permissions to
-  install to. The default location varies by platform, and the name
-  of the directory corresponds to the version of Komodo you are
-  running ("IDE" or "Edit" plus the version number - e.g.
-  "Komodo-IDE-4.0"):</p><strong>Windows</strong>
+  <p>The Komodo installer will prompt for an installation directory; you can
+  choose any directory you have permissions to install to. The default location
+  varies by platform, and the name of the directory corresponds to the version
+  of Komodo you are running ("IDE" or "Edit" on Windows, "IDE" or "Edit" plus
+  the version number on OS X and Linux):</p>
+  
+  <strong>Windows</strong>
   <pre class="code">
-C:\Program Files\ActiveState Komodo [IDE|Edit] &lt;version&gt;\
-</pre><strong>Linux</strong>
+C:\Program Files\ActiveState Komodo [IDE|Edit]\
+</pre>
+
+  <p><strong>Note</strong>: Older versions of Komodo on Windows installed in a
+  directory which included the version number (e.g. "ActiveState Komodo IDE
+  4.2"), which allowed for side-by-side installations of different versions of
+  Komodo. If you wish to do this, manually specify an install directory with a
+  version number.</p>
+  
+  <strong>Linux</strong>
   <pre class="code">
 /opt/Komodo-[IDE|Edit]-&lt;version&gt;/
 </pre><strong>OS X</strong>
   <pre class="code">
 /Applications/Komodo-[IDE|Edit]-&lt;version&gt;.app
 </pre>
+  
 
   <h2><a name="appdata_dir" id="appdata_dir">Where does Komodo keep
   settings data?</a></h2>
@@ -368,7 +378,7 @@ C:\Users\&lt;user&gt;\AppData\Roaming\ActiveState\Komodo[IDE|Edit]\&lt;version&g
   if you have Mozilla on your system, Komodo installs the Mozilla
   version that it requires.</p>
 
-  <p>Another sizeable component of Komodo is language support.
+  <p>Another sizable component of Komodo is language support.
   Komodo is so tightly integrated with Perl, Python, Ruby and PHP
   that it is necessary to include components of those languages, at
   specific version levels, for debugger and editor support.</p>
@@ -510,7 +520,7 @@ These options need to match
   <h2><a name="psyco_debug" id="psyco_debug">Why don't breakpoints work
   when I use the Psyco extension in Python?</a></h2>
   
-  <p>When debuging Python programs that use <a target="_blank"
+  <p>When debugging Python programs that use <a target="_blank"
   href="http://psyco.sourceforge.net/">Psyco</a>, the breakpoints will
   be ignored. This is due to the optimizations/changes made by the
   psyco compiler.</p>
@@ -638,7 +648,7 @@ Servername debug.yourdomain.com
   <strong>Window</strong>.</p>
 
   <h2><a name="cvs_commands" id="cvs_commands">How can I run
-  additonal CVS commands from within Komodo?</a></h2>
+  additional CVS commands from within Komodo?</a></h2>
 
   <p>Komodo can be used to check out, add, remove, compare, submit
   and revert files in a CVS repository. CVS offers additional
@@ -659,7 +669,7 @@ Servername debug.yourdomain.com
   <p><code>cvs -d :ext:%(ask:User:jdoe)@myhost:/var/cvsroot import
   %(ask:Module:) %(ask:Project:MyProject)</code></p>
 
-  <p>CVS reqires a real terminal for adding change descriptions. Be
+  <p>CVS requires a real terminal for adding change descriptions. Be
   sure to set <strong>Run in: New Console</strong> in the command's
   properties.</p>
 
