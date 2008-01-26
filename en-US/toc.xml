@@ -719,26 +719,30 @@
 
 <node name="Tutorials" link="tut-intro.html#tut_over_top">
   <node id="showcase_tutorial" name="Feature Showcase" link="tutorial/tourlet_over.html#over_top">
-    <node name="Code Completion Snippet" link="tutorial/tourlet_codecomp.html#codecomp_top"/>
-    <node name="Create a Custom Toolbar" link="tutorial/tourlet_custtoolbar.html#custtoolbar_top"/>
-    <node name="Debug an XSLT Program" link="tutorial/tourlet_debug_xslt.html#debug_xslt_top"
-          flags="ide"/>
+    <node name="Live Projects" link="tutorial/tourlet_live_projects.html#tourlet_live_projects_top"/>
+    <node name="Remote Files" link="tutorial/tourlet_remote_files.html#tourlet_remote_files_top"/>
+    <node name="Custom Toolbars" link="tutorial/tourlet_custtoolbar.html#custtoolbar_top"/>
     <node name="Directory Shortcut" link="tutorial/tourlet_dirshortcut.html#dirshortcut_top"/>
-    <node name="Export/Import Project Package" link="tutorial/tourlet_expimppkg.html#expimppkg_top"/>
-    <node name="Fast String Finder" link="tutorial/tourlet_faststr.html#faststr_top"/>
+    <node name="Export/Import a Project Package" link="tutorial/tourlet_expimppkg.html#expimppkg_top"/>
     <node name="Filesystem in Project" link="tutorial/tourlet_filesys.html#filesys_top"/>
-    <node name="Google Run Command" link="tutorial/tourlet_googrun.html#googrun_top"/>
+    <node name="Custom Keybindings" link="tutorial/tourlet_keybinding.html#keybinding_top"/>
+    <node name="Custom Template in a Project" link="tutorial/tourlet_tempproj.html#tempproj_top"/>
+    <node name="Preview Cascading Style Sheets" link="tutorial/tourlet_viewcss.html#viewcss_top"/>
+    <node name="Simple Snippets" link="tutorial/tourlet_reuse.html#reuse_top"/>
+    <node name="Create a Prompting Snippet" link="tutorial/tourlet_snipinput.html#snipinput_top"/>
+    <node name="Code Completion Snippet" link="tutorial/tourlet_codecomp.html#codecomp_top"/>
+    <node name="Break on a Variable Value" link="tutorial/tourlet_condbreak.html#condbreak_top" flags="ide"/>
+    <node name="Debug an XSLT Program" link="tutorial/tourlet_debug_xslt.html#debug_xslt_top" flags="ide"/>
+    <node name="Fast String Finder" link="tutorial/tourlet_faststr.html#faststr_top"/>
     <node name="Incremental Searching" link="tutorial/tourlet_incrsrch.html#incrsrch_top"/>
+    <node name="The Open/Find Toolbar" link="tutorial/tourlet_openfind.html#openfind_top"/>
+    <node name="Installing Extensions" link="tutorial/tourlet_extensions.html#tourlet_install_extension_top"/>
+    <node name="Using SCC" link="tutorial/tourlet_scc.html#tourlet_scc_top"/>
+    <node name="Google Run Command" link="tutorial/tourlet_googrun.html#googrun_top"/>
     <node name="Using Interactive Shells" link="tutorial/tourlet_intshell.html#intshell_top"
           flags="ide"/>
-    <node name="Custom Keybindings" link="tutorial/tourlet_keybinding.html#keybinding_top"/>
-    <node name="Using the Open/Find Toolbar" link="tutorial/tourlet_openfind.html#openfind_top"/>
-    <node name="Reuse a Code Fragment" link="tutorial/tourlet_reuse.html#reuse_top"/>
     <node name="Test a Regular Expression" link="tutorial/tourlet_rx.html#rx_top"
           flags="ide"/>
-    <node name="Create a Prompting Snippet" link="tutorial/tourlet_snipinput.html#snipinput_top"/>
-    <node name="Store a Custom Template in a Project" link="tutorial/tourlet_tempproj.html#tempproj_top"/>
-    <node name="Preview Cascading Style Sheets" link="tutorial/tourlet_viewcss.html#viewcss_top"/>
   </node>
   <node name="Perl Tutorial" link="tutorial/perltut.html#perltut_top"
         flags="ide">
