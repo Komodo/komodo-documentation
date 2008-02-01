@@ -37,6 +37,7 @@ of Komodo IDE and Komodo Edit.</p>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
 
+<h3 id="changes">Changes:</h3>
 <ul>
   <li>The default installation directory on Windows has changed.
   Previous versions installed in a directory which included the
@@ -44,6 +45,73 @@ of Komodo IDE and Komodo Edit.</p>
   for side-by-side installations of different versions of Komodo. If
   you wish to do this, manually specify an install directory with a
   version number.</li>
+</ul>
+
+<h3 id="enhancements">Enhancements:</h3>
+
+<ul> 
+  <li>New Feature Showcases in the documentation (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=61187">61187</a>)</li>
+  <li>Added php constants and class constants to the stdlib cix files.</li>
+  <li>Vi emulation: Added scrolling commands (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73301">73301</a>)</li>
+</ul>
+
+<h3 id="bug_fixes">Bug Fixes:</h3>
+
+<ul>
+  <li>Editor:
+  <ul>
+    <li>Editor: Line-copy with no selection adds newline on paste if at the end of buffer. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73259">73259</a>)</li>
+    <li>Editor: Fixed indentation commands ignoring some preferences in XML. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73695">73695</a>)</li>
+  </ul></li>
+  <li>Find/Replace:
+  <ul>
+    <li>Selected string no longer skipped in replace. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=27208">27208</a>)</li>
+    <li>Alerts and messages are now shown in the statusbar to be less intrusive. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=65220">65220</a>)</li>
+    <li>Find in Files: Fixed problem preventing editing of files other than the one currently selected in the results tab. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=45636">45636</a>)</li>
+    <li>Find in Files: "Search in" sub dialog buttons fixed. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=67360">67360</a>)</li>
+    <li>Open/Find toolbar: The find "in" textbox now auto-completes properly. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74326">74326</a>)</li>
+  </ul></li>
+  <li>SCC:
+  <ul>
+    <li>Perforce now working with UNC paths. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=67182">67182</a>)</li>
+    <li>tab icons now update properly after a commit. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=72880">72880</a>)</li>
+    <li>Perforce: Submit form now always uses a newline separator for the "description" field. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73103">73103</a>)</li>
+    <li>No longer displaying superfluous "file has changed" notification on commit. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74471">74471</a>)</li>
+  </ul></li>
+  <li>PHP:
+  <ul>
+    <li>Autocomplete working with CodeIgniter. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73819">73819</a>)</li>
+    <li>Fixed UDL parsing of single line comments. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73829">73829</a>, <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73837">73837</a>)</li>
+    <li>Improved error messages for broken PHP configurations. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73485">73485</a>)</li>
+  </ul></li>
+  <li>Perl: No longer showing bogus prox var '${' (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74380">74380</a>)</li>
+  <li>Documentation:
+  <ul>
+    <li>PHP remote debugging XDEBUG_SESSION_START instructions more explicit. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74088">74088</a>)</li>
+    <li>More accurate description of SCC edit icon. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74144">74144</a>)</li>
+    <li>Added page on how to get support. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74211">74211</a>)</li>
+    <li>Perl tutorial no longer has a module dependency. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=33215">33215</a>)</li>
+  </ul></li>
+  <li>Vi emulation:
+  <ul>
+    <li>'tT' and ';,' find commands fixed. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=67045">67045</a>)</li>
+    <li>Change "c" with search "/" now works. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73315">73315</a>)</li>
+  </ul></li>
+  <li>Soft Characters: The "Editor: Move One Character Right" can now be used to harden a soft character sequence. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73901">73901</a>)</li>
+  <li>Remote files: Fixed problem with "sticky" incorrect login details. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=68773">68773</a>)</li>
+  <li>Fixed a problem opening files that have been deleted and re-created outside of Komodo. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=68285">68285</a>)</li>
+  <li>Recorded macros: Find_ReplaceAllInMacro now correctly escape backslashes in regular expressions. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=70740">70740</a>)</li>
+  <li>Fixed problems in Kid language support (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=72556">72556</a>)</li>
+  <li>Fixed line-end changes failing after the first change. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=72694">72694</a>)</li>
+  <li>Fixed printing problem encountered when setting no wrap for long lines. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73741">73741</a>)</li>
+  <li>Tcl lexer now ends braced terms correctly. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73762">73762</a>)</li>
+  <li>Linux: Fixed a Komodo crash triggered by using some Ubuntu window themes. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73850">73850</a>)</li>
+  <li>Build: Fixed OpenKomodo build failure on Ubuntu 7.10. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73926">73926</a>)</li>
+  <li>Fixed problem in changing file properties. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74097">74097</a>)</li>
+  <li>PDK: Fixed "Build Standalone Perl Application..." command (for older PDK versions, Windows only). (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74275">74275</a>)</li>
+  <li>Check configuration correctly reports on ActivePerl 5.10. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74369">74369</a>)</li>
+  <li>Remote debugging: Fixed problem with program output not appearing in output window. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74389">74389</a>)</li>
+  <li>Fixed problem detecting default encoding. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74434">74434</a>)</li>
 </ul>
 
 <h2 id="knownissues">Known Issues</h2>
