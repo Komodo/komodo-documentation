@@ -108,6 +108,32 @@ class mozhelp(_KomodoDocTask):
             raise
 
 
+class aspnhelp(_KomodoDocTask):
+    """Make an aspnhelp tree (for putting docs up on ASPN)."""
+    def deps(self):
+        yield "htdocs"
+
+    def results(self):
+        yield join(self.cfg.aspnhelp_dir, "toc.xml")
+
+        # Just a landmark in the htdoc files for now.
+        yield join(self.cfg.aspnhelp_dir, "top.html")
+        
+    def make(self):
+        sh.mkdir(self.cfg.aspnhelp_dir, log=self.log)
+        sh.cp(join(self.htdocs_dir, "*"), dstdir=self.cfg.aspnhelp_dir,
+              recursive=True, log=self.log.info)
+
+        junk = [
+            join(self.cfg.aspnhelp_dir, "komodo-js-api.toc"),
+            join(self.cfg.aspnhelp_dir, "manifest.ini"),
+            join(self.cfg.aspnhelp_dir, "aux_search.rdf"),
+        ]
+        for path in junk:
+            if exists(path):
+                sh.rm(path, log=self.log)
+
+
 class miniset(_KomodoDocTask):
     """A mini doc set for use in the root of a Mac OS X DMG package, etc.
     

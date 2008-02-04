@@ -77,6 +77,23 @@ class MinisetDir(ConfigVar):
             build_dir = config_var_from_name["build_dir"].value
             self.value = join(build_dir, "miniset")
 
+class ASPNHelpDir(ConfigVar):
+    """Directory into which to build the 'aspnhelp' target."""
+    name = "aspnhelp_dir"
+    deps = ["build_dir"]
+
+    def add_options(self, optparser):
+        optparser.add_option("--aspnhelp-dir",
+            help="directory into which to build the ASPN doc set for the "
+                 "'aspnhelp' target (by default is under the `build_dir`)")
+
+    def determine(self, config_var_from_name, options):
+        if options.aspnhelp_dir:
+            self.value = options.aspnhelp_dir
+        else:
+            build_dir = config_var_from_name["build_dir"].value
+            self.value = join(build_dir, "aspnhelp")
+
 
 class Lang(ConfigVar):
     name = "lang"
@@ -163,6 +180,7 @@ config_vars = [
     BuildDir(),
     ChromeDir(),
     MinisetDir(),
+    ASPNHelpDir(),
     Filters(),
     Lang(),
     LicenseTextPath(),
