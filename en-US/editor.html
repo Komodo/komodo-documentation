@@ -450,19 +450,54 @@ a = Animal.new(<span class="cursor">|</span>"dog")
   <ul>
     <li><strong>Classes and Methods</strong>: Classes in the
     current file, and classes in any included files, are displayed
-    upon entry of the keyword "new". Methods in the class are
-    displayed when you enter "-&gt;".</li>
+    upon entry of the keyword "new". Methods for a class instance
+    are displayed after you enter "-&gt;" on the instance variable
+    or alternatively if the scope is inside the class you will get
+    completions after "this->", "self::", "parent::" operators.
+    Static and constants are displayed after you enter "::" after
+    a class name.
+      <pre class="code">
+        class Student {
+          const UNIVERSITY = "Pluto";
+          var $id = "";
+          var $name = "";
+          function Print() {
+            echo "Id: " . $this->id . " Name: " . $this->name . "\n";
+          }
+        }
+        $student1 = new <span class="cursor">|</span>Student();
+        $student1-><span class="cursor">|</span>name = "Student 1";
+        $uni = Student::<span class="cursor">|</span>UNIVERSITY;
+      </pre>
+    </li>
 
     <li><strong>Functions</strong>: Standard PHP functions and
     functions defined within the script (and within any included
-    files) are displayed after you have typed four characters that
-    match one or more function names.</li>
+    files) are displayed after you have typed three characters that
+    match one or more function names. Function calltips are displayed
+    after the opening parentheses "(" on a function call.
+      <pre class="code">
+        php<span class="cursor">|</span>info();
+        phpversion(<span class="cursor">|</span>);
+      </pre>
+    </li>
+
+    <li><strong>Constants</strong>: PHP constants are included with
+    the functions list triggering after three characters have been
+    typed.
+      <pre class="code">
+        echo "Filename is: " . __F<span class="cursor">|</span>ILE__ . "\n";
+      </pre>
+    </li>
 
     <li><strong>Variables</strong>: Variables declared in the
     current file, or in any included files, are displayed when you
-    enter the symbol "$" followed by a letter. For variables
-    declared within the current file, only those variables declared
-    above the current line are included in the pop-up list.</li>
+    enter the symbol "$" followed by one letter.
+      <pre class="code">
+        $student1 = new Student();
+        $s<span class="cursor">|</span>tudent1->name = "Student 1";
+      </pre>
+    </li>
   </ul>
 
   <h4><a name="Tcl_AutoComplete" id="Tcl_AutoComplete">Tcl
