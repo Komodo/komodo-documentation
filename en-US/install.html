@@ -737,12 +737,13 @@ Prerequisites</a></h2>
   from the ActiveState website. Ensure that the directory
   location of the Perl interpreter (by default,
   <code>C:\perl</code>) is included in your system's
-  <code>PATH</code> environment variable. Some advanced
-  features, such as background syntax checking and remote
-  debugging, require ActivePerl.</li>
+  <code>PATH</code> environment variable. On Windows, some features
+  such as background syntax checking and remote debugging may require
+  ActivePerl -- there are known incompatibilities with Cygwin and msys
+  perl.</li>
 
   <li><strong>Python</strong>: <strong>Python
-  1.5.2</strong> or greater is required to debug Python
+  2.2</strong> or greater is required to debug Python
   programs. You can download the latest version of
   <a class="doc" target="_blank" href=
   "http://www.ActiveState.com/Products/ActivePython/">ActivePython</a>
@@ -750,11 +751,7 @@ Prerequisites</a></h2>
   location of the Python interpreter (by default
   <code>C:\Pythonxx</code> (where "xx" is the Python
   version)) is included in your system's <code>PATH</code>
-  environment variable. Some advanced features, such as
-  background syntax checking and remote debugging, require
-  ActivePython. <strong>Python 1.5.2</strong> or greater
-  and a fully configured Tkinter installation are required
-  to create Python dialogs with the GUI Builder.</li>
+  environment variable.</li>
 
   <li><strong>PHP</strong>: <strong>PHP 4.0.5</strong> or
   greater is required for PHP syntax checking. <strong>PHP
