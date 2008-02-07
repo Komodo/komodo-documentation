@@ -171,26 +171,573 @@ print "\n".join(msg)
   scheme, select <strong>Help|List Key Bindings</strong>. The
   following are key bindings which are unique to the Vi scheme.</p>
 
-  <h3>Vi key bindings</h3>
+  <h3>Vi-specific key bindings</h3>
   <!-- copied from Komodo|Help - List Key Bindings for default Vi scheme -->
+  
+  <table width="100%">
+    
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Cancel
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+[
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%">
+        Vi: Close the Current Buffer Without Saving
+      </td>
+
+      <td width="50%">
+              Z, Q
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Cut One Character
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              x
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Cut One Character to Left
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              X
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Cut Whole Line and Enter Insert Mode
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              S
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Cut to End of Line and Enter Insert Mode
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              C
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Delete the Current Character and Enter Insert Mode
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              s
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Deletes from cursor to end of line.
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              D
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Enter Insert Mode
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              i
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Enter Insert Mode after the Cursor Position
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              a
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Enter Insert Mode at Start of the Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              I
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Enter Insert mode at the End of the Current Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              A
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Enter command mode
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              :
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Enter visual block mode
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+V
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Enter visual character mode
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              v
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Enter visual line mode
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              V
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Go to Next Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              j
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Go to Previous Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+P
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              k
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Goto Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              G
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Join current and next lines
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              J
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Move Left One Character
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              h
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Move One Word Left
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              b
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Move Right One Character
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Space
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              l
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Move To End of Word To Right
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              e
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Move To Start of Word To Right
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              w
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Move one page down
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+F
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Move one page up
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+B
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Move one word left, past any punctuation
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              B
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Move one word right, past any punctuation
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              W
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Move to Beginning of Line (first visible char/first
+        column)
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              ^
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Vi: Move to Beginning of the Current Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              |
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              0
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Vi: Move to Beginning of the Previous Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              -
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+    
+  <h3>Code Browser</h3>
+
+  <table width="100%">
+    <tr>
+      <td></td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Locate current scope...
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+K, Ctrl+L
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <h3>Debugger</h3>
 
   <table width="100%">
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Cancel</p>
+      <td width="50%">
+        Clear All Breakpoints
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>Ctrl+[</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p>Esc</p>
+              Ctrl+F9
             </td>
           </tr>
         </table>
@@ -198,15 +745,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Cut One Character</p>
+      <td width="50%">
+        Disable/Enable Breakpoint
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>x</p>
+              F9
             </td>
           </tr>
         </table>
@@ -214,15 +761,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Cut One Character to Left</p>
+      <td width="50%">
+        New Session
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>X</p>
+              Ctrl+Shift+F5
             </td>
           </tr>
         </table>
@@ -230,15 +777,21 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Cut to End of Line and Enter Insert Mode</p>
+      <td width="50%">
+        Run Script
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>C</p>
+              F7
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Ctrl+F7
             </td>
           </tr>
         </table>
@@ -246,15 +799,21 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Delete the Current Character and Enter Insert Mode</p>
+      <td width="50%">
+        Run to Cursor
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>s</p>
+              Shift+F10
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Ctrl+Shift+F10
             </td>
           </tr>
         </table>
@@ -262,15 +821,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Deletes from cursor to end of line.</p>
+      <td width="50%">
+        Show Current Statement
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>D</p>
+              Alt+*
             </td>
           </tr>
         </table>
@@ -278,15 +837,21 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Enter Insert Mode</p>
+      <td width="50%">
+        Start
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>i</p>
+              F5
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Ctrl+F5
             </td>
           </tr>
         </table>
@@ -294,15 +859,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Enter Insert Mode after the Cursor Position</p>
+      <td width="50%">
+        Start/Find/Hide Default Interactive Shell
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>a</p>
+              F12
             </td>
           </tr>
         </table>
@@ -310,15 +875,21 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Enter Insert Mode at Start of the Line</p>
+      <td width="50%">
+        Step In
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>I</p>
+              F11
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Ctrl+F11
             </td>
           </tr>
         </table>
@@ -326,15 +897,21 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Enter Insert mode at the End of the Current Line</p>
+      <td width="50%">
+        Step Out
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>A</p>
+              Shift+F11
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Ctrl+Shift+F11
             </td>
           </tr>
         </table>
@@ -342,15 +919,21 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Enter command mode</p>
+      <td width="50%">
+        Step Over
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>:</p>
+              F10
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Ctrl+F10
             </td>
           </tr>
         </table>
@@ -358,15 +941,51 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Enter visual block mode</p>
+      <td width="50%">
+        Stop
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>Ctrl+V</p>
+              Shift+F5
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <h3>Editor</h3>
+
+  <table width="100%">
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Back
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Shift+Backspace
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Backspace
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Backspace
             </td>
           </tr>
         </table>
@@ -374,15 +993,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Enter visual character mode</p>
+      <td width="50%">
+        Beginning of Line (first visible char/first column)
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>v</p>
+              Home
             </td>
           </tr>
         </table>
@@ -390,15 +1009,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Enter visual line mode</p>
+      <td width="50%">
+        Cancel AutoComplete
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>V</p>
+              Escape
             </td>
           </tr>
         </table>
@@ -406,15 +1025,21 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Go to Next Line</p>
+      <td width="50%">
+        Close Current Buffer
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>j</p>
+              Ctrl+W
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Ctrl+F4
             </td>
           </tr>
         </table>
@@ -422,15 +1047,21 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Go to Previous Line</p>
+      <td width="50%">
+        Copy
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>k</p>
+              Ctrl+C
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Ctrl+Insert
             </td>
           </tr>
         </table>
@@ -438,15 +1069,27 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Goto Line</p>
+      <td width="50%">
+        Cut
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>G</p>
+              Ctrl+X
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Shift+Delete
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Ctrl+Shift+X
             </td>
           </tr>
         </table>
@@ -454,15 +1097,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Join current and next lines</p>
+      <td width="50%">
+        Delete
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>J</p>
+              Delete
             </td>
           </tr>
         </table>
@@ -470,15 +1113,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move Left One Character</p>
+      <td width="50%">
+        Delete Word Left
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>h</p>
+              Ctrl+Backspace
             </td>
           </tr>
         </table>
@@ -486,15 +1129,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move One Word Left</p>
+      <td width="50%">
+        Delete Word Right
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>b</p>
+              Ctrl+Delete
             </td>
           </tr>
         </table>
@@ -502,21 +1145,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move Right One Character</p>
+      <td width="50%">
+        End of Line
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>Space</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p>l</p>
+              End
             </td>
           </tr>
         </table>
@@ -524,15 +1161,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move To End of Word To Right</p>
+      <td width="50%">
+        Go to End of Document
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>e</p>
+              Ctrl+End
             </td>
           </tr>
         </table>
@@ -540,15 +1177,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move To Start of Word To Right</p>
+      <td width="50%">
+        Go to End of word
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>w</p>
+              Ctrl+E
             </td>
           </tr>
         </table>
@@ -556,15 +1193,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move one page down</p>
+      <td width="50%">
+        Go to Line...
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>Ctrl+F</p>
+              Ctrl+G
             </td>
           </tr>
         </table>
@@ -572,15 +1209,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move one page up</p>
+      <td width="50%">
+        Go to Next Bookmark
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>Ctrl+B</p>
+              F2
             </td>
           </tr>
         </table>
@@ -588,15 +1225,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move one word left, past any punctuation</p>
+      <td width="50%">
+        Go to Next Line
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>B</p>
+              Down
             </td>
           </tr>
         </table>
@@ -604,15 +1241,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move one word right, past any punctuation</p>
+      <td width="50%">
+        Go to Previous Bookmark
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>W</p>
+              Shift+F2
             </td>
           </tr>
         </table>
@@ -620,16 +1257,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move to Beginning of Line (first visible char/first
-        column)</p>
+      <td width="50%">
+        Go to Previous Line
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>^</p>
+              Up
             </td>
           </tr>
         </table>
@@ -637,21 +1273,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move to Beginning of the Current Line</p>
+      <td width="50%">
+        Go to Top of Document
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>|</p>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <p>0</p>
+              Ctrl+Home
             </td>
           </tr>
         </table>
@@ -659,15 +1289,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move to Beginning of the Previous Line</p>
+      <td width="50%">
+        Insert Abbreviation Snippet by Name
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>-</p>
+              Ctrl+T
             </td>
           </tr>
         </table>
@@ -675,15 +1305,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move to End of Current Line</p>
+      <td width="50%">
+        Insert Newline
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>$</p>
+              Return
             </td>
           </tr>
         </table>
@@ -691,16 +1321,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move to end of word to the right, past any
-        punctuation</p>
+      <td width="50%">
+        Insert Newline (align with current line)
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>E</p>
+              Ctrl+Shift+Return
             </td>
           </tr>
         </table>
@@ -708,15 +1337,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move to the Beginning of the Paragraph</p>
+      <td width="50%">
+        Insert Newline (continue comments)
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>{</p>
+              Shift+Return
             </td>
           </tr>
         </table>
@@ -724,15 +1353,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move to the Beginning of the Section</p>
+      <td width="50%">
+        Insert Newline (no favors)
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>[, [</p>
+              Ctrl+Return
             </td>
           </tr>
         </table>
@@ -740,15 +1369,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move to the Beginning of the Sentence</p>
+      <td width="50%">
+        Insert Next Key as Literal Character
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>(</p>
+              Ctrl+M
             </td>
           </tr>
         </table>
@@ -756,15 +1385,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move to the Bottom of the Screen</p>
+      <td width="50%">
+        Join current and next lines
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>L</p>
+              Ctrl+K, Ctrl+J
             </td>
           </tr>
         </table>
@@ -772,15 +1401,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move to the Center of the Screen</p>
+      <td width="50%">
+        Move Back Part of Word
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>M</p>
+              Alt+Right
             </td>
           </tr>
         </table>
@@ -788,15 +1417,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move to the End of the Paragraph</p>
+      <td width="50%">
+        Move Forward Part of Word
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>}</p>
+              Alt+Left
             </td>
           </tr>
         </table>
@@ -804,15 +1433,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move to the End of the Section</p>
+      <td width="50%">
+        Move Left One Character
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>], ]</p>
+              Left
             </td>
           </tr>
         </table>
@@ -820,15 +1449,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Move to the End of the Sentence</p>
+      <td width="50%">
+        Move One Character Right
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>)</p>
+              Right
             </td>
           </tr>
         </table>
@@ -836,15 +1465,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Move to the Top of the Screen</p>
+      <td width="50%">
+        Move One Word Left
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>H</p>
+              Ctrl+Left
             </td>
           </tr>
         </table>
@@ -852,15 +1481,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>New Line Starting After the Current Line</p>
+      <td width="50%">
+        Move One Word Right
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>o</p>
+              Ctrl+Right
             </td>
           </tr>
         </table>
@@ -868,15 +1497,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>New Line Starting Before the Current Line</p>
+      <td width="50%">
+        Page Down
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>O</p>
+              Page_Down
             </td>
           </tr>
         </table>
@@ -884,15 +1513,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Paste</p>
+      <td width="50%">
+        Page Up
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>P</p>
+              Page_Up
             </td>
           </tr>
         </table>
@@ -900,15 +1529,21 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Paste After</p>
+      <td width="50%">
+        Paste
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>p</p>
+              Ctrl+V
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Shift+Insert
             </td>
           </tr>
         </table>
@@ -916,15 +1551,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Redo</p>
+      <td width="50%">
+        Paste and Select
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>Ctrl+R</p>
+              Ctrl+Shift+V
             </td>
           </tr>
         </table>
@@ -932,15 +1567,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Repeat the last command again</p>
+      <td width="50%">
+        Redo
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>.</p>
+              Ctrl+Y
             </td>
           </tr>
         </table>
@@ -948,15 +1583,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Replace characters with the ones that are typed</p>
+      <td width="50%">
+        Reflow paragraph(s)
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>R</p>
+              Ctrl+Q
             </td>
           </tr>
         </table>
@@ -964,16 +1599,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Replace the current char with the next typed
-        character</p>
+      <td width="50%">
+        Remove All Bookmarks
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>r</p>
+              Ctrl+Shift+F2
             </td>
           </tr>
         </table>
@@ -981,15 +1615,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Scroll One Line Down</p>
+      <td width="50%">
+        Repeat next keystroke N times
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>Ctrl+E</p>
+              Ctrl+K, Ctrl+U
             </td>
           </tr>
         </table>
@@ -997,15 +1631,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Scroll One Line Up</p>
+      <td width="50%">
+        Scroll One Line Down
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>Ctrl+P</p>
+              Ctrl+Down
             </td>
           </tr>
         </table>
@@ -1013,16 +1647,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Search for the Next Occurance of the Word at the Current
-        Cursor Position</p>
+      <td width="50%">
+        Scroll One Line Up
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>*</p>
+              Ctrl+Up
             </td>
           </tr>
         </table>
@@ -1030,16 +1663,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Search for the Previous Occurance of the Word at the
-        Current Cursor Position</p>
+      <td width="50%">
+        Select All
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>#</p>
+              Ctrl+A
             </td>
           </tr>
         </table>
@@ -1047,15 +1679,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Start Change Text Operation</p>
+      <td width="50%">
+        Select Next Character
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>c</p>
+              Shift+Right
             </td>
           </tr>
         </table>
@@ -1063,15 +1695,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Start Delete Text Operation</p>
+      <td width="50%">
+        Select Next Word
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>d</p>
+              Ctrl+Shift+Right
             </td>
           </tr>
         </table>
@@ -1079,15 +1711,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Start Yank Text Operation</p>
+      <td width="50%">
+        Select Page Down
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>y</p>
+              Shift+Page_Down
             </td>
           </tr>
         </table>
@@ -1095,15 +1727,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Swap the current character's case.</p>
+      <td width="50%">
+        Select Page Up
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>~</p>
+              Shift+Page_Up
             </td>
           </tr>
         </table>
@@ -1111,31 +1743,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Undo</p>
+      <td width="50%">
+        Select Previous Character
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>u</p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-
-    <tr>
-      <td width="50%%">
-        <p>Enter Search Backwards</p>
-      </td>
-
-      <td width="50%%">
-        <table>
-          <tr>
-            <td>
-              <p>?</p>
+              Shift+Left
             </td>
           </tr>
         </table>
@@ -1143,15 +1759,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Enter Search Forward</p>
+      <td width="50%">
+        Select Previous Word
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>/</p>
+              Ctrl+Shift+Left
             </td>
           </tr>
         </table>
@@ -1159,15 +1775,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Find Next Pattern</p>
+      <td width="50%">
+        Select Rectangular Next Character
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>n</p>
+              Alt+Shift+Right
             </td>
           </tr>
         </table>
@@ -1175,15 +1791,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Find Previous Pattern</p>
+      <td width="50%">
+        Select Rectangular Page Down
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>N</p>
+              Alt+Shift+Page_Down
             </td>
           </tr>
         </table>
@@ -1191,16 +1807,15 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Find the Character Typed, After Cursor in Current
-        Line</p>
+      <td width="50%">
+        Select Rectangular Page Up
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>f</p>
+              Alt+Shift+Page_Up
             </td>
           </tr>
         </table>
@@ -1208,16 +1823,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Find the Character Typed, Before Cursor in Current
-        Line</p>
+      <td width="50%">
+        Select Rectangular Previous Character
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>F</p>
+              Alt+Shift+Left
             </td>
           </tr>
         </table>
@@ -1225,15 +1839,16 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Decrease Line Indent</p>
+      <td width="50%">
+        Select Rectangular to Beginning of Line (first char/first
+        column)
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>&lt;, &lt;&lt;/p&gt;</p>
+              Alt+Shift+Home
             </td>
           </tr>
         </table>
@@ -1241,15 +1856,15 @@ print "\n".join(msg)
     </tr>
 
     <tr bgcolor="#EEEEEE">
-      <td width="50%%">
-        <p>Increase Line Indent</p>
+      <td width="50%">
+        Select Rectangular to End of Line
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>&gt;, &gt;</p>
+              Alt+Shift+End
             </td>
           </tr>
         </table>
@@ -1257,20 +1872,213 @@ print "\n".join(msg)
     </tr>
 
     <tr>
-      <td width="50%%">
-        <p>Jump to Matching Brace</p>
+      <td width="50%">
+        Select Rectangular to Next Line
       </td>
 
-      <td width="50%%">
+      <td width="50%">
         <table>
           <tr>
             <td>
-              <p>%</p>
+              Alt+Shift+Down
             </td>
           </tr>
         </table>
       </td>
     </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Select Rectangular to Previous Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Alt+Shift+Up
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Select to Beginning of Line (first char/first column)
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Shift+Home
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Select to Beginning of word
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+Shift+W
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Select to End of Document
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+Shift+End
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Select to End of Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Shift+End
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Select to Next Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Shift+Down
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Select to Previous Line
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Shift+Up
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Select to Top of Document
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+Shift+Home
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Toggle Bookmark
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+F2
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Toggle Overtype/Insert Mode
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Insert
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr bgcolor="#EEEEEE">
+      <td width="50%">
+        Trigger preceding AutoComplete list or CallTip
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+J
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="50%">
+        Undo
+      </td>
+
+      <td width="50%">
+        <table>
+          <tr>
+            <td>
+              Ctrl+Z
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
   </table>
   <hr />
 </body>
