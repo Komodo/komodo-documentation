@@ -1,0 +1,141 @@
+<!-- Copyright (c) 2000-2008 ActiveState Software Inc.-->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type= "image/x-icon" />
+
+  <title>Abbreviations</title>
+</head>
+<body>
+  
+  <h1><a name="abbrev_top" id="abbrev_top">Abbreviations</a></h1>
+  
+  <p>The Abbreviations function lets you quickly insert code <a
+  href="snippets.html">snippets</a> by entering their name in the editor
+  buffer followed by <strong>Ctrl+T</strong>. Several useful default
+  snippets are included in Komodo. Additional ones can be added
+  easily.</p>
+   
+  <p>Komodo looks for abbreviations in a special folder in projects and
+  toolboxes called Abbreviations. Within the Abbreviations folder are
+  language specific sub-folders, and a General sub-folder for global
+  snippets.</p>
+  
+  <h2><a name="abbrev_inserting">Inserting Snippets</a></h2>
+  
+  <p>To insert a snippet using Abbreviations, enter the name of the
+  snippet in the editor buffer, then enter <strong>Ctrl+T</strong>
+  (Meta+T on OS X). Komodo searches for a snippet matching the word to
+  the left of the cursor in Abbreviations folders, and replaces the word
+  with the contents of the snippet if it finds one.</p>
+  
+  <p>If multiple snippets with the same name are found in the same <a
+  href="#abbrev_search_order">scope</a>, an autocomplete drop box is
+  shown, allowing you to select the snippet you want.</p>
+  
+  <p>For example, to insert the <code>divblock</code> snippet in an HTML
+  file, type:</p>
+
+  <pre class="code">
+    divblock<span class="cursor">|</span>
+  </pre>
+  
+  <p>Enter <strong>Ctrl+T</strong> to insert the snippet:</p>
+  
+  <pre class="code">
+    &lt;div id="&laquo;id&raquo;&gt;
+     &laquo;&raquo;
+    &lt;/div&gt;
+  </pre>
+  
+  <p>Many of the default snippets in Komodo use <a
+  href="tabstops.html">Tab Stops</a> (represented by the &laquo;&raquo;
+  symbols) to make populating the snippet with your content even
+  quicker. Entering <strong>Tab</strong> after the snippet is inserted
+  moves the cursor through the tab stop markers.</p>
+  
+  <h2><a name="abbrev_search_order">Language-Specific Search Order</a></h2>
+  
+  <p>When Ctrl+T is entered, Komodo searches for relevant snippets in
+  the current <a href="project.html">project</a>, the <a
+  href="toolbox.html">toolbox</a>, and the <a
+  href="toolbox.html#toolbox_share">shared toolbox</a> (in that order).
+  </p>
+  
+  <p>Komodo checks the language-specific sub-directory and the General
+  sub-directory in each of these places. For example, if you are editing
+  a Python module, these snippet directories will be checked in this
+  order:</p>
+  
+  <ol>
+    <li>Abbreviations/Python folders in:
+      <ul>
+        <li>Current Project</li>
+        <li>Toolbox</li>
+        <li>Shared Toolbox</li>
+      </ul>
+    </li>
+    <li>Abbreviations/General folders in:
+      <ul>
+        <li>Current Project</li>
+        <li>Toolbox</li>
+        <li>Shared Toolbox</li>
+      </ul>
+    </li>
+  </ol>
+  
+  <p>In a multi-language buffer, both the language type of the file and
+  the language type at the current cursor position are included. For
+  example, in a JavaScript block inside a PHP file, the following search
+  order would be used:</p>
+  
+  <ol>
+    <li>Abbreviations/JavaScript folders in:
+      <ul>
+        <li>Current Project</li>
+        <li>Toolbox</li>
+        <li>Shared Toolbox</li>
+      </ul>
+    </li>
+    <li>Abbreviations/PHP folders in:
+      <ul>
+        <li>Current Project</li>
+        <li>Toolbox</li>
+        <li>Shared Toolbox</li>
+      </ul>
+    </li>
+    <li>Abbreviations/General folders in:
+      <ul>
+        <li>Current Project</li>
+        <li>Toolbox</li>
+        <li>Shared Toolbox</li>
+      </ul>
+    </li>
+  </ol>
+  
+  <p>This allows you to have snippets with the same names for multiple
+  languages. For example an abbreviation called 'class' abbreviation
+  would insert a different snippet in a Perl file than in a PHP
+  file.</p>
+  
+  <h2><a name="abbrev_new">Adding New Abbreviations</a></h2>
+  
+  <p>To add a new abbreviation to the Toolbox, right-click on the
+  appropriate sub-folder under <strong>Samples/Abbreviations</strong>
+  and select <strong>Add|New Snippet...</strong>.</p>
+  
+  <p>To add a new abbreviation to a project, use the steps above after
+  adding the necessary folders (i.e. at least Abbreviations/General) to
+  the project.</p>
+ 
+  <p>As with all project and toolbox items, snippets can be copied, cut
+  and pasted between toolboxes and projects.</p>
+    
+    
+</body>
+</html>
