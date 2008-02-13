@@ -240,6 +240,11 @@
   <node name="Detecting Changed Files" link="editor.html#Detect_Changed"/>
   <node name="Preview in Browser" link="editor.html#browser_preview"/>
   <node name="Editor Tab Display" link="editor.html#editor_tabs"/>
+  <node name="Abbreviations" link="abbreviations.html#abbrev_top">
+    <node name="Inserting Snippets" link="abbreviations.html#abbrev_inserting"/>
+    <node name="Language-Specific Search Order" link="abbreviations.html#abbrev_search_order"/>
+    <node name="Adding New Abbreviations" link="abbreviations.html#abbrev_new"/>
+  </node>
 </node>
 
 <node name="Folders" link="folders.html#folders_top">
