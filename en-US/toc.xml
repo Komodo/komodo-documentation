@@ -492,6 +492,13 @@
   </node>
 </node>
 
+<node name="Unit Testing" link="unittest.html#unit_test_top" flags="ide">
+  <node name="Creating a Test Plan" link="unittest.html#unit_test_create">
+    <node name="Supported Test Frameworks by Language" link="unittest.html#unit_test_langs"/>
+  </node>
+  <node name="Running a Test Plan" link="unittest.html#unit_test_run"/>
+</node>
+
 <node name="HTTP Inspector" link="http-insp.html#http_top"
       flags="ide">
   <node name="HTTP Inspector Overview" link="http-insp.html#http_top"/>
