@@ -1,16 +1,20 @@
-
 *  {
 	margin: 0;
-	padding: 0;
+	padding-top: 4;
+	padding-right: 0;
+	padding-bottom: 0;
+	padding-left: 0;
 	}
 img {
 	border: none;
 	}
 body {
-	color: black;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	color: #656565;
+	font-size: 12px;
+	background-color:#ffffff;
+	background-image:url(../img/top/background_1.png);
+	background-repeat:no-repeat;
+	color: #000000;
 	}
 p {
 	margin-bottom: 7px;
@@ -33,8 +37,10 @@ a:hover {
 	text-align: left;
 	}
 #content #title {
-	border-bottom: solid 1px #cfcfcf;
-	padding-bottom: 15px;
+	padding-bottom: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000000;
 	}
 #content #title img{
 	position: absolute;
@@ -43,12 +49,18 @@ a:hover {
 #content #left-column {
 	float: left;
 	padding-top: 10px;
-	width: 62%;
+	width: 99%;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #666666;
 	}
 #content #right-column{
 	float: right;
 	padding-top: 10px;
 	width: 33%;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #FFFFFF;
 	}
 
 
@@ -59,9 +71,9 @@ ul 	{
 li {
 	padding-left: 37px;
 	min-height: 37px;
-	color: #656565;
+	color: #000000;
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	}
 
 li ul {
@@ -88,16 +100,22 @@ li img {
 	}
 
 h1 {
-	font-size: 14px;
+	font-size: 22px;
+	font-weight: normal;
 	}
 h2 {
 	font-size: 11px;
 	}
 a {
-	color: #0063a2;
-	text-decoration: none;
+	color: #000000;
+	text-decoration: underline;
+	font-weight:bolder;
 	}
-
+a:hover {
+	color: #999999;
+	text-decoration: underline;
+	font-weight:bolder;
+	}
 
 #left-column {
 	padding-left: 3px;
@@ -107,7 +125,19 @@ a {
 	text-align: center;
 	clear: both;
 	}
+#three-boxes A:link {
 
+	text-decoration: underline; 
+	color: #6699FF;
+	}
+#box-title  h2 {
+
+	text-decoration: overline;
+	font-size: 16px;
+	padding: 0px 0px 0px 0px;
+	color:#FFFFFF;
+	}	
+	
 .box {
 	float: left;
 	height: 10em;
@@ -125,14 +155,14 @@ a {
 	}	
 
 .box .right {
-	width: 12px;
+	width: 10px;
 	background: url(../img/top/box-right-bg.png) no-repeat;
 	height: 16em;
 	float: right;
 	}	
 	
 .box-title {
-	margin: 41px 20px 20px 20px;
+	margin: 31px 20px 20px 20px;
 	}
 	
 .box-title h2 {
