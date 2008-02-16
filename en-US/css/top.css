@@ -36,8 +36,8 @@ a:hover {
 	width: 96%;
 	text-align: left;
 	}
-#content #title {
-	padding-bottom: 5px;
+#title {
+	padding: 10px 0px 10px 10px;
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-bottom-color: #000000;
