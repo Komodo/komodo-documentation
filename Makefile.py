@@ -157,11 +157,11 @@ class miniset(_KomodoDocTask):
 
     def make(self):
         # Determine which release notes document to use.
-        filters = self.cfg.filters or []
+        filters = self.cfg.filters or set([])
         if "edit" in filters and "ide" not in filters:
             # Use "releases/ide.html" for the Komodo Edit release
             # notes -- at least for now.
-            filters.append("ide")
+            filters.add("ide")
         candidates = []
         for filter in filters:
             path = join(self.htdocs_dir, "releases", filter+".html")
