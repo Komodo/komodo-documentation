@@ -174,21 +174,30 @@
   </node>
 </node>
 
-<node name="Searching" link="search.html#search_top">
-  <node name="Searching for Strings" link="search.html#search_strings">
-    <node name="Find Dialog" link="search.html#Finding_a_word"/>
-    <node name="Replace Dialog" link="search.html#Searching_and_replacing"/>
-    <node name="Searching for the Word Under the Cursor" link="search.html#word_under_cursor"/>
-    <node name="Incremental Search" link="search.html#incr_search"/>
-    <node name="Find in Files Dialog" link="search.html#find_in_files"/>
-    <node name="Open/Find Toolbar" link="search.html#editor_find_toolbar"/>
-    <node name="Find Results Tabs" link="search.html#Find_Results"/>
+
+<node name="Find and Replace" link="search.html#search_top">
+  <node name="Incremental Search" link="search.html#search_incr"/>
+  <node name="Find Dialog" link="search.html#search_dialog">
+    <node name="Regex Searches" link="search.html#search_regex"/>
+    <node name="Case Sensitivity" link="search.html#search_case"/>
+    <node name="Match Whole Words" link="search.html#search_word"/>
+    <node name="Multiline" link="search.html#search_multiline"/>
+    <node name="Search Scope" link="search.html#search_scope"/>
+    <node name="Search and Replace Actions" link="search.html#search_actions"/>
   </node>
-  <node name="Function Search" link="search.html#functions">
-    <node name="Moving Between Functions" link="search.html#search_movefunc"/>
-    <node name="Displaying a List of Functions" link="search.html#search_dispfunc"/>
+  <node name="Replace in Files" link="search.html#search_repl_in_files">
+    <node name="Confirming Changes" link="search.html#search_repl_confirm">
+      <node name="Confirm Replacements" link="search.html#search_confirm_dialog"/>
+      <node name="Make Changes" link="search.html#search_repl_make_changes"/>
+    </node>
+    <node name="Review and Undo" link="search.html#search_repl_undo"/>
+  </node>
+  <node name="Find Results Tabs" link="search.html#search_output"/>
+  <node name="Open/Find Toolbar" link="search.html#search_find_toolbar"/>
+  <node name="Function Search" link="search.html#search_functions">
   </node>
 </node>
+
 
 <node name="Editing" link="editor.html#editor_top">
   <node name="Language Support" link="editor.html#editor_lang">

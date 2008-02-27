@@ -195,7 +195,7 @@
     <a href="toolbox.html#toolbox_top">Toolbox</a>.</li>
 
     <li><strong>Open/Find Toolbar</strong>: Use the <a href=
-    "search.html#editor_find_toolbar">Open/Find
+    "search.html#search_find_toolbar">Open/Find
     Toolbar</a>. To display the Open/Find Toolbar, select
     <strong>View|Toolbars|Open/Find</strong>.</li>
 
@@ -217,7 +217,7 @@
   Toolbar</a></h3>
 
   <p>The <a href=
-  "search.html#editor_find_toolbar">Open/Find
+  "search.html#search_find_toolbar">Open/Find
   Toolbar</a> provides quick access for opening files and finding
   strings. The toolbar is displayed in Komodo by default. To hide
   or show the toolbar, select
@@ -493,15 +493,13 @@
   "prefs.html#lang_specific">Fonts and Colors</a>
   preference.</p>
 
-  <p>The following key bindings are available in the "diff"
-  window:</p>
+  <p>The following buttons (and default keybindings) are available in
+  the "diff" window:</p>
 
   <ul>
-    <li><strong>F8</strong>: Jump to the next change.</li>
-
-    <li><strong>F7</strong>: Jump to the previous change.</li>
-
-    <li><strong>F9</strong>: Jump to corresponding line. Opens
+    <li><strong>Next</strong> ('F8'): Jump to the next change.</li>
+    <li><strong>Previous</strong> ('F7'): Jump to the previous change.</li>
+    <li><strong>Reveal</strong> ('F9'): Jump to corresponding line. Opens
     and/or shifts focus to the original file in the Editor Pane. If
     viewing a diff in an editor tab, right-click and select
     <strong>Jump to Corresponding Line</strong> (or select
@@ -512,9 +510,25 @@
     the Editor Pane. (If viewing a diff in an editor tab,
     right-click and select <strong>Jump to Corresponding
     Line</strong>.)</li>
-
-    <li><strong>Esc</strong>: close the window</li>
   </ul>
+  
+  <p>A right-click context menu is also available with the following
+  additional options:</p>
+  
+  <ul>
+    <li>Copy</li>
+    <li>Select All</li>
+    <li>View Whitespace</li>
+    <li>View Indentation Guides</li>
+    <li>View Line Numbers</li>
+    <li>View EOL Markers</li>
+    <li>Word Wrap</li>
+  </ul>
+  
+  
+  <p>Pressing 'Esc' closes the window.</p>
+  
+  
 
   <h2><a name="files_refstatus" id="files_refstatus">Refreshing
   File Status</a></h2>
@@ -653,7 +667,7 @@
   <p>Komodo tries to determine these values from the document's XML
   declaration. If the document does not have one, the DOCTYPE and
   namespace can be manually set here, enabling appropriate XML
-  autocompletion. XHTML 1.1 is the default if no delaration or
+  autocompletion. XHTML 1.1 is the default if no declaration or
   settings are present.</p>
 
   <h3><a name="files_settings_scc" id="files_settings_scc">File
