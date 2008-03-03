@@ -33,10 +33,12 @@
     later).</li>
 
     <li>A local installation of <a target="_blank" href=
-    "http://www.rubyonrails.org/down">Rails</a>.</li>
+    "http://www.rubyonrails.org/down">Rails version 2.x</a>.</li>
 
     <li>Access to a <a target="_blank" href=
-    "http://mysql.org/downloads/">MySQL</a> database.</li>
+    "http://mysql.org/downloads/">MySQL</a> or
+    <a target="_blank" href="http://www.sqlite.org/">SQLite</a>
+    database.</li>
   </ul>
 
   <p>Several online "how to" guides are available for installing
@@ -72,7 +74,7 @@
     <li>Write some code to iteratively develop the Movie Library
     application.</li>
 
-    <li>Debug the application.</li>
+    <li>Test and debug the application.</li>
   </ol>
 
   <h2><a name="rails_template_new" id="rails_template_new">Creating
@@ -89,7 +91,7 @@
 
     <li>Migrating databases</li>
 
-    <li>Running Webrick (the built-in web-server for Rails)</li>
+    <li>Running Webrick or Mongrel (two web servers for Rails)</li>
 
     <li>Debugging the application</li>
   </ul>
@@ -116,6 +118,14 @@
     <strong>Browse</strong> button to find it if you wish.</li>
 
     <li>Click <strong>Open</strong>.</li>
+    
+    <li>Komodo will give you a choice of databases to use.  The Rails
+    project has tools that automate creating and deleting databases, but
+    they currently work only with MySQL.  This step isn't needed for
+    SQLite, so if you choose PostgreSQL or Oracle, you'll need to build
+    your databases outside Komodo using either the command-line or another
+    application.  This covers the DDL (Data Definition Language)
+    part of database manipulation; Rails handles all data manipulation.
   </ol>
 
   <p>If Rails has been installed correctly, you should see a Komodo
@@ -136,7 +146,7 @@
           which run when a new project is created from the
           template. The <code>oncreate</code> macro in this Ruby on
           Rails template runs the command '<code>rails .
-          --force</code>' in the current working directory to
+          --skip</code>' in the current working directory to
           create the project.</p>
         </td>
       </tr>
@@ -154,6 +164,10 @@
 
   <h3><a name="rails_edit_database_yml" id=
   "rails_edit_database_yml">Editing the database.yml file</a></h3>
+  
+  <p>If you chose SQLite2 or SQLite3 as your database tool, you can skip
+  this step.  If you chose postgresql or oracle, you'll need to manage
+  the database manually.  So this section applies only to MySQL users.
 
   <p>If MySQL is installed locally and can accept connections by
   'root' without a password (it often is by default), click the
@@ -210,112 +224,6 @@
   be created and an alert will appear indicating that the database
   creation is done.</p>
 
-  <h2><a name="rails_generate_models" id=
-  "rails_generate_models">Generating Models</a></h2>
-
-  <p>Now that we have a directory tree with stub files, and a
-  database for the application to use, we need to create our first
-  model. At the command line we would use '<code>ruby
-  script/generate model <em>name</em></code>', but in Komodo we
-  have a macro to do that for us.</p>
-
-  <p>In the Rails Tools/Generators project folder are macros for
-  creating various parts of a Rails application. Double-click the
-  <strong>model</strong> macro. A dialog-box appears prompting for
-  a model name.</p>
-
-  <h3><a name="rails_movie_model" id="rails_movie_model">The Movie
-  Model</a></h3>
-
-  <p>Since our application is a library for movies, we will need a
-  movie model. Enter <code>movie</code> in the dialog box and click
-  <strong>OK</strong>.</p>
-
-  <p>The following output should appear in the <strong>Command
-  Output</strong> tab showing the files created in this step:</p>
-  <pre class="code">
-      exists  app/models/
-      exists  test/unit/
-      exists  test/fixtures/
-      create  app/models/movie.rb
-      create  test/unit/movie_test.rb
-      create  test/fixtures/movies.yml
-      create  db/migrate
-      create  db/migrate/001_create_movies.rb
-</pre>
-
-  <p>Komodo will also open these files in editor tabs. At this
-  point we need to define the database table that this model will
-  use. Click on the <em>001_create_movies.rb</em> editor tab (or
-  open it from the db/migrate/ project folder). Notice that Rails
-  has pluralized the name "movie" for the database table name.</p>
-
-  <p>Add the following below the '<code>create_table :movies do
-  |t|</code>' line:</p>
-  <pre class="code">
-      t.column :title, :string
-      t.column :created_on, :date
-</pre>
-
-  <p>This is the file that will control the creation of the
-  <code>movies</code> table in the database. The
-  <code>create_table</code> line adds the table, and our additions
-  create the columns '<code>title</code>' (a string) and
-  '<code>created_on</code>' (a special Rails value for date
-  stamping new records).</p>
-
-  <h3><a name="rails_person_model" id="rails_person_model">The
-  Person Model</a></h3>
-
-  <p>We will need to track the name of the person borrowing a
-  movie. We'll do this with a person model.</p>
-
-  <p>Double-click on the <strong>model</strong> macro again. This
-  time, specify <code>person</code> as the model name and click
-  <strong>OK</strong>.</p>
-
-  <p>The Command Output tab will again show us which files were
-  created. The file we need to edit is
-  <em>002_create_people.rb</em>. Add the following below the
-  <code>create_table</code> line:</p>
-  <pre class="code">
-      t.column :name, :string
-</pre>
-
-  <p>With both models, Rails will automatically add a
-  <code><em>tablename</em>_id</code> key for the table. We only
-  need to add the "custom" fields.</p>
-
-  <h3><a name="rails_checkout_model" id="rails_checkout_model">The
-  Checkout Model</a></h3>
-
-  <p>Now we need a way to link people with movies. We'll do this
-  with a 'checkout' model. Double-click on the
-  <strong>model</strong> macro again. This time, specify
-  <code>checkout</code> as the model name and click
-  <strong>OK</strong>.</p>
-
-  <p>Add the following to to the newly created
-  <em>003_create_checkouts.rb</em> below the
-  '<code>create_table</code>' line:</p>
-  <pre class="code">
-      t.column :person_id, :integer, :null =&gt; false
-      t.column :movie_id, :integer, :null =&gt; false
-      t.column :created_on, :date
-</pre>
-
-  <h3><a name="rails_migration" id=
-  "rails_migration">Migration</a></h3>
-
-  <p>Now that we've defined the models in Rails, we need to apply
-  them to our database. In Rails this is done with the '<code>rake
-  migrate</code>' command. Again, there's a macro to do this for
-  us.</p>
-
-  <p>Double-click the <strong>db:migrate</strong> macro in Rails
-  Tools|Migrate. The Command Output tab should show that the tables
-  'movies', 'people' and 'checkouts' have been created.</p>
-
   <h2><a name="rails_generate_scaffold" id=
   "rails_generate_scaffold">Creating a Scaffold</a></h2>
 
@@ -328,494 +236,768 @@
 
   <p>In the Generators folder, double-click the
   <strong>scaffold</strong> macro. In the dialog box enter
-  <code>movie</code> as the model name, and <code>library</code> as
-  the controller name. Click <strong>OK</strong></p>
+  <code>movie</code> as the model name, and <code>title:string</code> as
+  the only attribute in the <code>movie</code> model. Click <strong>OK</strong>.</p>
 
-  <p>Several files are created and opened in editor tabs. Since the
-  tutorial won't be dealing with most of these files, feel free to
-  close them to unclutter your workspace - they can all be opened
-  from the project later as needed.</p>
+  <p>The following output should appear in the <strong>Command
+  Output</strong> tab showing the files created in this step:</p>
+  <pre class="code">
+      exists  app/models/
+      exists  app/controllers/
+      exists  app/helpers/
+      create  app/views/movies
+      exists  app/views/layouts/
+      exists  test/functional/
+      exists  test/unit/
+      create  app/views/movies/index.html.erb
+      create  app/views/movies/show.html.erb
+      create  app/views/movies/new.html.erb
+      create  app/views/movies/edit.html.erb
+      create  app/views/layouts/movies.html.erb
+      create  public/stylesheets/scaffold.css
+  dependency  model
+      exists    app/models/
+      exists    test/unit/
+      exists    test/fixtures/
+      create    app/models/movie.rb
+      create    test/unit/movie_test.rb
+      create    test/fixtures/movies.yml
+      create    db/migrate
+      create    db/migrate/001_create_movies.rb
+      create  app/controllers/movies_controller.rb
+      create  test/functional/movies_controller_test.rb
+      create  app/helpers/movies_helper.rb
+       route  map.resources :movies
 
-  <h2><a name="rails_starting_webrick" id=
-  "rails_starting_webrick">Starting the Webrick Server</a></h2>
+</pre>
+
+  <p>Several files are created and opened in editor tabs.  You can unclutter
+  your workspace by closing most of them.  For now keep the files
+  but <em>movie.rb</em>, <em>movie_tests.rb</em>, <em>movie_controller.rb</em>,
+  and <em>movie_controller_tests.rb</em>.
+  We'll return to most of the other generated files later.</p>
+
+  <h3><a name="rails_migration" id=
+  "rails_migration">Migration</a></h3>
+
+  <p>Now that we've defined the model in Rails, we need to apply
+  them to our database. In Rails this is done with the '<code>rake
+  db:migrate</code>' command. Again, there's a macro to do this for
+  us.</p>
+
+  <p>Double-click the <strong>db:migrate</strong> macro in Rails
+  Tools|Migrate. The <strong>Command Output</strong> tab should show that the table
+  'movies' has been created.</p>
+  
+  <h2><a name="rails_testing_basics" id="rails_testing_basics"
+  >Testing Rails Scaffolds</a></h2>
+  
+  <p>At this point we have a working application.  While it's tempting
+  to start the server, switch to the browser, and try it out, we
+  should take advantage of the testing framework built into Rails to
+  verify that our application is working as we expect.</p>
+  
+  <p>Let's add a couple of sanity checks to the model: we want to verify
+  that all movie entries have a title, and that there are no duplicates.  Bring
+  up <em>movie.rb</em> and add this code at lines 2 and 3, immediately after
+  <code>class Movie < ActiveRecord::Base</code>:
+  
+  <pre class="code">
+   validates_presence_of :title
+   validates_uniqueness_of :title
+  </pre>
+  
+  <p>You should see code-completion after you type <code>val</code> each time.
+  </p>
+  
+  <p>In the second line, after you type <code>:t</code> you can press
+  the tab key to have it finish <code>:title</code>.  If this does nothing
+  verify that the setting in  <code>[Preferences|Editor|Smart Editing|Use tab
+  character to complete words like Ctrl+Space]</code> is on.</p>
+  
+  <p>Bring up <em>movie_test.rb</em>, delete the trivial test the scaffolder
+  generated for you, and add these two tests:</p>
+  
+  <pre class="code">
+ def test_present
+   m = Movie.new
+   assert !m.valid?
+   m.title = "Rocky"
+   assert m.valid?
+ end
+
+ def test_unique
+   m1 = Movie.create(:title => "Alien")
+   assert m1.valid?
+   m2 = Movie.create(:title => "Alien")
+   # First film should still be valid
+   assert m1.valid?
+   assert !m2.valid?
+   m2.title += "s"
+   assert m2.valid?
+ end
+  </pre>
+  
+  <h3><a name="running_tests_in_komodo_ide" id="running_tests_in_komodo_ide">
+  Running Model Tests in Komodo IDE</a></h3>
+  
+  <p>Komodo IDE introduced unit-test integration with version 4.3.  To run
+  the unit tests click on the <strong>Test Plan</strong> tab in the bottom window, and you
+  should see a set of tests in the test plan dropdown menu on the right side.
+  Select "test:units", and press the Run button immediately to the right.
+  </p>
+  
+  <p>You should see the tests run for a few seconds, and then a list of results
+  will appear.  If you get a message along the lines of the following:
+  "Run `rake db:migrate` to update your database then try again."
+  you probably skipped that step above.  Run the <code>Rails Tools|Migrate|db:migrate</code>
+  command, and retry the tests.</p>
+
+  <p>The result tab should show that 2 tests passed, 0 failed, and
+  there were 0 errors.  There's also an "Information" line,
+  where Komodo displays lines of output from the underlying test
+  pass that might be of interest, but don't fit in any particular
+  test.</p>
+  
+  <h3><a name="running_tests_in_komodo_edit" id="running_tests_in_komodo_edit">
+  Running Tests in Komodo Edit</a></h3>
+  
+  <p>You can run unit tests inside Komodo with the <code>Rails Tools|Test|Unit Tests</code>
+  command.  This will show the results in the
+  Command Output window.  You should see a final result of
+  <pre>
+    2 tests, 6 assertions, 0 failures, 0 errors
+  </pre>
+  
+  <h3><a name="running_controller_tests">Running Controller Tests</a></h3>
+  
+  <p>While the generated model test file has one trivial test,
+  the Rails scaffolder generates a full complement of
+  controller tests.  Bring up <em>movie_controller_test.rb</em> to have
+  a look at them.
+  
+  <p>In Komodo Edit, you can run controller tests with the <em>Run Command</em>
+  <code>rake test:functionals</code>, using the default setting of running
+  in the <strong>Command Output Tab</strong>.  This tutorial will assume Komodo IDE,
+  but it's easy to follow along with Komodo Edit.</p>
+  
+  <p>Click on the <strong>Test Results</strong> tab, select the
+  <strong>test:functionals</strong> test, and press
+  the right-facing triangle to run them. </p>
+  
+  <p>This time you should see that two of the tests failed:
+  <code>test_should_create_movie</code> and
+  <code>test_should_update_movie</code>.  If you click on the red
+  failure button in the ribbon above the results, it will
+  walk through all the tests that failed.</p>
+  
+  <p>Notice how the <em>Details</em> window shows the results for each test.  Make sure
+  the <code>test_should_create_movie</code> test is highlighted in the
+  first window.  Move to the <em>Details</em> window, find the first line
+  of code that refers to <code>test/functional/movies_controller_test.rb</code>,
+  and double-click it.</p>
+  
+  <p>Komodo should make <em>movies_controller_test.rb</em> the current file, with
+  the cursor at the line that was reported in the traceback;
+  in this case, line 16.  We see that this code is failing:</p>
+  
+  <pre class="code">
+  assert_difference('Movie.count') do
+       post :create, :movie => { }
+     end
+  </pre>
+
+  <p>The problem is that the controller_test's call to 'post' hits
+  the controller's create command, which does go through the
+  validation check.  The failure to pass the check prevents a new
+  movie from being created, and we still have two entries in the
+  database after the block runs.  Let's make a change that should
+  satisfy the model's rules:</p>
+  
+  <pre class="code">
+   def test_should_create_movie
+     assert_difference('Movie.count') do
+       post :create, :movie => { :title => "movie 3" }
+     end
+  </pre>
+  
+  <p>and rerun the test, we're now down to one failure.  Click on the red
+  failure button to move to the failed test, and then
+  double-click on the line starting with
+  <code>test/functional/movies_controller_test.rb:35:in `test_should_update_movie'</code>
+  in the  <em>Details</em> window to see the failed code.</p>
+
+  <pre class="code">
+  def test_should_update_movie
+    put :update, :id => movies(:one).id, :movie => { }
+    assert_redirected_to movie_path(assigns(:movie))
+  end
+  </pre>
+  
+  <p>It's not obvious why this test is failing.  Rails tests
+  are just Ruby code, so let's fire up the debugger to have a closer look
+  (if you're on Komodo IDE please feel free to follow along), with the
+  following steps:
+  
+  <ul>
+    <li>Set a breakpoint
+    at line 62 of <em>movies_controller.rb</em>, in the update routine.  </li>
+    <li>Bring up <em>movies_controller_test.rb</em></li>
+    <li>Start the debugger, with the <code>Debug|Go/Continue</code> menu item</li>
+    <li>In the <em>Debugging Options</em> box, make sure the Directory
+    field consists of the top-level directory of your project, namely the
+    directory containing the <em>movielib.kpf</em> file, not the test file.</li>
+    <li>Press OK.  </li>
+    <li>The debugger should stop at line 62.  Now set breakpoints at lines 64 and
+    68, to capture the success and failure branches, and continue.</li>
+    <li>The debugger should stop at line 68, since this test failed.  Examine
+    the cause of failure by clicking on the <strong>Self</strong> tab in the
+    <strong>Debug: movies_controller.rb</strong>
+    tab, finding <code>@movies</code>, and then expanding the <code>.@errors</code>
+    field under it.  This
+    field has another <code>.@errors</code> field, so expand that, and you'll see that the
+    <code>title</code> field is set to <code>"has already been taken"</code>.  Why?</li>
+  </ul>
+  
+  <p>What are those duplicate values?  While the debugger is still running,
+  enter the interactive shell with the <em>Debug|Interact</em> menu command,
+  and type the line</p>
+  <pre>
+    Movie.find(:all).map(&amp;:title)
+  </pre>
+  <p>Ruby should reply with <code>["MyString", "MyString"]</code>.  Those values
+  come from the file <em>test/fixtures/movies.yml</em>.  The problem
+  is that when Rails reads the fixtures file to populate the database, it doesn't
+  run the values through ActiveRecord's validation checks.  But now the <code>update</code>
+  method does pass the value through, and ran into the validation. </p>
+  
+  <p>Let's fix that.  Stop the debugger, and change one of those "MyString"
+  movie titles to something more interesting, like "Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?"
+or "My Other String", if you're not up for all that typing (or copying and pasting).</p>
+  
+  <p>The unit and functional tests should now pass.</p>
+
+
+  <h2><a name="rails_starting_app" id=
+  "rails_starting_app">Starting the Rails Application Server</a></h2>
 
   <p>At this point we have a working application. It's not yet
   useful as a lending library, but we can have a look at what we've
   got so far.</p>
 
   <p>In the Run folder, double-click the <strong>run
-  server</strong> macro. This will start the the Webrick web server
-  in a separate console.</p>
+  server</strong> macro. This will start one of the <strong>Mongrel</strong>,
+  <strong>lighttpd</strong>, or <strong>Webrick</strong> servers, depending
+  on your Ruby installation, and run it in a separate console window.</p>
+  
+  <h3><a name="mongrel_issues" id="mongrel_issues">Dealing with Mongrel</a></h3>
+  
+  <p>Rails now uses Mongrel as its default web server.  The dependencies between
+  different versions of Mongrel, Mongrel_Service and Rails haven't been worked out
+  on Windows yet.  If your console window exits with a <code>MissingSourceFile</code>
+  message (along with a long traceback), you can have Rails use Webrick by editing
+  the <code>Rails Tools|Run|run server</code> and making the following change:</p>
+  <p>Replace the line:</p>
+    <pre class="code">
+       as_rails_macros.launchRubyAppInConsole(this, project, 'script/server');
+    </pre>
+  <p>with:</p>
+    <pre class="code">
+       as_rails_macros.launchRubyAppInConsole(this, project, 'script/server webrick');
+    </pre>
+  
+    
+  <h3><a name="testing_app_1" id="testing_app_1">Testing the Application</a></h3>
 
   <p>Open the <a target="_blank" href=
-  "http://localhost:3000/library">http://localhost:3000/library</a>
-  in your favourite web browser. You should see a "Listing movies"
-  page with no data and a "New movie" link. This isn't actually
-  usable yet, but we can leave the web server running and see our
+  "http://localhost:3000/movies">http://localhost:3000/movies</a>
+  in your favorite web browser. You should see a <strong>Listing movies</strong>
+  page with no data and a <strong>New movie</strong> link. This is now
+  usable, but not terribly interesting.  However we can leave the web server running and see our
   changes as we make them.</p>
 
-  <h2><a name="rails_list_page" id="rails_list_page">Listing and
-  Adding Movies</a></h2>
-
-  <p>So far, the main Library page doesn't tell us much. We need to
-  create a basic listing page to view the library contents.</p>
-
-  <p>Open the <em>list.rhtml</em> file from the app/views/library
-  project directory, or click on it's editor tab if it is already
-  open. Replace the contents with the following:</p>
-  <pre class="code">
-&lt;h1&gt;DVD Lending Library&lt;/h1&gt;
-
-&lt;table&gt;
-   &lt;tr&gt;
-     &lt;th class="dvdlib_header"&gt;Title&lt;/th&gt;
-     &lt;th class="dvdlib_header"&gt;Status&lt;/th&gt;
-   &lt;/tr&gt;
-  &lt;% for movie in @movies %&gt;
-   &lt;tr&gt;
-     &lt;td class="dvdlib_item"&gt;&lt;%=h movie.title %&gt;&lt;/td&gt;
-     &lt;td class="dvdlib_item"&gt;In&lt;/td&gt;
-     &lt;td&gt;&lt;%= link_to 'Check out', :action =&gt; 'checkout', :id =&gt; movie %&gt;&lt;/td&gt;
-     &lt;td&gt;&lt;%= link_to 'Details', :action =&gt; 'details', :id =&gt; movie %&gt;&lt;/td&gt;
-     &lt;td&gt;&lt;%= link_to 'Edit', :action =&gt; 'edit', :id =&gt; movie %&gt;&lt;/td&gt;
-     &lt;td&gt;&lt;%= link_to 'Remove', { :action =&gt; 'destroy', :id =&gt; movie },
-        :confirm =&gt; 'Are you sure?', :method =&gt; :post %&gt;&lt;/td&gt;
-   &lt;/tr&gt;
-  &lt;% end %&gt;
-&lt;/table&gt;
-&lt;%= link_to 'Previous page', { :page =&gt; @movie_pages.current.previous } if @movie_pages.current.previous %&gt;
-&lt;%= link_to 'Next page', { :page =&gt; @movie_pages.current.next } if @movie_pages.current.next %&gt;
-&lt;br /&gt;
-&lt;%= link_to 'Add new movie', :action =&gt; 'new' %&gt;
-</pre>
-
-  <p>We also need to create a form to add movies. The <code>&lt;%=
-  link_to 'Add new movie', :action =&gt; 'new' %&gt;</code> uses
-  <em>new.rhtml</em> which in turn calls <em>_form.rhtml</em>. Open
-  <em>_form.rhtml</em> (app/views/library/_form.rhtml) and replace
-  the contents with the following:</p>
-  <pre class="code">
-&lt;%= error_messages_for 'movie' %&gt;
-&lt;!--[form:movie]--&gt;
-&lt;p&gt;&lt;label for="movie_title"&gt;Title&lt;/label&gt;&lt;br/&gt;
-&lt;%= text_field 'movie', 'title'  %&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;label for="movie_created_on"&gt;Added to library on:&lt;/label&gt;&lt;br/&gt;
-&lt;%= date_select 'movie', 'created_on'  %&gt;&lt;/p&gt;
-&lt;!--[eoform:movie]--&gt;
-</pre>
-
-  <p>We've created an editable field for entering the movie title,
-  and shown the current date stamp as the creation time.</p>
-
-  <p>Go ahead and add a few of your favourite movies. The "Check
-  out" and "Details" links won't do anything yet, but you can Add,
-  Edit, or Remove titles.</p>
-
-  <h2><a name="rails_edit_title" id="rails_edit_title">Editing a
-  Title in Place</a></h2>
-
-  <p>Rails has some built in JavaScript methods that provide some
-  useful functionality. We could use one of these to make the Title
-  field in our main library/list view editable.</p>
-
-  <p>Open <em>list.rhtml</em> (apps/views/library/list.rhtml) and
-  replace the <code>&lt;td class="dvdlib_item"&gt;&lt;%=h
-  movie.title %&gt;&lt;/td&gt;</code> line with the following:</p>
-  <pre class="code">
-    &lt;td class="dvdlib_item"&gt;
-      &lt;% @movie = movie %&gt;
-      &lt;%= in_place_editor_field  :movie, :title %&gt;
-     &lt;/td&gt;
-</pre>
-
-  <p>The <code>in_place_editor_field</code> requires an instance
-  name, so we need to assign the current value to
-  <code>@movie</code>. If you type this in instead of pasting,
-  you'll notice autocompletion for the
-  <code>in_place_editor_field</code> method.</p>
-
-  <p>Next, open <em>library.rhtml</em>
-  (apps/views/layouts/library.rhtml). Add the following line in the
-  <code>&lt;head&gt;</code> section:</p>
-  <pre class="code">
-   &lt;%= javascript_include_tag :defaults %&gt;
-</pre>
-
-  <p>This line includes the default Rails JavaScript libraries
-  (<code>&lt;script src="/javascripts/...</code>) in the library
-  page allowing the title to be edited in place. Since the 'Edit'
-  link is now redundant, feel free to remove this line from
-  <em>list.rhtml</em>:</p>
-  <pre style="background-color:#E9E9E9; display:inline">
-    &lt;td&gt;&lt;%= link_to 'Edit', :action =&gt; 'edit', :id =&gt; movie %&gt;&lt;/td&gt;
-</pre>
-
-  <p>The field in the page is now editable, but the change is not
-  savable until we make a change in <em>library_controller.rb</em>
-  (app/controllers/library_controller.rb). Add the following on
-  line 2, just below the LibraryController class declaration.</p>
-  <pre class="code">
-    in_place_edit_for :movie, :title
-</pre><br />
-
-  <table align="center" width="60%">
-    <tbody>
-      <tr>
-        <td class="startupBox">
-          <p><strong>Komodo Tip</strong>: Komodo has some useful
-          tools for debugging AJAX calls. Check out the <a href=
-          "../http-insp.html">HTTP Inspector</a> and
-          <a href="../debugjs.html">JavaScript
-          Debugger</a>.</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2><a name="rails_check_out" id="rails_check_out">Check Out a
-  Movie</a></h2>
-
-  <p>On the main library list page, each movie has four actions
-  associated with it: "Check out", "Details", and "Remove".
-  "Remove" (and the "Edit" action that we just removed) is a
-  generic web/database function that Rails provides which works
-  well enough for our library application. "Check out" and
-  "Details" are specific to our application and will have to be
-  defined in our Controller (<em>library_controller.rb</em>).</p>
-
-  <p>Our check out function should do the following:</p>
-
-  <ul>
-    <li>Redirect to a form</li>
-
-    <li>Ask for the borrower's name</li>
-
-    <li style="list-style: none">
-      <ul>
-        <li>if the name is in the database, accept</li>
-
-        <li>if not, prompt the user to enter a new name</li>
-      </ul>
-    </li>
-
-    <li>Link the borrower to the movie in the database</li>
-
-    <li>Redirect back to the main list</li>
-  </ul>
-
-  <p>Here are the routines we need to add to
-  <em>library_controller.rb</em>. Put them at the bottom of the
-  file, just before the last <code>end</code>.</p>
-  <pre class="code">
-  def checkout
-    @movie = Movie.find(params[:id])
-  end
-
-  def do_checkout
-    movie_id = params[:id]
-    name = params[:person][:name]
-    if name.blank?
-      flash[:notice] = 'No name given'
-      redirect_to :action =&gt; :checkout, :id =&gt; movie_id
-    elsif (@name = Person.find_by_name(name)).blank?
-      flash[:notice] = "Who is #{name}?"
-      redirect_to :action =&gt; checkout, :id =&gt; movie_id
-    else
-      @movie = Movie.find(movie_id)
-      checkout = Checkout.create(:movie_id =&gt; movie_id,
-                                 :person_id =&gt; @name.id).save
-      redirect_to :action =&gt; :list
-    end
-  end
+  <p>While the application the Rails scaffolder generates is certainly
+  serviceable, there are some tweaks that will immediately make it
+  friendlier:</p>
   
-  def register
-    movie_id = params[:id]
-    name_to_register = params[:person][:name]
-    if name_to_register.blank?
-      flash[:notice] = 'No name given'
-    else
-      person = Person.find_by_name(name_to_register)
-      if person
-        flash[:notice] = "#{person.name} is already registered"
-      else
-        Person.create(:name =&gt; name_to_register).save
-      end
-    end
-    redirect_to :action =&gt; :checkout, :id =&gt; movie_id
-  end  
-</pre>
+  <p>If we're going to enter a number of movies, let's speed things
+  up by stealing the <strong>New Movie</strong> link
+  from <em>index.html.erb</em>, and placing it in <em>show.html.erb</em>:</p>
+  
+  <p>Copy the line</p>
+  <pre class="code">
+  &lt;%= link_to 'New movie', new_movie_path %>
+  </pre>
+  
+  <p>from <em>index.html.erb</em>, and paste it at the end of
+  <em>show.html.erb</em>.  Put a "|" character at the end of
+  the previous line to maintain consistency.  Save
+  <em>show.html.erb</em>.  No need to restart the server -- switch
+  to the app, enter a new title at the <strong>New Movie</strong> screen,
+  press the "Create" button, and you should have a
+  "New movie" link.</p>
+  
+  <p>Similarly, it would be nice if the cursor was in the
+  <strong>Title</strong> field when we load the <strong>New movie</strong> page,
+  similar to how the <strong>Search</strong> field has the focus on
+  Google's home page.   Since we're going to be using
+  the <strong>Prototype</strong> library, I added the
+  <code>javascript_include_tag</code> directive to the head section of
+  <em>app/views/layouts/movies.html.erb</em>:</p>
+  
+  <pre class="code">
+    &lt;title>Movies: &lt;%= controller.action_name %>&lt;/title>
+    &lt;%= stylesheet_link_tag 'scaffold' %>
+    &lt;%= javascript_include_tag :defaults %>
+  </pre>
+  
+  <p>Then add this code to the end of <em>new.html.erb</em>:</p>
+  
+  <pre class="code">
+  &lt;script type="text/javascript">
+  Event.observe(window, "load", function() {
+      $('movie_title').focus();
+      });
+  &lt;/script>
+  </pre>
+  
+  <p>If you type this code in, you should see code-completion
+  after <code>Event.</code> and a call-tip after <code>(</code>, as long as you've
+  enabled the <em>prototype.js</em> code intelligence API catalog
+  in preferences.</p>
 
-  <p>Now we need to create the checkout page. Right-click on the
-  library folder (app/views/library) and select <strong>Add|New
-  File...</strong>. Enter the filename <em>checkout.rhtml</em> and
-  click <strong>Open</strong>. Add the following in the new
+  <P>Again, there's no need to restart the server.  As soon as you load
+  the new controller and view code, your changes will come into
+  effect.</p>
+
+  <h2><a name="installing_plugins" id="installing_plugins">Installing Plugins</a></h2>
+
+  <p>Too many software packages gain bloat as they reach higher revisions.
+  Rails is different -- the Rails team actually dropped much of its code
+  going from 1.2 to 2.0.  Most the dropped functionality is still
+  available as plugins,  but now people who want it need to explicitly
+  install it.  The idea is that people who don't need a particular
+  widget shouldn't subsidize the few who want it.</p>
+  
+  <p>We're going to install two plugins, to handle in-place editing and pagination.</p>
+  
+  <p>Fortunately Komodo ships with macros that install these plugins, and
+  add necessary patches.  Open the <code>Rails Tools|Plugins</code> folder in your
+  Rails project, and run the <code>in-place editing</code> and
+  <code>pagination</code> macros.  If you try to
+  install an installed plugin you'll get a warning.</p>
+  
+  <p>It's easy to create new plugin macros.  Every installable plugin is
+  treated as a resource, usually in a public subversion repository,
+  and identifiable with a URI.  On the command-line you would invoke
+  <code>ruby script/install plugin ...</code> with that URI.  In Komodo you would
+  just need to copy one of the macros, paste it into the same Plugins
+  folder, edit it, and replace the old URI with the new one.</p>
+  
+  <p>Note that plugins need to be installed in every Rails project that
+  uses them separately
+  Rails server afterwards, so this would be a good time to stop the
+  current Rails server.  Find the window it's running in, and press
+  <code>Ctrl-C</code> or <code>Ctrl-Break</code> on Windows.
+  (Yes, that is no different from
+  stopping Rails on the command-line).</p>
+
+  <h3><a name="adding_pagination" id="adding_pagination">Adding
+  Pagination</a></h3>
+  
+  <p>First we'll add
+  pagination by making these changes to the <strong>movie</strong> model and
+  controller.</p>
+  
+  <p>In <em>movies_controller.rb</em>, change line 5 from:</p>
+
+  <pre class="code">
+     @movies = Movie.find(:all)
+  </pre>  
+  
+  <p>to</p>
+  
+  <pre class="code">
+     @movies = Movie.paginate(:page => params[:page])
+  </pre>
+  
+  <p>Add this code at the class level to <em>model.rb</em> (lines 4-5):</p>
+  
+  <pre class="code">
+     cattr_reader :per_page
+     @@per_page = 10
+  </pre>
+  
+  <p>Finally, add pagination to the view.  The last six lines
+  of <em>app/views/movies/index.html.erb</em> should contain this code:</p>
+  
+  <pre class="code">
+  <% if @movies.size > Movie.per_page -%>
+  <br />
+  <%= will_paginate(@movies) %>
+  <% end %>
+  <br />
+  <%= link_to 'New movie', new_movie_path %>
+  </pre>
+
+  <h3><a name="testing_pagination" id="testing_pagination">Testing
+  Pagination</a></h3>
+  
+  Now we could start up the server, enter a few dozen
+  <em>different</em> titles, and verify that the pagination
+  is working.  Or we can write another test, in
+  <em>movies_controller_test.rb</em>:
+
+  <pre class="code">
+  def test_pagination
+    Movie.delete_all
+    35.times {|i| Movie.create(:title => "title #{i}")}
+    get :index
+    assert_tag(:tag => 'div',
+               :attributes => { :class => 'pagination'})
+    assert_tag(:tag => 'span',
+               :content => '&laquo; Previous',
+               :attributes => { :class => 'disabled'})
+    assert_tag(:tag => 'span',
+               :content => '1',
+               :attributes => { :class => 'current'})
+    assert_tag(:tag => 'div',
+               :attributes => { :class => 'pagination'},
+               :child => { :tag => 'a',
+                 :attributes => { :href => "/movies?page=4" },
+                 :content => "4" })
+  end
+  </pre>
+  
+  <p>Those <code>assert_tag</code> tests might look like they were pulled out
+  of thin air, but the debugger was very useful in writing them.  Originally
+  the test read like this:</p>
+  
+  <pre class="code">
+  def test_pagination
+    Movie.delete_all
+    35.times {|i| Movie.create(:title => "title #{i}")}
+    get :index
+    assert_response :success
+  end
+  </pre>
+  
+  <p>We used the debugger to stop at the final line, captured the contents
+  of <code>@request.body</code> by double-clicking on it in the <strong>Self</strong> tab
+  of the <strong>Debug</strong> tab, and pasted it into an empty <code>HTML</code> buffer
+  in Komodo, and found the paginator was generating this code:</p>
+  
+  <pre class="code">
+  &lt;div class="pagination">
+      &lt;span class="disabled">&amp;laquo; Previous&lt;/span>
+      &lt;span class="current">1&lt;/span>
+      &lt;a href="/movies?page=2">2&lt;/a>
+      &lt;a href="/movies?page=3">3&lt;/a>
+      &lt;a href="/movies?page=4">4&lt;/a>
+      &lt;a href="/movies?page=2">Next &amp;raquo;&lt;/a>
+  &lt;/div>
+  </pre>
+  
+  <p>We then entered an interactive context with the <code>Debug|Interact</code>
+  menu item, found some documentation on the <code>assert_tag</code>, and
+  interactively tried out the expressions, starting with simple expressions
+  and making them more complex.  A final set that covered the situations
+  was then copied into the test.</p>
+  
+  <h3><a name="using_pagination" id="using_pagination">Testing
+  Pagination in the Application</a></h3>
+  
+  <p>The functional test results should have you convinced that these additions
+  didn't break anything.  But now would be a good time to restart the server,
+  fire up the app, and make sure it still works as before.  If you add eleven
+  movies you should see the paginator at work.</p>
+  
+  <h3><a name="adding_in_place_editing" id="adding_in_place_editing">Adding
+  In-Place Editing</a></h3>
+    
+  <p>Having to bring up an editing screen to change the
+  spelling of a movie is cumbersome.  This is easy to fix.</p>
+  
+  <p>Add this code to movies/index.html.erb, around line 10:</p>
+  
+  <pre class="code">
+      &lt;td class="dvdlib_item">
+       &lt;% @movie = movie %>
+       &lt;%= in_place_editor_field :movie, :title %>
+     &lt;/td>
+  </pre>
+  
+  <p>Replace line 3 of <em>show.html.erb</em> with just this line:</p>
+  
+  <pre class="code">
+      &lt;%= in_place_editor_field :movie, :title %>
+  </pre>
+  
+  
+  <p>It should replace the line that displays the movie's title in a readonly
+  field (like <code>&lt;%= h(movie.title) %></code>) since you're now
+  allowing the user to edit the field directly.  You can also
+  remove the link to the edit page (in the <em>show.html.erb</em> file
+  as well), and remove
+  <em>views/movies/edit.html.erb</em> by right-clicking its icon in the
+  project view, pressing <strong>Delete</strong>, and choosing "Move to Trash".</p>
+  
+  <p>Finally you need to tell your controller you're doing in-place
+  editing:</p>
+  
+  <p>First line inside the MoviesController class:</p>
+  
+  <pre class="code">
+   in_place_edit_for :movie, :title
+   protect_from_forgery :except => [:set_movie_title]
+  </pre>
+   
+  <p>Also in the controller, change the <code>edit</code> method
+  so it doesn't go looking for the now-deleted <em>edit.html.erb</em>
   file:</p>
+  
   <pre class="code">
-&lt;h1&gt;Checkout a movie&lt;/h1&gt;
-&lt;p&gt;Title: &lt;%= h @movie.title %&gt;&lt;/p&gt;
-&lt;% form_tag :action =&gt; 'do_checkout', :id =&gt; @movie do %&gt;
-   &lt;p&gt;Your name: &lt;%= text_field_with_auto_complete(:person, :name) %&gt;
-   &lt;%= submit_tag 'Check out' %&gt;
-&lt;% end %&gt;
+  # GET /movies/1/edit
+  def edit
+    @movie = Movie.find(params[:id])
+    respond_to do |format|
+      format.html { render :action => "show" }
+      format.xml  { render :xml => @movie }
+    end
+  end
+  </pre>
 
-&lt;h2&gt;Please register me&lt;/h2&gt;
-&lt;% form_tag :action =&gt; 'register', :id =&gt; @movie do %&gt;
-   &lt;p&gt;&lt;label for="movie_title"&gt;Your name&lt;/label&gt;&lt;br/&gt;
-     &lt;%= text_field 'person', 'name'  %&gt;&lt;/p&gt;
-   &lt;%= submit_tag 'Add me' %&gt;
-&lt;% end %&gt;
-
-&lt;%= link_to 'Back to the library', :action =&gt; 'list' %&gt;
-</pre>
-
-  <p>Notice the <code>text_field_with_auto_complete(:person,
-  :name)</code>. This should give us autocompletion in the browser
-  based on people we've added to the library database. Currently
-  (even after adding a few people to the database) this won't
-  happen. In fact, the log output in the Webrick window shows
-  "<code>ActionController::UnknownAction (No action responded to
-  auto_complete_for_person_name)</code>". As with the
-  <code>in_place_editor_field</code> in <em>list.rhtml</em>, we
-  need to add something to our LibraryController class. Insert the
-  following into <em>library_controller.rb</em> at line 3:</p>
+  <p>Once again, run the unit and functional tests to verify
+  these changes didn't break anything. They should be fine, and this would be a
+  good time to verify their actions in the browser, especially
+  because in-place editing is hard to verify in a functional test.
+  Click on a movie title
+  in the list view, and you should see the field become writable, and an
+  <strong>OK</strong> button appear.  Make a change and press
+  the <strong>OK</strong> button.  If you
+  see a "Saving..." message in the field, and nothing else is happening,
+  check the end of your <em>log/development.log file</em>.  If you're curious
+  about the calls to <code>protect_from_forgery</code>, they're related to a
+  security issue that was addressed in Rails 2.0, but not by the plugin.</p>
+  
+  <h2><a name="adding_borrower_data" id="adding_borrower_data">Adding Borrower Data</a></h2>
+  
+    
+  <p>Now that we have a working library of DVDs, let's add the
+  pieces needed to track DVDs that leave the library,
+  who took them, and when they need to bring them back.</p>
+  
+  <p>Run <code>Rails Tools|Generate|Migration</code>, with a migration name of
+  <code>AddBorrowerInformation</code></p>.
+  
+  <p>Set the contents of 002_add_borrower_information.rb to this:</p>
+  
   <pre class="code">
-    auto_complete_for :person, :name
-</pre>
+  class AddBorrowerInformation < ActiveRecord::Migration
+    def self.up
+      add_column :movies, :borrower, :string, :limit => 60
+      add_column :movies, :borrowed_on, :date
+      add_column :movies, :due_on, :date
+    end
+  
+    def self.down
+      remove_column :movies, :borrower
+      remove_column :movies, :borrowed_on
+      remove_column :movies, :due_on
+    end
+  end
+  </pre>
+  
+  <p>and run the <code>Rails Tools|Migrate|db:migrate</code> tool.</p>
+  
+  <p>Let's add another validation routine.  This one's more complex:
+  we want to verify that if any of the <code>borrower</code>, <code>borrowed_on</code>,
+  and <code>due_on</code> fields are specified, they all are, and we'll due
+  a sanity check on the value of <code>due_on</code>.  This is to guard the
+  case where someone hits the controller without going
+  through one of our own views.</p>
+  
+  <p>Add this method to <em>movie.rb</em>:</p>
 
-  <p>The field should now give autocompletion options when you
-  start typing a name into it.</p>
-
-  <p>To change the main library list page to show whether a movie
-  is "In" or "Out". In <em>list.rhtml</em>, replace the placeholder
-  line '<code>&lt;td class="dvdlib_item"&gt;In&lt;/td&gt;</code>'
-  with:</p>
   <pre class="code">
-      &lt;% checkout = Checkout.find_by_movie_id(@movie) %&gt;
-      &lt;td class="dvdlib_item"&gt;&lt;%= Checkout.find_by_movie_id(@movie) ? "Out" : "In" %&gt;&lt;/td&gt;
-</pre>
+  def validate
+    if borrowed_on.blank? &amp;&amp; borrower.blank? &amp;&amp; due_on.blank?
+      # ok
+    elsif !borrowed_on.blank? &amp;&amp; !borrower.blank? &amp;&amp; !due_on.blank?
+      if due_on < borrowed_on
+        errors.add(:due_on, "is before date-borrowed")
+      end
+    elsif borrowed_on.blank?
+      errors.add(:borrowed_on ,"is not specified")
+    elsif borrower.blank?
+      errors.add(:borrower ,"is not specified")
+    else
+      errors.add(:due_on ,"is not specified")
+    end
+  end
+  </pre>
+  
+  <p>Add this test to <em>movie_test.rb</em>:</p>
 
-  <h2><a name="rails_debug" id="rails_debug">Debugging Rails</a>
-  <span class="version_alert">Komodo IDE only</span></h2>
+  
+  <pre class="code">
+  def test_borrower
+    m = Movie.create(:title => "House")
+    m.borrowed_on = Date.today
+    assert !m.valid?
+    m.borrower = "Dave"
+    assert !m.valid?
+    m.due_on = Date.yesterday
+    assert !m.valid?
+    m.due_on = m.borrowed_on + 3
+    assert m.valid?
+    
+    # Now clear the borrower
+    m.borrower = ""
+    assert !m.valid?
+  end
+  </pre>
 
-  <p>There is a bug in the <code>do_checkout</code> function that
-  can be triggered by entering new (i.e. not registered) name in
-  the 'Checkout a movie' section of <em>checkout.rhtml</em>.
-  Entering a new name in the 'Your name' field section generates a
-  'No action responded to <em>number</em>' error. It should instead
-  give us a message saying "Who is <em>name</em>?" We can use
-  Komodo's <a href="../debugger.html">debugger</a> to
-  try to find the problem.</p>
+  <p>The unit and functional tests should all pass.</p>
 
-  <table align="center" width="60%">
-    <tbody>
-      <tr>
-        <td class="startupBox">
-          <p><strong>Komodo Tip</strong>: The <a
-          href="../debugruby.html">Debugging Ruby documentation</a>
-          has information on configuring Komodo for <a
-          href="../debugruby.html#Configure_Ruby_Debugger">local</a>
-          and <a
-          href="../debugruby.html#Ruby_Remote_Debugger">remote</a>
-          Ruby debugging. If the steps below do not work automatically, check
-          the configuration and settings described in the documentation or
-          consult the <a target="_blank"
-          href="http://community.activestate.com/faq-list">online FAQs</a>.</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p>Open <em>library_controller.rb</em> in an editor tab. Set a
-  breakpoint on the '<code>flash[:notice] = "Who is
-  #{name}?"</code>' line by clicking in the blank margin to the
-  left. An orange octagonal icon should appear indicating the
-  breakpoint.</p>
-
+  <h2><a name="handling_checkouts" id="handling_checkouts">Handling Checkouts</a></h2>
+  
+  <p>We're almost done.  Let's outline the remaining pieces, since we're now moving
+  away from the code Rails generated for us:</p>
+  
   <ol>
-    <li>Stop the WEBrick server by entering 'Ctrl'+ 'C' in the
-    terminal window running the server.</li>
-
-    <li>Start the debugging version of the server by
-    double-clicking the <strong>debug rails app</strong> macro. By
-    default, the debugger will stop on the first line of executable
-    code, in this case line 2 of <em>script/server</em>.</li>
-
-    <li>Click <strong>Go/Continue</strong> in the Debug menu ('F5')
-    or the <strong>Go/Continue</strong> button in the toolbar.</li>
-
-    <li>In your browser, navigate to <a target="_blank" href=
-    "http://localhost:3000/library/checkout/1">http://localhost:3000/library/checkout/1</a>
-    (or the checkout page for the movie of your choice).</li>
-
-    <li>Enter a new name in the 'Your name' field of the 'Checkout
-    a movie' section (one that is not already in your
-    database).</li>
+    <li>Add a <code>checkout</code> method and <code>checkout</code> screen</li>
+    <li>Add a <code>return</code> method</li>
+    <li>Show the details in the list view</li>
   </ol>
 
-  <p>The <em>library_controller.rb</em> tab should come to the
-  foreground in Komodo, with a yellow arrow over the breakpoint we
-  set earlier. While execution of the application is paused, we can
-  examine variables and interact with the application via the Ruby
-  shell. On the <strong>Locals</strong> tab on the left side of the
-  bottom pane, we can see the following variables from the
-  <code>do_checkout</code> function:</p>
+  <p>Here's the RHTML for the checkout screen.  Create the
+  file <em>app/views/movies/checkout.html.erb</em> with this
+  code.  One way to create this file is to right-click
+  the <em>app/views/movies</em> folder and select "Add New File..."</p>
 
-  <table summary="Local Variables" border="1" cellspacing="0"
-  cellpadding="3" width="50%" style="margin-left: 3em">
-    <tbody>
-      <tr>
-        <td><strong>Name</strong></td>
-
-        <td><strong>Type</strong></td>
-
-        <td><strong>Value</strong></td>
-      </tr>
-
-      <tr>
-        <td>checkout</td>
-
-        <td>null</td>
-
-        <td>&nbsp;</td>
-      </tr>
-
-      <tr>
-        <td>movie_id</td>
-
-        <td>string</td>
-
-        <td>1</td>
-      </tr>
-
-      <tr>
-        <td>name</td>
-
-        <td>string</td>
-
-        <td><em>NewName</em></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p>The <code>movie_id</code> and <code>name</code> variables are
-  as expected, but where does this <code>checkout</code> variable
-  come from?</p>
-
-  <p>The line immediately below our breakpoint has the
-  following:</p>
   <pre class="code">
-      redirect_to :action =&gt; checkout, :id =&gt; movie_id
-</pre>
+    &lt;h1>Checkout a movie&lt;/h1>
+    &lt;p>Title: &lt;%= h @movie.title %>&lt;/p>
+    &lt;% form_tag :action => 'checkout', :id => @movie do %>
+      &lt;p>Your name: &lt;%= text_field(:movie, :borrower) %>
+      &lt;%= submit_tag 'Check out' %>
+    &lt;% end %>
+    &lt;%= link_to 'Back to the library', movies_path %>
+  </pre>
 
-  <p>The <code>:action</code> is <code>checkout</code> (an
-  undefined variable) rather than <code>:checkout</code> (a symbol
-  for the <code>checkout</code> function). Add the colon and the
-  checkout page should work as expected.</p>
+  <p>You might have noticed that we accept any name to be
+  typed in the form.  We can get away with this because we're building
+  a lending library that our co-workers would use.  In a
+  public application you would need to build a separate
+  table to track members, and another one to handle
+  login status, and then you'd have to deal with issues
+  like password hashing and email address verification.
+  All good information, and interesting,
+  but beyond the scope of this tutorial.  See the references
+  section for more info.</p>
 
-  <p>You can now leave WEBrick in debugging mode, or shut it down
-  ('Ctrl'+'C' in the console) and restart it with the <strong>run
-  server</strong> macro.</p>
-
-  <h2><a name="rails_return_movie" id=
-  "rails_return_movie">Returning a movie</a></h2>
-
-  <p>Now that we can check out a movie, we should add the ability
-  to return it. Currently we have a 'Check out' link. We can change
-  this so that it shows 'Check out' if the movie is in, and
-  'Return' if the movie is out. Replace the entire <em>second</em>
-  <code>&lt;tr&gt;</code> section in <em>list.rhtml</em> with the
-  following:</p>
+  <p>Here are the two new methods we need to add to the
+  controller:</p>
+  
   <pre class="code">
-  &lt;tr&gt;
-    &lt;td class="dvdlib_item"&gt;
-      &lt;% @movie = movie %&gt;
-      &lt;%= in_place_editor_field  :movie, :title %&gt;
-    &lt;/td&gt;
-    &lt;% checkout = Checkout.find_by_movie_id(@movie) %&gt;
-    &lt;td class="dvdlib_item"&gt;&lt;%= checkout ? "Out" : "In" %&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;% if checkout %&gt;
-        &lt;%= link_to 'Return', :action =&gt; 'return', :id =&gt; movie %&gt;
-        &lt;% else %&gt;
-        &lt;%= link_to 'Check out', :action =&gt; 'checkout', :id =&gt; movie %&gt;
-        &lt;% end %&gt;
-    &lt;/td&gt;
-    &lt;td&gt;&lt;%= link_to 'Details', :action =&gt; 'details', :id =&gt; movie %&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;%= link_to 'Remove', { :action =&gt; 'destroy', :id =&gt; movie }, :confirm =&gt; 'Are you sure?', :method =&gt; :post %&gt;&lt;/td&gt;
-   &lt;/tr&gt;
-</pre>
+   # Non-Rest methods
+   def checkout
+     @movie = Movie.find(params[:id])
+     if request.post?
+       # It's an update
+       @movie.borrower = params[:movie][borrower]
+       @movie.borrowed_on = today = Date.today
+       @movie.due_on = today + duration()
+       if @movie.save
+         flash[:notice] = 'Movie was successfully created.'
+         redirect_to(movies_url)
+       else
+         render :action => "checkout"
+       end
+     else
+       # Render the template, the default
+     end
+   end
+  
+   def return
+     @movie = Movie.find(params[:id])
+     @movie.borrower = @movie.borrowed_on = @movie.due_on = nil
+     @movie.save!
+     redirect_to(movies_url)
+   end
+  </pre>
+  
+  <p>I assume HTML output to simplify the code.  If you want you can
+  add the <code>respond_to</code> and <code>format</code> statements.  Note how we overload
+  the <code>checkout</code> method -- if it's part of a <code>get</code> request, we render
+  the form.  Otherwise we assume we're processing the submitted form.</p>
+  
+  <p>Finally we update the list view in <em>index.html.erb</em>:</p>
 
-  <p>Here is the method we need to add to
-  <em>library_controller.rb</em>:</p>
   <pre class="code">
-  def return
-    movie_id = params[:id]
-    checkout = Checkout.find_by_movie_id(movie_id)
-    if checkout
-      Checkout.delete(checkout)
-    end
-    redirect_to :action =&gt; :list
+  &lt;h2>Movies&lt;/h2>
+  
+  &lt;table>
+    &lt;tr>
+      &lt;th class="dvdlib_header">Title&lt;/th>
+      &lt;th class="dvdlib_header">Status&lt;/th>
+    &lt;/tr>
+   &lt;% for movie in @movies %>
+    &lt;tr>
+      &lt;td class="dvdlib_item">
+       &lt;% @movie = movie %>
+       &lt;%= in_place_editor_field :movie, :title %>
+     &lt;/td>
+      &lt;% if movie.borrower %>
+      &lt;td class="dvdlib_item">Signed out by: &lt;%= h movie.borrower %>&lt;/td>
+      &lt;td class="dvdlib_item">Due &lt;%= h movie.due_on %>&lt;/td>
+      &lt;td class="dvdlib_item">&lt;%= link_to 'Return', :action => 'return', :id => movie %>&lt;/td>
+      &lt;% else %>
+      &lt;td class="dvdlib_item">&lt;%= link_to 'Check out', :action => 'checkout', :id => movie %>&lt;/td>
+      &lt;td class="dvdlib_item">&lt;%= link_to 'Remove', { :action => 'destroy', :id => movie },
+         :confirm => 'Are you sure?', :method => :delete %>&lt;/td>
+      &lt;% end %>
+    &lt;/tr>
+   &lt;% end %>
+  &lt;/table>
+  &lt;% if @movies.size > 0 -%>
+  &lt;br />
+  &lt;%= will_paginate(@movies) %>
+  &lt;% end %>
+  &lt;br />
+  &lt;%= link_to 'Add new movie', new_movie_path %>
+  </pre>
+  
+  <p>Add two tests to <em>movies_controller_test.rb</em> to verify that everything
+  is working correctly:</p>
+  
+  <pre class="code">
+  def test_checkout_get
+    get :checkout, :id => movies(:one).id
+    assert_response :success
   end
-</pre>
 
-  <h2><a name="rails_checkout_details" id=
-  "rails_checkout_details">Viewing Checkout Details</a></h2>
-
-  <p>The application is now mostly working. There's just one
-  crucial component left to implement. The 'Details' link currently
-  doesn't do anything (besides bringing up an "Unknown action"
-  error). We want this page to show us who has the movie, and when
-  it was checked out.</p>
-
-  <p>Right-click on the library folder (app/views/library) and
-  select <strong>Add|New File...</strong>. Enter the filename
-  <em>details.rhtml</em> and click <strong>Open</strong>. Add the
-  following in the new file:</p>
-  <pre class="code">
-&lt;h1&gt;Checkout details&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;Movie: &lt;%= h @movie.title %&gt;&lt;/li&gt;
-  &lt;li&gt;Borrower: &lt;%= h(@person.name) %&gt;&lt;/li&gt;
-  &lt;li&gt;Borrowed: &lt;%= @checkout_date %&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/p&gt;
-
-&lt;%= link_to 'Return', :action =&gt; 'return', :id =&gt; @movie %&gt;
-&lt;%= link_to 'List', :action =&gt; 'list' %&gt;
-</pre>
-
-  <p>Of course, we'll need another method in
-  <em>library_controller.rb</em>:</p>
-  <pre class="code">
-  def details
-    movie_id = params[:id]
-    @movie = Movie.find(movie_id)
-    checkout_id = params[:checkout]
-    checkout = Checkout.find(checkout_id)
-    if !checkout
-      redirect_to :action =&gt; :list
-    else
-      @person = Person.find(checkout.person_id)
-      @checkout_date = checkout.created_on
-    end
+  def test_checkout_put
+    post :checkout, :id => movies(:one).id, :movie => {:borrower => "Fred"}
+    assert_redirected_to movies_path
   end
-</pre>
-
-  <p>Lastly, we must pass a checkout id as a parameter when the
-  page is called, because we're viewing the checkout details as
-  well as the movie details. Modify the '<code>link_to
-  'Details'</code> line in <em>list.rhtml</em> to include the
-  following:</p>
-  <pre class="code">
-    &lt;td&gt;&lt;% if checkout %&gt;
-      &lt;%= link_to 'Details', :action =&gt; 'details', :id =&gt; movie, :checkout =&gt; checkout %&gt;
-      &lt;% end %&gt;
-    &lt;/td&gt;
-</pre>
-
-  <p>Not only does this pass the <code>checkout_id</code>
-  parameter, it hides the 'Details' link if the movie is not
-  checked out.</p>
+  </pre>
+  
+  <p>We were expecting no errors, but this time we get an <code>undefined
+  local variable or method error</code> for <code>borrower</code> at line 99
+  of <em>movie_controller.rb</em>.  Sure enough, we forgot to put a ":" before
+  the param name "borrower".  Change it to <code>:borrower</code>, rerun the
+  tests, and they should pass.</p>
+  
+  <p>People familiar with the first version of this tutorial will recall
+  firing up the debugger to correct a problem like this.  Writing tests is
+  more efficient.  You can debug Rails apps if you need to, though.  Press the
+  <code>Rails Tools|Run|debug rails app</code> tool, set breakpoints at the points in the controllers and
+  views you're interested in, and then hit them with your application.</p>
+  
+  <p>Finally, fire up the server one more time, and verify that your application
+  now works as you expect.  You're ready to take this one live.</p>
 
   <h2><a name="rails_resources" id="rails_resources">Rails
   Resources</a></h2>
@@ -841,6 +1023,11 @@
     "http://www.softwaredeveloper.com/features/74-ruby-on-rails-resources-tutorials-050207/">
     74 Quality Ruby on Rails Resources and Tutorials</a>: An
     excellent compendium of Rails resources.</li>
+    
+    <li><a target="_blank" href=
+    "http://railscasts.com/episodes/80">Simplify Views with Rails 2.0</a>:
+    A screencast covering the resource-based approach to building a web application
+    with Rails 2.0.</li>
   </ul>
   <hr />
 </body>
