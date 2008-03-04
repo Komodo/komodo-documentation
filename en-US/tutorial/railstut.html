@@ -170,7 +170,7 @@
   
   <p>If you chose SQLite2 or SQLite3 as your database tool, you can skip
   this step.  If you chose postgresql or oracle, you'll need to manage
-  the database manually.  So this section applies only to MySQL users.
+  the database manually.  So this section applies only to MySQL users.</p>
 
   <p>If MySQL is installed locally and can accept connections by
   'root' without a password (it often is by default), click the
@@ -302,7 +302,7 @@
   <p>Let's add a couple of sanity checks to the model: we want to verify
   that all movie entries have a title, and that there are no duplicates.  Bring
   up <em>movie.rb</em> and add this code at lines 2 and 3, immediately after
-  <code>class Movie &lt; ActiveRecord::Base</code>:
+  <code>class Movie &lt; ActiveRecord::Base</code>:</p>
   
   <pre class="code">
    validates_presence_of :title
@@ -366,7 +366,7 @@
   
   <p>You can run unit tests inside Komodo with the <code>Rails Tools|Test|Unit Tests</code>
   command.  This will show the results in the
-  Command Output window.  You should see a final result of
+  Command Output window.  You should see a final result of:</p>
   <pre>
     2 tests, 6 assertions, 0 failures, 0 errors
   </pre>
@@ -376,7 +376,7 @@
   <p>While the generated model test file has one trivial test,
   the Rails scaffolder generates a full complement of
   controller tests.  Bring up <em>movie_controller_test.rb</em> to have
-  a look at them.
+  a look at them.</p>
   
   <p>In Komodo Edit, you can run controller tests with the <em>Run Command</em>
   <code>rake test:functionals</code>, using the default setting of running
@@ -439,7 +439,7 @@
   <p>It's not obvious why this test is failing.  Rails tests
   are just Ruby code, so let's fire up the debugger to have a closer look
   (if you're on Komodo IDE please feel free to follow along), with the
-  following steps:
+  following steps:</p>
   
   <ul>
     <li>Set a breakpoint
