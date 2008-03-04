@@ -33,7 +33,7 @@
     later).</li>
 
     <li>A local installation of <a target="_blank" href=
-    "http://www.rubyonrails.org/down">Rails version 2.x</a>.</li>
+    "http://www.rubyonrails.org/down">Ruby on Rails</a> (version 2.x).</li>
 
     <li>Access to a <a target="_blank" href=
     "http://mysql.org/downloads/">MySQL</a> or
@@ -91,7 +91,10 @@
 
     <li>Migrating databases</li>
 
-    <li>Running Webrick or Mongrel (two web servers for Rails)</li>
+    <li>Running a built-in web server(<a target="_blank"
+    href="http://mongrel.rubyforge.org/">Mongrel</a>, <a target="_blank"
+    href="http://www.webrick.org/">Webrick</a>, or <a target="_blank"
+    href="http://www.lighttpd.net/">LightHTTPD</a>)</li>
 
     <li>Debugging the application</li>
   </ul>
@@ -128,8 +131,8 @@
     part of database manipulation; Rails handles all data manipulation.
   </ol>
 
-  <p>If Rails has been installed correctly, you should see a Komodo
-  Alert dialog box saying "The movielib project is built". The
+  <p>If Rails has been installed correctly, you should see output in the
+  bottom pane saying "The movielib project is built".  The
   movielib.kpf project should open in the <strong>Projects</strong>
   tab on the left, and should contain "<a href=
   "../folders.html">Live Folders</a>" of all the
@@ -268,7 +271,6 @@
       create  test/functional/movies_controller_test.rb
       create  app/helpers/movies_helper.rb
        route  map.resources :movies
-
 </pre>
 
   <p>Several files are created and opened in editor tabs.  You can unclutter
