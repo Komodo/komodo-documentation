@@ -128,7 +128,7 @@
     SQLite, so if you choose PostgreSQL or Oracle, you'll need to build
     your databases outside Komodo using either the command-line or another
     application.  This covers the DDL (Data Definition Language)
-    part of database manipulation; Rails handles all data manipulation.
+    part of database manipulation; Rails handles all data manipulation.</li>
   </ol>
 
   <p>If Rails has been installed correctly, you should see output in the
@@ -302,7 +302,7 @@
   <p>Let's add a couple of sanity checks to the model: we want to verify
   that all movie entries have a title, and that there are no duplicates.  Bring
   up <em>movie.rb</em> and add this code at lines 2 and 3, immediately after
-  <code>class Movie < ActiveRecord::Base</code>:
+  <code>class Movie &lt; ActiveRecord::Base</code>:
   
   <pre class="code">
    validates_presence_of :title
@@ -329,9 +329,9 @@
  end
 
  def test_unique
-   m1 = Movie.create(:title => "Alien")
+   m1 = Movie.create(:title =&gt; "Alien")
    assert m1.valid?
-   m2 = Movie.create(:title => "Alien")
+   m2 = Movie.create(:title =&gt; "Alien")
    # First film should still be valid
    assert m1.valid?
    assert !m2.valid?
@@ -405,7 +405,7 @@
   
   <pre class="code">
   assert_difference('Movie.count') do
-       post :create, :movie => { }
+       post :create, :movie =&gt; { }
      end
   </pre>
 
@@ -419,7 +419,7 @@
   <pre class="code">
    def test_should_create_movie
      assert_difference('Movie.count') do
-       post :create, :movie => { :title => "movie 3" }
+       post :create, :movie =&gt; { :title =&gt; "movie 3" }
      end
   </pre>
   
@@ -431,7 +431,7 @@
 
   <pre class="code">
   def test_should_update_movie
-    put :update, :id => movies(:one).id, :movie => { }
+    put :update, :id =&gt; movies(:one).id, :movie =&gt; { }
     assert_redirected_to movie_path(assigns(:movie))
   end
   </pre>
@@ -568,7 +568,7 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   enabled the <em>prototype.js</em> code intelligence API catalog
   in preferences.</p>
 
-  <P>Again, there's no need to restart the server.  As soon as you load
+  <p>Again, there's no need to restart the server.  As soon as you load
   the new controller and view code, your changes will come into
   effect.</p>
 
@@ -620,7 +620,7 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   <p>to</p>
   
   <pre class="code">
-     @movies = Movie.paginate(:page => params[:page])
+     @movies = Movie.paginate(:page =&gt; params[:page])
   </pre>
   
   <p>Add this code at the class level to <em>model.rb</em> (lines 4-5):</p>
@@ -634,12 +634,12 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   of <em>app/views/movies/index.html.erb</em> should contain this code:</p>
   
   <pre class="code">
-  <% if @movies.size > Movie.per_page -%>
-  <br />
-  <%= will_paginate(@movies) %>
-  <% end %>
-  <br />
-  <%= link_to 'New movie', new_movie_path %>
+  &lt;% if @movies.size &gt; Movie.per_page -%&gt;
+  &lt;br /&gt;
+  &lt;%= will_paginate(@movies) %&gt;
+  &lt;% end %&gt;
+  &lt;br /&gt;
+  &lt;%= link_to 'New movie', new_movie_path %&gt;
   </pre>
 
   <h3><a name="testing_pagination" id="testing_pagination">Testing
@@ -653,21 +653,21 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   <pre class="code">
   def test_pagination
     Movie.delete_all
-    35.times {|i| Movie.create(:title => "title #{i}")}
+    35.times {|i| Movie.create(:title =&gt; "title #{i}")}
     get :index
-    assert_tag(:tag => 'div',
-               :attributes => { :class => 'pagination'})
-    assert_tag(:tag => 'span',
-               :content => '&laquo; Previous',
-               :attributes => { :class => 'disabled'})
-    assert_tag(:tag => 'span',
-               :content => '1',
-               :attributes => { :class => 'current'})
-    assert_tag(:tag => 'div',
-               :attributes => { :class => 'pagination'},
-               :child => { :tag => 'a',
-                 :attributes => { :href => "/movies?page=4" },
-                 :content => "4" })
+    assert_tag(:tag =&gt; 'div',
+               :attributes =&gt; { :class =&gt; 'pagination'})
+    assert_tag(:tag =&gt; 'span',
+               :content =&gt; '&laquo; Previous',
+               :attributes =&gt; { :class =&gt; 'disabled'})
+    assert_tag(:tag =&gt; 'span',
+               :content =&gt; '1',
+               :attributes =&gt; { :class =&gt; 'current'})
+    assert_tag(:tag =&gt; 'div',
+               :attributes =&gt; { :class =&gt; 'pagination'},
+               :child =&gt; { :tag =&gt; 'a',
+                 :attributes =&gt; { :href =&gt; "/movies?page=4" },
+                 :content =&gt; "4" })
   end
   </pre>
   
@@ -678,7 +678,7 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   <pre class="code">
   def test_pagination
     Movie.delete_all
-    35.times {|i| Movie.create(:title => "title #{i}")}
+    35.times {|i| Movie.create(:title =&gt; "title #{i}")}
     get :index
     assert_response :success
   end
@@ -690,14 +690,14 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   in Komodo, and found the paginator was generating this code:</p>
   
   <pre class="code">
-  &lt;div class="pagination">
-      &lt;span class="disabled">&amp;laquo; Previous&lt;/span>
-      &lt;span class="current">1&lt;/span>
-      &lt;a href="/movies?page=2">2&lt;/a>
-      &lt;a href="/movies?page=3">3&lt;/a>
-      &lt;a href="/movies?page=4">4&lt;/a>
-      &lt;a href="/movies?page=2">Next &amp;raquo;&lt;/a>
-  &lt;/div>
+  &lt;div class="pagination"&gt;
+      &lt;span class="disabled"&gt;&amp;laquo; Previous&lt;/span&gt;
+      &lt;span class="current"&gt;1&lt;/span&gt;
+      &lt;a href="/movies?page=2"&gt;2&lt;/a&gt;
+      &lt;a href="/movies?page=3"&gt;3&lt;/a&gt;
+      &lt;a href="/movies?page=4"&gt;4&lt;/a&gt;
+      &lt;a href="/movies?page=2"&gt;Next &amp;raquo;&lt;/a&gt;
+  &lt;/div&gt;
   </pre>
   
   <p>We then entered an interactive context with the <code>Debug|Interact</code>
@@ -723,16 +723,16 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   <p>Add this code to movies/index.html.erb, around line 10:</p>
   
   <pre class="code">
-      &lt;td class="dvdlib_item">
-       &lt;% @movie = movie %>
-       &lt;%= in_place_editor_field :movie, :title %>
-     &lt;/td>
+      &lt;td class="dvdlib_item"&gt;
+       &lt;% @movie = movie %&gt;
+       &lt;%= in_place_editor_field :movie, :title %&gt;
+     &lt;/td&gt;
   </pre>
   
   <p>Replace line 3 of <em>show.html.erb</em> with just this line:</p>
   
   <pre class="code">
-      &lt;%= in_place_editor_field :movie, :title %>
+      &lt;%= in_place_editor_field :movie, :title %&gt;
   </pre>
   
   
@@ -751,7 +751,7 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   
   <pre class="code">
    in_place_edit_for :movie, :title
-   protect_from_forgery :except => [:set_movie_title]
+   protect_from_forgery :except =&gt; [:set_movie_title]
   </pre>
    
   <p>Also in the controller, change the <code>edit</code> method
@@ -763,8 +763,8 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   def edit
     @movie = Movie.find(params[:id])
     respond_to do |format|
-      format.html { render :action => "show" }
-      format.xml  { render :xml => @movie }
+      format.html { render :action =&gt; "show" }
+      format.xml  { render :xml =&gt; @movie }
     end
   end
   </pre>
@@ -795,9 +795,9 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   <p>Set the contents of 002_add_borrower_information.rb to this:</p>
   
   <pre class="code">
-  class AddBorrowerInformation < ActiveRecord::Migration
+  class AddBorrowerInformation &lt; ActiveRecord::Migration
     def self.up
-      add_column :movies, :borrower, :string, :limit => 60
+      add_column :movies, :borrower, :string, :limit =&gt; 60
       add_column :movies, :borrowed_on, :date
       add_column :movies, :due_on, :date
     end
@@ -826,7 +826,7 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
     if borrowed_on.blank? &amp;&amp; borrower.blank? &amp;&amp; due_on.blank?
       # ok
     elsif !borrowed_on.blank? &amp;&amp; !borrower.blank? &amp;&amp; !due_on.blank?
-      if due_on < borrowed_on
+      if due_on &lt;borrowed_on
         errors.add(:due_on, "is before date-borrowed")
       end
     elsif borrowed_on.blank?
@@ -844,7 +844,7 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   
   <pre class="code">
   def test_borrower
-    m = Movie.create(:title => "House")
+    m = Movie.create(:title =&gt; "House")
     m.borrowed_on = Date.today
     assert !m.valid?
     m.borrower = "Dave"
@@ -880,12 +880,12 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
 
   <pre class="code">
     &lt;h1>Checkout a movie&lt;/h1>
-    &lt;p>Title: &lt;%= h @movie.title %>&lt;/p>
-    &lt;% form_tag :action => 'checkout', :id => @movie do %>
-      &lt;p>Your name: &lt;%= text_field(:movie, :borrower) %>
-      &lt;%= submit_tag 'Check out' %>
-    &lt;% end %>
-    &lt;%= link_to 'Back to the library', movies_path %>
+    &lt;p&gt;Title: &lt;%= h @movie.title %&gt;&lt;/p&gt;
+    &lt;% form_tag :action =&gt; 'checkout', :id =&gt; @movie do %&gt;
+      &lt;p&gt;Your name: &lt;%= text_field(:movie, :borrower) %&gt;
+      &lt;%= submit_tag 'Check out' %&gt;
+    &lt;% end %&gt;
+    &lt;%= link_to 'Back to the library', movies_path %&gt;
   </pre>
 
   <p>You might have noticed that we accept any name to be
@@ -915,7 +915,7 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
          flash[:notice] = 'Movie was successfully created.'
          redirect_to(movies_url)
        else
-         render :action => "checkout"
+         render :action =&gt; "checkout"
        end
      else
        # Render the template, the default
@@ -938,37 +938,37 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   <p>Finally we update the list view in <em>index.html.erb</em>:</p>
 
   <pre class="code">
-  &lt;h2>Movies&lt;/h2>
+  &lt;h2>Movies&lt;/h2&gt;
   
-  &lt;table>
-    &lt;tr>
-      &lt;th class="dvdlib_header">Title&lt;/th>
-      &lt;th class="dvdlib_header">Status&lt;/th>
-    &lt;/tr>
-   &lt;% for movie in @movies %>
-    &lt;tr>
-      &lt;td class="dvdlib_item">
-       &lt;% @movie = movie %>
-       &lt;%= in_place_editor_field :movie, :title %>
-     &lt;/td>
-      &lt;% if movie.borrower %>
-      &lt;td class="dvdlib_item">Signed out by: &lt;%= h movie.borrower %>&lt;/td>
-      &lt;td class="dvdlib_item">Due &lt;%= h movie.due_on %>&lt;/td>
-      &lt;td class="dvdlib_item">&lt;%= link_to 'Return', :action => 'return', :id => movie %>&lt;/td>
-      &lt;% else %>
-      &lt;td class="dvdlib_item">&lt;%= link_to 'Check out', :action => 'checkout', :id => movie %>&lt;/td>
-      &lt;td class="dvdlib_item">&lt;%= link_to 'Remove', { :action => 'destroy', :id => movie },
-         :confirm => 'Are you sure?', :method => :delete %>&lt;/td>
-      &lt;% end %>
-    &lt;/tr>
-   &lt;% end %>
-  &lt;/table>
-  &lt;% if @movies.size > 0 -%>
-  &lt;br />
-  &lt;%= will_paginate(@movies) %>
-  &lt;% end %>
-  &lt;br />
-  &lt;%= link_to 'Add new movie', new_movie_path %>
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th class="dvdlib_header"&gt;Title&lt;/th&gt;
+      &lt;th class="dvdlib_header"&gt;Status&lt;/th&gt;
+    &lt;/tr&gt;
+   &lt;% for movie in @movies %&gt;
+    &lt;tr&gt;
+      &lt;td class="dvdlib_item"&gt;
+       &lt;% @movie = movie %&gt;
+       &lt;%= in_place_editor_field :movie, :title %&gt;
+     &lt;/td&gt;
+      &lt;% if movie.borrower %&gt;
+      &lt;td class="dvdlib_item"&gt;Signed out by: &lt;%= h movie.borrower %&gt;&lt;/td&gt;
+      &lt;td class="dvdlib_item"&gt;Due &lt;%= h movie.due_on %&gt;&lt;/td&gt;
+      &lt;td class="dvdlib_item"&gt;&lt;%= link_to 'Return', :action =&gt; 'return', :id =&gt; movie %&gt;&lt;/td&gt;
+      &lt;% else %&gt;
+      &lt;td class="dvdlib_item"&gt;&lt;%= link_to 'Check out', :action =&gt; 'checkout', :id =&gt; movie %&gt;&lt;/td&gt;
+      &lt;td class="dvdlib_item"&gt;&lt;%= link_to 'Remove', { :action =&gt; 'destroy', :id =&gt; movie },
+         :confirm =&gt; 'Are you sure?', :method =&gt; :delete %&gt;&lt;/td&gt;
+      &lt;% end %&gt;
+    &lt;/tr&gt;
+   &lt;% end %&gt;
+  &lt;/table&gt;
+  &lt;% if @movies.size &gt; 0 -%&gt;
+  &lt;br /&gt;
+  &lt;%= will_paginate(@movies) %&gt;
+  &lt;% end %&gt;
+  &lt;br /&gt;
+  &lt;%= link_to 'Add new movie', new_movie_path %&gt;
   </pre>
   
   <p>Add two tests to <em>movies_controller_test.rb</em> to verify that everything
@@ -976,12 +976,12 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   
   <pre class="code">
   def test_checkout_get
-    get :checkout, :id => movies(:one).id
+    get :checkout, :id =&gt; movies(:one).id
     assert_response :success
   end
 
   def test_checkout_put
-    post :checkout, :id => movies(:one).id, :movie => {:borrower => "Fred"}
+    post :checkout, :id =&gt; movies(:one).id, :movie =&gt; {:borrower =&gt; "Fred"}
     assert_redirected_to movies_path
   end
   </pre>
