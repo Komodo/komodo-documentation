@@ -22,8 +22,9 @@ of Komodo IDE and Komodo Edit.</p>
 <h2 id="whatsnew">What's New in Komodo IDE/Edit</h2>
 
 <ul>
-  <li>Find/Replace improvements: A better interface for multi-line text entry
-  and a new options to Replace in Files and Find in Project.</li>
+  <li>Find/Replace improvements: A better interface for multi-line text entry,
+  support for Replace over multiple files,
+  and new options to single-file Replace, and Find in Project.</li>
   <li>Unit testing: Support in Komodo for unit test frameworks for PHP, Python,
   Ruby, and Perl.</li>
   <li><strong><a href="../unittest.html">Unit Test Integration</a></strong>
@@ -39,6 +40,7 @@ of Komodo IDE and Komodo Edit.</p>
   background while you continue to work.</li>
   <li>Code intelligence improvements: Better support for PHP, Tcl 8.5
   and Perl 5.10.</li>
+  <li>Komodo Edit now supports Tcl syntax-checking.</li>
   <li>Numerous bug fixes and improvements.</li>
 </ul>
 
@@ -68,8 +70,9 @@ of Komodo IDE and Komodo Edit.</p>
 <ul>
   <li>Editor:
   <ul>
-    <li>Line-copy with no selection adds newline on paste if at the end of buffer. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73259">73259</a>)</li>
     <li>Fixed indentation commands ignoring some preferences in XML. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73695">73695</a>)</li>
+    <li>Line-copy with no selection moves cursor to start of following line. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=75251">75251</a>)</li>
+    <li>
   </ul></li>
   <li>Find/Replace:
   <ul>
@@ -82,8 +85,10 @@ of Komodo IDE and Komodo Edit.</p>
   </ul></li>
   <li>SCC:
   <ul>
+    <li>Perforce: Fixed an error where spurious error messages would appear in the Command Output window. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=75235">75235</a>)</li>
+    <li>Perforce "open for edit" dialog box no longer appears more than once. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=75217">75217</a>)</li>
     <li>Perforce now working with UNC paths. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=67182">67182</a>)</li>
-    <li>tab icons now update properly after a commit. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=72880">72880</a>)</li>
+    <li>Tab icons now update properly after a commit. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=72880">72880</a>)</li>
     <li>Perforce: Submit form now always uses a newline separator for the "description" field. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73103">73103</a>)</li>
     <li>No longer displaying superfluous "file has changed" notification on commit. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74471">74471</a>)</li>
     <li>SCC tab icons now update properly after commit. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=72880">72880</a>)</li>
@@ -91,15 +96,16 @@ of Komodo IDE and Komodo Edit.</p>
   </ul></li>
   <li>PHP:
   <ul>
-    <li>Autocomplete working with CodeIgniter. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73819">73819</a>)</li>
+    <li>Autocomplete working with CodeIgniter. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=75052">75052</a>)</li>
+    <li>Calltips no longer fooled by invalid PHPDoc. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73819">73819</a>)</li>
     <li>Fixed UDL parsing of single line comments. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73829">73829</a>, <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73837">73837</a>)</li>
     <li>Improved error messages for broken PHP configurations. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73485">73485</a>)</li>
     <li>Fixed problem causing PHP remote debugger to ignore breakpoints. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=54147">54147</a>)</li>
     <li>Added completion support for magic methods. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=69758">69758</a>)</li>
-    <li>Fixed problem with Go to Definition not working whith multiple files of the same name in the include path. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=71870">71870</a>)</li>
+    <li>Fixed problem with Go to Definition not working with multiple files of the same name in the include path. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=71870">71870</a>)</li>
     <li>Fixed xdebug binary crashing the php interpreter on Windows Vista. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=75127">75127</a>)</li>
   </ul></li>
-  <li>Perl: No longer showing bogus prox var '${' (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74380">74380</a>)</li>
+  <li>Perl: No longer showing bogus proximity variable '${' (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74380">74380</a>)</li>
   <li>Documentation:
   <ul>
     <li>PHP remote debugging XDEBUG_SESSION_START instructions more explicit. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74088">74088</a>)</li>
@@ -112,9 +118,16 @@ of Komodo IDE and Komodo Edit.</p>
     <li>'tT' and ';,' find commands fixed. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=67045">67045</a>)</li>
     <li>Change "c" with search "/" now works. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73315">73315</a>)</li>
   </ul></li>
-  <li>XML files retain highlighting after a save-as operation.  (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=71648">71648</a>)</li>
+
+  <li>If spellcheck dictionaries are installed in the profile area (such
+  as <tt>c:\Documents and Settings\ericp\Application Data\ActiveState\KomodoIDE\4.3</tt>), they will automatically
+  be copied to other profile directories in future upgrades.  (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74629">74629</a>)</li>
+  <li>When upgrading to a new version of Komodo, usernames and passwords for
+  remote accounts are now imported automatically.  (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=70187">70187</a>)</li>
+  <li>XML files that don't have recognized extensions (e.g. *.rdf files) retain highlighting after a save-as operation.  (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=71648">71648</a>)</li>
   <li>Fix syntax checking always reporting "in progress" (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74372">74372</a>)</li>
   <li>New files use proper encoding and document preferences. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=74098">74098</a>)</li>
+  <li>Update readonly/writable status of non-SCC files (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73415">73415</a>)</li>
   <li>Snippet insertion properly respects your indentation preferences. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=72127">72127</a>)</li>
   <li>Soft Characters: "Editor: Move One Character Right" (e.g. right arrow) can now be used to harden a soft character sequence. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73901">73901</a>)</li>
   <li>Remote files: Fixed problem with "sticky" incorrect login details. (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=68773">68773</a>)</li>
@@ -152,13 +165,6 @@ Bug Database</a>.</p>
 "install_issues">Installation &amp; Upgrade</a></h3>
 
 <ul>
-  <li>When upgrading to a version of Komodo with a new
-  <a href="../trouble.html#appdata_dir">application
-  data directory</a> (i.e. 4.0.1 to 4.0.3 or 4.0.3 to 4.1),
-  the usernames and passwords for <a href="../prefs.html#Servers">Remote
-  Accounts</a> are not imported. These must be re-entered for each Server
-  in the Server Preferences panel after the upgrade.</li>
-
   <li>Windows Vista will prompt you to either 'Allow' or
   'Deny' the installation. Click on 'Allow' and Komodo will
   install normally.</li>
@@ -254,7 +260,7 @@ Bug Database</a>.</p>
 "Debugging_Issues">Debugging</a></h3>
 
 <ul>
-  <li>Python: Breakspoints will not work with the <a target="_blank"
+  <li>Python: Breakpoints will not work with the <a target="_blank"
   href="http://psyco.sourceforge.net/">Psyco</a> extension enabled.
   The Komodo <a href="../trouble.html#psyco_debug">FAQ</a> has a
   work-around solution.</li>
