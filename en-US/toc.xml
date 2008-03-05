@@ -814,22 +814,26 @@
       <node name="Editing the database.yml file" link="tutorial/railstut.html#rails_edit_database_yml"/>
       <node name="Running the Create Databases Macro" link="tutorial/railstut.html#rails_create_databases_macro"/>
     </node>
-    <node name="Generating Models" link="tutorial/railstut.html#rails_generate_models">
-      <node name="The Movie Model" link="tutorial/railstut.html#rails_movie_model"/>
-      <node name="The Person Model" link="tutorial/railstut.html#rails_person_model"/>
-      <node name="The Checkout Model" link="tutorial/railstut.html#rails_checkout_model"/>
-      <node name="Migration" link="tutorial/railstut.html#rails_migration"/>
-    </node>
     <node name="Creating a Scaffold" link="tutorial/railstut.html#rails_generate_scaffold"/>
-    <node name="Starting the WEBrick Server" link="tutorial/railstut.html#rails_starting_webrick"/>
-    <node name="Listing and Adding Movies" link="tutorial/railstut.html#rails_list_page"/>
-    <node name="Editing a Title in Place" link="tutorial/railstut.html#rails_edit_title"/>
-    <node name="Check Out a Movie" link="tutorial/railstut.html#rails_check_out"/>
-    <node name="Debugging Rails" link="tutorial/railstut.html#rails_debug"/>
-    <node name="Returning a movie" link="tutorial/railstut.html#rails_return_movie"/>
-    <node name="Viewing Checkout Details" link="tutorial/railstut.html#rails_checkout_details"/>
+    <node name="Migration" link="tutorial/railstut.html#rails_migration"/>
+    <node name="Rails Testing Basics" link="tutorial/railstut.html#rails_testing_basics">
+      <node name="Running Model Tests in Komodo IDE" link="tutorial/railstut.html#running_tests_in_komodo_ide"/>
+      <node name="Running Tests in Komodo Edit" link="tutorial/railstut.html#running_tests_in_komodo_edit"/>
+      <node name="Running Controller Tests" link="tutorial/railstut.html#running_controller_tests"/>
+    </node>
+    <node name="Starting the Rails Application Server" link="tutorial/railstut.html#rails_starting_app">
+      <node name="Mongrel Issues" link="tutorial/railstut.html#mongrel_issues"/>
+      <node name="Testing the Application" link="tutorial/railstut.html#testing_app_1"/>
+    </node>
+    <node name="Installing Plugins" link="tutorial/railstut.html#installing_plugins">
+      <node name="Adding Pagination" link="tutorial/railstut.html#adding_pagination"/>
+      <node name="Testing Pagination" link="tutorial/railstut.html#testing_pagination"/>
+      <node name="Using Pagination" link="tutorial/railstut.html#using_pagination"/>
+      <node name="Adding In-Place Editing" link="tutorial/railstut.html#adding_in_place_editing"/>
+    </node>
+    <node name="Adding Borrower Data" link="tutorial/railstut.html#adding_borrower_data"/>
+    <node name="Handling Checkouts" link="tutorial/railstut.html#handling_checkouts"/>
     <node name="Rails Resources" link="tutorial/railstut.html#rails_resources"/>
-    <node name="" link="tutorial/railstut.html#"/>
   </node>
   <node id="js_tutorial" name="JavaScript Tutorial" link="tutorial/jstut.html#jstut_top"
         flags="ide">
