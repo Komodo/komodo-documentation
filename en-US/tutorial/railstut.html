@@ -742,18 +742,18 @@
   </pre>
   
   
-  <p>It should replace the line that displays the movie's title in a readonly
-  field (like <code>&lt;%= h(movie.title) %></code>) since you're now
-  allowing the user to edit the field directly.  You can also
-  remove the link to the edit page (in the <em>show.html.erb</em> file
-  as well), and remove
+  <p>It should replace the line that displays the movie's title in a
+  readonly field (<code>&lt;%= h(movie.title) %></code>) with a
+  user-editable field. You can also remove the link to the edit page (in
+  the <em>show.html.erb</em> file as well), and remove
   <em>views/movies/edit.html.erb</em> by right-clicking its icon in the
-  project view, pressing <strong>Delete</strong>, and choosing "Move to Trash".</p>
+  project view, selecting <strong>Delete</strong>, and choosing "Move to
+  Trash".</p>
   
   <p>Finally you need to tell your controller you're doing in-place
   editing:</p>
   
-  <p>First line inside the MoviesController class:</p>
+  <p>On line 2 of <em>movies_controller.rb</em> add:</p>
   
   <pre class="code">
    in_place_edit_for :movie, :title
@@ -795,8 +795,8 @@
   pieces needed to track DVDs that leave the library,
   who took them, and when they need to bring them back.</p>
   
-  <p>Run <code>Rails Tools|Generate|Migration</code>, with a migration name of
-  <code>AddBorrowerInformation</code></p>.
+  <p>Run <strong>Rails Tools|Generators|Migration</strong>, with a migration name of
+  <code>AddBorrowerInformation</code>.</p>
   
   <p>Set the contents of 002_add_borrower_information.rb to this:</p>
   
@@ -816,14 +816,14 @@
   end
   </pre>
   
-  <p>and run the <code>Rails Tools|Migrate|db:migrate</code> tool.</p>
+  <p>Run the <code>Rails Tools|Migrate|db:migrate</code> tool.</p>
   
-  <p>Let's add another validation routine.  This one's more complex:
-  we want to verify that if any of the <code>borrower</code>, <code>borrowed_on</code>,
-  and <code>due_on</code> fields are specified, they all are, and we'll due
-  a sanity check on the value of <code>due_on</code>.  This is to guard the
-  case where someone hits the controller without going
-  through one of our own views.</p>
+  <p>Let's add another validation routine. This one's more complex: we
+  want to verify that if any of the <code>borrower</code>,
+  <code>borrowed_on</code>, and <code>due_on</code> fields are
+  specified, they all are, and we'll do a sanity check on the value of
+  <code>due_on</code>. This is to guard the case where someone hits the
+  controller without going through one of our own views.</p>
   
   <p>Add this method to <em>movie.rb</em>:</p>
 
@@ -894,19 +894,17 @@
     &lt;%= link_to 'Back to the library', movies_path %&gt;
   </pre>
 
-  <p>You might have noticed that we accept any name to be
-  typed in the form.  We can get away with this because we're building
-  a lending library that our co-workers would use.  In a
-  public application you would need to build a separate
-  table to track members, and another one to handle
-  login status, and then you'd have to deal with issues
-  like password hashing and email address verification.
-  All good information, and interesting,
-  but beyond the scope of this tutorial.  See the references
-  section for more info.</p>
+  <p>You might have noticed that we accept any name to be typed in the
+  form. We can get away with this because we're building a lending
+  library that our friends will use. In a public application you would
+  need to build a separate table to track members, and another one to
+  handle login status, and then you'd have to deal with issues like
+  password hashing and email address verification. All good information,
+  and interesting, but beyond the scope of this tutorial. See the
+  references section for more info.</p>
 
   <p>Here are the two new methods we need to add to the
-  controller:</p>
+  <em>movies_controller.rb</em>:</p>
   
   <pre class="code">
    # Non-Rest methods
@@ -916,7 +914,7 @@
        # It's an update
        @movie.borrower = params[:movie][borrower]
        @movie.borrowed_on = today = Date.today
-       @movie.due_on = today + duration()
+       @movie.due_on = today + 7
        if @movie.save
          flash[:notice] = 'Movie was successfully created.'
          redirect_to(movies_url)
@@ -992,20 +990,23 @@
   end
   </pre>
   
-  <p>We were expecting no errors, but this time we get an <code>undefined
-  local variable or method error</code> for <code>borrower</code> at line 99
-  of <em>movie_controller.rb</em>.  Sure enough, we forgot to put a ":" before
-  the param name "borrower".  Change it to <code>:borrower</code>, rerun the
-  tests, and they should pass.</p>
+  <p>We were expecting no errors, but this time we get an
+  <code>undefined local variable or method error</code> for
+  <code>borrower</code> at around line 97-99 of
+  <em>movie_controller.rb</em>. Sure enough, we forgot to put a ":"
+  before the param name "borrower". Change it to <code>:borrower</code>,
+  rerun the tests, and they should pass.</p>
   
   <p>People familiar with the first version of this tutorial will recall
-  firing up the debugger to correct a problem like this.  Writing tests is
-  more efficient.  You can debug Rails apps if you need to, though.  Press the
-  <code>Rails Tools|Run|debug rails app</code> tool, set breakpoints at the points in the controllers and
-  views you're interested in, and then hit them with your application.</p>
+  firing up the debugger to correct a problem like this. Writing tests
+  is more efficient. You can debug Rails apps if you need to, though.
+  Press the <code>Rails Tools|Run|debug rails app</code> tool, set
+  breakpoints at the points in the controllers and views you're
+  interested in, and then hit them with your application.</p>
   
-  <p>Finally, fire up the server one more time, and verify that your application
-  now works as you expect.  You're ready to take this one live.</p>
+  <p>Finally, fire up the server one more time, and verify that your
+  application now works as you expect. You're ready to take this one
+  live.</p>
 
   <h2><a name="rails_resources" id="rails_resources">Rails
   Resources</a></h2>
