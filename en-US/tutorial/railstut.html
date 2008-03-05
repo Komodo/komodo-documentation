@@ -183,7 +183,7 @@
   <em>database.yml</em> file:</p>
 
   <ol>
-    <li>Open the Config project folder and double-click
+    <li>Open the <strong>config</strong> project folder and double-click
     <em>database.yml</em> to open it in an editor tab.</li>
 
     <li>As necessary, modify the <code>username</code> and
@@ -314,11 +314,12 @@
   
   <p>In the second line, after you type <code>:t</code> you can press
   the tab key to have it finish <code>:title</code>.  If this does nothing
-  verify that the setting in  <code>[Preferences|Editor|Smart Editing|Use tab
-  character to complete words like Ctrl+Space]</code> is on.</p>
+  verify that the "Use tab character to complete words like Ctrl+Space"
+  setting is on under <strong>Edit|Preferences|Editor|Smart
+  Editing</strong>.</p>
   
-  <p>Bring up <em>movie_test.rb</em>, delete the trivial test the scaffolder
-  generated for you, and add these two tests:</p>
+  <p>Bring up <em>movie_test.rb</em>, delete the <code>test_truth</code>
+  that the scaffolder generated for you, and add these two tests:</p>
   
   <pre class="code">
  def test_present
@@ -343,17 +344,17 @@
   <h3><a name="running_tests_in_komodo_ide" id="running_tests_in_komodo_ide">
   Running Model Tests in Komodo IDE</a></h3>
   
-  <p>Komodo IDE introduced unit-test integration with version 4.3.  To run
-  the unit tests click on the <strong>Test Plan</strong> tab in the bottom window, and you
-  should see a set of tests in the test plan dropdown menu on the right side.
-  Select "test:units", and press the Run button immediately to the right.
-  </p>
+  <p>Komodo IDE introduced unit-test integration with version 4.3. To
+  run the unit tests click on the <strong>Test Results</strong> tab in
+  the bottom window. In the test plan dropdown menu on the right side.
+  Select "test:units", and press the <strong>Run</strong> button
+  immediately to the right.</p>
   
-  <p>You should see the tests run for a few seconds, and then a list of results
-  will appear.  If you get a message along the lines of the following:
-  "Run `rake db:migrate` to update your database then try again."
-  you probably skipped that step above.  Run the <code>Rails Tools|Migrate|db:migrate</code>
-  command, and retry the tests.</p>
+  <p>You should see the tests run for a few seconds, and then a list of
+  results will appear. If you get a message along the lines of the
+  following: "Run `rake db:migrate` to update your database then try
+  again." you probably skipped that step above. Run the <strong>Rails
+  Tools|Migrate|db:migrate</strong> command, and retry the tests.</p>
 
   <p>The result tab should show that 2 tests passed, 0 failed, and
   there were 0 errors.  There's also an "Information" line,
@@ -364,44 +365,44 @@
   <h3><a name="running_tests_in_komodo_edit" id="running_tests_in_komodo_edit">
   Running Tests in Komodo Edit</a></h3>
   
-  <p>You can run unit tests inside Komodo with the <code>Rails Tools|Test|Unit Tests</code>
-  command.  This will show the results in the
-  Command Output window.  You should see a final result of:</p>
+  <p>This tutorial assumes you're using Komodo IDE, but it's easy to
+  follow along with Komodo Edit. You can run unit tests inside Komodo
+  Edit with the <strong>Rails Tools|Test|Unit Tests</strong> command.
+  This will show the results in the Command Output window. You should
+  see a final result of:</p>
+  
   <pre>
     2 tests, 6 assertions, 0 failures, 0 errors
   </pre>
   
+  <p>Other commands (e.g. <code>rake test:functionals</code> below) can
+  be run in a <a href="../run.html">Run Command</a>.</p>
+
   <h3><a name="running_controller_tests">Running Controller Tests</a></h3>
   
-  <p>While the generated model test file has one trivial test,
-  the Rails scaffolder generates a full complement of
-  controller tests.  Bring up <em>movie_controller_test.rb</em> to have
-  a look at them.</p>
-  
-  <p>In Komodo Edit, you can run controller tests with the <em>Run Command</em>
-  <code>rake test:functionals</code>, using the default setting of running
-  in the <strong>Command Output Tab</strong>.  This tutorial will assume Komodo IDE,
-  but it's easy to follow along with Komodo Edit.</p>
+  <p>While the generated model test file has one trivial test, the Rails
+  scaffolder generates a full complement of controller tests. Bring up
+  <em>movie_controller_test.rb</em> to have a look at them.</p>
   
   <p>Click on the <strong>Test Results</strong> tab, select the
-  <strong>test:functionals</strong> test, and press
-  the right-facing triangle to run them. </p>
+  <strong>test:functionals</strong> test from the dropdown list, and
+  press the <strong>Run</strong> button.</p>
   
   <p>This time you should see that two of the tests failed:
   <code>test_should_create_movie</code> and
-  <code>test_should_update_movie</code>.  If you click on the red
-  failure button in the ribbon above the results, it will
-  walk through all the tests that failed.</p>
+  <code>test_should_update_movie</code>. If you click on the red "failures"
+  button above the results, it will cycle through the failed tests.</p>
   
-  <p>Notice how the <em>Details</em> window shows the results for each test.  Make sure
+  <p>The <strong>Details</strong> window shows the results for each test.  Make sure
   the <code>test_should_create_movie</code> test is highlighted in the
-  first window.  Move to the <em>Details</em> window, find the first line
-  of code that refers to <code>test/functional/movies_controller_test.rb</code>,
-  and double-click it.</p>
+  first window.</p>
   
-  <p>Komodo should make <em>movies_controller_test.rb</em> the current file, with
-  the cursor at the line that was reported in the traceback;
-  in this case, line 16.  We see that this code is failing:</p>
+  
+  <p>Double-click the first line of code that refers to
+  <code>test/functional/movies_controller_test.rb</code>.
+  <em>movies_controller_test.rb</em> should become the current file,
+  with the cursor at the line that was reported in the traceback; in
+  this case, line 16. We see that this code is failing:</p>
   
   <pre class="code">
   assert_difference('Movie.count') do
@@ -423,11 +424,12 @@
      end
   </pre>
   
-  <p>and rerun the test, we're now down to one failure.  Click on the red
-  failure button to move to the failed test, and then
-  double-click on the line starting with
-  <code>test/functional/movies_controller_test.rb:35:in `test_should_update_movie'</code>
-  in the  <em>Details</em> window to see the failed code.</p>
+  <p>If we rerun the test, we're now down to one failure. Click on the
+  red failure button to move to the failed test, then double-click on
+  the line starting with
+  <code>test/functional/movies_controller_test.rb:35:in
+  `test_should_update_movie'</code> in the <em>Details</em> window to
+  see the failed code.</p>
 
   <pre class="code">
   def test_should_update_movie
@@ -436,10 +438,9 @@
   end
   </pre>
   
-  <p>It's not obvious why this test is failing.  Rails tests
-  are just Ruby code, so let's fire up the debugger to have a closer look
-  (if you're on Komodo IDE please feel free to follow along), with the
-  following steps:</p>
+  <p>It's not obvious why this test is failing. Rails tests are just
+  Ruby code, so let's fire up the debugger (Komodo IDE only) to have a
+  closer look, with the following steps:</p>
   
   <ul>
     <li>Set a breakpoint
@@ -447,35 +448,40 @@
     <li>Bring up <em>movies_controller_test.rb</em></li>
     <li>Start the debugger, with the <code>Debug|Go/Continue</code> menu item</li>
     <li>In the <em>Debugging Options</em> box, make sure the Directory
-    field consists of the top-level directory of your project, namely the
-    directory containing the <em>movielib.kpf</em> file, not the test file.</li>
-    <li>Press OK.  </li>
+    field consists of the top-level directory of your project (the
+    directory containing the <em>movielib.kpf</em> file, not the test
+    file).</li>
+    <li>Press OK.</li>
     <li>The debugger should stop at line 62.  Now set breakpoints at lines 64 and
     68, to capture the success and failure branches, and continue.</li>
     <li>The debugger should stop at line 68, since this test failed.  Examine
     the cause of failure by clicking on the <strong>Self</strong> tab in the
     <strong>Debug: movies_controller.rb</strong>
-    tab, finding <code>@movies</code>, and then expanding the <code>.@errors</code>
+    tab, finding <code>@movie</code>, and then expanding the <code>.@errors</code>
     field under it.  This
     field has another <code>.@errors</code> field, so expand that, and you'll see that the
     <code>title</code> field is set to <code>"has already been taken"</code>.  Why?</li>
   </ul>
   
   <p>What are those duplicate values?  While the debugger is still running,
-  enter the interactive shell with the <em>Debug|Interact</em> menu command,
-  and type the line</p>
+  enter the interactive shell with the <strong>Debug|Interact</strong> menu command,
+  and type the line:</p>
+  
   <pre>
     Movie.find(:all).map(&amp;:title)
   </pre>
+  
   <p>Ruby should reply with <code>["MyString", "MyString"]</code>.  Those values
   come from the file <em>test/fixtures/movies.yml</em>.  The problem
   is that when Rails reads the fixtures file to populate the database, it doesn't
-  run the values through ActiveRecord's validation checks.  But now the <code>update</code>
-  method does pass the value through, and ran into the validation. </p>
+  run the values through ActiveRecord's validation checks. Once you
+  start using controller methods, like the <code>update</code> method
+  here, the values are run through validation checks.</p>
   
-  <p>Let's fix that.  Stop the debugger, and change one of those "MyString"
-  movie titles to something more interesting, like "Who Is Harry Kellerman and Why Is He Saying Those Terrible Things About Me?"
-or "My Other String", if you're not up for all that typing (or copying and pasting).</p>
+  <p>Let's fix that. Stop the debugger and change one of those
+  "MyString" movie titles to something more interesting, like "Who Is
+  Harry Kellerman and Why Is He Saying Those Terrible Things About Me?",
+  or "My Other String", if you're not up for all that typing.</p>
   
   <p>The unit and functional tests should now pass.</p>
 
@@ -498,8 +504,11 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   different versions of Mongrel, Mongrel_Service and Rails haven't been worked out
   on Windows yet.  If your console window exits with a <code>MissingSourceFile</code>
   message (along with a long traceback), you can have Rails use Webrick by editing
-  the <code>Rails Tools|Run|run server</code> and making the following change:</p>
+  the <strong>Rails Tools|Run|run server</strong> macro (right-click ->
+  Properties) and making the following change:</p>
+  
   <p>Replace the line:</p>
+  
     <pre class="code">
        as_rails_macros.launchRubyAppInConsole(this, project, 'script/server');
     </pre>
@@ -563,10 +572,11 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   &lt;/script>
   </pre>
   
-  <p>If you type this code in, you should see code-completion
-  after <code>Event.</code> and a call-tip after <code>(</code>, as long as you've
-  enabled the <em>prototype.js</em> code intelligence API catalog
-  in preferences.</p>
+  <p>If you type this code in, you should see code-completion after
+  '<code>Event.</code>' and a call-tip after '<code>(</code>' if you've
+  enabled the <em>prototype.js</em> code intelligence <a
+  href="../prefs.html#code_intel">API catalog</a> in <a
+  href="../prefs.html">Preferences</a>.</p>
 
   <p>Again, there's no need to restart the server.  As soon as you load
   the new controller and view code, your changes will come into
@@ -581,37 +591,36 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
   install it.  The idea is that people who don't need a particular
   widget shouldn't subsidize the few who want it.</p>
   
-  <p>We're going to install two plugins, to handle in-place editing and pagination.</p>
+  <p>We're going to install two plugins, to handle in-place editing and
+  pagination.</p>
   
-  <p>Fortunately Komodo ships with macros that install these plugins, and
-  add necessary patches.  Open the <code>Rails Tools|Plugins</code> folder in your
-  Rails project, and run the <code>in-place editing</code> and
-  <code>pagination</code> macros.  If you try to
-  install an installed plugin you'll get a warning.</p>
+  <p>Fortunately Komodo ships with macros that install these plugins,
+  and add necessary patches. Open the <code>Rails Tools|Plugins</code>
+  folder in your Rails project, and run the <code>in-place
+  editing</code> and <code>pagination</code> macros. If you try to
+  install a plugin that's already installed, you'll get a warning.</p>
   
   <p>It's easy to create new plugin macros.  Every installable plugin is
   treated as a resource, usually in a public subversion repository,
   and identifiable with a URI.  On the command-line you would invoke
-  <code>ruby script/install plugin ...</code> with that URI.  In Komodo you would
+  <code>ruby script/install plugin &lt;URI&gt;</code>.  In Komodo you would
   just need to copy one of the macros, paste it into the same Plugins
   folder, edit it, and replace the old URI with the new one.</p>
   
-  <p>Note that plugins need to be installed in every Rails project that
-  uses them separately
-  Rails server afterwards, so this would be a good time to stop the
-  current Rails server.  Find the window it's running in, and press
-  <code>Ctrl-C</code> or <code>Ctrl-Break</code> on Windows.
-  (Yes, that is no different from
-  stopping Rails on the command-line).</p>
+  <p>Plugins need to be installed in new Rails projects that use them
+  (i.e. the plugin is added to the specific Rails application, not to
+  Rails itself). You have to restart the server after doing this, so
+  this would be a good time to stop the current Rails server. Find the
+  window it's running in, and press <code>Ctrl-C</code>
+  (<code>Ctrl-Break</code> on Windows). We'll restart it again later.</p>
 
   <h3><a name="adding_pagination" id="adding_pagination">Adding
   Pagination</a></h3>
   
-  <p>First we'll add
-  pagination by making these changes to the <strong>movie</strong> model and
-  controller.</p>
+  <p>First we'll add pagination by making these changes to the
+  <strong>movie</strong> model and controller.</p>
   
-  <p>In <em>movies_controller.rb</em>, change line 5 from:</p>
+  <p>In <em>app/controllers/movies_controller.rb</em>, change line 5 from:</p>
 
   <pre class="code">
      @movies = Movie.find(:all)
@@ -623,21 +632,18 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
      @movies = Movie.paginate(:page =&gt; params[:page])
   </pre>
   
-  <p>Add this code at the class level to <em>model.rb</em> (lines 4-5):</p>
+  <p>Add this code at the class level to <em>app/models/movie.rb</em> (lines 4-5):</p>
   
   <pre class="code">
      cattr_reader :per_page
      @@per_page = 10
   </pre>
   
-  <p>Finally, add pagination to the view.  The last six lines
+  <p>Finally, add pagination to the view.  The last three lines
   of <em>app/views/movies/index.html.erb</em> should contain this code:</p>
   
   <pre class="code">
-  &lt;% if @movies.size &gt; Movie.per_page -%&gt;
-  &lt;br /&gt;
   &lt;%= will_paginate(@movies) %&gt;
-  &lt;% end %&gt;
   &lt;br /&gt;
   &lt;%= link_to 'New movie', new_movie_path %&gt;
   </pre>
@@ -658,7 +664,7 @@ or "My Other String", if you're not up for all that typing (or copying and pasti
     assert_tag(:tag =&gt; 'div',
                :attributes =&gt; { :class =&gt; 'pagination'})
     assert_tag(:tag =&gt; 'span',
-               :content =&gt; '&laquo; Previous',
+               :content =&gt; '&amp;laquo; Previous',
                :attributes =&gt; { :class =&gt; 'disabled'})
     assert_tag(:tag =&gt; 'span',
                :content =&gt; '1',
