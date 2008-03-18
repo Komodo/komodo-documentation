@@ -123,7 +123,7 @@ class Filters(ConfigVar):
         snapdragon
     """
     name = "filters"
-    known_values = ["ide", "edit", "snapdragon"]
+    known_values = ["ide", "edit", "snapdragon", "ideonly", "editonly"]
     
     def add_options(self, optparser):
         optparser.add_option("-F", "--filter",
