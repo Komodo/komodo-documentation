@@ -84,9 +84,10 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   <li>Find/Replace:
   <ul>
     <li>Find Next/Previous operations now correctly ignore the "find-searchBackward" preference. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75198">75198</a>)</li>
-    <li>Fixed causing "Find/Replace in Files" to fail on certain XML files (problem in XML prolog parsing). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75631">75631</a>)</li>
+    <li>Fixed bug causing Find/Replace in Files to fail on certain XML files (problem in XML prolog parsing). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75631">75631</a>)</li>
     <li>Fixed problem with 'Find Next' failing to jump to next instance (i18n). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=74641">74641</a>)</li>
     <li>Fixed bug causing symlinks to be ignored by Find in Files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75733">75733</a>)</li>
+    <li>Find/Replace in Files now uses Komodo's file association preferences. See also <a href="#Editing_Issues">Known Issues: Editing</a>. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75820">75820</a>)</li>
   </ul></li>
   <li>SCC:
   <ul>
@@ -252,6 +253,11 @@ Bug Database</a>.</p>
 "Editing_Issues">Editing</a></h3>
 
 <ul>
+  <li>By design, Komodo does not attempt Replace in Files operations on
+  unknown file types. However, file association preferences can be used
+  to associate a user-defined extenstion with a language category (e.g.
+  "Text") which then enables replacements for that file type.</li>
+  
   <li>Linux users may need to install the <acronym title="Smart Common
   Input Method">SCIM</acronym> platform packages for non-ASCII text entry.
   See "<a href="../install.html#System_Req_Lin">Linux Software
