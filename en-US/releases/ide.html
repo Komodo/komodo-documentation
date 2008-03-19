@@ -15,11 +15,12 @@
 <p>Welcome to Komodo, ActiveState's Integrated Development
 Environment (IDE). These Release Notes cover <a href="#whatsnew">what's
 new</a>, <a href="#details">detailed changes and bug fixes</a> and <a
-href="#knownissues">known issues</a> for the development version
-of Komodo IDE and Komodo Edit.</p>
+href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 
 <h2 id="whatsnew">What's New in Komodo IDE/Edit</h2>
+
+<h3 id="whatsnew-4.3.0">4.3.0</h3>
 
 <ul>
   <li>Find/Replace improvements: A better interface for multi-line text entry,
@@ -45,7 +46,15 @@ of Komodo IDE and Komodo Edit.</p>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
 
-<h3 id="changes">Changes:</h3>
+<h3 id="changes-4.3.0">4.3.1 Changes</h3>
+
+<ul>
+  <li>Find/Replace Dialog: The Replace field is now always visible. A
+  checkbox next to the field enables and disables it. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=75737">75737</a>)</li>
+</ul>
+
+<h3 id="changes-4.3.0">4.3.0 Changes</h3>
 <ul>
   <li>The default installation directory on Windows has changed.
   Previous versions installed in a directory which included the
@@ -55,7 +64,7 @@ of Komodo IDE and Komodo Edit.</p>
   version number.</li>
 </ul>
 
-<h3 id="enhancements">Enhancements:</h3>
+<h3 id="enhancements-4.3.0">4.3.0 Enhancements:</h3>
 
 <ul> 
   <li>New Feature Showcases in the documentation (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=61187">61187</a>)</li>
@@ -64,7 +73,52 @@ of Komodo IDE and Komodo Edit.</p>
   <li>Support for Rails 2 in the Ruby on Rails project template.</li>
 </ul>
 
-<h3 id="bug_fixes">Bug Fixes:</h3>
+<h3 id="bug_fixes-4.3.1">4.3.1 Bug Fixes:</h3>
+
+<ul>
+  <li>Editor:
+  <ul>
+    <li>New empty non-lintable buffers no longer marked "syntax-checking in progress". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id="></a>)</li>
+    <li> (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id="></a>)</li>
+  </ul></li>
+  <li>Find/Replace:
+  <ul>
+    <li>Find Next/Previous operations now correctly ignore the "find-searchBackward" preference. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75198">75198</a>)</li>
+    <li>Fixed causing "Find/Replace in Files" to fail on certain XML files (problem in XML prolog parsing). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75631">75631</a>)</li>
+    <li>Fixed problem with 'Find Next' failing to jump to next instance (i18n). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=74641">74641</a>)</li>
+    <li>Fixed bug causing symlinks to be ignored by Find in Files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75733">75733</a>)</li>
+  </ul></li>
+  <li>SCC:
+  <ul>
+    <li>Fixed problems in updating project folders (e.g. empty SCC diffs). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75495">75495</a>)</li>
+    <li>Messages to stderr no longer abort scc operations. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75624">75624</a>)</li>
+    <li>Perforce: Fixed problem with "Force Save" dialog appearing before the 'p4 edit' command is recognized. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75613">75613</a>)</li>
+    <li>SVN: Fixed bug causing svn commits to fail on OS X. Commits no longer use the 'non_interactive' setting. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id="></a>)</li>
+    <li>Alert shown and dialog closed on diff error. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75497">75497</a>)</li>
+  </ul></li>
+  <li>Misc:
+  <ul>
+    <li>Fixed exceptions triggered by file notifications looking for a deleted file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=73722">73722</a>)</li>
+    <li>JavaScript debugging fixed and working with Firefox 3. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75417">75417</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=75115">75115</a>)</li>
+    <li>Fixed infinite loop in file status service thread. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id="></a>)</li>
+    <li>HTML completions working properly in PHP files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75490">75490</a>)</li>
+    <li>PHP: Fixed problems with calltips with some versions of PHP. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75492">75492</a>)</li>
+    <li>"Help for Languages" added back into Open Komodo / Komodo Edit. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75584">75584</a>)</li>
+    <li>Fixed 'Too many open files' error on OS X. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75633">75633</a>)</li>
+    <li>Run commands now quoted properly when passed to Windows' cmd.exe. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75467">75467</a>)</li>
+    <li>Command ouptut pane now correctly uses the global color scheme. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75552">75552</a>)</li>
+    <li>Rails: Fixed dependency on unit testing framework when creating new projects in Komodo Edit. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75617">75617</a>)</li>
+    <li>Perl: Added Perl 5.10 'state' keyword. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75522">75522</a>)</li>
+    <li>Ruby: Rakefiles now recognized as ruby automatically. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75410">75410</a>)</li>
+    <li>PHP: Added missing calltip information on stdlib DOM* classes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75397">75397</a>)</li>
+    <li>Documentation fixes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75450">75450</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=75610">75610</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=75767">75767</a>)</li>
+    <li>Fixed sorting by macro rank. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75747">75747</a>)</li>
+    <li>Fixes to project sorting. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=68906">68906</a>)</li>
+  </ul></li>
+</ul>
+  
+
+<h3 id="bug_fixes-4.3.0">4.3.0 Bug Fixes:</h3>
 
 <ul>
   <li>Editor:
@@ -152,6 +206,8 @@ of Komodo IDE and Komodo Edit.</p>
 </ul>
 
 <h2 id="knownissues">Known Issues</h2>
+
+<h3 id="knownissues-4.3.0">4.3.0</h3>
 
 <p>To view the status of outstanding Komodo issues,
 including those that have been fixed in this release, or to
