@@ -47,6 +47,13 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
 
 <h3 id="changes-4.3.1">4.3.1 Changes</h3>
+<ul>
+  <li>Find/Replace Dialog: The replace checkbox has moved back
+  underneath the text box to enable better tabbing between the find and
+  replace fields. The Replace field is still always visible. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=75931">75931</a>)</li>
+</ul>
+<h3 id="changes-4.3.1">4.3.1 Changes</h3>
 
 <ul>
   <li>Find/Replace Dialog: The Replace field is now always visible. A
@@ -66,11 +73,24 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <h3 id="enhancements-4.3.0">4.3.0 Enhancements:</h3>
 
-<ul> 
+<ul>
   <li>New Feature Showcases in the documentation (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=61187">61187</a>)</li>
   <li>Added php constants and class constants to the stdlib cix files.</li>
   <li>Vi emulation: Added scrolling commands (Bug <a target="_blank" href="http://bugs.activestate.com/show_bug.cgi?id=73301">73301</a>)</li>
   <li>Support for Rails 2 in the Ruby on Rails project template.</li>
+</ul>
+
+<h3 id="bug_fixes-4.3.2">4.3.2 Bug Fixes:</h3>
+
+<ul>
+  <li>Find/Replace now handles broken symlinks better and has proveds useful error information in the UI. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76038">76038</a>)</li>
+  <li>Fixed a bug with Go to Definition function in PHP includes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76090">76090</a>)</li>
+  <li>SCC: Heavy CPU usage on SCC operations fixed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75961">75961</a>)</li>
+  <li>SCC: Fixed SVN diff on project folders. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id="></a>)</li>
+  <li>Remote files with group-writable permissions no longer incorrectly marked as read-only. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76018">76018</a>)</li>
+  <li>JavaScript: Support for dojo.declare/extend. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75069">75069</a>)</li>
+  <li>Remote Files: Fixed problem with SSH/SCP login not correctly checking allowed login types. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id="></a>)</li>
+  <li>HTML autocomplete: Attribute values no longer all uppercase automatically. The case is now taken from the case of other attribute values in the file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76006">76006</a>)</li>
 </ul>
 
 <h3 id="bug_fixes-4.3.1">4.3.1 Bug Fixes:</h3>
@@ -116,7 +136,7 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
     <li>Fixes to project sorting. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=68906">68906</a>)</li>
   </ul></li>
 </ul>
-  
+
 
 <h3 id="bug_fixes-4.3.0">4.3.0 Bug Fixes:</h3>
 
@@ -256,13 +276,13 @@ Bug Database</a>.</p>
   unknown file types. However, file association preferences can be used
   to associate a user-defined extenstion with a language category (e.g.
   "Text") which then enables replacements for that file type.</li>
-  
+
   <li>Linux users may need to install the <acronym title="Smart Common
   Input Method">SCIM</acronym> platform packages for non-ASCII text entry.
   See "<a href="../install.html#System_Req_Lin">Linux Software
   Prerequisites</a>" in the Installation Guide for details. (Bug
   70812)</li>
-  
+
   <li>Autocompletion on the following Python Win32 modules
   is not yet available: dbc, perfmon, pywintypes, win2kras,
   dde, pythoncom, and the binary sub-modules of
@@ -323,7 +343,7 @@ Bug Database</a>.</p>
   href="http://psyco.sourceforge.net/">Psyco</a> extension enabled.
   The Komodo <a href="../trouble.html#psyco_debug">FAQ</a> has a
   work-around solution.</li>
-  
+
   <li><strong>Tcl 8.5</strong>: Tcl Beta releases contain
   only version-specific executables (e.g.
   <code>tclsh85.exe</code> and <code>wish85.exe</code>).
@@ -815,4 +835,3 @@ AMD64 can be found <a href=
 
 </body>
 </html>
-
