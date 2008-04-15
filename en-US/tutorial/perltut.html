@@ -29,12 +29,11 @@
 
   <ul>
     <li>...that <a target="_blank" href=
-    "http://www.ActiveState.com/Products/ActivePerl">ActivePerl
-    build 623</a> or greater is installed on your system.
-    ActivePerl is a free distribution of the core Perl language.
-    See Komodo's <a class="doc" href=
-    "../install.html#top">Installation Guide</a> for
-    configuration instructions.</li>
+    "http://www.ActiveState.com/Products/ActivePerl">ActivePerl build
+    623</a> or greater is installed on your system. ActivePerl is a free
+    distribution of the core Perl language. See the <a class="doc" href=
+    "../debugperl.html#debugperl_top">Debugging Perl</a> documentation
+    for configuration instructions.</li>
 
     <li>...that you have a connection to the Internet.</li>
 
@@ -91,7 +90,7 @@
   <p>The Text::CSV_XS Perl module is optional for this tutorial.  If the
   program finds that it hasn't been installed, it will use a "Fake" module
   that implements the minimum functionality needed for this tutorial.</p>
-  
+
   <p>To install it using PPM:</p>
 
   <ol>
@@ -259,26 +258,26 @@
   the CSV Parser</a></h3>
 
   <h4>Line 7 - the BEGIN line</h4>
-  
+
   <ul>
     <li>The BEGIN block wraps code to be done during compilation.</li>
   </ul>
-  
+
   <h4>Lines 8 to 11 - Load Text::CSV_XS, if it's installed</h4>
     <ul>
       <li>"require Text::CSV_XS" refers to the module installed in Step
       One</li>
     </ul>
-  
+
   <h4>Lines 12 to 64 - Define a Text::CSV_XS::Fake class</h4>
-  
+
   <ul>
     <li>This code is executed if the regular library isn't installed.</li>
-    
+
     <li>Define a constructor called "new", and implement the "getline" function,
     which actually will process multiple lines to allow fields with embedded newlines.
     </li>
-    
+
   </ul>
 
   <h3><a name="perlut_write_header" id=

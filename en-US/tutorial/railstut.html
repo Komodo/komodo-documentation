@@ -30,7 +30,9 @@
   <ul>
     <li>A recent local installation of <a target="_blank" href=
     "http://www.ruby-lang.org/en/downloads/">Ruby</a> (1.8.5 or
-    later).</li>
+    later). See the <a
+    href="../debugruby.html#debugruby_top">Debugging Ruby</a>
+    documentation for debugger configuration instructions.</li>
 
     <li>A local installation of <a target="_blank" href=
     "http://www.rubyonrails.org/down">Ruby on Rails</a> (version 2.x).</li>
@@ -121,7 +123,7 @@
     <strong>Browse</strong> button to find it if you wish.</li>
 
     <li>Click <strong>Open</strong>.</li>
-    
+
     <li>Komodo will give you a choice of databases to use.  The Rails
     project has tools that automate creating and deleting databases, but
     they currently work only with MySQL.  This step isn't needed for
@@ -161,13 +163,13 @@
   a macro or command isn't working as expected, check the the <a target="_blank"
   href="http://community.activestate.com/faq-list">online FAQs</a> for possible
   solutions.</p>
-  
+
   <h2><a name="rails_create_db" id="rails_create_db">Creating the
   Database</a></h2>
 
   <h3><a name="rails_edit_database_yml" id=
   "rails_edit_database_yml">Editing the database.yml file</a></h3>
-  
+
   <p>If you chose SQLite2 or SQLite3 as your database tool, you can skip
   this step.  If you chose postgresql or oracle, you'll need to manage
   the database manually.  So this section applies only to MySQL users.</p>
@@ -290,37 +292,37 @@
   <p>Double-click the <strong>db:migrate</strong> macro in Rails
   Tools|Migrate. The <strong>Command Output</strong> tab should show that the table
   'movies' has been created.</p>
-  
+
   <h2><a name="rails_testing_basics" id="rails_testing_basics"
   >Testing Rails Scaffolds</a></h2>
-  
+
   <p>At this point we have a working application.  While it's tempting
   to start the server, switch to the browser, and try it out, we
   should take advantage of the testing framework built into Rails to
   verify that our application is working as we expect.</p>
-  
+
   <p>Let's add a couple of sanity checks to the model: we want to verify
   that all movie entries have a title, and that there are no duplicates.  Bring
   up <em>movie.rb</em> and add this code at lines 2 and 3, immediately after
   <code>class Movie &lt; ActiveRecord::Base</code>:</p>
-  
+
   <pre class="code">
    validates_presence_of :title
    validates_uniqueness_of :title
   </pre>
-  
+
   <p>You should see code-completion after you type <code>val</code> each time.
   </p>
-  
+
   <p>In the second line, after you type <code>:t</code> you can press
   the tab key to have it finish <code>:title</code>.  If this does nothing
   verify that the "Use tab character to complete words like Ctrl+Space"
   setting is on under <strong>Edit|Preferences|Editor|Smart
   Editing</strong>.</p>
-  
+
   <p>Bring up <em>movie_test.rb</em>, delete the <code>test_truth</code>
   that the scaffolder generated for you, and add these two tests:</p>
-  
+
   <pre class="code">
  def test_present
    m = Movie.new
@@ -340,16 +342,16 @@
    assert m2.valid?
  end
   </pre>
-  
+
   <h3><a name="running_tests_in_komodo_ide" id="running_tests_in_komodo_ide">
   Running Model Tests in Komodo IDE</a></h3>
-  
+
   <p>Komodo IDE introduced unit-test integration with version 4.3. To
   run the unit tests click on the <strong>Test Results</strong> tab in
   the bottom window. In the test plan dropdown menu on the right side.
   Select "test:units", and press the <strong>Run</strong> button
   immediately to the right.</p>
-  
+
   <p>You should see the tests run for a few seconds, and then a list of
   results will appear. If you get a message along the lines of the
   following: "Run `rake db:migrate` to update your database then try
@@ -361,49 +363,49 @@
   where Komodo displays lines of output from the underlying test
   pass that might be of interest, but don't fit in any particular
   test.</p>
-  
+
   <h3><a name="running_tests_in_komodo_edit" id="running_tests_in_komodo_edit">
   Running Tests in Komodo Edit</a></h3>
-  
+
   <p>This tutorial assumes you're using Komodo IDE, but it's easy to
   follow along with Komodo Edit. You can run unit tests inside Komodo
   Edit with the <strong>Rails Tools|Test|Unit Tests</strong> command.
   This will show the results in the Command Output window. You should
   see a final result of:</p>
-  
+
   <pre>
     2 tests, 6 assertions, 0 failures, 0 errors
   </pre>
-  
+
   <p>Other commands (e.g. <code>rake test:functionals</code> below) can
   be run in a <a href="../run.html">Run Command</a>.</p>
 
   <h3><a name="running_controller_tests">Running Controller Tests</a></h3>
-  
+
   <p>While the generated model test file has one trivial test, the Rails
   scaffolder generates a full complement of controller tests. Bring up
   <em>movie_controller_test.rb</em> to have a look at them.</p>
-  
+
   <p>Click on the <strong>Test Results</strong> tab, select the
   <strong>test:functionals</strong> test from the dropdown list, and
   press the <strong>Run</strong> button.</p>
-  
+
   <p>This time you should see that two of the tests failed:
   <code>test_should_create_movie</code> and
   <code>test_should_update_movie</code>. If you click on the red "failures"
   button above the results, it will cycle through the failed tests.</p>
-  
+
   <p>The <strong>Details</strong> window shows the results for each test.  Make sure
   the <code>test_should_create_movie</code> test is highlighted in the
   first window.</p>
-  
-  
+
+
   <p>Double-click the first line of code that refers to
   <code>test/functional/movies_controller_test.rb</code>.
   <em>movies_controller_test.rb</em> should become the current file,
   with the cursor at the line that was reported in the traceback; in
   this case, line 16. We see that this code is failing:</p>
-  
+
   <pre class="code">
   assert_difference('Movie.count') do
        post :create, :movie =&gt; { }
@@ -416,14 +418,14 @@
   movie from being created, and we still have two entries in the
   database after the block runs.  Let's make a change that should
   satisfy the model's rules:</p>
-  
+
   <pre class="code">
    def test_should_create_movie
      assert_difference('Movie.count') do
        post :create, :movie =&gt; { :title =&gt; "movie 3" }
      end
   </pre>
-  
+
   <p>If we rerun the test, we're now down to one failure. Click on the
   red failure button to move to the failed test, then double-click on
   the line starting with
@@ -437,11 +439,11 @@
     assert_redirected_to movie_path(assigns(:movie))
   end
   </pre>
-  
+
   <p>It's not obvious why this test is failing. Rails tests are just
   Ruby code, so let's fire up the debugger (Komodo IDE only) to have a
   closer look, with the following steps:</p>
-  
+
   <ul>
     <li>Set a breakpoint
     at line 62 of <em>movies_controller.rb</em>, in the update routine.  </li>
@@ -462,27 +464,27 @@
     field has another <code>.@errors</code> field, so expand that, and you'll see that the
     <code>title</code> field is set to <code>"has already been taken"</code>.  Why?</li>
   </ul>
-  
+
   <p>What are those duplicate values?  While the debugger is still running,
   enter the interactive shell with the <strong>Debug|Interact</strong> menu command,
   and type the line:</p>
-  
+
   <pre>
     Movie.find(:all).map(&amp;:title)
   </pre>
-  
+
   <p>Ruby should reply with <code>["MyString", "MyString"]</code>.  Those values
   come from the file <em>test/fixtures/movies.yml</em>.  The problem
   is that when Rails reads the fixtures file to populate the database, it doesn't
   run the values through ActiveRecord's validation checks. Once you
   start using controller methods, like the <code>update</code> method
   here, the values are run through validation checks.</p>
-  
+
   <p>Let's fix that. Stop the debugger and change one of those
   "MyString" movie titles to something more interesting, like "Who Is
   Harry Kellerman and Why Is He Saying Those Terrible Things About Me?",
   or "My Other String", if you're not up for all that typing.</p>
-  
+
   <p>The unit and functional tests should now pass.</p>
 
 
@@ -497,18 +499,18 @@
   server</strong> macro. This will start one of the <strong>Mongrel</strong>,
   <strong>lighttpd</strong>, or <strong>Webrick</strong> servers, depending
   on your Ruby installation, and run it in a separate console window.</p>
-  
+
   <h3><a name="mongrel_issues" id="mongrel_issues">Dealing with Mongrel</a></h3>
-  
+
   <p>Rails now uses Mongrel as its default web server.  The dependencies between
   different versions of Mongrel, Mongrel_Service and Rails haven't been worked out
   on Windows yet.  If your console window exits with a <code>MissingSourceFile</code>
   message (along with a long traceback), you can have Rails use Webrick by editing
   the <strong>Rails Tools|Run|run server</strong> macro (right-click ->
   Properties) and making the following change:</p>
-  
+
   <p>Replace the line:</p>
-  
+
     <pre class="code">
        as_rails_macros.launchRubyAppInConsole(this, project, 'script/server');
     </pre>
@@ -516,8 +518,8 @@
     <pre class="code">
        as_rails_macros.launchRubyAppInConsole(this, project, 'script/server webrick');
     </pre>
-  
-    
+
+
   <h3><a name="testing_app_1" id="testing_app_1">Testing the Application</a></h3>
 
   <p>Open the <a target="_blank" href=
@@ -530,16 +532,16 @@
   <p>While the application the Rails scaffolder generates is certainly
   serviceable, there are some tweaks that will immediately make it
   friendlier:</p>
-  
+
   <p>If we're going to enter a number of movies, let's speed things
   up by stealing the <strong>New Movie</strong> link
   from <em>index.html.erb</em>, and placing it in <em>show.html.erb</em>:</p>
-  
+
   <p>Copy the line</p>
   <pre class="code">
   &lt;%= link_to 'New movie', new_movie_path %>
   </pre>
-  
+
   <p>from <em>index.html.erb</em>, and paste it at the end of
   <em>show.html.erb</em>.  Put a "|" character at the end of
   the previous line to maintain consistency.  Save
@@ -547,7 +549,7 @@
   to the app, enter a new title at the <strong>New Movie</strong> screen,
   press the "Create" button, and you should have a
   "New movie" link.</p>
-  
+
   <p>Similarly, it would be nice if the cursor was in the
   <strong>Title</strong> field when we load the <strong>New movie</strong> page,
   similar to how the <strong>Search</strong> field has the focus on
@@ -555,15 +557,15 @@
   the <strong>Prototype</strong> library, I added the
   <code>javascript_include_tag</code> directive to the head section of
   <em>app/views/layouts/movies.html.erb</em>:</p>
-  
+
   <pre class="code">
     &lt;title>Movies: &lt;%= controller.action_name %>&lt;/title>
     &lt;%= stylesheet_link_tag 'scaffold' %>
     &lt;%= javascript_include_tag :defaults %>
   </pre>
-  
+
   <p>Then add this code to the end of <em>new.html.erb</em>:</p>
-  
+
   <pre class="code">
   &lt;script type="text/javascript">
   Event.observe(window, "load", function() {
@@ -571,7 +573,7 @@
       });
   &lt;/script>
   </pre>
-  
+
   <p>If you type this code in, you should see code-completion after
   '<code>Event.</code>' and a call-tip after '<code>(</code>' if you've
   enabled the <em>prototype.js</em> code intelligence <a
@@ -590,23 +592,23 @@
   available as plugins,  but now people who want it need to explicitly
   install it.  The idea is that people who don't need a particular
   widget shouldn't subsidize the few who want it.</p>
-  
+
   <p>We're going to install two plugins, to handle in-place editing and
   pagination.</p>
-  
+
   <p>Fortunately Komodo ships with macros that install these plugins,
   and add necessary patches. Open the <code>Rails Tools|Plugins</code>
   folder in your Rails project, and run the <code>in-place
   editing</code> and <code>pagination</code> macros. If you try to
   install a plugin that's already installed, you'll get a warning.</p>
-  
+
   <p>It's easy to create new plugin macros.  Every installable plugin is
   treated as a resource, usually in a public subversion repository,
   and identifiable with a URI.  On the command-line you would invoke
   <code>ruby script/install plugin &lt;URI&gt;</code>.  In Komodo you would
   just need to copy one of the macros, paste it into the same Plugins
   folder, edit it, and replace the old URI with the new one.</p>
-  
+
   <p>Plugins need to be installed in new Rails projects that use them
   (i.e. the plugin is added to the specific Rails application, not to
   Rails itself). You have to restart the server after doing this, so
@@ -616,32 +618,32 @@
 
   <h3><a name="adding_pagination" id="adding_pagination">Adding
   Pagination</a></h3>
-  
+
   <p>First we'll add pagination by making these changes to the
   <strong>movie</strong> model and controller.</p>
-  
+
   <p>In <em>app/controllers/movies_controller.rb</em>, change line 5 from:</p>
 
   <pre class="code">
      @movies = Movie.find(:all)
-  </pre>  
-  
+  </pre>
+
   <p>to</p>
-  
+
   <pre class="code">
      @movies = Movie.paginate(:page =&gt; params[:page])
   </pre>
-  
+
   <p>Add this code at the class level to <em>app/models/movie.rb</em> (lines 4-5):</p>
-  
+
   <pre class="code">
      cattr_reader :per_page
      @@per_page = 10
   </pre>
-  
+
   <p>Finally, add pagination to the view.  The last three lines
   of <em>app/views/movies/index.html.erb</em> should contain this code:</p>
-  
+
   <pre class="code">
   &lt;%= will_paginate(@movies) %&gt;
   &lt;br /&gt;
@@ -650,7 +652,7 @@
 
   <h3><a name="testing_pagination" id="testing_pagination">Testing
   Pagination</a></h3>
-  
+
   Now we could start up the server, enter a few dozen
   <em>different</em> titles, and verify that the pagination
   is working.  Or we can write another test, in
@@ -676,11 +678,11 @@
                  :content =&gt; "4" })
   end
   </pre>
-  
+
   <p>Those <code>assert_tag</code> tests might look like they were pulled out
   of thin air, but the debugger was very useful in writing them.  Originally
   the test read like this:</p>
-  
+
   <pre class="code">
   def test_pagination
     Movie.delete_all
@@ -689,12 +691,12 @@
     assert_response :success
   end
   </pre>
-  
+
   <p>We used the debugger to stop at the final line, captured the contents
   of <code>@request.body</code> by double-clicking on it in the <strong>Self</strong> tab
   of the <strong>Debug</strong> tab, and pasted it into an empty <code>HTML</code> buffer
   in Komodo, and found the paginator was generating this code:</p>
-  
+
   <pre class="code">
   &lt;div class="pagination"&gt;
       &lt;span class="disabled"&gt;&amp;laquo; Previous&lt;/span&gt;
@@ -705,43 +707,43 @@
       &lt;a href="/movies?page=2"&gt;Next &amp;raquo;&lt;/a&gt;
   &lt;/div&gt;
   </pre>
-  
+
   <p>We then entered an interactive context with the <code>Debug|Interact</code>
   menu item, found some documentation on the <code>assert_tag</code>, and
   interactively tried out the expressions, starting with simple expressions
   and making them more complex.  A final set that covered the situations
   was then copied into the test.</p>
-  
+
   <h3><a name="using_pagination" id="using_pagination">Testing
   Pagination in the Application</a></h3>
-  
+
   <p>The functional test results should have you convinced that these additions
   didn't break anything.  But now would be a good time to restart the server,
   fire up the app, and make sure it still works as before.  If you add eleven
   movies you should see the paginator at work.</p>
-  
+
   <h3><a name="adding_in_place_editing" id="adding_in_place_editing">Adding
   In-Place Editing</a></h3>
-    
+
   <p>Having to bring up an editing screen to change the
   spelling of a movie is cumbersome.  This is easy to fix.</p>
-  
+
   <p>Add this code to movies/index.html.erb, around line 10:</p>
-  
+
   <pre class="code">
       &lt;td class="dvdlib_item"&gt;
        &lt;% @movie = movie %&gt;
        &lt;%= in_place_editor_field :movie, :title %&gt;
      &lt;/td&gt;
   </pre>
-  
+
   <p>Replace line 3 of <em>show.html.erb</em> with just this line:</p>
-  
+
   <pre class="code">
       &lt;%= in_place_editor_field :movie, :title %&gt;
   </pre>
-  
-  
+
+
   <p>It should replace the line that displays the movie's title in a
   readonly field (<code>&lt;%= h(movie.title) %></code>) with a
   user-editable field. You can also remove the link to the edit page (in
@@ -749,21 +751,21 @@
   <em>views/movies/edit.html.erb</em> by right-clicking its icon in the
   project view, selecting <strong>Delete</strong>, and choosing "Move to
   Trash".</p>
-  
+
   <p>Finally you need to tell your controller you're doing in-place
   editing:</p>
-  
+
   <p>On line 2 of <em>movies_controller.rb</em> add:</p>
-  
+
   <pre class="code">
    in_place_edit_for :movie, :title
    protect_from_forgery :except =&gt; [:set_movie_title]
   </pre>
-   
+
   <p>Also in the controller, change the <code>edit</code> method
   so it doesn't go looking for the now-deleted <em>edit.html.erb</em>
   file:</p>
-  
+
   <pre class="code">
   # GET /movies/1/edit
   def edit
@@ -787,19 +789,19 @@
   check the end of your <em>log/development.log file</em>.  If you're curious
   about the calls to <code>protect_from_forgery</code>, they're related to a
   security issue that was addressed in Rails 2.0, but not by the plugin.</p>
-  
+
   <h2><a name="adding_borrower_data" id="adding_borrower_data">Adding Borrower Data</a></h2>
-  
-    
+
+
   <p>Now that we have a working library of DVDs, let's add the
   pieces needed to track DVDs that leave the library,
   who took them, and when they need to bring them back.</p>
-  
+
   <p>Run <strong>Rails Tools|Generators|Migration</strong>, with a migration name of
   <code>AddBorrowerInformation</code>.</p>
-  
+
   <p>Set the contents of 002_add_borrower_information.rb to this:</p>
-  
+
   <pre class="code">
   class AddBorrowerInformation &lt; ActiveRecord::Migration
     def self.up
@@ -807,7 +809,7 @@
       add_column :movies, :borrowed_on, :date
       add_column :movies, :due_on, :date
     end
-  
+
     def self.down
       remove_column :movies, :borrower
       remove_column :movies, :borrowed_on
@@ -815,16 +817,16 @@
     end
   end
   </pre>
-  
+
   <p>Run the <code>Rails Tools|Migrate|db:migrate</code> tool.</p>
-  
+
   <p>Let's add another validation routine. This one's more complex: we
   want to verify that if any of the <code>borrower</code>,
   <code>borrowed_on</code>, and <code>due_on</code> fields are
   specified, they all are, and we'll do a sanity check on the value of
   <code>due_on</code>. This is to guard the case where someone hits the
   controller without going through one of our own views.</p>
-  
+
   <p>Add this method to <em>movie.rb</em>:</p>
 
   <pre class="code">
@@ -844,10 +846,10 @@
     end
   end
   </pre>
-  
+
   <p>Add this test to <em>movie_test.rb</em>:</p>
 
-  
+
   <pre class="code">
   def test_borrower
     m = Movie.create(:title =&gt; "House")
@@ -859,7 +861,7 @@
     assert !m.valid?
     m.due_on = m.borrowed_on + 3
     assert m.valid?
-    
+
     # Now clear the borrower
     m.borrower = ""
     assert !m.valid?
@@ -869,10 +871,10 @@
   <p>The unit and functional tests should all pass.</p>
 
   <h2><a name="handling_checkouts" id="handling_checkouts">Handling Checkouts</a></h2>
-  
+
   <p>We're almost done.  Let's outline the remaining pieces, since we're now moving
   away from the code Rails generated for us:</p>
-  
+
   <ol>
     <li>Add a <code>checkout</code> method and <code>checkout</code> screen</li>
     <li>Add a <code>return</code> method</li>
@@ -905,7 +907,7 @@
 
   <p>Here are the two new methods we need to add to the
   <em>movies_controller.rb</em>:</p>
-  
+
   <pre class="code">
    # Non-Rest methods
    def checkout
@@ -925,7 +927,7 @@
        # Render the template, the default
      end
    end
-  
+
    def return
      @movie = Movie.find(params[:id])
      @movie.borrower = @movie.borrowed_on = @movie.due_on = nil
@@ -933,17 +935,17 @@
      redirect_to(movies_url)
    end
   </pre>
-  
+
   <p>I assume HTML output to simplify the code.  If you want you can
   add the <code>respond_to</code> and <code>format</code> statements.  Note how we overload
   the <code>checkout</code> method -- if it's part of a <code>get</code> request, we render
   the form.  Otherwise we assume we're processing the submitted form.</p>
-  
+
   <p>Finally we update the list view in <em>index.html.erb</em>:</p>
 
   <pre class="code">
   &lt;h2>Movies&lt;/h2&gt;
-  
+
   &lt;table&gt;
     &lt;tr&gt;
       &lt;th class="dvdlib_header"&gt;Title&lt;/th&gt;
@@ -974,10 +976,10 @@
   &lt;br /&gt;
   &lt;%= link_to 'Add new movie', new_movie_path %&gt;
   </pre>
-  
+
   <p>Add two tests to <em>movies_controller_test.rb</em> to verify that everything
   is working correctly:</p>
-  
+
   <pre class="code">
   def test_checkout_get
     get :checkout, :id =&gt; movies(:one).id
@@ -989,21 +991,21 @@
     assert_redirected_to movies_path
   end
   </pre>
-  
+
   <p>We were expecting no errors, but this time we get an
   <code>undefined local variable or method error</code> for
   <code>borrower</code> at around line 97-99 of
   <em>movie_controller.rb</em>. Sure enough, we forgot to put a ":"
   before the param name "borrower". Change it to <code>:borrower</code>,
   rerun the tests, and they should pass.</p>
-  
+
   <p>People familiar with the first version of this tutorial will recall
   firing up the debugger to correct a problem like this. Writing tests
   is more efficient. You can debug Rails apps if you need to, though.
   Press the <code>Rails Tools|Run|debug rails app</code> tool, set
   breakpoints at the points in the controllers and views you're
   interested in, and then hit them with your application.</p>
-  
+
   <p>Finally, fire up the server one more time, and verify that your
   application now works as you expect. You're ready to take this one
   live.</p>
@@ -1032,7 +1034,7 @@
     "http://www.softwaredeveloper.com/features/74-ruby-on-rails-resources-tutorials-050207/">
     74 Quality Ruby on Rails Resources and Tutorials</a>: An
     excellent compendium of Rails resources.</li>
-    
+
     <li><a target="_blank" href=
     "http://railscasts.com/episodes/80">Simplify Views with Rails 2.0</a>:
     A screencast covering the resource-based approach to building a web application
