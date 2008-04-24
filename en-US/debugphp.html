@@ -65,7 +65,7 @@
   <h2><a name="install_PHP" id="install_PHP">Installing
   PHP</a></h2>
 
-  <p>PHP debugging in Komodo will work with PHP 4.3.10 or later,
+  <p>PHP debugging in Komodo will work with PHP 4.3.11 or later,
   with the exception of versions 5.0.0 through 5.0.2. If you are
   using PHP 5.0, you will need at least 5.0.3 or greater. Download
   PHP from <a class="doc" target="_blank" href=
@@ -96,7 +96,7 @@
 
   <p>Your Linux system may already have PHP installed. Login and
   type 'php -v' to determine the version of your current PHP
-  interpreter. If it is earlier than version 4.3.1 (or 5.0.0
+  interpreter. If it is earlier than version 4.3.11 (or 5.0.0
   through 5.0.2) you must upgrade. PHP must also support loading
   dynamic extensions (the default for PHP under Linux). If it does
   not, reinstall PHP as per the instructions on the <a class="doc"
@@ -526,7 +526,7 @@ php -m
 
   <ol>
     <li>Ensure PHP is installed and configured properly for your web server.</li>
-    
+
     <li>Ensure Komodo and PHP are configured for remote debugging (as described
     in "<a class="doc" href= "#config_remote_PHP">Configuring Remote PHP
     Debugging</a>").</li>
@@ -539,7 +539,7 @@ php -m
       <pre class="code">
 http://example.org/sample.php?XDEBUG_SESSION_START=1
 </pre>
-      
+
     If you are using the <a href="debugger.html#dbgp_proxy">DBGP Proxy</a>, the
     value for the GET method should match the <strong>Proxy Key</strong> value
     shown in <strong>Debug|Listener Status</strong>. For example:<br />

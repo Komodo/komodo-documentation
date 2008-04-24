@@ -67,7 +67,7 @@
 
     <li><a class="doc" href="#psyco_debug">Why don't breakpoints work
     when I use the Psyco extension in Python?</a></li>
-    
+
     <li><a class="doc" href="#virtual_host_apache">How do I
     configure Virtual Hosting on an Apache Web server?</a></li>
 
@@ -105,7 +105,7 @@
   varies by platform, and the name of the directory corresponds to the version
   of Komodo you are running ("IDE" or "Edit" on Windows, "IDE" or "Edit" plus
   the version number on OS X and Linux):</p>
-  
+
   <strong>Windows</strong>
   <pre class="code">
 C:\Program Files\ActiveState Komodo [IDE|Edit]\
@@ -116,7 +116,7 @@ C:\Program Files\ActiveState Komodo [IDE|Edit]\
   4.2"), which allowed for side-by-side installations of different versions of
   Komodo. If you wish to do this, manually specify an install directory with a
   version number.</p>
-  
+
   <strong>Linux</strong>
   <pre class="code">
 /opt/Komodo-[IDE|Edit]-&lt;version&gt;/
@@ -124,7 +124,7 @@ C:\Program Files\ActiveState Komodo [IDE|Edit]\
   <pre class="code">
 /Applications/Komodo-[IDE|Edit]-&lt;version&gt;.app
 </pre>
-  
+
 
   <h2><a name="appdata_dir" id="appdata_dir">Where does Komodo keep
   settings data?</a></h2>
@@ -448,7 +448,7 @@ to communicate with the PHP interpreter.
     location of the php.ini file can also be explicitly set.</li>
 
     <li><strong>Verify the PHP version:</strong> PHP 4.0.5 or
-    greater is required for PHP syntax checking. PHP 4.3.1 or
+    greater is required for PHP syntax checking. PHP 4.3.11 or
     greater is required to debug PHP programs.</li>
 
     <li>
@@ -519,22 +519,22 @@ These options need to match
 
   <h2><a name="psyco_debug" id="psyco_debug">Why don't breakpoints work
   when I use the Psyco extension in Python?</a></h2>
-  
+
   <p>When debugging Python programs that use <a target="_blank"
   href="http://psyco.sourceforge.net/">Psyco</a>, the breakpoints will
   be ignored. This is due to the optimizations/changes made by the
   psyco compiler.</p>
-  
+
   <p>You can work around this problem with the following code which
   disables Psyco while debugging:</p>
-  
+
   <pre class="code">
 import logging
 if not logging.Logger.manager.loggerDict.has_key('dbgp'):
     import psyco
     psyco.full()
   </pre>
-  
+
   <h2><a name="virtual_host_apache" id="virtual_host_apache">How do
   I configure Virtual Hosting on an Apache Web server?</a></h2>
 
@@ -707,8 +707,8 @@ sudo gem install ruby-debug-base-0.9.x.gem
 
   <p>Komodo will automatically find and use the new version of the
   debugging library.</p>
-  
-  
+
+
   <hr />
 </body>
 </html>
