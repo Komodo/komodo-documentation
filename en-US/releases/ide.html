@@ -20,29 +20,44 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <h2 id="whatsnew">What's New in Komodo IDE/Edit</h2>
 
-<h3 id="whatsnew-4.4a1">4.4 Alpha 1</h3>
+<h3 id="whatsnew-4.4">4.4</h3>
 
 <ul>
-  <li></li>
+  <li>
+    Sections menulist in the Komodo statusbar. This shows a menulist outlining
+    the main elements contained in your current Komodo editor file.
+  </li>
+  <li>
+    Multi-file SCC Commit support. The commit dialog will now show the scc
+    status of files you wish to commit and easily allow you to add/remove
+    files from the commit operation.
+  </li>
+  <li>
+    SCC Changelists. A new toolbar tab "Change Lists" has been added to the
+    right-sided Komodo pane. This tab will show you the scc status of files
+    you have opened/referenced and enables you to create and manage groups of
+    scc files (changelists).
+  </li>
+  <li>
+    Unit testing refactoring. Ericp (update?)
+  </li>
 </ul>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
 
-<h3 id="changes-4.4a1">4.4 Alpha 1 Changes</h3>
-<ul>
-  <li></li>
-</ul>
-
-<h3 id="enhancements-4.4a1">4.4 Alpha 1 Enhancements:</h3>
-
-<ul>
-  <li></li>
-</ul>
-
 <h3 id="bug_fixes-4.4a1">4.4 Alpha 1 Bug Fixes:</h3>
 
 <ul>
-  <li></li>
+  <li>On shutdown there are tracebacks complaining about null tree nodes (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76288">76288</a>)</li>
+  <li>Statusbar: show number of selected lines (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76020">76020</a>)</li>
+  <li>Preview in browser no longer works with Komodo's mapped URIs (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76323">76323</a>)</li>
+  <li>Fix problem of cut/copy not working correctly at document EOF (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75300">75300</a>)</li>
+  <li>API: Make the ko.interpolate.getWordUnderCursor scimoz argument optional (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=73518">73518</a>)</li>
+  <li>Javascript: provide completions on a javascript function (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76504">76504</a>)</li>
+  <li>Http inspector: match on all rules can sometimes match any instead (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76368">76368</a>)</li>
+  <li>Projects: notification 'current_project_changed' not sent when closing a project (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75473">75473</a>)</li>
+  <li>MacOSX: crash when dragging wrapped text (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76566">76566</a>)</li>
+  <li>Sections menulist: statusbar item is placed in wrong location for vi mode (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76505">76505</a>)</li>
 </ul>
 
 <h2 id="knownissues">Known Issues</h2>
