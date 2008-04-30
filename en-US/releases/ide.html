@@ -39,7 +39,21 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
     scc files (changelists).
   </li>
   <li>
-    Unit testing refactoring. Ericp (update?)
+    Unit testing improvements:
+    <ul>
+      <li>Extensibility: Komodo now reads in unit test harnesses dynamically.
+      These can be built as extensions.  Komodo ships with a sample of two
+      harnesses for the Python Nose test framework -- one wraps Python's
+      PyUnit library, the other wraps Python's doctest library.
+      </li>
+      <li>UI improvements: test plans are now associated either with projects,
+      as in version 4.3, or single documents.  There is no longer a set of
+      global test plans.  The Tools|Test menu is now used to manage document-based
+      test plans.  A "[Tools|Test|Move Global Test Plans to Document...]"
+      allows copying or moving global test plans created in version 4.3 to
+      specified documents.
+      </li>
+    </ul>
   </li>
 </ul>
 
