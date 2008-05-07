@@ -350,6 +350,86 @@
     <strong>'Ctrl' + 'K', 'R'</strong></li>
   </ul>
 
+  <h2><a name="changelists" id="changelists">Change Lists</a></h2>
+  
+  <p>Changelists are a way of grouping associated files together so they
+  can be committed in a single SCC operation. Subversion and Perforce
+  have native implementations of changelists, but Komodo IDE offers it's
+  own generic changelist functionality which can be used with
+  Subversion, Perforce and CVS.</p>
+  
+  <p>The <strong>Change Lists</strong> tab in the left pane allows you
+  to create new changelists, modify existing ones, and drag files
+  from one list to another.</p>
+  
+  <p>Right-click on a list to perform SCC operations or view the list
+  properties.</p>
+  
+  <h3><a name="default_changelist" id="default_changelist">Default
+  Change Lists</a></h3>
+  
+  <p>When you add, edit, or delete files in an SCC repository, these
+  changes are automatically added to a <strong>Default Changes</strong>
+  list (separate ones are created for SVN, P4, and CVS). Files can be
+  dragged from this list to other change lists, or the <strong>Default
+  Changes</strong> list can be renamed and modified as desired; new
+  default lists are created when another file under SCC control is
+  edited, added or deleted.</p>
+  
+  <h3><a name="create_changelist" id="create_changelist">Creating a New
+  Change List</a></h3>
+  
+  <p>Use the <strong>Add New Change List</strong> button in the
+  <strong>Change Lists</strong> tab to create a new change list. You
+  will be prompted to specify a unique name for the change list.</p>
+  
+  <h3><a name="changelist_properties" id="changelist_properties">Change
+  List Properties</a></h3>
+  
+  <p>Right-clicking on a change list brings up a context menu. Select
+  <strong>Properties</strong> to bring up the <strong>Changelist
+  Properties</strong> dialog box with the following fields:</p>  
+  
+  <ul>
+    <li><strong>Changelist Name</strong>: This can be any arbitrary
+    unique name.</li>
+    <li><strong>Commit Meessage</strong>: The message to log with the
+    SCC server when the changes are committed.</li>
+    <li><strong>Files</strong>: The list of files included with the
+    change list. By default, this shows the files that have been added
+    to the list (checked) and other files with pending SCC operations
+    under the same base path (unchecked). An icon next to the check box
+    shows which SCC operation is pending for each file.</li>
+  </ul>
+
+  <h4><a name="changelist_modify"
+  id="changelist_modify">Modifying the File List</a></h4>
+  
+  <p>Only checked files will be included when the change list is
+  submitted. Unchecked files (those that are under the same base path
+  with pending SCC operations) are displayed so that they can be added
+  easily if desired. Select <strong>Only show checked files</strong> to
+  hide these.</p>
+  
+  <p>The <strong>Base path</strong> displayed above the file list is
+  highest level directory to include all files in the list. If you add a
+  new file in an adjacent or higher-level directory, or if you use the
+  <strong>Add Dir</strong> button to specify another directory outside
+  of the base path, Komodo will re-compute the base path to include all
+  files.</p>
+  
+  <h4><a name="changelist_patch" id="changelist_patch"></a>Making a
+  Patch</h4>
+  
+  <p>The <strong>Show Diff</strong> will display a unified diff of all
+  checked files using the base path described above. This is an
+  excellent way to create patches.</p>
+  
+  <p>If <a href="prefs.html#scc">Diff Display Style</a> is set to
+  <strong>Create new window</strong>, copy the diff into a new file and
+  save it. If this is set to <strong>Open editor tab</strong>, use
+  <strong>File|Save As...</strong>.</p>
+  
   <h2><a name="config" id="config">Configuring Source Code Control
   Integration</a></h2>
 
