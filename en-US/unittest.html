@@ -17,24 +17,26 @@
   <h1><a name="unit_test_top" id="unit_test_top">Unit Testing</a></h1>
 
   <p>Komodo has a unit testing interface for Perl, PHP, Ruby and Python.
-  Unit tests can be defined globally, or within a project. Test output
-  is displayed in the <strong>Test Results</strong> tab in the bottom
-  pane. Click on an error to jump to the relevant file and line
+  Unit tests can be defined within project or file preferences. Test
+  output is displayed in the <strong>Test Results</strong> tab in the
+  bottom pane. Click on an error to jump to the relevant file and line
   number.</p>
-  
+
   <h2><a name="unit_test_create" id="unit_test_create">Creating a Test Plan</a></h2>
-  
-  <p>To create a global test plan, click <strong>Tools|Test Plans|Create
-  New Global Test Plan...</strong>. Global test plans can be edited and
-  managed in Komodo's preferences.</p>
-  
+
+  <p>To create a test plan for a specific file, click <strong>Tools|Test
+  Plans|Create New Test Plan...</strong>. File-based test plans can be
+  edited and managed in the file's <a
+  href="files.html#files_settings">preferences</a> (<strong>Edit|Current
+  File Settings</strong>).</p>
+
   <p>To create a project-specific test plan, right-click on a
   project and select <strong>Create New Test Plan...</strong>.
   Project-specific test plans can be edited and managed in the project
   preferences.</p>
-    
+
   <p>In the "Define a new Test Plan" dialog box:
-  
+
     <ol>
       <li>Give the test plan a unique name</li>
       <li>Select the language</li>
@@ -44,45 +46,45 @@
       <li>Click 'OK' to save the test plan</li>
     </ol>
   </p>
-  
+
   <h3><a name="unit_test_langs" id="unit_test_langs">Supported Test Frameworks
   by Language</a></h3>
-  
+
   <ul>
     <li><strong>Perl</strong>: Uses '<tt>make test</tt>'. If no Makefile
     is present, it first runs '<tt>perl Makefile.PL</tt>' to generate
     one before running '<tt>make test</tt>'.</li>
-  
+
     <li><strong>Python</strong>: Uses the <tt>unittest</tt> framework.
     You need to specify a list of files and/or directories to test.</li>
-  
+
     <li><strong>PHP</strong>: Uses the <tt>PHPUnit</tt> framework. Set
     the test plan to point to the base directory of the project. The
     test harness will look for a subdirectory called
     <em>tests</em>.</li>
-  
+
     <li><strong>Ruby</strong>: Runs '<tt>rake</tt>'. If the default
     action of the Rakefile is to run tests, no command-line options are
     needed. If not, enter the appropriate target for rake (e.g.
     '<tt>rake test</tt>').</li>
   </ul>
-  
-  
+
+
   <h2><a name="unit_test_run" id="unit_test_run">Running a Test Plan</a></h2>
-  
-  <p>To run a test plan, select it from the drop list in the <strong>Tests
-  Results</strong> tab in the bottom pane and click the <strong>Run Test
-  Plan</strong> button. The drop list shows all test plans available globally
-  and in the current <a href="project.html#Switching_Between_Projects">active
-  project</a>.</p>
-  
+
+  <p>To run a test plan, select it from the drop list in the
+  <strong>Tests Results</strong> tab in the bottom pane and click the
+  <strong>Run Test Plan</strong> button. The drop list shows all test
+  plans available for the current file and in the <a
+  href="project.html#Switching_Between_Projects">active project</a>.</p>
+
   <p>These plans can also be started from the
   <strong>Tools|Test</strong> menu.</p>
-  
+
   <p>Project-specific test plans can be run by right-clicking on the project
   to bring up the context menu, then selecting the test plan from the
   <strong>Test</strong> sub-menu.</p>
-  
+
 
   <br />
   <!-- Footer Start -->
