@@ -555,6 +555,11 @@
     <node name="Locating Current Scope" link="codeintel.html#codeintel_scope"/>
     <node name="Filtering Symbols" link="codeintel.html#codeintel_filter"/>
   </node>
+  <node name="Code Outline" link="code_outline.html#code_outline"
+        flags="ide">
+    <node name="Viewing the Outline" link="code_outline.html#view_outline"/>
+    <node name="Selecting and Filtering" link="code_outline.html#outline_select"/>
+  </node>
 </node>
 
 <node name="DOM Viewer" link="dom.html#dom_top"
