@@ -555,10 +555,10 @@
     <node name="Locating Current Scope" link="codeintel.html#codeintel_scope"/>
     <node name="Filtering Symbols" link="codeintel.html#codeintel_filter"/>
   </node>
-  <node name="Code Outline" link="code_outline.html#code_outline"
+  <node name="Sections List" link="sections_list.html#sections_top"
         flags="ide">
-    <node name="Viewing the Outline" link="code_outline.html#view_outline"/>
-    <node name="Selecting and Filtering" link="code_outline.html#outline_select"/>
+    <node name="Viewing the List" link="sections_list.html#sections_view"/>
+    <node name="Selecting and Filtering" link="sections_list.html#sections_select"/>
   </node>
 </node>
 
