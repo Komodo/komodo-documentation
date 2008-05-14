@@ -172,10 +172,10 @@
 
   <p>If you chose SQLite2 or SQLite3 as your database tool, you can skip
   this step.  If you chose postgresql or oracle, you'll need to manage
-  the database manually.  So this section applies only to MySQL users.</p>
+  the database manually.  This section applies only to MySQL users.</p>
 
   <p>If MySQL is installed locally and can accept connections by
-  'root' without a password (it often is by default), click the
+  'root' without a password (it often does by default), click the
   <strong>Create Databases</strong> macro in the <strong>Rails
   Tools</strong> project folder to create the database.</p>
 
@@ -195,8 +195,8 @@
     '<code>password:</code> '). In this tutorial, we will only be
     working with the <code>development</code> database, but you
     should modify the <code>test</code> and <code>production</code>
-    sections as well to avoid errors with the <strong>Create
-    Databases</strong> macro below.</li>
+    sections as well to avoid seeing errors when running the
+    <strong>Create Databases</strong> macro below.</li>
 
     <li>If you are running MySQL on a remote server, add the
     setting <code>hostname:</code> <em>host</em> to the
@@ -356,7 +356,7 @@
   results will appear. If you get a message along the lines of the
   following: "Run `rake db:migrate` to update your database then try
   again." you probably skipped that step above. Run the <strong>Rails
-  Tools|Migrate|db:migrate</strong> command, and retry the tests.</p>
+  Tools/Migrate/db:migrate</strong> macro, and retry the tests.</p>
 
   <p>The result tab should show that 2 tests passed, 0 failed, and
   there were 0 errors.  There's also an "Information" line,
@@ -369,7 +369,7 @@
 
   <p>This tutorial assumes you're using Komodo IDE, but it's easy to
   follow along with Komodo Edit. You can run unit tests inside Komodo
-  Edit with the <strong>Rails Tools|Test|Unit Tests</strong> command.
+  Edit with the <strong>Rails Tools/Test/Unit Tests</strong> macro.
   This will show the results in the Command Output window. You should
   see a final result of:</p>
 
@@ -401,7 +401,7 @@
 
 
   <p>Double-click the first line of code that refers to
-  <code>test/functional/movies_controller_test.rb</code>.
+  <em>test/functional/movies_controller_test.rb</em>.
   <em>movies_controller_test.rb</em> should become the current file,
   with the cursor at the line that was reported in the traceback; in
   this case, line 16. We see that this code is failing:</p>
@@ -430,7 +430,7 @@
   red failure button to move to the failed test, then double-click on
   the line starting with
   <code>test/functional/movies_controller_test.rb:35:in
-  `test_should_update_movie'</code> in the <em>Details</em> window to
+  `test_should_update_movie'</code> in the <strong>Details</strong> window to
   see the failed code.</p>
 
   <pre class="code">
