@@ -24,30 +24,31 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <ul>
   <li>
-    Sections menulist in the Komodo statusbar. This shows a menulist outlining
-    the main elements contained in your current Komodo editor file.
+    Sections list: A menulist in the status bar that shows an outline
+    list of the main elements in your current file.
   </li>
   <li>
-    Multi-file SCC Commit support. The commit dialog will now show the scc
+    Multi-file SCC Commit support: The commit dialog now shows the SCC
     status of files you wish to commit and easily allow you to add/remove
     files from the commit operation.
   </li>
   <li>
-    SCC Changelists. A new toolbar tab "Change Lists" has been added to the
+    SCC Changelists: A new toolbar tab "Change Lists" has been added to the
     right Komodo pane (next to the Komodo toolbox). This tab will show you the
-    scc status of files you have opened/referenced and enables you to create and
-    manage groups of scc files (changelists).
+    SCC status of files you have opened/referenced and enables you to create and
+    manage groups of SCC files (changelists).
   </li>
+
   <li>
     Unit testing improvements:
     <ul>
       <li>Extensibility: Komodo now reads in unit test harnesses dynamically.
       These can be built as extensions.
       </li>
-      <li>UI improvements: test plans are now associated either with projects,
+      <li>UI improvements: Test plans are now associated either with projects,
       as in version 4.3, or single documents.  There is no longer a set of
       global test plans.  The Tools|Test menu is now used to manage document-based
-      test plans.  A "[Tools|Test|Move Global Test Plans to Document...]"
+      test plans.  A "Tools|Test|Move Global Test Plans to Document" menu item
       allows copying or moving global test plans created in version 4.3 to
       specified documents.
       </li>
@@ -56,6 +57,25 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 </ul>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
+
+<h3 id="bug_fixes-4.4a2">4.4 Alpha 2 Bug Fixes:</h3>
+
+<ul>
+  <li>Tabstops are now case sensitive. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76657">76657</a>)</li>
+  <li>Improved performance in macro trigger selection. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75694">75694</a>)</li>
+  <li>Unit Tests: Support for Ruby single-test files outside of Rakefiles. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=74663">74663</a>)</li>
+  <li>Unit Tests: Test harnesses loaded dynamically. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76466">76466</a>)</li>
+  <li>JavaScript: Autocompletion and code browser support for anonymous functions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76519">76519</a>)</li>
+  <li>A "Debug: Go/Continue" item is now listed (along with "Debug: Start" which does the same thing) in the keybinding preferences. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76690">76690</a>)</li>
+  <li>Unit Tests: Python unit tests now use Komodo's python include path preference. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76701">76701</a>)</li>
+  <li>Debugger: Exception traceback when viewing variables in the python interactive shell fixed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76709">76709</a>)</li>
+  <li>Improved list of PL-SQL keywords. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76743">76743</a>)</li>
+  <li>Folding now works in SQL. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76875">76875</a>)</li>
+  <li>Added an observer trigger macro, as a generalization of current trigger macros. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76885">76885</a>)</li>
+  <li>Fixes to bklocal.py build script. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77001">77001</a>)</li>
+  <li>HTTP Inspector: Contents now visible in application/xml or application/xhtml+xml responses. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76656">76656</a>)</li>
+  <li>Language-specific tab/indent settings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=58747">58747</a>)</li>
+</ul>
 
 <h3 id="bug_fixes-4.4a1">4.4 Alpha 1 Bug Fixes:</h3>
 
@@ -68,7 +88,7 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   <li>Javascript: provide completions on a javascript function (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76504">76504</a>)</li>
   <li>Perl: wrong syntax highlighting for heredoc in Perl (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76004">76004</a>)</li>
   <li>Preview in browser no longer works with Komodo's mapped URIs (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76323">76323</a>)</li>
-  <li>Http inspector: match on all rules can sometimes match any instead (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76368">76368</a>)</li>
+  <li>HTTP Inspector: match on all rules can sometimes match any instead (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76368">76368</a>)</li>
   <li>Bookmarks: allow bookmark with middle click (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75317">75317</a>)</li>
   <li>Test integration: unit test properties show up on all project-part properties (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76327">76327</a>)</li>
   <li>Editor: fix cut/copy not working correctly at document EOF (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75300">75300</a>)</li>
