@@ -62,7 +62,54 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
 
-<h3 id="bug_fixes-4.4a2">4.4 Alpha 2 Bug Fixes:</h3>
+<h3 id="bug_fixes-4.4b1">4.4 Beta 1 Bug Fixes</h3>
+
+<ul>
+  <li>PHP:
+    <ul>
+      <li>Added *.phtml file association to PHP for zend extension. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77065">77065</a>)</li>
+      <li>Added $_SERVER array members to php cix file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77081">77081</a>)</li>
+      <li>Better @var autocompletion. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76676">76676</a>)</li>
+      <li>Three-character autocompletion for defined class names. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76677">76677</a>)</li>
+      <li>Autocompletion on variable names typed in comments. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76687">76687</a>)</li>
+      <li>Removed '#' from cpln_stop_chars. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77451">77451</a>)</li>
+      <li>Support for virtual properties via PHPDoc comments. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=72960">72960</a>)</li>
+      <li>Autocomplete for predefined sets of array keys. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=67367">67367</a>)</li>
+    </ul>
+  </li>
+  <li>JavaScript:
+    <ul>
+      <li>Added 'undefined' keyword to syntax highlighting. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id="></a>)</li>
+      <li>Three-character autocompletions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=62767">62767</a>)</li>
+    </ul>
+  </li>
+  <li>SCC:
+    <ul>
+      <li>Case-insensitive filename comparisons on Windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76624">76624</a>)</li>
+      <li>Fixed bug that made SCC unavailable after changing the executable. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77286">77286</a>)</li>
+    </ul>
+  </li>
+  <li>Code Intelligence:
+    <ul>
+      <li>Added fillup characters for PHP, JavaScript and CSS. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75876">75876</a>)</li>
+      <li>Autocompletion information for loggers. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76056">76056</a>)</li>
+    </ul>
+  </li>
+  <li>Bookmarks, transient marks and breakpoints no longer lost when using 'Replace all'. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76694">76694</a>)</li>
+  <li>Better window focus handling on Windows and OS X. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77077">77077</a>)</li>
+  <li>Better shutdown handling when closing Komodo. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77284">77284</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=75727">75727</a>)</li>
+  <li>Sections List: Fixed styling problems. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76975">76975</a>)</li>
+  <li>Preferences: New warning dialog for unsaved File Associations. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75053">75053</a>)</li>
+  <li>Unit Testing: Fixed duplicate output problem. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75350">75350</a>)</li>
+  <li>Better Ruby web documentation link in Help menu. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75400">75400</a>)</li>
+  <li>JavaScript: Object autocompletions on array properties. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76711">76711</a>)</li>
+  <li>Toolbox node state (i.e. folders open or closed) now preserved across sessions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77236">77236</a>)</li>
+  <li>Fixed exception caused by disabling then enabling the Shared Toolbox. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77238">77238</a>)</li>
+  <li>Ruby: Comment folding. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77362">77362</a>)</li>
+  <li>Incremental Search documentation rewritten. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=72849">72849</a>)</li>
+</ul>
+
+<h3 id="bug_fixes-4.4a2">4.4 Alpha 2 Bug Fixes</h3>
 
 <ul>
   <li>Tabstops are now case sensitive. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76657">76657</a>)</li>
@@ -81,7 +128,7 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   <li>Language-specific tab/indent settings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=58747">58747</a>)</li>
 </ul>
 
-<h3 id="bug_fixes-4.4a1">4.4 Alpha 1 Bug Fixes:</h3>
+<h3 id="bug_fixes-4.4a1">4.4 Alpha 1 Bug Fixes</h3>
 
 <ul>
   <li>MacOSX: crash when dragging wrapped text (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76566">76566</a>)</li>
@@ -104,7 +151,7 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <h2 id="knownissues">Known Issues</h2>
 
-<h3 id="knownissues-4.4a1">4.4 Alpha 1</h3>
+<h3 id="knownissues-4.4b1">4.4 Beta 1</h3>
 
 <p>To view the status of outstanding Komodo issues,
 including those that have been fixed in this release, or to
