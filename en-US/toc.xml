@@ -506,6 +506,7 @@
     <node name="Supported Test Frameworks by Language" link="unittest.html#unit_test_langs"/>
   </node>
   <node name="Running a Test Plan" link="unittest.html#unit_test_run"/>
+  <node name="Importing Global Test Plans" link="unittest.html#importing_global_test_plans"/>
 </node>
 
 <node name="HTTP Inspector" link="http-insp.html#http_top"
