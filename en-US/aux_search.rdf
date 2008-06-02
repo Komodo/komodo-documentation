@@ -14,6 +14,8 @@
       <rdf:li> <rdf:Description ID="opening_remote_files" nc:link="files.html#Opening_Remote_Files" nc:name="Opening Remote Files (FTP, SFTP and SCP)" /> </rdf:li>
       <rdf:li> <rdf:Description ID="files_public_key_auth" nc:link="files.html#files_public_key_auth" nc:name="ssh-agent and Pageant" /> </rdf:li>
       <rdf:li> <rdf:Description ID="files_public_key_auth" nc:link="files.html#files_public_key_auth" nc:name="Passwordless Authentication" /> </rdf:li>
+      <rdf:li> <rdf:Description ID="change_lists" nc:link="scc.html#changelists" nc:name="Changelists" /> </rdf:li>
+      <rdf:li> <rdf:Description ID="using_bookmarks_and_marks" nc:link="editor.html#bookmarks" nc:name="Transient Marks" /> </rdf:li>
     </rdf:Seq>
   </nc:subheadings>
 </rdf:Description>
