@@ -26,8 +26,8 @@
   developers can work on the same project (including the same
   project file) at the same time. The SCC repository can be queried
   for a detailed listing of the changes that occurred each time a
-  file was edited. Files under source code control that are open
-  for editing can also be reverted to their previous state.</p>
+  file was edited. Files under source code control that have been
+  locally modified can also be reverted to their previous state.</p>
 
   <p>Komodo's SCC integration works in conjunction with the
   <a class="doc" href="http://www.nongnu.org/cvs/">CVS</a>,
@@ -60,7 +60,7 @@
   </ul>
 
   <p>Additionally, files under Perforce control are recognized by
-  Komodo even when they are not open for edit. They can be opened
+  Komodo even when they are not locally modified. They can be opened
   via the File menu, SCC context menus (locations described below),
   or the <a class="doc" href=
   "workspace.html#Toolbars">SCC toolbar</a>.</p>
@@ -257,9 +257,9 @@
 
   <p>The icons can appear in a variety of combinations, depending
   on the status of the file and where they are displayed in the
-  Komodo workspace. For example, a green circle next to a padlock
-  on a tab in the Editor Pane indicates that the file is open for
-  edit and that the version of the file in your local directory is
+  Komodo workspace. For example, a pencil icon next to a padlock icon
+  on a tab in the Editor Pane indicates that the file has been locally
+  modified and that the version of the file in your local directory is
   in sync with the version in the source code repository.</p>
 
   <table cellpadding="2">
@@ -287,7 +287,8 @@
       <td><img border="0" src="img/status_icon_ok.png" /></td>
 
       <td>The version of the file in your local directory is in
-      sync with the version in the source code repository.</td>
+      sync with the version in the source code repository (i.e. there
+      are no pending updates from the SCC server).</td>
     </tr>
 
     <tr>
