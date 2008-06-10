@@ -30,7 +30,7 @@
 
   <p>Komodo can be used to debug PHP programs <a href=
   "#local_debug_PHP">locally</a> or <a href=
-  "#remote_debug_PHP">remotely</a>. Remote PHP debugging encompases
+  "#remote_debug_PHP">remotely</a>. Remote PHP debugging encompasses
   all types of PHP debugging not initiated from within Komodo,
   including debugging PHP scripts running under a local web
   server.</p>
@@ -297,7 +297,7 @@
   <h2><a name="remote_debug_PHP" id="remote_debug_PHP">Remote PHP
   Debugging</a></h2>
 
-  <p>Remote PHP debugging encompases all types of PHP debugging not
+  <p>Remote PHP debugging encompasses all types of PHP debugging not
   initiated from within Komodo, including debugging PHP scripts
   running under a local web server.</p>
 
@@ -407,7 +407,9 @@
 
   <p>Open the <em>php.ini</em> configuration file on the web
   server. In the "<code>Dynamic Extension</code>" section, add the
-  lines specified below.</p>
+  lines specified below. Edit the values to reflect your particular
+  environment (see <strong><a href="#debugphp_xdebug_settings">Xdebug
+  settings explained</a></strong> below).</p>
 
   <table align="center" width="60%">
     <tbody>
@@ -426,6 +428,13 @@
   <ul>
     <li>
       <p><strong>Windows</strong></p>
+      
+      <p>The <em>php.ini</em> configuration file should be in your
+      operating system directory (e.g. C:\WINDOWS or C:\WINNT), or
+      in the same directory as <code>php.exe</code> (e.g. C:\PHP).
+      If you used the PHP Windows installer, this file should be in
+      the correct location.</p>
+      
       <pre class="code">
 ; xdebug config for Windows
 zend_extension_ts=c:\path\to\php_xdebug.dll
@@ -437,11 +446,6 @@ xdebug.remote_port=9000
 xdebug.idekey=&lt;idekey&gt;
 </pre>
 
-      <p>The <em>php.ini</em> configuration file should be in your
-      operating system directory (e.g. C:\WINDOWS or C:\WINNT), or
-      in the same directory as <code>php.exe</code> (e.g. C:\PHP).
-      If you used the PHP Windows installer, this file should be in
-      the correct location.</p>
     </li>
 
     <li>
@@ -459,15 +463,47 @@ xdebug.idekey=&lt;idekey&gt;
     </li>
   </ul>
 
-  <p>Set <code>remote_port</code> to the same value as the
-  debugging listener port configured in
-  <strong>Edit|Preferences|Debugger</strong> (or the system
-  assigned <strong>Host Port</strong> displayed under
-  <strong>Debug|Listener Status</strong>). If Komodo is not running
-  on the same machine as the web server, you also need to set
-  <code>remote_host</code> to the correct IP address for
-  Komodo.</p>
+  <p><strong><a name="debugphp_xdebug_settings">Xdebug settings explained</a></strong>:</p>
+  
+  <dl style="margin: 0 15em 0 3em">
+    <dt><code>zend_extension_ts</code> or <code>zend_extension</code></dt>
+    <dd>Should be set to the full path to the xdebug library on your
+    system. Use <code>zend_extension_ts</code> ("thread safe") on
+    Windows and <code>zend_extension</code> on other platforms.</dd>
+    
+    <dt><code>xdebug.remote_enable</code></dt>
+    <dd>Enables remote debugging.</dd>
+    
+    <dt><code>xdebug.remote_handler</code></dt>
+    <dd>Should be set to <code>dbgp</code> for use with Komodo.</dd>
 
+    <dt><code>xdebug.remote_mode</code></dt>
+    <dd>Set to <code>req</code> to have the script connect to Komodo
+    when it starts. Set to <code>jit</code> to connect only on an error
+    condition (see <a target="_blank"
+    href="http://www.openkomodo.com/blogs/jeffg/jit-php-debugging-komodo">JIT
+    PHP debugging in Komodo</a>).</dd>
+    
+    <dt><code>xdebug.remote_host</code></dt>
+    <dd>Set to the hostname or IP address of the computer running Komodo
+    or the <a href="debugger.html#dbgp_proxy">DBGP Proxy</a>. Use
+    'localhost' or '127.0.0.1' if Komodo and the web server are running
+    on the same system.</dd>
+    
+    <dt><code>xdebug.remote_port</code></dt>
+    <dd>Set to the same value as the debugging listener port configured
+    in the <a href="prefs.html#DebuggerConnection">Debugger Connection
+    preferences</a> (or the system assigned <strong>Host Port</strong>
+    displayed under <strong>Debug|Listener Status</strong>)</dd>
+    
+    <dt><code>xdebug.idekey</code> (optional)</dt>
+    <dd>If you are using the <a href="debugger.html#dbgp_proxy">DBGP
+    Proxy</a>, set this to the Proxy Key configured in the <a
+    href="prefs.html#DebuggerConnection">Debugger Connection
+    preferences</a>.</dd>
+  </dl>
+    
+    
   <p>Restart the web server to load the new configuration.</p>
 
   <h4><a name="debugphp_verify_php_ini" id=
@@ -483,7 +519,7 @@ php -m
   <p>If your command-line PHP interpreter uses a different
   <em>php.ini</em> file (this is often the case) or if you're not
   sure which file it uses, create a <em>phpinfo.php</em> file
-  containting the line '<code>&lt;?php phpinfo(); ?&gt;</code>' in
+  containing the line '<code>&lt;?php phpinfo(); ?&gt;</code>' in
   a web server directory to display the configuration in a web
   browser.</p>
 
@@ -719,4 +755,4 @@ export XDEBUG_CONFIG="remote_port=9000 remote_enable=1 remote_log=/tmp/xdebug.or
   should be manually commented out in <em>php.ini</em>.</p>
   <hr />
 </body>
-</html>
+</html> 
