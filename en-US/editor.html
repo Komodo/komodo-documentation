@@ -83,7 +83,7 @@
     Settings</a> for more information.</li>
 
     <li><strong>Source Control</strong>: Opens a sub-menu with
-    <a class="doc" href="scc.html#scc_top">source sode
+    <a class="doc" href="scc.html#scc_top">source code
     control</a> commands. Available only for files under version
     control (Komodo IDE only).</li>
 
@@ -765,7 +765,32 @@ object.method(value)<span class="cursor">|</span>
 
   <h2><a name="editor_mancode" id="editor_mancode">Manipulating
   Code</a></h2>
+  
+  <h3><a name="line_cut_copy" id="line_cut_copy">Cutting and Copying
+  Lines</a></h3>
+  
+  <p>When no text is selected, the Cut and Copy commands operate on the
+  entire line. For example, pressing 'Ctrl'+'X' while editing a line
+  will cut the entire line even though there is no selection.
+  <strong>Note</strong>: This behavior also applies to blank lines.</p>
+  
+  <p>Copying or cutting lines repeatedly from the same cursor position
+  adds each line to the clipboard rather than overwriting the previous
+  clipboard contents.</p>
+  
+  <h3><a name="line_select_drag" id="line_select_drag">Selecting and
+  Dragging Lines</a></h3>
+  
+  <p>If the <a href="#line_numbers_on">line number column</a> is
+  displayed, lines can be selected by and clicking on the line number.
+  The selection will only be highlighted while the mouse button is
+  depressed. To select multiple lines click on the starting line number,
+  press 'Shift', then click the ending line number.</p> 
 
+  <p>To drag a single line, click the line number and (keeping the left
+  mouse button depressed) drag it to the desired location. The same
+  operation can be done with multi-line selections.</p>
+  
   <h3><a name="repeat_keystrokes" id=
   "repeat_keystrokes">Automatically Repeating Keystrokes</a></h3>
 

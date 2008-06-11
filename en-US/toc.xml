@@ -217,6 +217,8 @@
     <node name="Commenting Blocks of Code" link="editor.html#Code_Commenting"/>
   </node>
   <node name="Manipulating Code" link="editor.html#editor_mancode">
+    <node link="editor.html#line_cut_copy" name="Cutting and Copying Lines" />
+    <node link="editor.html#line_select_drag" name="Selecting and Dragging Lines" />
     <node name="Repeating Keystrokes" link="editor.html#repeat_keystrokes"/>
     <node name="Indenting Code" link="editor.html#Indenting"/>
     <node name="Reflowing Paragraphs" link="editor.html#reflow"/>
