@@ -1047,16 +1047,46 @@ object.method(value)<span class="cursor">|</span>
   href="prefs.html#Indentation_Features">Preferences</a>
   dialog box. The default value is 8.</p>
 
-  <h3><a name="Column_Select" id="Column_Select">Selecting Columns
-  or Blocks</a></h3>
+  <h3><a name="Column_Select" id="Column_Select">Column / Rectangular
+  Selection</a></h3>
 
-  <p>Select columns of text in Komodo by pressing the 'Alt' key and
-  then dragging with the mouse. This feature, often called block
-  selection, is particularly useful when you want to easily move
-  code and data that is arranged in columns. Once the column of
-  text has been selected, use the keyboard or the Edit menu to
-  delete it or move it to another location.</p>
+  <p>To select a column or rectangular section press 'Alt' ('Ctrl' on
+  Linux) then left-click and drag with the mouse, or press 'Alt'+'Shift'
+  and use the direction keys (arrows, PageUp, PageDown, etc.). Cut,
+  Copy, Paste and Delete commands will operate on the highlighted
+  block.</p>
+  
+  <h3><a name="column_edit" id="column_edit">Column Editing
+  </a></h3>
+  
+  <p>Once a column selection has been made, text insertion will operate
+  on each line of the selection; the characters will be duplicated on
+  all selected lines.</p>
+  
+  <p>For example to change "directory-name" in the file list below,
+  select the column containing that name as described above.</p>
+  
+  <img src="img/column_select.png" border="1" alt="Column Selection" />
+  
+  <p>Once the column is selected, begin typing. The cursor will appear
+  only at the top line of the selection, but the new text will appear on
+  all subsequent lines within the colum selection.</p>
+  
+  <img src="img/column_edit.png" border="1" alt="Column Editing" />
 
+  <p>Press 'Esc' or any direction key to exit column editing mode.</p>
+  
+  <p><strong>Note</strong>: Column selections in areas beyond line
+  endings will not appear correctly. The areas beyond the end of line
+  will not be highlighted, but column editing will still work. Text will
+  be inserted immediately after the longest line in the selection.</p>
+  
+  <p>With <strong><a href="vikeybind.html">Vi emulation</a></strong>
+  enabled, mouse selection and Vi visual blockwise selection
+  ('Ctrl'+'V') will not trigger column editing. While in Input mode, use
+  'Alt'+'Shift' with the direction keys to make the column selection,
+  and 'Esc' to exit column editing mode.</p>
+  
   <h3><a name="Complete_Word" id="Complete_Word">Completing
   Words</a></h3>
 
