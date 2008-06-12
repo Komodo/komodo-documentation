@@ -105,8 +105,8 @@
 
   <ol>
     <li>Make a new directory/folder in a convenient location (e.g.
-    C:\rails on Windows, or /home/<em>username</em>/rails on OS X
-    or Linux).</li>
+    C:\rails\movielib on Windows, or
+    /home/<em>username</em>/rails/movielib on OS X or Linux).</li>
 
     <li>In Komodo, select <strong>File|New|New Project from
     Template</strong>.</li>
@@ -441,7 +441,7 @@
   </pre>
 
   <p>It's not obvious why this test is failing. Rails tests are just
-  Ruby code, so let's fire up the debugger (Komodo IDE only) to have a
+  Ruby code, so let's use the debugger (Komodo IDE only) to have a
   closer look, with the following steps:</p>
 
   <ul>
@@ -522,7 +522,7 @@
 
   <h3><a name="testing_app_1" id="testing_app_1">Testing the Application</a></h3>
 
-  <p>Open the <a target="_blank" href=
+  <p>Open the URL <a target="_blank" href=
   "http://localhost:3000/movies">http://localhost:3000/movies</a>
   in your favorite web browser. You should see a <strong>Listing movies</strong>
   page with no data and a <strong>New movie</strong> link. This is now
@@ -719,7 +719,7 @@
 
   <p>The functional test results should have you convinced that these additions
   didn't break anything.  But now would be a good time to restart the server,
-  fire up the app, and make sure it still works as before.  If you add eleven
+  try the application, and make sure it still works as before.  If you add eleven
   movies you should see the paginator at work.</p>
 
   <h3><a name="adding_in_place_editing" id="adding_in_place_editing">Adding
@@ -1000,13 +1000,13 @@
   rerun the tests, and they should pass.</p>
 
   <p>People familiar with the first version of this tutorial will recall
-  firing up the debugger to correct a problem like this. Writing tests
+  using the debugger to correct a problem like this. Writing tests
   is more efficient. You can debug Rails apps if you need to, though.
   Press the <code>Rails Tools|Run|debug rails app</code> tool, set
   breakpoints at the points in the controllers and views you're
   interested in, and then hit them with your application.</p>
 
-  <p>Finally, fire up the server one more time, and verify that your
+  <p>Finally, start the server one more time, and verify that your
   application now works as you expect. You're ready to take this one
   live.</p>
 
