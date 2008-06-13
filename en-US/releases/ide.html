@@ -269,6 +269,15 @@ Bug Database</a>.</p>
 "Debugging_Issues">Debugging</a></h3>
 
 <ul>
+  <li>PHP: A non-empty <code>doc_root</code> setting in <em>php.ini</em>
+  causes a 'No input file specified' error when starting a local
+  debugging session with CGI emulation. The Web Developer Suite 2.0
+  package and others use this setting, and it is copied into the
+  debugging version of <em>php.ini</em> during PHP auto-config. Comment
+  this setting out in the file specified in
+  'Preferences|Languages|PHP|Path to alternate PHP configuration file'
+  to avoid this problem.</li>
+  
   <li>Python: Breakpoints will not work with the <a target="_blank"
   href="http://psyco.sourceforge.net/">Psyco</a> extension enabled.
   The Komodo <a href="../trouble.html#psyco_debug">FAQ</a> has a
