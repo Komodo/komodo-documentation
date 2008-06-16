@@ -38,7 +38,11 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
     SCC status of files you have opened/referenced and enables you to create and
     manage groups of SCC files (changelists).
   </li>
-
+  <li>
+    Column Editing: Column / rectangular selection now triggers column
+    editing mode, allowing you to quickly add comments or modify
+    multiple lines of text silmultaneously within the selection.
+  </li>
   <li>
     Unit testing improvements:
     <ul>
@@ -61,6 +65,75 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 </ul>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
+
+<h3 id="bug_fixes-4.4b2">4.4 Beta 2 Bug Fixes</h3>
+
+<ul>
+  <li>PHP:
+    <ul>
+      <li>Code browser now shows type-casted variables. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=http://bugs.activestate.com/show_bug.cgi?id=76553">76553</a>)</li>
+      <li>'/', '?' and '$' no longer "fillup characters" as they got in the way of correct autocompeltion. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77800">77800</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=77524">77524</a>)</li>
+      <li>Updated Xdebug to include fix for incorrect file URIs. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=69699">69699</a>)</li>
+      <li>Class variables now only get set on the class scope. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77810">77810</a>)</li>
+      <li>Using '@var object' in phpdoc no longer breaks 'Go to Definition'. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77602">77602</a>)</li>
+      <li>Improved PHP remote debugging instructions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=70594">70594</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=70596">70596</a>)</li>  
+      <li>New Xdebug builds. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75978">75978</a>)</li>
+      <li>Fixed Xdebug compatibility issue on Windows Vista. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77272">77272</a>)</li>
+    </ul>
+  </li>
+  
+  <li>JavaScript:
+    <ul>
+      <li>Fixed missing functions in sections list. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76662">76662</a>)</li>
+      <li>Fixed array completions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77780">77780</a>)</li>
+      <li>Fixed problem with namespace declaration not being corectly parsed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76529">76529</a>)</li>
+      <li>Function argument is no longer incorrectly recongized as a global var in nested functions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75068">75068</a>)</li>
+    </ul>
+  </li>
+  
+  <li>SCC:
+    <ul>
+      <li>Multiple history dialog boxes can now be opened. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75153">75153</a>)</li>
+      <li>SCC+SSH:// no longer hangs Komodo when unable to resolve remote system. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=65833">65833</a>)</li>
+      <li>Fixes to History UI. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=47048">47048</a>,
+        <a href="http://bugs.activestate.com/show_bug.cgi?id=47068">47068</a>,
+        <a href="http://bugs.activestate.com/show_bug.cgi?id=51397">51397</a>,
+        <a href="http://bugs.activestate.com/show_bug.cgi?id=74458">74458</a>)</li>
+      <li>Changed shortcut keys in Commit dialog. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77582">77582</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Find/Replace:
+    <ul>
+      <li>'Replace with' field in the Find dialog now populated from the Rx Toolkit if used. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76582">76582</a>)</li>
+      <li>Turned off ChardetImportWarning. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77562">77562</a>)</li>
+      <li>Better feedback in the Find/Replace dialog. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76032">76032</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Debugging: Python: Detatching from a remote debug session no longer kills embedded interpreter. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76160">76160</a>)</li>
+  <li>Language-specific indentation settings now saved properly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77248">77248</a>)</li>
+  <li>Code Browser: Fixed problem expanding trees in multi-language files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77655">77655</a>)</li>
+  <li>File changes outside the editor now properly trigger a reload. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77790">77790</a>)</li>
+  <li>Fixed disabled textbox styling on Vista and Linux. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75996">75996</a>)</li>
+  <li>Fixed appearance of line endings in Replace All results. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76612">76612</a>)</li>
+  <li>Documented cut/copy behavior with when there is no selection. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77758">77758</a>)</li>
+  <li>Projects: Filter field now case sensitive on Linux and OS X to avoid inconsistent filter results. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=74554">74554</a>)</li>
+  <li>Macros: Fixed line continuation failure in Python macros.. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76374">76374</a>)</li>
+  <li>Snippets: Fixed unstable processing of non-latin letters. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77488">77488</a>)</li>
+  <li>Fixed window management problems on Linux. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75050">75050</a>)</li>
+  <li>Paths and URIs normalized to avoid duplicate editor tabs for same file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76156">76156</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=77205">77205</a>)</li>
+  <li>Auto Update: A progress dialog box is now shown during the update. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76348">76348</a>)</li>
+  <li>Changelists: Less confusing dialog for deleting a file from a changelist. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77483">77483</a>)</li>
+  <li>Added link to help on editing test plans. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75408">75408</a>)</li>
+  <li>Editor: Fixed bug with "Minimum number of lines to keep above and below the cursor" setting being ignored with word wrap enabled. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75645">75645</a>)</li>
+  <li>Fixed LangInfo exeptions when loading .udl files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76733">76733</a>)</li>
+  <li>SDK: Fixed bug in Firefox extension project template. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76998">76998</a>)</li>
+  <li>Minor change to Rails tutorial instructions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=http://bugs.activestate.com/show_bug.cgi?id=77444">77444</a>)</li>
+  <li>Fixed exception when opening Smarty language files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77684">77684</a>)</li>
+  <li>Clearer text in auto-update wizard. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77816">77816</a>)</li>
+  <li>Fixed hidden 'Yes' button on file creation dialogs containing long paths. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75851">75851</a>)</li>
+</ul>
 
 <h3 id="bug_fixes-4.4b1">4.4 Beta 1 Bug Fixes</h3>
 
