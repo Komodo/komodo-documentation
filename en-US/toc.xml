@@ -457,7 +457,7 @@
       <node name="Invoking the Python Remote Debugger" link="debugpython.html#Invoking_the_Python_Remote_Debugger">
         <node name="Running dbgpClient.py from the Command Line" link="debugpython.html#debugpython_dbgpclient_command_line"/>
         <node name="Using dbgpClient Functions in Python Programs" link="debugpython.html#debugpython_dbgpclient_functions"/>
-        <node name="Just-in-Time Debugging" link="debugpython.html#just_in_time"/>
+        <node name="Python Just-in-Time Debugging" link="debugpython.html#just_in_time"/>
       </node>
       <node name="Python CGI Debugging" link="debugpython.html#debugpython_dbgpclient_cgi"/>
     </node>
