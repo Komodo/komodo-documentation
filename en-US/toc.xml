@@ -883,13 +883,14 @@
 
 <node name="Komodo Reference" link="">
   <node name="Komodo FAQ" link="trouble.html#trouble_top"/>
-  <node name="Default Key Binding Lists" link="keybind.html">
+  <node name="Key Binding Schemes" link="keybind.html">
     <node name="Windows/Linux Key Bindings" link="defkeybind.html"/>
     <node name="OS X Key Bindings" link="osxkeybind.html"/>
     <node name="Emacs Key Bindings" link="emacskeybind.html"/>
     <node name="Vi Key Bindings" link="vikeybind.html">
       <node name="Custom Vi Commands" link="vikeybind.html#vi_commands"/>
     </node>
+    <node name="Sharing Keybinding Schemes" link="keybind.html#sharing_keybinding_schemes"/>
   </node>
 
 <!-- #if defined('KOMODO_JS_API_TOC') -->
