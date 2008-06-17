@@ -475,6 +475,7 @@
       <node name="Starting Remote Debugging" link="debugphp.html#debugphp_start_stop_remote_PHP"/>
       <node name="Using xdebug_break()" link="debugphp.html#using_xdebug_break"/>
       <node name="Xdebug Logging" link="debugphp.html#xdebug_logging"/>
+      <node name="PHP Just-in-Time Debugging / Break on Exception" link="debugphp.html#php_just_in_time"/>
     </node>
     <node name="Common PHP Debugging Problems" link="debugphp.html#config_PHP_problems">
       <node name="Debugging PHP on OS X" link="debugphp.html#config_PHP_os_x"/>

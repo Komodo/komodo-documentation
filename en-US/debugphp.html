@@ -711,11 +711,50 @@ xdebug.remote_log=/tmp/xdebug.log
   <p>...or add <code>remote_log</code> to the
   <code>XDEBUG_CONFIG</code> environment variable. For example:</p>
   <pre class="code">
-export XDEBUG_CONFIG="remote_port=9000 remote_enable=1 remote_log=/tmp/xdebug.org"
-</pre>
+export XDEBUG_CONFIG="remote_port=9000 remote_enable=1 remote_log=/tmp/xdebug.org"</pre>
 
   <p>You can replace "<code>/tmp/xdebug.org</code>" with any
   writable directory and the filename of your choice.</p>
+  
+  
+  <h3><a name="php_just_in_time" id="php_just_in_time">PHP Just-in-Time
+  Debugging / Break on Exception</a></h3>
+
+  <p>PHP remote debugging can be configured to break when an exception
+  is thrown. Sometimes called just-in-time debugging, this method allows
+  you to test your application and stop to examine code when there is a
+  problem.</p>
+  
+  <p>To turn this on, change the <code>xdebug.remote_mode</code> setting
+  in <em>php.ini</em> from '<code>req</code>' to '<code>jit</code>' or
+  override the setting in your code:</p>
+  
+  <pre class="code">
+&lt;?php 
+ini_set('xdebug.remote_mode', 'jit');
+...
+?&gt;</pre>
+
+  <p>Whenever an exception is thrown, a debugging session is initiated
+  with a break at the line that caused the problem.</p>
+  
+  <p>This may generate a lot of breaks if PHP is configured with verbose
+  error handling (e.g. <code>error_reporting = E_ALL</code>). In PHP 5,
+  you can define your own Exception class which enables JIT debugging
+  only for specific exceptions:</p>
+
+  <pre class="code">
+&lt;?php
+class KoException extends Exception
+{
+  function __construct($message, $code = 0) {
+    ini_set('xdebug.remote_mode', 'jit');
+    parent::__construct($message, $code);
+  }
+}
+
+throw new KoException('this is my exception!', 42);
+?&gt;</pre>
 
   <h2><a name="config_PHP_problems" id="config_PHP_problems">Common
   PHP Debugging Problems</a></h2>
