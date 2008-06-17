@@ -890,7 +890,7 @@
     <node name="Vi Key Bindings" link="vikeybind.html">
       <node name="Custom Vi Commands" link="vikeybind.html#vi_commands"/>
     </node>
-    <node name="Sharing Keybinding Schemes" link="keybind.html#sharing_keybinding_schemes"/>
+    <node name="Sharing Key Binding Schemes" link="keybind.html#sharing_keybinding_schemes"/>
   </node>
 
 <!-- #if defined('KOMODO_JS_API_TOC') -->
