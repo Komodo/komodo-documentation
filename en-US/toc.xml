@@ -229,7 +229,7 @@
     <node name="Commenting Code" link="editor.html#Commenting"/>
     <node name="Cleaning Line Endings" link="editor.html#Cleaning"/>
     <node name="Tabifying Code Regions" link="editor.html#Tabifying"/>
-    <node name="Column / Rectangular Selection" link="editor.html#Column_Select"/>
+    <node name="Rectangular Selection" link="editor.html#Column_Select"/>
     <node name="Column Editing" link="editor.html#column_edit"/>
     <node name="Completing Words" link="editor.html#Complete_Word"/>
     <node name="Selecting Blocks of Code" link="editor.html#Select_Block"/>

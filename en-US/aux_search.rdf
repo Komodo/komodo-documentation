@@ -16,6 +16,7 @@
       <rdf:li> <rdf:Description ID="files_public_key_auth" nc:link="files.html#files_public_key_auth" nc:name="Passwordless Authentication" /> </rdf:li>
       <rdf:li> <rdf:Description ID="change_lists" nc:link="scc.html#changelists" nc:name="Changelists" /> </rdf:li>
       <rdf:li> <rdf:Description ID="using_bookmarks_and_marks" nc:link="editor.html#bookmarks" nc:name="Transient Marks" /> </rdf:li>
+      <rdf:li> <rdf:Description ID="column_select" nc:link="editor.html#Column_Select" nc:name="Column Selection" /> </rdf:li>
     </rdf:Seq>
   </nc:subheadings>
 </rdf:Description>
