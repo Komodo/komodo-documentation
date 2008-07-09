@@ -80,18 +80,25 @@ Sections List apply to Komodo IDE only.</p>
 <h3 id="bug_fixes-4.4.1">4.4.1 Bug Fixes</h3>
 
 <ul>
+  <li>PHP:
+    <ul>
+      <li>Optimized variable sorting to speed up debugging. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78232">78232</a>)</li>
+      <li>Better fix enabling @var autocompletion. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76676">76676</a>)</li>
+      <li>Better fix for virtual properties support via PHPDoc comments. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=72960">72960</a>)</li>
+      <li>Three-character autocompletion for defined class names. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76677">76677</a>)</li>
+    </ul>
+  </li>
+  <li>SCC: Fixed slowness in updating SVN file status. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78246">78246</a>)</li>
+  <li>SCC: Fixed 'cvs diff' failing for latin-1 encodings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78486">78486</a>)</li>
   <li>Fixed editing performance problems caused by the Sections List. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78332">78332</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=78578">78578</a>)</li>
   <li>Fixed code intelligence database corruption problems which caused autocompletion and calltips to fail. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78401">78401</a>)</li>
   <li>Enabling dbgp logging in python mod_wsgi handling no longer causes dbgp failure. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78457">78457</a>)</li>
   <li>Fixed missing cancel button on command output window (Komodo Edit only). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78386">78386</a>)</li>
   <li>Find Toolbar: Pressing 'Enter' in the find textbox searches current document. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78304">78304</a>)</li>
-  <li>SCC: Fixed slowness in updating SVN file status. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78246">78246</a>)</li>
-  <li>SCC: Fixed 'cvs diff' failing for latin-1 encodings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78486">78486</a>)</li>
-  <li>PHP: Optimized variable sorting to speed up debugging. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78232">78232</a>)</li>
-  <li>PHP: Better fix enabling @var autocompletion. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76676">76676</a>)</li>
   <li>Keybindings: Customizations no longer lost when selecting the default keybinding scheme. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78316">78316</a>)</li>
   <li>CSS: Correct handling of hyphens in autocomplete. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78312">78312</a>)</li>
   <li>Fixed bug preventing server preference editing after the internal Komodo browser had set a password entry. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76664">76664</a>)</li>
+  <li>Debugger: Fixed incorrect calculation of parent node in the variable viewer. Clicking on the "Next Page..." link was sometimes being ignored. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78155">78155</a>)</li>
 </ul>
 
 <h3 id="bug_fixes-4.4.0">4.4.0 Bug Fixes</h3>
