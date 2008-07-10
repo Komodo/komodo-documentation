@@ -29,11 +29,12 @@
 
   <ul>
     <li>...that <a target="_blank" href=
-    "http://www.ActiveState.com/Products/ActivePerl">ActivePerl build
-    623</a> or greater is installed on your system. ActivePerl is a free
-    distribution of the core Perl language. See the <a class="doc" href=
-    "../debugperl.html#debugperl_top">Debugging Perl</a> documentation
-    for configuration instructions.</li>
+    "http://www.ActiveState.com/Products/ActivePerl">ActivePerl
+    build 623</a> or greater is installed on your system.
+    ActivePerl is a free distribution of the core Perl language.
+    See Komodo's <a class="doc" href=
+    "../install.html#top">Installation Guide</a> for
+    configuration instructions.</li>
 
     <li>...that you have a connection to the Internet.</li>
 
@@ -87,11 +88,8 @@
   <h3><a name="perltut_runppm" id="perltut_runppm">Running the Perl
   Package Manager</a></h3>
 
-  <p>The Text::CSV_XS Perl module is optional for this tutorial.  If the
-  program finds that it hasn't been installed, it will use a "Fake" module
-  that implements the minimum functionality needed for this tutorial.</p>
-
-  <p>To install it using PPM:</p>
+  <p>The Text::CSV_XS Perl module is necessary for this tutorial.
+  To install it using PPM:</p>
 
   <ol>
     <li>Open the Run Command dialog box. Select <strong>Tools|Run
@@ -174,15 +172,15 @@
 
   <p>The files included in the tutorial project are displayed on
   the <a class="doc" href=
-  "../workspace.html#Projects_Tab">Projects tab</a> in the
+  "../top.html#Project_Pane">Projects tab</a> in the
   Left Pane. No files open automatically in the <a class="doc"
-  href="../workspace.html#Editor_Pane">Editor Pane</a>.</p>
+  href="../top.html#Editor_Pane">Editor Pane</a>.</p>
 
   <h3><a name="perltut_openfile" id="perltut_openfile">Open the
   Perl Tutorial Files</a></h3>
 
   <p>On the <a class="doc" href=
-  "../workspace.html#Projects_Tab">Projects tab</a>,
+  "../top.html#Project_Pane">Projects tab</a>,
   double-click the files <code>parse.pl</code>,
   <code>mailexport.xml</code> and <code>mailexport.txt</code>.
   These files will open in the Editor Pane; a tab at the top of the
@@ -243,7 +241,7 @@
     </tr>
   </table>
 
-  <h4>Lines 2 to 3 - External Modules</h4>
+  <h4>Lines 2 to 4 - External Modules</h4>
 
   <ul>
     <li>these lines load external Perl modules used by the
@@ -252,38 +250,14 @@
     <li>Perl module files have a ".pm" extension; "use strict" uses
     the "strict.pm" module, part of the core Perl distribution</li>
 
-  </ul>
-
-  <h3><a name="perltut_define_csv_parser" id="perltut_define_csv_parser">Creating
-  the CSV Parser</a></h3>
-
-  <h4>Line 7 - the BEGIN line</h4>
-
-  <ul>
-    <li>The BEGIN block wraps code to be done during compilation.</li>
-  </ul>
-
-  <h4>Lines 8 to 11 - Load Text::CSV_XS, if it's installed</h4>
-    <ul>
-      <li>"require Text::CSV_XS" refers to the module installed in Step
-      One</li>
-    </ul>
-
-  <h4>Lines 12 to 64 - Define a Text::CSV_XS::Fake class</h4>
-
-  <ul>
-    <li>This code is executed if the regular library isn't installed.</li>
-
-    <li>Define a constructor called "new", and implement the "getline" function,
-    which actually will process multiple lines to allow fields with embedded newlines.
-    </li>
-
+    <li>"use Text::CSV_XS" refers to the module installed in Step
+    One</li>
   </ul>
 
   <h3><a name="perlut_write_header" id=
   "perlut_write_header">Writing the Output Header</a></h3>
 
-  <h4>Lines 67 to 68 - Open Files</h4>
+  <h4>Lines 6 to 7 - Open Files</h4>
 
   <ul>
     <li>input and output files are opened; if the output file does
@@ -307,7 +281,7 @@
     </tr>
   </table>
 
-  <h4>Lines 70 to 74 - Print the Header to the Output File</h4>
+  <h4>Lines 9 to 13 - Print the Header to the Output File</h4>
 
   <ul>
     <li>"&lt;&lt;" is a "here document" indicator that defines the
@@ -323,14 +297,14 @@
       </ul>
     </li>
 
-    <li>lines 71 and 72 are data that will be printed to the output
+    <li>lines 10 and 11 are data that will be printed to the output
     file</li>
   </ul>
 
   <h3><a name="perltut_setup_variables" id=
   "perltut_setup_variables">Setting Up Input Variables</a></h3>
 
-  <h4>Lines 77 to 80 - Assign Method Call to Scalar Variable</h4>
+  <h4>Lines 15 to 16 - Assign Method Call to Scalar Variable</h4>
 
   <ul>
     <li>the result of the method call "new" is assigned to the
@@ -353,7 +327,7 @@
     </tr>
   </table>
 
-  <h4>Lines 80 to 81 - Method "getline"</h4>
+  <h4>Lines 18 to 19 - Method "getline"</h4>
 
   <ul>
     <li>the method "getline" is contained in the module
@@ -368,7 +342,7 @@
   <h3><a name="perltut_process_loop" id=
   "perltut_process_loop">Starting the Processing Loop</a></h3>
 
-  <h4>Line 82 - "while" Loop</h4>
+  <h4>Line 21 - "while" Loop</h4>
 
   <ul>
     <li>the "while" statement is conditional</li>
@@ -379,10 +353,10 @@
         the loop because the condition is always met</li>
 
         <li>the logic for breaking out of the loop is on line
-        86</li>
+        25</li>
 
         <li>the loop is enclosed in braces; the opening brace is on
-        line 82 the closing brace on line 113</li>
+        line 21, the closing brace on line 51</li>
       </ul>
     </li>
   </ul>
@@ -391,7 +365,7 @@
     <tr>
       <td class="startupBox">
         <p><strong>Komodo Tip</strong> Click on the minus symbol to
-        the left of line 82. The entire section of nested code will
+        the left of line 21. The entire section of nested code will
         be collapsed. This is <a class="doc" href=
         "../editor.html#Folding">Code Folding</a>.</p>
       </td>
@@ -402,14 +376,14 @@
     <tr>
       <td class="startupBox">
         <p><strong>Komodo Tip</strong> click the mouse pointer on
-        line 82. Notice that the opening brace changes to a bold
-        red font. The closing brace on line 113 is displayed the
+        line 21. Notice that the opening brace changes to a bold
+        red font. The closing brace on line 51 is displayed the
         same way.</p>
       </td>
     </tr>
   </table>
 
-  <h4>Lines 83 to 87 - Extracting a Line of Input Data</h4>
+  <h4>Lines 22 to 25 - Extracting a Line of Input Data</h4>
 
   <ul>
     <li>the "getline" function extracts one line of data from the
@@ -417,7 +391,7 @@
 
     <li>if "getline" returns an empty array, the input file has
     been fully processed and the program exits the loop and
-    proceeds to line 114</li>
+    proceeds to line 52</li>
   </ul>
 
   <table align="center">
@@ -433,13 +407,13 @@
   <h3><a name="perltut_reg_exp" id="perltut_reg_exp">Converting
   Characters with a Regular Expression</a></h3>
 
-  <h4>Lines 89 to 93 - "foreach"</h4>
+  <h4>Lines 27 to 31 - "foreach"</h4>
 
   <ul>
     <li>"foreach" cycles through the elements stored in the
     @$record array</li>
 
-    <li>the regular expressions on lines 91 and 92 find the
+    <li>the regular expressions on lines 29 and 30 find the
     characters "&lt;" and "&amp;", and replace them with their
     character entity values ("&lt;" and "&amp;" are reserved
     characters in XML)</li>
@@ -462,10 +436,10 @@
   "perltut_hash_slice">Combining Field Reference and Field
   Data</a></h3>
 
-  <h4>Lines 95 to 97 - hash slice</h4>
+  <h4>Lines 33 to 35 - hash slice</h4>
 
   <ul>
-    <li>line 97 combines the @$record array with the field
+    <li>line 35 combines the @$record array with the field
     reference generated in line 19</li>
   </ul>
 
@@ -482,7 +456,7 @@
   <h3><a name="write_data" id="write_data">Writing Data to the
   Output File</a></h3>
 
-  <h4>Lines 99 to 112 - Writing Data to the Output File</h4>
+  <h4>Lines 37 to 50 - Writing Data to the Output File</h4>
 
   <ul>
     <li>one line at a time, lines from the input file are processed
@@ -497,24 +471,24 @@
   <h3><a name="close_loop" id="close_loop">Closing the
   Program</a></h3>
 
-  <h4>Line 113 - Closing the Processing Loop</h4>
+  <h4>Line 51 - Closing the Processing Loop</h4>
 
   <ul>
-    <li>at line 113, processing will loop back to the opening brace
-    on line 82</li>
+    <li>at line 51, processing will loop back to the opening brace
+    on line 21</li>
 
     <li>the logic to exit the loop is on line 25</li>
   </ul>
 
-  <h4>Lines 114 to 116 - Ending the Program</h4>
+  <h4>Lines 52 to 54 - Ending the Program</h4>
 
   <ul>
-    <li>line 114 prints the closing tag to the XML file</li>
+    <li>line 52 prints the closing tag to the XML file</li>
 
-    <li>line 115 closes the output file or, if it cannot, fails with
+    <li>line 53 closes the output file or, if it cannot, fails with
     the error "Can't write mailexport.xml"</li>
 
-    <li>line 116 closes the input file (it is not necessary to check
+    <li>line 54 closes the input file (it is not necessary to check
     the status when closing the input file because this only fails
     if the program contains a logic error.)</li>
   </ul>
@@ -556,7 +530,7 @@
   <ol>
     <li><strong>Set a breakpoint</strong>: On the "parse.pl" tab,
     click in the grey margin immediately to the left of the code on
-    line 70 of the program. This will set a breakpoint, indicated by
+    line 9 of the program. This will set a breakpoint, indicated by
     a red circle.</li>
 
     <li><strong>Run the Debugger</strong>: Select
@@ -588,32 +562,31 @@
     the file.</li>
 
     <li><strong>View variables</strong>: In the <a class="doc"
-    href="../workspace.html#Output_Pane">Bottom Pane</a>, see
+    href="../top.html#Output_Pane">Bottom Pane</a>, see
     the <strong>Debug</strong> tab. The variables "$in" and "$out"
     appear in the <strong>Locals</strong> tab.</li>
 
-    <li><strong>Line 70 - Step In</strong>: Select
+    <li><strong>Line 9 - Step In</strong>: Select
     <strong>Debug|Step In</strong>. "Step In" is a debugger command
     that causes the debugger to execute the current line and then
     stop at the next processing line (notice that the lines between
-    70 and 74 are raw output indicated by "here" document
+    9 and 13 are raw output indicated by "here" document
     markers).</li>
 
-    <li><strong>Line 77 - Step In</strong>: On line 77, the
+    <li><strong>Line 16 - Step In</strong>: On line 16, the
     processing transfers to the module Text::CSV_XS. Komodo opens
     the file CSV_XS.pm and stops the debugger at the active line in
-    the module.  If you haven't installed Text::CSV_XS, stepping in will
-    take you to line 18 of parse.pl</li>
+    the module.</li>
 
-    <li><strong>Line 61 in CSV_XS.pm, line 19 in parse.pl - Step Out</strong>: Select
+    <li><strong>Line 61 - Step Out</strong>: Select
     <strong>Debug|Step Out</strong>. The Step Out command will make
     the debugger execute the function in Text::CSV_XS and pause at
     the next line of processing, which is back in parse.pl on line
-    80.</li>
+    19.</li>
 
-    <li><strong>Line 80 - Step Over</strong>: Select
+    <li><strong>Line 19 - Step Over</strong>: Select
     <strong>Debug|Step Over</strong>. The debugger will process the
-    function in line 80 without opening the module containing the
+    function in line 19 without opening the module containing the
     "getline" function.</li>
   </ol>
 
@@ -644,9 +617,9 @@
   </table>
 
   <ol start="9">
-    <li><strong>Line 83 - Set Another Breakpoint</strong>: After
-    the debugger stops at line 82, click in the grey margin
-    immediately to the left of the code on line 83 to set another
+    <li><strong>Line 22 - Set Another Breakpoint</strong>: After
+    the debugger stops at line 21, click in the grey margin
+    immediately to the left of the code on line 22 to set another
     breakpoint.</li>
   </ol>
 
@@ -665,18 +638,18 @@
   </table>
 
   <ol start="10">
-    <li><strong>Line 83 - Step Out</strong>: It appears that
+    <li><strong>Line 22 - Step Out</strong>: It appears that
     nothing happened. However, the debugger actually completed one
-    iteration of the "while loop" (from lines 82 to 113). To see how
-    this works, set another breakpoint at line 99, and Step Out
-    again. The debugger will stop at line 99. On the Debug Session
+    iteration of the "while loop" (from lines 21 to 51). To see how
+    this works, set another breakpoint at line 37, and Step Out
+    again. The debugger will stop at line 37. On the Debug Session
     tab, look at the data assigned to the $record variable. Then
     Step Out, and notice that $record is no longer displayed, and
-    the debugger is back on line 53. Step Out again, and look at
+    the debugger is back on line 21. Step Out again, and look at
     the $record variable - it now contains data from the next
     record in the input file.</li>
 
-    <li><strong>Line 99 - Stop the Debugger</strong>: Select
+    <li><strong>Line 37 - Stop the Debugger</strong>: Select
     <strong>Debug|Stop</strong> to stop the Komodo debugger.</li>
 
     <li style="list-style: none"><br /></li>
