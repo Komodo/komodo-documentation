@@ -156,7 +156,8 @@ class LicenseTextPath(ConfigVar):
     def determine(self, config_var_from_name, options):
         if options.license_text_path:
             self.value = options.license_text_path
-        self.value = abspath(join("support", "LICENSE.mpl.txt"))
+        else:
+            self.value = abspath(join("support", "LICENSE.mpl.txt"))
 
 
 class KomodoCixPath(ConfigVar):
