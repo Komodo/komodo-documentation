@@ -291,19 +291,20 @@
 
 <node name="Macros" link="macros.html#macros_top">
   <node name="Creating Macros" link="macros.html#creating_macros">
-    <node name="Recording Macros" link="macros.html#macros_adding"/>
-    <node name="Saving Recorded Macros" link="macros.html#macros_saving_macros"/>
-    <node name="Programming Macros" link="macros.html#macros_adding_macros"/>
+    <node name="Recording Macros" link="macros.html#macros_recording"/>
+    <node name="Writing Macros" link="macros.html#macros_writing"/>
   </node>
-  <node name="Running Macros" link="macros.html#macros_using"/>
-  <node name="Specifying Macro Triggers" link="macros.html#triggers_macros">
-    <node name="Running Macros in the Background" link="macros.html#run_background"/>
-  </node>
-  <node name="Storing Macros in Projects or the Toolbox" link="macros.html#assign">
-    <node name="Macro Options" link="macros.html#macros_options"/>
-    <node name="Assigning Custom Icons to Macros" link="macros.html#Cust_Icons"/>
+  <node name="Running Macros" link="macros.html#macros_running"/>
+  <node name="Managing Macros" link="macros.html#macros_managing"/>
+  <node name="Macro Properties" link="macros.html#macros_properties">
     <node name="Assigning Key Bindings to Macros" link="macros.html#key_bindings"/>
+    <node name="Assigning Custom Icons to Macros" link="macros.html#Cust_Icons"/>
+    <node name="Running Macros in the Background" link="macros.html#run_background"/>
+    <node name="Specifying Macro Triggers" link="macros.html#triggers_macros">
+      <node name="Macro Return Values" link="macros.html#macros_return_values"/>
+    </node>
   </node>
+  <node name="Vi Command Mode Macros" link="macros.html#vi_macros"/>
   <node name="Macro API" link="macroapi.html#macroapi_top">
     <node name="Macro API Overview" link="macroapi.html#macroapi_overview"/>
     <node name="JavaScript Macros" link="macroapi.html#macroapi_js">
