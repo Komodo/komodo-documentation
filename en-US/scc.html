@@ -20,27 +20,21 @@
   <h1><a name="scc_top" id="scc_top">Source Code Control</a>
   <span class="version_alert">Komodo IDE only</span></h1>
 
-  <p>"Source code control" refers to the practice of storing files
-  containing program source code (and other project artifacts) in a
-  common repository. Using source code control (SCC), multiple
-  developers can work on the same project (including the same
-  project file) at the same time. The SCC repository can be queried
-  for a detailed listing of the changes that occurred each time a
-  file was edited. Files under source code control that have been
-  locally modified can also be reverted to their previous state.</p>
-
-  <p>Komodo's SCC integration works in conjunction with the
-  <a class="doc" href="http://www.nongnu.org/cvs/">CVS</a>,
-  <a class="doc" href=
-  "http://subversion.tigris.org/">Subversion</a> and <a class="doc"
-  href="http://www.perforce.com/">Perforce</a> source code control
-  systems.</p>
-
-  <p>Depots, repositories, branches, and projects cannot be created
-  or configured from within Komodo. This must be done using the SCC
-  software itself. Komodo's SCC features become available when
-  files are checked out from the source code repository.</p>
-
+  <p>Source code control (also called "revision control", "version
+  control" or "code management") is the practice of managing changes to
+  a set of files in a common repository. Files can be checked out from
+  the repository, edited, reverted, merged, checked in or compared
+  with other versions.</p>
+  
+  <p>Komodo supports common operations for the following SCC systems:</p>
+  <ul>
+    <li><a class="doc" href="http://www.nongnu.org/cvs/">CVS</a></li>
+    <li><a class="doc" href="http://subversion.tigris.org/">SVN</a> (Subversion)</li>
+    <li><a class="doc" href="http://www.perforce.com/">P4</a> (Perforce)</li>
+    <li><a class="doc" href="http://git-scm.com/">Git</a></li>
+    <li><a class="doc" href="http://bazaar-vcs.org/">Bazaar</a></li>
+  </ul>
+  
   <p>From within Komodo, you can perform the following SCC
   actions:</p>
 
@@ -59,24 +53,22 @@
     <li>revert files to their previous state</li>
   </ul>
 
-  <p>Additionally, files under Perforce control are recognized by
-  Komodo even when they are not locally modified. They can be opened
-  via the File menu, SCC context menus (locations described below),
-  or the <a class="doc" href=
-  "workspace.html#Toolbars">SCC toolbar</a>.</p>
-
-  <p>Komodo is intended to work in conjunction with these SCC
-  programs; it does not replace them. <a class="doc" href=
+  <p>Depots, repositories, branches, and projects cannot be created
+  or configured from within Komodo. This must be done using the SCC
+  software directly. Komodo's SCC features become available when
+  files are checked out from the source code repository.</p>
+  
+  <p>Komodo is can work in conjunction with external graphial SCC
+  clients such as <a class="doc" href=
   "http://www.tortoisecvs.org/">TortoiseCVS</a> and <a class="doc"
-  href="http://tortoisesvn.tigris.org/">TortoiseSVN</a> are useful
-  tools for managing files under source code control from within
-  Windows Explorer. Perforce provides <a class="doc" href=
-  "http://www.perforce.com/perforce/products/p4win.html">P4Win</a>,
-  a graphical client for Windows used to view and manage files in a
-  SCC repository.</p>
+  href="http://tortoisesvn.tigris.org/">TortoiseSVN</a>, and <a
+  class="doc" href=
+  "http://www.perforce.com/perforce/products/p4win.html">P4Win</a>.
+  However, the command line executables (i.e. <code>cvs</code>,
+  <code>svn</code> and <code>p4</code>) must be present on the local
+  system.</p>
 
-  <p>Komodo SCC functions are accessible from the following
-  locations:</p>
+  <p>SCC functions are available in the following locations:</p>
 
   <ul>
     <li><strong>Toolbox Context Menu</strong>: Right-click a file
