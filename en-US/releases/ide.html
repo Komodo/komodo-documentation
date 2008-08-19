@@ -28,7 +28,7 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   <li><strong>Built on Mozilla 1.9</strong>: Komodo is now built on the
   Mozilla 1.9 branch, the same code base Firefox 3.0 is built on. This
   includes a number of bug fixes and performance improvements.</li>
-  
+
   <li><strong>Multi-Window</strong>: Komodo can now open multiple
   top-level windows, allowing you to configure your workspace the way you want
   when editing or debugging.</li>
@@ -59,43 +59,51 @@ Sections List apply to Komodo IDE only.</p>
       <li>SVN was slow to update modified status for paths that
       contained spaces. (Bug <a
       href="http://bugs.activestate.com/show_bug.cgi?id=79065">79065</a>)</li>
-  
+
       <li>Enabled the diff command when a file has a conflict. (Bug <a
       href="http://bugs.activestate.com/show_bug.cgi?id=78883">78883</a>)</li>
-  
+
       <li>Added "Don't display this dialog again" option to File|Revert
       dialog box. (Bug <a
       href="http://bugs.activestate.com/show_bug.cgi?id=78328">78328</a>)</li>
     </ul>
   </li>
-  
+
   <li>Tcl Interactive shell menu option was grayed out - not respecing
   Tcl preferences. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79111">79111</a>)</li>
-  
+
   <li>Active project state correctly saved between Komodo sessions.
   Previously, the last project opened at session start would be the
   active one. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=78285">78285</a>)</li>
-  
+
   <li>Unit Testing: Fixed TAP parser problem (Perl) causing failed tests
   to appear as passed. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=78781">78781</a>)</li>
-  
+
   <li>Keybindings: SCC commands can now be set in preferences. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=78938">78938</a>)</li>
-  
+
   <li>Windows Powershell language support. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=78905">78905</a>)</li>
-  
+
   <li>PHP: Code browser now shows functions inside alternative syntax
   conditionals. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=78957">78957</a>)</li>
-  
+
+  <li>PHP: Fixed code intelligence not working with chained function
+  calls that contained function arguments. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=77834">77834</a>)</li>
+
   <li>Remote Files: Invalide HOME environment variable would break the
   remote file dialog. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=72402">72402</a>)</li>
-  
+
+  <li>Fixed bug causing autocomplete to only display on primary monitor.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=38281">38281</a>)</li>
+
 </ul>
 
 <h2 id="knownissues">Known Issues</h2>
@@ -220,7 +228,7 @@ Bug Database</a>.</p>
   this setting out in the file specified in
   'Preferences|Languages|PHP|Path to alternate PHP configuration file'
   to avoid this problem.</li>
-  
+
   <li>Python: Breakpoints will not work with the <a target="_blank"
   href="http://psyco.sourceforge.net/">Psyco</a> extension enabled.
   The Komodo <a href="../trouble.html#psyco_debug">FAQ</a> has a
