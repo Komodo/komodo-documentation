@@ -25,7 +25,7 @@
   a set of files in a common repository. Files can be checked out from
   the repository, edited, reverted, merged, checked in or compared
   with other versions.</p>
-  
+
   <p>Komodo supports common operations for the following SCC systems:</p>
   <ul>
     <li><a class="doc" href="http://www.nongnu.org/cvs/">CVS</a></li>
@@ -34,7 +34,7 @@
     <li><a class="doc" href="http://git-scm.com/">Git</a></li>
     <li><a class="doc" href="http://bazaar-vcs.org/">Bazaar</a></li>
   </ul>
-  
+
   <p>From within Komodo, you can perform the following SCC
   actions:</p>
 
@@ -57,7 +57,7 @@
   or configured from within Komodo. This must be done using the SCC
   software directly. Komodo's SCC features become available when
   files are checked out from the source code repository.</p>
-  
+
   <p>Komodo is can work in conjunction with external graphial SCC
   clients such as <a class="doc" href=
   "http://www.tortoisecvs.org/">TortoiseCVS</a> and <a class="doc"
@@ -344,45 +344,45 @@
   </ul>
 
   <h2><a name="changelists" id="changelists">Change Lists</a></h2>
-  
+
   <p>Changelists are a way of grouping associated files together so they
   can be committed in a single SCC operation. Perforce has native
   changelist functionality, but Komodo IDE offers it's own generic
   changelist feature which can be used with Subversion, Perforce and
   CVS.</p>
-  
+
   <p>The <strong>Change Lists</strong> tab in the right pane allows you
   to create new changelists, modify existing ones, and drag files
   from one list to another.</p>
-  
+
   <p>Right-click on a list to perform SCC operations or view the list
   properties.</p>
-  
+
   <h3><a name="default_changelist" id="default_changelist">Default
   Change Lists</a></h3>
-  
+
   <p>When Komodo handles a modified SCC file that does not yet belong to
   an existing change list, the file is added to a <strong>Default
   Changes</strong> list. Separate default change lists are created for
   SVN, P4, and CVS.</p>
-  
+
   <p>The <strong>Default Changes</strong> list can be renamed and
   modified as desired; new ones are created by Komodo as necessary.</p>
-  
+
   <h3><a name="create_changelist" id="create_changelist">Creating a New
   Change List</a></h3>
-  
+
   <p>Use the <strong>Add New Change List</strong> button in the
   <strong>Change Lists</strong> tab to create a new change list. You
   will be prompted to specify a unique name for the change list.</p>
-  
+
   <h3><a name="changelist_properties" id="changelist_properties">Change
   List Properties</a></h3>
-  
+
   <p>Right-clicking on a change list brings up a context menu. Select
   <strong>Properties</strong> to bring up the <strong>Changelist
-  Properties</strong> dialog box with the following fields:</p>  
-  
+  Properties</strong> dialog box with the following fields:</p>
+
   <ul>
     <li><strong>Changelist Name</strong>: This can be any arbitrary
     unique name.</li>
@@ -397,31 +397,31 @@
 
   <h4><a name="changelist_modify"
   id="changelist_modify">Modifying the File List</a></h4>
-  
+
   <p>Only checked files will be included when the change list is
   submitted. Unchecked files (those that are under the same base path
   with pending SCC operations) are displayed so that they can be added
   easily if desired. Select <strong>Only show checked files</strong> to
   hide these.</p>
-  
+
   <p>The <strong>Base path</strong> displayed above the file list is the
   longest path prefix (lowest level directory) that can include all
   files in the list. If you add a new file file or directory that is
   outside of this base path, Komodo re-computes the base path and
   updates the relative paths displayed in the list.</p>
-  
+
   <h4><a name="changelist_patch" id="changelist_patch"></a>Making a
   Patch</h4>
-  
+
   <p>The <strong>Show Diff</strong> will display a unified diff of all
   checked files using the base path described above. This is an
   excellent way to create patches.</p>
-  
+
   <p>If <a href="prefs.html#scc">Diff Display Style</a> is set to
   <strong>Create new window</strong>, copy the diff into a new file and
   save it. If this is set to <strong>Open editor tab</strong>, use
   <strong>File|Save As...</strong>.</p>
-  
+
   <h2><a name="config" id="config">Configuring Source Code Control
   Integration</a></h2>
 
@@ -929,7 +929,8 @@ CVS_RSH=ssh
 
     <li>Enter <code>exec ssh-agent bash</code>.</li>
 
-    <li>Enter <code>ssh-add</code>.</li>
+    <li>Enter <code>ssh-add</code> <em>/path/to/public/key</em> (e.g.
+    '<code>ssh-add /.ssh/id_rsa.pub</code>')</li>
 
     <li>To check out a CVS module, enter:
       <pre class="code">
@@ -958,7 +959,8 @@ cvs -d :ext:<em>username@cvs.server.com</em>:/<em>repository_name</em> co <em>cv
 
     <li>Enter <code>exec ssh-agent bash</code>.</li>
 
-    <li>Enter <code>ssh-add</code>.</li>
+    <li>Enter <code>ssh-add</code> <em>/path/to/public/key</em> (e.g.
+    'ssh-add ~/.ssh/id_rsa.pub')</li>
 
     <li>Start Komodo within the cygwin shell as follows:
       <pre class="code">
@@ -982,7 +984,8 @@ cvs -d :ext:<em>username@cvs.server.com</em>:/<em>repository_name</em> co <em>cv
 
     <li>Enter <code>exec ssh-agent bash</code>.</li>
 
-    <li>Enter <code>ssh-add</code>.</li>
+    <li>Enter <code>ssh-add</code> <em>/path/to/public/key</em> (e.g.
+    '<code>ssh-add ~/.ssh/id_rsa.pub</code>')</li>
 
     <li>To check out a Subversion module, enter:
       <pre class="code">
