@@ -44,6 +44,9 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   target="_blank" href="http://bazaar-vcs.org/">Bazaar</a> (bzr), and <a
   target="_blank" href="http://git.or.cz/">Git</a> source control
   systems.</li>
+
+  <li><strong>SCC Checkout</strong>: A new interface for checking out
+  working copies of a repository from within Komodo.</li>
 </ul>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
@@ -52,7 +55,44 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
-<h3 id="bug_fixes-5.0a1">5.0 Alpha 2 Bug Fixes</h3>
+<h3 id="bug_fixes-5.0a3">5.0 Alpha 3 Bug Fixes</h3>
+
+<ul>
+  
+  <li>Snippets:
+  <ul>
+    <li>Extra newline no longer added at insertion point.
+    (Bug <a
+    href="http://bugs.activestate.com/show_bug.cgi?id=78354">78354</a>)</li>
+  
+    <li>Snippets now use spaces instead of tabs. To insert an actual tab in
+    a snippet you'll need to paste one in. (Bug <a
+    href="http://bugs.activestate.com/show_bug.cgi?id=79809">79809</a>)</li>
+  
+    <li>Indentation fixed for snippets containing selections. (Bug <a
+    href="http://bugs.activestate.com/show_bug.cgi?id=72662">72662</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Fixed JavaScript debugging for Firefox 3. Connection was failing due
+  to attempt to use obsolete Firefox 2 code. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78845">78845</a>)</li>
+  
+  
+  <li>Macros: The syntax checker no longer complains about return statements in
+  the top level of macros. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78810">78810</a>)</li>
+  
+  <li>Perl: The interactive shell now displays overloaded objects, and
+  also displays regexp objects. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79784">79784</a>)</li>
+  
+  <li>PHP: Obtain the correct expression for static class variables.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79991">79991</a>)</li>
+</ul>
+
+<h3 id="bug_fixes-5.0a2">5.0 Alpha 2 Bug Fixes</h3>
 
 <ul>
   <li>Windows: Fixed crash on startup caused by checking a trial
@@ -138,8 +178,6 @@ Sections List apply to Komodo IDE only.</p>
 </ul>
 
 <h2 id="knownissues">Known Issues</h2>
-
-<h3 id="knownissues-5.0a1">5.0 Alpha 2</h3>
 
 <p>To view the status of outstanding Komodo issues,
 including those that have been fixed in this release, or to
