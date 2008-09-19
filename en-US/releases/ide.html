@@ -58,6 +58,17 @@ Sections List apply to Komodo IDE only.</p>
 <h3 id="bug_fixes-5.0a3">5.0 Alpha 3 Bug Fixes</h3>
 
 <ul>
+  <li>Windows: Fixed problems with sub-process launching (affecting
+  debugging, background syntax checking, run commands, etc.) when
+  starting Komodo from the command line. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=76208">76208</a>)</li>
+  
+  <li>OS X: HTTP Proxy dialog is now a real dialog window, not a sheet.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=74504">74504</a>)</li>
+  
+  <li>Fixed large memory leak in Find/Replace. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78638">78638</a>)</li>
   
   <li>Snippets:
   <ul>
@@ -77,7 +88,6 @@ Sections List apply to Komodo IDE only.</p>
   <li>Fixed JavaScript debugging for Firefox 3. Connection was failing due
   to attempt to use obsolete Firefox 2 code. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=78845">78845</a>)</li>
-  
   
   <li>Macros: The syntax checker no longer complains about return statements in
   the top level of macros. (Bug <a
