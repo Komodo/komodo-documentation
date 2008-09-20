@@ -58,6 +58,21 @@ Sections List apply to Komodo IDE only.</p>
 <h3 id="bug_fixes-5.0a3">5.0 Alpha 3 Bug Fixes</h3>
 
 <ul>
+  <li>Vi Emulation: Fixed the 'r' command (replace character). Now
+  correctly maintains the same cursor position. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79021">79021</a>)</li>
+  
+  <li>PHP: Fixed autocompletion when an instance name is the same as the
+  class name. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=70015">70015</a>)</li>
+  
+  <li>SCC: SCC operations on project folders working again. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79687">79687</a>)</li>
+  
+  <li>Komodo now saves the layout information of multiple windows on
+  shutdown and restores them on restart. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79920">79920</a>)</li>
+  
   <li>Windows: Fixed problems with sub-process launching (affecting
   debugging, background syntax checking, run commands, etc.) when
   starting Komodo from the command line. (Bug <a
