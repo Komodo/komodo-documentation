@@ -13,12 +13,19 @@
     <script src="chrome://komodo/content/browse.js"                 type="application/x-javascript"/>
     <script src="chrome://komodo/content/library/windowManager.js"  type="application/x-javascript"/>
 
-<script>
-<![CDATA[
-var mainWindow = window;
+<script><![CDATA[
 function onclick_handler(event) {
+    if (event.target.nodeName.toLowerCase() != "a") {
+        return;
+    }
+
+    var target = event.target.getAttribute("target");
     var url = event.target.getAttribute("href");
-    if (url && url.match(/^\w+:\/\//)) {
+    if (url && (target == "_blank"
+                // Not all of the Komodo docs external links specify
+                // target="_blank".
+                || url.match(/^\w+:\/\//)))
+    {
         ko.browse.openUrlInDefaultBrowser(url);
         event.stopPropagation();
         event.preventDefault();
@@ -26,21 +33,7 @@ function onclick_handler(event) {
     }
 }
 
-function help_onclick_init() {
-    try {
-        window.addEventListener("click", onclick_handler, true);
-    } catch(e) {
-        alert(e);
-    }
-}
+window.addEventListener("click", onclick_handler, true);
+]]></script>
 
-function help_onload_handler(event) {
-    if (event.target.nodeName == "#document" &&
-        event.target.defaultView != mainWindow)
-        window.setTimeout(help_onclick_init,500);
-}
-
-window.addEventListener("load", help_onload_handler, true);
-]]>
-</script>
 </overlay>
