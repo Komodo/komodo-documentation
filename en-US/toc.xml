@@ -583,6 +583,11 @@
     <node name="File Status Icons" link="scc.html#file_status"/>
     <node name="Refresh Status" link="scc.html#scc_refresh_status"/>
   </node>
+  <node name="SCC Checkout Wizard" link="scc.html#scc_checkout">
+    <node name="Set the SCC handler and the checkout data" link="scc.html#scc_checkout_1"/>
+    <node name="Customize the SCC checkout parameters" link="scc.html#scc_checkout_2"/>
+    <node name="SCC Command line summary" link="scc.html#scc_checkout_3"/>
+  </node>
   <node name="Change Lists" link="scc.html#changelists">
     <node name="Default Change Lists" link="scc.html#default_changelist"/>
     <node name="Creating a New Change List" link="scc.html#create_changelist"/>

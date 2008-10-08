@@ -174,12 +174,14 @@
   depending on the context:</p>
 
   <ul>
+    <li><strong>Checkout</strong>: Launches the <a href="#">SCC Checkout
+    wizard</a> for fetching a local copy from a repository.</li>
+    
     <li><strong>Add</strong>: Add a file from a designated source
     code directory on your local drive to the source code
     repository.</li>
 
-    <li><strong>Edit</strong>: Check out a file from the current
-    source code repository.</li>
+    <li><strong>Edit</strong>: Unlock a file for editing.</li>
 
     <li><strong>Revert Changes</strong>: Check the file back into
     the repository, abandoning any changes made since it was
@@ -343,6 +345,96 @@
     <strong>'Ctrl' + 'K', 'R'</strong></li>
   </ul>
 
+  <h2><a name="scc_checkout" id="scc_checkout">SCC Checkout Wizard</a></h2>
+  
+  <p>Komodo's <strong>Checkout</strong> command launches a wizard which
+  steps through downloading a local copy of a set of version controlled
+  files (e.g. a branch).</p>
+  
+  <h3><a name="scc_checkout_1">Step One: Set the SCC handler and the checkout data</a></h3>
+  <p>Set the following options:</p>
+    <ul>
+      <li>SCC Handler: Choose the SCC system to use (e.g. svn, git,
+      bzr, etc.)</li>
+      <li>Checkout URL: Specify the specific URL of the branch being
+      checked out (e.g.
+      "http://svn.openkomodo.com/repos/komododoc/trunk/"). Specify the
+      protocol to use (e.g. "http://", "rsync://", "git://"
+      etc.).</li>
+      <li>Save to: Specify the local directory to download to. Some
+      SCC clients, such as CVS, will require that the specified
+      directory already. Others, such as SVN, will create the
+      directory if it does not exist already.</li>
+    </ul>
+ <h3><a name="scc_checkout_2">Step Two: Customize the checkout parameters</a></h3>
+ <p>Each SCC handler will have different additional paramenters which can be set:</p>
+  <ul>
+    <li><a href="http://bazaar-vcs.org/">bzr</a>:
+      <ul>
+        <li>Revision: The revision to check out. User the revision
+        number or other <a target="_blank"
+        href="http://doc.bazaar-vcs.org/bzr.dev/en/user-reference/bzr_man.html#revision-identifiers">revision
+        identifier</a>.</li>
+        <li>Hard-link working tree files where possible: Uses the
+        "--hardlink" command line option.</li>
+      </ul>
+    </li>
+    <li><a href="http://www.nongnu.org/cvs/">cvs</a>:
+      <ul>
+        <li>Module: A path within the repository or a CVS module name
+        (required field).</li>
+        <li>Branch or Tag: The branch or "sticky tag" of the branch to be checked out.</li>
+        <li>Specific date: Checkout version from a specific date.
+        Accepts a variety of date formats (e.g. "YYYY-MM-DD
+        HH:MM").</li>
+        <li>Checkout Type: Normal (for working on the modules) or Export
+        (for making a software release).</li>
+      </ul>
+    </li>
+    <li><a href="http://git.or.cz/">git</a>:
+      <ul>
+        <li>Local repository: Used if the repository to clone is locally
+        available. Uses the "--local" command line option.</li>
+        <li>Do not perform a HEAD checkout after cloning: Uses the
+        "--no-checkout" option.</li>
+        <li>Make a bare GIT repository: Uses the "--bare" option.</li>
+      </ul>
+    </li>
+    <li><a href="http://www.selenic.com/mercurial/wiki/">hg</a>:
+      <ul>
+        <li>Revision: The revision number to check out. Current if unspecified.</li>
+        <li>Do not update the new working directory: Uses the "--noupdate" option.</li>
+        <li>Use pull protocol to copy metadata: Uses the "--pull" option.</li>
+        <li>Use uncompressed transfer (fast over LAN): Uses the "--uncompressed" option.</li>
+      </ul>
+    </li>
+    <li><a href="http://subversion.tigris.org/">svn</a>:
+      <ul>
+        <li>Revision: The revision number to check out (HEAD by default).</li>
+        <li>Only check out the top folder: Users the "--non-recursive" option.</li>
+        <li>Omit externals: Uses the "--ignore-externals" option.</li>
+      </ul>
+    </li>
+  </ul>
+ 
+  <p>Options mentioned above are explained with more detail in the
+  documentation for each SCC handler:</p>
+   <ul>
+     <li><a target="_blank" href="http://doc.bazaar-vcs.org/latest/en/user-guide/index.html">Bazaar User Guide</a></li>
+     <li><a target="_blank" href="http://www.nongnu.org/cvs/index.html#documentation">CVS Documentation</a></li>
+     <li><a target="_blank" href="http://git.or.cz/gitwiki/GitDocumentation">Git Documentation</a></li>
+     <li><a target="_blank" href="http://hgbook.red-bean.com/hgbook.html">Distributed revision control with Mercurial</a></li>
+     <li><a target="_blank" href="http://svnbook.red-bean.com/en/1.5/index.html">Version Control with Subversion</a>:</li>
+   </ul>
+  
+ 
+  <h3><a name="scc_checkout_3">Step Three: Command line summary</a></h3>
+  
+  <p>The last step in the wizard shows the command to be executed based
+  on the options chosen in the previous two steps. Click
+  <strong>Checkout</strong> to run the command. Current status and
+  command output will be displayed as the command runs.</p>
+ 
   <h2><a name="changelists" id="changelists">Change Lists</a></h2>
 
   <p>Changelists are a way of grouping associated files together so they
