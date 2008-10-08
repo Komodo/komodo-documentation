@@ -79,7 +79,7 @@
     <node name="Right Pane" link="workspace.html#Right_Pane"/>
     <node name="Editor Pane" link="workspace.html#Editor_Pane"/>
     <node name="Bottom Pane" link="workspace.html#Output_Pane"/>
-    <node name="Managing Tabs and Panes" link="workspace.html#manage"/>
+    <node name="Managing Sidebars, Tabs and Panes" link="workspace.html#manage"/>
     <node name="Enabling Full Screen Mode" link="workspace.html#full_screen"/>
   </node>
   <node name="Komodo's Sample Project" link="getstarted.html#getstarted_top">
@@ -102,8 +102,8 @@
   </node>
 </node>
 
-<node name="Project Tab" link="project.html#project_top">
-  <node name="Displaying the Project Tab" link="project.html#project_display"/>
+<node name="Projects Sidebar" link="project.html#project_top">
+  <node name="Displaying the Projects Sidebar" link="project.html#project_display"/>
   <node name="Creating Projects" link="project.html#Creating_a_Project">
     <node name="Live Import" link="project.html#Live_Import"/>
   </node>
