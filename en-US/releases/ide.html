@@ -33,6 +33,9 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   <li><strong>Multi-Window</strong>: Komodo can now open multiple
   top-level windows, allowing you to configure your workspace the way you want
   when editing or debugging.</li>
+  
+  <li><strong>Improved Tab Stops</strong>: Tabstops in snippets and file
+  templates are now more intuitive.</li> 
 </ul>
 
 <strong>IDE only</strong>
@@ -47,6 +50,9 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
   <li><strong>SCC Checkout</strong>: A new interface for checking out
   working copies of a repository from within Komodo.</li>
+  
+  <li><strong>Code Formatting</strong>: Integrations with external code
+  formatters.</li>
 </ul>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
@@ -54,6 +60,36 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to debugging, interactive shells, source code
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-5.0b1">5.0 Beta 1 Bug Fixes</h3>
+
+<ul>
+  <li>CSS: Removed autocompletion fillup characters that got in the way
+  of regular usage. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80063">80063</a>, <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80126">80126</a>)</li>
+  
+  <li>Debugger: Fixed space key failing to toggle breakpoint state in
+  breakpoints tab. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80163">80163</a></li>
+  
+  <li>Multi-window: Added support for breakpoint handling when multiple
+  windows are open. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79117">79117</a>)</li>
+  
+  <li>Fixed error indicated by console error messages referencing
+  "ko.dbg.manager". (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80279">80279</a>)</li>
+  
+  <li>Added background syntax checking support for Python 3.</li>
+  
+  <li>Tabstops in snippets and templates are now implemented with
+  invisible markers in the buffer. Komodo now uses
+  highlighting/outlining instead of chevrons to delimit them. Nested
+  tabstops are now possible. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80201">80201</a>)</li>
+  
+</ul>
 
 <h3 id="bug_fixes-5.0a3">5.0 Alpha 3 Bug Fixes</h3>
 
