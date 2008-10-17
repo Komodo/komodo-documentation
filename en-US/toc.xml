@@ -222,6 +222,7 @@
     <node name="Repeating Keystrokes" link="editor.html#repeat_keystrokes"/>
     <node name="Indenting Code" link="editor.html#Indenting"/>
     <node name="Reflowing Paragraphs" link="editor.html#reflow"/>
+    <node name="Formatting Code" link="editor.html#editor_formatters"/>
     <node name="Joining Lines" link="editor.html#join_lines"/>
     <node name="Converting Case" link="editor.html#Case"/>
     <node name="Transposing Characters" link="editor.html#transpose"/>
@@ -726,6 +727,8 @@
     <node name="Common Syntax Coloring" link="prefs.html#common_syntax"/>
     <node name="Language-Specific Coloring" link="prefs.html#lang_specific"/>
   </node>
+  <node name="Code Formatters" link="prefs.html#code_formatters"
+        flags="ide"/>
   <node name="HTTP Inspector Preferences" link="prefs.html#http_inspector"
         flags="ide"/>
   <node name="Interactive Shell Preferences" link="prefs.html#int_shell"

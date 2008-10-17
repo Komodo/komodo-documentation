@@ -77,6 +77,10 @@
     change in the original file, and <strong>Esc</strong> to close
     the window.</li>
 
+    <li><strong>Format Using</strong>: Opens a sub-menu showing
+    configured <a href="#editor_formatters">code formatters</a>. (Komodo
+    IDE only)</li>
+    
     <li><strong>Refresh Status</strong>: Refresh the current file's
     status. See <a class="doc" href=
     "prefs.html#File_Associations">Customizing File
@@ -860,6 +864,38 @@ object.method(value)<span class="cursor">|</span>
   associated <a href=
   "prefs.html#Config_Key_Bindings">key binding</a>.</p>
 
+  <h3><a name="editor_formatters" id="editor_formatters">Formatting
+  Code</a> <span class="version_alert">Komodo IDE
+  only</span></h3>
+  
+  <p>Komodo offers integrations with external code formatters. Selected
+  text, or an entire document can be passed to the formatter, processed,
+  returned via stdin and reinserted in the buffer. You can add or edit
+  code formatters in the <a
+  href="prefs.html#code_formatters">Code Formatters preferences</a>.</p>
+  
+  <p>To use a formatter on the current buffer:</p>
+  
+  <ul>
+    <li>Select the formatter from the list under <strong>Code|Format
+    Using</strong>. The first sub-menu shows the formatters available
+    based on Komodo's language detection. Additional formatters are
+    available under the <strong>Other Formatters</strong> sub-menu.</li>
+    
+    <li>Use the <strong>Editor: Format Code or Text</strong> command
+    ('cmd_format'). Komodo will run the formatter on the selection if
+    there is one. If there is no selection, the entire document will be
+    formatted. By default, this command does not have a key binding; you
+    can assign one in the <a href="prefs.html#Config_Key_Bindings">Key
+    Bindings</a> preferences.</li>
+  </ul>
+  
+  <p><strong>Note</strong>: Komodo uses HTML Tidy as the default
+  formatter for HTML documents. Since this parser cannot differentiate
+  between isolated sections of HTML and complete documents, use
+  <strong>Tidy Fragment</strong> when formatting selection and
+  <strong>Tidy Document</strong> when formatting the entire file.</p>
+  
   <h3><a name="join_lines" id="join_lines">Joining Lines</a></h3>
 
   <p>To cause two lines of code to display on the same line,
