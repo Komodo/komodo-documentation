@@ -16,75 +16,112 @@
 </head>
 
 <body>
-  <h1><a name="tabstops_top" id="tabstops_top">Tab Stops</a></h1>
+  <h1><a name="tabstops_top" id="tabstops_top">Tabstops</a></h1>
     
-  <p>Tab Stop/Replace markers ("&laquo;&raquo;") are used in <a href=
-  "snippets.html#snippets_top">snippets</a> and <a href=
-  "templates.html#templates_top">templates</a> as placeholders for
-  inserting content. They change the behavior of the Tab key when they are
-  present.</p>
+  <p>Tabstops are highlighted placeholders for inserting content in <a
+  href="snippets.html#snippets_top">snippets</a> and <a href=
+  "templates.html#templates_top">templates</a>. Tabstops with the same
+  number are linked, and will mirror the content inserted in the first
+  one. When tabstops are present in the buffer, the tab key moves the
+  cursor through the tabstops instead of inserting a whitespace tab.</p>
   
+  <h2><a name="tabstop_create" id="tabstop_create">Creating Tabstops</a></h2>
   
-  <h2><a name="tabstop_usage" id="tabstop_usage">Usage</a></h2>
-  
-  <p>The markers have the following format in a snippet or template:</p>
+  <p>Tabstops are set in snippets and templates using a similar syntax
+  to <a href="shortcuts.html#shortcuts_brack">bracketed interpolation
+  shortcuts</a>. The simplest type just provides a placeholder for
+  inserting text:</p>
   
   <pre class="code">
-[[%tabstop:<em>name</em>]]
-</pre>
-
-  <p>When the snippet is used or a new file is created from the
-  template, the marker looks like this:</p>
+[[%tabstop]</pre>
+  
+  <p>Adding a colon followed by any string provides a default value (or
+  just a helpful name):</p>
+    
   <pre class="code">
-&laquo;<em>name</em>&raquo;
-</pre>
+[[%tabstop:myValue]</pre>
+  
+  <p>Numbered tabstops are linked together in the buffer. Text
+  replacements in one numbered tabstop will be replicated in tabstops
+  with the same number. Linked tabstops should use the same default
+  string or omit the default string once it's been defined in the first
+  linked tabstop:</p>
+  
+  <pre class="code">
+print &lt;&lt;"[[%tabstop1:EOT]]";
+  [[%tabstop:TextHere]]
+[[%tabstop1]]</pre>
+  
+  
+  <p>Tabstops can be nested within other tabstops:</p>
+  
+  <pre class="code">
+def [[%tabstop1:method]](self[[%tabstop2:, ARGS]]):[[%tabstop:
+    [[%tabstop1]].__init__(self[[%tabstop2]])]]
+    [[%tabstop:pass]]</pre>
+  
+  <h2><a name="tabstop_usage" id="tabstop_usage">Using Tabstops</a></h2>
+  
+  <p>When the snippet or template is inserted or loaded in the buffer,
+  the tabstops will show the default text (i.e. specified after the
+  colon) highlighted in the buffer. Hitting the <strong>Tab</strong> key
+  cycles the cursor through the tabstops in the order they appear in the
+  snippet or template (not in numbered order).</p>
 
-  <p>The "<em>name</em>" between the chevron characters ("&laquo;" and
-  "&raquo;") is the default value of the marker. It can be set to any
-  string (see examples below).</p>
-
-  <p>After the snippet is inserted, the first marker is selected. The marker can
-  be replaced with text at this point, or left as the default value. Use the
-  <strong>Tab</strong> key to replace the marker and all subsequent markers with
-  the same name with the new text or default value. Use the <strong>Tab</strong>
-  key again to jump to the next marker.</p>
+  <p>With the cursor on a tabstop, typing overwrites the default value
+  (if defined). Hitting <strong>Tab</strong> again inserts the default
+  value and moves to the next tabstop.</p>
 
   <h2><a name="tabstop_examples" id="tabstop_examples">Examples</a></h2>
   
-  <p>Here's an example of a "blank" PHP function snippet that uses
-  Tab Stop/Replace markers:</p>
+  <p>This "blank" PHP function snippet uses numbered tabstops. This is
+  what it looks like when defined in the snippet:</p>
+  
   <pre class="code">
 /*
-    * function &laquo;name&raquo;
-    * @param $&laquo;arg&raquo;
+    * function [[%tabstop1:name]]
+    * @param [[%tabstop2:arg]]
 */
 
-function &laquo;name&raquo;($&laquo;arg&raquo;) {
-  &laquo;&raquo;
+function [[tabstop1:name]]($[[%tabstop2:arg]]) {
+  [[%tabstop]];
+}
+</pre>
+  
+  <p>When inserted in the buffer, it will look like this:</p>
+  
+  <pre class="code">
+/*
+    * function <span style="background-color: #C1ABAB">name</span>
+    * @param $<span style="border: inherit; border-color: #9999FF">arg</span>;
+*/
+
+function <span style="background-color: #FFE7E7">name</span>($<span style="border: inherit; border-color: #9999FF">arg</span>) {
+  
 }
 </pre>
 
-  <p>The &laquo;name&raquo; marker is the first place "Tab" will stop. It gets
-  replaced with the function name which is propagated through the
-  rest of the snippet when "Tab" is hit again. The &laquo;arg&raquo; marker is
-  the next place "Tab" stops, and is treated the same way.</p>
-
-  <p>It is useful to leave the cursor in the snippet window
-  immediately before the first Tab Stop/Replace marker and select
-  <strong>Maintain selected text or cursor position after
-  insertion</strong>. If the cursor is left at the end of the
-  snippet, "Tab" will not encounter the markers.</p>
+  <p>The "name" tabstop is the first place <strong>Tab</strong> will
+  stop. It gets replaced with the function name which is propagated
+  through the rest of the snippet when <strong>Tab</strong> is hit again. The "arg"
+  tabstop is the next place <strong>Tab</strong> stops, and is treated the same way.
+  The unnamed tabstop is invisible in the buffer, but hitting <strong>Tab</strong>
+  again will move the cursor to it's position.</p>
 
   <p>Here's another example of a short snippet for HTML:</p>
   <pre class="code">
-&lt;&laquo;div&raquo;&gt;[[%s]]&lt;/&laquo;div&raquo;&gt;
-</pre>
+&lt;[[%tabstop1:div]]&gt;[[%s]]&lt;/[[%tabstop1:div]]&gt;</pre>
 
   <p>The current selection is wrapped in an element (a "div" by
-  default). Hitting "Tab" after insertion will select the first
-  "div" for replacement. If it is replaced, the closing tag will be
-  changed when "Tab" is hit again. If it is not replaced, "div"
-  will be used as the element type.</p>
+  default).</p>
+  
+  <pre class="code">
+&lt;<span style="background-color: #C1ABAB">div</span>&gt;[[%s]]&lt;/<span style="background-color: #FFE7E7">div</span>&gt;</pre>
+  
+  <p>Hitting <strong>Tab</strong> after insertion will select the first "div" for
+  replacement. If it is replaced, the closing tag will be changed as you
+  type. If it is not replaced, "div" will be used as the element
+  type.</p>
   
     <hr />
 </body>
