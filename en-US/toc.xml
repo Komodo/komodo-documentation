@@ -286,7 +286,7 @@
 </node>
 
 <node name="Tabstops" link="tabstops.html#tabstops_top">
-  <node name="Creating Tabstops" link="tabstops.html#tabstop_usage"/>
+  <node name="Creating Tabstops" link="tabstops.html#tabstop_create"/>
   <node name="Using Tabstops" link="tabstops.html#tabstop_usage"/>
   <node name="Tabstop Examples" link="tabstops.html#tabstop_examples"/>
 </node>
