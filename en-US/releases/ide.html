@@ -33,9 +33,10 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   <li><strong>Multi-Window</strong>: Komodo can now open multiple
   top-level windows, allowing you to configure your workspace the way you want
   when editing or debugging.</li>
-  
-  <li><strong>Improved Tab Stops</strong>: Tabstops in snippets and file
-  templates are now more intuitive.</li> 
+
+  <li><strong>Improved Tabstops</strong>: <a
+  href="tabstops.html">Tabstops</a> in snippets and file templates are
+  now more intuitive.</li>
 </ul>
 
 <strong>IDE only</strong>
@@ -50,7 +51,7 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
   <li><strong>SCC Checkout</strong>: A new interface for checking out
   working copies of a repository from within Komodo.</li>
-  
+
   <li><strong>Code Formatting</strong>: Integrations with external code
   formatters.</li>
 </ul>
@@ -68,27 +69,27 @@ Sections List apply to Komodo IDE only.</p>
   of regular usage. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80063">80063</a>, <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80126">80126</a>)</li>
-  
+
   <li>Debugger: Fixed space key failing to toggle breakpoint state in
   breakpoints tab. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80163">80163</a></li>
-  
+
   <li>Multi-window: Added support for breakpoint handling when multiple
   windows are open. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79117">79117</a>)</li>
-  
+
   <li>Fixed error indicated by console error messages referencing
   "ko.dbg.manager". (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80279">80279</a>)</li>
-  
+
   <li>Added background syntax checking support for Python 3.</li>
-  
+
   <li>Tabstops in snippets and templates are now implemented with
   invisible markers in the buffer. Komodo now uses
   highlighting/outlining instead of chevrons to delimit them. Nested
   tabstops are now possible. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80201">80201</a>)</li>
-  
+
 </ul>
 
 <h3 id="bug_fixes-5.0a3">5.0 Alpha 3 Bug Fixes</h3>
@@ -96,61 +97,61 @@ Sections List apply to Komodo IDE only.</p>
 <ul>
   <li>Remote debugging fixed (dbgp URIs not working in Alphas 1 and 2). (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80017">80017</a>)</li>
-  
+
   <li>Vi Emulation: Fixed the 'r' command (replace character). Now
   correctly maintains the same cursor position. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79021">79021</a>)</li>
-  
+
   <li>PHP: Fixed autocompletion when an instance name is the same as the
   class name. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=70015">70015</a>)</li>
-  
+
   <li>SCC: SCC operations on project folders working again. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79687">79687</a>)</li>
-  
+
   <li>Komodo now saves the layout information of multiple windows on
   shutdown and restores them on restart. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79920">79920</a>)</li>
-  
+
   <li>Windows: Fixed problems with sub-process launching (affecting
   debugging, background syntax checking, run commands, etc.) when
   starting Komodo from the command line. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=76208">76208</a>)</li>
-  
+
   <li>OS X: HTTP Proxy dialog is now a real dialog window, not a sheet.
   (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=74504">74504</a>)</li>
-  
+
   <li>Fixed large memory leak in Find/Replace. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=78638">78638</a>)</li>
-  
+
   <li>Snippets:
   <ul>
     <li>Extra newline no longer added at insertion point.
     (Bug <a
     href="http://bugs.activestate.com/show_bug.cgi?id=78354">78354</a>)</li>
-  
+
     <li>Snippets now use spaces instead of tabs. To insert an actual tab in
     a snippet you'll need to paste one in. (Bug <a
     href="http://bugs.activestate.com/show_bug.cgi?id=79809">79809</a>)</li>
-  
+
     <li>Indentation fixed for snippets containing selections. (Bug <a
     href="http://bugs.activestate.com/show_bug.cgi?id=72662">72662</a>)</li>
     </ul>
   </li>
-  
+
   <li>Fixed JavaScript debugging for Firefox 3. Connection was failing due
   to attempt to use obsolete Firefox 2 code. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=78845">78845</a>)</li>
-  
+
   <li>Macros: The syntax checker no longer complains about return statements in
   the top level of macros. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=78810">78810</a>)</li>
-  
+
   <li>Perl: The interactive shell now displays overloaded objects, and
   also displays regexp objects. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79784">79784</a>)</li>
-  
+
   <li>PHP: Obtain the correct expression for static class variables.
   (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79991">79991</a>)</li>
@@ -162,27 +163,27 @@ Sections List apply to Komodo IDE only.</p>
   <li>Windows: Fixed crash on startup caused by checking a trial
   license. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79607">79607</a>)</li>
-  
+
   <li>Restored missing application icon for Komodo Edit. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79539">79539</a>)</li>
-  
+
   <li>Fixed 'Refresh Status' not causing a status update on remote files.
   (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79567">79567</a>)</li>
-  
+
   <li>Mapped URIs: Komodo no longer adds an extraneous slash after
   protocol names. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=78847">78847</a>)</li>
-  
+
   <li>Sections List: Fixed section types for languages using
   section_regexes. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79073">79073</a>)</li>
-  
+
   <li>Fixed print preview. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79701">79701</a>)</li>
-  
+
   <li>Continuing work on sidebar and tabs UI.</li>
-  
+
   <li>Miscellaneous plugin fixes.</li>
 </ul>
 
