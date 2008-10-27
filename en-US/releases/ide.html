@@ -36,7 +36,7 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
   <li><strong>Improved Tabstops</strong>: <a
   href="tabstops.html">Tabstops</a> in snippets and file templates are
-  now more intuitive.</li>
+  now more intuitive and flexible.</li>
 </ul>
 
 <strong>IDE only</strong>
@@ -52,8 +52,9 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   <li><strong>SCC Checkout</strong>: A new interface for checking out
   working copies of a repository from within Komodo.</li>
 
-  <li><strong>Code Formatting</strong>: Integrations with external code
-  formatters.</li>
+  <li><strong>Code Formatting</strong>: <a
+  href="editor.html#editor_formatters">Configurable
+  commands</a> for formatting selections and documents.</li>
 </ul>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
@@ -287,6 +288,15 @@ Bug Database</a>.</p>
 "Editing_Issues">Editing</a></h3>
 
 <ul>
+  <li><a href="../tabstops.html">Tabstop syntax</a> has changed in
+  Komodo 5.0. Abbreviation from the Toolbox|Samples directory of pre-5.0
+  versions of Komodo will not work as expected with the current
+  implementation. Delete the older versions to use the ones featured in
+  the "Samples (5.0.0)" directory. Alternatively, if you have made
+  modifications to these snippets or have implemented your own using
+  tabstops linked by name, consult the documentation and revise
+  them using numbered linking.</li>
+  
   <li>By design, Komodo does not attempt Replace in Files operations on
   unknown file types. However, file association preferences can be used
   to associate a user-defined extenstion with a language category (e.g.
