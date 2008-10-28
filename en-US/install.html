@@ -476,12 +476,15 @@ X</a></h3>
 <p>The following platforms are officially supported.</p>
 
 <ul>
-  <li>Red Hat Enterprise Linux 3 (WS, ES and AS)</li>
+  <li>Red Hat Enterprise Linux 4 (WS, ES and AS) or later</li>
+  
+  <li>Fedora Core 8 or later</li>
+  
+  <li>CentOS 5.0 or later</li>
 
-  <li>SuSE 9.x</li>
+  <li>SuSE 9.x or later</li>
 
   <li>Ubuntu 5.10 or later</li>
-  
 </ul>
 
 <p><strong>Other operating systems</strong>:</p>
@@ -492,12 +495,6 @@ platforms; platform-specific bugs may or may not be
 fixed.</p>
 
 <ul>
-  <li>Fedora Core 2</li>
-
-  <li>Red Hat 9.x</li>
-
-  <li>SuSE 8.2</li>
-
   <li>Debian</li>
 
   <li>FreeBSD (with <a target="_blank" href=
@@ -521,6 +518,15 @@ fixed.</p>
 
 <p><strong>Fedora Core 4</strong> also requires the
 <strong>xorg-x11-deprecated-libs</strong> package.</p>
+
+<p>Running Komodo on 64 bit versions of Linux will require additional
+32-bit libraries (e.g. libc6 and gtk), which should be installed with
+your system's package manager. Known dependencies include:</p>
+
+<ul>
+  <li>Ubuntu 8.04: binfmt-support ia32-libs libc6-i386</li>
+  <li>Ubuntu 6.10: ia32-libs-gtk ia32-libs</li>
+</ul> 
 
 <p>Non-ASCII Input Requirements:</p>
 
