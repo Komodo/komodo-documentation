@@ -127,7 +127,7 @@ Sections List apply to Komodo IDE only.</p>
   <li>SCC: Less CPU intensive mercurial status checking. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80563">80563</a>)</li>
   
-  <li>HTML: Changed default tidy linting to not include accessability
+  <li>HTML: Changed default tidy linting to not include accessibility
   checks. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80598">80598</a>)</li>
   
@@ -309,7 +309,7 @@ Sections List apply to Komodo IDE only.</p>
     </ul>
   </li>
 
-  <li>Tcl Interactive shell menu option was grayed out - not respecing
+  <li>Tcl Interactive shell menu option was grayed out - not respecting
   Tcl preferences. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=79111">79111</a>)</li>
 
@@ -336,7 +336,7 @@ Sections List apply to Komodo IDE only.</p>
   calls that contained function arguments. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=77834">77834</a>)</li>
 
-  <li>Remote Files: Invalide HOME environment variable would break the
+  <li>Remote Files: Invalid HOME environment variable would break the
   remote file dialog. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=72402">72402</a>)</li>
 
@@ -402,7 +402,7 @@ Bug Database</a>.</p>
   
   <li>By design, Komodo does not attempt Replace in Files operations on
   unknown file types. However, file association preferences can be used
-  to associate a user-defined extenstion with a language category (e.g.
+  to associate a user-defined extension with a language category (e.g.
   "Text") which then enables replacements for that file type.</li>
 
   <li>Linux users may need to install the <acronym title="Smart Common
@@ -671,11 +671,15 @@ Bug Database</a>.</p>
 "Interactive_Shell_Issues">Interactive Shell</a></h3>
 
 <ul>
+  <li>The interactive shell does not initialize properly when invoked
+  while the Command Output tab has focus. To avoid this, switch focus to
+  another tab or sidebar before starting the interactive shell.</li>
+  
   <li>Perl: Only pattern variables $1 .. $9 are preserved
   across each query. (Bug 34528)</li>
 
   <li>Python: The getpass package requires the use of a tty
-  on unix systems. Komodo does not provide a tty in it's
+  on UNIX systems. Komodo does not provide a tty in it's
   interactive shell so getpass will fail with an exception.
   (Bug 34259)</li>
 </ul>
@@ -720,14 +724,14 @@ Bug Database</a>.</p>
 
 <ul>
   <li>If you have two drives with the same name, and you
-  use the file open dialog in a mozilla application, the
+  use the file open dialog in a Mozilla application, the
   directory menu (top middle of dialog) may crash when
   clicked. To avoid this, rename one of the hard
   drives.</li>
 
   <li>New Custom Menus created in a Project or in the
   Toolbox will not appear until Komodo has been
-  restared.</li>
+  restarted.</li>
 
   <li>Throughout the Komodo documentation there are
   references to key bindings that use the 'Meta' key. This
@@ -771,8 +775,8 @@ Bug Database</a>.</p>
   <li>Context menus may not display unless you hold down
   the mouse button for a period of time. This is because
   the Komodo editor is implemented in Mozilla as a plugin,
-  and it does not access the apropriate context menu event
-  to handle this behaviour properly without interfering
+  and it does not access the appropriate context menu event
+  to handle this behavior properly without interfering
   with other mouse events (for example, drag and drop).
   (Bug 41216)</li>
 
@@ -951,9 +955,9 @@ AMD64 can be found <a href=
   the user in the 'diff' window, or the 'no difference'
   dialog. (Bug 32932)</li>
 
-  <li>In Komodo's Rx Toolkit, the match offsets for unicode
+  <li>In Komodo's Rx Toolkit, the match offsets for Unicode
   or high-bit data are incorrect. When matching, the
-  program does not account for UTF-8 multibyte characters.
+  program does not account for UTF-8 multi-byte characters.
   (Bug 33287)</li>
 
   <li>When adding new key bindings via the Preferences
