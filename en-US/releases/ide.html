@@ -842,26 +842,6 @@ Bug Database</a>.</p>
   lib-compat</code>. This is not thought to be a problem on
   Debian systems. (Bug 36244)</li>
 
-  <li>Komodo will work on Debian/Ubuntu AMD64 with some
-  manual configuration (some libraries were not properly
-  ported to support 32-bit applications). (Bug 41368) Run
-  Komodo from a shell script which sets certain environment
-  variables:
-    <pre class="code">
-#!/bin/sh
-export GTK_PATH=/usr/lib32/gtk-2.0/
-export PANGO_RC_FILE=/etc/pango32/pangorc
-komodo
-</pre>The <code>pangorc</code> file should contain the following:
-            <pre class="code">
-[Pango]
-ModuleFiles=/etc/pango32/pango.modules
-[PangoX]
-AliasFiles=/etc/pango/pangox.aliases
-</pre>More information on running 32 bit Mozilla applications on
-AMD64 can be found <a href=
-"http://www.ubuntuforums.org/showthread.php?t=84732">here</a>.
-  </li>
 </ul>
 
 <h3><a name="Other_Issues" id="Other_Issues">Other</a></h3>
