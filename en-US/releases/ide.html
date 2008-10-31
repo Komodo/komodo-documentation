@@ -164,6 +164,38 @@ Sections List apply to Komodo IDE only.</p>
   <li>Common application directories now added to the PATH in Komodo's
   user environment settings. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80656">80656</a>)</li>
+  
+  <li>Vista: Fixed menus appearing with a vertical line through the
+  text. Extension authors must update usages of &lt;menu
+  class="menu-iconic-wide"&gt; and &lt;menuitem
+  class="menuitem-iconic-wide"&gt; according to these rules:
+  <ul>
+    <li>Drop custom 'menu-iconic-wide' and 'menuitem-iconic-wide'
+    classes/bindings in favor of the Mozilla toolkit 'menu-iconic' and
+    'menuitem-iconic'.</li>
+    <li>Use these classes only if your menu/menuitem has an icon.
+    Otherwise the alignment of the menu/menuitem labels will be
+    incorrect in context menus on Mac OS X.</li>
+  </ul>
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80629">80629</a>)</li>
+  
+  <li>Debugger: Starting a remote debugging session no longer prompts
+  twice to create a mapped URI". (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80125">80125</a>)</li>
+  
+  <li>Prefs: Fixed failure to load preference files containing high-bit
+  characters. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80676">80676</a>)</li>
+  
+  <li>SCC: Fixed bzr status failing to detect all files in a folder.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80431">80431</a>)</li>
+  
+  <li>OS X: Workaround for custom menus crashing. Custom menus in
+  projects and toolboxes are no longer available on OS X due to an
+  internal error in the underlying Cocoa UI code. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80697">80697</a>)</li>
 </ul>
 
 <h3 id="bug_fixes-5.0b1">5.0 Beta 1 Bug Fixes</h3>
