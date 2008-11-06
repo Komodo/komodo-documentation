@@ -1,9 +1,6 @@
 *  {
 	margin: 0;
-	padding-top: 4px;
-	padding-right: 0;
-	padding-bottom: 0;
-	padding-left: 0;
+	padding: 0;
 	}
 img {
 	border: none;
@@ -11,9 +8,7 @@ img {
 body {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 12px;
-	background-color:#ffffff;
-	background-image:url(../img/top/background_1.png);
-	background-repeat:no-repeat;
+	line-height: 1.8em;
 	color: #000000;
 	}
 p {
@@ -23,11 +18,12 @@ a:hover {
 	text-decoration: underline;
 }
 
-	
 #main-container {
-	position: relative;
-	margin-bottom: 2em;
+	background-color:#ffffff;
+	background-image:url(../img/top/background_1.png);
+	background-repeat:no-repeat;
 	}
+	
 #content {
 	padding: 0 0 0 2em;
 	left: 2%;
