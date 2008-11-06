@@ -108,26 +108,30 @@ class mozhelp(_KomodoDocTask):
             raise
 
 
-class aspnhelp(_KomodoDocTask):
-    """Make an aspnhelp tree (for putting docs up on ASPN)."""
+class ashelp(_KomodoDocTask):
+    """Make an ashelp tree (for putting docs up on docs.activestate.com).
+    
+    Basically this is the HTML tree plus a toc.xml which defines the Table
+    of Contents.
+    """
     def deps(self):
         yield "htdocs"
 
     def results(self):
-        yield join(self.cfg.aspnhelp_dir, "toc.xml")
+        yield join(self.cfg.ashelp_dir, "toc.xml")
 
         # Just a landmark in the htdoc files for now.
-        yield join(self.cfg.aspnhelp_dir, "top.html")
+        yield join(self.cfg.ashelp_dir, "top.html")
         
     def make(self):
-        sh.mkdir(self.cfg.aspnhelp_dir, log=self.log)
-        sh.cp(join(self.htdocs_dir, "*"), dstdir=self.cfg.aspnhelp_dir,
+        sh.mkdir(self.cfg.ashelp_dir, log=self.log)
+        sh.cp(join(self.htdocs_dir, "*"), dstdir=self.cfg.ashelp_dir,
               recursive=True, log=self.log.info)
 
         junk = [
-            join(self.cfg.aspnhelp_dir, "komodo-js-api.toc"),
-            join(self.cfg.aspnhelp_dir, "manifest.ini"),
-            join(self.cfg.aspnhelp_dir, "aux_search.rdf"),
+            join(self.cfg.ashelp_dir, "komodo-js-api.toc"),
+            join(self.cfg.ashelp_dir, "manifest.ini"),
+            join(self.cfg.ashelp_dir, "aux_search.rdf"),
         ]
         for path in junk:
             if exists(path):
