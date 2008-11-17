@@ -64,6 +64,73 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-5.0.2">5.0.2 Bug Fixes</h3>
+
+<ul>
+  <li>Fixed settings import from previous versions when KOMODO_USERDATIDIR
+  is set.. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80768">80768</a>)</li>
+  
+  <li>Added preference for turning off mixed EOL warnings. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=33318">33318</a>)</li>
+  
+  <li>Fixed encoding and language pop up menus so nested items can be
+  selected. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80721">80721</a>)</li>
+  
+  <li>Leading whitespace in snippets now follows the global settings.
+  The tabWidth in a snippet is the indentWidth in the editor, as each
+  tab corresponds to indenting by one indentLevel when a snippet is
+  inserted into a buffer. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79809">79809</a>)</li>
+  
+  <li>PHP: Fixed code intelligence failing when scanning encounters a
+  non-existing symlinked PHP file. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80841">80841</a>)</li>
+  
+  <li>SDK: The koext tool now zips additional directories for Mozilla
+  extensions. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=75091">75091</a>)</li>
+  
+  <li>PHP: Fixed non-expanding arrays in debugger variable view. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78260">78260</a>)</li>
+  
+  <li>SCC: Fixed SVN diff options being ignored. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80799">80799</a>)</li>
+  
+  <li>JavaScript: Provide calltips for "Function.apply" et al. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80880">80880</a>)</li>
+  
+  <li>Linux: Fixed file encoding preferences not being displayed
+  correctly. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=75399">75399</a>)</li>
+  
+  <li>Rx: Fixed "$" matching line feed rather than current line ending
+  when combined with a range. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80881">80881</a>)</li>
+  
+  <li>Fixed template names with periods being cut off. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80882">80882</a>)</li>
+  
+  <li>Remote Files: Fixed FTPS. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80386">80386</a>)</li>
+  
+  <li>SCC: Filter out "path contains illegal component: .hg" warning
+  messages. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80762">80762</a>)</li>
+  
+  <li>Leading tabs in snippets are now replaced with [indentWidth]
+  spaces on snippet insertion. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80784">80784</a>)</li>
+  
+  <li>SCC: Fixed diff between history versions failing with hg. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80933">80933</a>)</li>
+  
+  <li>JavaScript: Fixed object variables being incorrectly recognized as
+  class members. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78497">78497</a>)</li>
+</ul>
+
 <h3 id="bug_fixes-5.0.1">5.0.1 Bug Fixes</h3>
 
 <ul>
