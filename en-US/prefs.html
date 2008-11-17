@@ -702,31 +702,12 @@
 
   <h3><a name="smart_editing" id="smart_editing">Smart
   Editing</a></h3>
-
-  <h4><a name="syntax_checking" id="syntax_checking">Background
-  Syntax Checking</a></h4>
-
-  <p>Background syntax checking validates code against the language
-  interpreter as you type. (If <a href="#code_intel">Code
-  Intelligence</a> is enabled for Python, the code intelligence
-  database is used to validate Python code.) Syntax errors and
-  warnings are underlined in the <a href=
-  "workspace.html#Editor_Pane">Editor Pane</a>. See <a href=
-  "editor.html#Linting">Background Syntax Checking</a>
-  for more information.</p>
-
-  <p>By default, Komodo performs a background syntax check one
-  second (1000 msecs) after you stop typing. In very large files,
-  this background process can slow down editing. If you notice
-  slowness in the editor pane, try extending the delay or disabling
-  background syntax checking. Syntax checking can be run manually
-  by clicking the syntax checking icon (<img class="icon" src=
-  "img/icon_check_ok.png" /> or <img class="icon" src=
-  "img/icon_check_error.png" />) in the status bar.</p>
-
-  <p>The level of background syntax checking for Perl is determined
-  by the setting on the <a href="#Perl">Perl Language</a>
-  preference page.</p>
+  
+  <p>Options set through the Preferences dialog box are the default
+  for all files opened in Komodo. Some <a href=
+  "#smart_editing">Smart Editing</a> features can be assigned to
+  <a href="files.html#files_settings">individual
+  files</a>.</p>
 
   <h4><a name="Config_Word_Complete" id=
   "Config_Word_Complete">Configuring Word Completion</a></h4>
@@ -744,7 +725,7 @@
   complete words like Ctrl+Space</strong>. Note that the 'Tab' key
   can still be used for other purposes when this check box is
   selected. Word completion only occurs when the cursor is
-  positioned to the right of a character that begins a word that
+  positioned to the right of characters in a word that
   has been stored in the editor's index.</p>
 
   <h4><a name="Config_Auto_Wrap" id="Config_Auto_Wrap">Configuring
@@ -796,12 +777,6 @@
     position of the vertical marker.</li>
   </ul>
 
-  <p>Options set through the Preferences dialog box are the default
-  for all files opened in Komodo. Some <a href=
-  "#smart_editing">Smart Editing</a> features can be assigned to
-  <a href="files.html#files_settings">individual
-  files</a>.</p>
-
   <h4><a name="Soft_Chars" id="Soft_Chars">Soft Characters</a></h4>
 
   <p><strong>Enable soft characters</strong> turns on
@@ -811,6 +786,35 @@
   "editor.html#Soft_Char">Soft Characters</a> in the
   Editor section for more information.</p>
 
+  <h4><a name="syntax_checking" id="syntax_checking">Background
+  Syntax Checking</a></h4>
+
+  <p>Background syntax checking validates code against the language
+  interpreter as you type. (If <a href="#code_intel">Code
+  Intelligence</a> is enabled for Python, the code intelligence
+  database is used to validate Python code.) Syntax errors and
+  warnings are underlined in the <a href=
+  "workspace.html#Editor_Pane">Editor Pane</a>. See <a href=
+  "editor.html#Linting">Background Syntax Checking</a>
+  for more information.</p>
+
+  <p>By default, Komodo performs a background syntax check one
+  second (1000 msecs) after you stop typing. In very large files,
+  this background process can slow down editing. If you notice
+  slowness in the editor pane, try extending the delay or disabling
+  background syntax checking. Syntax checking can be run manually
+  by clicking the syntax checking icon (<img class="icon" src=
+  "img/icon_check_ok.png" /> or <img class="icon" src=
+  "img/icon_check_error.png" />) in the status bar.</p>
+
+  <p>The level of background syntax checking for Perl is determined
+  by the setting on the <a href="#Perl">Perl Language</a>
+  preference page.</p>
+  
+  <p><strong>Enable checking of mixed end-of-line (EOL)
+  characters"</strong> checks for inconsistent end-of-line characters
+  caused by editing a file on multiple platforms (e.g. CR-LF on Windows
+  vs. LF on Linux). </p>
 
   <h4><a name="Folding" id="Folding">Configuring
   Folding</a></h4>Komodo can fold (i.e. hide and un-hide) logical
