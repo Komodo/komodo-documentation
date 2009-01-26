@@ -1672,13 +1672,9 @@
 
   <h3><a name="Tcl" id="Tcl">Configuring Tcl</a></h3>
 
-  <p>Komodo provides the ability to interact with both the standard
-  Tcl interpreter ("Tclsh") and the Tcl interpreter that supports
-  the Tk widget library ("Wish"). Komodo's Tcl integration also
-  supports logging and syntax checking. Extended Tcl editing
-  support and the Tcl debugging libraries are included with a
-  subscription to <a class="doc" href=
-  "http://www.ActiveState.com/Products/ASPN_Tcl">ASPN Tcl</a>.</p>
+  <p>Komodo can use the standard <code>tclsh</code> interpreter, the
+  Tk-enabled <code>wish</code> interpreter, or any other Tcl core
+  compatible extended shell.</p>
 
   <ul>
     <li><strong>Use this Wish interpreter</strong>: Select
@@ -1693,19 +1689,16 @@
     <li><strong>Use this Tclsh Interpreter</strong>: As described
     above, specify the desired Tclsh interpreter.</li>
 
-    <li><strong>Enable Debugger Log</strong>: If this option is
-    enabled, the Komodo debugger logs the debugging session to a
-    file in the directory specified in the <strong>Debugger Log
-    Path</strong> field (or the directory specified in the system's
-    <code>TEMP</code> variable, if no directory is specified). This
-    is primarily for debugging the debugger, as opposed to gaining
-    additional insight on the debug session itself. The debugger
-    log file is named <em>tcl-dbgp.log</em>. The contents of the
-    log file are overwritten each time the debugger is
-    invoked.</li>
-
-    <li><strong>Additional Tcl Include Directories</strong>:
-    Directories specified in this field are inserted at the
+    <li><strong>Enable Debugger Log</strong>: If this option is enabled,
+    the debugger logs sessions to a file called <em>tcl-dbgp.log</em> in
+    the directory specified in <strong>Debugger Log Path</strong> (or
+    the the system's <code>TEMP</code> directory if no path is
+    specified). The contents of the log file are overwritten each time
+    the debugger is invoked. This file is primarily useful in
+    troubleshooting debugger sessions.</li>
+    
+    <li><strong>Additional Tcl Include Directories</strong>: Directories
+    specified in this field are inserted at the
     beginning of Tcl's <code>TCLLIBPATH</code> environment
     variable. Modules in the specified directories are used for
     <a href=
@@ -1725,9 +1718,14 @@
 
   <h4><a name="Tcl_syntax" id="Tcl_syntax">Tcl Syntax
   Checking</a></h4>
+  
+  <p>Syntax checking support in Komodo Edit requires the <a class="doc"
+  href= "http://community.activestate.com/xpi/tcl-syntax-checker">TCL
+  Syntax Checker extension</a>.</p>
 
   <p>To specify Tcl syntax checking:</p>
 
+  
   <ul>
     <li><strong>Warning messages to suppress</strong>: The warning
     messages listed in this dialog box can be disabled. This
