@@ -20,14 +20,42 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <h2 id="whatsnew">What's New in Komodo IDE/Edit</h2>
 
-<h3 id="whatsnew-5.1">5.1</h3>
+<h3 id="whatsnew-5.0">5.0</h3>
 
 <strong>Edit and IDE</strong>
 
 <ul>
-  <li><strong>History</strong>: Navigation (forward and back) buttons
-  and a drop list in the toolbar that let you browse though the files
-  and buffer locations you've been editing recently.</li>
+  <li><strong>Built on Mozilla 1.9</strong>: Komodo is now built on the
+  Mozilla 1.9 branch, the same code base Firefox 3.0 is built on. This
+  includes a number of bug fixes and performance improvements, and
+  provides a more platform-native look and feel.</li>
+
+  <li><strong>Multi-Window</strong>: Komodo can now open multiple
+  top-level windows, allowing you to configure your workspace the way you want
+  when editing or debugging.</li>
+
+  <li><strong>Improved Tabstops</strong>: <a
+  href="../tabstops.html">Tabstops</a> in snippets and file templates are
+  now more intuitive and flexible.</li>
+</ul>
+
+<strong>IDE only</strong>
+
+<ul>
+  <li><strong>Mercurial, Bazaar, and Git Support</strong>: Integration
+  support for the <a target="_blank"
+  href="http://www.selenic.com/mercurial/wiki/">Mercurial</a> (hg), <a
+  target="_blank" href="http://bazaar-vcs.org/">Bazaar</a> (bzr), and <a
+  target="_blank" href="http://git.or.cz/">Git</a> source control
+  systems.</li>
+  
+  <li><strong>Code Formatting</strong>: <a
+  href="../editor.html#editor_formatters">Configurable
+  commands</a> for formatting selections and documents.</li>
+
+  <li><strong>SCC Checkout</strong>: A <a
+  href="../scc.html#scc_checkout">new interface</a> for checking out
+  working copies of a repository from within Komodo.</li>
 </ul>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
@@ -36,105 +64,488 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
-<h3 id="bug_fixes-5.1.0a1">5.1.0 Alpha 1 Bug Fixes</h3>
+<h3 id="bug_fixes-5.0.3">5.0.3 Bug Fixes</h3>
 
 <ul>
-  <li>Vi Emulation: Fixed behavior of 'yank' and 'cut' on last line with
-  no EOL. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81184">81184</a>, <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=51878">51878</a>)</li>
+  <li>Tcl: Fixed spawnpoints in Tcl debugging. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81047">81047</a>)</li>
   
-  <li>Interactive Shell: Fixed shell not launching when Command Output
-  or Find Results tabs had focus. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=80152">80152</a>)</li>
+  <li>Fixed updating of add-ons from the ActiveState Community site.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81121">81121</a>)</li>
   
-  <li>Files changed outside of Komodo are now re-scanned when opened in
-  Komodo. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=77866">77866</a>)</li>
+  <li>Fixed crash when working with a UDL language with an empty state
+  map. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81200">81200</a>)</li>
+  
+  <li>Ruby: Debugger now properly handles UNC paths. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80991">80991</a>)</li>
   
   <li>Fold state preserved when reopening documents. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=45621">45621</a>)</li>
-  
-  <li>Macros: Triggered macros now fire with an argument called "<a
-  href="../macros.html#macros_trigger_subject">subject</a>", available
-  as a global within the macro. At startup, any post-open trigger macros
-  now fire after the startup trigger has fired, guaranteeing that Komodo
-  is fully initialized. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=76933">76933</a>)</li>
   
   <li>Mac OS X: Fixed run/debug. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=81298">81298</a>)</li>
   
   <li>Fixed exception caused by removing all items from a project
   folder. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81315">81315</a>)</li>    
-  
-  <li>JavaScript debugger now correctly handles paths that contain
-  parentheses. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81336">81336</a>)</li>
-  
-  <li>The active project no longer changes when a non-active project is
-  closed. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81300">81300</a>)</li>
-  
-  <li>Unit Testing: The PHP unit test harness now supports additional
-  arguments --file fileName and --class className, which filter tests
-  based on simple substring matching on filenames and class names,
-  respectively. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81286">81286</a>)</li>
-  
-  <li>Support opening files with percent characters in their paths. (Bug
-  <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81275">81275</a>, <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=70777">70777</a>)</li>
-  
-  <li>Prevent the 'this.parentNode is null' JavaScript error message
-  when closing a tab.. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=80115">80115</a>)</li>
-  
-  <li>Clicking on a button in the embedded browser's navigation bar now
-  gives the browser window the focus. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81288">81288</a>)</li>
-  
-  <li>Tcl: Handle 4-line messages from kotcllint. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81326">81326</a>)</li>
+  href="http://bugs.activestate.com/show_bug.cgi?id=81315">81315</a>)</li>
   
   <li>Mac OS X: Fixed slow typing response. This fix has an impact on
   extensions using API calls such as "ko.open.URI" (see Open Komodo <a
   href="http://svn.openkomodo.com/openkomodo/revision/?rev=2751">revision
   2751</a> for details). (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80683">80683</a>)</li>
-  
-  <li>Workspace: Panel and splitter states restored correctly on
-  startup. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81170">81170</a>)</li>
-  
-  <li>Windows: Fixed possible hang on start. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81363">81363</a>)</li>
-  
-  <li>Python: Interactive shell in debugging sessions now shows current
-  frame. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81287">81287</a>)</li>
-  
-  <li>Allow opening a Komodo project from the command line. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81394">81394</a>)</li>
-  
-  <li>Fixed nested setTimouts for updateCommands('interactiveshell')
-  sometimes causing a hang. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81402">81402</a>)</li>
-  
-  <li>HTML: Autocomplete now correctly un-indents end tags. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=64217">64217</a>)</li>
-  
-  <li>Using multiple windows no longer suppresses "Save Modified Files?"
-  dialog. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81707">81707</a>)</li>
-  
- <li>The 'cmd_lineDuplicate now duplicates selections as well. (Bug <a
- href="http://bugs.activestate.com/show_bug.cgi?id=78819">78819</a>)</li>
- 
 </ul>
 
+<h3 id="bug_fixes-5.0.2">5.0.2 Bug Fixes</h3>
+
+<ul>
+  <li>Fixed settings import from previous versions when KOMODO_USERDATIDIR
+  is set. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80768">80768</a>)</li>
+  
+  <li>Preferences: Added preference for turning off mixed EOL warnings.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=33318">33318</a>)</li>
+  
+  <li>Preferences: Fixed encoding and language pop up menus so nested
+  items can be selected. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80721">80721</a>)</li>
+  
+  <li>Leading whitespace in snippets now follows the global settings.
+  The tabWidth in a snippet is the indentWidth in the editor, as each
+  tab corresponds to indenting by one indentLevel when a snippet is
+  inserted into a buffer. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79809">79809</a>)</li>
+  
+  <li>PHP: Fixed code intelligence failing when scanning encounters a
+  non-existing symlinked PHP file. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80841">80841</a>)</li>
+  
+  <li>SDK: The koext tool now zips additional directories for Mozilla
+  extensions. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=75091">75091</a>)</li>
+  
+  <li>PHP: Fixed non-expanding arrays in debugger variable view. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78260">78260</a>)</li>
+  
+  <li>SCC: Fixed SVN diff options being ignored. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80799">80799</a>)</li>
+  
+  <li>JavaScript: Provide calltips for "Function.apply" et al. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80880">80880</a>)</li>
+  
+  <li>Linux: Fixed file encoding preferences not being displayed
+  correctly. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=75399">75399</a>)</li>
+  
+  <li>Rx: Fixed "$" matching line feed rather than current line ending
+  when combined with a range. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80881">80881</a>)</li>
+  
+  <li>Fixed template names with periods being cut off. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80882">80882</a>)</li>
+  
+  <li>Remote Files: Fixed FTPS. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80386">80386</a>)</li>
+  
+  <li>SCC: Filter out "path contains illegal component: .hg" warning
+  messages. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80762">80762</a>)</li>
+  
+  <li>Leading tabs in snippets are now replaced with [indentWidth]
+  spaces on snippet insertion. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80784">80784</a>)</li>
+  
+  <li>SCC: Fixed diff between history versions failing with hg. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80933">80933</a>)</li>
+  
+  <li>JavaScript: Fixed object variables being incorrectly recognized as
+  class members. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78497">78497</a>)</li>
+  
+  <li>Calltips: New preference for setting the calltip maximum line
+  width. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=67403">67403</a>)</li>
+  
+  <li>Debugging: CGI debugging of POST requests is fixed. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80970">80970</a>)</li>
+  
+  <li>"Jump to corresponding line" now works in diffs with relative
+  paths. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80989">80989</a>)</li>
+  
+  <li>Fixed LangInfoError exception on unknown filetype: matlab and
+  Forth. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80803">80803</a>)</li>
+  
+  <li>OS X: Fixed problem grabbing bottom pane splitter. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80756">80756</a>)</li>
+  
+  <li>OS X: 'Cmd'+'H' now hides Komodo. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80666">80666</a>)</li>
+  
+  <li>Tab key now inserts white-space when at end of a word with no
+  autocompletions. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80647">80647</a>)</li>
+  
+  <li>Code Browser sidebar state now correctly saved. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80843">80843</a>)</li>
+  
+  <li>Fixes for multi-window layout save and restore. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79920">79920</a>)</li>
+</ul>
+
+<h3 id="bug_fixes-5.0.1">5.0.1 Bug Fixes</h3>
+
+<ul>
+  <li>Remote Files: Fixed "ValueError" warning message on console. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80726">80726</a>)</li>
+  
+  <li>Fixed run commands failing when using "Pass selection as input" or
+  "Insert output". (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80732">80732</a>)</li>
+  
+  <li>Linux: Fixed blurry icons when task switching. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80727">80727</a>)</li>
+  
+  <li>Windows: Fixed Komodo application icon. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80689">80689</a>)</li>
+  
+  <li>Windows: Maximized window state now restored properly. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80661">80661</a>)</li>
+  
+  <li>Remote files: Remote server accounts without passwords were not
+  being properly migrated from 4.4 profile. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80724">80724</a>)</li>
+  
+  <li>Removed incorrect error message when inserting snippets containing
+  [[%w]] or [[%W]] interpolation shortcuts. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80741">80741</a>)</li>
+  
+  <li>Mapped URIs: Fixed broken 'Remote' button in mapped URI dialog.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80730">80730</a>)</li>
+  
+  <li>Fixed problem saving preferences with "Use tab character to
+  complete words like Ctrl+Space" selected. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80767">80767</a>)</li>
+</ul>
+
+<h3 id="bug_fixes-5.0">5.0 Bug Fixes</h3>
+
+<ul>
+  <li>Key binding changes: Moved the debugger's default step over
+  keybinding from 'F10'/'Ctrl'+'F10' to 'F12'/'Ctrl-F12'. Toggling the
+  interactive shell has moved from 'F12' to 'Shift'-'F12'. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80296">80296</a>)</li>
+  
+  <li>SCC: fixed bzr incorrectly showing non-scc files as being under
+  scc control. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80431">80431</a>)</li>
+  
+  <li>Fixed file type not showing up in the status bar after opening or
+  creating a file. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80462">80462</a>)</li>
+  
+  <li>Projects: Moved the "New Project", "Open Project" and "Save
+  Project" buttons into a "Project Tools" menulist to make more room for
+  the filter box. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79625">79625</a>)</li>
+  
+  <li>Fixed truncated run command and debugger output. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80291">80291</a>, <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80258">80258</a>)</li>
+  
+  <li>JavScript and PHP: Keywords now included in 3-char trigger completions.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78185">78185</a>, <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=77532">77532</a>)</li>
+  
+  <li>Editor: Fixed indentation guessing for newly opened files. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80188">80188</a>)</li>
+  
+  <li>Toolbox: Trap exceptions on loading a toolbox that references
+  non-existent live folders. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80420">80420</a>)</li>
+  
+  <li>Snippets: Cursor position is now handled correctly after snippet
+  insertion. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80439">80439</a>)</li>
+  
+  <li>Editor: Fixed problem with increase line indent not handling
+  non-ASCII content. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80493">80493</a>)</li>
+  
+  <li>Fixed erroneous prompt to create a new file when double-clicking a
+  line in "Find Results" output for an untitled (new) document. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80232">80232</a>)</li>
+  
+  <li>Keybindings: Reordered keybindings so common shortcuts appear in
+  menus. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80530">80530</a>)</li>
+  
+  <li>Fix non-ascii character handling in replaceTarget (indent region,
+  comment/uncomment region, vi-mode replace, spell check, find/replace). (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80511">80511</a>)</li>
+  
+  <li>Sped up parsing of long lines of JavaScript and HTML. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80496">80496</a>)</li>
+  
+  <li>SCC: Less CPU intensive mercurial status checking. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80563">80563</a>)</li>
+  
+  <li>HTML: Changed default tidy linting to not include accessibility
+  checks. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80598">80598</a>)</li>
+  
+  <li>Remote Files: Fixed "File|Save Remotely As..." not working for
+  untitled (new) files. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80605">80605</a>)</li>
+  
+  <li>Fixed bug causing some editor commands to be disabled at startup.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80583">80583</a>)</li>
+  
+  <li>OS X: Fixed 'Cmd'+'W' close behavior for the Preferences dialog.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80619">80619</a>)</li>
+  
+  <li>JavaScript API: Added simple API for clipboard operations. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79772">79772</a>)</li>
+  
+  <li>JavaScript API: Added the xtk namespace to the API documentation.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80646">80646</a>)</li>
+  
+  <li>Windows: Fixed hard crashes. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=76066">76066</a>)</li>
+  
+  <li>Calltips: Added preference for maximum number of lines shown. (Bug
+  <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=70560">70560</a>)</li>
+  
+  <li>PHP: Statically typed function arguments now correctly parsed.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79003">79003</a>)</li>
+  
+  <li>Common application directories now added to the PATH in Komodo's
+  user environment settings. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80656">80656</a>)</li>
+  
+  <li>Vista: Fixed menus appearing with a vertical line through the
+  text. Extension authors must update usages of &lt;menu
+  class="menu-iconic-wide"&gt; and &lt;menuitem
+  class="menuitem-iconic-wide"&gt; according to these rules:
+  <ul>
+    <li>Drop custom 'menu-iconic-wide' and 'menuitem-iconic-wide'
+    classes/bindings in favor of the Mozilla toolkit 'menu-iconic' and
+    'menuitem-iconic'.</li>
+    <li>Use these classes only if your menu/menuitem has an icon.
+    Otherwise the alignment of the menu/menuitem labels will be
+    incorrect in context menus on Mac OS X.</li>
+  </ul>
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80629">80629</a>)</li>
+  
+  <li>Debugger: Starting a remote debugging session no longer prompts
+  twice to create a mapped URI". (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80125">80125</a>)</li>
+  
+  <li>Prefs: Fixed failure to load preference files containing high-bit
+  characters. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80676">80676</a>)</li>
+  
+  <li>SCC: Fixed bzr status failing to detect all files in a folder.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80431">80431</a>)</li>
+  
+  <li>OS X: Workaround for custom menus crashing. Custom menus in
+  projects and toolboxes are no longer available on OS X due to an
+  internal error in the underlying Cocoa UI code. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80697">80697</a>)</li>
+</ul>
+
+<h3 id="bug_fixes-5.0b1">5.0 Beta 1 Bug Fixes</h3>
+
+<ul>
+  <li>CSS: Removed autocompletion fillup characters that got in the way
+  of regular usage. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80063">80063</a>, <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80126">80126</a>)</li>
+
+  <li>Debugger: Fixed space key failing to toggle breakpoint state in
+  breakpoints tab. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80163">80163</a></li>
+
+  <li>Multi-window: Added support for breakpoint handling when multiple
+  windows are open. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79117">79117</a>)</li>
+
+  <li>Fixed error indicated by console error messages referencing
+  "ko.dbg.manager". (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80279">80279</a>)</li>
+
+  <li>Added background syntax checking support for Python 3.</li>
+
+  <li>Tabstops in snippets and templates are now implemented with
+  invisible markers in the buffer. Komodo now uses
+  highlighting/outlining instead of chevrons to delimit them. Nested
+  tabstops are now possible. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80201">80201</a>)</li>
+
+</ul>
+
+<h3 id="bug_fixes-5.0a3">5.0 Alpha 3 Bug Fixes</h3>
+
+<ul>
+  <li>Remote debugging fixed (dbgp URIs not working in Alphas 1 and 2). (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80017">80017</a>)</li>
+
+  <li>Vi Emulation: Fixed the 'r' command (replace character). Now
+  correctly maintains the same cursor position. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79021">79021</a>)</li>
+
+  <li>PHP: Fixed autocompletion when an instance name is the same as the
+  class name. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=70015">70015</a>)</li>
+
+  <li>SCC: SCC operations on project folders working again. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79687">79687</a>)</li>
+
+  <li>Komodo now saves the layout information of multiple windows on
+  shutdown and restores them on restart. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79920">79920</a>)</li>
+
+  <li>Windows: Fixed problems with sub-process launching (affecting
+  debugging, background syntax checking, run commands, etc.) when
+  starting Komodo from the command line. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=76208">76208</a>)</li>
+
+  <li>OS X: HTTP Proxy dialog is now a real dialog window, not a sheet.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=74504">74504</a>)</li>
+
+  <li>Fixed large memory leak in Find/Replace. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78638">78638</a>)</li>
+
+  <li>Snippets:
+  <ul>
+    <li>Extra newline no longer added at insertion point.
+    (Bug <a
+    href="http://bugs.activestate.com/show_bug.cgi?id=78354">78354</a>)</li>
+
+    <li>Snippets now use spaces instead of tabs. To insert an actual tab in
+    a snippet you'll need to paste one in. (Bug <a
+    href="http://bugs.activestate.com/show_bug.cgi?id=79809">79809</a>)</li>
+
+    <li>Indentation fixed for snippets containing selections. (Bug <a
+    href="http://bugs.activestate.com/show_bug.cgi?id=72662">72662</a>)</li>
+    </ul>
+  </li>
+
+  <li>Fixed JavaScript debugging for Firefox 3. Connection was failing due
+  to attempt to use obsolete Firefox 2 code. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78845">78845</a>)</li>
+
+  <li>Macros: The syntax checker no longer complains about return statements in
+  the top level of macros. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78810">78810</a>)</li>
+
+  <li>Perl: The interactive shell now displays overloaded objects, and
+  also displays regexp objects. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79784">79784</a>)</li>
+
+  <li>PHP: Obtain the correct expression for static class variables.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79991">79991</a>)</li>
+</ul>
+
+<h3 id="bug_fixes-5.0a2">5.0 Alpha 2 Bug Fixes</h3>
+
+<ul>
+  <li>Windows: Fixed crash on startup caused by checking a trial
+  license. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79607">79607</a>)</li>
+
+  <li>Restored missing application icon for Komodo Edit. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79539">79539</a>)</li>
+
+  <li>Fixed 'Refresh Status' not causing a status update on remote files.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79567">79567</a>)</li>
+
+  <li>Mapped URIs: Komodo no longer adds an extraneous slash after
+  protocol names. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78847">78847</a>)</li>
+
+  <li>Sections List: Fixed section types for languages using
+  section_regexes. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79073">79073</a>)</li>
+
+  <li>Fixed print preview. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79701">79701</a>)</li>
+
+  <li>Continuing work on sidebar and tabs UI.</li>
+
+  <li>Miscellaneous plugin fixes.</li>
+</ul>
+
+<h3 id="bug_fixes-5.0a1">5.0 Alpha 1 Bug Fixes</h3>
+
+<ul>
+  <li>SCC:
+    <ul>
+      <li>SVN was slow to update modified status for paths that
+      contained spaces. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=79065">79065</a>)</li>
+
+      <li>Enabled the diff command when a file has a conflict. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=78883">78883</a>)</li>
+
+      <li>Added "Don't display this dialog again" option to File|Revert
+      dialog box. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=78328">78328</a>)</li>
+    </ul>
+  </li>
+
+  <li>Tcl Interactive shell menu option was grayed out - not respecting
+  Tcl preferences. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=79111">79111</a>)</li>
+
+  <li>Active project state correctly saved between Komodo sessions.
+  Previously, the last project opened at session start would be the
+  active one. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78285">78285</a>)</li>
+
+  <li>Unit Testing: Fixed TAP parser problem (Perl) causing failed tests
+  to appear as passed. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78781">78781</a>)</li>
+
+  <li>Keybindings: SCC commands can now be set in preferences. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78938">78938</a>)</li>
+
+  <li>Windows Powershell language support. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78905">78905</a>)</li>
+
+  <li>PHP: Code browser now shows functions inside alternative syntax
+  conditionals. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78957">78957</a>)</li>
+
+  <li>PHP: Fixed code intelligence not working with chained function
+  calls that contained function arguments. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=77834">77834</a>)</li>
+
+  <li>Remote Files: Invalid HOME environment variable would break the
+  remote file dialog. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=72402">72402</a>)</li>
+
+  <li>Fixed bug causing autocomplete to only display on primary monitor.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=38281">38281</a>)</li>
+
+</ul>
 
 <h2 id="knownissues">Known Issues</h2>
 

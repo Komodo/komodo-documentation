@@ -287,6 +287,20 @@
 
     <li>Click <strong>Apply</strong>.</li>
   </ol>
+  
+  <h4><a name="macros_trigger_subject">Trigger Macro subject Variable</a></h4>
+  
+  <p>Trigger macros run with an argument called "subject", available as
+  a global variable within the macro. This variable references the <a
+  href="macroapi.html#macroapi_js">ko.views.manager.currentView
+  object</a> for post-open, pre/post-save, and pre-close trigger macros.
+  For post-close macros, it references the URI since the view object is
+  empty at that point. For example, in a macro with an "After file open"
+  trigger you could use:</p>
+  
+<pre class="code">
+alert("Just opened file " + subject.document.displayPath);</pre> 
+  
 
   <h4><a name="macros_return_values">Macro Return Values</a></h4>
 

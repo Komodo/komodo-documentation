@@ -303,6 +303,7 @@
     <node name="Assigning Custom Icons to Macros" link="macros.html#Cust_Icons"/>
     <node name="Running Macros in the Background" link="macros.html#run_background"/>
     <node name="Specifying Macro Triggers" link="macros.html#triggers_macros">
+      <node name="Trigger Macro subject Variable" link="macros.html#macros_trigger_subject"/>
       <node name="Macro Return Values" link="macros.html#macros_return_values"/>
     </node>
   </node>
