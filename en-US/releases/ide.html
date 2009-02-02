@@ -39,10 +39,48 @@ Sections List apply to Komodo IDE only.</p>
 <h3 id="bug_fixes-5.1.0a1">5.1.0 Alpha 1 Bug Fixes</h3>
 
 <ul>
-  <li>Vi Emulation: Fixed behavior of 'yank' and 'cut' on last line with
-  no EOL. (Bug <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=81184">81184</a>, <a
-  href="http://bugs.activestate.com/show_bug.cgi?id=51878">51878</a>)</li>
+  <li>Vi Emulation:
+    <ul>
+      <li>Fixed behavior of 'yank' and 'cut' on last line with no EOL.
+      (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=81184">81184</a>,
+      <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=51878">51878</a>)</li>
+     
+      <li>Ensure 'c' in visual mode enters insert mode. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=81763">81763</a>)</li>
+     
+      <li>Pasting in visual mode no longer moves down one line. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=81576">81576</a>)</li>
+      
+      <li>Vi commands no longer operating outside of the editor pane.
+      (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=81633">81633</a>)</li>
+    </ul>
+  </li>
+ 
+  <li>Perl:
+    <ul>
+      <li>Perl: Autocompletion on '$var = new <em>object</em>' syntax
+      now works. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=80856">80856</a>)</li>
+      
+      <li>Perl: Fixed autocompletion not working on variable names
+      ending with a digit. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=81788">81788</a>)</li>
+    </ul>
+  </li>
+  
+  <li>CSS:
+    <ul>
+      <li>Do not trigger CSS code completions after a '/'. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=81661">81661</a>)</li>
+  
+      <li>Cancel autocomplete list when a '{' or '#' entered in CSS
+      code. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=81755">81755</a>)</li>
+    </ul>
+  </li>
   
   <li>Interactive Shell: Fixed shell not launching when Command Output
   or Find Results tabs had focus. (Bug <a
@@ -73,8 +111,8 @@ Sections List apply to Komodo IDE only.</p>
   parentheses. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=81336">81336</a>)</li>
   
-  <li>The active project no longer changes when a non-active project is
-  closed. (Bug <a
+  <li>Projects: The active project no longer changes when a non-active
+  project is closed. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=81300">81300</a>)</li>
   
   <li>Unit Testing: The PHP unit test harness now supports additional
@@ -105,8 +143,7 @@ Sections List apply to Komodo IDE only.</p>
   2751</a> for details). (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=80683">80683</a>)</li>
   
-  <li>Workspace: Panel and splitter states restored correctly on
-  startup. (Bug <a
+  <li>Panel and splitter states restored correctly on startup. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=81170">81170</a>)</li>
   
   <li>Windows: Fixed possible hang on start. (Bug <a
@@ -130,9 +167,23 @@ Sections List apply to Komodo IDE only.</p>
   dialog. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=81707">81707</a>)</li>
   
- <li>The 'cmd_lineDuplicate now duplicates selections as well. (Bug <a
- href="http://bugs.activestate.com/show_bug.cgi?id=78819">78819</a>)</li>
- 
+  <li>The 'cmd_lineDuplicate now duplicates selections as well. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78819">78819</a>)</li>
+  
+  <li>Fixed delete key behavior within textboxes in Komodo dialog
+  boxes. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=65504">65504</a>)</li>
+  
+  <li>SCC: Fixed mercurial diff on an unchanged file causing a hang in
+  the diff window. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81444">81444</a>)</li>
+  
+  <li>Flock browser on Linux now correctly detected in browser
+  preferences (as 'flock-bin' rather than 'flock'). (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81743">81743</a>)</li>
+  
+  <li>Remote Files: Fixed date display bug. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81475">81475</a>)</li>
 </ul>
 
 
