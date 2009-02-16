@@ -28,6 +28,7 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   <li><strong>History</strong>: Navigation (forward and back) buttons
   and a drop list in the toolbar that let you browse though the files
   and buffer locations you've been editing recently.</li>
+  
 </ul>
 
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
@@ -35,6 +36,56 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to debugging, interactive shells, source code
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-5.1.0a2">5.1.0 Alpha 2 Bug Fixes</h3>
+
+<ul>
+  <li>SCC: A new context menu in the History view to get diffs between
+  two versions or diff against the current version.</li>
+  
+  <li>Find: Highlight all matching search terms in the editor. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=32695">32695</a>)</li>
+  
+  <li>Breakpoint colors are now fixed, but bookmark colors are now
+  changeable. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81379">81379</a>)</li>
+  
+  <li>Start Page shows full path names rather than base names. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81885">81885</a>)</li>
+  
+  <li>SCC: SVN history now shows all revisions of a file, not just up to
+  the local revision. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81881">81881</a>)</li>
+  
+  <li>Macros: Get <code>doCommand</code> working again. This fixes the
+  behavior of certain macros which would work immediately after
+  recording, but not once they were saved to the Toolbox. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=53647">53647</a>)</li>
+  
+  <li>Editor: Cursor now moves to the correct place when text is dragged
+  and dropped in the editor. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81413">81413</a>)</li>
+  
+  <li>Editor: Fixed mouse block selections setting focus to menu. (Bug
+  <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81541">81541</a>)</li>
+  
+  <li>Stopped random crashes after closing files. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81293">81293</a>)</li>
+  
+  <li>History: While stepping through a file in debugging, Komodo tries
+  to map sequential runs of lines in a single section (usually a
+  function) to the most recently visited. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81812">81812</a>)</li>
+  
+  <li>Vi Emulation: Ensure ":q!" does not prompt to save changes. (Bug
+  <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81956">81956</a>)</li>
+  
+  <li>Editor: Added a pref to control zero-selection cut/copy. Default
+  is now set to off. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=77735">77735</a>)</li>
+</ul>
 
 <h3 id="bug_fixes-5.1.0a1">5.1.0 Alpha 1 Bug Fixes</h3>
 
