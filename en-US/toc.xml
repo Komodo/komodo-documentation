@@ -176,6 +176,7 @@
 
 
 <node name="Find and Replace" link="search.html#search_top">
+  <node name="Match Highlighting" link="search.html#search_highlight"/>
   <node name="Incremental Search" link="search.html#search_incr"/>
   <node name="Find Dialog" link="search.html#search_dialog">
     <node name="Regex Searches" link="search.html#search_regex"/>
@@ -722,6 +723,7 @@
     <node name="Save Options" link="prefs.html#Save_Options"/>
   </node>
   <node name="Environment" link="prefs.html#Environment"/>
+  <node name="Find" link="prefs.html#Find"/>
   <node name="File Associations" link="prefs.html#File_Associations"/>
   <node name="Fonts and Colors" link="prefs.html#Customizing_Fonts">
     <node name="Fonts" link="prefs.html#fonts"/>
