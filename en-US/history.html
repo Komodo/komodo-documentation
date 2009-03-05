@@ -18,19 +18,18 @@
   
   <p>The History feature lets you navigate backwards and forwards
   through your editing sessions. Similar to the history feature provided
-  by a web browser, Komodo provides a <strong>Go back...</strong>
-  and <strong>Go forward...</strong> buttons, and a drop down list of
-  recent editing positions.</p>
+  by a web browser, Komodo provides <strong>Back<strong> and
+  <strong>Forward</strong> buttons, and a drop down list of recent
+  editing positions.</p>
   
-  <h2><a name="history_positions" id="history_positions">Positions</a></h2>
+  <h2><a name="history_locations"
+  id="history_locations">Locations</a></h2>
   
-  <p>The editing history is saved as a list of positions. Each position
-  is made up of a filename and a cursor position. Positions are
-  window-specific (as opposed to tab-specific) so each Komodo window
-  will have it's own.</p>
+  <p>The editing history is saved as a list of locations. Each location
+  is made up of a filename and a cursor position. There is one history
+  session per Komodo window.</p>
   
-  <p>Positions are saved to the history by the
-  following actions:</p>
+  <p>Positions are saved to the history when:</p>
   
   <ul>
     <li>opening a new file</li>
@@ -38,20 +37,24 @@
     <li>jumping to a line from the <a
     href="search.html#search_output">Find Results</a> tab</li>
     <li>using <a href="editor.html#go_to_def">Go To Definition</a></li>
+    <li>any other command or interaction in Komodo that jumps to a new
+    editing position</li>
   </ul>
   
   <h2><a name="history_navigation" id="history_navigation">History
   Navigation</a></h2>
     
-  <p>You can navigate the history using the <strong>Go back...</strong>
-  and <strong>Go forward...</strong> buttons, or by selecting the
-  desired position from drop down list.</p>
+  <p>You can navigate the history using the <strong>Back</strong>
+  and <strong>Forward</strong> buttons, or by selecting the
+  desired position from the drop down list.</p>
   
-  <p><strong>Forward</strong> and <strong>Back</strong> are also
+  <p><strong>Back</strong> and <strong>Forward</strong> are also
   available in the <strong>Code</strong> menu, and will display the
   keybindings assigned to these actions ("Editor: Go Forward" and
   "Editor: Go Back" in the <a href="prefs.html#Config_Key_Bindings">Key
-  Binding preferences</a>).</p>
+  Binding preferences</a>). The default keybindings are the same as
+  those used in most browsers: 'Alt'+'Left/Right arrows' on Windows and
+  Linux, 'Meta' + 'Left/Right arrows' on Mac OS X.</p>
   
 </body>
 </html>
