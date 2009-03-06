@@ -34,6 +34,20 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   
 </ul>
 
+<strong>IDE only</strong>
+
+<ul>
+  <li><strong>Editor Hyperlinking</strong>: 'Ctrl'+'hover' will
+  highlight HTTP hyperlinks under the pointer; 'Ctrl'+'click' will open
+  the URL in the configured browser.</li>
+  
+  <li><strong>CSS Color Popup</strong>: 'Ctrl' + 'hover' over a color
+  value in CSS will display a popup of that color; 'Ctrl'+'click' will
+  open the color picker.</li>
+  
+</ul>
+
+
 <h2 id="details">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
 
 <p>Changes related to debugging, interactive shells, source code
@@ -43,7 +57,47 @@ Sections List apply to Komodo IDE only.</p>
 <h3 id="bug_fixes-5.1.0b1">5.1.0 Beta 1 Bug Fixes</h3>
 
 <ul>
+  <li>Fixed crash after closing a split view buffer. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82032">82032</a>)</li>
   
+  <li>Editor: Extend the functionality of the "duplicate line" function.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78819">78819</a>)</li>
+  
+  <li>Editor: "Jump to Matching Brace" now works for end tags in HTML,
+  XML and PHP. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=73239">73239</a>)</li>
+  
+  <li>Editor: When a tag is clicked, the matching tag is highlighted.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81606">81606</a>)</li>
+  
+  <li>Calltips now correctly display Unicode doc comments. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=70448">70448</a>)</li>
+  
+  <li>History: Obsolete URIs (positions which are no longer accessible)
+  are now ignored when navigating the editing history. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81939">81939</a>)</li>
+  
+  <li>Debugger: Fixed Name, Type, and Value column resizing in the
+  variable viewer tabs. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80566">80566</a>)</li>
+  
+  <li>Window menu list of open buffers now correctly tracks unsaved
+  ("dirty") state. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82142">82142</a>)</li>
+  
+  <li>PHP: Allow explicit variable code completion after "$". (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82165">82165</a>)</li>
+  
+  <li>Added highlighting and ctrl-clicking for "Go to Definition". (Bug
+  <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=76721">76721</a>)</li>
+  
+  <li>History: "File|Recent Closed Tabs" gives quick access to the
+  recently closed tabs. Ctrl-Shift-T reloads the first one in the list
+  on (Windows and Linux only). (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82150">82150</a>)</li>
   
 </ul>
 
@@ -96,7 +150,7 @@ Sections List apply to Komodo IDE only.</p>
   (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77735">77735</a>)</li>
   
   <li>The "Clean trailing whitespace" file save preference is now
-  ingored for file types where whitespace is significant (e.g. YAML,
+  ignored for file types where whitespace is significant (e.g. YAML,
   Diff, nroff). (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=81878">81878</a>)</li>
   
