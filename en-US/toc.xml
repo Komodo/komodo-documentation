@@ -259,6 +259,10 @@
     <node name="Language-Specific Search Order" link="abbreviations.html#abbrev_search_order"/>
     <node name="Adding New Abbreviations" link="abbreviations.html#abbrev_new"/>
   </node>
+  <node name="History" link="history.html#history_top">
+    <node name="Locations" link="history.html#history_locations"/>
+    <node name="History Navigation" link="history.html#history_navigation"/>
+  </node>
 </node>
 
 <node name="Folders" link="folders.html#folders_top">
