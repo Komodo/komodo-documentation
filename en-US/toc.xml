@@ -723,6 +723,7 @@
       <node name="Word Wrap" link="prefs.html#Config_Auto_Wrap"/>
       <node name="Configuring Edge Lines" link="prefs.html#Config_Edge_Line"/>
       <node id="enable_soft_characters" name="Soft Characters" link="prefs.html#Soft_Chars"/>
+      <node id="line_cut_copy" name="Line Cut/Copy" link="prefs.html#line_cut_copy"/>
       <node name="Configuring Folding" link="prefs.html#Folding"/>
     </node>
     <node name="Save Options" link="prefs.html#Save_Options"/>
