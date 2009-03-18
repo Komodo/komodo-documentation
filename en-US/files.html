@@ -177,16 +177,11 @@
   include:</p>
 
   <ul>
-    <li><strong>Command-Line Argument</strong>: When Komodo is
-    invoked from the command line, files can be specified as open
-    arguments. See <a href=
-    "starting.html#Windows_Start">Starting on Windows</a>,
-    <a href="starting.html#OSX_Start">Starting on OSX</a>, or
-    <a href="starting.html#Linux_Start">Starting on Linux</a>
-    for more information.</li>
-
-    <li><strong>File|Open</strong>: Use the <strong><a href=
-    "#Opening_a_File">File|Open</a></strong> menu option.</li>
+    <li><strong>File|Open|File</strong>: Open a file using the system
+    file browser.</li>
+    
+    <li><strong>Fast Open</strong>: Open a file using the <strong><a
+    href="#files_fastopen">Fast Open</a></strong> dialog.</li>
 
     <li><strong>Projects or Toolbox sidebars</strong>: Double-click,
     drag and drop, or use the file's right-click context menu to
@@ -210,8 +205,35 @@
     <li><strong>Drag and Drop</strong>: Drag and drop one or more
     files from another drag-and-drop application (such as Windows
     Explorer) onto the Komodo editor.</li>
+    
+    <li><strong>Command-Line Argument</strong>: When Komodo is
+    invoked from the command line, files can be specified as open
+    arguments. See <a href=
+    "starting.html#Windows_Start">Starting on Windows</a>,
+    <a href="starting.html#OSX_Start">Starting on OSX</a>, or
+    <a href="starting.html#Linux_Start">Starting on Linux</a>
+    for more information.</li>
+
   </ul>
 
+  <h3><a name="files_fastopen" id="files_fastopen">Fast Open</a></h3>
+  
+  <p>The <strong>Fast Open</strong> dialog is a shortcut to open,
+  "nearby" and recently used files. It shows a list containing:</p>
+  
+  <ul>
+    <li>open files</li>
+    <li>files in the current directories of open files</li>
+    <li>files in the current <a href="project.html">"Live" project</a></li>
+    <li>the last 50 files in <a href="history.html">History</a></li>
+  </ul>
+  
+  <p>At the top of the dialog is a filter field. Typing in this field
+  narrows the list to items matching what you've typed so far (case
+  insensitive unless capital letters are used). You can select an item
+  from the shortened list, or filter the list down to one item and press
+  'Enter'.</p>
+  
   <h3><a name="files_openfindtoolbar" id=
   "files_openfindtoolbar">Opening Files with the Open/Find
   Toolbar</a></h3>
