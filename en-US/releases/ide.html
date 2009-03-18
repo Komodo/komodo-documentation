@@ -40,8 +40,9 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   value in CSS will display a popup of that color; 'Ctrl'+'click' will
   open the color picker.</li>
   
-  <li><strong>Fast Open</strong>: A new dialog for quickly opening
-  files from the history, projects or nearby directories.</li>
+  <li><strong>Fast Open</strong>: A new dialog for quickly jumping to
+  open files, or opening files in the History, current live projects and
+  current directories.</li>
 </ul>
 
 
@@ -54,6 +55,12 @@ Sections List apply to Komodo IDE only.</p>
 <h3 id="bug_fixes-5.1.0">5.1.0 Bug Fixes</h3>
 
 <ul>
+  <li>API Change: The localizations file has moved from
+  'chrome://komodo/locale/pref.dtd' to
+  'chrome://komodo/locale/pref/pref.dtd'. Any extension making use of
+  this localization file will need to be updated to use the new
+  location.</li>
+  
   <li>Vi Emulation: Added '' and ``. Apostrophes return to the exact
   position, apostrophes return to the start of the position's line,
   similar to the way the two commands work in Vim 7.1. Unlike the rest of
