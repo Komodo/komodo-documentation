@@ -32,11 +32,6 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   <li><strong>Search Highlighting</strong>: Matches are now highlighted
   in the current buffer.</li>
   
-</ul>
-
-<strong>IDE only</strong>
-
-<ul>
   <li><strong>Editor Hyperlinking</strong>: 'Ctrl'+'hover' will
   highlight HTTP hyperlinks under the pointer; 'Ctrl'+'click' will open
   the URL in the configured browser.</li>
@@ -45,6 +40,8 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   value in CSS will display a popup of that color; 'Ctrl'+'click' will
   open the color picker.</li>
   
+  <li><strong>Fast Open</strong>: A new dialog for quickly opening
+  files from the history, projects or nearby directories.</li>
 </ul>
 
 
@@ -53,6 +50,65 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to debugging, interactive shells, source code
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-5.1.0">5.1.0 Bug Fixes</h3>
+
+<ul>
+  <li>Vi Emulation: Added '' and ``. Apostrophes return to the exact
+  position, apostrophes return to the start of the position's line,
+  similar to the way the two commands work in Vim 7.1. Unlike the rest of
+  Komodo's History navigation, these commands stay in the current
+  document. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81919">81919</a>)</li>
+
+  <li>Allow custom ("friendly") project names when specified directly in
+  kpf files. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82050">82050</a>)</li>
+  
+  <li>Fold margin colors can now be customized. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81867">81867</a>)</li>
+  
+  <li>Debugger: Restoring cursor position after a debugging run is now
+  optional. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80610">80610</a>)</li>
+  
+  <li>Fixed line selection when clicking on the line number margin
+  (Linux). (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=37406">37406</a>)</li>
+  
+  <li>PHP: Fixed greedy comment/calltip parsing. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=78449">78449</a>)</li>
+  
+  <li>Preferences: Bold and italic buttons in the font preferences now
+  update correctly. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81339">81339</a>)</li>
+  
+  <li>History: When closing a file, Komodo moves to the previous history
+  position. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82145">82145</a>)</li>
+  
+  <li>Vi Emulation: Ensure replace in visual line-selection mode uses
+  the correct start/end points. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81570">81570</a>)</li>
+  
+  <li>History: The list of items in the history includes points where
+  changes were made. Where more than one sets of edits is done in a
+  single section, only the most recent edit is recorded. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82288">82288</a>)</li>
+  
+  <li>OS X: Keybinding changes (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82150">82150</a>):
+    <ul>
+      <li>Open/hide toolbox (cmd_viewToolbox): was Ctrl+Shift+T, now Ctrl+Shift+L</li>
+      <li>Step out (cmd_stepOut): was Meta+Shift+T, now Ctrl+Shift+T</li>
+      <li>Added keybinding for cmd_reopenLastClosedTab: Meta+Shift+T</li>
+    </ul>
+  </li>
+  
+  <li>Fixed disabled complete word menus after workspace restore. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80942">80942</a>)</li>
+  
+</ul>
 
 <h3 id="bug_fixes-5.1.0b1">5.1.0 Beta 1 Bug Fixes</h3>
 
