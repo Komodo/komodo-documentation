@@ -282,7 +282,9 @@
 <node name="Snippets" link="snippets.html#snippets_top">
   <node name="Creating Snippets" link="snippets.html#snippets_creating"/>
   <node name="Configuring Snippets" link="snippets.html#snippets_config"/>
-  <node name="Using Snippets" link="snippets.html#snippets_using"/>
+  <node name="Using Snippets" link="snippets.html#snippets_using">
+    <node name="Snippet Abbreviations" link="snippets.html#snippets_abbreviations"/>
+  </node>
   <node name="Snippet Options" link="snippets.html#snippets_options">
     <node name="Snippet Properties" link="snippets.html#snippets_properties">
       <node name="Assigning Custom Icons to Snippets" link="snippets.html#snippets_Cust_Icons"/>
