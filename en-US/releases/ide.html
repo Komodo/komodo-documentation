@@ -55,6 +55,11 @@ Sections List apply to Komodo IDE only.</p>
 <h3 id="bug_fixes-5.1.1">5.1.1 Bug Fixes</h3>
 
 <ul>
+  <li>Perl: Added support for Perl::Critic linting (if the module is
+  installed), including a preference to indicate which severity level to
+  use. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80330">80330</a>)</li>
+  
   <li>Debugger: Fixed problem in redrawing variable tabs which caused
   slowdowns and hangs when debugger was run repeatedly. (Bug
   <a
@@ -92,6 +97,11 @@ Sections List apply to Komodo IDE only.</p>
   
   <li>Fixed bug saving files in some less common languages. (Bug <a
   href="http://bugs.activestate.com/show_bug.cgi?id=82512">82512</a>)</li>
+  
+  <li>New behavior: When a buffer is closed, Komodo now switches to the
+  previously visited buffer. The title bar now correctly shows the name
+  of the new current buffer after the close. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82474">82474</a>)</li>
 </ul>
 
 <h3 id="bug_fixes-5.1.0">5.1.0 Bug Fixes</h3>
