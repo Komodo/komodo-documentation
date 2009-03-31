@@ -52,6 +52,45 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-5.1.1">5.1.1 Bug Fixes</h3>
+
+<ul>
+  <li>Debugger: Fixed problem in redrawing variable tabs which caused
+  slowdowns and hangs when debugger was run repeatedly. (Bug
+  <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82518">82518</a>, <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82542">82542</a>, <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82426">82426</a>, <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82557">82557</a>).</li>
+  
+  <li>SCC History:
+    <ul>
+      <li>Date column now sorting correctly for git, bzr and hg.
+      (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=82372">82372</a>)</li>
+      
+      <li>Fixed support for Unicode usernames with hg. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=82493">82493</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Mac OS X: Fixed potential error opening browser from within
+  Komodo. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82470">82470</a>)</li>
+  
+  <li>Go to File: Added support for filesystem paths (e.g.
+  "~/dir/file.ext"). (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82483">82483</a>)</li>
+  
+  <li>Remote Files: Don't re-prompt for password when username contains
+  "@". (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=73780">73780</a>)</li>
+  
+  <li>PHP: Fixed Fixed stdlib code completions failing after trying to
+  parse a binary file. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82543">82543</a>)</li>
+</ul>
+
 <h3 id="bug_fixes-5.1.0">5.1.0 Bug Fixes</h3>
 
 <ul>
