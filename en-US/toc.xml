@@ -15,7 +15,7 @@
     <node id="knownissues_snapdragon" name="Known Issues" link="releases/snapdragon.html#knownissues" />
   </node>
 
-  <node name="Release Notes (IDE/Edit)" link="releases/ide.html"
+  <node id="release_notes" name="Release Notes (IDE/Edit)" link="releases/ide.html"
         flags="ide edit">
     <node id="whatsnew_ide" name="What's New" link="releases/ide.html#whatsnew" />
     <node id="details_ide" name="Detailed Changes" link="releases/ide.html#details" />
