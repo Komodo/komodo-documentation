@@ -217,7 +217,7 @@
 
   </ul>
 
-  <h3><a name="files_go_to_file" id="files_go_to_file">Go to File</a></h3>
+  <h3><a name="files_go_to_file" id="files_go_to_file">Go to File</a> (Fast Open)</h3>
   
   <p>The <strong>Go to File</strong> dialog is a shortcut to open,
   "nearby" and recently used files. It shows a list containing:</p>
@@ -226,7 +226,7 @@
     <li>open files</li>
     <li>files in the current directories of open files (excluding remote
     directories)</li>
-    <li>files in the current <a href="project.html">"Live" project</a></li>
+    <li>files in the current <a href="project.html">project</a></li>
     <li>the last 50 files in <a href="history.html">History</a></li>
   </ul>
   
@@ -235,6 +235,23 @@
   insensitive unless capital letters are used). You can select an item
   from the shortened list, or filter the list down to one item and press
   'Enter'.</p>
+  
+  <p>If the filter term contains a path (e.g. "~/project",
+  "./relative/path", "C:\tmp") the dialog will enter path mode, showing
+  files in the specified directory or directories. Paths can be absolute
+  or relative to the current directories of all open files. Choosing a
+  directory from the list will autocomplete the directory name in the
+  filter field.</p>
+  
+  <p>The filter field does multi-token searching. For example, in path
+  mode, the search term:</p>
+  
+  <pre>
+    /etc/ os</pre>
+  
+  <p>... might list "<em>/etc/hosts</em>", "<em>/etc/hostname"</em> and
+  "<em>/etc/postgresql/</em>".</p>
+  
   
   <h3><a name="files_openfindtoolbar" id=
   "files_openfindtoolbar">Opening Files with the Open/Find

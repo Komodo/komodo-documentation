@@ -139,7 +139,7 @@
     <node name="Exporting Files to a Package" link="files.html#files_expack"/>
   </node>
   <node name="Opening Files" link="files.html#Opening_a_File">
-    <node name="Go to File" link="files.html#files_go_to_file"/>
+    <node name="Go to File (Fast Open)" link="files.html#files_go_to_file"/>
     <node name="Opening Files with the Open/Find Toolbar" link="files.html#files_openfindtoolbar"/>
     <node name="Opening Remote Files" link="files.html#Opening_Remote_Files">
       <node name="Connecting to a Remove Server" link="files.html#files_remote_connect"/>
