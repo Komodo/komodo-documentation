@@ -52,6 +52,131 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-5.1.1">5.1.2 Bug Fixes</h3>
+
+<ul>
+  <li>Fast Open:
+    <ul>
+      <li>Removed duplicates in "Go to File" list. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=82419">82419</a>)</li>
+      
+      <li>Current search is aborted when the "Go to File" dialog is
+      closed. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=82529">82529</a>)</li>
+      
+      <li>Tab now autocompletes instead of moving to the next match. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=82677">82677</a>)</li>
+    
+      <li>Added 'Ctrl'+'n/p' keybinding for down/up navigation. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=82678">82678</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Vi Emulation:
+    <ul>  
+      <li>Comment/uncomment working correctly in visual line mode. (Bug
+      <a href="http://bugs.activestate.com/show_bug.cgi?id=82369">82369</a>)</li>
+      
+      <li>Fixed visual line selection mode indent/dedent problems. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=82368">82368</a>)</li>
+    </ul>
+  </li>
+  
+  <li>JavaScript:
+    <ul>
+      <li>Stopped ciler (scanner) failing on certain file contents. (Bug
+      <a href="http://bugs.activestate.com/show_bug.cgi?id=82659">82659</a>)</li>
+      
+      <li>Updated Dojo catalog to version 1.3.0. (Bug <a
+      href="http://bugs.activestate.com/show_bug.cgi?id=75112">75112</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Fixed XML tag highlighting bug. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82325">82325</a>)</li>
+  
+  <li>Code Formatting: fixed problem with formatter losing some UTF-8
+  characters. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82615">82615</a>)</li>
+  
+  <li>Mac OS X: Keybindings once again work for combinations involving
+  Ctrl, Shift, and a non-alpha key (e.g. 'Ctrl'+'Shift'+'8' to show
+  whitespace. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=80844">80844</a>)</li>
+  
+  <li>Fixed problem opening files with "%" in the name. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82660">82660</a>)</li>
+  
+  <li>Find in Files now remembers last find context. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=81579">81579</a>)</li>
+  
+  <li>You can now drag and drop ".ksf" color scheme files (or URLs) into
+  Komodo. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82632">82632</a>)</li> 
+  
+  <li>Better handling of faulty color scheme files. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82643">82643</a>)</li>
+  
+  <li>Perl: The debugger no longer shows has variable refs like "%$foo"
+  when they're used in an each loop. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82650">82650</a>)</li>
+  
+  <li>Localization fixes. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82580">82580</a>,
+  <a href="http://bugs.activestate.com/show_bug.cgi?id=82819">82819</a>,
+  <a href="http://bugs.activestate.com/show_bug.cgi?id=82821">82821</a>,
+  <a href="http://bugs.activestate.com/show_bug.cgi?id=82822">82822</a>,
+  <a href="http://bugs.activestate.com/show_bug.cgi?id=82824">82824</a>,
+  <a href="http://bugs.activestate.com/show_bug.cgi?id=82825">82825</a>)</li>
+  
+  <li>Vi Emulation: The "cc' command now maintains line indentation.
+  (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82707">82707</a>)</li>
+  
+  <li>Hyperlinks: Added keyboard driven hyperlink jump command
+  (cmd_invokeHyperlink). (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82704">82704</a>)</li>
+  
+  <li>Color scheme names may now contain characters in "-,.+=@#$%", as
+  well as ASCII letters, digits, space, and "_" as before.. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82644">82644</a>)</li>
+  
+  <li>PHP: Support for PHP4 class constructor styles. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82721">82721</a>)</li>
+  
+  <li>Run Commands: Fixed terminate process button not always working on
+  Windows. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82655">82655</a>)</li>
+  
+  <li>PDK: Fixed incorrectly disabled menu PDK menu items on OS X. (Bug
+  <a href="http://bugs.activestate.com/show_bug.cgi?id=82459">82459</a>)</li>
+  
+  <li>Notification box for accepting or reverting color scheme. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82657">82657</a>)</li>
+  
+  <li>New preference for controlling tab close behavior. By default,
+  Komodo now shows the next tab on the right (or left) when a tab is
+  closed, as it did before 5.1.0. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82739">82739</a>)</li>
+  
+  <li>Importing Komodo package files (.kHz) now easier. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82631">82631</a>)</li>
+  
+  <li>Fixed problem determining sub-languages. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82761">82761</a>)</li>
+  
+  <li>Projects: Create URL link when dropping an HTTP URL into a project
+  or toolbox. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82782">82782</a>)</li>
+  
+  <li>Debugger: Sort all PHP variables and child properties. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82793">82793</a>)</li>
+  
+  <li>Ruby: Fixed Ruby linting. (Bug <a
+  href="http://bugs.activestate.com/show_bug.cgi?id=82849">82849</a>)</li>
+</ul>
+
+
 <h3 id="bug_fixes-5.1.1">5.1.1 Bug Fixes</h3>
 
 <ul>
