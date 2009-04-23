@@ -264,6 +264,12 @@
     <node name="Locations" link="history.html#history_locations"/>
     <node name="History Navigation" link="history.html#history_navigation"/>
   </node>
+  <node name="Editor Hyperlinks" link="hyperlinks.html#hyperlinks_top">
+    <node id="hyperlinks_goto_def" name="Go to Definition" link="hyperlinks.html#hyperlinks_definition"/>
+    <node id="hyperlinks_url" name="URLs" link="hyperlinks.html#hyperlinks_url"/>
+    <node id="hyperlinks_color" name="Colors" link="hyperlinks.html#hyperlinks_color"/>
+    <node id="hyperlinks_custom" name="Custom" link="hyperlinks.html#hyperlinks_custom"/>
+  </node>
 </node>
 
 <node name="Folders" link="folders.html#folders_top">
