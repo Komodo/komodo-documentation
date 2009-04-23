@@ -1,0 +1,100 @@
+<!-- Copyright (c) 2000-2006 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux (vers 1 September 2005), see www.w3.org" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Hyperlinks</title>
+</head>
+
+<body>
+  
+  <h1><a name="hyperlinks_top" id="hyperlinks_top">Editor Hyperlinks</a></h1>
+  
+  <p>Komodo can interpret certain strings in the buffer as hyperlinks.
+  'Ctrl'+'mouse hover' ('Cmd'+'mouse hover' on Mac OS X) underlines the
+  link. 'Ctrl'+'mouse click' performs an action specific to the type of
+  hyperlink selected.</p>
+  
+  <p>There are three default hyperlink types:</p>
+  
+  <h2><a name="hyperlinks_definition" id="hyperlinks_definition">Go to
+  Definition</a> <span class="version_alert">Komodo IDE only</span></h2>
+  
+  <p>Code objects such as classes, methods, and subroutines link to
+  their definition. This uses the built-in <a href="editor.html#go_to_def">Go to
+  Definition</a> feature.</p>
+  
+    <img alt="Go to Definition Hyperlinks" src="img/hyperlinks_definition.png"
+  border="1" />
+  
+  <h2><a name="hyperlinks_url" id="hyperlinks_url">URLs</a></h2>
+  
+  <p>HTTP, HTTPS and FTP URLs are opened in the browser configured in
+  <a href="prefs.html#web">Web &amp; Browser</a> preferences.</p>
+    
+    <img alt="URL Hyperlinks" src="img/hyperlinks_url.png"
+  border="1" />
+  
+  <h2><a name="hyperlinks_color" id="hyperlinks_color">Colors</a></h2>
+  
+  <p>'Ctrl/Cmd'+'mouse hover' over a color value in CSS (including CSS
+  embedded in HTML) shows a pop-up swatch for the selected color.
+  'Ctrl/Cmd'+'mouse click' raises a color picker dialog box for choosing
+  and inserting a new color. Colors are inserted in RGB hexadecimal
+  notation (e.g. "#ff0000" for red).</p>
+  
+    <img alt="CSS Color Hyperlinks" src="img/hyperlinks_color.png"
+  border="1" />
+    
+  <h2><a name="hyperlinks_custom" id="hyperlinks_custom">Custom</a></h2>
+  
+  <p>You can define your own hyperlinks using the <a
+  href="komodo-js-api.html#ko.hyperlinks"><code>ko.hyperlinks</code></a>
+  functions in the <a href="komodo-js-api.html">Komodo JavaScript
+  API</a>.</p>
+  
+  <p>For example, the following macro will match the given pattern and
+  when clicked, will try to open the URL "http://foo.com/$1", where $1
+  is the regular expression match group 1. You can use $0 through to
+  $9.</p>
+  
+  <pre class="code">
+var PEPRegexHandler = new ko.hyperlinks.RegexHandler(
+      "Python Enhancement Proposals",
+      new RegExp("PEP:\\s(\\d{4})"),            /* pattern to match */
+      ko.browse.openUrlInDefaultBrowser,
+      "http://www.python.org/dev/peps/pep-$1",  /* replacement string */
+      /* which languages the handler is active in - 'null' for all */
+      ['Python', 'Text', 'HTML'],
+      Components.interfaces.ISciMoz.INDIC_PLAIN,
+      RGB(0x60,0x90,0xff));                     /* indicator color */
+ko.hyperlinks.addHandler(PEPRegexHandler);
+  </pre>
+  
+  <p>You can set a <a href="macros.html#triggers_macros">macro
+  trigger</a> to set up this handler when Komodo starts.</p>
+  
+  <p>Hyperlink handlers are checked in the order they were originally
+  added. Since the built-in "Go to Definition" handler matches quite a
+  few patterns, it may be necessary to preempt it by reordering the
+  handlers. To do this, replace the last line of the macro above with
+  the following:</p>
+  
+  <pre class="code">
+var gotoHandler = ko.hyperlinks.getHandlerWithName("Goto Defintion");
+ko.hyperlinks.removeHandler(gotoHandler);
+ko.hyperlinks.addHandler(PEPRegexHandler);
+ko.hyperlinks.addHandler(gotoHandler);
+  </pre>
+  
+</body>
+</html>
