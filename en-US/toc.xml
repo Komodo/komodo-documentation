@@ -618,11 +618,11 @@
       <node name="Basic CVS Configuration" link="scc.html#basic_cvs_config"/>
       <node name="Configuring CVS with SSH" link="scc.html#cvs_over_ssh"/>
     </node>
-    <node name="Configuring Subversion" link="scc.html#config_svn">
-      <node name="Basic Subversion Configuration" link="scc.html#basic_svn_config"/>
-      <node name="Configuring Subversion with SSH" link="scc.html#svn_over_ssh"/>
+    <node name="Configuring Subversion (SVN)" link="scc.html#config_svn">
+      <node name="Basic SVN Configuration" link="scc.html#basic_svn_config"/>
+      <node name="Configuring SVN with SSH" link="scc.html#svn_over_ssh"/>
     </node>
-    <node name="Configuring Perforce" link="scc.html#config_perforce"/>
+    <node name="Configuring Perforce (P4)" link="scc.html#config_perforce"/>
       <node name="Basic Perforce Configuration" link="scc.html#basic_p4_config"/>
     <node name="Configuring Preferences" link="scc.html#config_prefs"/>
     <node name="Configuring SSH Support for CVS and Subversion" link="scc.html#config_ssh">

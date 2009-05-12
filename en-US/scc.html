@@ -29,10 +29,11 @@
   <p>Komodo supports common operations for the following SCC systems:</p>
   <ul>
     <li><a class="doc" href="http://www.nongnu.org/cvs/">CVS</a></li>
-    <li><a class="doc" href="http://subversion.tigris.org/">SVN</a> (Subversion)</li>
-    <li><a class="doc" href="http://www.perforce.com/">P4</a> (Perforce)</li>
+    <li><a class="doc" href="http://subversion.tigris.org/">Subversion (SVN)</a></li>
+    <li><a class="doc" href="http://www.perforce.com/">Perforce (P4)</a></li>
     <li><a class="doc" href="http://git-scm.com/">Git</a></li>
-    <li><a class="doc" href="http://bazaar-vcs.org/">Bazaar</a></li>
+    <li><a class="doc" href="http://www.selenic.com/mercurial/wiki/">Mercurial (Hg)</a></li>
+    <li><a class="doc" href="http://bazaar-vcs.org/">Bazaar (bzr)</a></li>
   </ul>
 
   <p>From within Komodo, you can perform the following SCC
@@ -174,8 +175,9 @@
   depending on the context:</p>
 
   <ul>
-    <li><strong>Checkout</strong>: Launches the <a href="#">SCC Checkout
-    wizard</a> for fetching a local copy from a repository.</li>
+    <li><strong>Checkout</strong>: Launches the <a
+    href="#scc_checkout">SCC Checkout wizard</a> for fetching a local
+    copy from a repository.</li>
     
     <li><strong>Add</strong>: Add a file from a designated source
     code directory on your local drive to the source code
@@ -566,20 +568,15 @@
   support.</p>
 
   <h3><a name="config_svn" id="config_svn">Configuring
-  Subversion</a></h3>
+  Subversion (SVN)</a></h3>
 
   <h4><a name="basic_svn_config" id="basic_svn_config">Basic
-  Subversion Configuration</a></h4>
+  SVN Configuration</a></h4>
 
   <ol>
-    <li>If you have not already done so, install <a target="_blank"
-    href="http://subversion.tigris.org/">Subversion</a> on your
-    system.</li>
-
-    <li>Check out files: Komodo does not have integrated SCC
-    checkout functions. As necessary, run <code>svn</code> from the
-    command line (e.g. '<code>svn checkout <em>URL</em>
-    ...</code>').</li>
+    <li>If you have not already done so, install the <a target="_blank"
+    href="http://subversion.tigris.org/">svn</a> command-line client on
+    your system.</li>
 
     <li>Enable Subversion support in Komodo: Under <a href=
     "prefs.html#prefs_top">Preferences</a>|<a href=
@@ -589,16 +586,20 @@
     <code>svn</code> executable is available in your
     <code>PATH</code> or is specified with a full pathname.</li>
 
+    <li>Check out files: If you haven't checked out a local working copy
+    of the files yet, use the <a href="#scc_checkout">SCC checkout
+    wizard</a> or run <code>svn checkout ...</code> from the command
+    line.</li>
+
     <li>Open any file under Subversion control in Komodo.</li>
   </ol>
 
-  <p>Komodo should now recognize that the file is under Subversion
-  source code control and the SCC menus and status icons should be
-  enabled. If not, click <strong>Refresh Status</strong> on the
-  <strong>File</strong> menu (or Ctrl-K, R) to force it to
-  reset.</p>
+  <p>Komodo will recognize the files is under Subversion source code
+  control and the SCC menus and status icons should be enabled. If not,
+  click <strong>Refresh Status</strong> on the <strong>File</strong>
+  menu (or Ctrl-K, R) to force it to reset.</p>
 
-  <h4><a name="svn_over_ssh" id="svn_over_ssh">Subversion Over
+  <h4><a name="svn_over_ssh" id="svn_over_ssh">SVN Over
   SSH</a></h4>
 
   <p>Some Subversion repositories only support Subversion access
@@ -609,7 +610,7 @@
   support.</p>
 
   <h3><a name="config_perforce" id="config_perforce">Configuring
-  Perforce</a></h3>
+  Perforce (P4)</a></h3>
 
   <h4><a name="basic_p4_config" id="basic_p4_config">Basic Perforce
   Configuration</a></h4>
