@@ -1003,7 +1003,7 @@ from xpcom import components</pre>
     <pre class="code">
 viewSvc = components.classes["@activestate.com/koViewService;1"]\
     .getService(components.interfaces.koIViewService)
-view = viewSvc.currentView</pre>
+view = viewSvc.currentView.queryInterface(components.interfaces.koIScintillaView)</pre>
     
   <p>The <code>view</code> object will have the same properties as
   <code>ko.views.manager.currentView</code>, exposing:</p> 
