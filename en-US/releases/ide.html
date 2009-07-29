@@ -70,6 +70,7 @@ Sections List apply to Komodo IDE only.</p>
           <li>Updated the dojo catalog to version 1.3.0. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75112">75112</a>)</li>
           <li>Display anonymous functions created as a method argument. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83553">83553</a>)</li>
           <li>Stop ciler (scanner) failing on certain file contents. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82659">82659</a>)</li>
+          <li>Fixed parsing of class missing some function attributes. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=78247">78247</a>)</li>
         </ul>
       </li>
       <li>PHP:
@@ -81,6 +82,10 @@ Sections List apply to Komodo IDE only.</p>
           <li>If a class implements an interface, get calltip from the interface. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83381">83381</a>)</li>
           <li>Improved performance of explicit calltip triggering (Ctrl+J).  (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=55497">55497</a>)</li>
           <li>Support both types of quotes in here-doc syntax, and show that ${...} in a string is a variable. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83643">83643</a>)</li>
+          <li>Parse statically typed pass-by-reference function arguments. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=79003">79003</a>)</li>
+          <li>Updated the calltip signature for function arguments. Argument names now include the "$", calltip now includes any pass by reference details "&amp;", and full details for the defualt value is now included (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=80716">80716</a>)</li>
+          <li>Include "&amp;" in the function signature when a function returns a reference. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=83803">83803</a>)</li>
+          <li>Debugging config wizard now sets fields correctly. Clarified some prompts. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=77820">77820</a>)</li>
         </ul>
       </li>
     </ul>
@@ -120,6 +125,7 @@ Sections List apply to Komodo IDE only.</p>
       <li>Gutter colors for Dark was wrong in some languages (yaml, sql, latex). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83023">83023</a>)</li>
       <li>Color scheme names may now contain "-,.+=@#$%" characters, as well as ascii letters, digits, space, and "_" as before. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82644">82644</a>)</li>
       <li>Fixed handling of faulty scheme files introduced into Komodo's userData or systemData areas. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82643">82643</a>)</li>
+      <li>Improved color schemes for multi-language documents. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=76829">76829</a>)</li>
     </ul>
   </li>
   
@@ -147,6 +153,7 @@ Sections List apply to Komodo IDE only.</p>
       <li>Support brace-matching on "{}", "[]", and "()" for all languages, not just ones where the characters are styled as indent/lineup characters. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83172">83172</a>)</li>
       <li>Fixed an off-by-one error at EOF so the sublanguage is based on the style of the last character of the document, not whatever sublanguage style 0 belongs to. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82761">82761</a>)</li>
       <li>HTML: Fixed style attributes prevents start-tag =&gt; end-tag matching. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83484">83484</a>)</li>
+      <li>Added single-quoted strings to Flagship coloring. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=83700">83700</a>)</li>
     </ul>
   </li>
   
@@ -194,6 +201,9 @@ Sections List apply to Komodo IDE only.</p>
       <li>Commit dialog now remembers previous commit messages. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=29688">29688</a>)</li>
       <li>The diff output is now always suitable for generating a patch. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76799">76799</a>)</li>
       <li>Mercurial: "History|diff with local copy" now working correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83446">83446</a>)</li>
+      <li>Added a search interface to the History dialog. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=67107">67107</a>)</li>
+      <li>Commit UI now shows added directories correctly. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=78026">78026</a>)</li>
+      <li>Mercurial: Allow loading of logs that have no commit message. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=83869">83869</a>)</li>
     </ul>
   </li>
   
@@ -222,11 +232,13 @@ Sections List apply to Komodo IDE only.</p>
       <li>Highlight matching tag when click on word only. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82912">82912</a>)</li>
       <li>Fixed problem sharing clipboard data with Komodo, in particular applications built with Java, and pgadmin. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=81340">81340</a>)</li>
       <li>Snippets: Fixed snippets beginning with new line not being preserved across sessions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83385">83385</a>)</li>
+      <li>Snippets: Fixed leading tabs being converted to spaces. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=83740">83740</a>)</li>
       <li>Formatters: Provide menus for formatting individual selections and sub-language blocks. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82510">82510</a>)</li>
       <li>Hyperlinks: Added a keyboard driven hyperlink jump command. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82704">82704</a>)</li>
       <li>Split View: Fixed "Ctrl"+"Tab" in split view mode causing Komodo to get stuck in switch-view mode. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82776">82776</a>)</li>
       <li>Convert case of selected blocks correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=68806">68806</a>)</li>
       <li>Support go-to and select-to matching characters in XML data content. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82796">82796</a>)</li>
+      <li>Paragraph reflow no longer converts non-breaking spaces to regular spaces. (Bug  <a href="http://bugs.activestate.com/show_bug.cgi?id=83764">83764</a>)</li>
     </ul>
   </li>
   
@@ -240,7 +252,7 @@ Sections List apply to Komodo IDE only.</p>
     <li>Keybindings on the Mac once again work for combinations involving Ctrl, Shift, and a non-alpha key, such as Ctrl-Shift-8 to show whitespace. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=80844">80844</a>)</li>
     <li>Make sure the cursor is exposed when a workspace pane is opened. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83545">83545</a>)</li>
     <li>PDK Integration: make sure PDK menu items are enabled when appropriate on OS X. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82459">82459</a>)</li>
-    <li>Sanity-check arguments to SciMoz::GetTextRange: require min <= max, min >= 0, and max >= -1 (-1 means scimoz.length). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83013">83013</a>)</li>
+    <li>Sanity-check arguments to SciMoz::GetTextRange: require min &lt;= max, min &gt;= 0, and max >= -1 (-1 means scimoz.length). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83013">83013</a>)</li>
     <li>Added option to view source when dropping a URL onto Komodo. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82783">82783</a>)</li>
     <li>Autosave: Convert the auto-save preference value from minutes into seconds. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82854">82854</a>)</li>
     <li>Fixed ko.projects.manager.closeAllProjects* (wasn't closing all of them). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83144">83144</a>)</li>
