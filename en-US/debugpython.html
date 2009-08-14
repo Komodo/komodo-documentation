@@ -216,6 +216,20 @@ running <em>pydbgp</em> is displayed.
   href="#Installing_the_Python_Remote_Debugger">Installing the
   Python Remote Debugger</a>).
 
+  <table align="center" width="60%">
+    <tbody>
+      <tr>
+        <td class="startupBox">
+          <p><strong>Note</strong>: For Komodo to open an editable copy
+          of the file, a <a
+          href="debugger.html#remote_uri_mapping">Mapped URI</a> must be
+          created to link the file on the remote filesystem with the URI
+          Komodo receives from the remote debugger.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
   <h4><a name="debugpython_dbgpclient_command_line" id=
   "debugpython_dbgpclient_command_line">Running <em>pydbgp.py</em>
   from the Command Line</a></h4>
@@ -262,12 +276,24 @@ python -S <strong>path/to/</strong>pydbgp.py --help
     </li>
   </ol>
 
+  <table align="center" width="60%">
+    <tbody>
+      <tr>
+        <td class="startupBox">
   <p><strong>Note:</strong> If your application requires that
   <em>sitecustomize.py</em> is loaded, you must run Python with the
   -S argument. The debugger will load site.py at the appropriate
   time. Komodo is unable to debug <em>sitecustomize.py</em> due to
   how Python handles loading of that file.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
+  <table align="center" width="60%">
+    <tbody>
+      <tr>
+        <td class="startupBox">
   <p><strong>Note:</strong> If you followed the tip described in
   <a class="doc" href=
   "#Installing_the_Python_Remote_Debugger">Installing the Python
@@ -275,6 +301,10 @@ python -S <strong>path/to/</strong>pydbgp.py --help
   <pre class="code">
 pydbgp -d <strong>host:port</strong> <strong>your-script.py</strong>
 </pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
   <h4><a name="debugpython_dbgpclient_functions" id=
   "debugpython_dbgpclient_functions">Calling
