@@ -125,20 +125,18 @@
   <p><strong>Step One: Configure the Remote Machine</strong></p>
 
   <ol>
-    <li>Copy Komodo's perl debugger and its associated libraries to
+    <li><p>Copy Komodo's perl debugger and its associated libraries to
     the remote machine by copying the entire <em>dbgp/perllib</em>
     sub-directory of the Komodo installation to the new machine, or
     download a package from the <a class="doc" target="_blank"
     href="http://aspn.ActiveState.com/ASPN/Downloads/Komodo/RemoteDebugging">
-    Komodo Remote Debugging</a> page.<br />
-    <br />
-    <strong>Note</strong>: Do not copy <em>perl5db.pl</em> to the
+    Komodo Remote Debugging</a> page.</p>
+    
+    <p><strong>Note</strong>: Do not copy <em>perl5db.pl</em> to the
     standard "lib" directory of the Perl installation on the remote
     machine, as this will overwrite the standard
-    <em>perl5db.pl</em> file.</li>
-
-    <li style="list-style: none"><br />
-    <br /></li>
+    <em>perl5db.pl</em> file.</p>
+    </li>
 
     <li>On the remote machine, set the <code>PERL5LIB</code>
     environment variable to the location of the new
@@ -147,20 +145,29 @@
     directory was copied to <em>C:\misc\perllib</em>, set the
     variable as follows:
 
-      <blockquote>
-        <code>set PERL5LIB=C:\misc\perllib</code>
-      </blockquote>
+    <pre class="code">
+set PERL5LIB=C:/misc/perllib</pre>
 
-      <p>For example, if the remote machine is running Linux or Mac
-      OS X and <em>perllib</em> was copied to the
-      <em>/home/me/perl/komodo_perl_debugging</em> directory, set
-      the variable as follows:</p>
+    <p>For CGI debugging with IIS, you would also need to set the
+    PERL5DB environment variable as follows:</p>
+    
+    <pre class="code">
+set PERL5DB=BEGIN { require q(C:/misc/perllib/perl5db.pl) }</pre>
+      
+    <p>Note the forward slashes "/" in place of the regular Windows
+    backslash path separators. This is optional for PERL5LIB, but
+    necessary for PERL5DB.</p>
+    
+      
+    <p>Another example: If the remote machine is running Linux or Mac
+    OS X and <em>perllib</em> was copied to the
+    <em>/home/me/perl/komodo_perl_debugging</em> directory, set
+    the variable as follows:</p>
 
-      <blockquote>
-        <code>export
-        PERL5LIB=/home/me/perl/komodo_perl_debugging/perllib</code>
-      </blockquote>
+    <pre class="code">
+export PERL5LIB=/home/me/perl/komodo_perl_debugging/perllib</pre>
     </li>
+    
 
     <li>On the remote machine, set the <code>PERLDB_OPTS</code> and
     <code>DBGP_IDEKEY</code> variables. This tells the Perl
@@ -172,6 +179,7 @@
 PERLDB_OPTS=RemotePort=&lt;hostname&gt;:&lt;port&gt;
 DBGP_IDEKEY=&lt;ide_key&gt;
 </pre>
+      
 
       <ul>
         <li>The port number must match the port number specified in
@@ -186,8 +194,7 @@ DBGP_IDEKEY=&lt;ide_key&gt;
         environment variable is used as the IDE Key.</li>
 
         <li>The variable definitions must be on one line.</li>
-      </ul><br />
-
+      </ul>
       <p>For example:<br /></p>
 
       <p><strong>Windows 2000, NT, XP</strong></p>
@@ -375,16 +382,14 @@ export PERLDB_OPTS=
       <strong>System Variables</strong> pane:<br />
       <pre class="code">
 PERL5LIB=C:\Program Files\ActiveState Komodo <em>x.x</em>\lib\support\dbgp\perllib
+PERL5DB=BEGIN { require q(C:/Program Files/ActiveState Komodo <em>x.x</em>/lib/support/dbgp/perllib/perl5db.pl) }
 PERLDB_OPTS=RemotePort=&lt;hostname&gt;:&lt;port&gt;
-DBGP_IDEKEY="&lt;ide_key&gt;"
-</pre><strong>Note:</strong> The path for the PERL5LIB directory
-shown above is the correct path in a default installation. That
-path must be changed if you have installed Komodo in a different
-location. Also, the debugger doesn't seem to be able to find the
-libraries if any directories in the path contain spaces. You should
-copy the perllib directory to another location in which there are
-no spaces in the path to overcome this problem and use that path in
-the PERL5LIB system variable described above.
+DBGP_IDEKEY="&lt;ide_key&gt;" </pre>
+      <strong>Note:</strong> The path for the PERL5LIB directory shown
+      above is the correct path in a default installation. That path
+      must be changed if you have installed Komodo in a different
+      location. Forward slashes, "/", are used in place of the normal
+      Windows path separator, "\", in the PERL5DB environment variable.
     </li>
 
     <li><strong>Modify the Internet Information Services
