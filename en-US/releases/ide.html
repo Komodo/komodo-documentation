@@ -22,8 +22,6 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <h3 id="whatsnew-5.2">5.2</h3>
 
-<strong>Edit and IDE</strong>
-
 <ul>
   <li><strong>Performance and Stability Improvements</strong>:
   The underlying Mozilla source code has been updated in Komodo, which has led
@@ -37,27 +35,24 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
       document.</li>
       <li>The Find search speed has been increased, making it faster to
       search your documents.</li>
-      <li>The Rx Toolkit is now much faster when parsing results</li>
+      <li>The Rx Toolkit is now much faster when parsing results (IDE)</li>
     </ul>
   </li>
     
-  <li><strong>PHP 5.3 support</strong>: Komodo now has started supporting PHP
-  5.3 in the following ways:
+  <li><strong>Ruby</strong>: Debugging support for Ruby 1.9.1 and up (IDE).</li>
+  
+  <li><strong>PHP</strong>: New PHP 5.3 support:
     <ul>
-      <li><strong>Code Intelligence</strong>
-        <ul>
-          <li>Code browser and sectionlist support for namespaces</li>
-          <li>Code completions for /Namespaces</li>
-          <li>Syntax colorizing of latest keywords ("namespace", "use", "as",
-          etc...)</li>
-        </ul>
-      </li>
-      <li><strong>PHP Debugging</strong>
-        <ul>
-          <li>Improved debugger wizard for the first time setup</li>
-          <li>Updated xdebug builds to support PHP 5.3</li>
-        </ul>
-      </li>
+      <li>Code browser and sectionlist support for namespaces</li>
+      <li>Code completions for /Namespaces</li>
+      <li>Syntax coloring of latest keywords ("namespace", "use", "as",
+      etc...)</li>
+      <li>Updated xdebug builds to support PHP 5.3 (IDE)</li>
+    </ul>
+    ...plus some debugging configuration improvements (IDE):
+    <ul>
+      <li>Improved debugger wizard for the first time setup</li>
+      <li>Support for a wider range of PHP builds on Windows</li>
     </ul>
   </li>
   
@@ -77,6 +72,72 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to debugging, interactive shells, source code
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-5.2.0b1">5.2.0 Beta 1 Bug Fixes</h3>
+
+<ul>
+  <li>Editor:
+    <ul>
+      <li>Allow opening and editing of files containing null bytes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=35678">35678</a>)</li>
+      <li>Show tooltips until the mouse is moved. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82217">82217</a>)</li>
+      <li>Removed prompt for tabwidth during tabify/untabify if that setting is already present. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=72385">72385</a>)</li>
+      <li>Support comment-continued indentation on shift-newline for UDL CSL languages. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84231">84231</a>)</li>
+      <li>Move focus back to the editor after dragging tabs. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84215">84215</a>)</li>
+      <li>Leading whitespace no longer removed when uncommenting lines. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84078">84078</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Perl: Fixed quoting an character escaping in the debugger (e.g. large integer hash keys no longer have underscores in the thousands separator position). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83959">83959</a>)</li>
+  <li>PHP:
+    <ul>
+      <li>Debugger config improvements:
+        <ul>
+          <li>supporting all combinations of php and xdebug for Windows, with
+          the exception of vc9/32bit/thread-safe.</li>
+          <li>cleaned up the flow through the Debug Config Wizard</li>
+          <li>more error checking and better error messages</li>
+        </ul>
+      </li>
+      <li>List all available classes in the namespace completions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=48074">48074</a>)</li>
+    </ul>
+  </li>
+  <li>Python:
+    <ul>
+      <li>Debugger no longer evaluates properties. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83896">83896</a>)</li>
+      <li>Fixed importing of the Python stdlib email sub modules. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83928">83928</a>)</li>
+    </ul>
+  </li>
+  <li>Ruby: Debugging support for Ruby 1.9.1 (and up). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75323">75323</a>)</li>
+  <li>Projects:
+    <ul>
+      <li>Fixed error adding new folder to project on Mac OS X. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83847">83847</a>)</li>
+      <li>Fixed problem automatically closing project files in split view. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83938">83938</a>)</li>
+    </ul>
+  </li>
+  <li>Fixed Rx toolkit styling. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84019">84019</a>)</li>
+  <li>Schemes: Allow selection of color for visible whitespace characters ("Whitespace Foreground Color"). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=67521">67521</a>)</li>
+  <li>SCC:
+    <ul>
+      <li>Allow adding a file when the folder is not yet under SCC control. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=74774">74774</a>)</li>
+      <li>Correct detection of files under CVS control using the 'ntserver' protocol. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84208">84208</a>)</li>
+      <li>Log messages in the History drop-down of the Check-in dialog box are now remembered between restarts. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83916">83916</a>)</li>
+    </ul>
+  </li>
+  <li>Preferences:
+    <ul>
+      <li>Fixed space bar selection in API Catalogs tree. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84101">84101</a>)</li>
+      <li>Added UI for selecting the default color picker. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82790">82790</a>)</li>
+      <li>Categorization of primary and "Other" languages now configurable. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84032">84032</a>)</li>
+    </ul>
+  </li>
+  <li>PDK: Added PerlCritic toolbar button which brings up 'perlcritic-gui' with the last used profile (or .perlcriticrc on the first run). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82442">82442</a>)</li>
+  <li>Ensure creation of 'templates' and 'project-templates' directories in the Komodo profile. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83339">83339</a>)</li>
+  <li>Run Commands: Fixed exception caused by running certain commands. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83303">83303</a>)</li>
+  <li>Linux: Dragging multiple files into Komodo now opens all the files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83544">83544</a>)</li>
+  <li>JavaScript: Correct parsing of scope names. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82625">82625</a>)</li>
+  <li>Show only existing files in the Go-to-file dialog. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84060">84060</a>)</li>
+  <li>Fixed incorrect current line coloring in multi-language buffers. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76829">76829</a>)</li>
+</ul>
 
 <h3 id="bug_fixes-5.2.0a1">5.2.0 Alpha 1 Bug Fixes</h3>
 
