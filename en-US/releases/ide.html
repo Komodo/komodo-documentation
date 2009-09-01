@@ -36,6 +36,8 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
       <li>The Find search speed has been increased, making it faster to
       search your documents.</li>
       <li>The Rx Toolkit is now much faster when parsing results (IDE)</li>
+      <li>The Rx Toolkit's matching is now performed out-of-process and it is
+      now possible to stop a running rx match (IDE)</li>
     </ul>
   </li>
     
@@ -48,14 +50,17 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
       <li>Syntax coloring of latest keywords ("namespace", "use", "as",
       etc...)</li>
       <li>Updated xdebug builds to support PHP 5.3 (IDE)</li>
-    </ul>
-    ...plus some debugging configuration improvements (IDE):
-    <ul>
       <li>Improved debugger wizard for the first time setup</li>
       <li>Support for a wider range of PHP builds on Windows</li>
     </ul>
   </li>
   
+  <li><strong>Primary language preferences</strong>: It is now possible to
+  configure which languages you'd like to see as primary languages in Komodo.
+  The primary languages are the first group of languages seen in the language
+  drop-down menus, whilst secondary languages are grouped under the
+  <em>Other</em> sub-menu.</li>
+
   <li><strong>Sub-language background colors</strong>: It is now possible to
   give sub-languages a different background color. For example, when editing a
   HTML file you can set the JavaScript background color to be green and all the
@@ -115,12 +120,17 @@ Sections List apply to Komodo IDE only.</p>
     </ul>
   </li>
   <li>Fixed Rx toolkit styling. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84019">84019</a>)</li>
-  <li>Schemes: Allow selection of color for visible whitespace characters ("Whitespace Foreground Color"). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=67521">67521</a>)</li>
+  <li>Schemes:
+    <ul>
+      <li>Allow selection of color for visible whitespace characters ("Whitespace Foreground Color"). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=67521">67521</a>)</li>
+      <li>Fix scheme modifications that weren't being correctly saved (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84418">84418</a>)</li>
+    </ul>
+  </li>
   <li>SCC:
     <ul>
       <li>Allow adding a file when the folder is not yet under SCC control. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=74774">74774</a>)</li>
       <li>Correct detection of files under CVS control using the 'ntserver' protocol. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84208">84208</a>)</li>
-      <li>Log messages in the History drop-down of the Check-in dialog box are now remembered between restarts. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83916">83916</a>)</li>
+      <li>Log messages in the History drop-down of the Commit dialog box are now remembered between restarts. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83916">83916</a>)</li>
     </ul>
   </li>
   <li>Preferences:
