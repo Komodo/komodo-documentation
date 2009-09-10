@@ -24,11 +24,12 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <ul>
   <li><strong>Performance and Stability Improvements</strong>:
-  The underlying Mozilla source code has been updated in Komodo, which has led
-  to better security and stability of the Komodo platform as a whole.
+  The underlying Mozilla source code has been updated in Komodo, which
+  has led to better security and stability of the Komodo platform as a
+  whole.
   
   Numerous performance improvements have been made to Komodo to make it speedier
-  in the tasks it performs, especlially with large files:
+  in the tasks it performs, especially with large files:
     <ul>
       <li>Komodo will now automatically style very large HTML documents
       as text in order to support faster edits and re-displaying of the
@@ -41,11 +42,16 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
     </ul>
   </li>
     
+  <li><strong>Tcl Dev Kit Integration</strong>: A new toolbar for
+  launching <a href="http://www.activestate.com/tcl_dev_kit/">Tcl Dev
+  Kit</a> tools - TclApp, TclCompiler, TclXref, TclVFSE, TclInspector,
+  and the Tcl Package Editor.</li>
+  
   <li><strong>Primary language preferences</strong>: It is now possible to
   configure which languages you'd like to see as primary languages in Komodo.
   The primary languages are the first group of languages seen in the language
   drop-down menus, whilst secondary languages are grouped under the
-  <em>Other</em> sub-menu.</li>
+  <em>Other</em> sub-menu. (IDE)</li>
 
   <li><strong>Sub-language background colors</strong>: It is now possible to
   give sub-languages a different background color. For example, when editing a
@@ -57,10 +63,12 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   contents of this web page. This is convenient for checking the
   underlying HTML source code of web pages.</li>
 
+  <li><strong>Ruby</strong>: Debugging support for Ruby 1.9.1 and up (IDE)</li>
+  
   <li><strong>PHP</strong>: New PHP 5.3 support:
     <ul>
-      <li>Code browser and sectionlist support for namespaces</li>
-      <li>Code completions for /Namespaces</li>
+      <li>Code browser and section list support for namespaces (IDE)</li>
+      <li>Code completions for \Namespaces</li>
       <li>Syntax coloring of latest keywords ("namespace", "use", "as",
       etc...)</li>
       <li>Updated xdebug builds to support PHP 5.3 (IDE)</li>
@@ -68,9 +76,6 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
       <li>Support for a wider range of PHP builds on Windows</li>
     </ul>
   </li>
-  
-  <li><strong>Ruby</strong>: Debugging support for Ruby 1.9.1 and up (IDE).</li>
-  
 </ul>
 
 <h2 id="details" title="Komodo Changelog">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
@@ -79,6 +84,18 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-5.2.0">5.2.0 Bug Fixes</h3>
+
+<ul>
+  <li>Fixed problems saving schemes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84418">84418</a>)</li>
+  <li>Fixes to history URI expiration. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84267">84267</a>)</li>
+  <li>Fixed ko.views.manager.currentView being set to null after closing a tabbed-list view. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82213">82213</a>)</li>
+  <li>Rx Toolkit: Pattern matching is now done in separate processes, and results are styled in slices to return UI control to the user. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=74463">74463</a>)</li>
+  <li>SCC: Can now delete a folder under SVN control within Komodo. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=65821">65821</a>)</li>
+  <li>Editor: Fixed inconsistent HTML autocomplete on closing tags. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83378">83378</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=82946">82946</a>)</li>
+</ul>
+
+
 <h3 id="bug_fixes-5.2.0b1">5.2.0 Beta 1 Bug Fixes</h3>
 
 <ul>
@@ -86,7 +103,7 @@ Sections List apply to Komodo IDE only.</p>
     <ul>
       <li>Allow opening and editing of files containing null bytes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=35678">35678</a>)</li>
       <li>Show tooltips until the mouse is moved. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82217">82217</a>)</li>
-      <li>Removed prompt for tabwidth during tabify/untabify if that setting is already present. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=72385">72385</a>)</li>
+      <li>Removed prompt for tab-width during tabify/untabify if that setting is already present. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=72385">72385</a>)</li>
       <li>Support comment-continued indentation on shift-newline for UDL CSL languages. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84231">84231</a>)</li>
       <li>Move focus back to the editor after dragging tabs. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84215">84215</a>)</li>
       <li>Leading whitespace no longer removed when uncommenting lines. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84078">84078</a>)</li>
