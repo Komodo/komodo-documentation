@@ -1,5 +1,5 @@
 #HTMLDOC 1.8.27
--t pdf14 -f "build/komodo_ide.pdf" --book --toclevels 4 --numbered
+-t pdf14 -f "build/komodo_ide.pdf" --book --toclevels 4 --no-numbered
 --toctitle "Table of Contents" --title "Komodo User Guide" 
 build/edit-ide-ideonly-en-US/htdocs/top.html
 build/edit-ide-ideonly-en-US/htdocs/releases/ide.html
