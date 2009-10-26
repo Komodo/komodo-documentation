@@ -174,6 +174,23 @@
   is successful, a new copy of <code>php.ini</code> is created
   automatically with debugging enabled which Komodo will use when
   debugging PHP scripts locally.</p>
+  
+  <table align="center" width="60%">
+    <tbody>
+      <tr>
+        <td class="startupBox">
+          <p><strong>Note</strong>: If Xdebug is already installed and
+          configured, make sure <code>xdebug.remote_autostart</code> is
+          not enabled. This setting will interfere with local
+          debugging in Komodo. If you need this option enabled for
+          remote debugging, set the <strong>Path to alternate PHP
+          configuration file</strong> under
+          <strong>Preferences|Languages|PHP</strong> to point to a
+          copy of <code>php.ini</code> without this option.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
   <h4><a name="PHP_debugger_config_wizard" id=
   "PHP_debugger_config_wizard">PHP Debugger Config Wizard</a></h4>

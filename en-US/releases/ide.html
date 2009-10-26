@@ -517,6 +517,13 @@ Bug Database</a>.</p>
 "Debugging_Issues">Debugging</a></h3>
 
 <ul>
+  <li>PHP: The <code>xdebug.remote_autostart</code> option will
+  interfere with local debugging configuration in Komodo if it is
+  enabled. If you need this option enabled for remote debugging, set the
+  <strong>Path to alternate PHP configuration file</strong> under
+  <strong>Preferences|Languages|PHP</strong> to point to a copy of
+  php.ini without this option.</li>
+  
   <li>PHP: A non-empty <code>doc_root</code> setting in <em>php.ini</em>
   causes a 'No input file specified' error when starting a local
   debugging session with CGI emulation. The Web Developer Suite 2.0
