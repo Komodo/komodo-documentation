@@ -87,6 +87,51 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-5.2.2">5.2.2 Bug Fixes</h3>
+
+<ul>
+  <li>SCC:
+    <ul>
+      <li>You can now commit a project directory using the Komodo toolbar. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84535">84535</a>)</li>
+      <li>CVS: Correct parsing of SSPI CVSROOT files on Windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84593">84593</a>)</li>
+      <li>Git: Unknown files in a project now have a different status icon. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82260">82260</a>)</li>
+    </ul>
+  </li>
+  <li>Unit Testing:
+    <ul>
+      <li>Restored styling for dialog boxes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84638">84638</a>)</li>
+      <li>Unit Testing: Updates for PHP. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84860">84860</a>)</li>
+    </ul>
+  </li>
+  <li>Editor:
+    <ul>
+      <li>Sub-language coloring: Adjust the current background line based on that line's background color. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84651">84651</a>)</li>
+      <li>HTML and PHP background color preferences for sub-language sections no longer used for main language file types. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84651">84651</a>)</li>
+      <li>Highlight style updated after a scheme change. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84707">84707</a>)</li>
+      <li>Cursor now appears at the first character, not the last, when a new file is opened. Behavior also changed in the Rx Toolkit and HTTP Inspector. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84654">84654</a>)</li>
+    </ul>
+  </li>
+  <li>Code Intelligence:
+    <ul>
+      <li>PHP class inheritance now works with namespaces (autocomplete). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84840">84840</a>)</li>
+      <li>Python 2.6 stdlib now supported. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84776">84776</a>)</li>
+      <li>PHP 5.3 stdlib now supported. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83995">83995</a>)</li>
+      <li>PHP: Add support for late static binding completions (e.g. "static::"). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84877">84877</a>)</li>
+    </ul>
+  </li>
+  <li>Preferences:
+    <ul>
+      <li>Added vertical scrollbars when contents are too long to fit on page. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=74223">74223</a>)</li>
+      <li>Fixed problem trying to save default (read only) schemes. Komodo now prompts to save as a new, custom scheme. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84875">84875</a>)</li>
+      <li>PHP: Fixed configuration wizard to work with php-cgi 5.3.</li>
+    </ul>
+  </li>
+  <li>Windows: Added PHP debugger binary for thread-safe 32-bit VC6 PHP 5.3.</li>
+  <li>Remote Files: Ensure the active FTP setting is correctly set on connection. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=66198">66198</a>)</li>
+  <li>Hyperlinks: Fix for first time 'Ctrl'+click. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82806">82806</a>)</li>
+  <li>Removed prompt to restore a file on re-open if the user answered "No" to the original prompt to save changes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85026">85026</a>)</li>
+</ul>
+
 <h3 id="bug_fixes-5.2.1">5.2.1 Bug Fixes</h3>
 
 <ul>
