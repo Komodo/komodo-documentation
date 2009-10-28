@@ -95,6 +95,7 @@ Sections List apply to Komodo IDE only.</p>
       <li>You can now commit a project directory using the Komodo toolbar. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84535">84535</a>)</li>
       <li>CVS: Correct parsing of SSPI CVSROOT files on Windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84593">84593</a>)</li>
       <li>Git: Unknown files in a project now have a different status icon. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82260">82260</a>)</li>
+      <li>Bzr: Fixed tracebacks calling Bazaar on Windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84467">84467</a>)</li>
     </ul>
   </li>
   <li>Unit Testing:
@@ -121,15 +122,21 @@ Sections List apply to Komodo IDE only.</p>
   </li>
   <li>Preferences:
     <ul>
+      <li>Fixed saving of preferences when an interpreter is missing. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84907">84907</a>)</li>
+      <li>Browse buttons now start in the directory of the current value. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84770">84770</a>)</li>
       <li>Added vertical scrollbars when contents are too long to fit on page. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=74223">74223</a>)</li>
       <li>Fixed problem trying to save default (read only) schemes. Komodo now prompts to save as a new, custom scheme. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84875">84875</a>)</li>
       <li>PHP: Fixed configuration wizard to work with php-cgi 5.3.</li>
     </ul>
   </li>
   <li>Windows: Added PHP debugger binary for thread-safe 32-bit VC6 PHP 5.3.</li>
+  <li>Windows: Fixed problem resolving the APPDATA directory. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85005">85005</a>)</li>
+  <li>OS X: Fixed external stylesheets not being applied in browser preview. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84741">84741</a>)</li>
   <li>Remote Files: Ensure the active FTP setting is correctly set on connection. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=66198">66198</a>)</li>
+  <li>Search: Correct line scrolling when searching with very long lines. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84626">84626</a>)</li>
   <li>Hyperlinks: Fix for first time 'Ctrl'+click. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82806">82806</a>)</li>
   <li>Removed prompt to restore a file on re-open if the user answered "No" to the original prompt to save changes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85026">85026</a>)</li>
+  <li>Added a "Do not ask again" preference for large file alerts. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84927">84927</a>)</li>
 </ul>
 
 <h3 id="bug_fixes-5.2.1">5.2.1 Bug Fixes</h3>
