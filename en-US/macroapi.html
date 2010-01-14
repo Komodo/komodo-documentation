@@ -1060,18 +1060,18 @@ komodo.getWordUnderCursor()</pre>
   
   <pre class="code">
 def doCommand(commandId):
-    _observerSvc = components.classes["@mozilla.org/observer-service;1"]\
+    observerSvc = components.classes["@mozilla.org/observer-service;1"]\
         .getService(components.interfaces.nsIObserverService)
-    _observerSvc.notifyObservers(None, 'command-docommand', commandId);</pre>   
+    observerSvc.notifyObservers(None, 'command-docommand', commandId);</pre>   
     
   <h3><a name="xpcom_findPart">Find a part</a></h3>
     
   <p>To find other components (snippets, run commands, other macros, etc):</p>
     
   <pre class="code">
-var _partSvc = components.classes["@activestate.com/koPartService;1"]
+partSvc = components.classes["@activestate.com/koPartService;1"]\
             .getService(components.interfaces.koIPartService);
-_partSvc.findPartForRunningMacro(type, name, where);</pre>
+partSvc.findPartForRunningMacro(type, name, where);</pre>
 
   <hr />
 </body>
