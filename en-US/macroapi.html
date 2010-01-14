@@ -1001,6 +1001,7 @@ from xpcom import components</pre>
   be used. For example:</p>
   
     <pre class="code">
+from xpcom import components
 viewSvc = components.classes["@activestate.com/koViewService;1"]\
     .getService(components.interfaces.koIViewService)
 view = viewSvc.currentView.queryInterface(components.interfaces.koIScintillaView)</pre>
@@ -1019,10 +1020,28 @@ view = viewSvc.currentView.queryInterface(components.interfaces.koIScintillaView
       corresponding to files on disk.</li>
     </ul>
     
+  <h3><a name="xpcom_openURI">Accessing the editor</a></h3>
+  
+  <p>Get the view and then utilize the Scintilla (scimoz) instance:</p>
+  <pre class="code">
+from xpcom import components
+viewSvc = components.classes["@activestate.com/koViewService;1"]\
+    .getService(components.interfaces.koIViewService)
+view = viewSvc.currentView
+view = view.queryInterface(components.interfaces.koIScintillaView)
+sm = view.scimoz
+sm.currentPos   # current position in the editor
+sm.text         # editor text
+sm.selText      # the selected text
+scimoz.replaceSel("new text") # replace the current selection
+  </pre>
+    
+    
   <h3><a name="xpcom_openURI">Opening a URI</a></h3>
   
   <p>To open a URI:</p>
   <pre class="code">
+from xpcom import components
 obsvc = components.classes["@mozilla.org/observer-service;1"].\
     getService(components.interfaces.nsIObserverService);
 obsvc.notifyObservers(None, 'open-url', uri);</pre>
@@ -1059,6 +1078,7 @@ komodo.getWordUnderCursor()</pre>
   <p>To execute Komodo <a href="commandid.html">command</a>:</p>
   
   <pre class="code">
+from xpcom import components
 def doCommand(commandId):
     observerSvc = components.classes["@mozilla.org/observer-service;1"]\
         .getService(components.interfaces.nsIObserverService)
@@ -1069,6 +1089,7 @@ def doCommand(commandId):
   <p>To find other components (snippets, run commands, other macros, etc):</p>
     
   <pre class="code">
+from xpcom import components
 partSvc = components.classes["@activestate.com/koPartService;1"]\
             .getService(components.interfaces.koIPartService);
 partSvc.findPartForRunningMacro(type, name, where);</pre>
