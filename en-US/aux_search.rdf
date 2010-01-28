@@ -17,6 +17,8 @@
       <rdf:li> <rdf:Description ID="change_lists" nc:link="scc.html#changelists" nc:name="Changelists" /> </rdf:li>
       <rdf:li> <rdf:Description ID="using_bookmarks_and_marks" nc:link="editor.html#bookmarks" nc:name="Transient Marks" /> </rdf:li>
       <rdf:li> <rdf:Description ID="column_select" nc:link="editor.html#Column_Select" nc:name="Column Selection" /> </rdf:li>
+      <rdf:li> <rdf:Description ID="breakpoint_properties" nc:link="debugger.html#set_breakpoint_prop" nc:name="Watch Breakpoints" /> </rdf:li>
+      <rdf:li> <rdf:Description ID="breakpoint_properties" nc:link="debugger.html#set_breakpoint_prop" nc:name="Conditional Breakpoints" /> </rdf:li>
     </rdf:Seq>
   </nc:subheadings>
 </rdf:Description>
