@@ -157,9 +157,8 @@
   <node name="File Properties and Settings" link="files.html#files_settings">
     <node id="files_settings_props" name="Properties" link="files.html#files_settings_props"/>
     <node id="files_settings_scc" name="Source Control" link="files.html#files_settings_scc"/>
-    <!-- TODO: fix "filles" typo -->
-    <node id="filles_settings_editing" name="Editing" link="files.html#files_settings_editing"/>
-    <node id="files_settings_editing" name="Indentation" link="files.html#files_settings_indent"/>
+    <node id="files_settings_editing" name="Editing" link="files.html#files_settings_editing"/>
+    <node id="files_settings_indent" name="Indentation" link="files.html#files_settings_indent"/>
     <node id="files_browser_preview" name="Preview" link="files.html#browser_preview"/>
   </node>
   <node name="Printing Files" link="files.html#Printing">
