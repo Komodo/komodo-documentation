@@ -22,6 +22,31 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <h3 id="whatsnew-6.0">6.0</h3>
 
+<ul>
+  <li><strong>Database Explorer</strong>: Lets you easily explore local
+  and remote database installations, including viewing and managing
+  data. SQLite is supported in this release, with more databases coming
+  soon. Supported for each database is implemented as a Komodo
+  extension, so integration with other databases can be easily
+  added.</li>
+  <li><strong>Workspace Save and Restore</strong>: Komodo will now be
+  regularly saving your workspace. In the case of an unexpected
+  shutdown, you can choose to restore your last used workspace the next
+  time it starts up.</li>
+  <li><strong>Mozilla 1.9.1</strong>: The underlying Mozilla source code
+  has been updated to version 1.9.1, the same code base as Firefox
+  3.5.</li>
+  <li><strong>Hyperlink Additions</strong>: Hyperlinks have been extended and can now...
+    <ul>
+      <li>jump to an HTML anchor tag to it's definition,</li>
+      <li>jump to HREF and SRC locations,</li>
+      <li>open files from a path reference,</li>
+      <li>jump to PHP file includes</li>
+    </ul>
+  </li>
+</ul>
+  
+
 <h2 id="details" title="Komodo Changelog">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
 
 <p>Changes related to debugging, interactive shells, source code
@@ -30,6 +55,42 @@ Sections List apply to Komodo IDE only.</p>
 
 
 <h3 id="bug_fixes-6.0.0a1">6.0.0a1 Bug Fixes</h3>
+
+<ul>
+  <li>PHP:
+    <ul>
+      <li>Added completion support for cloned variables. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85534">85534</a>)</li>
+      <li>Added completions for instances aliased namespaces. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85682">85682</a>)</li>
+      <li>Namespace aliases are now included in class and function autocomplete lists. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85681">85681</a>)</li>
+      <li>Show inherited class methods when using namespacing. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85643">85643</a>)</li>
+    </ul>
+  </li>
+  <li>Python: Proper auto-completion support for the user site directory (<a href="http://docs.activestate.com/activepython/2.6/python/whatsnew/2.6.html#pep-370-per-user-site-packages-directory">PEP 370</a>). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85216">85216</a>)</li>
+  <li>Keybindings:
+    <ul>
+      <li>Hyperlinks now use Ctrl+Shift+G instead of Cmd+Shift+G. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84867">84867</a>)</li>
+      <li>Vi Emulation: Added a key binding for overloaded "run command" (Ctrl+Shift+R). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85655">85655</a>)</li>
+    </ul>
+  </li>
+  <li>Codeintel: Autocomplete list now re-updates after first trigger character is changed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85250">85250</a>)</li>
+  <li>"Close all" now shows a list of dirty files. You can then save/ignore these files or cancel the close command. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85489">85489</a>)</li>
+  <li>Command line option "--selection=" now works for column selection. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85659">85659</a>)</li>
+  <li>Remote Files: Reconnect when SFTP connection is dropped due to inactivity. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85050">85050</a>)</li>
+  <li>Fixed pasting in the command output tab. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85720">85720</a>)</li>
+  <li>Fixed utf8/unicode mix up when prompts written to terminal contain non-ASCII text. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85672">85672</a>)</li>
+  <li>Editor: Added command to select the current word under cursor (cmd_selectWordUnderCursor). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85835">85835</a>)</li>
+  <li>Added scroll bar width tracking setting to Komodo's preferences. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75485">75485</a>)</li>
+  <li>Remote files can now be opened from the command line. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82925">82925</a>)</li>
+  <li>Debugger: Debug menus now enabled when changing from remote to local file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=42411">42411</a>)</li>
+  <li>Fixed import of XRE/chrome/ customizations during upgrades. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86221">86221</a>)</li>
+  <li>Mac OS X
+    <ul>
+      <li>Show the auto-update dialog when updating. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85523">85523</a>)</li>
+      <li>Mac OS X: Run commands can now be properly terminated. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85693">85693</a>)</li>
+    </ul>
+  </li>
+  <li>Windows: Better handling of corrupted preference files at start up. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86226">86226</a>)</li>
+</ul>
 
 
 <h2 id="knownissues">Known Issues</h2>
