@@ -29,13 +29,28 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   soon. Support for each database is implemented as a Komodo
   extension, so integration with other databases can be easily
   added.</li>
+  
+  <li><strong>Places</strong>: A new file manager has been added to
+  Komodo's left pane. It provides a customized view of your file
+  system (local or remote) and easy file management
+  operations such as file editing, drag/drop copying, creation of new 
+  files and folders, and search.</li>
+
+  <li><strong>Publishing tools</strong>: Copy remote files to your local
+  system to work on them, then push them back to the remote system when
+  you're done. Komodo keeps track of the synchronization details to
+  avoid copying files that haven't changed, as well as using advanced
+  conflict detection to avoid overwriting changes made by others.</li>
+  
   <li><strong>Workspace Save and Restore</strong>: Komodo will now be
   regularly saving your workspace. In the case of an unexpected
   shutdown, you can choose to restore your last used workspace the next
   time it starts up.</li>
+  
   <li><strong>Mozilla 1.9.1</strong>: The underlying Mozilla source code
   has been updated to version 1.9.1, the same code base as Firefox
   3.5.</li>
+  
   <li><strong>Hyperlink Additions</strong>: Hyperlinks have been extended and can now...
     <ul>
       <li>jump to an HTML anchor tag to it's definition,</li>
@@ -53,6 +68,56 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-6.0.0a2">6.0.0a2 Bug Fixes</h3>
+
+<ul>
+  <li>Debugger:
+    <ul>
+      <li>Fixed HTML preview. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85194">85194</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=85369">85369</a>)</li>
+      <li>Komodo now handles arbitrary PHP expressions in the watch window and in hover tips while debugging. Previously only simple variable references were supported. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75956">75956</a>)</li>
+      <li>Shows class name in variable pane when available (Python and JavaScript). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86445">86445</a>)</li>
+      <li>Python: Improved type field for old-style instances.</li>
+    </ul>
+  </li>
+  <li>Editor:
+    <ul>
+      <li>Ctrl+arrow in Ruby, Perl, and PHP now handles variable indicators. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=70694">70694</a>)</li>
+      <li>Fixed rectangular (column) editing. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86170">86170</a>)</li>
+      <li>Fixed line jumping behavior with "View as Language". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85387">85387</a>)</li>
+      <li>Fixed auto-indent problems when unicode characters present. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86527">86527</a>)</li>
+    </ul>
+  </li>
+  <li>PHP:
+    <ul>
+      <li>Tag matching in PHP files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86371">86371</a>)</li>
+      <li>Added "throws" and "exception" phpdoc tags. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86545">86545</a>)</li>
+    </ul>
+  </li>
+  <li>Remote Files:
+    <ul>
+      <li>Fixed remote file connection class dropping symbolic link info. This only affects extension which use this class. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86434">86434</a>)</li>
+      <li>A "server-preferences-changed" observer notification is now sent when the server preferences are changed. Server preferences are now cached, but updated when changed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=66046">66046</a>)</li>
+    </ul>
+  </li>
+  <li>DBExplorer: Fixed double-click behavior on tables and nodes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86306">86306</a>)</li>
+  <li>Python: Python 3 support added - prefs, linting, lexing, and debugging. Code intelligence still to come. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84517">84517</a>)</li>
+  <li>Added EUC-JP support. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86347">86347</a>)</li>
+  <li>Preferences: Opening key binding preferences no longer clears toolbox key bindings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82036">82036</a>)</li>
+  <li>Added image preview. Image files opened in Komodo are shown in a browser tab. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85103">85103</a>)</li>
+  <li>JavaScript: Added completions for HTML style attributes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86391">86391</a>)</li>
+  <li>Fixed replacement "shortcuts" for regular expression groups. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86418">86418</a>)</li>
+  <li>Find: Escape the find pattern if regex is selected. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85619">85619</a>)</li>
+  <li>Unit Tests: PHP unit tests now work with one or more PHP lookup paths specified. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86488">86488</a>)</li>
+  <li>Key Bindings: Fixed labels for "Move Back Part of Word" and "Move Forward Part of Word". They were reversed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86493">86493</a>)</li>
+  <li>History: Recently closed files show up in the "Go to File" dialog box near the top. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86492">86492</a>)</li>
+  <li>Places: When komodo is asked to open a directory instead of a file, it sends a notification as a request to see if any components can do this. The places module can, so when Komodo is launched with a directory path on the command-line, the path is opened at the top of the Place, like in TextMate.</li>
+  <li>Places: Added support for named filters. "default" hides hides dot files, tilde files, and some "uninteresting" files, like *.pyc, *.pyo, etc.</li>
+  <li>Find: Improved the search speed of "find all in current document". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=67518">67518</a>)</li>
+  <li>Hyperlinks now work over remote access technologies such as VNC and Synergy. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82430">82430</a>)</li>
+  <li>Added default key binding (Ctrl+K, F11) or (Ctrl+C, F11) in Emacs mode to toggle full screen (partial fix). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86119">86119</a>)</li>
+  <li>Mac OS X: 64-bit dbgp binaries for Python 2.6 and Python 3.1. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86305">86305</a>)</li>
+  <li>SCC: Fixed 'hg remove' command. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86593">86593</a>)</li>
+</ul>
 
 <h3 id="bug_fixes-6.0.0a1">6.0.0a1 Bug Fixes</h3>
 
