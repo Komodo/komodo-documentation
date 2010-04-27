@@ -79,10 +79,10 @@
       <li>The <a href="#macroapi_scimoz"><code>scimoz</code></a> object for
       manipulation of code buffers.</li>
       
-      <li>The <a href="#macroapi_document"><code>document</code></a> object for
+      <li>The <a href="#macroapi_koDoc"><code>koDoc</code></a> object for
       manipulation of documents in memory.</li>
       
-      <li>The <a href="#macroapi_file"><code>document.file</code></a> object,
+      <li>The <a href="#macroapi_file"><code>koDoc.file</code></a> object,
       corresponding to files on disk.</li>
     </ul>
     </li>
@@ -694,15 +694,27 @@ try {
     ko.views.manager.currentView.scimoz.endUndoAction()
 }</pre>
 
-  <h3><a name="macroapi_document"
-  id="macroapi_document">ko.views.manager.currentView.document</a></h3>
+  <h3><a name="macroapi_koDoc"
+  id="macroapi_koDoc">ko.views.manager.currentView.koDoc</a></h3>
 
-  <p>The <code>ko.views.manager.currentView.document</code> object refers to the
-  current document. A document contains the contents of the file being edited.
-  These contents will be different than those of the file on disk if the file is
-  unsaved or "dirty".</p>
+  <p>The <code>ko.views.manager.currentView.koDoc</code> object refers
+  to the current document; the contents of the file being edited. These
+  contents will be different than those of the file on disk if the file
+  is unsaved or "dirty".</p>
+  
+  <p><code>koDoc</code> replaces the <code>document</code> object
+  present in Komodo 5 and previous versions. If you need to write macros
+  compatible with earlier versions, use capability-detection style code
+  such as:</p>
+  
+  <p>JavaScript</p>
+  <pre class="code">
+var koDoc = (komodo.koDoc === undefined ? komodo.document : komodo.koDoc);</pre>
+  <p>Python</p>
+  <pre class="code">
+koDoc = (komodo.koDoc if hasattr(komodo, "koDoc") else komodo.document)</pre>
 
-  <h4>document Attributes</h4>
+  <h4>koDoc Attributes</h4>
 
   <dl>
     <dt><a name="doc_baseName" id="doc_baseName">string
@@ -719,7 +731,7 @@ try {
 
     <dt><a name="doc_file" id="doc_file">file</a></dt>
 
-    <dd>The <a href="#macroapi_file">document.file</a> object corresponding
+    <dd>The <a href="#macroapi_file">koDoc.file</a> object corresponding
     to the document (null if the document is unsaved).</dd>
 
     <dt><a name="doc_buffer" id="doc_buffer">string buffer</a></dt>
@@ -744,10 +756,10 @@ try {
   </dl>
 
   <h3><a name="macroapi_file"
-  id="macroapi_file">ko.views.manager.currentView.document.file</a></h3>
+  id="macroapi_file">ko.views.manager.currentView.koDoc.file</a></h3>
 
   <p>The <code>file</code> object is an attribute of <a href=
-  "#macroapi_document"><code>document</code></a> objects, and corresponds to a
+  "#macroapi_koDoc"><code>koDoc</code></a> objects, and corresponds to a
   wrapper object around the file object.</p>
 
   <h4><code>document.file</code> attributes</h4>
@@ -1013,10 +1025,10 @@ view = viewSvc.currentView.queryInterface(components.interfaces.koIScintillaView
       <li>The <a href="#macroapi_scimoz"><code>scimoz</code></a> object for
       manipulation of code buffers.</li>
       
-      <li>The <a href="#macroapi_document"><code>document</code></a> object for
+      <li>The <a href="#macroapi_koDoc"><code>koDoc</code></a> object for
       manipulation of documents in memory.</li>
       
-      <li>The <a href="#macroapi_file"><code>document.file</code></a> object,
+      <li>The <a href="#macroapi_file"><code>koDoc.file</code></a> object,
       corresponding to files on disk.</li>
     </ul>
     

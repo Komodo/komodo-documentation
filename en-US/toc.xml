@@ -325,7 +325,7 @@
     <node name="Macro API Overview" link="macroapi.html#macroapi_overview"/>
     <node name="JavaScript Macros" link="macroapi.html#macroapi_js">
       <node name="The scimoz Object" link="macroapi.html#macroapi_scimoz"/>
-      <node name="The document Object" link="macroapi.html#macroapi_document"/>
+      <node name="The koDoc Object" link="macroapi.html#macroapi_koDoc"/>
       <node name="The document.file Object" link="macroapi.html#macroapi_file"/>
       <node name="The doCommand Function" link="macroapi.html#macroapi_doCommand"/>
       <node name="The open.URI Function" link="macroapi.html#macroapi_openURI"/>
