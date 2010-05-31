@@ -37,7 +37,7 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   files and folders, and search capabilities. Note: Places will be
   replacing the existing Komodo project viewer.</li>
 
-  <li><strong>Publishing tools</strong>: Copy remote files to your local
+  <li><strong>Publishing</strong>: Copy remote files to your local
   system to work on them, then push them back to the remote system when
   you're done. Komodo keeps track of the synchronization details to
   avoid copying files that haven't changed, as well as using advanced
@@ -60,6 +60,11 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
       <li>jump to PHP file includes</li>
     </ul>
   </li>
+  
+  <li><strong>Rx Toolkit Improvements</strong>: Choose between Python,
+  Perl, PHP, Ruby, and JavaScript syntax for testing your Regular
+  Expressions. They are now evaluated "out of process", so a
+  long-running regular expression won't tie up the IDE.</li>
 </ul>
   
 
@@ -69,7 +74,54 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
-<h3 id="bug_fixes-6.0.0a2">6.0.0a2 Bug Fixes</h3>
+<h3 id="bug_fixes-6.0.0b1">6.0.0 Beta 1 Bug Fixes</h3>
+
+<ul>
+  <li>API Changes:
+    <ul>
+      <li>Removed 'ko.views.manager.doFileNewFromTemplate' (deprecated in Komodo 5.0.3). Use 'ko.views.manager.doFileNewFromTemplateAsync' instead.</li>
+      <li>Removed 'ko.views.manager.newViewFromURI' and 'ko.views.manager.loadViewFromURI' (deprecated in Komodo 5.0.3). Use 'ko.views.manager.newViewFromURIAsync' instead.</li>
+      <li>Removed 'ko.view.manager.newTemplate(...)' (deprecated in Komodo 5.1.0). Not currently used in Komodo or any 3rd party extensions we're aware of.</li>
+      <li>Removed 'ko.views.manager.getViewForFile'. Use 'ko.views.manager.getViewForURI'.</li>
+      <li>'koIDocumentService.getUntitiledNameForLanuage' and 'ko.views.manager.getDefaultDirector' are no longer exposed.</li>
+      <li>Deprecating 'koIViews.document' (bad name because of confusion with DOM "document") in favor of 'koIViews.koDoc'.</li>
+      <li>Deprecating 'koILintRequest.document'. Use 'koILintRequest.koDoc'.</li>
+    </ul>
+  </li>
+  <li>PHP:
+    <ul>
+      <li>Function return types now appear in calltips. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86661">86661</a>)</li>
+      <li>Support for phpdoc virtual methods ("@method ..."). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86690">86690</a>)</li>
+      <li>Correctly determine type information inside switch/case statements. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86927">86927</a>)</li>
+    </ul>
+  </li>
+  <li>Python: Support for property decorators. </li>
+  <li>JavaScript: Improved jsdoc parsing for code intelligence. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82093">82093</a>)</li>
+  <li>SCC:
+    <ul>
+      <li>Perforce diff will no longer fail from a bad IndexError. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86677">86677</a>)</li>
+      <li>Allow adding files in a new directory under Perforce control. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86959">86959</a>)</li>
+      <li>Fixed initialization of git, hg and bzr components. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86578">86578</a>)</li>
+    </ul>
+  </li>
+  <li>In dialog boxes, the Yes/No button positions now follow platform style guides. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86249">86249</a>)</li>
+  <li>Pressing 'Enter' in the Sections List no longer inserts a newline in the buffer. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86672">86672</a>)</li>
+  <li>Go to File: Fixed unexpected results when pressing 'Enter' immediately after a query string change. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82800">82800</a>)</li>
+  <li>Publishing: Better handling of slow remote file listing results. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86675">86675</a>)</li>
+  <li>Publishing: Fixed hard crash when prompting for a username and password. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86978">86978</a>)</li>
+  <li>New File dialog is now re-sizable. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86693">86693</a>)</li>
+  <li>Mac OS X: Fixed opening files from the command line. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86470">86470</a>)</li>
+  <li>Mac OS X: Toolbar color now remains consistent. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86812">86812</a>)</li>
+  <li>Start Page: Ensure recent file types are shown in the New File section. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86697">86697</a>)</li>
+  <li>Places: The location of files which are open in the buffer are now updated properly when they're moved in Places. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86676">86676</a>)</li>
+  <li>Editor: Fixed 'Collapse Fold Recursively' on top-level blocks. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86676">86676</a>)</li>
+  <li>Find: Added a text box filter for the Find/Replace results. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86325">86325</a>)</li>
+  <li>Toolbox: Fixed problem resetting macro icons. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86921">86921</a>)</li>
+  <li>Key Bindings: Added "Cmd+[1-9]" key bindings for Mac OS X for switching tabs at that index. The associated "cmd_buffer_[1-9]" commands are available for custom key bindings on all platforms.</li>
+  <li>Run Commands: Properly expand environment variables when running in a new console. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86973">86973</a>)</li>
+</ul>
+
+<h3 id="bug_fixes-6.0.0a2">6.0.0 Alpha 2 Bug Fixes</h3>
 
 <ul>
   <li>Debugger:
@@ -120,7 +172,7 @@ Sections List apply to Komodo IDE only.</p>
   <li>SCC: Fixed 'hg remove' command. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86593">86593</a>)</li>
 </ul>
 
-<h3 id="bug_fixes-6.0.0a1">6.0.0a1 Bug Fixes</h3>
+<h3 id="bug_fixes-6.0.0a1">6.0.0 Alpha 1 Bug Fixes</h3>
 
 <ul>
   <li>PHP:
