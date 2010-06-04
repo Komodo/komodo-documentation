@@ -422,12 +422,14 @@
   "debugphp_edit_php_ini">Step 2 - Edit the Web Server's PHP
   Configuration</a></h4>
 
-  <p>Open the <em>php.ini</em> configuration file on the web
-  server. In the "<code>Dynamic Extension</code>" section, add the
-  lines specified below. Edit the values to reflect your particular
-  environment (see <strong><a href="#debugphp_xdebug_settings">Xdebug
-  settings explained</a></strong> below).</p>
-
+  <p>Open the <em>php.ini</em> configuration file on the server. There
+  may be multiple copies of this file, so check the value of "Loaded
+  Configuration File" in the <code>phpinfo()</code> output to see which
+  one is being used by the web server (e.g. create a
+  <em>phpinfo.php</em> file containing the line '<code>&lt;?php
+  phpinfo(); ?&gt;</code>' in a web server directory,
+  then open the corresponding URL in a browser).</p>
+  
   <table align="center" width="60%">
     <tbody>
       <tr>
@@ -442,15 +444,20 @@
     </tbody>
   </table>
 
+  <p>In the "<code>Dynamic Extension</code>" section, add the
+  lines specified below. Edit the values to reflect your particular
+  environment (see <strong><a href="#debugphp_xdebug_settings">Xdebug
+  settings explained</a></strong> below).</p>
+  
   <ul>
     <li>
       <p><strong>Windows</strong></p>
       
-      <p>The <em>php.ini</em> configuration file should be in your
-      operating system directory (e.g. C:\WINDOWS or C:\WINNT), or
+      <p>The <em>php.ini</em> configuration file is generally in your
+      operating system directory (e.g. C:\WINDOWS or C:\WINNT) or
       in the same directory as <code>php.exe</code> (e.g. C:\PHP).
-      If you used the PHP Windows installer, this file should be in
-      the correct location.</p>
+      Check <code>phpinfo()</code> as described above if you cannot find
+      the file or have multiple copies.</p>
       
       <pre class="code">
 ; xdebug config for Windows
@@ -525,18 +532,11 @@ xdebug.idekey=&lt;idekey&gt;
   "debugphp_verify_php_ini">Step 3 - Verify the Web Server's PHP
   Configuration</a></h4>
 
-  <p>Once the <em>php.ini</em> file is updated, verify that Xdebug
-  is configured by running the following command:</p>
-  <pre class="code">
-php -m
-</pre>
-
-  <p>If your command-line PHP interpreter uses a different
-  <em>php.ini</em> file (this is often the case) or if you're not
-  sure which file it uses, create a <em>phpinfo.php</em> file
-  containing the line '<code>&lt;?php phpinfo(); ?&gt;</code>' in
-  a web server directory to display the configuration in a web
-  browser.</p>
+  <p>Once the <em>php.ini</em> file is updated, verify that Xdebug is
+  configured by checking the output of <code>phpinfo()</code> (described
+  in <a href="#debugphp_edit_php_ini">Step 2</a>). There should be an
+  Xdebug section in the alpabetical list of modules which shows
+  all of the relevant settings.</p>
 
   <p><strong>Note</strong>: Recent versions of PHP are set to
   buffer program output by default. While debugging, it is useful
