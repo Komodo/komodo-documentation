@@ -1,0 +1,83 @@
+<!-- Copyright (c) 2000-2010 ActiveState Software Inc. -->
+<!-- See the file LICENSE.txt for licensing information. -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Publishing</title>
+</head>
+
+<body>
+  <h1><a name="publish_top" id="publish_top">Publishing</a> <span
+  class="version_alert">Komodo IDE only</span></h1>
+  
+  <p>Publishing lets you take a group of files saved locally, upload
+  them to a remote server, then keep the local and remote files in sync.
+  Komodo keeps track of the synchronization details to avoid copying
+  files that haven't changed and uses advanced conflict detection to
+  avoid overwriting changes made by others.</p>
+  
+  <p>You can also using Publishing for file backups.</p>
+  
+  <h2><a name="publish_config" id="publish_config">Creating a
+  Configuration</a></h2>
+  
+  <p>To launch the Publishing configuration wizard, click
+  <strong>Tools|Publishing|New Configuration</strong>. You will be
+  prompted to set up:</p>
+  
+  <ul>
+    <li><strong>Name</strong>: A convenient name for your saved
+    configuration.</li>
+    
+    <li><strong>Local path</strong>: The full path to the directory
+    containing the files you want to publish. Use the Browse button or
+    enter the path manually.</li>
+    
+    <li><strong>Remote path</strong>: The full URI path to the target
+    directory. Use the Browse button to navigate to a <a
+    href="prefs.html#Servers">previously configured server</a>, or enter
+    the URI manually (e.g.
+    <code>scp:///username@servername/path/to/dir</code>)</li>
+    
+    <li><strong>Includes</strong>: File types to be included in the
+    synchronization. Use glob syntax separated by semi-colons (e.g.
+    "*.html;*.xml") or leave blank.</li>
+    
+    <li><strong>Excludes</strong>: File types to be excluded from the
+    synchronization. Use either Includes or Excludes, not both. Same
+    syntax as above.</li>
+  </ul>
+  
+  <p>Clicking "Save" opens the Synchronization dialog box and initiates
+  the first push of the local files to the remote server.</p>
+  
+  <h2><a name="publish_sync" id="publish_sync">Synchronizing</a></h2>
+
+  <p>The Synchronization dialog box shows which local files will be
+  pushed to the server, which remote files will be pulled from the
+  server, and which files cannot be synchronized because of a
+  conflict. The following actions are available:</p>
+  
+  <ul>
+    <li><strong>Check All</strong>: selects all items in the list.</li>
+    <li><strong>Uncheck All: de-selects all items in the list.</strong></li>
+    <li><strong>Diff Changes</strong>: shows a unified diff of all pending changes (selected files).</li>
+    <li><strong>Synchronize</strong>: starts the pending uploads and downloads.</li>
+  </ul>
+
+  <p>When synchronizing, Komodo will first examine these locations for
+  any file differences and present the changes for your inspection.
+  Check the files you wish to be transfered and then triggering the
+  synchronize action will copy the files between the local and remote
+  file systems. Synchronization operations can be aborted at any time by
+  pressing the stop botton.</p>
+
+</body>
+</html>

@@ -123,6 +123,16 @@
   <node name="Project Properties" link="project.html#project_props"/>
 </node>
 
+<node name="Places" link="places.html#places_top">
+  <node name="Views" link="places.html#places_views"/>
+</node>
+
+<node name="Database Explorer" link="db_explorer.html#database_exp_top">
+  <node name="Databases Sidebar" link="db_explorer.html#database_exp_sidebar"/>
+  <node name="Examining Tables" link="db_explorer.html#database_exp_tables"/>
+</node>
+
+
 <node name="Toolbox" link="toolbox.html#toolbox_top">
   <node name="Displaying the Toolbox" link="toolbox.html#toolbox_display"/>
   <node name="Adding Components to the Toolbox" link="toolbox.html#toolbox_addcomp"/>
@@ -174,6 +184,10 @@
   </node>
 </node>
 
+<node name="Publishing" link="publish.html#publish_top">
+  <node name="Creating a Publishing Configuration" link="publish.html#publish_config"/>
+  <node name="Synchronizing" link="publish.html#publish_sync"/>
+</node>
 
 <node name="Find and Replace" link="search.html#search_top">
   <node name="Match Highlighting" link="search.html#search_highlight"/>
