@@ -1587,12 +1587,9 @@
 
   <h3><a name="PHP" id="PHP">Configuring PHP</a></h3>
 
-  <p>Click the <strong>PHP Debugger Configuration Wizard</strong>
-  button to configure the location of the PHP interpreter, to
-  modify the <code>php.ini</code> file for Komodo debugging, and to
-  install the required debugging extensions. To manually configure
-  PHP debugging, refer to <a href=
-  "debugphp.html#debugphp_top">Debugging PHP</a> for
+  <p>Komodo will try to automatically configure itself for local PHP debugging.
+  If this fails then you'll need to manually configure PHP debugging,
+  refer to <a href="debugphp.html#debugphp_top">Debugging PHP</a> for
   instructions.</p>
 
   <ul>
@@ -1606,14 +1603,9 @@
     the desired interpreter.</li>
 
     <li><strong>Path to alternate PHP configuration file</strong>:
-    The <code>php.ini</code> file must be modified to support
-    Komodo debugging. To specify an different <code>php.ini</code>
-    than the one configured by the <strong>PHP Debugger
-    Configuration Wizard</strong>, enter the path in this field, or
-    use the <strong>Browse</strong> button. See <a href=
-    "debugphp.html#debugphp_top">Debugging PHP</a> for
-    information about manually configuring the
-    <code>php.ini</code>.</li>
+    The <code>php.ini</code> file to be used by Komodo PHP functions,
+    enter the path in this field, or use the <strong>Browse</strong>
+    button.</li>
 
     <li><strong>PHP Directories</strong>: Specify any directories
     that you want Komodo to use for autocompletion and calltips.
