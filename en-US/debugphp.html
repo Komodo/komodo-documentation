@@ -49,8 +49,9 @@
 
   <p>Komodo uses a PHP debugger extension called
   <strong>Xdebug</strong> that must be installed for Komodo to
-  debug PHP scripts. This can be done manually or with the PHP
-  Configuration Wizard. Pre-built binaries named "php_xdebug.dll"
+  debug PHP scripts. Komodo automatically configures itself to use Xdebug for
+  local PHP debugging, but the configuration must be done manually for remote
+  PHP debugging. Pre-built binaries named "php_xdebug.dll"
   (for Windows) or "xdebug.so" (for Linux and Mac OS X) are
   provided with Komodo and are also available for download from the
   <a class="doc" href=
@@ -191,106 +192,6 @@
       </tr>
     </tbody>
   </table>
-
-  <h4><a name="PHP_debugger_config_wizard" id=
-  "PHP_debugger_config_wizard">PHP Debugger Config Wizard</a></h4>
-
-  <p>If the automatic configuration of PHP debugging is not
-  successful, try configuring PHP debugging manually using the
-  <strong>PHP Configuration Wizard</strong>.</p>
-
-  <p>To start the wizard:</p>
-
-  <ol>
-    <li>On the <strong>Edit</strong> menu, click
-    <strong>Preferences</strong>.</li>
-
-    <li>Under <strong>Languages</strong>, select
-    <strong>PHP</strong>.</li>
-
-    <li>Click the <strong>Debugger Configuration Wizard</strong>
-    button to display the wizard's introductory window.</li>
-
-    <li>Click <strong>Next</strong> to begin configuring PHP for
-    debugging.</li>
-  </ol>
-
-  <p>The wizard will guide you through the steps necessary to
-  configure the debugging extension.</p>
-
-  <ol>
-    <li>
-      <strong>Choose Installation</strong>:
-
-      <p>The first step assumes that you have already <a class=
-      "doc" href="#install_PHP">installed PHP</a>. If you have more
-      than one version of PHP installed, choose the version to
-      configure. Browse to the directory containing the PHP
-      executable or enter the directory path in the <strong>Set up
-      this installation</strong> field, and then click
-      <strong>Next</strong>.</p>
-    </li>
-
-    <li>
-      <strong>Choose PHP INI Path</strong>:
-
-      <p>Next, choose the <em>php.ini</em> file to be copied and
-      its destination directory. Subsequent changes to the original
-      file will not be available in the new copy. Modify the new
-      file directly, or rerun the wizard to copy the changes. Click
-      <strong>Next</strong>.</p>
-
-      <ul>
-        <li>On Windows, the <em>php.ini</em> file is generally
-        located in <code>c:\windows</code>, or
-        <code>c:\winnt</code>, depending on your operating system.
-        It may also be located in the same directory as your
-        php.exe executable.</li>
-
-        <li>On Linux, the default location is
-        <code>/usr/local/lib</code>. It may also be located in the
-        same directory as your PHP executable.</li>
-      </ul>
-    </li>
-
-    <li style="list-style: none"><br /></li>
-
-    <li>
-      <strong>Choose PHP Extension Directory</strong>:
-
-      <p>Many PHP installations already include a default
-      "extensions" directory. This is where the debugger extension
-      should be installed. If you have specified an extensions
-      directory in the .ini file, you do not need to change the
-      path that appears in the <strong>Use this extensions
-      directory</strong> field. It is important that the extensions
-      are installed in the same directory as your PHP installation.
-      If you choose a different location, some extensions may not
-      work. Once the desired path is set, click
-      <strong>Next</strong>.</p>
-    </li>
-
-    <li>
-      <strong>Ready to Install</strong>:
-
-      <p>The final window in the wizard displays the installation
-      options. Confirm that the selections are correct and click
-      <strong>Next</strong>. To change any of the selections, click
-      <strong>Back</strong>.</p>
-    </li>
-  </ol>
-
-  <p>The PHP Configuration Wizard is only used to configure local
-  debugging. To debug PHP remotely on a web server, see <a class=
-  "doc" href="#config_remote_PHP">Configuring Remote PHP
-  Debugging</a>.</p>
-
-  <p>If the wizard does not successfully enable local PHP
-  debugging, refer to <a class="doc" href=
-  "#config_remote_PHP">Configuring Remote PHP Debugging</a> for
-  more information on manual configuration and <a href=
-  "#config_PHP_problems">Common PHP Debugging
-  Problems</a> for information on common problems.</p>
 
   <h3><a name="debugphp_start_stop_local_PHP" id=
   "debugphp_start_stop_local_PHP">Starting and Stopping a PHP Local
@@ -806,8 +707,9 @@ throw new KoException('this is my exception!', 42);
   "http://xdebug.org/install.php">compile Xdebug from source</a>,
   replace
   <em>Komodo-&lt;version&gt;/lib/support/php/debugging/&lt;PHP
-  version&gt;/xdebug.so</em> with the new 64-bit version, and run
-  the <strong>PHP Configuration Wizard</strong>.</p>
+  version&gt;/xdebug.so</em> with the new 64-bit version, and re-check
+  the <strong>PHP Configuration Debugger status in Komodo's PHP
+  preferences.</strong>.</p>
 
   <h3><a name="config_PHP_zend" id="config_PHP_zend">Zend Optimizer
   and Zend Studio Debugger</a></h3>

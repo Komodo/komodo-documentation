@@ -496,9 +496,7 @@
   <node name="Debugging PHP" link="debugphp.html">
     <node name="Installing PHP" link="debugphp.html#install_PHP"/>
     <node name="Local PHP Debugging" link="debugphp.html#local_debug_PHP">
-      <node name="Configuring PHP Local Debugging" link="debugphp.html#config_local_PHP">
-        <node name="PHP Debugger Config Wizard" link="debugphp.html#PHP_debugger_config_wizard"/>
-      </node>
+      <node name="Configuring PHP Local Debugging" link="debugphp.html#config_local_PHP"/>
       <node name="Starting Local Debugging" link="debugphp.html#debugphp_start_stop_local_PHP"/>
     </node>
     <node name="Remote PHP Debugging" link="debugphp.html#remote_debug_PHP">
