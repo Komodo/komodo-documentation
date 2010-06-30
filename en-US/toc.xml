@@ -616,14 +616,6 @@
     <node name="Customize the SCC checkout parameters" link="scc.html#scc_checkout_2"/>
     <node name="SCC Command line summary" link="scc.html#scc_checkout_3"/>
   </node>
-  <node name="Change Lists" link="scc.html#changelists">
-    <node name="Default Change Lists" link="scc.html#default_changelist"/>
-    <node name="Creating a New Change List" link="scc.html#create_changelist"/>
-    <node name="Change List Properties" link="scc.html#changelist_properties">
-      <node name="Modifying the File List" link="scc.html#changelist_modify"/>
-      <node name="Making a Patch" link="scc.html#changelist_patch"/>
-    </node>
-  </node>
   <node name="Configuring SCC Integration" link="scc.html#config">
     <node name="Configuring CVS" link="scc.html#config_cvs">
       <node name="Basic CVS Configuration" link="scc.html#basic_cvs_config"/>
