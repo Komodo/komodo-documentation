@@ -23,31 +23,33 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <h3 id="whatsnew-6.0">6.0</h3>
 
 <ul>
-  <li><strong>Database Explorer</strong>: Lets you easily explore local
+  <li><strong><a href="../db_explorer.html">Database
+  Explorer</a></strong> (Komodo IDE only): Lets you easily explore local
   and remote database installations, including viewing and managing
   data. SQLite is supported in this release, with more databases coming
-  soon. Support for each database is implemented as a Komodo
-  extension, so integration with other databases can be easily
-  added.</li>
+  soon. Support for each database is implemented as a Komodo extension,
+  so integration with other databases can be
+  easily added.</li>
   
-  <li><strong>Places</strong>: A new file manager has been added to
-  Komodo's left pane. It provides a customized view of your file
-  system (local or remote) and easy file management
-  operations such as file editing, drag/drop file moving, creation of new 
-  files and folders, and search capabilities. Note: Places will be
+  <li><strong><a href="../places.html">Places</a></strong>: A new file
+  manager has been added to Komodo's left pane. It provides a customized
+  view of your file system (local or remote) and easy file management
+  operations such as file editing, drag/drop file moving, creation of
+  new files and folders, and search capabilities. Note: Places will be
   replacing the existing Komodo project viewer.</li>
 
-  <li><strong>Publishing</strong>: Copy remote files to your local
-  system to work on them, then push them back to the remote system when
-  you're done. Komodo keeps track of the synchronization details to
-  avoid copying files that haven't changed, as well as using advanced
-  conflict detection to avoid overwriting changes made by others.</li>
+  <li><strong><a href="../publish.html">Publishing</a></strong> (Komodo
+  IDE only): Copy remote files to your local system to work on them,
+  then push them back to the remote system when you're done. Komodo
+  keeps track of the synchronization details to avoid copying files that
+  haven't changed, as well as using advanced conflict detection to avoid
+  overwriting changes made by others.</li>
   
-  <li><strong>New Toolbox</strong>: The Komodo toolbox and project
-  system are being rewritten. Individual toolbox items (commands,
-  macros, snippets, etc.) are saved in separate JSON files rather than
-  as nodes in a toolbox.kpf file. In future versions project-specific
-  tools will appear in the Toolbox sidebar instead of the Projects
+  <li><strong>Toolbox</strong>: The Komodo toolbox and project system
+  are being rewritten. Individual toolbox items (commands, macros,
+  snippets, etc.) are saved in separate JSON files rather than as nodes
+  in a toolbox.kpf file. In future versions project-specific tools will
+  appear in the Toolbox sidebar instead of the Projects
   sidebar, which will eventually be removed.</li>
   
   <li><strong>Workspace Save and Restore</strong>: Komodo will now be
@@ -72,6 +74,9 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   Perl, PHP, Ruby, and JavaScript syntax for testing your Regular
   Expressions. They are now evaluated "out of process", so a
   long-running regular expression won't tie up the IDE.</li>
+  
+  <li><strong>HTML 5 and CSS3 Support</strong>: Autocomplete for HTML 5
+  and CSS3.</li>
 </ul>
   
 
@@ -80,6 +85,39 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to debugging, interactive shells, source code
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-6.0.0b2">6.0.0 Beta 2 Bug Fixes</h3>
+
+<ul>
+  <li>Toolbox:
+    <ul>
+      <li>Reinstated hard-wired sorting and filtering. Filtered views are now sorted as well.</li>
+      <li>Selected folders remain selected and visible when filter is cleared.</li>
+      <li>Removed top-level Toolbox menu.</li>
+      <li>Updated icons.</li>
+      <li>Removed Directory Shortcuts; the Places interface make these obsolete. Existing shortcuts will be migrated on upgrade to macros that behave similarly. </li>
+      <li>Users of previous Komodo 6 Beta/Nightly versions can force a re-import of tools from toolbox.kpf (5.x format) by deleting the toolbox.sqlite file from the user data directory.</li>
+      <li>Restored "View|Tabs &amp; Sidebars|New Toolbox". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87150">87150</a>)</li>
+      <li>Added importDirectory of tools into toolbox. <!-- TODO: WTF *is* this? --></li>
+      <li>Now you can import a KPZ file from the web with the right-click "Import kpz Package from the web" menu item.<!-- TODO: Why? --></li>
+      <li>When opening kpf files of version 4 or earlier (kpf v.4 is for Komodo 4.1-5.x), extract the tools, if any, into a .komodotools directory in the same folder as the kpf file, set the version # to 5, and save the file as a .komodoproject file. It's possible that some projects will collide, but we'll wait to see if that happens.</li>
+      <li>Added context menus for folders. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87269">87269</a>)</li>
+      <li>Items in the Tools sidebar can now be renamed in place. Previously, this had to be done in the Properties dialog. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87269">87269</a>)</li>
+      <li>Tools can no longer be added to project folders.</li>
+      <li>Implemented renameProject with new projects. The name of the associated tools directory gets updated as well.</li>
+      <li>Saved Run Commands in Tools sidebar now work again.</li>
+    </ul>
+  </li>
+  <li>Projects: When Komodo opens old kpf project files, tools are extracted into a ".komodotools" directory in the same folder as the kpf file. Tools from the project will appear in the Tools sidebar in their own top-level Toolbox.</li>
+  <li>PHP: Detect the exception type in a catch exception block. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85389">85389</a>)</li>
+  <li>Linux: Main menu now uses the proper GTK theme colors. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86191">86191</a>)</li>
+  <li>Code Intelligence: Purge db files that have been removed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87091">87091</a>)</li>
+  <li>Abbreviations: Now triggered on the first word in the snippet name only. If the abbreviation name starts with a non-word-character, its trigger is everything up to the first space or word character. This allows you to create snippets with descriptive names and short abbreviation triggers.</li>
+  <li>Vi Emulation: Enabled visual line selection mode. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86300">86300</a>)</li>
+  <li>Mac OS X: Improved visibility of text selection when overlapping an indicator. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82223">82223</a>)</li>
+  <li>Mac OS X: Improved solid indicators in editor. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82223">82223</a>)</li>
+  <li>Vi Emulation: Vi Commands folder now works in the new Toolbox. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87231">87231</a>)</li>
+</ul>
 
 <h3 id="bug_fixes-6.0.0b1">6.0.0 Beta 1 Bug Fixes</h3>
 
