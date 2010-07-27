@@ -86,6 +86,48 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-6.0.0b3">6.0.0 Beta 3 Bug Fixes</h3>
+
+<ul>
+  <li>Places:
+    <ul>
+      <li>Moved the sort controller from the tree column into the menu.</li>
+      <li>Top icon now shows whether the current directory is a project base directory.</li>
+      <li>When opening a project, the Places sidebar changes to the directory containing that project, or it's configured base directory (if set).</li>
+    </ul>
+  </li>
+  <li>Tools:
+    <ul>
+      <li>The "Samples (6.x.x)/tools" directory has been renamed "Samples (6.x.x)".</li>
+      <li>The Samples directory is no longer recreated automatically after it is deleted. Removing the "haveINstalledSampleToolbox-Komodo" preference from prefs.xml restore the old behavior.</li>
+      <li>'Return' and 'Enter' now invoke, expand, or contract the selected item the same way they do in partviewers.</li>
+    </ul>
+  </li>
+  <li>Code Intelligence:
+    <ul>
+      <li>Added pywin32 "win32ui" and "dde" modules. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87357">87357</a>)</li>
+      <li>PHP: Corrected calltips for 'ucfirst' and 'lcfirst'. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87426">87426</a>)</li>
+      <li>Only pre-load standard library data for languages that are being used. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=56807">56807</a>)</li>
+      <li>CSS3: Updated "pseudo" selectors. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87482">87482</a>)</li>
+      <li>HTML: Ensure browser-specific CSS completions available in the "style" attribute. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87386">87386</a>)</li>
+    </ul>
+  </li>
+  <li>Editor:
+    <ul>
+      <li>Disabled drag tracking when the drop is finished (Windows). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87342">87342</a>)</li>
+      <li>Sub-language background colors now extend the full line width. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86167">86167</a>)</li>
+      <li>Check that there is at least one character when pasting text (Mac OS X). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85437">85437</a>)</li>
+    </ul>
+  </li>
+  <li>Added missing "_deprecatedNameTest" method to fix a problem exposed by the HTML Toolkit add-on. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87367">87367</a>)</li>
+  <li>Database Explorer: Fixed parsing of "~" in paths to database. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87402">87402</a>)</li>
+  <li>Debugger: Fixed editing of variable values while debugging (Python). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87405">87405</a>)</li>
+  <li>Find: Skip over files 100MB or larger. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85881">85881</a>)</li>
+  <li>Remote Files: Fixed problem editing server prefs when opened from a child window. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84571">84571</a>)</li>
+  <li>Ensure editor menu commands are enabled correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83741">83741</a>)</li>
+  <li>Fixed crash on copy/paste. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85437">85437</a>)</li>
+</ul>
+
 <h3 id="bug_fixes-6.0.0b2">6.0.0 Beta 2 Bug Fixes</h3>
 
 <ul>
