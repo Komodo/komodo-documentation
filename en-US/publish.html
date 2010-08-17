@@ -17,13 +17,18 @@
   <h1><a name="publish_top" id="publish_top">Publishing</a> <span
   class="version_alert">Komodo IDE only</span></h1>
   
-  <p>Publishing lets you take a group of files saved locally, upload
-  them to a remote server, then keep the local and remote files in sync.
-  Komodo keeps track of the synchronization details to avoid copying
+  <p>Publishing synchronizes groups of files between local and remote
+  systems over FTP, SFTP, FTPS or SCP. You can upload a group of files
+  from your local system or download a group from the remote system
+  and keep the synchronized. Local changes are pushed to the remote
+  server, and remote changes are pulled to the local system.</p>
+  
+  <p>Komodo keeps track of the synchronization details to avoid copying
   files that haven't changed and uses advanced conflict detection to
   avoid overwriting changes made by others.</p>
   
-  <p>You can also using Publishing for file backups.</p>
+  <p>You can use Publishing for deploying websites to the hosting web
+  server, or use it with remote storage as a simple backup utility.</p>
   
   <h2><a name="publish_config" id="publish_config">Creating a
   Configuration</a></h2>
@@ -36,48 +41,71 @@
     <li><strong>Name</strong>: A convenient name for your saved
     configuration.</li>
     
-    <li><strong>Local path</strong>: The full path to the directory
-    containing the files you want to publish. Use the Browse button or
-    enter the path manually.</li>
+    <li><strong>Local path</strong>: The full path to the local
+    directory. Use the <strong>Browse</strong> button or enter the path
+    manually.</li>
     
-    <li><strong>Remote path</strong>: The full URI path to the target
-    directory. Use the Browse button to navigate to a <a
+    <li><strong>Remote path</strong>: The URI of the remote directory,
+    including the hostname and full path. Use the
+    <strong>Browse</strong> button to navigate to a <a
     href="prefs.html#Servers">previously configured server</a>, or enter
     the URI manually (e.g.
-    <code>scp:///username@servername/path/to/dir</code>)</li>
+    <code>scp://username@servername/path/to/dir</code>)</li>
     
     <li><strong>Includes</strong>: File types to be included in the
     synchronization. Use glob syntax separated by semi-colons (e.g.
     "*.html;*.xml") or leave blank.</li>
     
     <li><strong>Excludes</strong>: File types to be excluded from the
-    synchronization. Use either Includes or Excludes, not both. Same
-    syntax as above.</li>
+    synchronization. Same syntax as above. If you use both, the Excludes
+    list takes priority if there are conflicts.</li>
   </ul>
   
-  <p>Clicking "Save" opens the Synchronization dialog box and initiates
-  the first push of the local files to the remote server.</p>
+  <p>Clicking "Save" opens the Synchronization dialog box and shows the
+  details of the pending synchronization.</p>
   
   <h2><a name="publish_sync" id="publish_sync">Synchronizing</a></h2>
 
-  <p>The Synchronization dialog box shows which local files will be
-  pushed to the server, which remote files will be pulled from the
-  server, and which files cannot be synchronized because of a
-  conflict. The following actions are available:</p>
+  <p>The Synchronization dialog box shows:</p>
+  
+  <ul>
+    <li>which local files will be uploaded to the server</li>
+    <li>which remote files will be downloaded from the server</li>
+    <li>which files cannot be synchronized because of a conflict</li>
+  </ul>
+  
+  <img src="img/publish_sync.png" alt="Synchronization dialog box" />
+  
+  <p>The following actions are available:</p>
   
   <ul>
     <li><strong>Check All</strong>: selects all items in the list.</li>
-    <li><strong>Uncheck All: de-selects all items in the list.</strong></li>
+    <li><strong>Uncheck All</strong>: de-selects all items in the list.</li>
     <li><strong>Diff Changes</strong>: shows a unified diff of all pending changes (selected files).</li>
     <li><strong>Synchronize</strong>: starts the pending uploads and downloads.</li>
   </ul>
+  
+  <p>When synchronizing, Komodo will examine the local and remote
+  locations for any file differences and present the changes for your
+  inspection. Check the files you wish to be transferred (or use
+  <strong>Check All</strong>). Clicking <strong>Synchronize</strong>
+  will copy the files between the local and remote file systems. The
+  synchronization be aborted at any time by pressing the
+  <strong>Stop</strong> button.</p>
 
-  <p>When synchronizing, Komodo will first examine these locations for
-  any file differences and present the changes for your inspection.
-  Check the files you wish to be transfered and then triggering the
-  synchronize action will copy the files between the local and remote
-  file systems. Synchronization operations can be aborted at any time by
-  pressing the stop botton.</p>
+  <h2><a name="publish_conflict" id="publish_conflict">Conflicts</a></h2>
+  
+  <p>If a file has been modified locally <em>and</em> remotely, the
+  conflict will be highlighted in the file list. Right click on any file
+  in the file list to bring up a context menu with the following
+  options:</p>
+  
+  <ul>
+    <li>Diff: Show the line-by-line differences between the files.</li>
+    <li>Resolve conflict: Lets you choose one file or the other -
+    <strong>Upload the local file</strong> or <strong>Download the
+    remote file</strong>.</li>
+  </ul>
 
 </body>
 </html>
