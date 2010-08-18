@@ -460,11 +460,6 @@
     <node name="Detaching the Debugger" link="debugger.html#Detaching_the_Debugger"/>
     <node name="Stopping the Debugger" link="debugger.html#Stopping_the_Debugger"/>
   </node>
-  <node name="Debugging JavaScript" link="debugjs.html">
-    <node name="Understanding JavaScript Debugging" link="debugjs.html#Understanding_JavaScript_Debugging"/>
-    <node name="Configuring the JavaScript Debugger" link="debugjs.html#Configure_JavaScript_Debugging"/>
-    <node name="JavaScript Debugging Process" link="debugjs.html#JavaScript_Debugging"/>
-  </node>
   <node name="Debugging Perl" link="debugperl.html">
     <node name="Configuring the Perl Debugger" link="debugperl.html#Configuring_Perl_Debugger">
       <node name="Starting a Komodo debugging session with perl -d"
@@ -575,7 +570,6 @@
   <node name="Perl Interactive Shell" link="intshell.html#intshell_perl">
     <node name="Debugging with the Perl Shell" link="intshell.html#intshell_debugperl"/>
   </node>
-  <node name="JavaScript Interactive Shell" link="intshell.html#intshell_js"/>
   <node name="Ruby Interactive Shell" link="intshell.html#intshell_ruby">
     <node name="Debugging with the Ruby Shell" link="intshell.html#intshell_debugrb"/>
   </node>
@@ -882,15 +876,6 @@
     <node name="Adding Borrower Data" link="tutorial/railstut.html#adding_borrower_data"/>
     <node name="Handling Checkouts" link="tutorial/railstut.html#handling_checkouts"/>
     <node name="Rails Resources" link="tutorial/railstut.html#rails_resources"/>
-  </node>
-  <node id="js_tutorial" name="JavaScript Tutorial" link="tutorial/jstut.html#jstut_top"
-        flags="ide">
-    <node name="JavaScript Tutorial Overview" link="tutorial/jstut.html#jstut_overview"/>
-    <node name="Opening the JavaScript Tutorial Files" link="tutorial/jstut.html#jstut_open"/>
-    <node name="Analyzing the JavaScript Program" link="tutorial/jstut.html#jstut_analyze"/>
-    <node name="Debugging the JavaScript Program" link="tutorial/jstut.html#jstut_debug"/>
-    <node name="Adding Links" link="tutorial/jstut.html#jstut_linkify"/>
-    <node name="More JavaScript Resources" link="tutorial/jstut.html#jstut_resources"/>
   </node>
   <node name="XSLT Tutorial" link="tutorial/xslttut.html#xslttut_top"
         flags="ide">
