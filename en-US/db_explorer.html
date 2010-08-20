@@ -19,32 +19,27 @@
   <h1><a name="database_exp_top" id="database_exp_top">Database
   Explorer</a> <span class="version_alert">Komodo IDE only</span></h1>
   
+  <img src="img/dbx.png" alt="Databases sidebar"
+  style="float:left;margin-right:2em;margin-bottom:1em"/>
 
   <p>The <strong>Database Explorer</strong> is a tool for examining the
-  structure and content of databases. By default, it support SQLite and
-  Oracle, but support for addional database types is avaialable through
-  <a href="http://community.activestate.com/addons">extensions</a>.</p>
+  structure and content of databases. By default, it can connect to
+  SQLite and Oracle databases, but support for additional database types
+  such as MySQL is available through <a
+  href="http://community.activestate.com/addons">extensions</a>.</p>
   
+  <p>The Database sidebar displays a filterable list of database
+  connections. Each connection offers a tree view of databases available
+  via that connection, the tables in each database, and the
+  fields/columns in each table.</p>
   
-  <h2><a name="database_exp_sidebar" id="database_exp_sidebar">Databases Sidebar</a></h2>
+  <h2 style="clear:both"><a name="database_exp_add"
+  id="database_exp_add">Adding a Database Connection</a></h2>
   
-  <table align="center" width="60%">
-    <tbody>
-      <tr>
-        <td class="startupBox">
-          <p><strong>Note</strong>: The <strong>Database
-          Explorer</strong> is still under active development. The
-          interface will undergo extensive changes during the Beta
-          period.</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <p>Open the Databases sidebar from the <strong>List all
-  Sidebars</strong> menu button in the left pane. Use the <strong>Add a
-  Database Connection</strong> button to configure a connection. Select
-  a <strong>Database Type</strong> and configure the required connection
+  <p>Click on the <strong>Databases</strong> tab to open the Databases
+  sidebar in the left pane. Use the <strong>Add a Database
+  Connection</strong> button to configure a connection. Select a
+  <strong>Database Type</strong> and configure the required connection
   information or the path to the file.</p>
   
   <p>Click <strong>Add</strong> to create the connection and open the
@@ -61,9 +56,16 @@
   
   <ul>
     <li><strong>Full Table</strong>: a spreadsheet-like view of the
-    selected table, showing all fields.</li>
+    selected table, showing all fields. The table can be sorted by any
+    column. Columns can be hidden or displayed via the column selection
+    button at the right side of the title row.</li>
     <li><strong>Query</strong>: a Query field for composing SQL queries
-    (for any table) and an Output pane to show the query results.</li>
+    (for any table) and an Output pane similar to the Full Table view to
+    show the query results. Click <strong>Run</strong> to execute the
+    contents of the Query field. The <strong>Refresh</strong> button is
+    for refreshing the query output display. It re-runs the last
+    successful query, not the current contents of the Query editing
+    buffer above.</li>
     <li><strong>Schema</strong>: displays the Schema for the selected
     table including the field id, name and type as well as whether it is
     nullable. Indicates the default value (if any) and shows which is
