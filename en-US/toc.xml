@@ -635,6 +635,7 @@
 <node name="Regular Expressions" link="regex.html#regex_top">
   <node name="Rx Toolkit" link="regex.html"
         flags="ide">
+    <node name="Selecting a Language" link="regex.html#select_rx_language">
     <node name="Creating Regular Expressions" link="regex.html#Creating_rx">
       <node name="Adding Metacharacters to a Regular Expression" link="regex.html#Add_Metacharacters"/>
       <node name="Setting the Match Type" link="regex.html#Match_Type"/>

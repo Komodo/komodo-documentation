@@ -43,38 +43,22 @@
   the regular expression as necessary to produce the desired
   matches in the <strong>Match Results</strong> pane.</p>
 
-  <p><strong>Note</strong>: Although the Rx Toolkit has a Python
-  back end, most Perl, PHP, Ruby and Tcl regular expression syntax
-  is also supported.</p>
-
   <p>If you are new to Regular Expressions, see the <a class="doc"
   href="regex-intro.html#regex-intro_top">Regular
   Expressions Primer</a>. In addition, online references for
   Python, Perl, PHP, Ruby, and Tcl regular expressions are
   available via the Rx Toolkit's <strong>Help</strong> menu.</p>
 
-  <p>To open the Rx Toolkit, do one of the following:</p>
-
-  <ul>
-    <li>On the Standard Toolbar, click <img class="icon" src=
-    "img/rx_button.png" border="0" />.</li>
-
-    <li style="list-style: none">&nbsp;&nbsp;or<br /></li>
-
-    <li>On the <strong>Tools</strong> menu, select <strong>Rx
-    Toolkit</strong>.</li>
-  </ul>
-
-  <p>To close the Rx Toolkit:</p>
-
-  <ul>
-    <li>Click the "X" button in the top right corner of the Rx
-    Toolkit window.</li>
-  </ul>
+  <p>To open the Rx Toolkit, click <img class="icon"
+  src="img/rx_button.png" border="0" /> in the toolbar, or select
+  <strong>Tools|Rx Toolkit</strong>.</p>
 
   <p><strong>Rx Toolkit Quick Reference</strong></p>
 
   <ul>
+    <li><a class="doc" href="#select_rx_language">Select a language</a>
+    Rx engine</li>
+    
     <li><a class="doc" href="#Creating_rx">Create and edit</a>
     regular expressions in the <strong>Regular Expression</strong>
     pane.</li>
@@ -114,11 +98,32 @@
     Text</strong> pane.</li>
   </ul>
 
+  <h2><a name="select_rx_language" id="select_rx_language">Selecting a
+  Language</a></h2>
+  
+  <p>Regular expression syntax is similar in most programming languages,
+  but there are some important differences. The Rx Toolkit can evaluate
+  regular expressions using:</p>
+  
+  <ul>
+    <li><a target="_blank" href="https://developer.mozilla.org/en/JavaScript/Guide/Regular_Expressions">JavaScript</a></li>
+    <li><a target="_blank" href="http://docs.activestate.com/activeperl/5.12/lib/pods/perlreref.html">Perl</a></li>
+    <li><a target="_blank" href="http://php.net/manual/en/book.pcre.php">PHP</a></li>
+    <li><a target="_blank" href="http://docs.activestate.com/activepython/2.7/python/library/re.html">Python</a></li>
+    <li><a target="_blank" href="http://ruby-doc.org/core-1.9/classes/Regexp.html">Ruby</a>
+    (requires the <a target="_blank" href="http://flori.github.com/json/">JSON</a> module)</li>
+  </ul>
+
+  <p>Select the regular expression engine you want to use from the
+  drop-down list in the Regular Expression panel. You will need the
+  requisite Perl, PHP, and Ruby interpreters installed to use those
+  engines. Komodo has embedded interpreters for JavaScript and
+  Python.</p>
+
   <h2><a name="Creating_rx" id="Creating_rx">Creating Regular
   Expressions</a></h2>
 
-  <p>Use the Rx Toolkit to create and edit regular expressions.
-  Create regular expressions by typing them in the <strong>Regular
+  <p>Type or paste your expression in the <strong>Regular
   Expression</strong> pane. A regular expression can include
   <a class="doc" href=
   "regex-intro.html#wildcards">metacharacters</a>,
@@ -136,15 +141,16 @@
   'Ctrl'+'Shift'+'6' ('Cmd'+'Shift'+'6' on Mac OS X) if the
   default key binding scheme is in effect.</p>
 
-  <p><strong>Note: Do not enclose regular expressions in forward
-  slashes ("/"). The Rx Toolkit does not recognize enclosing
-  slashes.</strong></p><img src="img/rx_match.gif" />
+  <p><strong>Note</strong>: Do not enclose regular expressions in forward
+  slashes ("/"). The Rx Toolkit does not recognize enclosing slashes.</p>
+  
+  <img src="img/rx_match.png" />
 
   <h3><a name="Add_Metacharacters" id="Add_Metacharacters">Adding
   Metacharacters to a Regular Expression</a></h3>
 
   <p>The <strong>Shortcuts</strong> menu provides a list of all of
-  the metacharacters that are valid in the Rx Toolkit.</p>
+  the metacharacters that are valid in the selected language.</p>
 
   <p>To add a metacharacter to a regular expression:</p>
 
@@ -166,7 +172,7 @@
   which function is used to match the regular expression to the
   search text. The options are based on module-level functions of
   Python's <a class="doc" href=
-  "http://aspn.activestate.com/ASPN/docs/ActivePython/2.3/python/lib/module-re.html">
+  "http://docs.activestate.com/activepython/2.7/python/library/re.html">
   re</a> module. Choose from the following options:</p>
 
   <ul>
@@ -263,7 +269,7 @@
     <li>If a regular expression is invalid, the title bar of the
     <strong>Match Results</strong> pane becomes red and details of
     the error are displayed in that pane.</li>
-  </ul><img src="img/rx_matches.gif" />
+  </ul><img src="img/rx_matches.png" />
 
   <h3><a name="debug_output" id="debug_output">Match
   Results</a></h3>
@@ -703,7 +709,7 @@ while {[gets $doc line]!=-1} {
   <h3><a name="regex_php" id="regex_php">PHP</a></h3>
 
   <p>This PHP code uses a <a class="doc" href=
-  "http://aspn.activestate.com/ASPN/docs/PHP/ref.pcre.html">Perl
+  "http://php.net/manual/en/book.pcre.php">Perl
   Compatible Regular Expressions(PCRE)</a> to search for valid
   phone numbers in the United States and Canada; that is, numbers
   with a three-digit area code, followed by an additional seven
@@ -741,9 +747,7 @@ function isValidPhone($Number) {
 </pre>-->
 
   <p>This PHP example uses the <code>preg_match</code> function for
-  matching regular expressions. Other <a class="doc" href=
-  "http://aspn.activestate.com/ASPN/docs/PHP/ref.pcre.html">Perl
-  compatible regular expression functions</a> are also available.
+  matching regular expressions. Other PCRE functions are also available.
   If the function <code>isValidPhone</code> returns true, the
   program outputs a statement that includes the valid phone number.
   Otherwise, it outputs a statement advising that the number is not
