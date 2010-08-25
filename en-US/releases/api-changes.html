@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta name="generator" content="HTML Tidy for Linux (vers 11 August 2008), see www.w3.org" />
+    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+    <title>Komodo IDE/Edit 6 API Changes</title>
+    <link rel="stylesheet" type="text/css" href="../css/screen.css" />
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h1>
+      <a name="api_changes" id="api_changes">Komodo IDE/Edit 6 API Changes</a>
+    </h1>
+    <div class="contents topic" id="v6-changes">
+      <ul class="simple">
+        <li>
+          <a class="reference internal" href="#dropped-global-names" id="id1" name="id1">Dropped Global Names</a>
+        </li>
+        <li>
+          <a class="reference internal" href="#deprecated-global-names" id="id2" name="id2">Deprecated Global Names</a>
+        </li>
+        <li>
+          <a class="reference internal" href="#deprecated-xpcom" id="id3" name="id3">Deprecated XPCOM</a>
+        </li>
+        <li>
+          <a class="reference internal" href="#interface-changes" id="id4" name="id4">Interface changes</a>
+        </li>
+        <li>
+          <a class="reference internal" href="#deprecated-names-we-want-to-drop" id="id5" name="id5">Deprecated names we want to drop</a>
+        </li>
+        <li>
+          <a class="reference internal" href="#dropped-xul-elements" id="id6" name="id6">Dropped XUL elements</a>
+          <ul>
+            <li>
+              <a class="reference internal" href="#toolbox-element-ids" id="id7" name="id7">toolbox element IDs:</a>
+            </li>
+            <li>
+              <a class="reference internal" href="#toolbox-entities" id="id8" name="id8">toolbox entities</a>
+            </li>
+            <li>
+              <a class="reference internal" href="#to-classify" id="id9" name="id9">to classify:</a>
+            </li>
+            <li>
+              <a class="reference internal" href="#misc-xul-names" id="id10" name="id10">Misc. XUL names:</a>
+              <ul>
+                <li>
+                  <a class="reference internal" href="#xul-elements" id="id11" name="id11">XUL elements</a>
+                </li>
+                <li>
+                  <a class="reference internal" href="#xul-misc" id="id12" name="id12">XUL misc</a>
+                </li>
+                <li>
+                  <a class="reference internal" href="#xul-entities" id="id13" name="id13">XUL entities</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a class="reference internal" href="#xul-commands" id="id14" name="id14">XUL commands</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a class="reference internal" href="#dropped-project-and-toolbox-stuff" id="id15" name="id15">Dropped Project and Toolbox stuff</a>
+          <ul>
+            <li>
+              <a class="reference internal" href="#importing-and-exporting-packages-from-projects-is-gone-affected-files" id="id16" name="id16">Importing and exporting packages from projects is gone. Affected files:</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a class="reference internal" href="#limited-compatibility" id="id17" name="id17">Limited compatibility:</a>
+        </li>
+        <li>
+          <a class="reference internal" href="#added-misc" id="id18" name="id18">Added Misc</a>
+        </li>
+        <li>
+          <a class="reference internal" href="#dropped-notifications" id="id19" name="id19">Dropped Notifications:</a>
+        </li>
+        <li>
+          <a class="reference internal" href="#ko-filepicker" id="id20" name="id20">ko.filepicker</a>
+        </li>
+      </ul>
+    </div>
+    <p>A list of interfaces and globals that are being changed, dropped, or deprecated in Komodo 6.</p>
+    <div class="section" id="dropped-global-names">
+      <h1>
+        <a class="toc-backref" href="#id1">Dropped Global Names</a>
+      </h1>
+      <ul>
+        <li>
+          <p class="first">gProjectManager - use ko.projects.manager</p>
+          <p>Currently used in</p>
+          <ul class="simple">
+            <li>Rails toolkit</li>
+            <li>findinprojectfiles</li>
+            <li>knose</li>
+          </ul>
+        </li>
+        <li>
+          <p class="first">gFocusedProjectView - use ko.projects.active. Used in guibuilder/peGUI.js</p>
+        </li>
+        <li>
+          <p class="first">toolboxMgr - ko.toolboxes.user. Not used anywhere.</p>
+        </li>
+        <li>
+          <p class="first">ko.dd - use ko.dragdrop. Not used anywhere.</p>
+        </li>
+        <li>
+          <p class="first">ko.views.manager.loadViewFromURI - use ko.views.manager.doFileOpenAsync</p>
+        </li>
+      </ul>
+      <p>Used only in ActiveState's '
+      <a class="reference external" href="about:config">about:config</a>' macro.</p>
+    </div>
+    <div class="section" id="deprecated-global-names">
+      <h1>
+        <a class="toc-backref" href="#id2">Deprecated Global Names</a>
+      </h1>
+      <ul class="simple">
+        <li>var peMenu_addMenu = ko.projects.addMenu;</li>
+        <li>var peMenu_addMenuFromPart = ko.projects.addMenuFromPart;</li>
+        <li>var peMenu_addToolbar = ko.projects.addToolbar;</li>
+        <li>var peMenu_addToolbarFromPart = ko.projects.addToolbarFromPart;</li>
+        <li>var peMenu_editProperties = ko.projects.menuProperties;</li>
+        <li>var peMenu_partAcceptsMenuToolbar = ko.projects.partAcceptsMenuToolbar;</li>
+        <li>var peMenu_removeToolbarForPart = ko.projects.removeToolbarForPart;</li>
+        <li>var peMenu_toggleToolbarHiddenStateInPref = ko.projects.toggleToolbarHiddenStateInPref;</li>
+        <li>var findItemsByURL = ko.projects.findItemsByURL;</li>
+        <li>var removeItemsByURL = ko.projects.removeItemsByURL;</li>
+        <li>var findPartsByURL = ko.projects.findPartsByURL;</li>
+        <li>var invalidateItem = ko.projects.invokePart;</li>
+        <li>var part_invokePartById = ko.projects.invokePartById;</li>
+        <li>var part_findPartById = ko.projects.findPartById;</li>
+        <li>var part_ImportFromFS = ko.projects.importFromFileSystem;</li>
+        <li>var part_ImportFromPackage = ko.projects.importFromPackage;</li>
+        <li>var peCommand_addCommand = ko.projects.addCommand == ko.toolbox2.add_command</li>
+        <li>var command_editProperties = ko.projects.commandProperties;</li>
+        <li>var Run_CommandPart = ko.projects.runCommand;</li>
+        <li>var peFile_addDirectoryShortcut = ko.projects.addDirectoryShortcut;</li>
+        <li>var peFile_Properties = ko.projects.fileProperties;</li>
+        <li>var peFile_ShowDiffs = ko.fileutils.showDiffs;</li>
+        <li>var OpenDirectoryShortcut = ko.projects.openDirectoryShortcut;</li>
+        <li>var peFolder_getDefaultDirectory = ko.projects.getDefaultDirectory;</li>
+        <li>var peFolder_add = ko.projects.addNewPart;</li>
+        <li>var peFolder_ensureFolderAdd = ko.projects.ensureAddMenu;</li>
+        <li>var peFolder_addNewFileFromTemplate = ko.projects.addNewFileFromTemplate;</li>
+        <li>var peFolder_addFileWithURL = ko.projects.addFileWithURL;</li>
+        <li>var peFolder_addFile = ko.projects.addFile;</li>
+        <li>var peFolder_addRemoteFile = ko.projects.addRemoteFile;</li>
+        <li>var peFolder_addFolder = ko.projects.addFolder;</li>
+        <li>var peFolder_addLiveFolder = ko.projects.addLiveFolder;</li>
+        <li>var gPeMacro = ko.macros.eventHandler;</li>
+        <li>var peMacro_addMacro = ko.projects.addMacro;</li>
+        <li>var macro_executeMacro = ko.projects.executeMacro;</li>
+        <li>var macro_editProperties = ko.projects.macroProperties;</li>
+        <li>var macro_executeMacroById = ko.projects.executeMacroById;</li>
+        <li>var macro_evalAsJavascript = ko.macros.evalAsJavaScript;</li>
+        <li>var macro_recordPartInvocation = ko.macros.recordPartInvocation;</li>
+        <li>var peSnippet_addSnippet = ko.projects.addSnippet;</li>
+        <li>var AddSnippetFromText = ko.projects.addSnippetFromText;</li>
+        <li>var Snippet_insert = ko.projects.snippetInsert;</li>
+        <li>var snippet_editProperties = ko.projects.snippetProperties;</li>
+        <li>var peURL_editProperties = ko.projects.URLProperties;</li>
+        <li>var peURL_addURL = ko.projects.addURLFromText;</li>
+        <li>var peURL_newURL = ko.projects.addURL;</li>
+        <li>var view_openFilesWithPicker = ko.open.filePicker;</li>
+        <li>var view_openTemplatesWithPicker = ko.open.templatePicker;</li>
+        <li>var view_restoreWorkspace = ko.workspace.restoreWorkspace;</li>
+        <li>var view_saveWorkspace = ko.workspace.saveWorkspace;</li>
+        <li>var view_focusedScintilla = ko.window.focusedScintilla;</li>
+        <li>var view_focusedView = ko.window.focusedView;</li>
+        <li>var view_checkDiskFiles = ko.window.checkDiskFiles;</li>
+        <li>var View_GetCwd = ko.window.getCwd;</li>
+        <li>gViewsMgr remains as a deprecated alias to ko.views.manager</li>
+      </ul>
+    </div>
+    <div class="section" id="deprecated-xpcom">
+      <h1>
+        <a class="toc-backref" href="#id3">Deprecated XPCOM</a>
+      </h1>
+      <ul class="simple">
+        <li>koPreferenceSet.addObserver - use koPreferenceSet.prefObserverService</li>
+        <li>koPreferenceSet.removeObserver - use koPreferenceSet.prefObserverService</li>
+      </ul>
+    </div>
+    <div class="section" id="interface-changes">
+      <h1>
+        <a class="toc-backref" href="#id4">Interface changes</a>
+      </h1>
+      <p>koIPartService.runningMacro deprecated, replaced by koToolBox2Service.runningMacro</p>
+      <p>runningMacro.project returns the active project, if there is one, regardless of where the macro being run lives. If the macro is part of the current project, runningMacro.project gives that project. This JavaScript gives the main owner of the runningMacro:</p>
+      <pre class="literal-block">
+var parent = runningMacro.parent;
+while (parent.parent) parent = parent.parent;
+return parent;
+</pre>
+      <p>koIPartService.findPartForRunningMacro is dropped. Use koIToolbox2Service.runningMacro.project.findPart(...) instead</p>
+    </div>
+    <div class="section" id="deprecated-names-we-want-to-drop">
+      <h1>
+        <a class="toc-backref" href="#id5">Deprecated names we want to drop</a>
+      </h1>
+      <p>gViewMgr -- use ko.views.manager -- used in closeallbut, aboutconfig, Bookmark-Click, komodo_html_entities, knose</p>
+    </div>
+    <div class="section" id="dropped-xul-elements">
+      <h1>
+        <a class="toc-backref" href="#id6">Dropped XUL elements</a>
+      </h1>
+      <div class="section" id="toolbox-element-ids">
+        <h2>
+          <a class="toc-backref" href="#id7">toolbox element IDs:</a>
+        </h2>
+        <ul class="simple">
+          <li>menu_toolbox</li>
+          <li>menu_toolboxAdd</li>
+          <li>menu_toolboxExportPackage</li>
+          <li>menu_toolboxHiddenMenu</li>
+          <li>menu_toolboxImportPackage</li>
+          <li>menu_toolboxSortBy</li>
+          <li>menupopup_toolboxSortBy</li>
+          <li>popup_toolbox</li>
+          <li>popup_toolboxAdd</li>
+          <li>toolbox-menuseparator</li>
+          <li>toolboxContext</li>
+          <li>toolboxContextMenu_cut</li>
+          <li>toolboxContextMenu_copy</li>
+          <li>toolboxContextMenu_partPaste</li>
+          <li>toolboxContextMenu_delete</li>
+          <li>toolboxContextMenu_editProperties</li>
+          <li>menu_projectMakeActive</li>
+          <li>menu_projectMakeActive_popup</li>
+          <li>ko.projects.manager.getProjectsMenu</li>
+          <li>menu_projectSortBy</li>
+          <li>cmd_projectSortBy</li>
+          <li>menu_project_submenu</li>
+          <li>menu_projectAdd</li>
+          <li>broadcaster_projectCurrent</li>
+          <li>projectAdd_popup</li>
+        </ul>
+      </div>
+      <div class="section" id="toolbox-entities">
+        <h2>
+          <a class="toc-backref" href="#id8">toolbox entities</a>
+        </h2>
+        <ul class="simple">
+          <li>exportPackage.label</li>
+          <li>importPackage.label</li>
+          <li>menuToolboxAdd.accesskey</li>
+          <li>toolbox.accesskey</li>
+          <li>toolbox.label</li>
+          <li>menuToolbox.accesskey</li>
+        </ul>
+      </div>
+      <div class="section" id="to-classify">
+        <h2>
+          <a class="toc-backref" href="#id9">to classify:</a>
+        </h2>
+        <ul class="simple">
+          <li>Added: cmd_renameProject</li>
+        </ul>
+      </div>
+      <div class="section" id="misc-xul-names">
+        <h2>
+          <a class="toc-backref" href="#id10">Misc. XUL names:</a>
+        </h2>
+        <div class="section" id="xul-elements">
+          <h3>
+            <a class="toc-backref" href="#id11">XUL elements</a>
+          </h3>
+          <ul class="simple">
+            <li>partviewer-filter-textbox</li>
+            <li>partviewer</li>
+            <li>id projectviewbox (Used in several overlays' insertafter attribute)</li>
+            <li>id="projectview-vbox"&gt;</li>
+            <li>id="projectview"</li>
+            <li>id projectContext</li>
+            <li>id="projectContext"</li>
+            <li>id="projectContextMenu_cut"</li>
+            <li>id="projectContextMenu_copy"</li>
+            <li>id="projectContextMenu_partPaste"</li>
+            <li>id="projectContextMenu_delete"</li>
+            <li>id="projectContextMenu_editProperties"</li>
+            <li>tabid="project_tab"</li>
+            <li>broadcaster_projectCurrent</li>
+            <li>projectNameTreeColumn.label</li>
+            <li>projectNameTreeColumn.accesskey</li>
+            <li>id="projectView_toolsPopup"</li>
+            <li>id="projectView_newProjectButton"</li>
+            <li>id="projectView_openButton"</li>
+            <li>id="projectView_saveButton"</li>
+            <li>id="projectView_sortByMenu"</li>
+            <li>id="projectView_sortByMenuPopup"</li>
+            <li>id="projectView_AddItem"</li>
+            <li>id="projectView_AddItemPopup"</li>
+            <li>id="project_sortBy_menupopup</li>
+            <li>id="project_sortBy_name_menu"</li>
+            <li>id="project_sortByName_menupopup"</li>
+            <li>id="project_sortDirection_menupopup"</li>
+            <li>id="project_sortDirection_natural_menuitem"</li>
+            <li>id= project_sortDirection_ascending_menuitem"</li>
+            <li>id= project_sortDirection_descending_menuitem"</li>
+            <li>id="project_tab"</li>
+            <li>id="projectView_tools"</li>
+            <li>id="projectView_toolsPopup"</li>
+            <li>id="projectView_newProjectButton"</li>
+            <li>id="projectView_openButton"</li>
+            <li>id="projectView_saveButton"</li>
+            <li>id="projectView_sortByMenu"</li>
+            <li>id="projectView_sortByMenuPopup</li>
+            <li>id="projectView_AddItem"</li>
+            <li>id="projectView_AddItemPopup"</li>
+            <li>id="folder_context"</li>
+            <li>id="folder_context_popup"</li>
+            <li>id="folder_context_newFile"</li>
+            <li>id="folder_context_newFolder"</li>
+            <li>id="folder_context_newLiveFolder"</li>
+            <li>id="folder_context_existingFile"</li>
+            <li>id="folder_context_remoteFile"</li>
+          </ul>
+        </div>
+        <div class="section" id="xul-misc">
+          <h3>
+            <a class="toc-backref" href="#id12">XUL misc</a>
+          </h3>
+          <ul class="simple">
+            <li>css class addToolboxItemButton</li>
+          </ul>
+        </div>
+        <div class="section" id="xul-entities">
+          <h3>
+            <a class="toc-backref" href="#id13">XUL entities</a>
+          </h3>
+          <ul class="simple">
+            <li>projectView.tooltiptext</li>
+            <li>entity projectSortDirectionNatural.label</li>
+            <li>entity projectSortDirectionNatural.accesskey</li>
+            <li>entity projectSortDirectionAscending.label</li>
+            <li>entity projectSortDirectionAscending.accesskey</li>
+            <li>entity projectSortDirectionDescending.label</li>
+            <li>entity projectSortDirectionDescending.accesskey</li>
+            <li>entity addItemToCurrentProject.tooltiptext</li>
+            <li>entity folderContext.accesskey</li>
+            <li>folderContextExistingFile.accesskey</li>
+            <li>folderContextNewCommand.accesskey</li>
+            <li>folderContextNewFile.accesskey</li>
+            <li>folderContextNewFolder.accesskey</li>
+            <li>folderContextNewLiveFolder.accesskey</li>
+            <li>folderContextNewMacro.accesskey</li>
+            <li>folderContextNewMenu.accesskey</li>
+            <li>folderContextNewShortcut.accesskey</li>
+            <li>folderContextNewSnippet.accesskey</li>
+            <li>folderContextNewTemplate.accesskey</li>
+            <li>folderContextNewToolbar.accesskey</li>
+            <li>folderContextNewURL.accesskey</li>
+            <li>folderContextRemoteFile.accesskey</li>
+          </ul>
+        </div>
+      </div>
+      <div class="section" id="xul-commands">
+        <h2>
+          <a class="toc-backref" href="#id14">XUL commands</a>
+        </h2>
+        <ul class="simple">
+          <li>cmd_exportItems</li>
+          <li>cmd_exportToPackage</li>
+          <li>cmd cmd_viewProjects</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section" id="dropped-project-and-toolbox-stuff">
+      <h1>
+        <a class="toc-backref" href="#id15">Dropped Project and Toolbox stuff</a>
+      </h1>
+      <ul class="simple">
+        <li>ko.projects.handle_parts_reload</li>
+        <li>ko.toolboxes.shared</li>
+        <li>ko.toolboxes.scc</li>
+        <li>most of ko.toolboxes.user</li>
+        <li>ko.projects.active</li>
+        <li>ko.projects.activeView</li>
+        <li>ko.projects.getManagerForItem</li>
+        <li>ko.projects.manager.lastCurrentProject</li>
+        <li>ko.projects.manager._projects</li>
+        <li>ko.projects.manager.getProjectsMenu (and xul tag)</li>
+        <li>ko.projects.manager.hasProject</li>
+        <li>ko.projects.manager.managers</li>
+        <li>ko.projects.manager.getAllProjects</li>
+        <li>ko.projects.manager.getFocusedProjectView</li>
+        <li>ko.projects.lastCurrentProject</li>
+        <li>ko.projects.manager.addItem</li>
+        <li>ko.projects.manager.removeItem</li>
+        <li>ko.projects.manager.removeItems</li>
+        <li>ko.toolboxes.importPackage -- can't import packages into toolboxes now</li>
+        <li>folder_context_newSnippet</li>
+        <li>folder_context_newCommand</li>
+        <li>folder_context_newTemplate</li>
+        <li>folder_context_newURL</li>
+        <li>folder_context_newMacro</li>
+        <li>folder_context_newShortcut</li>
+        <li>folder_context_newMenu</li>
+        <li>folder_context_newToolbar</li>
+        <li>exporting packages from the toolbox is gone</li>
+        <li>toolboxController is no longer supported:</li>
+        <li>ko.projects.exportItems</li>
+        <li>ko.projects.exportPackageItems</li>
+        <li>Toolbox_ExportItems</li>
+        <li>Toolbox_ExportPackageItems</li>
+        <li>ko.projects.sortByOnPopupShowing</li>
+        <li>ko.projects.sortByMenuHandler</li>
+        <li>ko.projects.sortByDirectionOnPopupShowing</li>
+        <li>projectExtensionManager.prototype.updateToplevelMenu</li>
+        <li>projectExtensionManager.prototype.updateMenu</li>
+        <li>ko.projects.ensureAddMenu</li>
+        <li>ko.projects.exportItems</li>
+        <li>ko.projects.exportPackageItems</li>
+        <li>ko.projects.manager.lastCurrentProject</li>
+        <li>ko.projects.manager.activeView</li>
+        <li>ko.projects.manager._projects</li>
+        <li>ko.projects.manager.getProjectsMenu (and xul tag)</li>
+        <li>ko.projects.manager.hasProject</li>
+        <li>ko.projects.manager.managers</li>
+        <li>ko.projects.manager.getAllProjects</li>
+        <li>ko.projects.manager.getFocusedProjectView</li>
+        <li>ko.projects.manager.findItemByAttributeValue</li>
+        <li>ko.projects.manager.sortByMenuHandler</li>
+        <li>ko.projects.manager.sortByDirectionOnPopupShowing</li>
+        <li>ko.projects.ensureAddMenu</li>
+        <li>peFolder_ensureFolderAdd</li>
+        <li>newProjectFromTemplate</li>
+        <li>menu_newProjectFromTemplate</li>
+        <li>cmd_newProjectFromTemplate</li>
+        <li>generalNewProjectFromTemplate.desc (entity)</li>
+        <li>ko.projects.manager.newProjectFromTemplate</li>
+        <li>cmd_reimportFromFS_Project</li>
+        <li>reImport.label</li>
+        <li>cmd_reimportFromFS_Project</li>
+        <li>menu_reimportFromFS</li>
+        <li>reImportFromFileSystemWithSameSettings.tooltiptext</li>
+      </ul>
+      <div class="section" id="importing-and-exporting-packages-from-projects-is-gone-affected-files">
+        <h2>
+          <a class="toc-backref" href="#id16">Importing and exporting packages from projects is gone. Affected files:</a>
+        </h2>
+        <ul class="simple">
+          <li>package-export-wizard.xul</li>
+          <li>package-import-wizard.xul</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section" id="limited-compatibility">
+      <h1>
+        <a class="toc-backref" href="#id17">Limited compatibility:</a>
+      </h1>
+      <ul class="simple">
+        <li>ko.toolboxes.user</li>
+        <li>ko.toolboxes.user.toolbox.createPartFromType =&amp;gt; ko.toolbox2.createPartFromType</li>
+        <li>ko.toolboxes.user.addItem =&amp;gt; ko.toolbox2.addItem</li>
+      </ul>
+    </div>
+    <div class="section" id="added-misc">
+      <h1>
+        <a class="toc-backref" href="#id18">Added Misc</a>
+      </h1>
+      <ul class="simple">
+        <li>koIPartService.runningMacro now expects a koITool object, not a koIPart</li>
+        <li>closeTheOpenedFilesFromThisProject.message - no longer used in</li>
+      </ul>
+    </div>
+    <div class="section" id="dropped-notifications">
+      <h1>
+        <a class="toc-backref" href="#id19">Dropped Notifications:</a>
+      </h1>
+      <ul class="simple">
+        <li>kpf_tree_filter_status</li>
+      </ul>
+    </div>
+    <div class="section" id="ko-filepicker">
+      <h1>
+        <a class="toc-backref" href="#id20">ko.filepicker</a>
+      </h1>
+      <ul class="simple">
+        <li>ko.filepicker.openFile =&gt; ko.filepicker.browseForFile</li>
+        <li>ko.filepicker.openExeFile =&gt; ko.filepicker.browseForExeFile</li>
+        <li>ko.filepicker.openFiles =&gt; ko.filepicker.browseForFiles</li>
+      </ul>
+    </div>
+    <!-- id="content" -->
+  </body>
+</html>
