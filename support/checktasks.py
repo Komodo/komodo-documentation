@@ -55,9 +55,9 @@ class links(_KomodoDocTask):
         if path not in self._doc_from_path:
             try:
                 if basename(path) == "toc.xml":
-                    self._doc_from_path[path] = _TOCDocument(path)
+                    self._doc_from_path[path] = _TOCDocument(path, self.log)
                 else:
-                    self._doc_from_path[path] = _Document(path)
+                    self._doc_from_path[path] = _Document(path, self.log)
             except SyntaxError, ex:
                 # Currently only handle XHTML.
                 print "%s: can't parse: %s" % (path, ex)
@@ -199,8 +199,9 @@ class _Document(object):
     """Wrapper for an HTML file to provide convenience info for link
     checking.
     """
-    def __init__(self, path):
+    def __init__(self, path, log):
         self.path = path
+        self.log = log
         self._gather_links_and_anchors(path)
 
     def _gather_links_and_anchors(self, path):
@@ -215,15 +216,19 @@ class _Document(object):
         body = root.find("{%s}body" % ns)
         for elem in body.getiterator():
             if elem.tag == '{%s}a' % ns:
+                weird = True
                 if elem.get("href"):
                     self.links.add(elem.get("href"))
-                elif elem.get("id"):
+                    weird = False
+                if elem.get("id"):
                     self.anchors.add(elem.get("id"))
+                    weird = False
                 elif elem.get("name"):
                     self.anchors.add(elem.get("name"))
-                else:
-                    log.warn("<a> without href, id or name: %s",
-                             elem.attrib)
+                    weird = False
+                if weird:
+                    self.log.warn("<a> without href, id or name: %s",
+                        elem.attrib)
             elif elem.get("id"):
                 self.anchors.add(elem.get("id"))
 
