@@ -610,6 +610,7 @@
     <node name="Customize the SCC checkout parameters" link="scc.html#scc_checkout_2"/>
     <node name="SCC Command line summary" link="scc.html#scc_checkout_3"/>
   </node>
+  <node name="SCC Commit Dialog" link="scc.html#commit_dialog"/>
   <node name="Configuring SCC Integration" link="scc.html#config">
     <node name="Configuring CVS" link="scc.html#config_cvs">
       <node name="Basic CVS Configuration" link="scc.html#basic_cvs_config"/>
