@@ -128,7 +128,7 @@
 </node>
 
 <node name="Database Explorer" link="db_explorer.html#database_exp_top">
-  <node name="Databases Sidebar" link="db_explorer.html#database_exp_sidebar"/>
+  <node name="Adding a Database Connection" link="db_explorer.html#database_exp_add"/>
   <node name="Examining Tables" link="db_explorer.html#database_exp_tables"/>
 </node>
 
