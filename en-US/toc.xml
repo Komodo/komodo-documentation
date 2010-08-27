@@ -784,12 +784,9 @@
 
 <node name="Tutorials" link="tut-intro.html#tut_over_top">
   <node id="showcase_tutorial" name="Feature Showcase" link="tutorial/tourlet_over.html#over_top">
-    <node name="Live Projects" link="tutorial/tourlet_live_projects.html#tourlet_live_projects_top"/>
     <node name="Remote Files" link="tutorial/tourlet_remote_files.html#tourlet_remote_files_top"/>
     <node name="Custom Toolbars" link="tutorial/tourlet_custtoolbar.html#custtoolbar_top"/>
-    <node name="Directory Shortcut" link="tutorial/tourlet_dirshortcut.html#dirshortcut_top"/>
     <node name="Export/Import a Project Package" link="tutorial/tourlet_expimppkg.html#expimppkg_top"/>
-    <node name="Filesystem in Project" link="tutorial/tourlet_filesys.html#filesys_top"/>
     <node name="Custom Keybindings" link="tutorial/tourlet_keybinding.html#keybinding_top"/>
     <node name="Custom Template in a Project" link="tutorial/tourlet_tempproj.html#tempproj_top"/>
     <node name="Preview Cascading Style Sheets" link="tutorial/tourlet_viewcss.html#viewcss_top"/>
