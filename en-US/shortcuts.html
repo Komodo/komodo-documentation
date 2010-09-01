@@ -325,17 +325,17 @@
 [[  %(ask:Your Name:Trent Mick)   ]]
 </pre>
 
-  <h2><a name="options" id="options">Basic Interpolation Shortcut
+  <h2><a name="options" id="options">Basic Interpolation 
   Options</a></h2>
 
   <p>The following table shows the standard options available for
-  <em>most</em> interpolation shortcuts. The <a href=
+  <em>most</em> interpolation shortcuts, though the <a href=
   "#shortcuts_askcode">%(ask)</a>, <a href=
   "#shortcuts_askcode">%(askpass)</a>, <a href=
   "#shortcuts_pathcode">%(path)</a>, <a href=
   "#shortcuts_prefscode">%(pref)</a> and <a href=
   "#shortcuts_debugcode">%(debugger)</a> shortcuts have their own
-  options and syntax.</p>
+  additional options and syntax.</p>
 
   <table border="1" cellpadding="5">
     <tr>
@@ -365,6 +365,47 @@
       <td>If a value for the shortcut cannot be determined
       automatically, then &lt;default&gt; is used.</td>
     </tr>
+
+    <tr>
+      <td>lowercase</td>
+
+      <td>%(&lt;code&gt;:<b>lowercase</b>)</td>
+
+      <td>The interpolation result will all be lower cased.</td>
+    </tr>
+
+    <tr>
+      <td>uppercase</td>
+
+      <td>%(&lt;code&gt;:<b>uppercase</b>)</td>
+
+      <td>The interpolation result will all be upper cased.</td>
+    </tr>
+
+    <tr>
+      <td>capitalize</td>
+
+      <td>%(&lt;code&gt;:<b>capitalize</b>)</td>
+
+      <td>The first character of the interpolation result will be upper cased.</td>
+    </tr>
+
+    <tr>
+      <td>dirname</td>
+
+      <td>%(&lt;code&gt;:<b>dirname</b>)</td>
+
+      <td>The parent directory of the resulting shortcut code.</td>
+    </tr>
+
+    <tr>
+      <td>basename</td>
+
+      <td>%(&lt;code&gt;:<b>basename</b>)</td>
+
+      <td>The base name (leaf name) of the resulting shortcut code.</td>
+    </tr>
+
   </table>
 
   <p>Use the <code>%(...:orask)</code> modifier with other
