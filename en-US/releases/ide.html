@@ -66,6 +66,8 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   
   <li><strong>Hyperlink Additions</strong>: Hyperlinks have been extended and can now...
     <ul>
+      <li>show image preview while hovering on an image link,</li>
+      <li>show Code Intelligence definitions while hovering on a symbol,</li>
       <li>jump to an HTML anchor tag to it's definition,</li>
       <li>jump to HREF and SRC locations,</li>
       <li>open files from a path reference,</li>
@@ -88,6 +90,73 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to debugging, interactive shells, source code
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-6.0.0rc1">6.0.0 RC 1 Bug Fixes</h3>
+
+<ul>
+  <li>Places:
+    <ul>
+      <li>Show the context menu on the empty area of the tree. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87815">87815</a>)</li>
+      <li>Trigger file open on ENTER keypress. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87694">87694</a>)</li>
+      <li>Filter views now work correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87015">87015</a>)</li>
+    </ul>
+  </li>
+  <li>Projects:
+    <ul>
+      <li>Don't create ".kpf.bak" files in the base of the user data dir. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87515">87515</a>)</li>
+      <li>All windows now follow project changes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87444">87444</a>)</li>
+      <li>Display project toolboxes in the toolbox. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87591">87591</a>)</li>
+      <li>Always show a toolbox for the current project, even if it's empty. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87824">87824</a>)</li>
+    </ul>
+  </li>
+  <li>Toolbox:
+    <ul>
+      <li>Support cut/copy/paste commands. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87771">87771</a>)</li>
+      <li>Allow saving of recorded macros. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87053">87053</a>)</li>
+      <li>Hide private (SCC) directories from the toolbox folder. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87767">87767</a>)</li>
+    </ul>
+  </li>
+  <li>Drag/Drop:
+    <ul>
+      <li>Mac: no longer overwrites the clipboard contents. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85494">85494</a>)</li>
+      <li>Komodo now remembers the last dropped directory. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87681">87681</a>)</li>
+    </ul>
+  </li>
+  <li>Editor:
+    <ul>
+      <li>Allow IME input in the editor. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86648">86648</a>)</li>
+      <li>Remove the editor tooltip when the editor loses focus. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85808">85808</a>)</li>
+      <li>Ensure the titlebar is updated when saving to a new file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87615">87615</a>)</li>
+      <li>Fix for CSS indentation when line ends with a comment. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87586">87586</a>)</li>
+    </ul>
+  </li>
+  <li>Keybindings:
+    <ul>
+      <li>Add Ctrl+= and Ctrl+- for zoom in/out. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87748">87748</a>)</li>
+      <li>Vi: moving left/right now scrolls horizontally. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87820">87820</a>)</li>
+    </ul>
+  </li>
+  <li>Code Intelligence:
+    <ul>
+      <li>Position calltip relative to the cursor. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87587">87587</a>)</li>
+      <li>Add a hyperlink definition popup when hovering. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82196">82196</a>)</li>
+      <li>JavaScript: completions now work for aliased variables. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87671">87671</a>)</li>
+      <li>Python: ensure all sys.path directories are used. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87520">87520</a>)</li>
+    </ul>
+  </li>
+  <li>Source Code Control:
+    <ul>
+      <li>Bzr: ensure the scc status is properly detected. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87534">87534</a>)</li>
+      <li>Bzr: history command now works with merged branches. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87618">87618</a>)</li>
+    </ul>
+  </li>
+  <li>Browser Preview: can now preview remote files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=29508">29508</a>)</li>
+  <li>Image Preview: hyperlinks now show an image preview when hovering on an image link.</li>
+  <li>Rx Toolkit: correctly relay all error messages. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87713">87713</a>)</li>
+  <li>Statusbar: make encoding statusbar a changeable drop-down menulist. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=78224">78224</a>)</li>
+  <li>Workspace restore: fix restoring a second Komodo window. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87500">87500</a>)</li>
+  <li>Crash: Mac: fix crasher with text drag and drop. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87571">87571</a>)</li>
+</ul>
 
 <h3 id="bug_fixes-6.0.0b3">6.0.0 Beta 3 Bug Fixes</h3>
 
