@@ -16,8 +16,7 @@
 </head>
 
 <body>
-  <h1><a name="toolbox_top" id="toolbox_top">Using the
-  Toolbox</a></h1>
+  <h1><a id="toolbox_top">Toolboxes</a></h1>
 
   <div class="right-float-box">
     <p><strong>Feature Showcases</strong></p>
@@ -26,10 +25,6 @@
       <li>create a <a href=
       "tutorial/tourlet_custtoolbar.html#custtoolbar_top">custom
       toolbar</a></li>
-
-      <li>create a <a href=
-      "tutorial/tourlet_dirshortcut.html#dirshortcut_top">directory
-      shortcut</a></li>
 
       <li>import a <a href=
       "tutorial/tourlet_filesys.html#filesys_top">filesystem</a></li>
@@ -44,12 +39,73 @@
     </ul>
   </div>
   
-  <p><strong>Note</strong>: The Komodo Toolbox system is being changed
-  extensively during the Komodo 6 Beta period. The documentation below
-  does not accurately reflect the current interface.</p>
+  <p>Komodo has a Toolbox sidebar for storing tools - bits of code that
+  you can quickly add to Komodo to automate tasks, integrate extrnal
+  tools, or just store snippets of text or links. These following types
+  of tools can be added anywhere in the Toolbox sidebar:</p>
+    
+  <ul>
+    <li><a href="macros.html">macros</a></li>
+    <li><a href="run.html">commands</a></li>
+    <li><a href="snippets.html">snippets</a></li>
+    <li><a href="templates.html">templates</a></li>
+    <li><a href="urls.html">URLs</a></li>
+  </ul>
   
-  <hr/>
+  <p>The top level of the Toolbox sidebar is considered the global
+  toolbox. This is an area for tools that are generally applicable for
+  any file you might be working on. Tools can be grouped into folders to
+  keep them organized.</p>
+  
+  <p>There are also two optional toolboxes which are displayed under
+  special toolbox icons within the sidebar:</p>
+      
+  <ul>
+    <li><strong>Shared Toolbox</strong>: An optional toolbox for teams
+    of people to share tools, or a place to put tools that are shared
+    between multiple installations of Komodo. The location of this
+    toolbox is configured in the <a
+    href="prefs.html#Shared_Support">Shared Support</a>
+    preferences.</li>
+  
+    <li><strong>Project Toolbox</strong>: Tools specific to a particular
+    project, only visible when that project is active.</li>
+  </ul>
 
+  <h2><a id="tools_add_rem">Adding, Removing and Managing Tools</a></h2>
+  
+  <p><strong>To add an item to the toolbox</strong>: click the Tools menu button and
+  select the type of tool you want (e.g. "New Macro..."). A relevant
+  dialog box will open with options for the tool. Clicking "OK" adds it
+  the new tool at the top level of the Toolbox.</p>
+  
+  <p><strong>To add an item in a specific place</strong>: right-click on
+  the desired folder or toolbox, and select <strong>Add|New...</strong>
+  from the context menu.</p>
+
+  <p><strong>To remove an item</strong>: select it and hit the Delete
+  key or right-click on it and choose "Delete" from the context menu</p>
+  
+  <p>Tools can be dragged between folders and toolboxes or cut/copy
+  pasted anywhere in the Toolbox sidebar.</p>
+  
+  <!-- TODO - describe in detail
+  Behind the scenes:
+  
+  Tooboxes are stored as special directories containing a file for each tool.
+  
+  Global: user data dir -> tools directory
+  Shared: tools directory anywhere in the filesystem
+  Project: .komodotools hidden directory in the same directory as the 
+  
+  
+  Tools are stored in .komodotool JSON files.
+  
+  -->
+
+  <!-- TODO remove this stuff when I'm sure there's nothing worth keeping
+  <hr/>
+  
   <p>The Komodo Toolbox stores components that are frequently used.
   The Toolbox is similar to a persistent <a href=
   "project.html#project_top">project</a>; however,
@@ -276,6 +332,9 @@
   <p>The Shared Toolbox is populated by the same methods described
   in <a href="#toolbox_addcomp">Adding Components to the
   Toolbox</a>.</p>
+  
   <hr />
+  -->
+  
 </body>
 </html>
