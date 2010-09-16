@@ -102,25 +102,10 @@
   </node>
 </node>
 
-<node name="Projects Sidebar" link="project.html#project_top">
-  <node name="Displaying the Projects Sidebar" link="project.html#project_display"/>
-  <node name="Creating Projects" link="project.html#Creating_a_Project">
-    <node name="Live Import" link="project.html#Live_Import"/>
-  </node>
-  <node name="Opening Projects" link="project.html#Opening_a_Project"/>
-  <node name="Setting the Active Project" link="project.html#Switching_Between_Projects"/>
-  <node name="Adding Components to Projects" link="project.html#project_add_comp"/>
-  <node name="Project Display Settings" link="project.html#org_project"/>
-  <node name="Saving Projects" link="project.html#Saving_a_Project"/>
-  <node name="Refreshing Project Status" link="project.html#Refreshing_a_Project"/>
-  <node name="Importing/Exporting via Packages" link="project.html#project_impexp"/>
-  <node name="Importing from a File System" link="project.html#project_impcomp"/>
-  <node name="Project Source Code Control" link="project.html#project_scc"
-        flags="ide"/>
-  <node name="Reverting Projects" link="project.html#Reverting_a_Project"/>
-  <node name="Closing Projects" link="project.html#Closing_Projects"/>
-  <node name="Deleting Projects" link="project.html#project_delete"/>
-  <node name="Project Properties" link="project.html#project_props"/>
+<node name="Projects" link="project.html#project_top">
+  <node name="Projects Pane" link="project.html#project_pane"/>
+  <node name="Projects Menu" link="project.html#project_menu"/>
+  <node name="Project Properties and Settings" link="project.html#project_prefs"/>
 </node>
 
 <node name="Places" link="places.html#places_top">
@@ -134,10 +119,10 @@
 
 
 <node name="Toolbox" link="toolbox.html#toolbox_top">
-  <node name="Displaying the Toolbox" link="toolbox.html#toolbox_display"/>
-  <node name="Adding Components to the Toolbox" link="toolbox.html#toolbox_addcomp"/>
-  <node name="Exporting and Importing Toolbox Contents" link="toolbox.html#export_import"/>
-  <node name="Sharing Toolboxes" link="toolbox.html#toolbox_share"/>
+  <node name="Adding, Removing, and Managing Tools" link="toolbox.html#tools_add_rem"/>
+  <node name="Special Folders - Abbreviations and Vi Commands" link="toolbox.html#tools_special_folders"/>
+  <node name="Behind the Scenes - How Tools are Stored" link="toolbox.html#tools_behind_scenes"/>
+  <node name="Importing and Exporting Tools" link="toolbox.html#tools_import_export"/>
 </node>
 
 <node name="Files" link="files.html#files_top">

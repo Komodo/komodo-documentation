@@ -39,10 +39,12 @@
     </ul>
   </div>
   
-  <p>Komodo has a Toolbox sidebar for storing tools - bits of code that
+  <p>The Toolbox sidebar is for storing "tools" - bits of code that
   you can quickly add to Komodo to automate tasks, integrate extrnal
-  tools, or just store snippets of text or links. These following types
-  of tools can be added anywhere in the Toolbox sidebar:</p>
+  tools, or just store snippets of text or links.</p>
+  
+  <p>The following types of tools can be added anywhere in the Toolbox
+  sidebar:</p>
     
   <ul>
     <li><a href="macros.html">macros</a></li>
@@ -52,19 +54,23 @@
     <li><a href="urls.html">URLs</a></li>
   </ul>
   
+  <p>To show and hide the Toolbox sidebar click the <strong>Show/Hide
+  Right Pane</strong> button in the Workspace toolbar, click
+  <strong>View|Tabs &amp; Sidebars|Toolbox</strong>, or use the key
+  binding for your platform (e.g. "Ctrl" + "Shift" + "L").</p>
+  
   <p>The top level of the Toolbox sidebar is considered the global
   toolbox. This is an area for tools that are generally applicable for
   any file you might be working on. Tools can be grouped into folders to
   keep them organized.</p>
   
-  <p>There are also two optional toolboxes which are displayed under
-  special toolbox icons within the sidebar:</p>
+  <p>There are also two optional toolboxes indicated by special toolbox
+  icons in the sidebar:</p>
       
   <ul>
-    <li><strong>Shared Toolbox</strong>: An optional toolbox for teams
-    of people to share tools, or a place to put tools that are shared
-    between multiple installations of Komodo. The location of this
-    toolbox is configured in the <a
+    <li><strong>Shared Toolbox</strong>: A toolbox for tools shared with
+    a group of people or otherwise accessed by other installations of
+    Komodo. It is configured and toggled on or off in the <a
     href="prefs.html#Shared_Support">Shared Support</a>
     preferences.</li>
   
@@ -75,266 +81,78 @@
   <h2><a id="tools_add_rem">Adding, Removing and Managing Tools</a></h2>
   
   <p><strong>To add an item to the toolbox</strong>: click the Tools menu button and
-  select the type of tool you want (e.g. "New Macro..."). A relevant
-  dialog box will open with options for the tool. Clicking "OK" adds it
-  the new tool at the top level of the Toolbox.</p>
+  select the type of tool you want (e.g. "<strong>New
+  Macro...</strong>"). A relevant dialog box will open with options for
+  the tool. Clicking "OK" adds it the new tool at the top level of the
+  Toolbox.</p>
   
   <p><strong>To add an item in a specific place</strong>: right-click on
   the desired folder or toolbox, and select <strong>Add|New...</strong>
   from the context menu.</p>
 
   <p><strong>To remove an item</strong>: select it and hit the Delete
-  key or right-click on it and choose "Delete" from the context menu</p>
+  key or right-click on it and choose "Delete" from the context menu.</p>
   
-  <p>Tools can be dragged between folders and toolboxes or cut/copy
-  pasted anywhere in the Toolbox sidebar.</p>
+  <p><strong>To move tools</strong>: drag tools or directories between
+  folders and toolboxes or cut/copy paste anywhere in the Toolbox
+  sidebar.</p>
   
-  <!-- TODO - describe in detail
-  Behind the scenes:
+  <h2><a id="tools_special_folders">Special Folders - Abbreviations and
+  Vi Commands</a></h2>
   
-  Tooboxes are stored as special directories containing a file for each tool.
+  <p>There are two folder names that have special behavior in
+  Komodo:</p>
   
-  Global: user data dir -> tools directory
-  Shared: tools directory anywhere in the filesystem
-  Project: .komodotools hidden directory in the same directory as the 
-  
-  
-  Tools are stored in .komodotool JSON files.
-  
-  -->
-
-  <!-- TODO remove this stuff when I'm sure there's nothing worth keeping
-  <hr/>
-  
-  <p>The Komodo Toolbox stores components that are frequently used.
-  The Toolbox is similar to a persistent <a href=
-  "project.html#project_top">project</a>; however,
-  rather than storing components that are specific to a particular
-  project, it stores components that are used for a variety of
-  tasks.</p>
-
-  <p>The Projects Manager and the Toolbox share a common set of
-  components. Components are of two types: Komodo-specific
-  components (such as macros, run commands and custom menus) and
-  filesystem-based components (such as files and dialog
-  projects).</p>
-
-  <p>Components within the Projects sidebar and the Toolbox are
-  manipulated using an intuitive drag-and-drop interface, by
-  context menus, or via the <strong>Project</strong> and
-  <strong>Toolbox</strong> drop-down menus. Component options are
-  accessed via the drop-down menus, or via right-click context
-  menus.</p>
-
-  <h2><a name="toolbox_display" id="toolbox_display">Displaying the
-  Toolbox</a></h2>
-
-  <p>The Toolbox is displayed on a "tab" in the <a href=
-  "workspace.html#Right_Pane">Right Pane</a> of the Komodo
-  workspace. It is displayed or hidden via any of the following
-  methods:</p>
-
   <ul>
-    <li><strong>View|Tabs &amp; Sidebars|Toolbox</strong>: Use the
-    <strong>View</strong> drop-down menu to modify Komodo's display
-    characteristics.</li>
-
-    <li><strong>Key Binding</strong>: The default key binding (in
-    the default <a href=
-    "prefs.html#Config_Key_Bindings">key binding</a>
-    scheme) for opening and closing the Toolbox tab is
-    'Ctrl'+'Shift'+'T'. See <a href=
-    "prefs.html#Config_Key_Bindings">Configuring Key
-    Bindings</a> to alter or view the current key assignment.</li>
-
-    <li><strong>Workspace Toolbar</strong>: If the Workspace
-    Toolbar is displayed, click the "Show/Hide Right Pane" button.
-    (Select <strong>View|Toolbars|Workspace</strong> to display the
-    toolbar.) Alternatively, click the <strong>Show Specific Sidebar/Tab</strong> button
-    and select <strong>Toolbox</strong>.</li>
+    
+    <li><strong>Abbreviations</strong>: Any folder named "Abbreviations"
+    for snippets it can use with the <a
+    href="abbreviations.html">Abbreviations</a> function. See the
+    "Samples" toolbox directory for an example.</li>
+    
+    <li><strong>Vi Commands</strong>: Macros stored in a folder named
+    "Vi Commands" can be run in command-line mode if <a
+    href="vikeybind.html#vi_emulation">Vi emulation</a> is enabled.</li>
   </ul>
-
-  <h2><a name="toolbox_addcomp" id="toolbox_addcomp">Adding
-  Components to the Toolbox</a></h2>
-
-  <p>The Toolbox is an organizational container for frequently used
-  "components". Components are items like files, folders, snippets,
-  macros, etc. For information about individual components, refer
-  to the relevant section of the documentation.</p>
-
-  <p>Filesystem-based components consists of items that exist as
-  entities on the disk: <a href=
-  "files.html#files_top">files</a> and <a href=
-  "templates.html#templates_top">templates</a>.
-  Komodo-specific components exist only in Komodo, and are not
-  stored as external disk entities. Komodo-specific components
-  include <a href="openshort.html#openshort_top">open
-  shortcuts</a>, <a href=
-  "folders.html#folders_top">folders</a>, <a href=
-  "snippets.html#snippets_top">snippets</a>, <a href=
-  "run.html#run_top">run commands</a>, <a href=
-  "urls.html#urls_top">URL shortcuts</a>, <a href=
-  "macros.html#macros_top">macros</a> and <a href=
-  "custtbi.html#custtbi_top">custom menus and
-  toolbars</a>.</p>
-
-  <p>Within the toolbox, filesytem-based components are merely
-  references; they cannot be moved or deleted from within Komodo;
-  moving them between projects and the Toolbox, or deleting them
-  from projects or the Toolbox, has no effect on their actual
-  disk-based location or their contents. On the other hand,
-  Komodo-specific components do not exist outside of Komodo;
-  therefore, they can be moved and copied (for example, from the
-  Toolbox to the Projects sidebar) and deleted independently of the
-  filesystem.</p>
-
-  <p>For example, when a snippet (a Komodo-specific component) is
-  copied from the Projects sidebar to the Toolbox, a new copy of the
-  snippet is created; the original version still exists in the
-  original location. Subsequent modifications of the snippet in the
-  Toolbox do not change the version of the snippet stored in the
-  Projects sidebar. On the other hand, when the contents of a file (a
-  filesystem-based component) are changed, the changes apply
-  regardless of the location from which the file is invoked.</p>
-
-  <p>To add a component to the Toolbox:</p>
-
-  <ul>
-    <li><strong>Toolbox|Add</strong>: Use the
-    <strong>Toolbox</strong> drop-down menu.</li>
-
-    <li><strong>Toolbox|Add|<em>folder_name</em></strong>: When a
-    folder name is selected in the Toolbox, the selected folder's
-    name is also displayed on the <strong>Toolbox</strong>
-    drop-down menu. Components can be added directly to that
-    folder.</li>
-
-    <li><strong>Add Button</strong>: Use the <strong>Add</strong>
-    <img class="icon" src="img/projtb_add_butt.png" /> button on
-    the <strong>Toolbox</strong> tab.</li>
-
-    <li>
-      <strong>Drag and Drop</strong>: Drag and drop components
-      from:
-
-      <ul>
-        <li><strong>Drag-and-Drop-Aware Applications</strong>:
-        Filenames can be dragged from drag-and-drop applications
-        (such as Windows Explorer).</li>
-
-        <li><strong>Projects or Toolbox sidebars</strong>: Components
-        can be dragged between projects, the Toolbox and container
-        components (such as folders).</li>
-
-        <li><strong>Editor Filename Tabs</strong>: When a file is
-        open in the Editor Pane, drag and drop from the tab that
-        displays the filename to the Toolbox.</li>
-      </ul>
-    </li>
-
-    <li><strong>Import from Filesystem</strong>: Right-click a
-    folder and select <strong><a href=
-    "project.html#project_impcomp">Import from File
-    System</a></strong>.</li>
-
-    <li><strong>Cut/Copy/Paste</strong>: All components have a
-    right-click menu that includes the options
-    <strong>Cut</strong>, <strong>Copy</strong> and
-    <strong>Paste</strong>. Use these options to move components
-    between projects, the Toolbox and container components (such as
-    folders).</li>
-  </ul>
-
-  <p>Some components have special component-specific mechanisms for
-  being added to projects. For example, snippets can be created and
-  added to the Toolbox in one step by selecting a block of text in
-  the Editor Pane and dragging it into the Toolbox. URL shortcuts
-  are created by dragging and dropping a URL from a browser address
-  bar or from the Editor Pane into the Toolbox. Refer to the
-  specific component sections for more information about these
-  options.</p>
-
-  <p>To remove a component from the Toolbox, right-click the
-  desired item and select <strong>Delete</strong>. Alternatively,
-  click the desired component and press 'Delete', or right-click
-  the component and select <strong>Delete</strong>.</p>
-
-  <p>Komodo-specific components (run commands, macros, etc) are
-  permanently deleted. Filesystem-based components (files, dialog
-  boxes) are not; only the reference to the component within the
-  project is removed.</p>
-
-  <h2><a name="export_import" id="export_import">Exporting and
-  Importing Toolbox Contents</a></h2>
-
-  <p>The Toolbox has commands for exporting and importing the
-  contents of the Toolbox as a package. Packages, which are stored
-  with a ".kpz" extension, are compressed archive files, and can be
-  opened by any archiving utility that supports <code>libz</code>
-  (for example WinZip). The <strong>Export Package</strong> option
-  differs from the <strong>Export as Project File</strong> option
-  in that copies of filesystem-based components (such as files and
-  dialog projects) are included in the archive. Conversely,
-  <strong>Export as Project File</strong> creates a project with a
-  reference to the component's original location and does not
-  create copies of the components.</p>
-
-  <p>Both Komodo-specific components (such as run commands and
-  snippets) and filesystem-based components (such as files and
-  dialog projects) can be included. The exported file can
-  subsequently be loaded as a project or imported into the Toolbox.
-  This provides a mechanism for sharing a Toolbox among multiple
-  Komodo users; another mechanism is described in the "Shared
-  Toolbox" section below.</p>
-
-  <p>To export the contents of the Toolbox to a project file:</p>
-
-  <ol>
-    <li>From the <strong>Toolbox</strong> menu, select
-    <strong>Export</strong>.</li>
-
-    <li>In the <strong>Export Package</strong> dialog box, choose
-    the destination directory and enter a filename.</li>
-
-    <li>Click <strong>Save</strong>.</li>
-  </ol>
-
-  <p>To import a previously exported Toolbox:</p>
-
-  <ol>
-    <li>From the <strong>Toolbox</strong> menu, select
-    <strong>Import</strong>.</li>
-
-    <li>In the <strong>Import Package</strong> dialog box, select
-    the project file containing the item(s) that you want to
-    import.</li>
-
-    <li>Click <strong>Open</strong>.</li>
-  </ol>
-
-  <h2><a name="toolbox_share" id="toolbox_share">Sharing
-  Toolboxes</a></h2>
-
-  <p>A Shared Toolbox is a single Toolbox shared by multiple Komodo
-  users. When a Shared Toolbox is enabled, a second sidebar called
-  <strong>Shared Toolbox</strong> is available in the Right Pane. This
-  sidebar displays the contents of the <code>toolbox.kpf</code> file,
-  located in the Common Data Directory specified in Komodo's <a href=
-  "prefs.html#Config_CDD">Shared Toolbox</a> preference.</p>
-
-  <p>The functionality of the Shared Toolbox is determined by the
-  user's access rights to the <code>toolbox.kpf</code> file. All
-  users with "read" rights to the file are able to use items from
-  the Toolbox. To prevent users from altering the shared toolbox,
-  ensure that they only have "read" (and not "write") access to the
-  file.</p>
-
-  <p>The Shared Toolbox is populated by the same methods described
-  in <a href="#toolbox_addcomp">Adding Components to the
-  Toolbox</a>.</p>
   
-  <hr />
-  -->
+  <h2><a id="tools_behind_scenes">Behind the Scenes - How Tools are
+  Stored</a></h2>
+  
+  <p>Tooboxes are stored as special directories containing a file for
+  each tool.</p>
+  
+  <ul>
+    <li><strong>global toolbox</strong>: stored
+    in a "tools" sub-directory of the <a
+    href="trouble.html#appdata_dir">user data directory</a>.</li>
+    <li><strong>shared toolbox</strong>: stored in a "tools"
+    sub-directory of the path set in the <a
+    href="prefs.html#Shared_Support">Shared Support preferences</a>.
+    This will generally be on a mapped network drive or mounted network
+    directory, but synchronizing a local copy of the directory (e.g.
+    using source code
+    control, rsync, or <a href="publish.html">Publishing</a>) is also
+    an option.</li>
+    <li><strong>project-specific toolboxes</strong>: stored in a hidden
+    ".komodotools" directory adjacent to the project file. Note:
+    projects stored in the same directory will have a common
+    toolbox, whether or not the base directories set in the project
+    settings are different.</li>
+  </ul>
+  
+  <p>The individual tools are stored in JSON files with a ".komodotool"
+  extension.</p>
+  
+  <h2><a id="tools_import_export">Importing and Exporting Tools</a></h2>
+
+  <p>The toolbox menu and context menu have options to help with saving,
+  importing and exporting tools and directories. Files with the
+  ".komodotool" extension or directories containing those files can be
+  imported, as can legacy (5.2 and previous) Komodo toolbox files in
+  ".kpf" format.</p>
+  
+  <p>Toolboxes can also be exported as standard zip archives using
+  "<strong>Export as Zip File...</strong>"</p>
   
 </body>
 </html>
