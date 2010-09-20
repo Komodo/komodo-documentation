@@ -92,6 +92,9 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   
   <li><strong>HTML 5 and CSS3 Support</strong>: Autocomplete for HTML 5
   and CSS3.</li>
+  
+  <li><strong>More Languages</strong>: Syntax highlighting for COBOL,
+  Markdown, MySQL, Nimrod, PowerPro, SML, Sorcus, TACL, TAL</li> 
 </ul>
   
 
@@ -100,6 +103,69 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to debugging, interactive shells, source code
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-6.0.0rc1">6.0.0 Bug Fixes</h3>
+
+<ul>
+  <li>Code Intelligence:
+    <ul>
+      <li>Perl: Allow goto definition when symbol contains "&amp;" character. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87870">87870</a>)</li>
+      <li>Python: Resolve goto definition hits into the standard library.</li>
+      <li>When a definition is not found, prompt to go to online docs. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=65296">65296</a>)</li>
+    </ul>
+  </li>
+  <li>Publishing:
+    <ul>
+      <li>Correctly sync on Windows platform (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87953">87953</a>)</li>
+      <li>Include filtering now works for sub-folders (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87975">87975</a>)</li>
+    </ul>
+  </li>
+  <li>Places:
+    <ul>
+      <li>Fixed high CPU usage for Places pane when sitting idle. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87981">87981</a>)</li>
+      <li>When restoring a project, don't focus on the project pane. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87868">87868</a>)</li>
+      <li>SCC menu item in the main Places folder's context menu always disabled. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87936">87936</a>)</li>
+    </ul>
+  </li>
+  <li>Projects:
+    <ul>
+      <li>Allow setting the base directory to be a remote path. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87968">87968</a>)</li>
+      <li>Add a context menuitem to remove a project from the subpane. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87935">87935</a>)</li>
+    </ul>
+  </li>
+  <li>Vi emulation:
+    <ul>
+      <li>Allow pasting from clipboard "+" register. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87944">87944</a>)</li>
+      <li>Ensure Ctrl+[ cancels autocomplete popup. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87946">87946</a>)</li>
+      <li>Allow repeating of visual indent commands. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87966">87966</a>)</li>
+      <li>Allow replace "r" command in visual mode. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87967">87967</a>)</li>
+      <li>Allow visual block selections. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87281">87281</a>)</li>
+      <li>Properly handle line indentation counts. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85499">85499</a>)</li>
+    </ul>
+  </li>
+  <li>Debugger: Ignore debugger stop command when not debugging. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=75377">75377</a>)</li>
+  <li>Editor: Allow drag/drop of Komodo editor tabs between windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87620">87620</a>)</li>
+  <li>Extensions: Upgrading will now maintain the add-on enabled status. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84985">84985</a>)</li>
+  <li>Invoke Tool: Added support for matching against the subDir.</li>
+  <li>PHP Debugging: Upgrade to Xdebug 2.1.0. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87279">87279</a>)</li>
+  <li>Projects: Allow setting the base directory to be a remote path. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87968">87968</a>)</li>
+  <li>Macros: Recoded macro uses the wrong param for Find_ReplaceAllInMacro. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87991">87991</a>)</li>
+  <li>UI: Linux: Stoped the flexing of left pane when selecting the DOM tab. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87998">87998</a>)</li>
+  <li>Fixed 'Edit-&gt;Find in Current Project menu and hotkey showing last used "Find Dialog" instead of "Find in Current Project"' (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87916">87916</a>)</li>
+  <li>Added an "invoke tool" dialog. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87739">87739</a>)</li>
+  <li>Have the "Current Project View" filters come from either the global prefs, or the project-specific import prefs. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87888">87888</a>)</li>
+  <li>Broken Javascript RegExp highlighting after return statement. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86891">86891</a>)</li>
+  <li>Mac: Allow copy/paste keyboard commands in the file open dialog. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85838">85838</a>)</li>
+  <li>Multiple entity escaping in prefs.xml file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87928">87928</a>)</li>
+  <li>PHPUnit test harness doesn't support failed tests. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86728">86728</a>)</li>
+  <li>Python3 debugger loses track of local variables (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87617">87617</a>)</li>
+  <li>Ruby: Support debugging of rubyinstaller installations for versions 1.8.6, 1.8.7, and 1.9.1. People who build their own Ruby will need to remove the installed ruby_debug.so files, and build their own from source, or 'gem install ruby-debug-base' or 'gem install ruby-debug-base19'. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=79306">79306</a>)</li>
+  <li>Toolbox: drag/drop is moving files when ctrl key is down. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87924">87924</a>)</li>
+  <li>View Line Endings setting gets out of sync after changing the line-end. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87884">87884</a>)</li>
+  <li>Add a "Help-&gt;Troubleshooting-&gt;Contact ActiveState" menu item. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85055">85055</a>)</li>
+  <!-- Next pass from r56704 -->
+</ul>
+
 
 <h3 id="bug_fixes-6.0.0rc1">6.0.0 RC 1 Bug Fixes</h3>
 
