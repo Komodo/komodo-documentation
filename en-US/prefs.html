@@ -284,7 +284,7 @@
     will automatically appear in the corresponding Live Folder in
     the project. This setting can be overridden in a particular
     Project's scope in <a href=
-    "project.html#project_props">Project Properties and
+    "project.html#project_prefs">Project Properties and
     Settings</a>.</li>
 
     <li><strong>Directory to import from</strong>: Specify the
@@ -550,9 +550,6 @@
   components:</p>
 
   <ul>
-    <li><a href="openshort.html#openshort_top">Open
-    Shortcuts</a></li>
-
     <li><a href="urls.html#urls_top">URLs</a></li>
 
     <li><a href="run.html#run_top">Run Commands</a></li>
@@ -2069,70 +2066,12 @@ it uses the line ending already in use in the file.</p>-->
   enables a periodic check of the read/write status and the
   <a href="scc.html#scc_top">source code control</a>
   status of components stored in the <a href=
-  "project.html#project_top">Projects sidebar</a> and the
-  <a href="toolbox.html#toolbox_top">Toolbox</a>.</p>
+  "places.html">Places</a> and <a href="toolbox.html">Toolbox</a>
+  sidebars.</p>
 
-  <p>Status refresh can also be performed manually; see <a href=
-  "project.html#Refreshing_a_Project">Refreshing Project
-  Status</a> for more information.</p>
-
-  <p><strong>Importing Files From Disk</strong></p>
-
-  <p>Specify the defaults for the <strong>Import from File
-  System</strong> option, available in the option in the <a href=
-  "project.html#project_top">Projects sidebar</a>, the
-  <a href="toolbox.html#toolbox_top">Toolbox</a>, and in
-  <a href="folders.html#folders_top">folders</a> stored
-  in either a project or the Toolbox. These defaults can be
-  overridden in the <strong>Import from File System</strong> dialog
-  box.</p>
-
-  <ul>
-    <li><strong>Filenames to include</strong>: Specify the
-    filenames to include. Use wildcards ("*" and "?") to specify
-    groups of files. Separate multiple file specifications with
-    semicolons. If the field is left blank, all files in the
-    specified directory are imported.</li>
-
-    <li><strong>Filenames to exclude</strong>: Specify the file and
-    directory names to exclude. Use wildcards ("*" and "?") to
-    specify groups of files. Separate multiple file specifications
-    with semicolons. If the field is left blank, no files in the
-    specified directory are excluded.</li>
-
-    <li>
-      <strong>Import Subdirectories Recursively</strong>: To import
-      subdirectories located beneath the directory specified for
-      the import, check <strong>Import Subdirectories
-      Recursively</strong>. Specify how Komodo should handle
-      subdirectories by selecting one of the following options:
-
-      <ul>
-        <li><strong>Import directory structure</strong>: If the
-        <strong>Import Subdirectories Recursively</strong> box is
-        checked and this option is selected, Komodo creates folders
-        within the project that represent imported directories.
-        Thus, the directory structure is preserved within the
-        project.</li>
-
-        <li><strong>Make a folder per language</strong>: If this
-        option is selected, imported files are organized into
-        folders according to the language indicated by file pattern
-        in the filename. File associations are configured in the
-        Komodo <a class="doc" href=
-        "prefs.html#File_Associations">Preferences</a>.
-        Each folder is named after the associated language, for
-        example, "Perl files", "XML files", etc. Files that don't
-        correspond to a known file pattern are stored in a folder
-        called "Other files".</li>
-
-        <li><strong>Make one flat list</strong>: If this option is
-        selected, all the imported files are placed directly under
-        the project or folder from which the <strong>Import from
-        File System</strong> command was invoked.</li>
-      </ul>
-    </li>
-  </ul>
+  <p>Status refresh can also be performed manually with the
+  <strong>Refresh</strong> context menu item for any tool, file or
+  folder.</p>
 
   <p><strong>Triggering Macros</strong></p>
 

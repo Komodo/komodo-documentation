@@ -122,7 +122,6 @@
   <node name="Creating Files" link="files.html#Creating_a_New_File"/>
   <node name="Creating Files from Templates" link="files.html#files_templates"/>
   <node name="Storing Files within a Project or the Toolbox" link="files.html#files_projtool">
-    <node name="Creating an Open Shortcut" link="files.html#files_openshort"/>
     <node name="Exporting Files as Projects" link="files.html#files_exproj"/>
     <node name="Exporting Files to a Package" link="files.html#files_expack"/>
   </node>
@@ -335,15 +334,6 @@
     <node name="Template Options" link="templates.html#templates_options"/>
     <node name="Assigning Custom Icons to Templates" link="templates.html#Cust_Icons"/>
     <node name="Template Key Bindings" link="templates.html#template_key_bindings"/>
-  </node>
-</node>
-
-<node name="Open Shortcuts" link="openshort.html#openshort_top">
-  <node name="Open Shortcut Options" link="openshort.html#openshort_options">
-    <node name="Open Shortcut Properties" link="openshort.html#openshort_props">
-      <node name="Assigning Custom Icons to Open Shortcuts" link="openshort.html#openshort_Cust_Icons"/>
-      <node name="Open Shortcut Key Bindings" link="openshort.html#openshort_key_bindings"/>
-    </node>
   </node>
 </node>
 
