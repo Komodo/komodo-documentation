@@ -159,21 +159,12 @@ templates\
   projects.</p>
 
   <p>To create a new project from a project template, click
-  <strong>File|New|New Project from Template</strong> and choose
+  <strong>Project|New From Template</strong> and choose
   from one of the available templates.</p>
 
-  <p>To save any project as a template select the project and click
-  <strong>Project|Create Template From Project...</strong>, or
-  right-click on the project and click <strong>Create Template From
-  Project....</strong> in the context-menu. The project will be
-  exported as a <a href=
-  "project.html#project_impexp">project package</a> and
-  saved in the <em>project-templates/My Templates</em>
-  sub-directory of the <a href=
-  "trouble.html#appdata_dir">user data directory</a>.
-  Once the project has been saved as a template, it becomes
-  available via <strong>File|New|New Project from
-  Template</strong>.</p>
+  <p>To save any project as a template, click <strong>Project|New From
+  Template|Create Template From Project...</strong> and select a
+  location to save the template (e.g. the My Templates directory).</p>
 
   <p>Komodo ships with project templates for, Ruby on Rails, Komodo
   Extensions, and Firefox Extensions.</p>
@@ -196,57 +187,20 @@ templates\
     <li><strong>Open Template</strong>: Use this option to create a
     new file from the selected template.</li>
 
-    <li><strong>Cut/Copy/Paste</strong>: These options are used to
-    remove the template from a project or the Toolbox, or to move
-    templates between the project and the Toolbox (and vice
-    versa).</li>
+    <li><strong>Cut/Copy/Paste</strong>: Used to duplicate or move a
+    template when dragging is not convenient (e.g. to a project which is
+    currently closed).</li>
 
-    <li><strong>Export as Project File</strong>: When this option
-    is invoked, a new project file is created that contains the
-    template from which the option is invoked. You are prompted to
-    provide the name of the new project file and the directory
-    where it will be stored. To open the new project file, select
-    <strong>File|Open|Project</strong>.</li>
+    <li><strong>Show in File Manager</strong>: Shows the JSON file for
+    the template in the system's default file manager.</li>
 
-    <li><strong>Export Package</strong>: Templates can be archived
-    and distributed among multiple Komodo users via "packages".
-    Packages are compressed archive files that contain the template
-    from which the <strong>Export Package</strong> option was
-    invoked. Packages are stored in files with a ".kpz" extension,
-    and can be opened by any archiving utility that supports
-    <code>libz</code> (for example WinZip). The <strong>Export
-    Package</strong> option differs from the <strong>Export as
-    Project File</strong> option in that copies of filesystem-based
-    components (such as files and dialog projects) are included in
-    the archive. Conversely, <strong>Export as Project
-    File</strong> creates a project with a reference to the
-    component's original location and does not create copies of the
-    components. When <strong>Export Package</strong> is invoked,
-    you are prompted for a name and file location for the package.
-    Exported packages can only be imported into "container" objects
-    in Komodo, such as projects, the Toolbox, and folders within
-    projects and the Toolbox. See <a href=
-    "toolbox.html#export_import">Toolbox - Exporting and
-    Importing Toolbox Contents</a>, <a href=
-    "project.html#project_impexp">Projects - Importing
-    and Exporting Projects via Packages</a>, or <a href=
-    "folders.html#folders_importpack">Folders - Import
-    Contents from Package</a> for more information.</li>
+    <li><strong>Export as Zip File...</strong>: Exports the template in
+    a standard ".zip" archive.</li>
 
-    <li><strong>Rename</strong>: To change the name of a template
-    (as displayed in the Projects or Toolbox sidebars), select this
-    option and enter a new name.</li>
+    <li><strong>Rename</strong>: Changes the template name.</li>
 
-    <li><strong>Delete</strong>: To remove a template from a
-    project or the Toolbox, select this option. The reference to
-    the template is deleted; the file containing the template is
-    not deleted.</li>
-
-    <li><strong>Properties</strong>: Changes the title or the disk
-    location of the template. In addition, the icon and key binding
-    assigned to the template are accessed via the Properties dialog
-    box. See below for instructions on altering the template's icon
-    or key binding.</li>
+    <li><strong>Delete</strong>: Permanently removes the selected
+    template from the toolbox.</li>
   </ul>
 
   <h3><a name="Cust_Icons" id="Cust_Icons">Assigning Custom Icons
