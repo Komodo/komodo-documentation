@@ -189,7 +189,7 @@
   </h1>
   <p>koIPartService.runningMacro deprecated, replaced by koToolBox2Service.runningMacro</p>
   <p>runningMacro.project returns the active project, if there is one, regardless of where the macro being run lives. If the macro is part of the current project, runningMacro.project gives that project. This JavaScript gives the main owner of the runningMacro:</p>
-  <pre class="literal-block">
+  <pre>
 var parent = runningMacro.parent;
 while (parent.parent) parent = parent.parent;
 return parent;

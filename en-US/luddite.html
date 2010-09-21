@@ -69,7 +69,7 @@
     example:</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   Good
   % if ($time &gt; 12) {
   afternoon
@@ -82,7 +82,7 @@
     <dd>This is easily handled with this Luddite code:</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   state IN_M_DEFAULT:
   /^%/ : paint(upto, M_DEFAULT), paint(include, TPL_OPERATOR), \
     at_eol(IN_M_DEFAULT), =&gt; IN_SSL_DEFAULT
@@ -159,7 +159,7 @@
     <dd>Used to describe which tokens start and end a code-folding
     block. For example:</dd>
   </dl>
-  <pre class="literal-block">
+  <pre>
   fold "{" CSL_OPERATOR +
   fold "if" SSL_WORD +
   fold "end" SSL_WORD -
@@ -184,7 +184,7 @@
     the target language that are the same as reserved words in
     Luddite must be quoted.</dd>
   </dl>
-  <pre class="literal-block">
+  <pre>
   keywords ["__FILE__", "__LINE__", BEGIN, class ensure nil ]
 </pre>
 
@@ -200,7 +200,7 @@
     are colored as the first style normally will be promoted to the
     second style.</dd>
   </dl>
-  <pre class="literal-block">
+  <pre>
   keyword_style SSL_IDENTIFIER =&gt; SSL_WORD
 </pre>
 
@@ -212,7 +212,7 @@
     directory, that file's directory is appended to the include
     path.</dd>
   </dl>
-  <pre class="literal-block">
+  <pre>
   include "html2ruby.udl"
 </pre>
 
@@ -229,7 +229,7 @@
     <dd>The state processing for the current family should start
     at.</dd>
   </dl>
-  <pre class="literal-block">
+  <pre>
   initial IN_SSL_DEFAULT
 </pre>
 
@@ -242,7 +242,7 @@
     up in the Komodo UI in places like Language Preferences and the
     "New File" command.</dd>
   </dl>
-  <pre class="literal-block">
+  <pre>
   language RHTML
 </pre>
 
@@ -255,7 +255,7 @@
     attribute value.</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   namespace "http://www.w3.org/2001/XMLSchema"
   namespace "http://www.w3.org/1999/XMLSchema"
   # Be prepared if a new version is released in a few centuries.
@@ -275,7 +275,7 @@
     Perl.</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   state IN_SSL_DEFAULT:
   /\.(?=[a-z])/ : paint(upto, SSL_DEFAULT), \
     paint(include, SSL_OPERATOR), =&gt; IN_SSL_NON_KEYWORD_IDENTIFIER_1
@@ -295,7 +295,7 @@
     this:</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   state IN_SSL_COMMENT_1 :
   /$/ : paint(include, SSL_COMMENT) =&gt; IN_SSL_DEFAULT
 </pre>
@@ -322,7 +322,7 @@
     patterns by putting a "$" before them.</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   pattern NMSTART = '_\w\x80-\xff' # used inside character sets only
   pattern NMCHAR = '$NMSTART\d'    # used inside character sets only
   ...
@@ -341,7 +341,7 @@
     in its Doctype declaration.</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   public_id "-//MOZILLA//DTD XBL V1.0//EN"
   publicid "-//MOZILLA//DTD XBL V1.1//EN" # Be prepared
   # "publicid" is a synonym for "public_id"
@@ -357,7 +357,7 @@
     stay there in the new state.</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   state IN_SSL_NUMBER_3:
   ...
   /[^\d]/ : paint(upto, SSL_NUMBER), redo, =&gt; IN_SSL_DEFAULT
@@ -405,7 +405,7 @@
     subpattern.</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   /m([^\w\d])/ : paint(upto, SSL_DEFAULT), set_delimiter(1), \
     =&gt; IN_SSL_REGEX1_TARGET
 </pre>
@@ -421,7 +421,7 @@
     subpattern.</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   /m([\{\[\(\&lt;])/ : paint(upto, SSL_DEFAULT), \
     set_opposite_delimiter(1), =&gt; IN_SSL_REGEX1_TARGET
 </pre>
@@ -460,7 +460,7 @@
     <dd>The common name of the language this family targets.</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   sublanguage ruby
 </pre>
     </dd>
@@ -481,7 +481,7 @@
     in its Doctype declaration.</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   
   system_id "http://www.w3.org/2001/XMLSchema"
   systemid "http://www.w3.org/1999/XMLSchema"
@@ -552,7 +552,7 @@
     later point.</dd>
 
     <dd>
-      <pre class="literal-block">
+      <pre>
   state IN_SSL_DSTRING:
   '#{' : paint(include, SSL_STRING), spush_check(IN_SSL_DSTRING), \
     =&gt; IN_SSL_DEFAULT

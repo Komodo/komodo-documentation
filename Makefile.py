@@ -369,11 +369,14 @@ class munge(Task):
         MARKER = re.compile('^\s*<meta name="generator" content=\s*"HTML Tidy for .*? \(vers .*?\), see www.w3.org" />\n', re.S | re.M)
         REPLACEMENT = ""
         #MARKER = re.compile('HTML Tidy')
-    if True:
+    if False:
         MARKER = re.compile('<div id="content">')
         INVERSE = True
         SEARCH = re.compile(r'<body>\n(.*?)</body>', re.S)
         REPLACEMENT = r'<body>\n<div id="content">\n\1\n</div> <!-- content -->\n</body>'
+    if True:
+        MARKER = re.compile(' class="literal-block"')
+        REPLACEMENT = ""
     
     def make(self):
         import codecs
