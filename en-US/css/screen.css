@@ -6,6 +6,7 @@
     margin: 15px;
 }
 
+
 /* ---- base styles ---- */
 
 h2 {
@@ -56,8 +57,8 @@ div.right-float-box {
     width: 25%;
     background-color: #EEEEEE;
     border:1px solid #CCCCCC;
-    padding: 0 1em 0 1em;
-    margin: 0 1em 1em 1em;
+    padding: 0 1em;
+    margin: 0 0 1em 1em;
 }
 
 span.cursor {
