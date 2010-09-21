@@ -212,10 +212,13 @@ class _Document(object):
         # Gather links and anchors.
         self.anchors = set()
         self.links = set()
-        ns = re.match("^{(.*?)}\w+$", root.tag).group(1)
-        body = root.find("{%s}body" % ns)
+        if '{' in root.tag:
+            ns = re.match("^({.*?})\w+$", root.tag).group(1)
+        else:
+            ns = ""
+        body = root.find("%sbody" % ns)
         for elem in body.getiterator():
-            if elem.tag == '{%s}a' % ns:
+            if elem.tag == '%sa' % ns:
                 weird = True
                 if elem.get("href"):
                     self.links.add(elem.get("href"))
