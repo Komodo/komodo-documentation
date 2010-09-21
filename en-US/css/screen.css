@@ -9,6 +9,9 @@ h2 {
     margin: 2em 0 0.5em;
     padding-top: 0.4em;
 }
+h2.first {
+    border-top: none;
+}
 h3 {
     color: #333333;  /* the red from AS styleguide is weird */
     border-top: 2px solid #ccc;
@@ -133,6 +136,12 @@ div.app-ide-edit {
     background: url("../img/bodybg.gif") repeat-x top;
 }
 
+.top#content {
+    background: url("../img/ribbons.png") top left no-repeat;
+}
+.top #title {
+    height: 100px;
+}
 
 /* ---- resets for styling on docs.activestate.com ----
  * Based on the assumption that page content is in a
