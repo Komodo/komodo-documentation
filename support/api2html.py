@@ -309,10 +309,8 @@ def _generate_from_elem(elem, title, html_stream, html_href,
 
     # Write the HTML.
     tree = ET.ElementTree(html)
-    xhtml_header = '<?xml version="1.0"?>\n' \
-                   '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" ' \
-                   '"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n'
-    html_stream.write(xhtml_header)
+    html_header = '<!DOCTYPE html>\n'
+    html_stream.write(html_header)
     tree.write(html_stream)
 
     # Write the TOC XML output.
