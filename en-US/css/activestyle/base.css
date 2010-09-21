@@ -1,0 +1,86 @@
+/* {{{ base -- basic HTML element styles
+ */
+
+body {
+    line-height: 1.4em;
+    background-color: #fff;
+    color: #333333;
+    font-family: arial, helvetica, clean, sans-serif;
+    font-size: 14px;
+}
+  
+ul, ol {
+    padding-left: 20px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+ol { list-style-type: decimal; }
+ol ol { list-style-type: upper-roman; }
+ol ol ol { list-style-type: upper-alpha; }
+ol ol ol ol { list-style-type: lower-roman; }
+ol ol ol ol ol { list-style-type: lower-alpha; }
+   
+th, td {
+    text-align: left;
+    font-size: 14px;
+    padding-right: 1em;
+}
+
+a:focus {
+    outline: thin dotted;
+    outline-color: inherit;
+}
+
+/* Link colors: blue, specifically NO separate hover color for now. */
+:link { 
+    color: #026981; /* ActiveState blue */
+}
+:visited { 
+    color: #40849a; /* lighter ActiveState blue */
+} 
+:link:active, :visited:active {
+    color: #ae1a27;  /* ActiveState red */
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+}
+h2 {
+    font-size: 22px;
+    color: #333333;
+}
+h3 {
+    font-size: 19px;
+    color: #ae1a27;
+}
+h4 {
+    font-size: 19px;
+    color: #333333;
+}
+h5 {
+    font-size: 14px;
+    color: #333333;
+}
+h6 {
+    font-size: 14px;
+    font-style: italic;
+    color: #333333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.8em 0 0.5em 0;
+}
+
+p,
+fieldset,
+table,
+pre {
+    margin-bottom: 1em;
+}
+
+blockquote, ul, ol, dl {
+    margin: 0 1em 1em 1em;
+}
+/* }}} */

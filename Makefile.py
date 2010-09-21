@@ -344,6 +344,37 @@ class distclean(_KomodoDocTask):
             sh.rm("config.py", self.log)
         
 
+class munge(Task):
+    """Munge the HTML files (for bulk edits)."""
+    MARKER = re.compile('<html xmlns="http://www.w3.org/1999/xhtml">')
+    REPLACEMENT = '<html>'
+    MARKER = re.compile('<!DOCTYPE html PUBLIC .*?>', re.S)
+    REPLACEMENT = '<!DOCTYPE html>'
+    def make(self):
+        import codecs
+        from glob import glob
+        
+        paths = glob(join(self.dir, "en-US", "*.html"))
+        paths += glob(join(self.dir, "en-US", "*", "*.html"))
+        #pprint(paths)
+        #print len(paths)
+        paths_without_marker = []
+        paths_with_marker = []
+        content_from_path = {}
+        for path in paths:
+            f = codecs.open(path, 'r', 'utf-8')
+            content = f.read()
+            f.close()
+            if not self.MARKER.search(content):
+                paths_without_marker.append(path)
+            else:
+                content_from_path[path] = content
+                paths_with_marker.append(path)
+        pprint(paths_without_marker)
+        print len(paths_without_marker)
+            
+            
+
 class todo(Task):
     """Print out todo's and xxx's in the docs area."""
     def make(self):

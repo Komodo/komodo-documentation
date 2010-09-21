@@ -1,262 +1,191 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta name="generator" content=
-  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
-  <meta http-equiv="Content-Type" content=
-  "text/html; charset=us-ascii" />
-
   <title>Komodo User Guide</title>
-  <link rel="stylesheet" type="text/css" href="css/top.css" />
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
 </head>
-
 <body>
-  <div id="main-container">
-      <div id="title">
-        <h1>Welcome to the Komodo User Guide</h1>
-      </div>
-    <div id="content">
-
-        <div class="app-editonly">
-          <ul>
-            <li>
-              <img src="img/top/komodo_icon_1.png" />
-
-              <h2><a href="releases/ide.html#whatsnew">What's new in
-              Komodo Edit</a></h2>
-              
-  <ul>
-    <li><strong>Workspace Save and Restore</strong>: Komodo will now be
-    regularly saving your workspace. In the case of an unexpected
-    shutdown, you can choose to restore your last used workspace the next
-    time it starts up.</li>
-    
-    <li><strong>Places</strong>: A new file manager has been added
-    to Komodo's left pane. It provides a customized view of your file
-    system (local or remote) and easy file management operations such as
-    file editing, drag/drop copying, creation of new files and folders,
-    and search.</li>
+<div id="content">
   
-    <li><strong>Projects</a></strong>: Komodo projects are now
-    integrated with the new Places component. Opened and recent Projects
-    will be visible in a bottom pane of the Places panel. All projects
-    are now live folders (no virtual folders) with only one project
-    being opened/active at a time. Project preferences apply to all
-    opened files (even if the file does not reside in the projects base
-    directory). Project tools (macros, run commands, snippets, etc...)
-    are now be displayed in the Komodo toolbox area.
-    </li>
+  <h1 id="title">Welcome to the Komodo User Guide</h1>
 
-    <li><strong>Faster</strong>: A number of Komodo components have been
-    made to run faster, such as startup, shutdown, tab-switching and
-    finding text. The underlying Mozilla source code has been updated to
-    version 1.9.1, the same code base as Firefox 3.5, which means
-    improved performance gains for Komodo.</li>
-  
-    <li><strong>New Toolbox</strong>: The Komodo toolbox and project
-    system are being rewritten. Individual toolbox items (commands,
-    macros, snippets, etc.) are saved in separate JSON files rather than
-    as nodes in a toolbox.kpf file. There is a new "Invoke Tool" command
-    which allows you to easily search and then execute specific tools.
-    In future versions project-specific tools will appear in the Toolbox
-    sidebar instead of the Projects sidebar, which will eventually be
-    removed.</li>
+  <div class="app-editonly">
+    <h2><a href="releases/ide.html#whatsnew">What's new in Komodo Edit</a></h2>
 
-    <li><strong>Hyperlink Additions</strong>: Hyperlinks have been extended and can now...
-      <ul>
-        <li>show image preview while hovering on an image link,</li>
-        <li>show Code Intelligence definitions while hovering on a symbol,</li>
-        <li>jump to an HTML anchor tag to it's definition,</li>
-        <li>jump to HREF and SRC locations,</li>
-        <li>open files from a path reference,</li>
-        <li>jump to PHP file includes</li>
-      </ul>
-    </li>
+    <ul>
+      <li><strong>Workspace Save and Restore</strong>: Komodo will now be
+      regularly saving your workspace. In the case of an unexpected
+      shutdown, you can choose to restore your last used workspace the next
+      time it starts up.</li>
 
-    <li><strong>HTML 5 and CSS3 Support</strong>: Autocomplete for HTML 5
-    and CSS3.</li>
-  </ul>
-                
-              <p>(Read the full <a href="releases/ide.html">Release
-              Notes</a>.)</p>
-            </li>
-          </ul>
-        </div>
+      <li><strong>Places</strong>: A new file manager has been added
+      to Komodo's left pane. It provides a customized view of your file
+      system (local or remote) and easy file management operations such as
+      file editing, drag/drop copying, creation of new files and folders,
+      and search.</li>
 
-        <div class="app-ideonly">
-          <ul>
-            <li>
-              <img src="img/top/komodo_icon_1.png" />
+      <li><strong>Projects</a></strong>: Komodo projects are now
+      integrated with the new Places component. Opened and recent Projects
+      will be visible in a bottom pane of the Places panel. All projects
+      are now live folders (no virtual folders) with only one project
+      being opened/active at a time. Project preferences apply to all
+      opened files (even if the file does not reside in the projects base
+      directory). Project tools (macros, run commands, snippets, etc...)
+      are now be displayed in the Komodo toolbox area.
+      </li>
 
-              <h2><a href="releases/ide.html#whatsnew">What's new in
-              Komodo IDE</a></h2>
-                
-  <ul>
+      <li><strong>Faster</strong>: A number of Komodo components have been
+      made to run faster, such as startup, shutdown, tab-switching and
+      finding text. The underlying Mozilla source code has been updated to
+      version 1.9.1, the same code base as Firefox 3.5, which means
+      improved performance gains for Komodo.</li>
 
-    <li><strong>Database Explorer</strong>: Lets you easily explore local
-    and remote database installations, including viewing and managing
-    data. SQLite is supported in this release, with more databases coming
-    soon. Support for each database is implemented as a Komodo
-    extension, so integration with other databases can be easily
-    added.</li>
+      <li><strong>New Toolbox</strong>: The Komodo toolbox and project
+      system are being rewritten. Individual toolbox items (commands,
+      macros, snippets, etc.) are saved in separate JSON files rather than
+      as nodes in a toolbox.kpf file. There is a new "Invoke Tool" command
+      which allows you to easily search and then execute specific tools.
+      In future versions project-specific tools will appear in the Toolbox
+      sidebar instead of the Projects sidebar, which will eventually be
+      removed.</li>
 
-    <li><strong>Places</strong>: A new file manager has been added
-    to Komodo's left pane. It provides a customized view of your file
-    system (local or remote) and easy file management operations such as
-    file editing, drag/drop copying, creation of new files and folders,
-    and search.</li>
+      <li><strong>Hyperlink Additions</strong>: Hyperlinks have been extended and can now...
+        <ul>
+          <li>show image preview while hovering on an image link,</li>
+          <li>show Code Intelligence definitions while hovering on a symbol,</li>
+          <li>jump to an HTML anchor tag to it's definition,</li>
+          <li>jump to HREF and SRC locations,</li>
+          <li>open files from a path reference,</li>
+          <li>jump to PHP file includes</li>
+        </ul>
+      </li>
 
-    <li><strong>Projects</a></strong>: Komodo projects are now
-    integrated with the new Places component. Opened and recent Projects
-    will be visible in a bottom pane of the Places panel. All projects
-    are now live folders (no virtual folders) with only one project
-    being opened/active at a time. Project preferences apply to all
-    opened files (even if the file does not reside in the projects base
-    directory). Project tools (macros, run commands, snippets, etc...)
-    are now be displayed in the Komodo toolbox area.
-    </li>
+      <li><strong>HTML 5 and CSS3 Support</strong>: Autocomplete for HTML 5
+      and CSS3.</li>
+    </ul>
 
-    <li><strong>Publishing</strong>: Copy remote files to your
-    local system to work on them, then push them back to the remote
-    system when you're done. Komodo keeps track of the synchronization
-    details to avoid copying files that haven't changed, as well as
-    using advanced conflict detection to avoid overwriting changes made
-    by others.</li>
-    
-    <li><strong>New Toolbox</strong>: The Komodo toolbox and project
-    system are being rewritten. Individual toolbox items (commands,
-    macros, snippets, etc.) are saved in separate JSON files rather than
-    as nodes in a toolbox.kpf file. There is a new "Invoke Tool" command
-    which allows you to easily search and then execute specific tools.
-    In future versions project-specific tools will appear in the Toolbox
-    sidebar instead of the Projects sidebar, which will eventually be
-    removed.</li>
-    
-    <li><strong>Faster</strong>: A number of Komodo components have been
-    made to run faster, such as startup, shutdown, tab-switching and
-    finding text. The underlying Mozilla source code has been updated to
-    version 1.9.1, the same code base as Firefox 3.5, which means
-    improved performance gains for Komodo.</li>
-  
-    <li><strong>Workspace Save and Restore</strong>: Komodo will now be
-    regularly saving your workspace. In the case of an unexpected
-    shutdown, you can choose to restore your last used workspace the next
-    time it starts up.</li>
-    
-    <li><strong>Hyperlink Additions</strong>: Hyperlinks have been extended and can now...
-      <ul>
-        <li>show image preview while hovering on an image link,</li>
-        <li>show Code Intelligence definitions while hovering on a symbol,</li>
-        <li>jump to an HTML anchor tag to it's definition,</li>
-        <li>jump to HREF and SRC locations,</li>
-        <li>open files from a path reference,</li>
-        <li>jump to PHP file includes</li>
-      </ul>
-    </li>
-    
-    <li><strong>Rx Toolkit Improvements</strong>: Choose between Python,
-    Perl, PHP, Ruby, and JavaScript syntax for testing your Regular
-    Expressions. They are now evaluated "out of process", so a
-    long-running regular expression won't tie up the IDE.</li>
-    
-    <li><strong>HTML 5 and CSS3 Support</strong>: Autocomplete for HTML 5
-    and CSS3.</li>
-  </ul>
-                
-              <p>(Read the full <a href="releases/ide.html">Release
-              Notes</a>.)</p>
-              
-            </li>
-          </ul>
-        </div>
+    <p>(Read the full <a href="releases/ide.html">Release Notes</a>.)</p>
+  </div>
 
-        <div>
-          <ul>
-            <li>
-              <a target="_blank" href=
-              "http://community.activestate.com/"><img src=
-              "img/top/forums-icon.png" alt="Komodo Community" /></a>
+  <div class="app-ideonly">
+    <h2><a href="releases/ide.html#whatsnew">What's new in Komodo IDE</a></h2>
 
-              <h2><a target="_blank" href=
-              "http://community.activestate.com/">Support and
-              Community</a></h2>
+    <ul>
+      <li><strong>Database Explorer</strong>: Lets you easily explore local
+      and remote database installations, including viewing and managing
+      data. SQLite is supported in this release, with more databases coming
+      soon. Support for each database is implemented as a Komodo
+      extension, so integration with other databases can be easily
+      added.</li>
 
-              <p>The ActiveState Community site has resources to help
-              you use Komodo effectively:</p>
+      <li><strong>Places</strong>: A new file manager has been added
+      to Komodo's left pane. It provides a customized view of your file
+      system (local or remote) and easy file management operations such as
+      file editing, drag/drop copying, creation of new files and folders,
+      and search.</li>
 
-              <ul>
-                <li><a target="_blank" href=
-                "http://community.activestate.com/faq-list?filter0=49">
-                Komodo FAQs</a></li>
+      <li><strong>Projects</a></strong>: Komodo projects are now
+      integrated with the new Places component. Opened and recent Projects
+      will be visible in a bottom pane of the Places panel. All projects
+      are now live folders (no virtual folders) with only one project
+      being opened/active at a time. Project preferences apply to all
+      opened files (even if the file does not reside in the projects base
+      directory). Project tools (macros, run commands, snippets, etc...)
+      are now be displayed in the Komodo toolbox area.
+      </li>
 
-                <li><a target="_blank" href=
-                "http://community.activestate.com/forums/komodo">Komodo
-                Forums</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+      <li><strong>Publishing</strong>: Copy remote files to your
+      local system to work on them, then push them back to the remote
+      system when you're done. Komodo keeps track of the synchronization
+      details to avoid copying files that haven't changed, as well as
+      using advanced conflict detection to avoid overwriting changes made
+      by others.</li>
 
-        <div>
-          <ul>
-            <li>
-              <img src="img/top/sample_projects.png" />
+      <li><strong>New Toolbox</strong>: The Komodo toolbox and project
+      system are being rewritten. Individual toolbox items (commands,
+      macros, snippets, etc.) are saved in separate JSON files rather than
+      as nodes in a toolbox.kpf file. There is a new "Invoke Tool" command
+      which allows you to easily search and then execute specific tools.
+      In future versions project-specific tools will appear in the Toolbox
+      sidebar instead of the Projects sidebar, which will eventually be
+      removed.</li>
 
-              <h2><a href="getstarted.html#getstarted_top">Sample
-              Project</a></h2>
+      <li><strong>Faster</strong>: A number of Komodo components have been
+      made to run faster, such as startup, shutdown, tab-switching and
+      finding text. The underlying Mozilla source code has been updated to
+      version 1.9.1, the same code base as Firefox 3.5, which means
+      improved performance gains for Komodo.</li>
 
-              <p>Get started fast with Komodo's <strong><a href=
-              "getstarted.html#getstarted_top">Sample
-              Project</a></strong>.</p>
-            </li>
-          </ul>
-        </div>
+      <li><strong>Workspace Save and Restore</strong>: Komodo will now be
+      regularly saving your workspace. In the case of an unexpected
+      shutdown, you can choose to restore your last used workspace the next
+      time it starts up.</li>
 
-        <div>
-          <ul>
-            <li>
-              <img src="img/top/showcase.png" />
+      <li><strong>Hyperlink Additions</strong>: Hyperlinks have been extended and can now...
+        <ul>
+          <li>show image preview while hovering on an image link,</li>
+          <li>show Code Intelligence definitions while hovering on a symbol,</li>
+          <li>jump to an HTML anchor tag to it's definition,</li>
+          <li>jump to HREF and SRC locations,</li>
+          <li>open files from a path reference,</li>
+          <li>jump to PHP file includes</li>
+        </ul>
+      </li>
 
-              <h2><a href=
-              "tutorial/tourlet_over.html#over_top">Feature
-              Showcase</a></h2>
+      <li><strong>Rx Toolkit Improvements</strong>: Choose between Python,
+      Perl, PHP, Ruby, and JavaScript syntax for testing your Regular
+      Expressions. They are now evaluated "out of process", so a
+      long-running regular expression won't tie up the IDE.</li>
+      
+      <li><strong>HTML 5 and CSS3 Support</strong>: Autocomplete for HTML 5
+      and CSS3.</li>
+    </ul>
 
-              <p>Quick <strong><a href=
-              "tutorial/tourlet_over.html#over_top">Demos</a></strong>
-              showing advanced search functionality, editing,
-              debugging, and more.</p>
-            </li>
-          </ul>
-        </div>
+    <p>(Read the full <a href="releases/ide.html">Release Notes</a>.)</p>
+  </div>
 
-        <div class="app-ideonly">
-          <ul>
-            <li>
-              <img src="img/top/tutorials.png" />
+  <div>
+    <h2><a target="_blank" href="http://community.activestate.com/">Support and Community</a></h2>
 
-              <h2><a href=
-              "tut-intro.html#tut_over_top">Tutorials</a></h2>
+    <p>The ActiveState Community site has resources to help you use Komodo effectively:</p>
 
-              <p>Helpful introductions to <span class=
-              "app-ide app-edit"><a href=
-              "tutorial/railstut.html#rails_top">Ruby on Rails</a>,
-              <a href="tutorial/jstut.html#jstut_top">JavaScript</a>,
-              <a href="tutorial/rubytut.html#rubytut_top">Ruby</a>,
-              <a href="tutorial/phptut.html#phptut_top">PHP</a>,
-              <a href="tutorial/perltut.html#perltut_top">Perl</a>,
-              <a href=
-              "tutorial/pythontut.html#pythontut_top">Python</a>,
-              <a href="tutorial/xslttut.html#xslttut_top">XSLT</a>
-              and</span> <a href=
-              "tutorial/runcmdtut.html#runcmdtut_top">Run
-              Commands</a>.</p>
-            </li>
-          </ul>
-        </div>
+    <ul>
+      <li><a target="_blank" href="http://community.activestate.com/faq-list?filter0=49">Komodo FAQs</a></li>
+      <li><a target="_blank" href="http://community.activestate.com/forums/komodo">Komodo Forums</a></li>
+    </ul>
+  </div>
 
-    </div><!-- content -->
-  </div><!-- main-container -->
+  <div>
+    <h2><a href="getstarted.html#getstarted_top">Sample Project</a></h2>
+
+    <p>Get started fast with Komodo's <strong><a href=
+    "getstarted.html#getstarted_top">Sample
+    Project</a></strong>.</p>
+  </div>
+
+  <div>
+    <h2><a href="tutorial/tourlet_over.html#over_top">Feature Showcase</a></h2>
+
+    <p>Quick <strong><a href=
+    "tutorial/tourlet_over.html#over_top">Demos</a></strong>
+    showing advanced search functionality, editing,
+    debugging, and more.</p>
+  </div>
+
+  <div class="app-ideonly">
+    <h2><a href="tut-intro.html#tut_over_top">Tutorials</a></h2>
+
+    <p>Helpful introductions to <span class="app-ide app-edit">
+    <a href="tutorial/railstut.html#rails_top">Ruby on Rails</a>,
+    <a href="tutorial/jstut.html#jstut_top">JavaScript</a>,
+    <a href="tutorial/rubytut.html#rubytut_top">Ruby</a>,
+    <a href="tutorial/phptut.html#phptut_top">PHP</a>,
+    <a href="tutorial/perltut.html#perltut_top">Perl</a>,
+    <a href="tutorial/pythontut.html#pythontut_top">Python</a>,
+    <a href="tutorial/xslttut.html#xslttut_top">XSLT</a>
+    and</span> <a href="tutorial/runcmdtut.html#runcmdtut_top">Run Commands</a>.</p>
+  </div>
+
+</div> <!-- content -->
 </body>
 </html>

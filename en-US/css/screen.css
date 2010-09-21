@@ -1,8 +1,58 @@
+@import url("activestyle/reset.css");
+@import url("activestyle/base.css");
 
-/* Screen style for the Komodo docs. */
 
-/* Start with our crufty aspn.css. Eventually want to replace this. */
-@import url("aspn.css");
+#content {
+    margin: 15px;
+}
 
-@import url("app.css");
+h2 {
+    border-top: 5px solid #ccc;
+    margin: 2em 0 0.5em;
+    padding-top: 0.4em;
+}
+h3 {
+    color: #333333;  /* the red from AS styleguide is weird */
+}
+
+
+
+/* {{{ app -- Styling for app-specific sections.
+ *
+ * Customarily, sections of the Komodo docs that are specific to a
+ * particular app/flavour are maked with:
+ *      class="app-NAME"
+ * For example:
+ *      <div class="app-ide">
+ *          ...
+ *      </div>
+ * or:
+ *      <li class="app-edit">
+ *          ...
+ *      </li>
+ *
+ * TODO: add subtle background text (via bg img perhaps?) that says
+ *       when specific to an app
+ */
+div.app-edit {
+    /*border: 2px solid #ddd;*/
+    padding: 2px 0px;
+    margin: 2px 0px;
+    background: url(../img/app-edit.png) no-repeat right top;
+}
+
+div.app-ide {
+    /*border: 2px solid #ddd;*/
+    padding: 2px 0px;
+    margin: 2px 0px;
+    background: url(../img/app-ide.png) no-repeat right top;
+}
+
+div.app-ide-edit {
+    /*border: 2px solid #ddd;*/
+    padding: 2px 0px;
+    margin: 2px 0px;
+    background: url(../img/app-ide-edit.png) no-repeat right top;
+}
+/* }}} */
 
