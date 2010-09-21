@@ -121,10 +121,6 @@
 <node name="Files" link="files.html#files_top">
   <node name="Creating Files" link="files.html#Creating_a_New_File"/>
   <node name="Creating Files from Templates" link="files.html#files_templates"/>
-  <node name="Storing Files within a Project or the Toolbox" link="files.html#files_projtool">
-    <node name="Exporting Files as Projects" link="files.html#files_exproj"/>
-    <node name="Exporting Files to a Package" link="files.html#files_expack"/>
-  </node>
   <node name="Opening Files" link="files.html#Opening_a_File">
     <node name="Go to File (Fast Open)" link="files.html#files_go_to_file"/>
     <node name="Opening Files with the Open/Find Toolbar" link="files.html#files_openfindtoolbar"/>

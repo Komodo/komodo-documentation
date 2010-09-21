@@ -265,97 +265,6 @@
     nested objects (e.g. arrays of arrays etc.).</li>
   </ul>
 
-
-  <h2><a name="Directory_Import" id="Directory_Import">Directory
-  Import</a></h2>
-
-  <p>These preferences define how Komodo imports files and
-  directories. The following import options are available:</p>
-
-  <ul>
-    <li><strong>Live Import</strong>: Keep the imported directories
-    and files current with the file system via <a href=
-    "folders.html#folders_top">Live Folders</a>. By
-    default, new projects use the base directory in which they are
-    created as the project's root directory and import all files
-    and directories recursively. Files and directories in the
-    project are kept synchronized with the filesystem. For example,
-    when new files are added to a directory in the project, they
-    will automatically appear in the corresponding Live Folder in
-    the project. This setting can be overridden in a particular
-    Project's scope in <a href=
-    "project.html#project_prefs">Project Properties and
-    Settings</a>.</li>
-
-    <li><strong>Directory to import from</strong>: Specify the
-    directory from which you want to import files. Use the
-    <strong>Browse</strong> button to navigate the file
-    system.</li>
-
-    <li><strong>Files to include</strong>: Specify the filenames to
-    include. Use wildcards ("*" and "?") to specify groups of
-    files. Separate multiple file specifications with semicolons.
-    If the field is left blank, all files in the specified
-    directory are imported.</li>
-
-    <li><strong>Files and directories to exclude</strong>: Specify
-    the file and directory names to exclude. Use wildcards ("*" and
-    "?") to specify groups of files. Separate multiple file
-    specifications with semicolons. If the field is left blank, no
-    files in the specified directory are excluded.</li>
-
-    <li><strong>Import Subdirectories Recursively</strong>: Select
-    this check box to import directories (and files contained in
-    those directories) located beneath the directory specified in
-    the <strong>Directory to import from</strong> field. This check
-    box must be checked in order to specify the "Import Directory
-    Structure" option as the <strong>Type of folder structure to
-    create</strong>.</li>
-
-    <li>
-      <strong>Type of folder structure to create</strong>:
-
-      <ul>
-        <li><strong>Import directory structure</strong>: If the
-        <strong>Import Subdirectories Recursively</strong> box is
-        selected and this option is selected, Komodo creates
-        folders within the project that represent imported
-        directories. Thus, the directory structure is preserved
-        within the project.</li>
-
-        <li><strong>Make a folder per language</strong>: If this
-        option is selected, imported files are organized into
-        folders according to the language indicated by file pattern
-        in the filename. File associations are configured in the
-        Komodo <a class="doc" href=
-        "prefs.html#File_Associations">Preferences</a>.
-        Each folder is named after the associated language, for
-        example, "Perl files", "XML files", etc. Files that don't
-        correspond to a known file pattern are stored in a folder
-        called "Other files".</li>
-
-        <li><strong>Make one flat list</strong>: If this option is
-        selected, all the imported files are placed directly under
-        the project from which the <strong>Import from File
-        System</strong> command was invoked.</li>
-      </ul>
-    </li>
-  </ul>
-
-  <p>These settings apply to all new projects in Komodo. They can
-  be overridden in:</p>
-
-  <ul>
-    <li>the specific project's <strong>Directory Import</strong>
-    settings</li>
-
-    <li>the <strong>Directory Filter</strong> properties (Live
-    Folders)</li>
-
-    <li>the <strong>Import from Filesystem</strong> settings
-    (Virtual Folders).</li>
-  </ul>
-
   <h2><a name="prefs_editor" id="prefs_editor">Editor
   Preferences</a></h2>
 
@@ -544,10 +453,10 @@
   key binding. If the key binding is already assigned, the original
   assignment is cleared.</p>
 
-  <p><strong>Key Bindings for Custom Components</strong></p>
+  <p><strong>Key Bindings for Tools</strong></p>
 
   <p>Custom key bindings can be assigned to the following types of
-  components:</p>
+  tools:</p>
 
   <ul>
     <li><a href="urls.html#urls_top">URLs</a></li>
@@ -563,24 +472,19 @@
     "templates.html#templates_top">Templates</a></li>
   </ul>
 
-  <p>When the key binding associated with a component is invoked,
-  it has the same action as double-clicking the component in the
-  <a href="toolbox.html#toolbox_top">Toolbox</a> or
-  <a href="project.html#project_top">Projects
-  tab</a>.</p>
+  <p>When the key binding associated with a toolis invoked,
+  it has the same action as double-clicking the tool in the
+  <a href="toolbox.html#toolbox_top">Toolbox</a> sidebar.</p>
 
-  <p>Key bindings assigned to components in a project are only
-  available for the <a href=
-  "project.html#Switching_Between_Projects">active
-  project</a>. Key bindings for Toolbox components are always
+  <p>Key bindings assigned to tools in a project toolbox are only
+  available for the <a href="project.html">active
+  project</a>. Key bindings for tools in the global toolbox are always
   available.</p>
 
-  <p>To assign a key binding to a component, or to alter or delete
-  an existing key binding, right-click the desired component in the
-  <a href="toolbox.html#toolbox_top">Toolbox</a> or
-  <a href="project.html#project_top">Projects sidebar</a> to
-  display the Properties dialog box, then click the <strong>Key
-  Binding</strong> tab. Configure as described above.</p>
+  <p>To assign a key binding to a tool, or to alter or delete
+  an existing key binding, right-click the tool and select Properties,
+  then click the <strong>Key Binding</strong> tab. Configure as
+  described above.</p>
 
   <p><strong>Sharing Keybindings</strong></p>
 
@@ -2060,14 +1964,13 @@ it uses the line ending already in use in the file.</p>-->
   </ul>
 
   <p><strong><a name="file_info" id="file_info">File Status Updates
-  in Projects sidebar</a></strong></p>
+  in Places sidebar</a></strong></p>
 
   <p>The <strong>Update file status automatically</strong> option
   enables a periodic check of the read/write status and the
   <a href="scc.html#scc_top">source code control</a>
-  status of components stored in the <a href=
-  "places.html">Places</a> and <a href="toolbox.html">Toolbox</a>
-  sidebars.</p>
+  status of files in the <a href=
+  "places.html">Places</a> sidebar.</p>
 
   <p>Status refresh can also be performed manually with the
   <strong>Refresh</strong> context menu item for any tool, file or
@@ -2150,6 +2053,8 @@ it uses the line ending already in use in the file.</p>-->
   <h2><a name="Shared_Support" id="Shared_Support">Shared Support
   Preferences</a></h2>
 
+  <!-- TODO: this section needs an audit, may be out of date -->
+  
   <p>Komodo's shared support functionality is used to configure
   components on one machine and distribute them for use on other
   machines. Shared support is implemented via a "Common Data
@@ -2180,15 +2085,14 @@ it uses the line ending already in use in the file.</p>-->
 
   <p>To access shared components, Komodo users must have "read"
   access rights to shared files in both the Common Data Directory
-  and the <a href="toolbox.html#toolbox_share">Shared
+  and the <a href="toolbox.html#toolbox_top">Shared
   Toolbox</a> (if the directory is not the same as the Common Data
   Directory). To alter shared components, users must also have
   "write" rights.</p>
 
   <p>By default, the <a name="Config_CDD" id="Config_CDD">The
   Common Data Directory</a> is the same as the <a href=
-  "trouble.html#appdata_dir">user data</a>
-  directory.</p>
+  "trouble.html#appdata_dir">user data</a> directory.</p>
 
   <p>To specify a custom location for the Common Data
   Directory:</p>
@@ -2255,12 +2159,12 @@ it uses the line ending already in use in the file.</p>-->
 
   <ul>
     <li><strong>Windows</strong>: <em>C:\Program Files\ActiveState
-    Komodo 3.x</em></li>
+    Komodo 6.x</em></li>
 
     <li><strong>Mac OS X</strong>:
     <em><em>&lt;komodo-install-directory&gt;</em>/Contents/SharedSupport/</em></li>
 
-    <li><strong>Linux</strong>: <em>etc/komodo/</em></li>
+    <li><strong>Linux</strong>: <em>/etc/komodo/</em></li>
   </ul>
 
   <p>Make a backup copy of <em>prefs.xml</em> before editing it. In
