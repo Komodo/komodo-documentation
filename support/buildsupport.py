@@ -59,12 +59,12 @@ def app_filter_html_path_inplace(path, filters, log=None):
         <div class="app-ide">
             ...ide info...
         </div>
-        <div class="app-snapdragon">
-            ...snapdragon info...
+        <div class="app-edit">
+            ...edit info...
         </div>
     If there are no filters, then the HTML is not changed. If the filters
-    include "ide" but not "snapdragon", then the ide div remains and the
-    snapdragon div is removed.
+    include "ide" but not "edit", then the ide div remains and the
+    edit div is removed.
     """
     if not filters:
         return
@@ -124,12 +124,12 @@ def app_filter_xml_path_inplace(path, filters, log=None):
         <sometag flags="ide">
             ...ide info...
         </sometag>
-        <sometag flags="app-snapdragon">
-            ...snapdragon info...
+        <sometag flags="app-edit">
+            ...edit info...
         </sometag>
     If there are no filters, then the XML is not changed. If the filters
-    include "ide" but not "snapdragon", then the ide tag remains and the
-    snapdragon tag is removed.
+    include "ide" but not "edit", then the ide tag remains and the
+    edit tag is removed.
     """
     if not filters:
         return

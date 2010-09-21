@@ -9,20 +9,13 @@
  *          ...
  *      </div>
  * or:
- *      <li class="app-snapdragon">
+ *      <li class="app-edit">
  *          ...
  *      </li>
  *
  * TODO: add subtle background text (via bg img perhaps?) that says
  *       when specific to an app
  */
-
-div.app-snapdragon {
-    /*border: 2px solid #ddd;*/
-    padding: 2px 0px;
-    margin: 2px 0px;
-    background: url(../img/app-snapdragon.png) no-repeat right top;
-}
 
 div.app-edit {
     /*border: 2px solid #ddd;*/

@@ -120,10 +120,9 @@ class Filters(ConfigVar):
     
         ide
         edit
-        snapdragon
     """
     name = "filters"
-    known_values = ["ide", "edit", "snapdragon", "ideonly", "editonly"]
+    known_values = ["ide", "edit", "ideonly", "editonly"]
     
     def add_options(self, optparser):
         optparser.add_option("-F", "--filter",

@@ -8,13 +8,6 @@
      context sensitive help in Komodo (see 'help_tag2page' in launch.js.) -->
 
 <node name="Welcome to Komodo" link="top.html">
-  <node name="Release Notes (Snapdragon)" link="releases/snapdragon.html"
-        flags="snapdragon">
-    <node id="whatsnew_snapdragon" name="What's New" link="releases/snapdragon.html#whatsnew" />
-    <node id="details_snapdragon" name="Detailed Changes" link="releases/snapdragon.html#details" />
-    <node id="knownissues_snapdragon" name="Known Issues" link="releases/snapdragon.html#knownissues" />
-  </node>
-
   <node id="release_notes" name="Release Notes (IDE/Edit)" link="releases/ide.html"
         flags="ide edit">
     <node id="whatsnew_ide" name="What's New" link="releases/ide.html#whatsnew" />
