@@ -85,91 +85,6 @@
   access, select the desired template and click <strong>Add to
   Toolbox</strong>.</p>
 
-  <h2><a name="files_projtool" id="files_projtool">Storing Files
-  within a Project or the Toolbox</a></h2>
-
-  <p>Files can be stored in a <a href=
-  "project.html#project_top">project</a>, in the
-  <a href="toolbox.html#toolbox_top">Toolbox</a>, or
-  within <a href="folders.html#folders_top">folders</a>
-  in a project or the Toolbox. Storing a file within a project or
-  the Toolbox creates a reference to the actual file located on the
-  disk; it does not affect the file itself. Therefore, the same
-  file can be stored in multiple projects and folders, both in
-  projects and within the Toolbox; changes to the original source
-  file apply regardless of the source of the file reference;
-  deleting a file from a project or the Toolbox does not delete the
-  file from the filesystem.</p>
-
-  <p>While most file options (such as source code control commands,
-  viewing unsaved changes, and refreshing the file status) are
-  accessible regardless or whether or not the file is contained in
-  a project or the Toolbox, some commands are specific to the
-  project/Toolbox environment. These commands are described
-  below.</p>
-
-  <h3><a name="files_openshort" id="files_openshort">Creating an
-  Open Shortcut to the Current File Location</a></h3>
-
-  <p><a href="openshort.html#openshort_top">Open...
-  shortcuts</a>, stored within a <a href=
-  "project.html#project_top">project</a> or the <a href=
-  "toolbox.html#toolbox_top">Toolbox</a>, are references
-  to filesystem directories. When an open shortcut is invoked, the
-  standard Open File dialog box is displayed with the contents of
-  the directory.</p>
-
-  <p>Open shortcuts can be created using a specific file as the
-  context. Right-click a file in a <a href=
-  "project.html#project_top">project</a> or the <a href=
-  "toolbox.html#toolbox_top">Toolbox</a> and select
-  <strong>Make "Open..." Shortcut</strong>. This creates an open
-  shortcut to the directory where the file is stored.</p>
-
-  <h3><a name="files_exproj" id="files_exproj">Exporting Files as
-  Projects</a></h3>
-
-  <p>The <strong>Export as Project File</strong> option is used to
-  create a new project file containing the file from which the
-  option was invoked. To access this option, the file must be
-  stored in a <a href=
-  "project.html#project_top">project</a> or the <a href=
-  "toolbox.html#toolbox_top">Toolbox</a>. Right-click
-  the desired file name and select <strong>Export as Project
-  File</strong>. You are prompted to provide the name of the new
-  project file and the directory where it will be stored.</p>
-
-  <p>To open the new project file, select
-  <strong>File|Open|Project</strong>.</p>
-
-  <h3><a name="files_expack" id="files_expack">Exporting Files to a
-  Package</a></h3>
-
-  <p>Files can be archived and distributed among multiple Komodo
-  users via "packages". Packages are compressed archive files that
-  contain the file from which the <strong>Export Package</strong>
-  option was invoked. Packages are stored in files with a ".kpz"
-  extension, and can be opened by any archiving utility that
-  supports <code>libz</code> (for example WinZip). The
-  <strong>Export Package</strong> option differs from the
-  <strong>Export as Project File</strong> option in that copies of
-  filesystem-based components (such as files and dialog projects)
-  are included in the archive. Conversely, <strong>Export as
-  Project File</strong> creates a project with a reference to the
-  component's original location and does not create copies of the
-  components. When <strong>Export Package</strong> is invoked, you
-  are prompted for a name and file location for the package.</p>
-
-  <p>Exported packages can only be imported into "container"
-  objects in Komodo, such as projects, the Toolbox, and folders
-  within projects and the Toolbox. See <a href=
-  "toolbox.html#export_import">Toolbox - Exporting and
-  Importing Toolbox Contents</a>, <a href=
-  "project.html#project_impexp">Projects - Importing and
-  Exporting Projects via Packages</a>, or <a href=
-  "folders.html#folders_importpack">Folders - Import
-  Contents from Package</a> for more information.</p>
-
   <h2><a name="Opening_a_File" id="Opening_a_File">Opening
   Files</a></h2>
 
@@ -430,12 +345,6 @@
   and re-opened. If no authentication information is stored in the
   server configuration, you are prompted to supply it when you open
   the file.</p>
-
-  <p>See <a href="project.html#project_add_comp">Adding
-  Components to Projects</a> or <a href=
-  "toolbox.html#toolbox_addcomp">Adding Components to
-  the Toolbox</a> for instructions on adding remote files to the
-  Toolbox or to projects.</p>
 
   <p>To open a remote file, double-click the file name, use the
   assigned key binding, or right-click the file and select

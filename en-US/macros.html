@@ -18,9 +18,8 @@
 <body>
   <h1><a name="macros_top" id="macros_top">Macros</a></h1>
 
-  <p>Macros are scripts which automate Komodo. They are stored in <a
-  class="doc" href="project.html#project_top">projects</a> or <a
-  class="doc" href="toolbox.html#toolbox_top">toolboxes</a>, and can be
+  <p>Macros are scripts which automate Komodo. They are stored  <a
+  class="doc" href="toolbox.html#toolbox_top">toolboxes</a> and can be
   launched by double-clicking the macro icon, pressing an associated <a
   href="#key_bindings">custom key binding</a>, or by binding them to
   event <a class="doc" href="#triggers_macros">triggers</a>.</p>
@@ -92,11 +91,8 @@
   <p>To add a macro:</p>
 
   <ol>
-    <li>Select <strong>Toolbox|Add|New Macro...</strong> or
-    <strong>Project|Add|New Macro...</strong>. Alternatively, use
-    the Add buttons within the Project or Toolbox sidebars, or
-    right-click a project or folder name and select
-    <strong>Add|New Macro...</strong>.</li>
+    <li>Select <strong>Add New Macro...</strong> from the Toolbox
+    drop-down menu or a folder's right-click context menu.</li>
     
     <li><strong>Language</strong>: Specify the language (Python or
     JavaScript) in which to program the macro.</li>
@@ -131,26 +127,24 @@
   <h2><a name="macros_managing" id="macros_managing">Managing Macros</a></h2>
 
   <p>Macros can be dragged into any <a
-  href="project.html#project_top">project</a>, <a
-  href="toolbox.html#toolbox_top">toolbox</a> or <a
-  href="folders.html#folders_top">folder</a>. Right-clicking on a macro
-  brings up a context menu with the following additional options:</p>
+  href="toolbox.html#toolbox_top">toolbox</a> or toolbox folder.
+  Right-clicking on a macro brings up a context menu with the following
+  additional options:</p>
 
   <ul>
     <li><strong>Execute Macro</strong>: Runs the selected macro.</li>
+    
+    <li><strong>Edit Macro</strong>: Opens the macro in an editor tab.</li>
 
     <li><strong>Cut/Copy/Paste</strong>: Used to duplicate or move a
     macro when dragging is not convenient (e.g. to a project which is
     currently closed).</li>
 
-    <li><strong>Export as Project File</strong>: Creates a new project
-    file that contains the selected macro. You are prompted to provide
-    the name of the new project file and the directory where it will be
-    stored.</li>
+    <li><strong>Show in File Manager</strong>: Shows the JSON file for
+    the macro in the system's default file manager.</li>
 
-    <li><strong>Export Package</strong>: Exports the macro as a Komodo
-    ".kpz" <a href="project.html#project_impexp">package</a> for sharing
-    or archiving.</li>
+    <li><strong>Export as Zip File...</strong>: Exports the macro in a
+    standard ".zip" archive.</li>
 
     <li><strong>Rename</strong>: Changes the macro name.</li>
 
