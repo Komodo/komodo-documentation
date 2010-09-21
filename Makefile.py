@@ -358,9 +358,13 @@ class munge(Task):
     if False:
         MARKER = re.compile('<!DOCTYPE', re.S)
         #REPLACEMENT = '<!DOCTYPE html>'
-    if True:
-        MARKER = re.compile('Copyright', re.S)
+    if False:
+        MARKER = re.compile('^<!-- Copyright.*-->\n<!--.*-->',)
+        REPLACEMENT = ""
         #REPLACEMENT = '<!DOCTYPE html>'
+    if True:
+        MARKER = re.compile('^\s+<!DOCTYPE', re.S)
+        REPLACEMENT = '<!DOCTYPE'
     
     def make(self):
         import codecs
@@ -384,6 +388,11 @@ class munge(Task):
                 paths_with_marker.append(path)
         pprint(paths_without_marker)
         print len(paths_without_marker)
+        
+        #for path in paths_without_marker:
+        #    print "-- ", path
+        #    sys.stdout.flush()
+        #    os.system("head %s" % path)
         
         # Make changes.
         if self.REPLACEMENT is not None:
