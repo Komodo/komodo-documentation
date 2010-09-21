@@ -346,10 +346,22 @@ class distclean(_KomodoDocTask):
 
 class munge(Task):
     """Munge the HTML files (for bulk edits)."""
-    MARKER = re.compile('<html xmlns="http://www.w3.org/1999/xhtml">')
-    REPLACEMENT = '<html>'
-    MARKER = re.compile('<!DOCTYPE html PUBLIC .*?>', re.S)
-    REPLACEMENT = '<!DOCTYPE html>'
+    INVERSE = False  # set True to change files with*out* MARKER
+    REPLACEMENT = None
+    
+    if False:
+        MARKER = re.compile('<html xmlns="http://www.w3.org/1999/xhtml">')
+        REPLACEMENT = '<html>'
+    if False:
+        MARKER = re.compile('<!DOCTYPE html PUBLIC .*?>\n*', re.S)
+        REPLACEMENT = '<!DOCTYPE html>\n'
+    if False:
+        MARKER = re.compile('<!DOCTYPE', re.S)
+        #REPLACEMENT = '<!DOCTYPE html>'
+    if True:
+        MARKER = re.compile('Copyright', re.S)
+        #REPLACEMENT = '<!DOCTYPE html>'
+    
     def make(self):
         import codecs
         from glob import glob
@@ -372,8 +384,19 @@ class munge(Task):
                 paths_with_marker.append(path)
         pprint(paths_without_marker)
         print len(paths_without_marker)
-            
-            
+        
+        # Make changes.
+        if self.REPLACEMENT is not None:
+            paths_to_change = (paths_without_marker if self.INVERSE
+                else paths_with_marker)
+            for path in paths_to_change:
+                content = content_from_path[path]
+                new_content = self.MARKER.sub(self.REPLACEMENT, content)
+                if new_content != content:
+                    print "update `%s'" % path
+                    f = codecs.open(path, 'w', 'utf-8')
+                    f.write(new_content)
+                    f.close()
 
 class todo(Task):
     """Print out todo's and xxx's in the docs area."""
