@@ -326,7 +326,7 @@
     <node name="Using Interpolation Shortcuts in Custom Templates" link="templates.html#template_variables"/>
   </node>
   <node name="Project Templates" link="templates.html#project_templates"/>
-  <node name="Storing Templates in a Project or the Toolbox" link="templates.html#templates_projtool">
+  <node name="Storing Templates in a Toolbox" link="templates.html#templates_projtool">
     <node name="Template Options" link="templates.html#templates_options"/>
     <node name="Assigning Custom Icons to Templates" link="templates.html#Cust_Icons"/>
     <node name="Template Key Bindings" link="templates.html#template_key_bindings"/>
@@ -348,7 +348,7 @@
     <node name="Advanced Run Commands" link="run.html#run_advanced"/>
     <node name="Command Output Tab" link="run.html#run_outputtab"/>
   </node>
-  <node name="Storing Run Commands in a Project or the Toolbox" link="run.html#run_projtool">
+  <node name="Storing Run Commands in a Toolbox" link="run.html#run_projtool">
     <node name="Run Command Properties" link="run.html#runcmd_props">
       <node name="Assigning Custom Icons to Run Commands" link="run.html#run_Cust_Icons"/>
       <node name="Run Command Key Bindings" link="run.html#run_key_bindings"/>

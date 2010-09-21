@@ -233,17 +233,16 @@
   "./tutorial/runcmdtut.html">Run Command Tutorial</a>.</p>
 
   <h2><a name="run_projtool" id="run_projtool">Storing Run Commands
-  in a Project or the Toolbox</a></h2>
+  in a Toolbox</a></h2>
 
-  <p>To add a run command to the <a href=
+  <p>To add a run command to <a href=
   "toolbox.html#toolbox_top">Toolbox</a>, select
   <strong>Add to Toolbox</strong> in the Run Command dialog box.
-  Run commands can also be added to <a href=
-  "project.html#project_top">projects</a> or the Toolbox
-  via the methods described in <a href="#run_projtool">Storing Run
-  Commands in a Project or the Toolbox</a>.</p>
+  Run commands can also be added to a toolbox directly via
+  <strong>Add|New Command...</strong> in the drop-down or context
+  menus.</p>
 
-  <p>To run a command stored in the Toolbox or in a project,
+  <p>To run a command stored in a Toolbox,
   double-click the run command's name, use the assigned <a href=
   "prefs.html#Config_Key_Bindings">key binding</a>, or
   right-click the run command and select <strong>Run</strong>.</p>
@@ -255,50 +254,21 @@
   <ul>
     <li><strong>Run Command</strong>: Execute the stored run
     command.</li>
+    
+    <li><strong>Cut/Copy/Paste</strong>: Used to duplicate or move a
+    command when dragging is not convenient (e.g. to a project which is
+    currently closed).</li>
 
-    <li><strong>Cut/Copy/Paste</strong>: These options are used to
-    remove the run command from a project or the Toolbox, or to
-    move a run command between a project and the Toolbox (and vice
-    versa).</li>
+    <li><strong>Show in File Manager</strong>: Shows the JSON file for
+    the command in the system's default file manager.</li>
 
-    <li><strong>Export as Project File</strong>: When this option
-    is invoked, a new project file is created that contains the run
-    command from which the option is invoked. You are prompted to
-    provide the name of the new project file and the directory
-    where it is stored. To open the new project file, select
-    <strong>File|Open|Project</strong>.</li>
+    <li><strong>Export as Zip File...</strong>: Exports the command in a
+    standard ".zip" archive.</li>
 
-    <li><strong>Export Package</strong>: Run commands can be
-    archived and distributed among multiple Komodo users via
-    "packages". Packages are compressed archive files that contain
-    the run command from which the <strong>Export Package</strong>
-    option was invoked. Packages are stored in files with a ".kpz"
-    extension, and can be opened by any archiving utility that
-    supports <code>libz</code> (for example WinZip). The
-    <strong>Export Package</strong> option differs from the
-    <strong>Export as Project File</strong> option in that copies
-    of filesystem-based components (such as files and dialog
-    projects) are included in the archive. Conversely,
-    <strong>Export as Project File</strong> creates a project with
-    a reference to the component's original location and does not
-    create copies of the components. When <strong>Export
-    Package</strong> is invoked, you are prompted for a name and
-    file location for the package. Exported packages can only be
-    imported into "container" objects in Komodo, such as projects,
-    the Toolbox, and folders within projects and the Toolbox. See
-    <a href="toolbox.html#export_import">Toolbox -
-    Exporting and Importing Toolbox Contents</a>, <a href=
-    "project.html#project_impexp">Projects - Importing
-    and Exporting Projects via Packages</a>, or <a href=
-    "folders.html#folders_importpack">Folders - Import
-    Contents from Package</a> for more information.</li>
+    <li><strong>Rename</strong>: Changes the command name.</li>
 
-    <li><strong>Rename</strong>: To change the name of a run
-    command, select this option and enter a new name.</li>
-
-    <li><strong>Delete</strong>: To remove a run command from a
-    project or the Toolbox, select this option. The run command is
-    permanently deleted.</li>
+    <li><strong>Delete</strong>: Permanently removes the selected
+    command from the toolbox.</li>
   </ul>
 
   <h3><a name="runcmd_props" id="runcmd_props">Run Command
