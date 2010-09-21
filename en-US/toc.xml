@@ -102,7 +102,7 @@
 </node>
 
 <node name="Places" link="places.html#places_top">
-  <node name="Projects Pane" link="places.html#places_projects"/>
+  <node name="Projects Pane" link="places.html#places_projects_pane"/>
   <node name="Views" link="places.html#places_views"/>
 </node>
 
