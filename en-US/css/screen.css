@@ -63,6 +63,30 @@ span.cursor {
     font-weight: bold;
 }
 
+.version_alert {
+    font-size: small;
+    margin-left: 2em;
+    color: #777;
+}
+
+.startupBox {
+    background-color: #EEEEEE;
+    border-top: 3px double #BBBBBB;
+    border-right: 3px double #BBBBBB;
+    border-bottom: 3px double #BBBBBB;
+    border-left: 3px double #BBBBBB;
+    padding: 5px;
+}
+
+.icon-list {
+    list-style-type: none;
+}
+.icon-list li {
+    padding-left: 25px;
+    padding-bottom: 8px;
+    list-style-image: none;
+}
+
 
 /* ---- Styling for app-specific sections ----
  *
