@@ -102,6 +102,7 @@
 </node>
 
 <node name="Places" link="places.html#places_top">
+  <node name="Projects Pane" link="places.html#places_projects"/>
   <node name="Views" link="places.html#places_views"/>
 </node>
 
@@ -128,7 +129,6 @@
       <node name="Connecting to a Remove Server" link="files.html#files_remote_connect"/>
       <node name="Using Public Key Authentication" link="files.html#files_public_key_auth"/>
       <node name="Navigating the Remote File System" link="files.html#files_navremote"/>
-      <node name="Storing Remote Files in Projects or the Toolbox" link="files.html#files_remprojtool"/>
     </node>
     <node name="Opening Mapped URIs" link="files.html#Open_Mapped_URI"/>
   </node>
