@@ -17,9 +17,6 @@
 <body>
   <h1><a name="places_top">Places</a></h1>
   
-  
-  <div>
-  
   <img src="img/places_projects.png" alt="Places and Projects"
   style="float:right;margin:0 2em 2em 2em"/>
   
@@ -42,17 +39,29 @@
   href="project.html">Projects</a> pane. Switching projects in this
   pane will change the base directory of the Places view.</p>
   
-  </div>
-  
-  
   <h2 style="clear:both"><a name="places_views">Views</a></h2>
   
+  <img src="img/places_view.png" alt="Places View"
+  style="float:right;margin:0 2em 2em 2em"/>
+  
   <p>Places can be configured to show or hide certain files. The
+  drop-down menu in the Places toolbar provides options to switch
+  between:</p>
   
-  <strong>Manage Views</strong> option in the Places Tools menu opens a
+  <ul>
+    <li>Default View: filters commonly hidden file types.</li>
+    <li>Current Project View: the view configured under Directory Import
+    in the current project's settings.</li>
+    <li>View All: all files.</li>
+    <li>Custom Views: your own configurations, by name.</li>
+  </ul>
+  
+  <p>The <strong>Manage Views</strong> option in the Places menu opens a
   dialog that lets you choose which files should be shown or hidden, and
-  to save these preferences in a named View".</p>
+  to save these preferences in a named View.</p>
   
+  <p>To specify which file types to include or exclude, use glob syntax
+  patterns separated by semi-colons (e.g. "*.html;*.xml").</p>
   
 </body>
 </html>

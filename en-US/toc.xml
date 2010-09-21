@@ -263,19 +263,6 @@
   </node>
 </node>
 
-<node name="Folders" link="folders.html#folders_top">
-  <node name="Folder Options" link="folders.html#folders_options"/>
-  <node name="Import from File System" link="folders.html#folders_importfs"/>
-  <node name="Import Contents from Package" link="folders.html#folders_importpack"/>
-  <node name="Export Contents to Package" link="folders.html#folders_opt_expack"/>
-  <node name="Refresh Folder Contents Status" link="folders.html#folders_opt_refstat"/>
-  <node name="Adding Components to Folders" link="folders.html#folders_add"/>
-  <node name="Exporting Contents as Project File" link="folders.html#folders_opt_exproj"/>
-  <node name="Renaming Folders" link="folders.html#folders_opt_rename"/>
-  <node name="Source Control on Folder Contents" link="folders.html#folders_opt_scccont"/>
-  <node name="Deleting Folders" link="folders.html#folders_opt_del"/>
-</node>
-
 <node name="Snippets" link="snippets.html#snippets_top">
   <node name="Creating Snippets" link="snippets.html#snippets_creating"/>
   <node name="Configuring Snippets" link="snippets.html#snippets_config"/>
