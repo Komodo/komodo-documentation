@@ -670,7 +670,6 @@
     <node name="Debugger Connection Options" link="prefs.html#DebuggerConnection"/>
     <node name="Advanced Debugger Preferences" link="prefs.html#Debugger_advanced"/>
   </node>
-  <node name="Directory Import" link="prefs.html#Directory_Import"/>
   <node name="Editor" link="prefs.html#prefs_editor">
     <node name="Key Bindings" link="prefs.html#Config_Key_Bindings"/>
     <node name="Indentation" link="prefs.html#Indentation_Features"/>
