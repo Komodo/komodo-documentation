@@ -362,9 +362,18 @@ class munge(Task):
         MARKER = re.compile('^<!-- Copyright.*-->\n<!--.*-->',)
         REPLACEMENT = ""
         #REPLACEMENT = '<!DOCTYPE html>'
-    if True:
+    if False:
         MARKER = re.compile('^\s+<!DOCTYPE', re.S)
         REPLACEMENT = '<!DOCTYPE'
+    if False:
+        MARKER = re.compile('^\s*<meta name="generator" content=\s*"HTML Tidy for .*? \(vers .*?\), see www.w3.org" />\n', re.S | re.M)
+        REPLACEMENT = ""
+        #MARKER = re.compile('HTML Tidy')
+    if True:
+        MARKER = re.compile('<div id="content">')
+        INVERSE = True
+        SEARCH = re.compile(r'<body>\n(.*?)</body>', re.S)
+        REPLACEMENT = r'<body>\n<div id="content">\n\1\n</div> <!-- content -->\n</body>'
     
     def make(self):
         import codecs
@@ -381,31 +390,37 @@ class munge(Task):
             f = codecs.open(path, 'r', 'utf-8')
             content = f.read()
             f.close()
+            content_from_path[path] = content
             if not self.MARKER.search(content):
                 paths_without_marker.append(path)
             else:
-                content_from_path[path] = content
                 paths_with_marker.append(path)
+        pprint(paths_with_marker)
+        print len(paths_with_marker)
         pprint(paths_without_marker)
         print len(paths_without_marker)
         
         #for path in paths_without_marker:
         #    print "-- ", path
         #    sys.stdout.flush()
-        #    os.system("head %s" % path)
+        #    os.system("grep -U5 Tidy %s" % path)
         
         # Make changes.
         if self.REPLACEMENT is not None:
             paths_to_change = (paths_without_marker if self.INVERSE
                 else paths_with_marker)
+            searcher = self.SEARCH if self.INVERSE else self.MARKER
             for path in paths_to_change:
                 content = content_from_path[path]
-                new_content = self.MARKER.sub(self.REPLACEMENT, content)
+                new_content = searcher.sub(self.REPLACEMENT, content)
+                #print "XXX match with %r: %r" % (searcher.pattern, searcher.search(content))
                 if new_content != content:
                     print "update `%s'" % path
                     f = codecs.open(path, 'w', 'utf-8')
                     f.write(new_content)
                     f.close()
+                else:
+                    print "no change in `%s' (%s)" % (path, self.REPLACEMENT)
 
 class todo(Task):
     """Print out todo's and xxx's in the docs area."""
