@@ -2,11 +2,6 @@
 @import url("activestyle/base.css");
 
 
-#content {
-    margin: 15px;
-}
-
-
 /* ---- base styles ---- */
 
 h2 {
@@ -129,5 +124,21 @@ div.app-ide-edit {
     margin: 2px 0px;
     background: url(../img/app-ide-edit.png) no-repeat right top;
 }
-/* }}} */
 
+
+/* ---- layout and branding ---- */
+
+#content {
+    padding: 15px;
+    background: url("../img/bodybg.gif") repeat-x top;
+}
+
+
+/* ---- resets for styling on docs.activestate.com ----
+ * Based on the assumption that page content is in a
+ *    <div id="as_docs_content">...</div>
+ */
+
+#as_docs_content #content {
+    background: none;
+}
