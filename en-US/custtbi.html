@@ -29,125 +29,36 @@
     </ul>
   </div>
 
-  <p>Custom toolbars and menus are used to extend Komodo's default
-  menus and toolbars with menus and toolbars containing custom
-  items. Any component that can be stored in a <a href=
-  "project.html#project_top">project</a> or the <a href=
-  "toolbox.html#toolbox_top">Toolbox</a> can be stored
-  in a custom toolbar or menu. A custom toolbar might contain
-  frequently used run commands and snippets; a custom menu might
-  contain folders with the contents of a local filesystem.</p>
-
-  <p>Custom toolbars and menus are created and configured within
-  the Project Manager and/or the Toolbox. Custom toolbars and menus
-  contained in projects are only displayed when the projects are
-  open in the Projects sidebar; custom toolbars and menus contained in
-  the Toolbox are always displayed.</p>
+  <p>Any component that can be stored in a <a href=
+  "toolbox.html#toolbox_top">Toolbox</a> can be stored in a custom
+  toolbar or menu. They are useful for exposing, snippets, commands,
+  macros or links which are used often.</p>
+  
+  <p>Custom toolbars and menus are created within a toolbox. Those in
+  project-specific toolboxes are only displayed when that project is
+  active; those contained in the global toolbox (i.e. at the top level)
+  are always displayed.</p>
 
   <h2><a name="Cust_Toolbar_Menu" id="Cust_Toolbar_Menu">Creating
   Custom Toolbars and Menus</a></h2>
 
   <ol>
-    <li>On the <strong>Project</strong> or <strong>Toolbox</strong>
-    menu, select <strong>Add|New Custom Toolbar</strong> or
-    <strong>Add|New Custom Menu</strong>. Enter a name for the new
-    component.</li>
+    <li>On the <strong>Toolbox</strong> drop-down menu, select
+    <strong>New Custom Toolbar</strong> or
+    <strong>New Custom Menu</strong>. Enter a name for the new
+    item.</li>
 
     <li>Copy and paste or drag and drop the item(s) to be included
-    on the toolbar or menu onto the icon created in the previous
-    step. Alternatively, right-click the custom menu or toolbar
-    name and select <strong>Add</strong>. For a complete
-    description of adding components to containers (such as
-    projects and custom menus and toolbars), see the <a href=
-    "project.html#project_top">Projects</a> section of
-    the documentation. New toolbars are displayed alongside the
+    onto the icon created in the previous step. Alternatively,
+    right-click the custom menu or toolbar name and select
+    <strong>Add</strong>. New toolbars are displayed alongside the
     default Komodo toolbars and can be accessed via the
     <strong>View|Toolbars</strong> menu. New menus are displayed to
     the right of the default Komodo menus.</li>
   </ol>
 
-  <h2><a name="custtbi_options" id="custtbi_options">Custom Menu
-  and Toolbar Options</a></h2>
-
-  <p>To access options for a custom menu or toolbar, do one of the
-  following:</p>
-
-  <ul>
-    <li>
-    <strong>Toolbox|<em>menuortoolbar_name</em>|<em>option</em></strong>
-    or
-    <strong>Project|<em>menuortoolbar_name</em>|<em>option</em></strong>:
-    When a custom menu or toolbar is selected in the Projects sidebar
-    or Toolbox, use the <strong>Project</strong> or
-    <strong>Toolbox</strong> menus to access the list of options.
-    The name of the custom menu or toolbar that is currently
-    selected in a project or the Toolbox is displayed on the
-    menu.</li>
-
-    <li><strong>Context Menu</strong>: Right-click the custom menu
-    or toolbar in a project or the Toolbox and select the desired
-    option.</li>
-  </ul>
-
-  <p>The following options are available:</p>
-
-  <ul>
-    <li><strong>Export as Project File</strong>: When this option
-    is invoked, a new project file is created that contains the
-    custom menu or toolbar from which the option is invoked. You
-    are prompted to provide the name of the new project file and
-    the directory where it will be stored. To open the new project
-    file, select <strong>File|Open|Project</strong>.</li>
-
-    <li><strong>Export Package</strong>: Snippets can be archived
-    and distributed among multiple Komodo users via <a href=
-    "project.html#project_impexp">Packages</a>. Packages
-    are compressed archive files that contain the snippet from
-    which the <strong>Export Package</strong> option was invoked.
-    Packages are stored in files with a ".kpz" extension, and can
-    be opened by any archiving utility that supports
-    <code>libz</code> (for example WinZip). The <strong>Export
-    Package</strong> option differs from the <strong>Export as
-    Project File</strong> option in that copies of filesystem-based
-    components (such as files and dialog projects) are included in
-    the archive. Conversely, <strong>Export as Project
-    File</strong> creates a project with a reference to the
-    component's original location and does not create copies of the
-    components. When <strong>Export Package</strong> is invoked,
-    you are prompted for a name and file location for the package.
-    Exported packages can only be imported into "container" objects
-    in Komodo, such as projects, the Toolbox, and folders within
-    projects and the Toolbox. See <a href=
-    "toolbox.html#export_import">Toolbox - Exporting and
-    Importing Toolbox Contents</a>, <a href=
-    "project.html#project_impexp">Projects - Importing
-    and Exporting Projects via Packages</a>, or <a href=
-    "folders.html#folders_importpack">Folders - Import
-    Contents from Package</a> for more information.</li>
-
-    <li><strong>Rename</strong>: To change the name of a custom
-    menu or toolbar, select this option and enter a new name.</li>
-
-    <li><strong>Cut/Copy/Paste</strong>: These options are used to
-    remove the custom menu or toolbar from a project or the
-    Toolbox, or to move custom menu or toolbars between the project
-    and the Toolbox (and vice versa).</li>
-
-    <li><strong>Add</strong>: Use this option to add components to
-    the selected custom menu or toolbar. All components can be
-    added to custom menu or toolbars in the same manner they are
-    added to projects. Refer to the individual component
-    documentation, or the <a href=
-    "project.html#project_top">project</a> documentation
-    for more information.</li>
-
-    <li><strong>Delete</strong>: To remove a custom menu or toolbar
-    from a project or the Toolbox, select this option. The custom
-    menu or toolbar is permanently deleted.</li>
-  </ul>
-
-  <h3><a name="custtbi_props" id="custtbi_props">Custom Menu and
-  Toolbar Properties</a></h3>
+  <h2><a name="custtbi_props" id="custtbi_props">Custom Menu and
+  Toolbar Properties</a></h2>
 
   <p>Custom menu or toolbar properties are used to alter the name
   of the custom menu or toolbar, or change the custom menu or
@@ -156,7 +67,7 @@
   <strong>Properties</strong>.</p>
 
   <p>Custom menus are displayed between the default
-  <strong>Tools</strong> and <strong>Window</strong> menus. If
+  <strong>Tools</strong> and <strong>Help</strong> menus. If
   multiple custom menus are in effect, the display order depends on
   the menu's <strong>Priority</strong> setting. New menus have a
   default priority of 100; alter the priority of custom menus to

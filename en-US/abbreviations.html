@@ -59,13 +59,19 @@
   insert text in place of the marker. Use the <strong>Tab</strong> key
   to cycle through subsequent markers.</p>
   
-  <h2><a name="abbrev_search_order">Language-Specific Search Order</a></h2>
+  <h2><a name="abbrev_search_order">Abbreviation Search Order</a></h2>
   
   <p>When Ctrl+T is entered, Komodo searches for relevant snippets in
-  the current <a href="project.html">project</a>, the <a
-  href="toolbox.html">toolbox</a>, and the <a
-  href="toolbox.html#toolbox_share">shared toolbox</a> (in that order).
-  </p>
+  the <a href="toolbox.html">toolbox</a>. It first checks the
+  language-specific subdirectory of the Abbreviations folder, then the
+  General snippets. The first match gets inserted.</p>
+  
+  <p>Exact case matches take precedence over mismatched case. For
+  example, "Class" would trigger a snippet named "class" if there isn't
+  one named "Class".</p>
+  
+  <!-- TODO: this can come back when it's been reimplemented - currently
+  much simpler checking 
   
   <p>Komodo checks the language-specific sub-directory and the General
   sub-directory in each of these places. For example, if you are editing
@@ -75,15 +81,15 @@
   <ol>
     <li>Abbreviations/Python folders in:
       <ul>
-        <li>Current Project</li>
-        <li>Toolbox</li>
+        <li>Current Project Toolbox</li>
+        <li>Global Toolbox</li>
         <li>Shared Toolbox</li>
       </ul>
     </li>
     <li>Abbreviations/General folders in:
       <ul>
-        <li>Current Project</li>
-        <li>Toolbox</li>
+        <li>Current Project Toolbox</li>
+        <li>Global Toolbox</li>
         <li>Shared Toolbox</li>
       </ul>
     </li>
@@ -97,15 +103,15 @@
   <ol>
     <li>Abbreviations/JavaScript folders in:
       <ul>
-        <li>Current Project</li>
-        <li>Toolbox</li>
+        <li>Current Project Toolbox</li>
+        <li>Global Toolbox</li>
         <li>Shared Toolbox</li>
       </ul>
     </li>
     <li>Abbreviations/PHP folders in:
       <ul>
-        <li>Current Project</li>
-        <li>Toolbox</li>
+        <li>Current Project Toolbox</li>
+        <li>Global Toolbox</li>
         <li>Shared Toolbox</li>
       </ul>
     </li>
@@ -117,6 +123,8 @@
       </ul>
     </li>
   </ol>
+  
+  -->
   
   <p>This allows you to have snippets with the same names for multiple
   languages. For example an abbreviation called 'class' abbreviation

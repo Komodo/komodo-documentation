@@ -248,7 +248,7 @@
   <node name="Editor Tab Display" link="editor.html#editor_tabs"/>
   <node name="Abbreviations" link="abbreviations.html#abbrev_top">
     <node name="Inserting Snippets" link="abbreviations.html#abbrev_inserting"/>
-    <node name="Language-Specific Search Order" link="abbreviations.html#abbrev_search_order"/>
+    <node name="Abbreviations Search Order" link="abbreviations.html#abbrev_search_order"/>
     <node name="Adding New Abbreviations" link="abbreviations.html#abbrev_new"/>
   </node>
   <node name="History" link="history.html#history_top">
@@ -372,7 +372,6 @@
 
 <node name="Custom Toolbars and Menus" link="custtbi.html#custtbi_top">
   <node name="Creating Custom Toolbars and Menus" link="custtbi.html#Cust_Toolbar_Menu"/>
-  <node name="Custom Menu and Toolbar Options" link="custtbi.html#custtbi_options"/>
   <node name="Custom Menu and Toolbar Properties" link="custtbi.html#custtbi_props"/>
 </node>
 
