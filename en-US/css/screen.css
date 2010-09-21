@@ -6,6 +6,8 @@
     margin: 15px;
 }
 
+/* ---- base styles ---- */
+
 h2 {
     border-top: 5px solid #ccc;
     margin: 2em 0 0.5em;
@@ -15,9 +17,54 @@ h3 {
     color: #333333;  /* the red from AS styleguide is weird */
 }
 
+code,
+pre {
+    /* Avoiding "Courier New" here because its line-height changes with
+     * different char styling which can cause alignment problems (e.g. with
+     * the recipe code blocks on ActiveState Code Recipes). */
+    font-family: Consolas, Monaco, "Lucida Console", "Courier New", monospace;
+    font-size: 9pt;
+    background-color: #f1f1f1;
+    border: 1px solid #dedede;
+    color: #444444;
+}
+code {
+    padding: 0 0.2em;
+}
+pre {
+    margin: 1em 0;
+    padding: .75em;
+    overflow: auto;
+}
+pre code  {
+    border: medium none;
+    padding: 0;
+}
+a code {
+    text-decoration: underline;
+}
 
 
-/* {{{ app -- Styling for app-specific sections.
+/* ---- special classes for the Komodo docs ---- */
+
+/* box for feature showcases and tutorials */
+div.right-float-box {
+    float: right;
+    width: 25%;
+    background-color: #EEEEEE;
+    border:1px solid #CCCCCC;
+    padding: 0 1em 0 1em;
+    margin: 0 1em 1em 1em;
+}
+
+span.cursor {
+    font-size: 120%;
+    color: black;
+    font-weight: bold;
+}
+
+
+/* ---- Styling for app-specific sections ----
  *
  * Customarily, sections of the Komodo docs that are specific to a
  * particular app/flavour are maked with:

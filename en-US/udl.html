@@ -3,60 +3,34 @@
 <head>
   <link rel="stylesheet" type="text/css" href="css/screen.css" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="shortcut icon" href="favicon.ico" type=
-  "image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
   <title>User-Defined Languages</title>
 </head>
 
 <body>
 <div id="content">
-  <h1><a name="udl_top" id="udl_top">User-Defined Language
-  Support</a></h1>
+  <h1 id="udl_top">User-Defined Language Support</h1>
+  
+  <div class="right-float-box">
+    <p><strong>Luddite Reference</strong></p>
+    <ul>
+      <li class="lisearch"><a href="luddite.html#keywords">Keywords</a></li>
+      <li class="lisearch"><a href="luddite.html#style-names">Style Names</a></li>
+      <li class="lisearch"><a href="luddite.html#terms">Terms</a></li>
+      <li class="lisearch"><a href="luddite.html#concepts">Concepts</a></li>
+    </ul>
+  </div>
 
-  <table>
-    <tr>
-      <td width="75%">
-        <p>Komodo's system for defining multi-language syntax
-        lexing and user-defined syntax highlighting is called UDL
-        (User Defined Languages). UDL files are written in a
-        language called <strong>Luddite</strong>, then compiled
-        into Scintilla lexers and packaged for use in Komodo.</p>
-      </td>
+  <p>Komodo's system for defining multi-language syntax
+  lexing and user-defined syntax highlighting is called UDL
+  (User Defined Languages). UDL files are written in a
+  language called <strong>Luddite</strong>, then compiled
+  into Scintilla lexers and packaged for use in Komodo.</p>
 
-      <td width="25%" valign="top">
-        <table class="greyback" width="100%">
-          <tr>
-            <td align="center">
-              <p><strong>Luddite Reference</strong></p>
-            </td>
-          </tr>
+  <div style="clear: both">&nbsp;</div>
 
-          <tr>
-            <td align="left">
-              <ul>
-                <li class="lisearch"><a href=
-                "luddite.html#keywords">Keywords</a></li>
-
-                <li class="lisearch"><a href=
-                "luddite.html#style-names">Style
-                Names</a></li>
-
-                <li class="lisearch"><a href=
-                "luddite.html#terms">Terms</a></li>
-
-                <li class="lisearch"><a href=
-                "luddite.html#concepts">Concepts</a></li>
-              </ul>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-
-  <h2><a id="udl_introduction" name=
-  "udl_introduction">Introduction</a></h2>
+  <h2><a id="udl_introduction" name="udl_introduction">Introduction</a></h2>
 
   <p>Komodo includes a general-purpose lexer engine that loads a
   description resource, and walks it while lexing the buffer. It
@@ -1164,7 +1138,6 @@ $ luddite help
         <p>Sample UDL files can be found in the <code>udl</code>
         subdirectory of the <em>Komodo SDK</em> directory.</p>
       </div>
-      <hr />
     </div>
   </div>
 
