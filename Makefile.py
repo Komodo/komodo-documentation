@@ -157,7 +157,6 @@ class miniset(_KomodoDocTask):
         yield join(self.cfg.miniset_dir, "relnotes.html")
         yield join(self.cfg.miniset_dir, "license.txt")
         yield join(self.cfg.miniset_dir, ".css", "screen.css")
-        yield join(self.cfg.miniset_dir, ".css", "aspn.css")
 
     def make(self):
         # Determine which release notes document to use.
@@ -183,8 +182,6 @@ class miniset(_KomodoDocTask):
         css_dir = join(self.cfg.miniset_dir, ".css")
         sh.mkdir(css_dir, log=self.log)
         sh.cp(join(self.htdocs_dir, "css", "screen.css"),
-              dstdir=css_dir, log=self.log.info)
-        sh.cp(join(self.htdocs_dir, "css", "aspn.css"),
               dstdir=css_dir, log=self.log.info)
         
         # License text.
@@ -259,7 +256,7 @@ class api_doc(_KomodoDocTask):
         api2html.api2html(self.cfg.komodo_cix_path,
                           self.results[0].relpath,
                           toc_path=self.results[1].relpath,
-                          css_paths=["css/aspn.css", "css/api.css"],
+                          css_paths=["css/api.css"],
                           title="Komodo JavaScript API Reference",
                           log=self.log.info)
 
