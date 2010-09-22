@@ -414,9 +414,32 @@
   copying the command shown in the command line summary and pasting it
   into a terminal.</p>
   
-  <h2><a name="commit_dialog" id="commit_dialog">Commit Dialog</a></h2>
+  <h2><a name="commit_dialog" id="commit_dialog">Commit (Check-in to
+  Source Control) Dialog</a></h2>
+  
+  <p>Clicking the <strong>Source Code Control: Commit</strong> button or
+  selecting <strong>Commit Changes</strong> from the SCC context
+  menu brings up the following dialog box.</p>
   
   <img alt="Commit Dialog" src="img/scc_commit_dialog.png"/>
+  
+  <p>The bottom pane shows a list of files for inclusion in the
+  check-in. Komodo scans the current directory and all subdirectories
+  under SCC control to populate this list and show the SCC status of
+  each with an icon.</p>
+  
+  <p>Check the box for each file you would like to include in the
+  check-in, or use the <strong>Check All</strong> button. Use the
+  <strong>Add File</strong> and <strong>Add Directory</strong> buttons
+  to expand the list as necessary (e.g. files in adjacent or parent
+  directories).</p> 
+  
+  <p>The <strong>Show Diff</strong> button shows a diff that includes
+  all checked files. This can be used to create multi-file patches.</p>
+  
+  <p>The <strong>Commit button</strong> starts the check-in. Command
+  line output is displayed in the <strong>SCC Output</strong> tab in the
+  bottom pane.</p>
   
   <h2><a name="config" id="config">Configuring Source Code Control
   Integration</a></h2>
