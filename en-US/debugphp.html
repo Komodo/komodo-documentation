@@ -357,7 +357,11 @@
       
       <pre class="code">
 ; xdebug config for Windows
+; - zend_extension_ts is for PHP <= 5.2
+; - zend_extension is for PHP >= 5.3
+; or you can specify both if your not sure.
 zend_extension_ts=c:\path\to\php_xdebug.dll
+zend_extension=c:\path\to\php_xdebug.dll
 xdebug.remote_enable=1
 xdebug.remote_handler=dbgp
 xdebug.remote_mode=req
@@ -389,7 +393,8 @@ xdebug.idekey=&lt;idekey&gt;
     <dt><code>zend_extension_ts</code> or <code>zend_extension</code></dt>
     <dd>Should be set to the full path to the xdebug library on your
     system. Use <code>zend_extension_ts</code> ("thread safe") on
-    Windows and <code>zend_extension</code> on other platforms.</dd>
+    Windows PHP <= 5.2, else <code>zend_extension</code> for
+    Windows PHP >= 5.3 and for all other platforms (i.e. Mac, Linux).</dd>
     
     <dt><code>xdebug.remote_enable</code></dt>
     <dd>Enables remote debugging.</dd>
