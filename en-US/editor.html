@@ -818,13 +818,11 @@ object.method(value)<span class="cursor">|</span>
   <ul>
     <li><strong>Single Line</strong>: Position the cursor at the
     start of the text on the desired line. Press
-    <strong>Tab</strong>, or select <strong>Code|Increase Line
-    Indent</strong>.</li>
+    <strong>Tab</strong>, or select <strong>Code|Indent</strong>.</li>
 
     <li><strong>Multiple Lines</strong>: Select the desired lines
     by clicking and dragging in the Editor Pane. Press
-    <strong>Tab</strong>, or select <strong>Code|Increase Line
-    Indent</strong>.</li>
+    <strong>Tab</strong>, or select <strong>Code|Indent</strong>.</li>
   </ul>
 
   <p>To un-indent a single line or a selected block of code:</p>
@@ -832,16 +830,14 @@ object.method(value)<span class="cursor">|</span>
   <ul>
     <li><strong>Single Line</strong>: Position the cursor at the
     start of the text on the desired line. Select
-    <strong>Code|Decrease Line Indent</strong> or use the
-    associated <a href=
-    "prefs.html#Config_Key_Bindings">key
+    <strong>Code|Dedent</strong> or use the
+    associated <a href="prefs.html#Config_Key_Bindings">key
     binding</a>.</li>
 
     <li><strong>Multiple Lines</strong>: Select the desired lines
     by clicking and dragging in the Editor Pane. Select
-    <strong>Code|Decrease Line Indent</strong>, or use the
-    associated <a href=
-    "prefs.html#Config_Key_Bindings">key
+    <strong>Code|Dedent</strong>, or use the
+    associated <a href="prefs.html#Config_Key_Bindings">key
     binding</a>.</li>
   </ul>
 
@@ -1176,7 +1172,7 @@ object.method(value)<span class="cursor">|</span>
   Code</a></h3>
 
   <p>Quickly select blocks of code using Komodo's <strong>Select
-  Block</strong> function (<strong>Code|Select Block</strong>, or
+  Block</strong> function (<strong>Edit|Select|Select Block</strong>, or
   use the associated <a href=
   "prefs.html#Config_Key_Bindings">key binding</a>).
   This function uses the <a class="doc" href=
@@ -1378,7 +1374,7 @@ object.method(value)<span class="cursor">|</span>
   the following ways:</p>
 
   <ul>
-    <li>Select <strong>Code|Go to Definition</strong></li>
+    <li>Select <strong>Navigation|Go to Definition</strong></li>
 
     <li>Right-click to bring up the context menu and select
     <strong>Go to Definition</strong></li>
@@ -1413,25 +1409,25 @@ object.method(value)<span class="cursor">|</span>
   <ul>
     <li><strong>To set or unset a bookmark</strong>: Position the
     editing cursor on the line of interest. Select
-    <strong>Code|Marks|Toggle Bookmark</strong> or use the
+    <strong>Navigation|Toggle Bookmark</strong> or use the
     associated <a href=
     "prefs.html#Config_Key_Bindings">key binding</a> to
     bookmark the line. If the line is already bookmarked, the
     bookmark will be removed.</li>
 
     <li><strong>To move to the next bookmark</strong>: Select
-    <strong>Code|Marks|Next Bookmark</strong> or use the associated
+    <strong>Navigation|Next Bookmark</strong> or use the associated
     <a href="prefs.html#Config_Key_Bindings">key
     binding</a>.</li>
 
     <li><strong>To move to the previous bookmark</strong>: Select
-    <strong>Code|Marks|Previous Bookmark</strong> or use the
+    <strong>Navigation|Previous Bookmark</strong> or use the
     associated <a href=
     "prefs.html#Config_Key_Bindings">key
     binding</a>.</li>
 
     <li><strong>To clear all bookmarks</strong>: Select
-    <strong>Code|Marks|Remove All Bookmarks</strong> or use the
+    <strong>Navigation|Remove All Bookmarks</strong> or use the
     associated <a href=
     "prefs.html#Config_Key_Bindings">key
     binding</a>.</li>
@@ -1439,34 +1435,18 @@ object.method(value)<span class="cursor">|</span>
 
   <p><strong><a name="marks" id="marks">Marks</a></strong></p>
 
+  <p>Komodo has three commands for Emacs-style transient marks, which
+  have following defaults using the Emacs key binding scheme:</p>
+  
   <ul>
-    <li><strong>To set a mark</strong>: Position the cursor on the
-    line of interest. Select <strong>Code|Marks|Set Transient
-    Mark</strong>. The status bar at the bottom of the Komodo
-    workspace indicates that a transient mark is set at the current
-    line. If the default <a class="doc" href=
-    "prefs.html#Config_Key_Bindings">Emacs key
-    binding</a> scheme is in effect, execute this command using
-    'Ctrl'+'Space'.</li>
-
-    <li><strong>To move from a position to a mark</strong>: Select
-    <strong>Code|Marks|Exchange Position and Mark</strong> to move
-    from the cursor location (or "position") back to the associated
-    mark. Conversely, if the cursor is located at the mark,
-    selecting this option will move the cursor back to the previous
-    position. If the default <a class="doc" href=
-    "prefs.html#Config_Key_Bindings">Emacs key
-    binding</a> scheme is in effect, execute this command using
-    'Ctrl'+'X', 'Ctrl'+'X'.</li>
-
-    <li><strong>To move to the previous mark</strong>: Select
-    <strong>Code|Marks|Move to Previous Mark</strong> to move from
-    the current mark to the previous mark or from the current
-    cursor location to the previous mark. If the default <a class=
-    "doc" href="prefs.html#Config_Key_Bindings">Emacs
-    key binding</a> scheme is in effect, execute this command using
-    'Ctrl'+'U', 'Ctrl'+'Space'.</li>
+    <li>Editor: Set Mark - Ctrl+Space</li>
+    <li>Editor: Exchange Current Point and Mark - Ctrl+X, Ctrl+X </li>
+    <li>Editor: Move to previous mark in mark ring - Ctrl+U, Ctrl+Space </li>
   </ul>
+  
+  <p>These commands can be bound to custom key sequences in the <a
+  href="prefs.html#Config_Key_Bindings">Key Bindings
+  preferences</a> with any key binding scheme.</p>
 
   <h3><a name="matching_brace" id="matching_brace">Matching
   Braces</a></h3>
@@ -1477,11 +1457,11 @@ object.method(value)<span class="cursor">|</span>
   parenthesis, the brace is displayed in bold red. The associated
   closing or opening brace is also displayed in bold red.</p>
 
-  <p>To jump to the matching brace, select <strong>Code|Jump to
+  <p>To jump to the matching brace, select <strong>Navigation|Jump to
   Matching Brace</strong>, or use the associated <a href=
   "prefs.html#Config_Key_Bindings">key binding</a>. To
   select the braces and the contents they contain, select
-  <strong>Code|Select to Matching Brace</strong>.</p>
+  <strong>Edit|Select|Select to Matching Brace</strong>.</p>
 
   <h2><a name="Detect_Changed" id="Detect_Changed">Detecting
   Changed Files</a></h2>
