@@ -137,7 +137,7 @@ div.app-ide-edit {
 }
 
 .top#content {
-    background: url("../img/ribbons.png") top left no-repeat;
+    background: url("../img/ribbons.png") top right no-repeat;
 }
 .top #title {
     height: 100px;
@@ -148,6 +148,3 @@ div.app-ide-edit {
  *    <div id="as_docs_content">...</div>
  */
 
-#as_docs_content #content {
-    background: none;
-}
