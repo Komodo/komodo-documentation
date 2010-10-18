@@ -104,7 +104,88 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
-<h3 id="bug_fixes-6.0.0rc1">6.0.0 Bug Fixes</h3>
+<h3 id="bug_fixes-6.0.1">6.0.1 Bug Fixes</h3>
+
+<ul>
+  <li>Toolbox:
+    <ul>
+      <li>Menu reorganization. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88010">88010</a>)</li>
+      <li>Cropped tree labels in the center. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88401">88401</a>)</li>
+      <li>Run command dialog: Limit the size of automatic naming. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88418">88418</a>)</li>
+    </ul>
+  </li>
+  
+  <li>SCC:
+    <ul>
+      <li>Context menu for 'commit' is disabled on Places root node. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88254">88254</a>)</li>
+      <li>Selecting multiple files/folders disables the SCC context menu. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88255">88255</a>)</li>
+      <li>Launch diff changes dialog when double-clicking a row. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88440">88440</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Vi emulation:
+    <ul>
+      <li>Allow registers to be used when in visual mode. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88215">88215</a>)</li>
+      <li>Position cursor correctly for "e" end-of-word command. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88394">88394</a>)</li>
+      <li>'cE' now properly erases the last letter of the word. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88417">88417</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Places
+    <ul>
+      <li>File duplication fixed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87994">87994</a>)</li>
+      <li>Manage Views dialog too small on Mac OS X. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88158">88158</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Code Intelligence:
+    <ul>
+      <li>Continue to show the completion dialog when backspacing. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88292">88292</a>)</li>
+      <li>Detect and skip over large files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88487">88487</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Ruby:
+    <ul>
+      <li>32-bit ruby debugger binary bits for linux-x86. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88055">88055</a>)</li>
+      <li>Add Ruby 1.9.1 and 1.9.2 debugging on OSX. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88386">88386</a>)</li>
+      <li>Setting Ruby prefs on a new install no longer requires restart. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88315">88315</a>)</li>
+      <li>Prerequisite modules for ruby-debug-base19 added. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88380">88380</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Mac OS X:
+    <ul>
+      <li>Deletion check dialog confirms delete by default. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88189">88189</a>)</li>
+      <li>Open/Find Toolbar: Bring back the round textbox controls. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88475">88475</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Project preferences: "Directory Import" should be renamed "Views". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87962">87962</a>)</li>
+  <li>New projects should always use ".komodoproject" extension. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88073">88073</a>)</li>
+  <li>Fixed failure in automatic snippet creation (drag/drop) if the code fragment contains double quotation marks("")'. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88392">88392</a>)</li>
+  <li>Open/Move Tab to New Window menu items disabled. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88399">88399</a>)</li>
+  <li>Python debugger: assigning sys.stdout to a var causes variables to no longer appear in the debugger. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88435">88435</a>)</li>
+  <li>Reinstate old snippet name-creation code. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88392">88392</a>)</li>
+  <li>Renaming a dirty file quietly loses changes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88451">88451</a>)</li>
+  <li>Show named groups for Perl matches. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88175">88175</a>)</li>
+  <li>OpenFind toolbar: Fixed opening directory in wrong window's Places. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88316">88316</a>)</li>
+  <li>Allow input from international keyboard layouts. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88492">88492</a>)</li>
+  <li>DOM Viewer: Show the DOM tree for HTML5 files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88155">88155</a>)</li>
+  <li>Find: When closing the Rx dialog - populate the search/replace fields. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=76582">76582</a>)</li>
+  <li>Add HTML5 formatter. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88157">88157</a>)</li>
+  <li>Hyperlinks: Close code definition popup if the editor has lost the focus.(Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88347">88347</a>)</li>
+  <li>Keybindings: Apply toolbox keybindings to new windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87979">87979</a>)</li>
+  <li>Lua: Add highlighting of "true", "false" and other missing keywords. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88425">88425</a>)</li>
+  <li>PHP: Give completions for aliased static class variables. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88242">88242</a>)</li>
+  <li>Publishing: Ensure file changes are properly detected on Windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88459">88459</a>)</li>
+  <li>Remote Files: Handle FTP connections to Mac OS Rumpus server. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88114">88114</a>)</li>
+  <li>Vertical Tab text was overlapping on Windows XP machines. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87984">87984</a>)</li>
+</ul>
+
+
+
+<h3 id="bug_fixes-6.0.0">6.0.0 Bug Fixes</h3>
 
 <ul>
   <li>Code Intelligence:
