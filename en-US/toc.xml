@@ -482,6 +482,7 @@
 <node name="Unit Testing" link="unittest.html#unit_test_top" flags="ide">
   <node name="Creating and Editing Test Plans" link="unittest.html#unit_test_create">
     <node name="Supported Test Frameworks by Language" link="unittest.html#unit_test_langs"/>
+    <node name="Adding Libraries Required for Unit Testing" link="unittest.html#unit_test_libs"/>
   </node>
   <node name="Running a Test Plan" link="unittest.html#unit_test_run"/>
   <node name="Importing Global Test Plans" link="unittest.html#importing_global_test_plans"/>
