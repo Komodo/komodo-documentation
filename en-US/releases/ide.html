@@ -104,6 +104,90 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-6.0.2">6.0.2 Bug Fixes</h3>
+
+<ul>
+  <li>Places and Projects:
+    <ul>
+      <li>Places lists multiple duplicates of files in some cases. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88030">88030</a>)</li>
+      <li>Can't create subdirs on remote directories. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88580">88580</a>)</li>
+      <li>Differentiate between projects with same name (show full path information). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88589">88589</a>)</li>
+      <li>Newly created files from Places don't inherit new-line settings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87833">87833</a>)</li>
+      <li>On need to invalidate the project tree row on project save. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88137">88137</a>)</li>
+      <li>Folder / File creation bugged when parent folder not expanded. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88428">88428</a>)</li>
+      <li>Double-click action on folders in places now optional. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88429">88429</a>)</li>
+    </ul>
+  </li>
+  
+  <li>
+    <ul>Rx Toolkit:
+      <li>Support Perl's \Q...\E to escape non-alphanumeric chars in regexps like '.', '*', '?', and '+' (but not '$'). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82715">82715</a>)</li>
+      <li>PHP seems to quietly fail when matching non-ascii characters. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88291">88291</a>)</li>
+      <li>Add the multi-line option to JavaScript. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88554">88554</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Database Explorer:
+    <ul>
+      <li>MySQL: Add UI options to specify mysql.sock file path (instead of TCP). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87432">87432</a>)</li>
+      <li>Nicer interface for adding a new database connection. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86680">86680</a>)</li>
+      <li>Full table display gives two warnings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88653">88653</a>)</li>
+      <li>Updating a password in the DB explorer fails. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88511">88511</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Code Intelligence:
+    <ul>
+      <li>Allow for interpreters with unexpected version strings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88614">88614</a>)</li>
+      <li>JavaScript: Properly detect static class variables. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88549">88549</a>)</li>
+      <li>HTML5/JavaScript: Fix completions for canvas API. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88742">88742</a>)</li>
+      <li>jQuery: Show completions for chained methods. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88129">88129</a>)</li>
+      <li>PHP: Calltips for default function arguments now only show one "=" sign. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88618">88618</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Toolbox:
+    <ul>
+      <li>Toolbox shows ".svn" directory. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88240">88240</a>)</li>
+      <li>Hard to create a copy of a tool. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88026">88026</a>)</li>
+    </ul>
+  </li>
+  
+  <li>Editor:
+    <ul>
+      <li>Detect and fix when certain key presses stop working. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86766">86766</a>)</li>
+      <li>Stop hyperlinks from triggering when trying to make a selection. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88050">88050</a>)</li>
+      <li>Mac OS X: Fixed crash when copying non-ascii text. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88563">88563</a>)</li>
+      <li>Vi emulation: Ensure change line command 'S' works on current line. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88734">88734</a>)</li>
+    </ul>
+  </li>
+  
+  <li>File status detection: Add pref to control network file checks. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88521">88521</a>)</li>
+  <li>New global pref for choosing wish or tclsh as the default interpreter for debugging. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88498">88498</a>)</li>
+  <li>EOL indicator isn't correctly used for new files created in Places sidebar. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88467">88467</a>)</li>
+  <li>Fixed file rename when changing only case. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88750">88750</a>)</li>
+  <li>Python3 debugger fails to start when file ends with a line containing only +1 spaces (or tabs). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88566">88566</a>)</li>
+  <li>The -version 170 flag is no longer needed. By default, the JavaScript linter will work at the current version. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88753">88753</a>)</li>
+  <li>When moving an item to another folder, if there's an item in the target folder with the same name, allow the name to be copied. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88026">88026</a>)</li>
+  <li>[Delete line] key binding should delete all selected lines, not just line where the cursor is. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86145">86145</a>)</li>
+  <li>Mac OS X: Use a longer Komodo version in the Info.plist file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88564">88564</a>)</li>
+  <li>Stop double handling of drag/drop data. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88395">88395</a>)</li>
+  <li>Implement full screen mode on OS X. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=45994">45994</a>)</li>
+  <li>koFileEx/URIlib doesn't recognize symbolic files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88642">88642</a>)</li>
+  <li>koIFile can't handle backslashes in file names. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87990">87990</a>)</li>
+  <li>Enable/disable menu items when the view changes (change affects MoreKomodo). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88071">88071</a>)</li>
+  <li>Preferences: Allow editing of the sample text (Mac OS X). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88084">88084</a>)</li>
+  <li>Properly update context menus shown for dialog editor widgets. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88090">88090</a>)</li>
+  <li>Publishing: Ensure changes made in subdirs are properly detected (Windows). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88714">88714</a>)</li>
+  <li>Templates: Ensure language detection works for the HTML5 samples. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88735">88735</a>)</li>
+  <li>textinfo.py doesn't recognize UTF-8 Perl files without a BOM. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88698">88698</a>)</li>
+  <li>Triggered macro runs in second window. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88569">88569</a>)</li>
+  <li>Open/find toolbar should not be visible by default. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88574">88574</a>)</li>
+  <li>Workspace isn't saved on re-start by the auto-update or add-on system. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=80785">80785</a>)</li>
+  <li>Restoring an opened project re-opens the project/places pane. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88069">88069</a>)</li>
+</ul>
+
+
 <h3 id="bug_fixes-6.0.1">6.0.1 Bug Fixes</h3>
 
 <ul>
