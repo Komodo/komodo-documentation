@@ -655,7 +655,7 @@
     <node name="Non-Bracketed Syntax" link="shortcuts.html#shortcuts_nonbrack"/>
     <node name="Bracketed Syntax" link="shortcuts.html#shortcuts_brack"/>
   </node>
-  <node name="Basic Interpolation Shorcut Options" link="shortcuts.html#options"/>
+  <node name="Basic Interpolation Shortcut Options" link="shortcuts.html#options"/>
   <node name="%(date)" link="shortcuts.html#shortcuts_datecode"/>
   <node name="%(ask)" link="shortcuts.html#shortcuts_askcode"/>
   <node name="%(path)" link="shortcuts.html#shortcuts_pathcode"/>
