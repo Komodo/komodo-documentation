@@ -153,7 +153,7 @@
         conditional based on those statements. In languages like
         C/C++, preprocessing is a common step applied to source
         files before compilation. The Python
-        <em>preprocessor.py</em> program mimics a C/C++
+        <em>preprocess.py</em> program mimics a C/C++
         preprocessor using similar directive statements.</p>
       </td>
     </tr>
@@ -165,11 +165,11 @@
         <p><strong>About Directive Statements</strong>:
         Preprocessor directive statements are dependent on the
         preprocessor program they are used within. In the
-        <em>preprocessor.py</em> program, a directive is preceded
+        <em>preprocess.py</em> program, a directive is preceded
         with a pound sign (#), and is located alone on a line of
         code. Placing a directive on a unique line ensures the
         statement is included in a file without breaking file
-        syntax rules. Valid <em>preprocessor.py</em> directives
+        syntax rules. Valid <em>preprocess.py</em> directives
         include:</p>
         <pre>
 
@@ -426,7 +426,7 @@
     <code>_commentGroups</code></li>
   </ul>
 
-  <h4>Lines 159 to 166 - Defining Patterns for Recognized
+  <h4>Lines 158 to 166 - Defining Patterns for Recognized
   Directives</h4>
 
   <p>This section defines advanced regular expressions for finding
@@ -845,8 +845,8 @@ defined, use '-D' option"
 
     <li><strong>Create New File</strong>: To create a new HTML file
     that will later contain the HTML code in the Bottom Pane,
-    select <strong>File|New|New File</strong>. In the New File
-    dialog box, select the HTML Category. Click
+    select <strong>File|New|File from Template</strong>. In the New File
+    dialog box, select the HTML Template. Click
     <strong>Open</strong>.</li>
 
     <li><strong>Save the Output</strong>: Delete the contents of
@@ -875,7 +875,7 @@ defined, use '-D' option"
 
   <ol>
     <li><strong>Set a breakpoint</strong>: On the
-    <strong>preprocessor.py</strong> tab, click on the gray margin
+    <strong>preprocess.py</strong> tab, click on the gray margin
     immediately to the left of the code on line 347 of the program.
     This sets a breakpoint, indicated by a red circle.</li>
 
@@ -1032,9 +1032,11 @@ defined, use '-D' option"
     "X" button, located in the upper-right corner of the
     <strong>Shell</strong> tab, for each open Python shell.</li>
 
-    <li><strong>Make <em>python_tutorial.kpf</em> the Active
-    Project</strong>: On the <strong>Project</strong> menu, select
-    <strong>Make Active Project|preprocess</strong>.</li>
+    <li><strong>Make sure <em>python_tutorial</em> is open (bold): If
+    you haven't opened it before, click on the <strong>Python
+    Tutorial</strong> link on the <strong>Start Page</strong>. If it's
+    in your list of recent projects in the <strong>Projects
+    pane</strong>, double-click it.</li>
   </ol>
 
   <p>Start using the interactive shell with the Python Tutorial
