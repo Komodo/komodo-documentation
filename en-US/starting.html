@@ -80,12 +80,19 @@ komodo [<em>options</em>] [<em>filenames</em>]
   <p>To start Komodo from the Terminal:</p>
 
   <p>If you want to start to Komodo from the command line, it is
-  best to first create the following symlink:</p>
+  best to first create an alias for 'komodo':</p>
+  
   <pre class="code">
-sudo ln -s /Applications/Komodo.app/Contents/MacOS/komodo /usr/local/bin/komodo
-</pre>
-
-  <p>Once the symlink is created, the following syntax applies:</p>
+alias komodo='open -a "Komodo IDE"'</pre>
+  
+  <p>If you're using Komodo Edit, modify the command accordingly:</p>
+  
+  <pre class="code">
+alias komodo='open -a "Komodo Edit"'</pre>
+  
+  <p>This line can be added to your <code>~/.bash_profile</code>.</p>
+  
+  <p>Once the alias is set, the following syntax applies:</p>
   <pre class="code">
 komodo [<em>options</em>] [<em>filenames</em>]
 </pre>
