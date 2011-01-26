@@ -34,7 +34,7 @@
     <li>the base directory to display in <a href="places.html">Places</a></li>
     <li>links to additional directories</li>
     <li>links to files</li>
-    <li>arbitrary groups of file and directory links</li>
+    <li>groups of file and directory links</li>
     <li>previously open files (optionally re-opened when the project becomes active)</li>
     <li>debugger preferences</li>
     <li>test plans</li>
@@ -56,23 +56,44 @@
   
   <p>Multiple projects can be opened in the Projects pane to give you
   quick access to that project's file and directory links, but only one
-  project at a time can be active.</p>
+  project (per Komodo window) is "active" at a time.</p>
   
   <p>If the active project has saved debugger settings, test plans,
-  library search paths, or mapped URI's, these settings will be active
+  library search paths, or mapped URI's, these settings will be enabled
   for all files that are part of that project.</p>
   
-  <h3><a id="project_menu">Projects Menu</a></h3>
+  <h3><a id="project_links"></a>File and Folder Links</h3>
   
-  <p>The Projects menu is available in the toolbar for the Projects pane
-  and as a right-click context menu. The toolbar menu operates on the
-  active (boldface) project and the context menu operates on the
-  selected project.</p> 
+  <p>Projects can contain links to files and folders on the local
+  filesystem or on remote servers. Double-clicking on a file link opens
+  it in an editor tab. Double-clicking on a folder link opens it in the
+  <a href="places.html">Places</a> pane above.</p>
+  
+  <h3><a id="project_groups"></a>Project Groups</h3>
+  
+  <p>Groups are named virtual containers for files and folders. You can
+  use them to organize items for quick access which might be in
+  disparate locations. Groups are not actual direcories, they just
+  contain links to files and folders (or sub-groups).</p>
+  
+  <h3><a id="project_menu">Project Menus</a></h3>
+  
+  <p>Projects menus are available in the main toolbar, the Projects pane
+  toolbar and as a right-click context menu. The toolbar menus operate
+  on the active project and the context menu operates on the selected
+  project.</p>
+  
+  <p>Each menu offers a different list of options, but there is some
+  overlap. The following options are available:</p>
   
   <ul>
     <li><strong>Show in Places</strong>: Changes the Places pane to the
-    base directory of the project. The filesystem directory associated
-    with the project can be overridden in the Properties.</li>
+    base directory of the project without making it the active project.</li>
+    <li><strong>Open Project</strong>: Opens a diolog for choosing a
+    .komodoproject file to open. The project is opened in the pane and
+    becomes the active project by default.</li>
+    <li><strong>New Project</strong>: Creates a new project, then opens
+    it and makes it active.</li>
     <li><strong>Close Project</strong>: Closing the current project (as
     opposed to switching projects) clears the project preferences,
     reverting to whatever preferences or defaults are set globally.</li>
@@ -84,7 +105,7 @@
     <li><strong>Rename Project...</strong>: Renames the current project
     in place.</li>
     <li><strong>Open Project in New Window</strong>: Each Komodo window
-    can have only one active project oat a time. This feature spawns a
+    can have only one active project at a time. This feature spawns a
     new Komodo window with the selected project as the active one,
     allowin you to work with multiple projects silmultaneously.</li>
     <li><strong>Replace Project...</strong>: Switch to a different
@@ -94,6 +115,33 @@
     preferences and settings are stored in a ".komodoproject" file. The
     directory selected becomes the base directory for display in
     Places.</li>
+    <li><strong>Refresh Status</strong>: Updates the filesystem and
+    source code control status of all files and directories in the
+    project.</li>
+    
+    <li><strong>Add</strong>: Add files folders and groups.
+      <ul>
+        <li>New File: Add a new file to the project or folder (depending
+        on context or selection).</li>
+        
+        <li>New Group: Add a new named group of folders or files.</li>
+        
+        <li>Existing File: Select a file to include in the project,
+        folder or group.</li>
+        
+        <li>Existing Folder: Select a filesystem folder to include in a
+        project or group.</li>
+        
+        <li>Existing Remote File / Folder: As above, but using the remote
+        filesystem browser.</li>
+      </ul>
+    </li>
+    
+    <li><strong>Source Code Control</strong>:</li>
+    <li><strong>Publishing</strong>:</li>
+    <li><strong>Show in File Manager</strong>: </li>
+    <li><strong>Remove</strong>:</li>
+    
     <li><strong>Properties</strong>: Opens the Properties and Settings
     dialog for the current or selected project.</li>
   </ul>
@@ -112,9 +160,6 @@
         <li><a href="debugger.html#Debugging_Options">Debugging</a></li>
 
         <li><a href="unittest.html">Test Plan Configuration</a></li>
-
-        <!-- TODO: relink when Prefs have been fixed -->
-        <li>Directory Import</li>
 
         <li><a href="prefs.html#lang_config">Languages</a></li>
 

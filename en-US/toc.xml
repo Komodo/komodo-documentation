@@ -98,7 +98,9 @@
 <node name="Projects" link="project.html#project_top">
   <node name="Projects Pane" link="project.html#project_pane"/>
   <node name="Open vs. Active Projects" link="project.html#project_active"/>
-  <node name="Projects Menu" link="project.html#project_menu"/>
+  <node name="File &amp; Folder Links" link="project.html#project_links"/>
+  <node name="Project Groups" link="project.html#project_groups"/>
+  <node name="Project Menus" link="project.html#project_menu"/>
   <node name="Project Properties and Settings" link="project.html#project_prefs"/>
 </node>
 
