@@ -20,6 +20,25 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <h2 id="whatsnew">What's New in Komodo IDE/Edit</h2>
 
+<h3 id="whatsnew-6.1">6.1</h3>
+
+<ul>
+  <li><strong>Better Support for Django</strong>:
+    <ul>
+      <li>better syntax highlighting and smarter indentation for templates</li>
+      <li>syntax checking for templates</li>
+      <li>automatic code completions for Django template tags and filters</li>
+      <li>hyperlinks to easily jump to template file locations</li>
+      <li>easier to open files with fast open supporting directory name matching</li>
+    </ul>
+  </li>
+  <li><strong>Projects</strong>: By popular demand, <a
+  href="../project.html#project_links">file and directory references</a>
+  have been reintroduced. These can be organized in <a
+  href="../project.html#project_groups">Groups</a> to keep things
+  logical and tidy.</li>
+</ul>
+
 <h3 id="whatsnew-6.0">6.0</h3>
 
 <ul>
@@ -103,6 +122,76 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to debugging, interactive shells, source code
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-6.1.0">6.1.0 Bug Fixes</h3>
+
+<ul>
+  <li>Editor:
+    <ul>
+      <li>Smarty highlights "==" incorrectly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88693">88693</a>)</li>
+      <li>Comment Region command for Javascript does not comment out code effectively. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82144">82144</a>)</li>
+      <li>Improved auto-indent for Django and RHTML after lines that contain &lt;% kwd ... %&gt; and {% kwd ... %}</li>
+    </ul>
+  </li>
+  <li>Places:
+    <ul>
+      <li>"set_currentPlace: URI (file path) doesn't exist" on startup. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89031">89031</a>)</li>
+      <li>Add "open Places here" command to the editor tab context menu. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84646">84646</a>)</li>
+      <li>Double-right-clicks in the places pane interpreted as double-left-clicks. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89066">89066</a>)</li>
+    </ul>
+  </li>
+to the trash.</li>
+  <li>Debugger:
+    <ul>
+      <li>Debugger gets stuck on the first invocation it uses. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89144">89144</a>)</li>
+      <li>Show better variable hover tooltips for arrays and objects. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=69765">69765</a>)</li>
+      <li>Debugging options "Directory" field is not sticky. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=80940">80940</a>)</li>
+    </ul>
+  </li>
+  <li>Go to File:
+    <ul>
+      <li>Include the places base directory in the search path. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87909">87909</a>)</li>
+      <li>Allow matching to a directory name within a project. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86555">86555</a>)</li>
+      <li>allow filtering on the directory name. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82770">82770</a>)</li>
+    </ul>
+  </li>
+  <li>JavaScript:
+    <ul>
+      <li>Fixed backslash syntax highlighting. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89046">89046</a>)</li>
+      <li>Update jsdoc calltips to version 2. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89027">89027</a>)</li>
+      <li>Correct the calltips for @param and @argument. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89026">89026</a>)</li>
+    </ul>
+  </li>
+  <li>Python
+    <ul>
+      <li>Correctly resolve relative directory imports. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=45822">45822</a>)</li>
+      <li>else/except do not trigger unindentation. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85011">85011</a>)</li>
+      <li>Add completions for magic python symbols. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88252">88252</a>)</li>
+      <li>Some bogus syntax warnings/errors in Django HTML templates. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77251">77251</a>)</li>
+    </ul>
+  </li>
+  <li>Perl: Fix completions for installed site lib modules. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89106">89106</a>)</li>
+  <li>CSS: Show completions for HTML5 tag names. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89143">89143</a>)</li>
+  <li>Projects: Remove ability to delete a file/folder from the filesystem when deleting it within a project. Use Places to move items
+  <li>Allow choice of delimiter (delimiters) for Perl and PHP. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88637">88637</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=88637">88637</a>)</li>
+  <li>Preferences: Komodo preferences truncate text at null bytes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84566">84566</a>)</li>
+  <li>Preferences: allow user to save prefs, leaving erroneous entries unchanged (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84919">84919</a>)</li>
+  <li>Don't show the current file name when creating an unnamed new file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89062">89062</a>)</li>
+  <li>Rx Toolkit: Regular expression input area is hard to read. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88035">88035</a>)</li>
+  <li>Pasting code doesn't keep the right tabbing. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89115">89115</a>)</li>
+  <li>Resizing in Linux Ubuntu makes it scroll to top. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88968">88968</a>)</li>
+  <li>Truncate each child of a compound variable in the tooltip, so one large value doesn't prevent others from appearing at all. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=69765">69765</a>)</li>
+  <li>Database explorer reverses value of "Nullable?" when viewing Sqlite3 table schema. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89074">89074</a>)</li>
+  <li>Add command-line "-n" option to open a new Komodo window. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89071">89071</a>)</li>
+  <li>Add a command to switch between Komodo windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88970">88970</a>)</li>
+  <li>Hyperlinks: for relative paths, resolve through the current file path. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89057">89057</a>)</li>
+  <li>Formatting: Keep place in file after applying a format operation. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83418">83418</a>)</li>
+  <li>SCC: Git: Use "git difftool" when external diff is selected. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88778">88778</a>)</li>
+  <li>Stop hyperlinks from interfering with rectangular column selections. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89114">89114</a>)</li>
+  <li>Vi Emulation: Stop doubling of delete commands after using a visual replace command. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89041">89041</a>)</li>
+  <li>When switching tabs, ensure the focus stays on the editor. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89163">89163</a>)</li>
+</ul>
+
 
 <h3 id="bug_fixes-6.0.3">6.0.3 Bug Fixes</h3>
 
