@@ -430,6 +430,30 @@ Executable Path = c:\perl\bin\perl.exe -d "%s" %s
             CGI as above.</li>
           </ol>
         </li>
+        
+        <li>IIS 7:
+
+          <ol>
+            <li>Open the <strong>Internet Information Services</strong>
+            manager.</li>
+
+            <li>Select the level at which you want the debugger
+            configuration applied (e.g. at the host level for a specific
+            website).</li>
+            
+            <li>In the center pane in the IIS section, double-click
+            <strong>Handler Mappings</strong></li>
+
+            <li>Add (or modify) an entry for Perl CGI (ActivePerl adds
+            one called "Perl CGI for .pl"). For example:
+              <ul>
+                <li><strong>Request path</strong>: *.pl</li>
+                <li><strong>Executable</strong>: C:\Perl\bin\perl.exe -d "%s" %s</li>
+              </ul>
+            </li>
+          </ol>
+          
+        </li>
       </ul>
     </li>
 
