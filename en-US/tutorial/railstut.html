@@ -24,18 +24,27 @@
 
   <ul>
     <li>A recent local installation of <a target="_blank" href=
-    "http://www.ruby-lang.org/en/downloads/">Ruby</a> (1.8.5 or
+    "http://www.ruby-lang.org/en/downloads/">Ruby</a> (1.8.6 or
     later). See the <a
     href="../debugruby.html#debugruby_top">Debugging Ruby</a>
     documentation for debugger configuration instructions.</li>
 
     <li>A local installation of <a target="_blank" href=
-    "http://www.rubyonrails.org/down">Ruby on Rails</a> (version 2.x).</li>
+    "http://www.rubyonrails.org/down">Ruby on Rails</a> (version 2.x
+    or later).</li>
+
+    <li>The Komodo <a target="_blank" href=
+    "http://community.activestate.com/xpi/ruby-rails-extension">Ruby on Rails extension</a>.</li>
 
     <li>Access to a <a target="_blank" href=
     "http://mysql.org/downloads/">MySQL</a> or
     <a target="_blank" href="http://www.sqlite.org/">SQLite</a>
-    database.</li>
+    database.  If using MySQL, you'll need to install a Ruby
+    library:
+    <pre>
+      gem install mysql # for Rails version 2
+      gem install mysql2 # for Rails version 3
+    </pre></li>
   </ul>
 
   <p>Several online "how to" guides are available for installing
@@ -51,7 +60,7 @@
   application that allows you to add, remove, borrow and return
   movies from a shared library.</p>
 
-  <p>Komodo has a very powerful Ruby on Rails project template with
+  <p>Komodo has a very powerful Ruby on Rails project extension with
   macros and commands for further automating the creation of Rails
   applications. The entire application can be created within Komodo
   using these tools and Komodo itself, without having to work at
@@ -61,7 +70,7 @@
 
   <ol>
     <li>Create a new Rails scaffold using the Ruby on Rails Komodo
-    project template.</li>
+    project extension.</li>
 
     <li>Create a MySQL database.</li>
 
@@ -77,7 +86,7 @@
   <h2><a name="rails_template_new" id="rails_template_new">Creating
   a Rails Project</a></h2>
 
-  <p>Komodo ships with a powerful template for Rails projects,
+  <p>Komodo ships with a powerful extension for creating Rails projects,
   containing several macros for:</p>
 
   <ul>
@@ -95,62 +104,43 @@
 
     <li>Debugging the application</li>
   </ul>
+  
+  <p>When creating a new Rails project, you can tell Komodo
+  where the Rails executable lives, and which database you prefer
+  to use, at <strong>Preferences | Languages | Ruby | Rails</strong>.
+  Komodo will make sure that the version of Rails matches the current
+  version of Ruby.
 
   <p>To create the tutorial project file:</p>
 
   <ol>
-    <li>Make a new directory/folder in a convenient location (e.g.
+    <li>In Komodo, select <strong>Project | Create Ruby on Rails Project</strong>.
+    Create a new directory/folder in a convenient location (e.g.
     C:\rails\movielib on Windows, or
-    /home/<em>username</em>/rails/movielib on OS X or Linux).</li>
-
-    <li>In Komodo, select <strong>File|New|New Project from
-    Template</strong>.</li>
-
-    <li>In the New Project dialog box, select the <strong>Ruby on
-    Rails</strong> template from the Common category.</li>
+    /home/<em>username</em>/rails/movielib on OS X or Linux).
+    You can create a new Rails project in an existing directory,
+    but it's advisable to not have more than one Rails project
+    in a directory.
+    </li>
 
     <li>Give the file a useful name. Since this tutorial creates a
     movie lending library, let's call it
-    <em>movielib.kpf</em>.</li>
-
-    <li>Specify your working directory (the one created in the
-    first step) in the <strong>Directory</strong> field. Use the
-    <strong>Browse</strong> button to find it if you wish.</li>
-
-    <li>Click <strong>Open</strong>.</li>
-
-    <li>Komodo will give you a choice of databases to use.  The Rails
-    project has tools that automate creating and deleting databases, but
-    they currently work only with MySQL.  This step isn't needed for
-    SQLite, so if you choose PostgreSQL or Oracle, you'll need to build
-    your databases outside Komodo using either the command-line or another
-    application.  This covers the DDL (Data Definition Language)
-    part of database manipulation; Rails handles all data manipulation.</li>
+    <em>movielib.komodoproject</em>.</li>
   </ol>
 
   <p>If Rails has been installed correctly, you should see output in the
   bottom pane saying "The movielib project is built".  The
-  movielib.kpf project should open in the <strong>Places</strong>
+  movielib project should open in the <strong>Places</strong>
   sidebar on the left, and should show the
   directories created by the <code>rails</code> command (app,
-  components, config, db, etc.) plus a Virtual Folder containing
-  the Komodo macros we'll be using.</p>
-
-  <table align="center" width="60%">
-    <tbody>
-      <tr>
-        <td class="startupBox">
-          <p><strong>Komodo Tip</strong>: Komodo project templates
-          can have a special macro called <code>oncreate</code>
-          which run when a new project is created from the
-          template. The <code>oncreate</code> macro in this Ruby on
-          Rails template runs the command '<code>rails .
-          --skip</code>' in the current working directory to
-          create the project.</p>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  components, config, db, etc.).</p>
+  
+  <p>When you installed the Ruby on Rails extension, it added
+  a "Ruby on Rails" toolbox in the Toolbox sidebar. You'll find
+  the tools that carry out the most common functions for creating
+  and managing Rails applications there.  If you prefer not to
+  keep the Toolbox sidebar open, you can access these tools by
+  name via the <strong>Tools | Invoke Tool</strong> menu item.</p>
 
   <p>Rails tools have a lot of third-party dependencies, and sometimes a new
   release of one of them can break the tools in the Rails project template. If
@@ -165,7 +155,7 @@
   "rails_edit_database_yml">Editing the database.yml file</a></h3>
 
   <p>If you chose SQLite2 or SQLite3 as your database tool, you can skip
-  this step.  If you chose postgresql or oracle, you'll need to manage
+  this step.  If you chose PostgreSQL or Oracle, you'll need to manage
   the database manually.  This section applies only to MySQL users.</p>
 
   <p>If MySQL is installed locally and can accept connections by
@@ -187,9 +177,10 @@
     MySQL server. If you're not sure what values to use, leave the
     default values ('<code>username: root</code>' and
     '<code>password:</code> '). In this tutorial, we will only be
-    working with the <code>development</code> database, but you
-    should modify the <code>test</code> and <code>production</code>
-    sections as well to avoid seeing errors when running the
+    working with the <code>development</code> database and <code>test</code>
+    databases, but you
+    should modify the <code>production</code>
+    section as well to avoid seeing errors when running the
     <strong>Create Databases</strong> macro below.</li>
 
     <li>If you are running MySQL on a remote server, add the
@@ -208,9 +199,8 @@
   drivers</a> installed, and creating the database manually. The
   database macros in the project will only work with MySQL.</p>
 
-  <h3><a name="rails_create_databases_macro" id=
-  "rails_create_databases_macro">Running the Create Databases
-  Macro</a></h3>
+  <h3><a name="rails_create_databases_macro"
+         id="rails_create_databases_macro">Running the Create Databases Macro</a></h3>
 
   <p>In the Rails Tools project folder is a macro called
   <strong>Create Databases</strong>. Double-click the macro to run
@@ -239,7 +229,8 @@
   the only attribute in the <code>movie</code> model. Click <strong>OK</strong>.</p>
 
   <p>The following output should appear in the <strong>Command
-  Output</strong> tab showing the files created in this step:</p>
+  Output</strong> tab showing the files created in this step
+  (exact output may vary with different versions of Rails):</p>
   <pre class="code">
       exists  app/models/
       exists  app/controllers/
@@ -315,7 +306,8 @@
   Editing</strong>.</p>
 
   <p>Bring up <em>movie_test.rb</em>, delete the <code>test_truth</code>
-  that the scaffolder generated for you, and add these two tests:</p>
+  method that the scaffolder generated for you (this will look slightly
+  different with Rails 3), and add these two tests:</p>
 
   <pre class="code">
  def test_present
@@ -339,12 +331,21 @@
 
   <h3><a name="running_tests_in_komodo_ide" id="running_tests_in_komodo_ide">
   Running Model Tests in Komodo IDE</a></h3>
+  
+  <p>Note: the functions described in this section currently don't work
+  with Rails 3.  If you're using Rails 3, and find running the tests
+  generate errors, please skip to the next section.</p>
 
   <p>Komodo IDE introduced unit-test integration with version 4.3. To
   run the unit tests click on the <strong>Test Results</strong> tab in
   the bottom window. In the test plan dropdown menu on the right side.
   Select "test:units", and press the <strong>Run</strong> button
   immediately to the right.</p>
+  
+  <p>  This command might fail if the Ruby and
+  Rake executables in the system path are different from the ones you've
+  indicated in the <strong>Preferences</strong> settings.  In this case,
+  you'll need to change the path environment Komodo runs in.</p>
 
   <p>You should see the tests run for a few seconds, and then a list of
   results will appear. If you get a message along the lines of the
@@ -503,14 +504,16 @@
   the <strong>Rails Tools|Run|run server</strong> macro (right-click ->
   Properties) and making the following change:</p>
 
-  <p>Replace the line:</p>
+  <p>Replace the lines:</p>
 
     <pre class="code">
-       as_rails_macros.launchRubyAppInConsole(this, project, 'script/server');
+            2: 'script/server webrick',
+            3: 'script/rails server webrick'
     </pre>
   <p>with:</p>
     <pre class="code">
-       as_rails_macros.launchRubyAppInConsole(this, project, 'script/server webrick');
+            2: 'script/server webrick',
+            3: 'script/rails server webrick'
     </pre>
 
 
@@ -550,7 +553,7 @@
   Google's home page.   Since we're going to be using
   the <strong>Prototype</strong> library, I added the
   <code>javascript_include_tag</code> directive to the head section of
-  <em>app/views/layouts/movies.html.erb</em>:</p>
+  <em>app/views/layouts/movies.html.erb</em> (Rails 3 does this already):</p>
 
   <pre class="code">
     &lt;title>Movies: &lt;%= controller.action_name %>&lt;/title>
@@ -582,7 +585,7 @@
 
   <p>Too many software packages gain bloat as they reach higher revisions.
   Rails is different -- the Rails team actually dropped much of its code
-  going from 1.2 to 2.0.  Most the dropped functionality is still
+  going from 1.2 to 2.0.  Most of the dropped functionality is still
   available as plugins,  but now people who want it need to explicitly
   install it.  The idea is that people who don't need a particular
   widget shouldn't subsidize the few who want it.</p>
@@ -599,9 +602,10 @@
   <p>It's easy to create new plugin macros.  Every installable plugin is
   treated as a resource, usually in a public subversion repository,
   and identifiable with a URI.  On the command-line you would invoke
-  <code>ruby script/install plugin &lt;URI&gt;</code>.  In Komodo you would
-  just need to copy one of the macros, paste it into the same Plugins
-  folder, edit it, and replace the old URI with the new one.</p>
+  <code>ruby script/install plugin &lt;URI&gt;</code> for Rails v2.
+  In Komodo you would
+  just need to copy one of the macros, edit it,
+  and replace the old URI with the new one.</p>
 
   <p>Plugins need to be installed in new Rails projects that use them
   (i.e. the plugin is added to the specific Rails application, not to
@@ -624,9 +628,17 @@
 
   <p>to</p>
 
+  <ul><li>For Rails 2:
   <pre class="code">
      @movies = Movie.paginate(:page =&gt; params[:page])
   </pre>
+  </li>
+    <li>For Rails 3:
+  <pre class="code">
+     @movies = Movie.find(:all).paginate(:page =&gt; params[:page], :per_page=&gt;Movie.per_page)
+  </pre>
+    </li>
+  </ul>
 
   <p>Add this code at the class level to <em>app/models/movie.rb</em> (lines 4-5):</p>
 
@@ -718,11 +730,15 @@
 
   <h3><a name="adding_in_place_editing" id="adding_in_place_editing">Adding
   In-Place Editing</a></h3>
+  
+  <p><strong>Rails 2 only!</strong>  We haven't found a straightforward solution
+  to supporting in-place-editing in Rails 3 yet.</p>
 
   <p>Having to bring up an editing screen to change the
   spelling of a movie is cumbersome.  This is easy to fix.</p>
 
-  <p>Add this code to movies/index.html.erb, around line 10:</p>
+  <p>Add this code to movies/index.html.erb, replacing the <strong>movie.title</strong>
+  accessor:</p>
 
   <pre class="code">
       &lt;td class="dvdlib_item"&gt;
@@ -758,7 +774,9 @@
 
   <p>Also in the controller, change the <code>edit</code> method
   so it doesn't go looking for the now-deleted <em>edit.html.erb</em>
-  file:</p>
+  file.  A quick way to find this method is with the <strong>Sections</strong>
+  panel in the statusbar -- it's the text field immediately to the right
+  of a green circle.:</p>
 
   <pre class="code">
   # GET /movies/1/edit
@@ -794,7 +812,7 @@
   <p>Run <strong>Rails Tools|Generators|Migration</strong>, with a migration name of
   <code>AddBorrowerInformation</code>.</p>
 
-  <p>Set the contents of 002_add_borrower_information.rb to this:</p>
+  <p>Set the contents of add_borrower_information.rb to this:</p>
 
   <pre class="code">
   class AddBorrowerInformation &lt; ActiveRecord::Migration
@@ -851,7 +869,7 @@
     assert !m.valid?
     m.borrower = "Dave"
     assert !m.valid?
-    m.due_on = Date.yesterday
+    m.due_on = Date.yesterday # Date.today - 1 if using Rails 3.0
     assert !m.valid?
     m.due_on = m.borrowed_on + 3
     assert m.valid?
