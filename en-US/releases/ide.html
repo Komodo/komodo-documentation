@@ -12,7 +12,7 @@
 <body>
 <div id="content">
 
-<h1>Komodo IDE/Edit 6.1 Release Notes</h1>
+<h1>Komodo IDE/Edit 7.0 Release Notes</h1>
 
 <p>These Release Notes cover <a href="#whatsnew">what's new</a>, <a
 href="#details">detailed changes and bug fixes</a> and <a
@@ -21,102 +21,22 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <h2 id="whatsnew">What's New in Komodo IDE/Edit</h2>
 
-<h3 id="whatsnew-6.1">6.1</h3>
+<h3 id="whatsnew-7.0">7.0</h3>
 
 <ul>
-  <li><strong>Better Support for Django</strong>:
-    <ul>
-      <li>better syntax highlighting and smarter indentation for templates,</li>
-      <li>syntax checking for templates,</li>
-      <li>automatic code completion for Django template tags and filters,</li>
-      <li><a href="../hyperlinks.html">hyperlinks</a> to easily jump to template file locations and</li>
-      <li>directory name matching in "Go to File" for quickly opening project files</li>
-    </ul>
+  <li><strong>Komodo Synchronization</strong>: Synchronize your important Komodo
+  data between multiple machines. Changes made to the toolbox, remote server
+  accounts or template files can be synchronized between all of the machines you
+  use Komodo on.
   </li>
-  <li><strong>Projects</strong>: By popular demand, <a
-  href="../project.html#project_links">file and directory references</a>
-  have been reintroduced. These can be organized in <a
-  href="../project.html#project_groups">Groups</a> to keep things
-  logical and tidy.</li>
+
+  <li><strong>Code Collaboration</strong>: Two or more people can collaborate
+  on the same document in real time. Changes made each individual user will be
+  propagated to all other collaborators.
+  </li>
+
+  <li>Languages: Perl: added Mojolicious template language</li>
 </ul>
-
-<h3 id="whatsnew-6.0">6.0</h3>
-
-<ul>
-  <li><strong><a href="../db_explorer.html">Database
-  Explorer</a></strong> (Komodo IDE only): Lets you easily explore local
-  and remote database installations, including viewing and managing
-  data. SQLite is supported in this release, with more databases coming
-  soon. Support for each database is implemented as a Komodo extension,
-  so integration with other databases can be
-  easily added.</li>
-  
-  <li><strong><a href="../places.html">Places</a></strong>: A new file
-  manager has been added to Komodo's left pane. It provides a customized
-  view of your file system (local or remote) and easy file management
-  operations such as file editing, drag/drop file moving, creation of
-  new files and folders, and search capabilities. Note: Places will be
-  replacing the existing Komodo project viewer.</li>
-
-  <li><strong><a href="../project.html">Projects</a></strong>: Komodo
-  projects are now integrated with the new Places component. Opened and
-  recent Projects will be visible in a bottom pane of the Places panel.
-  All projects are now live folders (no virtual folders) with only one
-  project being opened/active at a time. Project preferences apply to
-  all opened files (even if the file does not reside in the projects
-  base directory). Project tools (macros, run commands, snippets, etc...)
-  are now be displayed in the Komodo toolbox area.
-  </li>
-
-  <li><strong><a href="../publish.html">Publishing</a></strong> (Komodo
-  IDE only): Copy remote files to your local system to work on them,
-  then push them back to the remote system when you're done. Komodo
-  keeps track of the synchronization details to avoid copying files that
-  haven't changed, as well as using advanced conflict detection to avoid
-  overwriting changes made by others.</li>
-  
-  <li><strong>Toolbox</strong>: The Komodo toolbox and project system
-  are being rewritten. Individual toolbox items (commands, macros,
-  snippets, etc.) are saved in separate JSON files rather than as nodes
-  in a toolbox.kpf file. There is a new "Invoke Tool" command which
-  allows you to easily search and then execute specific tools. In future
-  versions project-specific tools will appear in the Toolbox sidebar
-  instead of the Projects sidebar, which will eventually be removed.</li>
-  
-  <li><strong>Faster</strong>: A number of Komodo components have been
-  made to run faster, such as startup, shutdown, tab-switching and
-  finding text. The underlying Mozilla source code has been updated to
-  version 1.9.1, the same code base as Firefox 3.5, which means
-  improved performance gains for Komodo.</li>
-  
-  <li><strong>Workspace Save and Restore</strong>: Komodo will now be
-  regularly saving your workspace. In the case of an unexpected
-  shutdown, you can choose to restore your last used workspace the next
-  time it starts up.</li>
-  
-  <li><strong>Hyperlink Additions</strong>: Hyperlinks have been extended and can now...
-    <ul>
-      <li>show image preview while hovering on an image link,</li>
-      <li>show Code Intelligence definitions while hovering on a symbol,</li>
-      <li>jump to an HTML anchor tag to it's definition,</li>
-      <li>jump to HREF and SRC locations,</li>
-      <li>open files from a path reference,</li>
-      <li>jump to PHP file includes</li>
-    </ul>
-  </li>
-  
-  <li><strong>Rx Toolkit Improvements</strong>: Choose between Python,
-  Perl, PHP, Ruby, and JavaScript syntax for testing your Regular
-  Expressions. They are now evaluated "out of process", so a
-  long-running regular expression won't tie up the IDE.</li>
-  
-  <li><strong>HTML 5 and CSS3 Support</strong>: Autocomplete for HTML 5
-  and CSS3.</li>
-  
-  <li><strong>More Languages</strong>: Syntax highlighting for
-  Markdown, MySQL, and others.</li> 
-</ul>
-  
 
 <h2 id="details" title="Komodo Changelog">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
 
@@ -124,88 +44,31 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
-<h3 id="bug_fixes-6.1.1">6.1.1 Bug Fixes</h3>
+<h3 id="bug_fixes-7.0.0a1">7.0.0a1 Bug Fixes</h3>
 
 <ul>
-  <li>Projects: Fix "Browse" and "Browse Remote" buttons in project properties. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89296">89296</a>)</li>
-  <li>Places: Fix performance issue caused by files changes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89377">89377</a>)</li>
-  <li>Debugging: Komodo could hang when starting/stopping debugging sessions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88439">88439</a>)</li>
-  <li>Startup: Remove Komodo-specific environment variables. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89345">89345</a>)</li>
-  <li>Fast Open: Sort directory listings.</li>
-  <li>CSS: Improve CSS3 syntax checking for unknown at-rules. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85396">85396</a>)</li>
-  <li>CSS: Improve CSS3 syntax checking for unknown properties. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87425">87425</a>)</li>
-  <li>Tcl: Lexer must escape '['. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89290">89290</a>)</li>
-  <li>Allow opening directories from the command line. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89364">89364</a>)</li>
-  <li>Editor: Ensure 'Close Others' on tabs offers to save unsaved files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89304">89304</a>)</li>
-  <li>Sections List: Use "Ctrl+L" keybinding instead of "Ctrl+F8". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89399">89399</a>)</li>
-  <li>Keybindings: Allow "Ctrl+Space" keybinding on Mac OS X. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89069">89069</a>)</li>
-  <li>Vi Emulation: Ensure a repeat of the "&gt;&gt;" command works properly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89370">89370</a>)</li>
-</ul>
-
-
-<h3 id="bug_fixes-6.1.0">6.1.0 Bug Fixes</h3>
-
-<ul>
-  <li>Editor:
-    <ul>
-      <li>Smarty highlights "==" incorrectly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88693">88693</a>)</li>
-      <li>Comment Region command in Javascript now works more effectively. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82144">82144</a>)</li>
-      <li>Improved auto-indent for Django and RHTML after lines that contain &lt;% kwd ... %&gt; and {% kwd ... %}</li>
-    </ul>
+  <li>Codeintel
+	<ul>
+	  <li>JavaScript: update the jQuery API catalog (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89475">89475</a>)</li>
+	  <li>Python: detect class instance variable assigned via tuples (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89416">89416</a>)</li>
+	  <li>Python: provide better standard library completions for Python 2.7 and 3.x (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89416">89416</a>)</li>
+	</ul>
   </li>
-  <li>Places:
+  <li>Syntax Checking
     <ul>
-      <li>Add "open Places here" command to the editor tab context menu. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84646">84646</a>)</li>
-      <li>Fix "set_currentPlace: URI (file path) doesn't exist" on startup. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89031">89031</a>)</li>
-      <li>Double-right-clicks in the places pane interpreted as double-left-clicks. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89066">89066</a>)</li>
-    </ul>
+	  <li>Better HTML5 linting (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89306">89306</a>)</li>
+	  <li>Added multi-language linting of Django HTML templates</li>
+	  <li>Added Mojolicious linting support</li>
+	  <li>Better checking of Perl use module errors (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83850">83850</a>)</li>
+	</ul>
   </li>
-  <li>Debugger:
-    <ul>
-      <li>Show better variable hover tooltips for arrays and objects. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=69765">69765</a>)</li>
-      <li>Remember the debugging options "Directory" field between runs. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=80940">80940</a>)</li>
-    </ul>
-  </li>
-  <li>Go to File:
-    <ul>
-      <li>Include the places base directory in the search path. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87909">87909</a>)</li>
-      <li>Allow matching to a directory name within a project. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86555">86555</a>)</li>
-      <li>Allow filtering on the directory name. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82770">82770</a>)</li>
-    </ul>
-  </li>
-  <li>JavaScript:
-    <ul>
-      <li>Fixed backslash syntax highlighting. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89046">89046</a>)</li>
-      <li>Update jsdoc calltips to version 2. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89027">89027</a>)</li>
-      <li>Correct the calltips for @param and @argument. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89026">89026</a>)</li>
-    </ul>
-  </li>
-  <li>Python
-    <ul>
-      <li>Correctly resolve relative directory imports. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=45822">45822</a>)</li>
-      <li>Auto dedent else/except blocks. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85011">85011</a>)</li>
-      <li>Add completions for magic python symbols. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88252">88252</a>)</li>
-      <li>Properly syntax check Django HTML templates. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=77251">77251</a>)</li>
-    </ul>
-  </li>
-  <li>Perl: Fix completions for installed site lib modules. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89106">89106</a>)</li>
-  <li>CSS: Show completions for HTML5 tag names. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89143">89143</a>)</li>
-  <li>Rx Toolkit: Allow choice of delimiter (delimiters) for Perl and PHP. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88637">88637</a>, <a href="http://bugs.activestate.com/show_bug.cgi?id=88637">88637</a>)</li>
-  <li>Rx Toolkit: Allow customization of the Regex fonts. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88035">88035</a>)</li>
-  <li>Preferences: Ensure Unicode entries are saved correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84566">84566</a>)</li>
-  <li>Preferences: allow user to save prefs, leaving erroneous entries unchanged (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84919">84919</a>)</li>
-  <li>Don't show the current file name when creating an unnamed new file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89062">89062</a>)</li>
-  <li>Ensure pasting of code keeps the right tab settings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89115">89115</a>)</li>
-  <li>Stop the editor from scrolling when resizing in Linux. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88968">88968</a>)</li>
-  <li>Database explorer reverses value of "Nullable?" when viewing Sqlite3 table schema. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89074">89074</a>)</li>
-  <li>Add command-line "-n" option to open a new Komodo window. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89071">89071</a>)</li>
-  <li>Add a command to switch between Komodo windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88970">88970</a>)</li>
-  <li>Hyperlinks: for relative paths, resolve through the current file path. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89057">89057</a>)</li>
-  <li>Formatting: Keep place in file after applying a format operation. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83418">83418</a>)</li>
-  <li>SCC: Git: Use "git difftool" when external diff is selected. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88778">88778</a>)</li>
-  <li>Stop hyperlinks from interfering with rectangular column selections. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89114">89114</a>)</li>
-  <li>Vi Emulation: Stop doubling of delete commands after using a visual replace command. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89041">89041</a>)</li>
-  <li>When switching tabs, ensure the focus stays on the editor. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89163">89163</a>)</li>
+  <li>Preferences: correctly handle text that contains null bytes (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84566">84566</a>)</li>
+  <li>Remote file dialog: use the current dir when hitting OK with no selection (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89373">89373</a>)</li>
+  <li>Run commands: ensure Komodo properly deals with Unicode output (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88764">88764</a>)</li>
+  <li>Convert commands now work on editor block selections (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88515">88515</a>)</li>
+  <li>Don't allow formatting on block selections (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88515">88515</a>)</li>
+  <li>UI: added "Revert" command to the editor tab context menu (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89504">89504</a>)</li>
+  <li>UI: ensure the undo / redo commands are correctly updated (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89414">89414</a>)</li>
 </ul>
 
 
