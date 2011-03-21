@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <title>Sync</title>
+</head>
+
+<body>
+<div id="content">
+  <h1><a name="sync_top" id="sync_top">Sync</a></h1>
+  
+  <h2 id="sync_account">Account Setup</h2>
+  
+  <p>Before you can start Sync or <a
+  href="collab.html">Collaboration</a>, you have to set up your
+  ActiveState account in Komodo. If you do not have one, you can
+  create one for free at:</p>
+  
+  <a href="https://account.activestate.com/signup/">https://account.activestate.com/signup/</p>
+
+  <p>To set up the account, select <strong>Tools|Komodo Services|My
+  Account</strong> from the menu. Enter the email adress and
+  password of your ActiveState.com account and click <strong>Login</strong>. If your
+  login data was valid, you should see the message "You're logged in to
+  Komodo Services".</p>
+
+  <h2 id="sync_what_is">Komodo Sync</h2>
+  
+  <p>Sync keeps your Komodo profile data (toolbox, color schemes,
+  keybindings and other preferences) synchronized between all the
+  machines you run Komodo on. Komodo uploads parts of your Komodo
+  profile to a remote Komodo Sync server hosted by ActiveSate. Your
+  other machines can then download the profile data and upload any
+  changes that are made to the profile, so it stays synchronized. Your
+  data is password protected and encrypted before upload. Only you have
+  access to the things you upload to the ActiveState Komodo Sync server.</p>
+  
+  <h3 id="sync_setup">Setup</h3>
+  
+  <p>Select <stong>Tools|Komodo Services|Set Up Sync...</strong> from
+  the menu bar to open the Sync setup wizard.</p>
+  
+  <p>When you click the <strong>Continue</strong> button, Komodo displays the
+  "Sync Key" it has automatically generated for you. The Sync Key is used to
+  encrypt all the data before it is uploaded to the Sync Server. Please store it
+  in a safe place. You will need it to set up Sync on any additional computers. To
+  keep your data secure, the Sync Key itself is only stored locally, not
+  on the ActiveState servers, so there is no way to recover your Sync
+  Key if it is lost.</p>
+  
+  <p>It's a good idea to email your Komodo Sync key to yourself, as
+  you'll need to be able to retrieve it later for your other Komodo
+  installations.</p>
+  
+  <p>Click <strong>Continue</strong> again to finish the Sync
+  setup. You can also click <strong>Sync Options</strong> button to
+  select which items to keep in Sync.</p>
+  
+  <h3 id="sync_syncing">Syncing your Data</h3>
+  
+  <p>After setup, Komodo will automatically contact the Komodo Sync
+  server every hour to synchronize your profile data. You can also start
+  synchronization manually by clicking on the Sync icon in the bottom
+  right corner of the Komodo window. Note that the first synchronization
+  may take some time because all data has to be uploaded to the server.
+  Later, only data that has changed will need to transferred.</p>
+  
+  <h3 id="sync_other_machines">Setting Up Other Machines</h3>
+  
+  <p>Setting up Sync on subsequent machines is similar to the steps
+  above, but there are two important differences:</p>
+  
+  <ol>
+    <li>The setup wizard will prompt you for the Sync Key that was
+    generated when you set up Sync for the first time, rather than
+    generating a new one.</li>
+    
+    <li>When you click the <code>Sync Options</code> button you can
+    choose what Sync should do with the data from the machine you're
+    setting up.</li>
+  </ol>
+  
+  <p>The safest choice is to merge the data. Sync will download all the
+  data from the server, apply it on the machine you are setting up and
+  then upload all new data to the Sync server. Alternatively, you can
+  also choose to replace all data on the server with your local data and
+  vice versa.</p>
+  
+</div>
+</body>
+</html>
