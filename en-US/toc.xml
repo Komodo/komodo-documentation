@@ -160,6 +160,15 @@
   </node>
 </node>
 
+<node name="Komodo Sync" link="sync.html#sync_top">
+  <node name="Account Setup" link="sync.html#sync_account"/>
+  <node name="Synchronizing Komodo" link="sync.html#sync_sync">
+    <node name="Sync Setup" link="sync.html#sync_setup"/>
+    <node name="Synchronizing your Data" link="sync.html#sync_data"/>
+    <node name="Additional Machines" link="sync.html#sync_other_machines"/>
+  </node>
+</node>
+
 <node name="Publishing" link="publish.html#publish_top">
   <node name="Creating a Publishing Configuration" link="publish.html#publish_config"/>
   <node name="Synchronizing" link="publish.html#publish_sync"/>
