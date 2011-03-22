@@ -169,6 +169,9 @@
   </node>
 </node>
 
+<node name="Collaboration" link="collab.html#collab_top">
+</node>
+
 <node name="Publishing" link="publish.html#publish_top">
   <node name="Creating a Publishing Configuration" link="publish.html#publish_config"/>
   <node name="Synchronizing" link="publish.html#publish_sync"/>
