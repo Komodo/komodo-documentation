@@ -161,7 +161,7 @@
 </node>
 
 <node name="Komodo Sync" link="sync.html#sync_top">
-  <node name="Account Setup" link="sync.html#sync_account"/>
+  <node name="Sync Account Setup" link="sync.html#sync_account"/>
   <node name="Synchronizing Komodo" link="sync.html#sync_sync">
     <node name="Sync Setup" link="sync.html#sync_setup"/>
     <node name="Synchronizing your Data" link="sync.html#sync_data"/>
@@ -170,10 +170,13 @@
 </node>
 
 <node name="Collaboration" link="collab.html#collab_top">
-  <node name="Setting up" link="collab.html#collab_account"/>
-  <node name="Overview of Collaboration" link="collab.html#collab_collab"/>
-  <node name="Collaborating with Others" link="collab.html#collab_usage"/>
-  <node name="Editing notes" link="collab.html#collab_editing"/>
+  <node name="Collaboration Account Setup" link="collab.html#collab_account"/>
+  <node name="Collaboration Overview" link="collab.html#collab_collab"/>
+  <node name="Using Collaboration" link="collab.html#collab_usage">
+    <node name="Sessions" link="collab.html#collab_sessions"/>
+    <node name="Contacts" link="collab.html#collab_contacts"/>
+  </node>
+  <node name="Collaborative Editing" link="collab.html#collab_editing"/>
 </node>
 
 <node name="Publishing" link="publish.html#publish_top">
