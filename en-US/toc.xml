@@ -170,6 +170,10 @@
 </node>
 
 <node name="Collaboration" link="collab.html#collab_top">
+  <node name="Account Setup" link="collab.html#collab_account"/>
+  <node name="Overview" link="collab.html#collab_collab"/>
+  <node name="Usage" link="collab.html#collab_usage"/>
+  <node name="Editing" link="collab.html#collab_editing"/>
 </node>
 
 <node name="Publishing" link="publish.html#publish_top">
