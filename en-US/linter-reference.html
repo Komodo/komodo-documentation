@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Writing Custom Syntax Checkers</title>
+</head>
+
+<body>
+<div id="content">
+  <h2><a name="linter_reference_top" id="linter_reference_top">Syntax Checker Reference</a></h2>
+
+  <h2>Terminology</h2>
+  <p>Komodo internally calls syntax checkers "linters", and extensions will necessarily
+  use that term as well, so this document will also.
+  
+  <h2>Writing a Linter</h2>
+  
+  <p>Linters must be written in Python, although the rest of the extension that contains
+  them could be written in JavaScript.
+  
+  <p>The name of the linter's file doesn't matter. Komodo uses the convention
+  <code>ko<i>Language</i>Linter.py</code>, but you aren't required to follow that scheme.
+  
+  <p>Each linter defines one Python class, and provides two methods:
+  
+  <pre>
+    <code>koILintResults lint(self, koILintRequest request)</code>
+    
+    <code>koILintResults lint_with_text(self, koILintRequest request, AString text)</code>
+  </pre>
+  
+  (<code>AString</code> is a string of Unicode characters that may contain null bytes.)
+  
+  <p>You will never call <code>lint</code> directly; Komodo does that for you,
+  and will supply the request object.  Most <code>lint</code> methods then
+  simply call <code>lint_with_text</code> using the following sequence:
+  
+  <pre>
+  def lint(self, request):
+      encoding_name = request.encoding.python_encoding_name
+      text = request.content.encode(encoding_name)
+      return self.lint_with_text(request, text)
+  </pre>
+  
+  <p>Before moving to the <code>lint_with_text</code> method, it's important to understand
+  Komodo knows when to fire your linter.  The key is in the registration code
+  in the class header. The class header for CSS looks like so:
+  
+  <pre>class KoCSSLinter:
+    _com_interfaces_ = [components.interfaces.koILinter]
+    _reg_desc_ = "Komodo CSS Linter"
+    _reg_clsid_ = "{F770CBE7-2AAF-492C-8900-CC512CAF5033}"
+    _reg_contractid_ = "@activestate.com/koLinter?language=CSS;1"
+    _reg_categories_ = [
+         ("category-komodo-linter", 'CSS'),
+         ]
+  </pre>
+  
+  At startup time, the class registers itself with the Komodo linter system
+  via the <code>_reg_categories_</code> heading. This array always contains at
+  least one two-value Python tuple. The first value is always <code>"category-komodo-linter"</code>.
+  The second value in the tuple must be unique.  Because this is the only
+  CSS linter in Komodo, a value of "CSS" is acceptable.  If you look in
+  <code>koJavaScriptLinter.py</code>, you'll see category values like
+  <code>JavaScript&type=jsShell</code> and <code>JavaScript&type=jslint</code>.
+  To ensure uniqueness, third-party linters should use a category value of
+  the form <code>languageName&type=com.mycompany:description</code>.
+  
+  <p>Komodo will figure out the language the linter supports by looking for all
+  the text up to the "&type=" part.  Note that language names <b>are</b> case
+  sensitive. If you're writing an extension for C++0x, the language name will
+  have to match the upper-case "C" and lower-case "x", or the linter won't
+  be invoked.
+  
+  <p>If you're writing extensions for two similar languages that happen to use
+  the same syntax checker, you would add an additional category field for
+  the second language.  Suppose the two languages "Hekla" and "Krafla" have
+  different code completion catalogs, but use the same syntax checker.  Your
+  linter class would then look like so:
+  
+  <pre>class KoIVLinter:
+    _com_interfaces_ = [components.interfaces.koILinter]
+    _reg_desc_ = "Komodo IV Linter"
+    _reg_clsid_ = "{generate-with-unix-util-uuidgen}"
+    _reg_contractid_ = "@mycompany.com/koLinter?language=IV;1" # not used
+    _reg_categories_ = [
+         ("category-komodo-linter", 'Hekla&type=mycompany.com:common IV linter'),
+         ("category-komodo-linter", 'Krafla&type=mycompany.com:common IV linter'),
+         ]
+  </pre>
+  
+  <h3>Collisions</h3>
+  
+  Suppose another company also writes a Komodo extension with a linter for
+  "Hekla".  Assuming they insert their own company name in the category field:
+  <pre>
+    _reg_categories_ = [
+         ("category-komodo-linter", 'Hekla&type=bitterrival.com:Hekla linter'),
+         ]
+  </pre>
+  
+  You don't need to worry: Komodo will run both linters, and show the combined
+  results.  Later you'll see how to use Komodo's preference system to control
+  when a linter should fire or not.
+  
+  <h2>Checking syntax</h2>
+  
+  <p>The actual syntax checking is done in the <code>lint_with_text</code> method.
+  Please consult the Komodo source code for an example.  The key factors to
+  follow are:
+  <ul>
+    <li>All linters fire in a background thread.  On the positive side, this
+    means they typically run during an idle period.  On the negative side,
+    if you have to access a front-end object, like the UI, you need to go
+    through a proxy.  You also don't have access to most of the methods and
+    fields in the scimoz editor object.  Trying to do something like run
+    <code>scimoz.colourise(0, -1)</code> has unpredictable results.</li>
+    <li>Write the passed text into a temporary file, and lint that.</li>
+    <li>Capture possible exceptions, and recover from them. Otherwise, the
+    user will see a red "busy pencil" in the status bar, but will never get
+    results.
+    </li>
+  </ul>
+  
+  Komodo usually invokes an external process to do the actual syntax checking.
+  Let's say your extension includes four versions of the <code>hekla</code> executable
+  for running this:
+  <ul>
+    <li><code>hekla.exe</code> for Windows,
+    <li><code>hekla</code>, a binary Darwin command-line utility for OSX,
+    <li>separate <code>hekla</code>s for 32-bit and 64-bit Linux
+  </ul>
+  
+  These executables should be packaged in the following directory
+  tree under your extension directory like so:
+  <pre>
+  +- platform
+     +- Darwin_x86-gcc3
+        +- hekla
+     +- Linux_x86-gcc3
+        +- hekla
+     +- Linux_x86_64-gcc3
+        +- hekla
+     +- WINNT_x86-msvc
+        +- hekla.exe
+  </pre>
+  
+  Finding the executable is straightforward now.  Getting the path to
+  your extension is straightforward -- assume that it's called "hekla@mycompany.com"
+  in the install.rdf.
+  
+  <pre>
+  import directoryServiceUtils
+  dirList = [x for x in directoryServiceUtils.getExtensionDirectories()
+             if x.endswith(os.path.sep + "hekla@mycompany.com")]
+  if len(dirList) != 1:
+      raise BigProblemo()
+  xulRuntimeSvc = components.classes["@mozilla.org/xre/app-info;1"].\
+      getService(components.interfaces.nsIXULRuntime)
+  platformName = "%s_%s" % (xulRuntimeSvc.OS, xulRuntimeSvc.XPCOMABI)
+  pathToExec = os.path.join(dirList[0], "platform", platformName, "hekla")
+  if sys.platform.startswith("win"):
+      pathToExec += ".exe"
+  </pre>
+    
+  You would then invoke the linter with this code sequence:
+  <pre>
+  cmd = [pathToExec, <i>arg1</i>, <i>arg2</i>, tempFileName, <i>args...</i>]
+  p = process.ProcessOpen(cmd, cwd=cwd, stdin=None)
+  stdout, stderr = p.communicate()
+  # error messages are either in stdout or stderr, depending on the syntax checker
+  # try to avoid designing syntax checkers that write to both streams.
+  lines = (stdout or stderr).splitlines(0)
+  # process lines for errors...   see source for examples
+  </pre>
+  
+  <h2>Multi-language Linting</h2>
+  
+  If your extension implements an HTML template-like language like Django or Mason,
+  the good news is that you hardly have any work to do at all. This does the
+  job for most multi-language templates:
+  <pre>
+    def __init__(self):
+        self._html_linter = koLintService.getLinterForLanguage("HTML")
+        #...
+        
+    def lint(self, request):
+        return self._html_linter.lint(request)
+  </pre>
+  
+  The HTML Linter will find the "Hekla"-specific code in the template, and
+  will invoke the <code>lint_with_text</code> method with a modified text field:
+  The Hekla-specific content will be preserved, but any non-Hekla code will
+  be converted to a space (with newlines being preserved).
+  
+  <p>If this doesn't work, you can always do your own template processing in
+  the <code>lint</code> method, and call the separate sublanguage's <code>lint_with_text</code>.
+  However, after having written linters for seven different multi-language
+  languages, we were always able to have the HTML linter do this grunt work.
+
+  <h2>Controlling Linting</h2>
+  
+  So you've written a linter, successfully used the registration mechanism to
+  get Komodo to invoke it, and while testing it already found a couple of areas
+  that needed fixing in your own Hekla files.  You push the extension to
+  <a href="http://community.activestate.com/addons">http://community.activestate.com/addons</a>,
+  sit back, and wait for the attaboys.
+  
+  <p>And then you get an email from a user saying she loves the
+  extension, but sometimes she needs to use bitterrival.com's Hekla linter,
+  and it's confusing seeing the two sets of error messages in the editor
+  window.  Can she turn them off.
+  
+  <p>We'll assume you know how to add a preference to the Komodo system (see the
+  Rails extension at
+  <a href="http://community.activestate.com/xpi/ruby-rails-extension">http://community.activestate.com/xpi/ruby-rails-extension</a>
+  for an example if this is new).  Assume you call the pref
+  <code>lint-hekla:mycompany.com</code>.  Your code should now check the
+  <code>request.document.getEffectivePrefs()</code> to see if that pref is true,
+  and return no results if it's false.
+  
+  <p>You might notice that when you toggle that pref in the Preference system,
+  Komodo doesn't re-lint the text until you make a change.  But you know
+  when you change other prefs, like changing the Ruby interpreter path,
+  Komodo does a rescan.  You can get your preference to work the same way
+  with one single line of JavaScript:
+  
+  <pre>
+  ko.lint.addLintPreference("lint-hekla:mycompany.com", ["Hekla"]);
+  </pre>
+  
+  The second argument is a list of the languages that this preference pertains
+  to.  If you're also writing an extension for a new HTML template language
+  called "Askja" which of course runs Hekla code on the server-side.  In
+  that case you would set the second arg to ["Hekla", "Askja"], so if the
+  user changed the Hekla pref while editing an Askja document, it would
+  still be relinted.
+
+</div> <!-- content -->
+</body>
