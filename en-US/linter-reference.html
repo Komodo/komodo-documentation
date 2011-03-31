@@ -113,19 +113,23 @@
   Please consult the Komodo source code for an example.  The key factors to
   follow are:
   <ul>
-    <li>All linters fire in a background thread.  On the positive side, this
-    means they typically run during an idle period.  On the negative side,
-    if you have to access a front-end object, like the UI, you need to go
-    through a proxy.  You also don't have access to most of the methods and
-    fields in the scimoz editor object.  Trying to do something like run
-    <code>scimoz.colourise(0, -1)</code> has unpredictable results.</li>
+    <li>All linters fire in a background thread.</li>
     <li>Write the passed text into a temporary file, and lint that.</li>
     <li>Capture possible exceptions, and recover from them. Otherwise, the
     user will see a red "busy pencil" in the status bar, but will never get
     results.
     </li>
   </ul>
-  
+  <p>That background thread note deserves elaboration.  On the positive side, this
+    means linters typically run during an idle period.  On the negative side,
+    if you have to access a front-end object, like the UI, you need to go
+    through a proxy.  You should also avoid accessing the scimoz editor object,
+    even through a proxy object (direct access will crash Komodo).  For one
+    thing, because the linter runs in a background thread, the state of the
+    scimoz object could change between the time the linter request was first
+    set, and when it finally fires.  Trying to do something like run
+    <code>proxy(scimoz).colourise(0, -1)</code> has unpredictable results.
+  <p>
   Komodo usually invokes an external process to do the actual syntax checking.
   Let's say your extension includes four versions of the <code>hekla</code> executable
   for running this:
