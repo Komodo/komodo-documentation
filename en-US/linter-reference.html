@@ -239,6 +239,92 @@
   that case you would set the second arg to ["Hekla", "Askja"], so if the
   user changed the Hekla pref while editing an Askja document, it would
   still be relinted.
+  
+  <h2>Aggregators</h2>
+  
+  When Komodo has more than one linter for a given language, by default it
+  collects the results for each linter, and then returns the combined set.
+  This is done through an <i>aggregator</i>. Usually you won't need to be
+  concerned about this, but suppose you want more control over how an aggregator
+  works.
+  
+  <p>For example, suppose that we are supplying three different linters for
+  Hekla, which we'll call "H1", "H2", and "H3".  If H1 finds any problems,
+  we only want to show them.  Do the same thing for H2, then H3, and if none
+  of them find any problems, return the lint results for any other Hekla linters
+  we might have.  To do this, we need to tell Komodo that we're supplying
+  our own aggregator, and then code it.
+  
+  <p>In this case, the linters like "H1" are called <i>terminals</i>, and
+  are invoked directly by the aggregator.
+  
+  <p>The class would look like this:
+  
+  <pre>
+class KoHeklaCompileLinter(object):
+    _reg_desc_ = "Komodo Hekla Aggregate Linter"
+    _reg_clsid_ = "{generate-with-unix-util-uuidgen}"
+    _reg_contractid_ = "@activestate.com/koLinter?language=Hekla&type=Aggregator;1"
+    _reg_categories_ = [
+         ("category-komodo-linter-aggregator", 'Hekla'),
+         ]
+    
+    def __init__(self):
+        self._koLintService = UnwrapObject(self._koLintService)
 
+    # This is the same -- the "terminal" linters' lint method isn't used.
+    def lint(self, request):
+        encoding_name = request.encoding.python_encoding_name
+        text = request.content.encode(encoding_name)
+        return self.lint_with_text(request, text)
+        
+    def idx_from_linter_name(self, cids, name):
+        # This might not be exactly what we want, but it is an example
+        for i in range(len(cids)):
+            if name in cids[i]:
+                return i
+        return -1
+
+    def lint_with_text(self, request, text):
+        # Your basic aggregator....
+        linters = [UnwrapObject(x) for x in
+                       self._koLintService.getTerminalLintersForLanguage("Hekla")]
+        # Now find our linters
+        h1_name = "type=H1"
+        h2_name = "type=H2"
+        h3_name = "type=Wally"  # there's one in every crowd
+        # Here's where we use the contract_id's
+        contract_ids = [x._reg_contractid_ for x in linters]
+        for name in (h1_name, h2_name, h3_name):
+            idx = self.idx_from_linter_name(contract_ids, name)
+            if idx >= 0:
+                results = linters[idx].lint_with_text(request, text)
+                if results.getNumResults():
+                    return results
+                del linters[idx]
+                
+        # Check remaining linters
+        finalLintResults = koLintResults()
+        for linter in linters:
+            newLintResults = linter.lint_with_text(request, text)
+            if newLintResults and newLintResults.getNumResults():
+                if finalLintResults.getNumResults():
+                    finalLintResults = finalLintResults.addResults(newLintResults)
+                else:
+                    finalLintResults = newLintResults
+        return finalLintResults
+  </pre>
+  
+  The key is that <code>category-komodo-linter-aggregator</code> category.
+  This tells Komodo that we're going to override Komodo's generic aggregator.
+  There currently is no public method to create a generic aggregator for a
+  specific language, but you could do it with an unwrapped <code>koLintService</code>
+  object:
+  
+  <pre>
+    aggregator = components.classes[koLintService.GENERIC_LINTER_AGGREGATOR_CID].createInstance(components.interfaces.koILinter)
+    UnwrapObject(aggregator).initialize(languageName, koLintService)
+  </pre>
+  
 </div> <!-- content -->
 </body>
