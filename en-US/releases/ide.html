@@ -24,6 +24,49 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <h3 id="whatsnew-7.0">7.0</h3>
 
 <ul>
+  <li><strong>Syntax Checking</strong>: Komodo's syntax checking feature has
+  been greatly improved in Komodo 7:
+    <ul>
+      <li>
+	Multi-language syntax checking - so for a HTML file you'll now
+        receive errors and warnings on the HTML, JavaScript and CSS content.
+      </li>
+      <li>
+	A syntax checking tab has been added to the bottom pane - so you can
+        easily see the list of errors and warnings in the one place.
+      </li>
+      <li>
+	There is now a wider ranger of syntax checkers to choose from, such as
+	the addition of JSLint for JavaScript and PyLint for Python.
+      </li>
+      <li>
+	Enable/disable syntax checkers on a per-file or per-language level.
+	Komodo's syntax checking preferences now offer complete customization
+	of syntax checking parameters.
+      </li>
+    </ul>
+  </li>
+
+  <li><strong>Updated Mozilla Code Base</strong>: Komodo is now based on the
+  Mozilla Firefox 4 code base. This update brings a number of benefits for
+  Komodo developers:
+    <ul>
+      <li>
+	Faster startup - Komodo 7 does not have any component registration, so
+	the first startup and restarting after installing an add-on will be
+	substantially faster.
+      </li>
+      <li>
+	A better browser preview - supporting the lastest and greatest web
+	technologies.
+      </li>
+      <li>
+	More stable - the stability improvements to the underlying Mozilla code
+	base will make Komodo itself more stable.
+      </li>
+    </ul>
+  </li>
+
   <li><strong><a href="../sync.html">Komodo Synchronization</a></strong>:
   Synchronize your important Komodo data between multiple machines. Changes made
   to the toolbox, remote server accounts or template files can be synchronized
@@ -35,7 +78,12 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   individual user will be propagated to all other collaborators.
   </li>
 
-  <li>Languages: Perl: added Mojolicious template language</li>
+  <li><strong>New Languages</strong>
+    <ul>
+      <li>Mojolicious - a Perl templating language</li>
+      <li>CoffeeScript - a JavaScript templating language</li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="details" title="Komodo Changelog">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
@@ -43,6 +91,40 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to debugging, interactive shells, source code
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-7.0.0a2">7.0.0a2 Bug Fixes</h3>
+
+<ul>
+  <li>Syntax Checking
+    <ul>
+      <li>Add two HTML checkers using Perl's HTML-Lint and HTML-Tidy</li>
+      <li>Add pychecker python linter</li>
+      <li>Django syntax-checking now includes python include dirs from pythonExtraPaths preferences (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89463">89463</a>)</li>
+    </ul>
+  </li>
+  <li>Places:
+    <ul>
+      <li>Right-clicking project properties now brings up the selected project, not the active project's properties (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89797">89797</a>)</li>
+      <li>Automatically ignore *.komodoproject and .komodotools (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89470">89470</a>)</li>
+      <li>Only sync the places sidebar when places is selected (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89553">89553</a>)</li>
+    </ul>
+  </li>
+  <li>Move komodo to gecko 2.0, aka Firefox 4 (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89214">89214</a>)</li>
+  <li>Languages: Add support for CoffeeScript (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89419">89419</a>)</li>
+  <li>PHP: ensure parent class lookup resolves namespaces correctly (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89755">89755</a>)</li>
+  <li>Python3 debugging: Handle source files that contain non-ascii non-utf8 strings</li>
+  <li>Ruby Debugging: Get remote Ruby debugging output working for Ruby 1.9</li>
+  <li>Toolbox Abbreviations: now more flexible - uses a language hierarchy (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89688">89688</a>)</li>
+  <li>Toolbox Abbreviations: prefer snippets found outside Komodo's Samples folder (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83707">83707</a>)</li>
+  <li>Formatters: ensure JS Beautify respects indentation settings (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89789">89789</a>)</li>
+  <li>Formatters: python: quote the path to re-indent script (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89782">89782</a>)</li>
+  <li>Projects: use the import_dirname field to determine whether a file is a member of a project or not (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89767">89767</a>)</li>
+  <li>SCC: Allow ctrl+enter as keyboard shortcut to 'Commit' from "Check-in to Source Control" window (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87092">87092</a>)</li>
+  <li>Editor: HTML lexing now requires &lt;/script&gt; to end all scripts (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89707">89707</a>)</li>
+  <li>Remote Files: allow selection of the root "/" directory (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89654">89654</a>)</li>
+</ul>
+
+
 
 <h3 id="bug_fixes-7.0.0a1">7.0.0a1 Bug Fixes</h3>
 
