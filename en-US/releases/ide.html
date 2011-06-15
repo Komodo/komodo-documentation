@@ -24,6 +24,24 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <h3 id="whatsnew-7.0">7.0</h3>
 
 <ul>
+  <li><p><strong><a href="http://www.stackato.com/">Stackato Integration</a></strong>:
+  Stackato is ActiveState's cloud hosting platform. Komodo provides tools that
+  will allow you to easily configure, develop, manage and deploy applications to
+  the Stackato platform. These tools are located in your Komodo toolbox pane.
+    </p>
+  </li>
+
+  <li><p><strong>Node.js</strong>:
+  Komodo now provides excellent code intelligence and debugging support for
+  Node. Komodo's debugger can connect and interact with the Node V8 runtime, to
+  show variables, set breakpoints, modify objects or view the call stack -
+  Komodo's debugger makes all of these things easy. As well as debugging,
+  Komodo's code intelligence provides support for the core Node library, as well
+  support for the CommonJS module specification, which is used in Node for
+  requiring (importing) JavaScript modules.
+  </p>
+  </li>
+
   <li><p><strong><a href="../sync.html">Komodo Synchronization</a></strong>:
   Synchronize your important Komodo data between multiple machines. Changes made
   to the toolbox, remote server accounts or template files can be synchronized
@@ -34,6 +52,14 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
   <li><p><strong><a href="../collab.html">Code Collaboration</a></strong>: Two or more
   people can collaborate on the same document in real time. Changes made each
   individual user will be propagated to all other collaborators.
+    </p>
+  </li>
+
+  <li><p><strong>Moveable Side Pane Widgets</strong>:
+  You can now easily move any of Komodo's side pane widgets to a different pane,
+  such as being able to move the Code Browser to the right side instead of the left.
+  Just right-click on the side-pane tab you wish to move and you'll see a context
+  menu offering you the ability to move the tab to an alternative pane.
     </p>
   </li>
 
@@ -94,6 +120,39 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to debugging, interactive shells, source code
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
+
+
+<h3 id="bug_fixes-7.0.0a3">7.0.0a3 Bug Fixes</h3>
+
+<ul>
+  <li>Projects and Places:
+    <ul>
+      <li>Show native file icons in the Places tree view</li>
+      <li>Re-use remote file connections (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90181">90181</a>)</li>
+      <li>User can now decide on two different project layouts (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89327">89327</a>)</li>
+      <li>Templates: Ignore packed .xpi extensions (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89980">89980</a>)</li>
+    </ul>
+  </li>
+  <li>Codeintel:
+    <ul>
+      <li>PHP: Provide completions for classes defined in namespaces (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88964">88964</a>)</li>
+      <li>PHP: Provide completions for variables defined in namespaces (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88964">88964</a>)</li>
+      <li>PHP: Show calltips for inherited class constructors</li>
+      <li>CSS: Cleanup css3 property calltips (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90055">90055</a>)</li>
+    </ul>
+  </li>
+  <li>Editor: Fix crash when editing UDL-based files (XUL, HTML, etc.) (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90080">90080</a>)</li>
+  <li>Find: Add the ability to filter out skipped replace paths</li>
+  <li>Addons: Fix koext.py so it generates extensions that work with Komodo 7.0.0a2 and above (based on Moz 2.0) (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90104">90104</a>)</li>
+  <li>Database Explorer: When editing a row, show scroll bars if there are too many columns to fit on the screen (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90087">90087</a>)</li>
+  <li>Komodo Sync: Don't store empty strings in nsILoginManager (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90217">90217</a>)</li>
+  <li>Languages: Don't map [Mm]akefile.* to the Makefile lexer</li>
+  <li>UI: Tweak the displaying of recent files/projects menulists (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90045">90045</a>)</li>
+  <li>Internationalization: Show time/dates in proper unicode format (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90170">90170</a>)</li>
+  <li>Linter: Stop emitting false JS syntax error positivies in XBL field elements (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89989">89989</a>)</li>
+  <li>SCC: Git: When performing an update - don't try to pull from "." (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88308">88308</a>)</li>
+</ul>
+
 
 <h3 id="bug_fixes-7.0.0a2">7.0.0a2 Bug Fixes</h3>
 
