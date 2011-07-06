@@ -124,6 +124,53 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
 Sections List apply to Komodo IDE only.</p>
 
+
+<h3 id="bug_fixes-6.1.2">6.1.2 Bug Fixes</h3>
+
+<ul>
+  <li>Code Intelligence:
+    <ul>
+      <li>PHP: provide completions for classes defined in namespaces. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88964">88964</a>)</li>
+      <li>PHP: provide completions for variables defined in namespaces. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88964">88964</a>)</li>
+      <li>PHP: show calltips for inherited class constructors. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90156">90156</a>)</li>
+      <li>PHP: ensure parent class lookup resolves namespaces correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89755">89755</a>)</li>
+      <li>Python: detect class instance variable assigned via tuples. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89416">89416</a>)</li>
+      <li>jQuery: updated API catalog to version 1.6.1. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89475">89475</a>)</li>
+      <li>CSS: removed empty string completion items for 'text-align', 'content' and 'quote'. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90055">90055</a>)</li>
+    </ul>
+  </li>
+  <li>Places:
+    <ul>
+      <li>Right-clicking project properties now brings up the selected project properties. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89797">89797</a>)</li>
+      <li>Re-use remote file connections. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90181">90181</a>)</li>
+      <li>Stop reopening the places sidebar when switching tabs when sync'ing places sidebar and tabs is on. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89553">89553</a>)</li>
+    </ul>
+  </li>
+  <li>SCC:
+    <ul>
+      <li>Git: when performing an update - don't try to pull from ".". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88308">88308</a>)</li>
+      <li>Mercurial: file status detection now supports renamed file status. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89547">89547</a>)</li>
+    </ul>
+  </li>
+  <li>Code Formatters:
+    <ul>
+      <li>JavaScript: make JS Beautify respect indentation settings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89789">89789</a>)</li>
+      <li>Python: quote the path to re-indent script. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89782">89782</a>)</li>
+    </ul>
+  </li>
+  <li>Remote Files:
+    <ul>
+      <li>Allow selection of the root "/" directory. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89654">89654</a>)</li>
+      <li>Correctly handle french directory listings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88866">88866</a>)</li>
+    </ul>
+  </li>
+  <li>Database Explorer: when editing a row, show scroll bars if there are too many columns to fit on the screen. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90087">90087</a>)</li>
+  <li>Debugging: Ruby: correctly encode attribute values that contain special characters. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90564">90564</a>)</li>
+  <li>Project Templates: improve compatibility with v5 extensions and macros. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89750">89750</a>)</li>
+  <li>Django: trigger syntax checking when the Python interpreter changes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89573">89573</a>)</li>
+</ul>
+
+
 <h3 id="bug_fixes-6.1.1">6.1.1 Bug Fixes</h3>
 
 <ul>
