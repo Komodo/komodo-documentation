@@ -360,14 +360,16 @@
 ; - zend_extension_ts is for PHP &lt;= 5.2
 ; - zend_extension is for PHP &gt;= 5.3
 ; or you can specify both if your not sure.
-zend_extension_ts=c:\path\to\php_xdebug.dll
-zend_extension=c:\path\to\php_xdebug.dll
+zend_extension_ts="c:\path\to\php_xdebug.dll"
+zend_extension="c:\path\to\php_xdebug.dll"
 xdebug.remote_enable=1
 xdebug.remote_handler=dbgp
 xdebug.remote_mode=req
 xdebug.remote_host=127.0.0.1
 xdebug.remote_port=9000
 xdebug.idekey=&lt;idekey&gt;
+; You may also want this - to always start a remote debugging connection.
+;xdebug.remote_autostart=1
 </pre>
 
     </li>
@@ -376,13 +378,15 @@ xdebug.idekey=&lt;idekey&gt;
       <p><strong>Linux and Mac OS X</strong></p>
       <pre class="code">
 ; xdebug config for Linux and Mac OS X
-zend_extension=/path/to/xdebug.so
+zend_extension="/path/to/xdebug.so"
 xdebug.remote_enable=1
 xdebug.remote_handler=dbgp
 xdebug.remote_mode=req
 xdebug.remote_host=127.0.0.1
 xdebug.remote_port=9000
 xdebug.idekey=&lt;idekey&gt;
+; You may also want this - to always start a remote debugging connection.
+;xdebug.remote_autostart=1
 </pre>
     </li>
   </ul>
