@@ -501,6 +501,12 @@
   </node>
 </node>
 
+<node name="Code Profiling" link="profiling.html#profiler_top" flags="ide">
+    <node name="Supported File Formats" link="profiling.html#supported_formats"/>
+    <node name="Starting the Code Profiler" link="profiling.html#start_profiling"/>
+    <node name="Remote Code Profiling" link="profiling.html#remote_profiling"/>
+</node>
+
 <node name="Unit Testing" link="unittest.html#unit_test_top" flags="ide">
   <node name="Creating and Editing Test Plans" link="unittest.html#unit_test_create">
     <node name="Supported Test Frameworks by Language" link="unittest.html#unit_test_langs"/>

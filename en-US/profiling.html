@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Code Profiling</title>
+</head>
+
+<body>
+<div id="content">
+  <h1><a name="profiler_top">Code Profiling of Programs</a> <span class=
+  "version_alert">Komodo IDE only</span></h1>
+
+  <p>
+    The Komodo code profiler is a tool that will analyze programs on a function
+    by function basis, tracking which function calls are made, which functions
+    call info other functions and how long these calls take to complete.
+  </p>
+
+  <p id="supported_formats">
+    Komodo only provides Code Profiling support for Python, though Komodo's
+    profiler interface can also read these profiling formats:
+    <ul>
+      <li><strong>Callgrind/Cachegrind/KCachegrind</strong> - such as
+    Xdebug's PHP code profiler produces</li>
+      <li><strong>pstats</strong> - produced by the Python cProfile and Profile
+      standard library modules</li>
+    </ul>
+  </p>
+
+  <p>
+    Komodo's Code Profiler interface can be launched from the <strong>Tools >
+    Code Profiler</strong> menu, where you can load previously executed
+    profiling sessions (files).
+  </p>
+
+  <h2><a name="start_profiling">Starting a new Code Profiling session</a></h2>
+
+  <p>
+    You can either perform code profiling on a local file of your system
+    <em>Local Code Profiling</em>, or alternatively use Komodo's <em>Remote Code
+    Profiling</em> facilities to launch code profiling on a different system and
+    then connect back to Komodo (via the network) to display the code profiling
+    results.
+  </p>
+
+  <h2><a name="remote_profiling">Local Code Profiling</a></h2>
+
+  <p>
+    In order to create a new Local Code Profiling session, use the <strong>Debug
+    > Start Code Profiling</strong> menu.
+  </p>
+
+  <p>
+    By default, the <a href="debugging.html#Debugging_Options">Profiling Options</a> dialog
+    box is displayed (which has the same fields as the regular debugger options
+    dialog). If multiple files are open in the <a class="doc"
+    href="workspace.html#Editor_Pane">Editor Pane</a>, the program that is
+    currently displayed will be profiled. Komodo will track the progress of
+    the application as it executes and when the program finishes, Komodo will
+    display the results in a separate code profiling window.
+  </p>
+
+
+  <h2><a name="remote_profiling">Remote Code Profiling</a></h2>
+
+  <p>
+    Remote profiling involves executing code on a remote machine and then
+    connecting back to Komodo (through the Komodo debugger port) in order to
+    display the code profiling results.
+  </p>
+
+  <p>
+    For Remote Code Profiling of <strong>Python applications</strong>, you will
+    need to launch the "pydbgp" application and add the <em>--profiling</em>
+    command line option. See Komodo's
+    <a href="debugpython.html#Using_the_Python_Remote_Debugger">Python Remote Debugging</a>
+    documentation for further details.
+  </p>
+
+</div> <!-- content -->
+</body>
+</html>
