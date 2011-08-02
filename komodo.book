@@ -25,6 +25,7 @@ build/edit-ide-ideonly-en-US/htdocs/templates.html
 build/edit-ide-ideonly-en-US/htdocs/openshort.html
 build/edit-ide-ideonly-en-US/htdocs/urls.html
 build/edit-ide-ideonly-en-US/htdocs/run.html
+build/edit-ide-ideonly-en-US/htdocs/sync.html
 build/edit-ide-ideonly-en-US/htdocs/custtbi.html
 build/edit-ide-ideonly-en-US/htdocs/debugger.html
 build/edit-ide-ideonly-en-US/htdocs/debugjs.html
@@ -34,10 +35,12 @@ build/edit-ide-ideonly-en-US/htdocs/debugphp.html
 build/edit-ide-ideonly-en-US/htdocs/debugruby.html
 build/edit-ide-ideonly-en-US/htdocs/debugtcl.html
 build/edit-ide-ideonly-en-US/htdocs/debugxslt.html
+build/edit-ide-ideonly-en-US/htdocs/profiling.html
 build/edit-ide-ideonly-en-US/htdocs/unittest.html
 build/edit-ide-ideonly-en-US/htdocs/http-insp.html
 build/edit-ide-ideonly-en-US/htdocs/intshell.html
 build/edit-ide-ideonly-en-US/htdocs/codeintel.html
+build/edit-ide-ideonly-en-US/htdocs/collab.html
 build/edit-ide-ideonly-en-US/htdocs/dom.html
 build/edit-ide-ideonly-en-US/htdocs/scc.html
 build/edit-ide-ideonly-en-US/htdocs/regex.html
