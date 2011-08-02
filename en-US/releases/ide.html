@@ -24,6 +24,25 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <h3 id="whatsnew-7.0">7.0</h3>
 
 <ul>
+
+  <li><p><strong><a href="../profiling.html">Code Profiling</a></strong>:
+  Komodo now provides the ability to profile an application in order to see the
+  hotspot code paths. Initially we've only added Python code profiling in order
+  to get feedback on the components and UI, before we launch into the other
+  languages. Komodo will also be able to open Cachegrind/Callgrind profile
+  files, which is a common storage format for profiling information.
+    </p>
+  </li>
+
+  <li><p><strong>Fast Find</strong>:
+  A new interactive find widget has been added to the Komodo editor, which will
+  speed up the time taken to search for text within documents. Using Ctrl+F
+  (Cmd+F) now brings up a small textbox at the bottom of the editor view where
+  you can type the text you wish to search for. The searching is done
+  incrementally as you type, so you'll see your matches instantly.
+    </p>
+  </li>
+
   <li><p><strong><a href="http://www.stackato.com/">Stackato Integration</a></strong>:
   Stackato is ActiveState's cloud hosting platform. Komodo provides tools that
   will allow you to easily configure, develop, manage and deploy applications to
@@ -120,6 +139,8 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
     <ul>
       <li>Mojolicious - a Perl templating language</li>
       <li>CoffeeScript - a JavaScript templating language</li>
+      <li>LESS - a CSS extension language</li>
+      <li>SCSS - a CSS extension language</li>
     </ul>
     </p>
   </li>
@@ -127,9 +148,53 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <h2 id="details" title="Komodo Changelog">Detailed Changes and Bug Fixes in Komodo IDE/Edit</h2>
 
-<p>Changes related to debugging, interactive shells, source code
-control, the HTTP Inspector, the Rx Toolkit, the Code Browser, and the
-Sections List apply to Komodo IDE only.</p>
+<p>Changes related to Debugging, Interactive Shells, Source Code
+Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
+Stackato and the Sections List only apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-7.0.0a4">7.0.0a4 Bug Fixes</h3>
+
+<ul>
+  <li>Projects and Places:
+    <ul>
+      <li>Show in Places command now opens/selects the Places panel in the left toolbox. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90606">90606</a>)</li>
+      <li>Show in Places now retains the root folder whenever possible. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90529">90529</a>)</li>
+      <li>Double-clicking on a remote folder now roots that folder in the Places area. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90459">90459</a>)</li>
+      <li>When closing a project, ensure the associated files are closed as well. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90484">90484</a>)</li>
+      <li>Remember how the projects are sorted. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89283">89283</a>)</li>
+      <li>Reinstate project templates: store referenced local files and directory trees in the generated project. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88519">88519</a>)</li>
+      <li>Store the toolbox in the project template. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88519">88519</a>)</li>
+      <li>Added per-project environment preferences. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=66202">66202</a>)</li>
+      <li>The SCC propeties now show the status of the .komodoproject file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90739">90739</a>)</li>
+    </ul>
+  </li>
+  <li>Codeintel:
+    <ul>
+      <li>Added code-completion for Less and SCSS (CSS wrappers). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87418">87418</a>)</li>
+      <li>JavaScript: support Object.defineProperty. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90684">90684</a>)</li>
+      <li>PHP: improved speed and accuracy for PHP namespace completions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90083">90083</a>)</li>
+    </ul>
+  </li>
+  <li>Command Line: Added -P|--use-position option for character positioning. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86164">86164</a>)</li>
+  <li>Database Explorer: MySQL queries no longer need to specify an explicit database. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88655">88655</a>)</li>
+  <li>Editor: Select-block now finds the start of a multi-line start-tag for XML- and HTML-based documents. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=62717">62717</a>)</li>
+  <li>Editor: When adding indentation after pressing newline, make sure the editor doesn't scroll back to the let margin. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90498">90498</a>)</li>
+  <li>Fixed a memory leak in the diff dialog. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84499">84499</a>)</li>
+  <li>Komodo Services: Make the username and password fields readonly when the user is logged in. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89985">89985</a>)</li>
+  <li>Publishing: Sort the publishing configuration menus. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90553">90553</a>)</li>
+  <li>PHP: Debugging: Update Xdebug to latest version - 2.1.1. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90428">90428</a>)</li>
+  <li>Python: Highlight the builtin methods in a different color.</li>
+  <li>Ruby: Debugging: Correctly encode attribute values that contain special characters. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90564">90564</a>)</li>
+  <li>Ruby: Editing: pod blocks (=begin ... =end) are now folded, but only in pure Ruby files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90573">90573</a>)</li>
+  <li>Remote Files: Fix Pageant file access error when accessing remote files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82419">82419</a>)</li>
+  <li>Run commands: Make commands work when run-in is set to '%D' but the current file is virtual (like a macro). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90575">90575</a>)</li>
+  <li>Rx Toolkit: Improve the layout of the Delimiters window, allows resizing and persists width/height. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89338">89338</a>)</li>
+  <li>Rx Toolkit: Fixed exception when selecting the Split method. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90555">90555</a>)</li>
+  <li>SCC: Mercurial: Update command shouldn't work on individual files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90477">90477</a>)</li>
+  <li>Sections List: Provide a preference to sort by natural or alphabetical order. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83387">83387</a>)</li>
+  <li>Stackato: All macros now ensure that Stackato has been properly configured. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90520">90520</a>)</li>
+  <li>UI: Allow removing of undesired MRU entries by using the Delete key. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90583">90583</a>)</li>
+</ul>
 
 
 <h3 id="bug_fixes-7.0.0a3">7.0.0a3 Bug Fixes</h3>
