@@ -25,6 +25,41 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
 <ul>
 
+  <li><p><strong>Preference Searching</strong>: Komodo now provides a search box
+  in the preferences page that can be used to narrow down the appropriate
+  preference categories for the preference you are looking for.
+    </p>
+  </li>
+
+  <li><p><strong>Notifications Pane</strong>: There is now a new notifications
+  panel located in Komodo's bottom pane that is used to keep track of the events
+  occurring in Komodo. Statusbar messages, SCC actions and other events will now
+  populate this Notifications panel - this allows easy reviewing, checking and
+  copying of Komodo events.
+    </p>
+  </li>
+
+  <li><p><strong>View Toolbar</strong>: A new toolbar has been placed at the top
+  of each editor tab. This toolbar will now contain editor specific controls
+  such as the Sections List popup, Language selection and file encoding choices.
+    </p>
+  </li>
+
+  <li><p><strong>Customize the Main Toolbar</strong>: It's now possible to
+  select the individual toolbar items you wish to be shown in the main Komodo
+  toolbar. Use the <em>View &gt; Toolbars &gt; Customize...</em> menu to start
+  your tweaking.
+    </p>
+  </li>
+
+  <li><p><strong>Code Completion Widget</strong>: The code completions widget
+  inside of Komodo has changed. Whilst most users shouldn't the difference
+  between the old and new completion widget, this will allow adding of
+  additional information to the completions dialog and also allow us to add
+  smarter code completions.
+    </p>
+  </li>
+
   <li><p><strong><a href="../profiling.html">Code Profiling</a></strong>:
   Komodo now provides the ability to profile an application in order to see the
   hotspot code paths. Initially we've only added Python code profiling in order
@@ -151,6 +186,37 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to Debugging, Interactive Shells, Source Code
 Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-7.0.0a5">7.0.0a5 Bug Fixes</h3>
+
+<ul>
+  <li>Code Intelligence:
+    <ul>
+      <li>HTML: on* attributes now styled as JavaScript. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=66039">66039</a>)</li>
+      <li>PHP: stop invalid completions after "()-&gt;foo". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90846">90846</a>)</li>
+      <li>PHP: don't show global classes when inside a namespace. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85918">85918</a>)</li>
+      <li>PHP: ensure class completions for static variables work. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90968">90968</a>)</li>
+      <li>PHP: fix unqualified namespace completions when inside a namespace. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=86784">86784</a>)</li>
+      <li>PHP: ensure functions that return the same type can be auto completed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90956">90956</a>)</li>
+      <li>PHP: ensure namespace defines are properly unescaped. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90795">90795</a>)</li>
+      <li>Tcl: ignore backslash-escaped braces when processing scopes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=74850">74850</a>)</li>
+    </ul>
+  </li>
+  <li>Editor:
+    <ul>
+      <li>Allow "&lt;" in SGML/XML attribute values. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91033">91033</a>)</li>
+      <li>Double-clicking on a floating point number will now select the whole number. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90958">90958</a>)</li>
+    </ul>
+  </li>
+  <li>Browser Preview: Use the real hostname when previewing remote files in an external browser. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91046">91046</a>)</li>
+  <li>Key Bindings: Bring back F10 for the debugger step over command. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=81657">81657</a>)</li>
+  <li>Preferences: Correct a problem with servers page becoming unresponsive. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89685">89685</a>)</li>
+  <li>Projects: Support file and folder references for the Single project view. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90283">90283</a>)</li>
+  <li>Project Templates: Update the Firefox and Komodo version numbers. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91107">91107</a>)</li>
+  <li>SCC: Allow password authentication in the checkout dialog. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=80651">80651</a>)</li>
+  <li>Stackato: Added a target command to the Stackato toolset.</li>
+</ul>
+
 
 <h3 id="bug_fixes-7.0.0a4">7.0.0a4 Bug Fixes</h3>
 
