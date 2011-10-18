@@ -21,8 +21,9 @@
   </p>
 
   <p id="supported_formats">
-    Komodo only provides Code Profiling support for Python, though Komodo's
-    profiler interface can also read these profiling formats:
+    Komodo only provides Code Profiling support for Python and PHP (PHP version
+    5.2 or higher), though Komodo's profiler interface can also read these
+    profiling formats:
     <ul>
       <li><strong>Callgrind/Cachegrind/KCachegrind</strong> - such as
     Xdebug's PHP code profiler produces</li>
@@ -73,12 +74,32 @@
     display the code profiling results.
   </p>
 
+  <h3><a name="python_remote_profiling">Python Remote Code Profiling</a></h3>
+
   <p>
     For Remote Code Profiling of <strong>Python applications</strong>, you will
     need to launch the "pydbgp" application and add the <em>--profiling</em>
     command line option. See Komodo's
     <a href="debugpython.html#Using_the_Python_Remote_Debugger">Python Remote Debugging</a>
     documentation for further details.
+  </p>
+
+  <h3><a name="php_remote_profiling">PHP Remote Code Profiling</a></h3>
+
+  <p>
+    For Remote Code Profiling of <strong>PHP applications</strong>, you will
+    need to be using PHP 5.2 or higher, and be using the xdebug library that is
+    included with Komodo IDE (or included from the Komodo PHP remote debugging
+    files). See Komodo's
+    <a href="debugphp.html#remote_debug_PHP">PHP Remote Debugging</a>
+    documentation for the basic configuration details, then change the Xdebug
+    remote_mode setting to be "profile", i.e.:
+    <pre class="code">
+xdebug.remote_mode=profile
+    </pre>
+    Any remote code that is run with this configuration will connect back to
+    Komodo and send the PHP code profiling information. Note: this connection
+    will occurs at the end of PHP application's execution.
   </p>
 
 </div> <!-- content -->
