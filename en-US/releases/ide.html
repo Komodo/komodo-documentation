@@ -187,6 +187,51 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-7.0.0b1">7.0.0b1 Bug Fixes</h3>
+
+<ul>
+  <li>Code Intelligence: PHP: Added new PHP 5.4 keywords to lexer and codeintel. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91274">91274</a>)</li>
+  <li>Code Intelligence: PHP: Allow phpdoc type hinting to use a namespace. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91248">91248</a>)</li>
+  <li>Color Picker: No longer freezes on Mac OS X. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91299">91299</a>)</li>
+  <li>Debugging: Highlight changed variables when stepping around. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=18775">18775</a>)</li>
+  <li>Editor: Fix HTML/JS syntax colorizing in on* handlers in HTML files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91213">91213</a>)</li>
+  <li>Editor: Ensure Home key moves to the first character in line, even where there's a selection. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91199">91199</a>)</li>
+  <li>Find: A find result click now positions the caret at the start of the selection. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91224">91224</a>)</li>
+  <li>Hyperlinks: Enable the CSS color picker in Less and SCSS files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91383">91383</a>)</li>
+  <li>Places: After a file rename, ensure any opened instances are also updated. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88671">88671</a>)</li>
+  <li>Places: Support more commands keybindings in the places and project view. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90892">90892</a>)</li>
+  <li>Preferences: Allow keybinding customation again. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91208">91208</a>)</li>
+  <li>Preferences: Disable the "preserve line endings" checkbox when all the EOLs are correct. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=33289">33289</a>)</li>
+  <li>Rx Toolkit: Add a link to JS Regex help. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88555">88555</a>)</li>
+  <li>SCC: Hg: Properly detect ignored files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91104">91104</a>)</li>
+  <li>Startup: Don't bring up windows that were closed before shutting down the previous session. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90960">90960</a>)</li>
+
+  <li>Stackato
+    <ul>
+      <li>Integrate Stackato with DBExplorer - adds a "View database in DB Explorer" menu item.</li>
+      <li>Quote terms that need quoting in the command-line. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90521">90521</a>)</li>
+    </ul>
+  </li>
+
+  <li>Syntax Checking
+    <ul>
+      <li>CSS
+	<ul>
+	  <li>Accept //-comments in SCSS and simple minified property declarations. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91221">91221</a>)</li>
+	  <li>Handle @media blocks correctly, and include support for css3/mediaqueries. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91345">91345</a>)</li>
+	  <li>Handle CSS3 structural pseudo-classes correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91347">91347</a>)</li>
+	  <li>Support ampersand as a kind of selector to denote the parent element. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91222">91222</a>)</li>
+	  <li>The last semi-colon before a close-brace is optional. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91229">91229</a>)</li>
+	</ul>
+      </li>
+      <li>Display extra data in the Syntax Checking Status tab. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91239">91239</a>)</li>
+      <li>Update error indicators (squiggles) and syntax checking panel as needed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91238">91238</a>)</li>
+      <li>Reinstate HTML5 syntax checking. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91217">91217</a>)</li>
+    </ul>
+  </li>
+</ul>
+
+
 <h3 id="bug_fixes-7.0.0a5">7.0.0a5 Bug Fixes</h3>
 
 <ul>
