@@ -56,6 +56,10 @@
     <li><strong>Excludes</strong>: File types to be excluded from the
     synchronization. Same syntax as above. If you use both, the Excludes
     list takes priority if there are conflicts.</li>
+    
+    <li><strong>Auto-push on file save</strong>: With this option enabled,
+    when a local publishing file is saved in the Komodo editor, it will be
+    automatically pushed to the remote server location.</li>
   </ul>
   
   <p>Clicking "Save" opens the Synchronization dialog box and shows the
@@ -90,7 +94,7 @@
   synchronization be aborted at any time by pressing the
   <strong>Stop</strong> button.</p>
 
-  <h2><a name="publish_conflict" id="publish_conflict">Conflicts</a></h2>
+  <h3><a name="publish_conflict" id="publish_conflict">Conflicts</a></h3>
   
   <p>If a file has been modified locally <em>and</em> remotely, the
   conflict will be highlighted in the file list. Right click on any file
@@ -104,6 +108,15 @@
     remote file</strong>.</li>
   </ul>
 
+  <h2><a name="publish_commands" id="publish_commands">Publishing Commands</a></h3>
+  
+  <p>There are also the following publishing commands available on
+  a per-file basis:</p>
+  
+  <ul>
+    <li>Push: Pushes a changed local file to the remote server.</li>
+    <li>Diff: Shows the line-by-line differences between the local and remote files.</li>
+  </ul>
 
 </div> <!-- content -->
 </body>
