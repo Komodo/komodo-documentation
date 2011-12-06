@@ -11,95 +11,99 @@
 
 <body>
 <div id="content">
-  <h1><a name="profiler_top">Code Profiling of Programs</a> <span class=
+  <h1><a name="profiler_top">Code Profiling</a> <span class=
   "version_alert">Komodo IDE only</span></h1>
 
-  <p>
-    The Komodo code profiler is a tool that will analyze programs on a function
-    by function basis, tracking which function calls are made, which functions
-    call info other functions and how long these calls take to complete.
-  </p>
+  <p>The Komodo code profiler analyzes programs on a function by
+  function basis, tracking which function calls are made, which
+  functions call into other functions, and how long these calls take to
+  complete.</p>
 
   <p id="supported_formats">
-    Komodo only provides Code Profiling support for Python and PHP (PHP version
-    5.2 or higher), though Komodo's profiler interface can also read these
-    profiling formats:
+    Komodo provides code profiling support for Python and PHP (version
+    5.2 or higher), though it can also read these profiling formats:</p>
     <ul>
       <li><strong>Callgrind/Cachegrind/KCachegrind</strong> - such as
     Xdebug's PHP code profiler produces</li>
       <li><strong>pstats</strong> - produced by the Python cProfile and Profile
       standard library modules</li>
     </ul>
-  </p>
 
   <p>
-    Komodo's Code Profiler interface can be launched from the <strong>Tools >
-    Code Profiler</strong> menu, where you can load previously executed
-    profiling sessions (files).
+    To load a previously executed profiling sessions from a file, launch
+    the Code Profiler interface with <strong>Tools|Code Profiler</strong>.
   </p>
 
-  <h2><a name="start_profiling">Starting a new Code Profiling session</a></h2>
+  <h2><a name="start_profiling">Starting a New Code Profiling Session</a></h2>
 
   <p>
-    You can either perform code profiling on a local file of your system
-    <em>Local Code Profiling</em>, or alternatively use Komodo's <em>Remote Code
-    Profiling</em> facilities to launch code profiling on a different system and
-    then connect back to Komodo (via the network) to display the code profiling
-    results.
+    As with local and remote debugging, Komodo can perform code
+    profiling on your local file system (Local Code Profiling) or run
+    profiling on a remote system and report the results back 
+    over the network for Komodo to display (Remote Code Profiling).
   </p>
 
-  <h2><a name="remote_profiling">Local Code Profiling</a></h2>
+  <h3><a name="remote_profiling">Local Code Profiling</a></h2>
+
+  <p> To create a new local session:</p>
+    
+  <ol>
+    <li>Click <strong>Debug|Start Code Profiling</strong>. By default,
+    the Profiling Options dialog box is displayed with the current file
+    in the <strong>Script</strong> filed. This dialog has has the same
+    fields as <a href="debugger.html#Debugging_Options">Debugging
+    Options</a></li>
+    <li>Optionally, add any interpreter or script arguments the program
+    requires, any necessary environment variables, and set the execution
+    directory (if it should be different than the current directory of
+    the file).</li>
+    <li>Click <strong>OK</strong>. The profiler tracks the progress of
+    the running program as it executes and gathers data. When it
+    finishes, Komodo will display the results in the Code Profiler</li>
+  </ol>
+    
+    <img src="img/profiler.png"/>
+    
+  <h3><a name="remote_profiling">Remote Code Profiling</a></h2>
 
   <p>
-    In order to create a new Local Code Profiling session, use the <strong>Debug
-    > Start Code Profiling</strong> menu.
+    Remote profiling executes code on a remote machine using the <a
+    href="debugger.html#remote_debugging">remote debugging libraries</a>
+    and reports back to Komodo through the debugger port. Komodo
+    displays the remote profiling data in the same interface as
+    local profiling.
   </p>
 
-  <p>
-    By default, the <a href="debugging.html#Debugging_Options">Profiling Options</a> dialog
-    box is displayed (which has the same fields as the regular debugger options
-    dialog). If multiple files are open in the <a class="doc"
-    href="workspace.html#Editor_Pane">Editor Pane</a>, the program that is
-    currently displayed will be profiled. Komodo will track the progress of
-    the application as it executes and when the program finishes, Komodo will
-    display the results in a separate code profiling window.
-  </p>
-
-
-  <h2><a name="remote_profiling">Remote Code Profiling</a></h2>
+  <h4><a name="python_remote_profiling">Python</a></h3>
 
   <p>
-    Remote profiling involves executing code on a remote machine and then
-    connecting back to Komodo (through the Komodo debugger port) in order to
-    display the code profiling results.
-  </p>
-
-  <h3><a name="python_remote_profiling">Python Remote Code Profiling</a></h3>
-
-  <p>
-    For Remote Code Profiling of <strong>Python applications</strong>, you will
-    need to launch the "pydbgp" application and add the <em>--profiling</em>
-    command line option. See Komodo's
+    To profile <strong>Python applications</strong> remotely, launch the
+    "pydbgp" application with the <em>--profiling</em> command line
+    option. See Komodo's
     <a href="debugpython.html#Using_the_Python_Remote_Debugger">Python Remote Debugging</a>
     documentation for further details.
   </p>
 
-  <h3><a name="php_remote_profiling">PHP Remote Code Profiling</a></h3>
+  <h4><a name="php_remote_profiling">PHP</a></h3>
 
   <p>
-    For Remote Code Profiling of <strong>PHP applications</strong>, you will
-    need to be using PHP 5.2 or higher, and be using the xdebug library that is
-    included with Komodo IDE (or included from the Komodo PHP remote debugging
-    files). See Komodo's
+    To profile <strong>PHP applications</strong> you will
+    need to use PHP 5.2 or higher and the <a
+    href="http://code.activestate.com/komodo/remotedebugging/">xdebug
+    library included with Komodo IDE</a>. See Komodo's
     <a href="debugphp.html#remote_debug_PHP">PHP Remote Debugging</a>
-    documentation for the basic configuration details, then change the Xdebug
-    remote_mode setting to be "profile", i.e.:
+    documentation for basic configuration details, then change the Xdebug
+    <code>remote_mode</code> setting to "<code>profile</code>":
+  </p>
+    
     <pre class="code">
 xdebug.remote_mode=profile
     </pre>
-    Any remote code that is run with this configuration will connect back to
-    Komodo and send the PHP code profiling information. Note: this connection
-    will occurs at the end of PHP application's execution.
+    
+  <p>
+    Remote code that is run with this configuration will connect back to
+    Komodo and send the code profiling data at the end of the
+    application's execution.
   </p>
 
 </div> <!-- content -->
