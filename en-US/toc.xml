@@ -433,6 +433,17 @@
     <node name="Detaching the Debugger" link="debugger.html#Detaching_the_Debugger"/>
     <node name="Stopping the Debugger" link="debugger.html#Stopping_the_Debugger"/>
   </node>
+  <node name="Debugging Node.js" link="debugnode.html">
+    <node name="Configuring the Node Debugger" link="debugnode.html#Configure_Node_Debugger"/>
+    <node name="Debugging Node Remotely" link="debugnode.html#Node_Remote_Debugger">
+      <node name="Setting a Break in your Node Code" link="debugnode.html#rdbgp_stop_next"/>
+      <node name="Nodegems and RUBYOPT" link="debugnode.html#Node_Debugging_and_Nodegems"/>
+    </node>
+    <node name="Debugging Node on Rails Applications" link="debugnode.html#Node_Rails_Debugging">
+      <node name="Local Node on Rails" link="debugnode.html#Local_Rails_Debugging"/>
+      <node name="Remote Node on Rails" link="debugnode.html#Remote_Rails_Debugging"/>
+    </node>
+  </node>
   <node name="Debugging Perl" link="debugperl.html">
     <node name="Configuring the Perl Debugger" link="debugperl.html#Configuring_Perl_Debugger">
       <node name="Starting a Komodo debugging session with perl -d"
