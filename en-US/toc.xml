@@ -182,6 +182,7 @@
 <node name="Publishing" link="publish.html#publish_top">
   <node name="Creating a Publishing Configuration" link="publish.html#publish_config"/>
   <node name="Synchronizing" link="publish.html#publish_sync"/>
+  <node name="Publishing Commands" link="publish.html#publish_commands"/>
 </node>
 
 <node name="Find and Replace" link="search.html#search_top">
@@ -502,9 +503,13 @@
 </node>
 
 <node name="Code Profiling" link="profiling.html#profiler_top" flags="ide">
-    <node name="Supported File Formats" link="profiling.html#supported_formats"/>
-    <node name="Starting the Code Profiler" link="profiling.html#start_profiling"/>
-    <node name="Remote Code Profiling" link="profiling.html#remote_profiling"/>
+  <node name="Starting a New Code Profiling Session" link="profiling.html#start_profiling">
+    <node name="Local Code Profiling" link="profiling.html#local_profiling"/>
+    <node name="Remote Code Profiling" link="profiling.html#remote_profiling">
+      <node name="Python Remote Profiling" link="profiling.html#python_remote_profiling"/>
+      <node name="PHP Remote Profiling" link="profiling.html#php_remote_profiling"/>
+    </node>
+  </node>
 </node>
 
 <node name="Unit Testing" link="unittest.html#unit_test_top" flags="ide">
