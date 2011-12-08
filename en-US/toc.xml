@@ -907,6 +907,17 @@
     <node name="Creating XML Catalogs" link="catalogs.html#creating_xml_catalogs"/>
     <node name="XML Catalog Resources" link="catalogs.html#xml_catalog_resources"/>
   </node>
+  
+  <node name="Linter Reference" link="linter-reference.html#linter_reference_top">
+    <node name="Writing a Linter" link="linter-reference.html#linter_writing">
+      <node name="Collisions" link="linter-reference.html#linter_collisions"/>
+    </node>
+    <node name="Checking Syntax" link="linter-reference.html#linter_checking_syntax"/>
+    <node name="Mulit-Language Linting" link="linter-reference.html#linter_multi_lang"/>
+    <node name="Controlling Linting" link="linter-reference.html#linter_control"/>
+    <node name="Aggregators" link="linter-reference.html#linter_aggregators"/>
+  </node>
+  
   <node name="User-Defined Languages" link="udl.html#udl_top">
     <node name="Introduction" link="udl.html#udl_introduction"/>
     <node name="Luddite Language Overview" link="udl.html#udl_language-overview">

@@ -178,38 +178,45 @@
   </ul>
 
   <p>Komodo supports background syntax checking for the following
-  languages:</p>
+  programming and template languages:</p>
 
   <table border="0" cellpadding="5" width="95%">
     <tr>
       <td width="34%" valign="top">
         <ul>
+          <li>ActiveScript</li>
+          <li>CSS (including Less and SCSS)</li>
           <li>HTML</li>
-
-          <li>JavaScript</li>
-
-          <li>Perl *</li>
-
-          <li>PHP **</li>
+          <li>HTML5</li>
+          <li>JavaScript (and CoffeeScript, if installed)</li>
+          <li>JSON</li>
+          <li>Perl</li>
         </ul>
       </td>
 
       <td width="33%" valign="top">
         <ul>
-          <li>Python</li><!--            <li>Ruby</li>-->
-
+          <li>Python</li>
+          <li>Python3</li>
+          <li>Ruby</li>
           <li>Tcl</li>
-
+          <li>XBL &amp; XUL</li>
           <li>XML</li>
-
           <li>XSLT</li>
         </ul>
       </td>
 
-      <td width="33%" valign="top">* requires ActivePerl build 623
-      or higher<br />
-      <br />
-      ** requires PHP version 4.05 or greater</td>
+      <td width="33%" valign="top">
+        <ul>
+          <li>Django</li>
+          <li>EJS</li>
+          <li>epMojo</li>
+          <li>Mason</li>
+          <li>RHTML</li>
+          <li>Smarty</li>
+          <li>TemplateToolkit</li>
+        </ul>
+      </td>
     </tr>
   </table>
 
@@ -257,10 +264,12 @@
   <p>More Information:</p>
 
   <ul>
-    <li><a class="doc" href=
-    "prefs.html#code_intel">Enabling and Disabling
-    AutoComplete and CallTips</a></li>
-  </ul><br />
+    <li><a class="doc" href="prefs.html#code_intel">Enabling and Disabling AutoComplete and CallTips</a></li>
+  
+     <li><a class="doc" href="linter-reference.html">Writing Syntax Checking Extensions</a></li>
+  </ul>
+  
+  <br />
 
   <h4><a name="Perl_AutoComplete" id="Perl_AutoComplete">Perl
   AutoComplete and CallTips</a></h4>
