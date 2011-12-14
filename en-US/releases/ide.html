@@ -81,12 +81,6 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
     </p>
   </li>
 
-  <li><p><strong>Document Toolbar</strong>: A new toolbar has been placed at the
-  top of each editor tab. This toolbar will now contain editor specific controls
-  such as the Sections List popup, Language selection and file encoding choices.
-    </p>
-  </li>
-
   <li><p><strong>Customize the Main Toolbar</strong>: It's now possible to
   select the individual toolbar items you wish to be shown in the main Komodo
   toolbar. Use the <em>View &gt; Toolbars &gt; Customize...</em> menu to start
@@ -212,6 +206,54 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to Debugging, Interactive Shells, Source Code
 Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
+
+<h3 id="bug_fixes-7.0.0rc1">7.0.0 Release Candidate 1 Bug Fixes</h3>
+<ul>
+  <li>Code Highlighting
+    <ul>
+      <li>Add highlighting for INI files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=67122">67122</a>)</li>
+      <li>Correctly colorize embedded JS transitions in EJS code. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91747">91747</a>)</li>
+    </ul>
+  </li>
+  <li>Debugging
+    <ul>
+      <li>Update any hover tooltips whilst stepping through code. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91779">91779</a>)</li>
+      <li>Node.js: Add as a debugging language for project preferences. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91860">91860</a>)</li>
+      <li>Python3: Fix remote debugging. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91054">91054</a>)</li>
+    </ul>
+  </li>
+  <li>Projects and Places
+    <ul>
+      <li>Places: Better handling for remote files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90282">90282</a>)</li>
+      <li>Places: On Windows, hide hidden files and folders by default. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91678">91678</a>)</li>
+      <li>Projects: Save project workspace at shutdown time. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91533">91533</a>)</li>
+      <li>Projects: Allow two files with the same basename, but different filepaths. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90525">90525</a>)</li>
+    </ul>
+  </li>
+  <li>Stackato
+    <ul>
+      <li>Use a wizard for "Add application". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91788">91788</a>)</li>
+      <li>Load information from .yml files in the app's directory. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91788">91788</a>)</li>
+      <li>Refresh the list of provisioned services when doing a refresh. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91730">91730</a>)</li>
+    </ul>
+  </li>
+  <li>Syntax Checking
+    <ul>
+      <li>HTML: Auto-detect html5 doctype declarations. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91748">91748</a>)</li>
+      <li>HTML: Allow HTML comments inside JavaScript and CSS code blocks. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91769">91769</a>)</li>
+      <li>JavaScript: Display warnings with green squigglies, not red. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91761">91761</a>)</li>
+      <li>PHP: Use the default HTML namespace to control HTML4/HTML5 syntax checking. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88884">88884</a>)</li>
+    </ul>
+  </li>
+  <li>Color Schemes: Fix dark scheme glitches of styles using black on black. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91797">91797</a>)</li>
+  <li>Document Toolbar: Now removed - items have gone back into the statusbar. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91408">91408</a>)</li>
+  <li>Editor: For large documents, 'save as' will no longer change the language type. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91285">91285</a>)</li>
+  <li>Erlang: Colorize all types of comments with the comment style. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91797">91797</a>)</li>
+  <li>Languages: Fallback language registration should default to text base, not binary. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91820">91820</a>)</li>
+  <li>Find/Replace: Allow find/replace usage even when no files are loaded. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91744">91744</a>)</li>
+  <li>Remote Files: strip any trailing spaces from hostname entries. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91869">91869</a>)</li>
+</ul>
+
 
 <h3 id="bug_fixes-7.0.0b2">7.0.0b2 Bug Fixes</h3>
 <ul>
