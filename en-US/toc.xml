@@ -435,7 +435,7 @@
   </node>
   <node name="Debugging Node.js" link="debugnode.html#debugnode_top">
     <node name="Configuring Node in the Preferences" link="debugnode.html#Configure_Node"/>
-    <node name="Debugging Node Remotely" link="debugnode.html#Node_Local_Debugger"/>
+    <node name="Debugging Node Locally" link="debugnode.html#Node_Local_Debugger"/>
     <node name="Debugging Node Remotely" link="debugnode.html#Node_Remote_Debugger">
       <node name="Node.js Hard Coded Breakpoints" link="debugnode.html#Node_Debugger_Statement"/>
     </node>
