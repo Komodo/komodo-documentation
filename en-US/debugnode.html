@@ -14,9 +14,10 @@
   <h1><a name="debugnode_top" id="debugnode_top">Debugging Node</a>
   <span class="version_alert">Komodo IDE only</span></h1>
 
-  <p>Komodo can debug Node programs locally or remotely. The
-  instructions below describe how to configure Komodo and Node for
-  debugging. For general information about using the Komodo debugger,
+  <p>Komodo can debug Node programs locally or <a
+  href="debugger.html#remote_debugging">remotely</a>. The instructions
+  below describe how to configure Komodo and Node for debugging in both
+  scenarios. For general information about using the Komodo debugger,
   see <a class="doc" href="debugger.html#debugger_top">Komodo Debugger
   Functions</a>.</p>
 
@@ -25,10 +26,11 @@
   debugger commands, see the <a class= "doc"
   href="debugger.html#How_use_Debugger">Debugger Command List</a>.</p>
 
-  <h2><a name="Configure_Node_Debugger" id=
-  "Configure_Node_Debugger">Configuring the Node Debugger</a></h2>
+  <h2><a name="Configure_Node" id=
+  "Configure_Node">Configuring Node in the Preferences</a></h2>
 
-  <p>To specify which Node.js interpreter Komodo uses for debuging:</p>
+  <p>To specify which Node.js interpreter Komodo uses for local debuging
+  and code intelligence:</p>
 
   <ol>
     <li>Select <strong>Edit|Preferences</strong> (OS X: <strong>Komodo|Preferences</strong>).</li>
@@ -41,15 +43,21 @@
     <li>If the preferred interpreter is in this list, click to
     select it. If not, click <strong>Browse</strong> to locate
     it.</li>
-
+    
     <li>Click <strong>OK</strong>.</li>
   </ol>
 
+  <h2><a id="Node_Local_Debugger">Debugging Node Locally</a></h2>
+  
   <p>To start a local Node debugging session:</p>
 
   <p>On the <strong>Debug</strong> menu or Debug Toolbar, click
   <strong>Go/Continue</strong> or <strong>Step In</strong> to
-  invoke the debugging session. See <a class="doc" href=
+  invoke the debugging session. <a
+  href="debugger.html#toggle_breakpoint">Toggle breakpoints</a> by
+  clicking in the Breakpoint Margin.</p>
+  
+  <p>See <a class="doc" href=
   "debugger.html#debugger_top">Komodo Debugger
   Functions</a> for full instructions on using Komodo's debugging
   functionality.</p>
@@ -58,14 +66,34 @@
   "Node_Remote_Debugger">Debugging Node Remotely</a></h2>
 
   <p>When debugging a Node program remotely, the program is
-  executed on the remote system and the debug output is sent to
-  Komodo. Komodo controls the debugging session (e.g. stepping and
-  breakpoints) once the session starts on the remote system.</p>
+  executed by the debugger on the remote system and the debug output is
+  sent to Komodo over the network using the DBGP protocol. Komodo
+  controls the debugging session (e.g. stepping and breakpoints) once
+  the session starts on the remote system.</p>
 
-  <p>Install the komodo-debug package with npm:</p>
+  <p>To set this up on the remote system, install the komodo-debug
+  package with npm:</p>
   <pre>
 npm install komodo-debug -g</pre>
   
+  <p>This installs the '<code>node-dbgp</code>' program and supporting libraries. To
+  initiate a remote debugging session:</p>
+  
+<pre>
+node-dbgp -h &lt;<em>komodo-host</em>&gt; -p &lt;<em>port</em>&gt; server.js</pre>
+
+<p>Specify the hostname or IP address of the system running Komodo with the
+  '-h' option and the debugger listener port with '-p'. You can check the
+  port Komodo is listening on under <strong>Debug|Listener
+  Status</strong>. If the <a href="debugger.html#dbgp_proxy">DBGP
+  Proxy</a> is used, specify those instead.</p>
+
+<p>On systems where you cannot install komodo-debug globally, you may
+need to run <code>node-dbgp</code> with the node interpreter and specify
+the path to it:</p>
+
+<pre>
+node /path/to/node_modules/node-dbgp ...</pre>
   
   <table align="center" width="60%">
     <tbody>
@@ -81,9 +109,14 @@ npm install komodo-debug -g</pre>
     </tbody>
   </table>
 
-  <h3><a name="rdbgp_stop_next" id="rdbgp_stop_next">Setting a
-  Break in your Node Code</a></h3>
+  <h3><a name="Node_Debugger_Statement"
+  id="Node_Debugger_Statement">Node.js Hard Coded Breakpoints</a></h3>
 
+  <p>Breakpoints can be hard-coded in a Node application using the
+  <code>debugger</code> statement. This will initiate a break at the
+  corresponding line when the application is run with
+  <code>node-dbgp</code>.</p> 
+  
   <hr />
 
 </div> <!-- content -->
