@@ -744,6 +744,7 @@
   <node name="Language Help Preferences" link="prefs.html#language_help"/>
   <node name="Language Configuration Preferences" link="prefs.html#lang_config">
     <node name="JavaScript Configuration" link="prefs.html#JavaScript"/>
+    <node name="Node.js Configuration" link="prefs.html#Node"/>
     <node name="Perl Configuration" link="prefs.html#Perl"/>
     <node name="PHP Configuration" link="prefs.html#PHP"/>
     <node name="Python Configuration" link="prefs.html#Python"/>
