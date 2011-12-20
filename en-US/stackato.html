@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Stackato Interface</title>
+</head>
+
+<body>
+<div id="content">
+  <h1><a name="stackato_top" id="stackato_top">Stackato</a> <span class=
+  "version_alert">Komodo IDE only</span></h1>
+
+  <p><a href="http://www.activestate.com/cloud">Stackato</a> is a cloud
+  application platform which is based on, and fully compatible with,
+  <a href="http://cloudfoundry.org/">Cloud Foundry</a>. Stackato sets up
+  virtual servers and deploys applications to them, automatically
+  provisioning everything your application requires to run (language
+  interpreter, web framework, modules, databases, and other services). </p>
+  
+  Komodo works in conjunction with the Stackato client to provide an
+  interface to Stackato and Cloud Foundry-based services. More
+  information on stackato can be found at: <a
+  href="http://www.activestate.com/cloud">www.activestate.com/cloud</a>
+
+  <h2><a name="stackato_client_setup" id="stackato_client_setup">Stackato Client Setup</a></h2>
+  
+<p>To enable Stackato support in Komodo:</p>
+  
+  <ul>
+    <li><a
+    href="http://community.activestate.com/stackato/download">Download
+    the client</a></li>
+    
+    <li>Rename and/or <code>chmod</code> the file as necessary (see <a
+    href="http://docs.stackato.com/quick-start.html#stackato-client-setup">Stackato
+    Client Setup</a>)</li>
+    
+    <li>Set the location of the client under
+    <strong>Preferences|Stackato</strong></li>
+  </ul>
+  
+  <p>Once the client is installed and configured, the
+  <strong>Tools|Stackato</strong> interface will be usable.</p>
+  
+  <h2><a name="stackato_connecting" id="stackato_connecting">Connecting to Stackato</a></h2>
+
+  <p>To connect to a Stackato API endpoint (e.g.
+  'https://api.stackato.local')
+  enter the URL in the <strong>Target</strong>field and click <strong>Target</strong>.
+  <strong>Note</strong>: By default, Stackato servers
+  will accept connections only over HTTPS.</p>
+  
+  <p>Once the API endpoint is targeted, enter the username (an email
+  address) and password, then click <strong>Login...</strong>.</p>
+  
+  <!--
+  <img alt="Screenshot" border="1" style="margin-left: 2em" src="img/stackato.png" />
+  -->
+  
+  <h3><a name="stackato_info" id="stackato_info">Viewing Target Info</a></h3>
+
+  <p>Details of the targeted Stackato system can be seen using the
+  buttons under the User field:</p>
+  
+  <ul>
+    <li>Show Target Info: Shows the server and client versions, and the
+    usage quotas for the logged-in user.</li>
+    <li>Show Runtimes: Lists the available language runtimes.</li>
+    <li>Show Frameworks: Lists the supported frameworks.</li>
+    <li>Show Services: Shows which services are available (and lists provisioned services).</li>
+  </ul>
+  
+  <p>The Applications pane shows applications belonging to the current
+  user that have been deployed to the target. It shows their current status, the
+  number of instances running, what services are bound to each, and the
+  application URL(s).</p>
+  
+  <p>The Provisioned Services pane (collapsible) shows the services that have been
+  provisioned for the current user, whether or not they are bound to
+  applications.</p>
+  
+  <p>The Stackato Output pane (collapsible) show the console output of
+  the various Stackato commands as they run.</p>
+  
+  <!-- TODO: Document wizard and it's interaction with stackato.yml
+  
+  <h2><a name="stackato_push_wizard" id="stackato_push_wizard">New Stackato App Wizard</a></h2>
+  
+  TODO: Overview of misc commands
+  
+  <h2><a name="stackato_common_operations" id="stackato_common_operations">Application Management</a></h2>
+  
+  -->
+
+  <br />
+  <!-- Footer Start -->
+  <hr />
+
+</div> <!-- content -->
+</body>
+</html>

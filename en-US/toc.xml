@@ -179,6 +179,13 @@
   <node name="Collaborative Editing" link="collab.html#collab_editing"/>
 </node>
 
+<node name="Stackato" link="stackato.html#stackato_top">
+  <node name="Stackato Client Setup" link="stackato.html#stackato_client_setup"/>
+  <node name="Connecting to Stackato" link="stackato.html#stackato_connecting">
+    <node name="Viewing Target Info" link="stackato.html#stackato_info"/>
+  </node>
+</node>
+  
 <node name="Publishing" link="publish.html#publish_top">
   <node name="Creating a Publishing Configuration" link="publish.html#publish_config"/>
   <node name="Synchronizing" link="publish.html#publish_sync"/>
