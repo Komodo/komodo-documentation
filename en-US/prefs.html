@@ -766,17 +766,6 @@
     exist.</li>
   </ul>
 
-  <p>Based on the specified <strong>Minutes between auto-save</strong>,
-  Komodo makes temporary backup copies of all un-saved files in
-  the editor. When the editor file is saved, then the backup
-  copies are deleted. If Komodo is shut down abnormally (such as
-  through a system crash), Komodo prompts to restore the backup
-  copy when the file is next opened. If you respond "Yes", the
-  backup copy of the file, rather than the (older) disk copy, is
-  opened in the editor. These temporary backup files are saved
-  into the "autosave" folder in the Komodo profile directory.
-  </p>
-
   <p>When files without extensions are saved, Komodo can be
   configured to prompt for an action. Configure the <strong>If
   filename has no extension</strong> drop-down list:</p>
@@ -792,6 +781,17 @@
     <li><strong>Leave filename alone</strong>: Komodo does nothing
     when a file is saved without an extension.</li>
   </ul>
+
+  <p>Based on the specified <strong>Minutes between auto-recovery</strong>,
+  Komodo makes temporary backup copies of all un-saved files in
+  the editor. When the editor file is saved, then the backup
+  copies are deleted. If Komodo is shut down abnormally (such as
+  through a system crash), Komodo prompts to restore the backup
+  copy when the file is next opened. If you respond "Yes" then
+  Komodo's backup copy of the file is opened in the editor. These
+  temporary backup files are saved into the "autosave" folder in
+  the Komodo profile directory.
+  </p>
 
   <h2><a name="Environment" id="Environment">Environment</a></h2>
 
