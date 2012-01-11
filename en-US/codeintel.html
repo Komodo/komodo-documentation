@@ -80,82 +80,54 @@
   </ul>
 
   <h3><a name="codeintel_code_browser_context" id=
-  "codeintel_code_browser_context">Context Menu</a></h3>
+  "codeintel_code_browser_context">Settings Menu</a></h3>
 
-  <p>Right-click in the <strong>Code Browser</strong> Pane to
-  access code searching options. The following options are
-  available:</p>
-
-  <p><img src="img/codeintel_code_browser_context.gif" border="1"
-  alt="" /></p>
+  <p>The cog button opens the Settings menu with the following options:</p>
 
   <ul>
-    <li><strong>Go to Definition</strong>: Jumps to the definition
-    of the associated symbol in the editor. Alternatively,
-    double-click the symbol name in the Code Browser tree. Objects
-    defined within the file, in user-defined modules, and in the
-    site library are accessible in this way; objects defined in a
-    language's standard library are not. (See also <a href=
-    "editor.html#editor_nav">Editor: Navigating within
-    Files</a>)</li>
-
-    <li><strong>Copy</strong>: Copies the symbol name to the
-    clipboard.</li>
-
     <li><strong>Sort By File Order</strong>: Sorts all symbols in
     the tree by file order.</li>
 
     <li><strong>Sort Alphabetically</strong>: Sorts all symbols in
     the tree alphabetically.</li>
+    
+    <li><strong>Automatically locate cursor position</strong>: Toggles
+    automatic highlighting of the code object at the current cursor
+    position.</li>
+    
+    <li><strong>Show only active file</strong>: Toggles multi-file
+    display.</li>
   </ul>
-
-  <h3><a name="codeintel_sort" id=
-  "codeintel_sort">Sorting</a></h3><img src=
-  "img/codeintel_sort.gif" border="1" />
-
-  <p>Use the <strong>Sort By</strong> button to organize all Code
-  Browser symbols by file order or alphabetically. To sort all
-  symbols by file order, click <strong>Sort By</strong>, and then
-  select <strong>Sort By File Order</strong> from the drop-down
-  list. To sort all symbols alphabetically, click <strong>Sort
-  By</strong>, and then select <strong>Sort Alphabetically</strong>
-  from the drop-down list. Alternatively, use the <a href=
-  "#codeintel_code_browser_context">context menu</a> (right-click
-  in the Code Browser) to access sorting options.</p>
 
   <h3><a name="codeintel_scope" id="codeintel_scope">Locating
   Current Scope</a></h3><img src="img/codeintel_scope.gif" border=
   "1" />
 
-  <p>Use the <strong>Locate Current Scope</strong> button to find
+  <p>The <strong>Locate Current Scope</strong> button to finds
   the scope of a symbol (for example, namespace, command, or
-  variable definition). To view the scope of a symbol, place the
-  cursor on the desired symbol in the source code and then click
-  the <strong>Locate Current Scope</strong> button. The Code
-  Browser tree opens to the associated scope. Alternatively, click
+  variable definition). Place the cursor on the desired symbol in the
+  source code and then click the <strong>Locate Current Scope</strong>
+  button to highlight the associated object. Alternatively, click
   <strong>Navigation|Locate Current Scope in Code Browser</strong> to
   open the Code Browser tree to the associated scope.</p>
+  
+  <p>This is done for you when <strong>Automatically locate cursor
+  position</strong> is enabled in Settings.</p>
 
   <h3><a name="codeintel_filter" id="codeintel_filter">Filtering
-  Symbols</a></h3><img src="img/codeintel_filter.gif" border="1" />
+  Symbols</a></h3><img src="img/codeintel_filter.png" border="1" />
 
   <p>The <strong>Filter Symbols</strong> text box limits the Code Browser
-  display to matching symbols. To filter symbols in the Code Browser, enter the
-  desired symbol name, or partial name, in the text box. The filter supports
-  regular expressions (Python syntax). If there is an error in the pattern, the
-  text is highlighted and a tooltip describes the error.</p>
+  display to matching symbols. Enter the desired symbol name, or partial
+  name, in the text box.</p>
+  
+  <p>The filter supports regular expressions (Python syntax). If there
+  is an error in the pattern, the text is highlighted and a tooltip
+  describes the error.</p>
   
   <p>Press 'Tab' to switch focus between the Filter text box and the Code
   Browser tree. Press 'Esc' to clear the current filter pattern.</p>
 
-  <h2><a name="codeintel_objectbrowser" id=
-  "codeintel_objectbrowser">Object Browser</a> <span class=
-  "version_alert">Komodo IDE only</span></h2>
-
-  <p>The <strong>Object Browser</strong> is currently being
-  re-implemented with Komodo's new Code Intelligence backend and is
-  not available in this release.</p>
-  <!-- TODO: new Object Browser documentation -->
   <!-- Footer Start -->
   <hr />
 

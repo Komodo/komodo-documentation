@@ -577,8 +577,7 @@
 <node name="Code Intelligence" link="codeintel.html#codeintel_top">
   <node name="Code Browser" link="codeintel.html#codeintel_codebrowser"
         flags="ide">
-    <node name="Context Menu" link="codeintel.html#codeintel_code_browser_context"/>
-    <node name="Sorting" link="codeintel.html#codeintel_sort"/>
+    <node name="Settings Menu" link="codeintel.html#codeintel_code_browser_context"/>
     <node name="Locating Current Scope" link="codeintel.html#codeintel_scope"/>
     <node name="Filtering Symbols" link="codeintel.html#codeintel_filter"/>
   </node>
