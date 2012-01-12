@@ -712,6 +712,7 @@
 </node>
 
 <node name="Preferences" link="prefs.html#prefs_top">
+  <node name="Filtering the Preferences List" link="prefs.html#searching_prefs"/>
   <node name="Appearance" link="prefs.html#UI_Configuration"/>
   <node name="Code Intelligence Preferences" link="prefs.html#code_intel"/>
   <node name="Debugger" link="prefs.html#Debugger" flags="ide">
