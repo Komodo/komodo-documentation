@@ -68,6 +68,7 @@
     <node name="Menus" link="workspace.html#Menus"/>
     <node name="Context Menus" link="workspace.html#Context_Menus"/>
     <node name="Toolbars" link="workspace.html#Toolbars"/>
+    <node name="Panes and Movable Widgets" link="workspace.html#moveable_widgets"/>
     <node name="Left Pane" link="workspace.html#Left_Pane"/>
     <node name="Right Pane" link="workspace.html#Right_Pane"/>
     <node name="Editor Pane" link="workspace.html#Editor_Pane"/>
@@ -163,10 +164,9 @@
 <node name="Komodo Sync" link="sync.html#sync_top">
   <node name="Sync Account Setup" link="sync.html#sync_account"/>
   <node name="Synchronizing Komodo" link="sync.html#sync_sync">
-    <node name="Sync Items" link="sync.html#sync_items"/>
     <node name="Sync Setup" link="sync.html#sync_setup"/>
     <node name="Synchronizing your Data" link="sync.html#sync_data"/>
-    <node name="Additional Machines" link="sync.html#sync_other_machines"/>
+    <node name="Synchronizing Additional Machines" link="sync.html#sync_other_machines"/>
   </node>
 </node>
 
