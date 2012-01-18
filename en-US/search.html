@@ -16,7 +16,7 @@
   <p>There are a number of ways to search for text in Komodo:</p>
   
     <ul>
-      <li><strong><a href="#search_incr">Incremental Search</a></strong>
+      <li><strong><a href="#search_incr">Fast Find (Incremental Search)</a></strong>
       quickly finds text in the current buffer</li>
       <li>The <strong><a href="#search_dialog">Find</a></strong> dialog
       box offers several find and replace options.</li>
@@ -51,32 +51,46 @@
     Komodo will stop highlighting matches after the timeout configured
     in the Find <a href="prefs.html#Find">preferences</a>.</p>
   
-  <h2><a name="search_incr" id="search_incr">Incremental Search</a></h2>
+  <h2><a name="search_incr" id="search_incr">Fast Find (Incremental Search)</a></h2>
 
-  <p>Use incremental search to quickly find a word or string in the file
+  <p>Use the Fast Find bar to quickly find a word or string in the file
   you are currently editing.</p>
+  
+  <div style="margin-left: 2em">
+    <img border="1" src="img/fast_find.png" alt="Fast Find Toolbar" />
+  </div>
   
   <ul>
     <li><strong>Start an incremental search</strong>: Use the associated
     <a href="prefs.html#Config_Key_Bindings">key binding</a> (by
-    default: 'Ctrl'+'I' on Windows and Linux, 'Cmd'+'I' on Mac OS X).
-    The status bar displays "Incremental Search:" followed by the
-    characters in your search. Begin typing the characters you want to
-    find. As you type, the cursor moves to the first match after the
-    current cursor position.</li>
+    default: 'Ctrl'+'F' on Windows and Linux, 'Cmd'+'F' on Mac OS X).
+    Start typing your search string in the Fast Find bar. As you type,
+    the cursor moves to the first match after the current cursor
+    position and highlights all other matches.</li>
     
     <li><strong>Jump to the next/previous occurrence</strong>: Press
-    'Ctrl'+'I' 'Ctrl'+'I' to cycle through all subsequent occurrences;
-    press 'Ctrl'+'Shift'+'I' to cycle through previous ones.</li>
+    'Ctrl'+'I' and 'Ctrl'+'Shift'+'I' or use the arrow buttons on the
+    Fast Find bar to move through all the matches.</li>
     
     <li><strong>Use a selection as your search string</strong>: Select
     the text you want to use with the mouse or keyboard, then press
-    'Ctrl'+'I'.</li>
+    'Ctrl'+'F' ('Cmd'+'F').</li>
     
     <li><strong>Change the search string while searching</strong>: Use
-    'Shift'+'Right Arrow' to add the character to the right of the
-    current selection, and 'Shift'+'Left Arrow' will remove a
-    character.</li>
+    'Shift'+'Right|Left Arrow' to add or remove characters from the
+    current selection.</li>
+    
+    <li><strong>Change case sensitivity</strong>: Use the button to the
+    right of the search field to toggle <a href="#search_case">case
+    sensitivity</a>.</li>
+    
+    <li><strong>Change search type</strong>: The next button toggles
+    between plain text / fixed strings ("F"), wildcard ("*") or <a
+    href="#search_regex">regular expression</a> ("//")searches.</li>
+    
+    <li><strong>Open the Find Dialog</strong>: If you need to open the
+    Find Dialog (e.g. to search in a project or a set of files), click
+    the green up arrow.</li>
   
     <li><strong>Cancel the search</strong>: Press 'Esc'.</li>
   </ul>
