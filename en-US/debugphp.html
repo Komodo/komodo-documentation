@@ -92,7 +92,7 @@
 
   <p>Your Linux system may already have PHP installed. Login and
   type 'php -v' to determine the version of your current PHP
-  interpreter. If it is earlier than version 4.3.11 (or 5.0.0
+  interpreter. If it is earlier than version 4.4 (or 5.0.0
   through 5.0.2) you must upgrade. PHP must also support loading
   dynamic extensions (the default for PHP under Linux). If it does
   not, reinstall PHP as per the instructions on the <a class="doc"
@@ -693,14 +693,12 @@ throw new KoException('this is my exception!', 42);
   <h3><a name="config_PHP_os_x" id="config_PHP_os_x">Debugging PHP
   on OS X</a></h3>
 
-  <p>The version of PHP supplied with <strong>Mac OS X</strong> is
-  not complied with loadable extension support, so it is not
-  compatible with Komodo's debugger (Xdebug). For PHP debugging on
-  OS X, either build PHP from source with loadable extension
-  support or use binaries from <a href=
+  <p>The default version of PHP supplied with <strong>Mac OS X</strong>
+  may not be complied with loadable extension support. If this is the
+  case then this PHP will not work with Komodo's debugger (Xdebug).
+  For PHP debugging on OS X, either build PHP from source with
+  loadable extension support or use binaries from <a href=
   "http://www.entropy.ch/software/macosx/php/">http://www.entropy.ch/software/macosx/php/</a>.
-  The 4.3.11 or 5.0.4 for Apache 1 packages have been found to work
-  well with Komodo PHP debugging.</p>
 
   <h3><a name="config_PHP_amd64" id="config_PHP_amd64">Debugging
   PHP on 64-bit Linux</a></h3>
