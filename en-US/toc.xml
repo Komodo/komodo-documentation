@@ -715,6 +715,7 @@
   <node name="Filtering the Preferences List" link="prefs.html#searching_prefs"/>
   <node name="Appearance" link="prefs.html#UI_Configuration"/>
   <node name="Code Intelligence Preferences" link="prefs.html#code_intel"/>
+  <node name="Database Explorer Preferences" link="prefs.html#db_explorer_prefs"/>
   <node name="Debugger" link="prefs.html#Debugger" flags="ide">
     <node name="Debugger Connection Options" link="prefs.html#DebuggerConnection"/>
     <node name="Advanced Debugger Preferences" link="prefs.html#Debugger_advanced"/>
@@ -723,7 +724,6 @@
     <node name="Key Bindings" link="prefs.html#Config_Key_Bindings"/>
     <node name="Indentation" link="prefs.html#Indentation_Features"/>
     <node name="Smart Editing" link="prefs.html#smart_editing">
-      <node name="Background Syntax Checking Preferences" link="prefs.html#syntax_checking"/>
       <node name="Word Completion" link="prefs.html#Config_Word_Complete"/>
       <node name="Word Wrap" link="prefs.html#Config_Auto_Wrap"/>
       <node name="Configuring Edge Lines" link="prefs.html#Config_Edge_Line"/>
@@ -734,6 +734,7 @@
     <node name="Save Options" link="prefs.html#Save_Options"/>
   </node>
   <node name="Environment" link="prefs.html#Environment"/>
+  <node name="Fast Open Preferences" link="prefs.html#fast_open"/>
   <node name="Find" link="prefs.html#Find"/>
   <node name="File Associations" link="prefs.html#File_Associations"/>
   <node name="Fonts and Colors" link="prefs.html#Customizing_Fonts">
@@ -777,6 +778,9 @@
     <node name="Perforce Integration" link="prefs.html#Perforce"/>
     <node name="Subversion Integration" link="prefs.html#Subversion"/>
   </node>
+  <node name="Stackato Preferences" link="prefs.html#stackato_prefs"/>
+  <node name="Syntax Checking Preferences" link="prefs.html#syntax_checking"/>
+  <node name="Test Plans" link="prefs.html#test_plan_prefs"/>
   <node name="Web and Browser" link="prefs.html#web"/>
   <node name="Windows Integration" link="prefs.html#integration"/>
 </node>

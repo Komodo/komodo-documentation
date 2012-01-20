@@ -124,8 +124,36 @@
     
     <li><strong>Maximum number of lines shown in calltip</strong>: Used
     to control how much calltip information can be displayed.</li>
+    
+    <li><strong>Automatically insert HTML/XML end tag</strong>:
+    Automatically insert a closing element in HTML and XML
+    documents.</li>
+  </ul>
+  
+  <p><strong>Code Scanning</strong></p>
+  
+  <p>Controls how the Code Intelligence system scans your source code
+  files.</p>
+  
+  <ul>
+    <li><strong>Maximum directory depth</strong>: How many directories
+    to recursively scan.</li>
+    <li><strong>Include all files and directories from the project base
+    directory</strong>: Toggles scanning of the current project's
+    directories.</li>
   </ul>
 
+  <p><strong>Sections List</strong></p>
+  
+  <p>The <a href="sections_list.html">Sections List</a> can be sorted by:</p>
+  
+  <ul>
+    <li>File Order: the order in which code objects occur in the source file.</li>
+    <li>Alphabetical Order: an alphabetical listing of the code objects 
+    (e.g. classes sorted first, then variables within each class).</li>
+  </ul>
+  
+  
   <p><strong>API Catalogs</strong></p>
 
   <p>Komodo uses API catalogs to provide autocomplete and calltips
@@ -135,6 +163,12 @@
   can yield confusing results if there are overlapping namespaces,
   classes or function names.</p>
 
+  <h2><a name="Database Explorer" id="db_explorer_prefs">Database
+  Explorer Preferences</a> <span class="version_alert">Komodo IDE only</span></h2>
+  
+  <p><strong>Confirm Row Deletions</strong>: Toggles a confirmation
+  dialog when deleting rows from a table.</p>
+  
   <h2><a name="Debugger" id="Debugger">Debugger Preferences</a>
   <span class="version_alert">Komodo IDE only</span></h2>
 
@@ -188,6 +222,8 @@
     this check box determines whether you are prompted to halt the
     debug session and close the tab, or whether this happens
     without prompting.</li>
+    
+    <li>Restore cursor position at debugger session startup.</li>
   </ul>
 
   <p><strong>Debugger Editor Options</strong></p>
@@ -212,6 +248,16 @@
     local file. This would only happen if the names and locations
     were identical (e.g., if both machines contained a file called
     "C:\foo\bar\baz.pl").</li>
+  </ul>
+  
+  <p><strong>Code Profiling</strong></p>
+  
+  <p><strong>When receiving a remote profiling request:</strong></p>
+  
+  <ul>
+    <li>Prompt for request confirmation</li>
+    <li>Allow all profiling requests</li>
+    <li>Refuse all profiling requests</li>
   </ul>
 
   <h3><a name="DebuggerConnection" id="DebuggerConnection">Debugger
@@ -268,6 +314,8 @@
     bytes stored for a value in a variable view.</li>
     <li><strong>Recursive depth retrieved</strong>: Recursion depth for
     nested objects (e.g. arrays of arrays etc.).</li>
+    <li><strong>Maximum length of data in a debugger tooltip</strong>:
+    Limits the size of debugger information relayed to tooltips.</li>
   </ul>
 
   <h2><a name="prefs_editor" id="prefs_editor">Editor
@@ -313,6 +361,17 @@
     <li>Invisible</li>
   </ul>
   
+  <p><strong>Drag &amp; Drop</strong></p>
+  
+  <p>When dropping a URL in Komodo:</p>
+  
+  <ul>
+    <li>Ask me what to do</li>
+    <li>View source</li>
+    <li>Map the URL</li>
+    <li>Drop as text</li>
+  </ul>
+  
   <p><strong>Confirmation Dialogs</strong></p>
 
   <p>When files that are opened in the Komodo editor are changed by
@@ -323,7 +382,7 @@
     <li><strong>Detect when files are changed outside the
     environment</strong>: When this option is enabled, Komodo pays
     attention to changes made to files outside the Komodo
-    environment.</li>
+    environment. Separate settings for local and remote files.</li>
 
     <li><strong>If files have been changed</strong>: When files are
     changed outside Komodo, select whether Komodo should
@@ -697,36 +756,6 @@
   <p>Enable or disable 'Ctrl'+'mouse-hover' hyperlinks
   ('Cmd'+'mouse-hover' on Mac OS X) in the buffer.</p>
   
-  <h4><a name="syntax_checking" id="syntax_checking">Background
-  Syntax Checking</a></h4>
-
-  <p>Background syntax checking validates code against the language
-  interpreter as you type. (If <a href="#code_intel">Code
-  Intelligence</a> is enabled for Python, the code intelligence
-  database is used to validate Python code.) Syntax errors and
-  warnings are underlined in the <a href=
-  "workspace.html#Editor_Pane">Editor pane</a>. See <a href=
-  "editor.html#Linting">Background Syntax Checking</a>
-  for more information.</p>
-
-  <p>By default, Komodo performs a background syntax check one
-  second (1000 msecs) after you stop typing. In very large files,
-  this background process can slow down editing. If you notice
-  slowness in the editor pane, try extending the delay or disabling
-  background syntax checking. Syntax checking can be run manually
-  by clicking the syntax checking icon (<img class="icon" src=
-  "img/icon_check_ok.png" /> or <img class="icon" src=
-  "img/icon_check_error.png" />) in the status bar.</p>
-
-  <p>The level of background syntax checking for Perl is determined
-  by the setting on the <a href="#Perl">Perl Language</a>
-  preference page.</p>
-  
-  <p><strong>Enable checking of mixed end-of-line (EOL)
-  characters"</strong> checks for inconsistent end-of-line characters
-  caused by editing a file on multiple platforms (e.g. CR-LF on Windows
-  vs. LF on Linux). </p>
-
   <h4><a name="Folding" id="Folding">Configuring
   Folding</a></h4>Komodo can fold (i.e. hide and un-hide) logical
   segments of code in many languages and data file types. The
@@ -833,34 +862,22 @@
   be edited. This new variable will override the one in
   <strong>Startup Environment Variables</strong></p>
 
-  <h2><a name="Find" id="Find">Find</a></h2>
+  <h2><a name="Fast Open" id="fast_open">Fast Open</a></h2>
   
-  <p><strong>Highlighting</strong></p>
+  <p>The Fast Open ('Go to File') dialog can present files "gathered"
+  from a number of sources. The following sources can be toggled:</p>
   
   <ul>
-    <li><strong>Enable highlighting of find and replace
-    results</strong>: Toggles the highlighting of matching strings in
-    the current buffer. To guard against performance problems caused by
-    slow searches, Komodo will stop highlighting matches after the
-    timeout configured here.</li>
+    <li>Open Files</li>
+    <li>Current Project (optionally including project directory names)</li>
+    <li>Current Working Directory (optionally excluding specified patterns)</li>
+    <li>History (to a specified maximum number of entries)</li>
   </ul>
   
-  <p><strong>Incremental Search</strong></p>
+  <p>Support is also available for <a
+  href="http://code.google.com/p/go-tool/">go-tool</a>, a shell command
+  for setting and using directory aliases.</p>
   
-  <p>These options set the defaults for the <a class="doc" href=
-  "search.html#search_incr">Incremental Search</a> feature.</p>
-
-  <ul>
-    <li><strong>Match Case</strong>: Choose the default case sensitivity
-    for searches.</li>
-
-    <li><strong>Uses</strong>: Specify the search syntax type.
-    <strong>Plain Text</strong> exactly matches the search string;
-    <strong>Regular Expressions</strong> interprets the search text
-    as a regular expression; <strong>Wildcard</strong> interprets
-    asterisk and question mark characters as wildcards.</li>
-  </ul>
-
   <h2><a name="File_Associations" id="File_Associations">File
   Associations</a></h2>
 
@@ -933,11 +950,38 @@
     configuration.</li>
   </ul>
 
+  <h2><a name="Find" id="Find">Find</a></h2>
+  
+  <p><strong>Highlighting</strong></p>
+  
+  <ul>
+    <li><strong>Enable highlighting of find and replace
+    results</strong>: Toggles the highlighting of matching strings in
+    the current buffer. To guard against performance problems caused by
+    slow searches, Komodo will stop highlighting matches after the
+    timeout configured here.</li>
+  </ul>
+  
+  <p><strong>Incremental Search</strong></p>
+  
+  <p>These options set the defaults for the <a class="doc" href=
+  "search.html#search_incr">Incremental Search</a> feature.</p>
+
+  <ul>
+    <li><strong>Match Case</strong>: Choose the default case sensitivity
+    for searches.</li>
+
+    <li><strong>Uses</strong>: Specify the search syntax type.
+    <strong>Plain Text</strong> exactly matches the search string;
+    <strong>Regular Expressions</strong> interprets the search text
+    as a regular expression; <strong>Wildcard</strong> interprets
+    asterisk and question mark characters as wildcards.</li>
+  </ul>
+
   <h2><a name="Customizing_Fonts" id="Customizing_Fonts">Fonts and
   Colors Preferences</a></h2>
 
-  <p>Komodo's Fonts and Colors Preference is used to customize the
-  display of text in the <a href=
+  <p>Customizes the display of text in the <a href=
   "workspace.html#Editor_Pane">Editor pane</a>. To modify the
   font and color preferences, from the <strong>Edit</strong> menu,
   select <strong>Preferences</strong>, then click <strong>Fonts and
@@ -1592,7 +1636,7 @@
     "intshell.html#intshell_top">interactive shell</a>
     sessions.</li>
   </ul>
-
+  
   <h3><a name="Ruby" id="Ruby">Configuring Ruby</a></h3>
 
   <ul>
@@ -1834,6 +1878,14 @@
   All catalogs specified here (and the DTDs and RelaxNG Schemas
   referenced by them) take precedence over the ones that ship with
   Komodo.</p>
+  
+  <h3><a name="actionscript" id="actionscript">Configuring ActionScript</a></h3>
+  
+  <p>Komodo supports ActionScript syntax checking using <a
+  href="http://www.mtasc.org/">MATC</a>
+  (Motion-Twin ActionScript 2 Compiler). With the compiler installed,
+  specify it's path in the <strong>user this interpreter</strong>
+  field.</p>
 
   <h2><a name="mapped_uris" id="mapped_uris">Mapped URIs</a></h2>
 
@@ -2379,7 +2431,51 @@ it uses the line ending already in use in the file.</p>-->
     check this box if you do not want a warning displayed when you
     start Komodo.</li>
   </ul>
+  
+  <h2><a name="Stackato Preferences" id="stackato_prefs">Stackato</a></h2>
+  
+  <p>Set the path to the <a
+  href="http://community.activestate.com/stackato/download">stackato
+  command line client</a> here, if it is not already in the system $PATH.</p>
 
+  <h2><a name="syntax_checking" id="syntax_checking">Syntax Checking</a></h2>
+
+  <p>Background syntax checking validates code against the language
+  interpreter as you type. (If <a href="#code_intel">Code
+  Intelligence</a> is enabled for Python, the code intelligence
+  database is used to validate Python code.) Syntax errors and
+  warnings are underlined in the <a href=
+  "workspace.html#Editor_Pane">Editor pane</a>. See <a href=
+  "editor.html#Linting">Background Syntax Checking</a>
+  for more information.</p>
+
+  <p>By default, Komodo performs a background syntax check one
+  second (1000 msecs) after you stop typing. In very large files,
+  this background process can slow down editing. If you notice
+  slowness in the editor pane, try extending the delay or disabling
+  background syntax checking. Syntax checking can be run manually
+  by clicking the syntax checking icon (<img class="icon" src=
+  "img/icon_check_ok.png" /> or <img class="icon" src=
+  "img/icon_check_error.png" />) in the status bar.</p>
+
+  <p><strong>Enable checking of mixed end-of-line (EOL)
+  characters"</strong> checks for inconsistent end-of-line characters
+  caused by editing a file on multiple platforms (e.g. CR-LF on Windows
+  vs. LF on Linux). </p>
+  
+  <h3><a name="Language-Specific Syntax Checking" id="lang_specific_syntax">Language-specific syntac checking properties</a></h3>
+  
+  <p>Syntax checking options for various languages can be set by
+  choosing the language from the drop-down list, setting the desired
+  parameters. Each language will have different options.</p> 
+  
+  <h2><a name="Test Plan Prefs" id="test_plan_prefs">Test Plan
+  Preferences</a></h2>
+
+  <p>Settings for global test plans (see <a href="unittest.html">Unit
+  Testing</a>). Project-level test plans should be configured in the <a
+  href="project.html#project_prefs">Project Properties</a>.</p>
+  
   <h2><a name="web" id="web">Web and Browser Preferences</a></h2>
 
   <ul>

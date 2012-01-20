@@ -445,20 +445,21 @@ to communicate with the PHP interpreter.
     higher is required.</li>
 
     <li>
-      <strong>Verify Xdebug library specification:</strong> The
-      location of <em>xdebug.dll</em> (Windows) or
-      <em>xdebug.so</em> (Linux) must be defined the
-      <em>php.ini</em> file, for example:<br />
-      <br />
+  <p><strong>Verify Xdebug library specification:</strong> The
+  location of <em>xdebug.dll</em> (Windows) or
+  <em>xdebug.so</em> (Linux) must be defined the
+  <em>php.ini</em> file, for example:</p>
 
       <ul>
         <li><strong>Windows:</strong>
-        zend_extension=C:\php-5.3.2\extensions\php_xdebug.dll</li>
-        zend_extension_ts=C:\php-5.2.17\extensions\php_xdebug.dll</li>
+          <pre>
+zend_extension=C:\php-5.3.2\extensions\php_xdebug.dll
+zend_extension_ts=C:\php-5.2.17\extensions\php_xdebug.dll</pre></li>
 
         <li><strong>Linux:</strong>
-        zend_extension=/php-5.3.2/extensions/php_xdebug.dll</li>
-      </ul><br />
+          <pre>
+zend_extension=/php-5.3.2/extensions/php_xdebug.dll</pre></li>
+      </ul>
     </li>
 
     <li>Ensure that the Xdebug extension is configured correctly in
