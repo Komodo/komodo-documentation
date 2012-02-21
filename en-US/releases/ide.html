@@ -196,6 +196,50 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-7.0.1">7.0.1 Bug Fixes</h3>
+<ul>
+  <li>Code Browser: Correct the sort handling. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92666">92666</a>)</li>
+  <li>Code Browser: Ensure consistent updating and refreshing of tree items. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92682">92682</a>)</li>
+  <li>Code Intelligence: JavaScript: Ensure "document." lookups work inside of HTML documents. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92394">92394</a>)</li>
+  <li>Code Profiling: Allow the profiling window to be resized on Windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92445">92445</a>)</li>
+  <li>Color Picker: Fix transparent window in the John Dyer color picker. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92556">92556</a>)</li>
+  <li>Debugging: Fix crash when viewing remote debugger source code on Windows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92419">92419</a>)</li>
+  <li>Debugging: Node.js: Support hover tips over complex expressions like foo[1].blah[3]. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92421">92421</a>)</li>
+  <li>Debugging: PHP: Add xdebug check to ensure a valid PHP session is being profiled. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92603">92603</a>)</li>
+  <li>Debugging: Perl: If PadWalker is installed, show local variables at each stack level. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=70425">70425</a>)</li>
+  <li>Debugging: Ruby: Handle hover tips correctly over compound expressions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92725">92725</a>)</li>
+  <li>Debugging: XSLT: Handle spaces and other non-alpha characters in xslt/input path names. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92262">92262</a>)</li>
+  <li>Editor: Don't let unexpected virtual space characters show up when ctrl-arrowing up or down through the document. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=3451681">3451681</a>)</li>
+  <li>Editor: Ensure newline caret positioning is correct, updating the "current caret X" policy. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92376">92376</a>)</li>
+  <li>Editor: Improve the way CSS colorizing stays in sync with what's going on in the document. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92718">92718</a>)</li>
+  <li>Editor: In the "Save As" file dialog, set the filter to be "All Files". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92826">92826</a>)</li>
+  <li>Editor: Komodo no longer crashes when non-ascii characters are used as string delimiters in Perl code. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92433">92433</a>)</li>
+  <li>Editor: Tabstops: Fix the last tabstop handling when used in new files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92448">92448</a>)</li>
+  <li>Find: Ensure editor commands are still enabled when the fast find bar has the focus. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92797">92797</a>)</li>
+  <li>Formatters: Restore keybinding to format a selected block of text. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92542">92542</a>)</li>
+  <li>Languages: Node.js: update language icon to use the new green hexagon image. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92538">92538</a>)</li>
+  <li>Languages: Perl: The editor now colors text between "&lt;" and "&gt;" as a string to indicate it's a glob operator. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=19095">19095</a>)</li>
+  <li>Mac OS X 10.5: Fix startup problem on 10.5. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92853">92853</a>)</li>
+  <li>Preferences: Improve handling of indentation changes in the current doc, project, and globally. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91887">91887</a>)</li>
+  <li>Preferences: Ensure the selected pref panel is always visible. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92588">92588</a>)</li>
+  <li>Projects: Fixed slowdown when editing a file that belongs to a project. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92569">92569</a>)</li>
+  <li>Publishing: Ensure remote connections are closed when they are done. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92754">92754</a>)</li>
+  <li>Remote Files: Allow timestamps far in the future. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82484">82484</a>)</li>
+  <li>Sections List: Use a larger popup panel to show more result rows. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92556">92556</a>)</li>
+  <li>SCC: Git: Ensure status checking works correctly when there are unrevisioned files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92821">92821</a>)</li>
+  <li>Startpage: Check Configuration:  Add a Node.js checker. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92403">92403</a>)</li>
+  <li>Sync: Setup: The continue button is now enabled when the sync key is pasted in. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91813">91813</a>)</li>
+  <li>Syntax Checking: CSS: Stop emitting false positives for directives (like @import or @media). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92531">92531</a>)</li>
+  <li>Syntax Checking: EJS: Don't emit false positive error messages in EJS (Express JavaScript templates). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91747">91747</a>)</li>
+  <li>Syntax Checking: Less: Allow "&amp;" as the start of a nested declaration. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92561">92561</a>)</li>
+  <li>Syntax Checking: Less: Allow parameterless mixins. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92561">92561</a>)</li>
+  <li>Syntax Checking: Less: Support "&gt;" and "+" nested continuations. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92561">92561</a>)</li>
+  <li>Syntax Checking: Perl: Don't execute contents of BEGIN blocks during syntax checking. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92583">92583</a>)</li>
+  <li>UDL: Allow for JS&lt;=&gt;PHP transitions in on* handlers in HTML code. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92742">92742</a>)</li>
+  <li>UI: Windows: Tweak language icon placement when using the classic theme. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91943">91943</a>)</li>
+</ul>
+
+
 <h3 id="bug_fixes-7.0.0rc2">7.0.0 Release Candidate 2 Bug Fixes</h3>
 <ul>
   <li>Add editor context menu items for "Find..." and "Replace...". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89157">89157</a>)</li>
