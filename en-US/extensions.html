@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <title>Extensions</title>
+</head>
+
+<body>
+<div id="content">
+  <h1><a name="extensions_top" id="extensions_top">Komodo Extensions</a></h1>
+
+  <p>Komodo extensions (also known as add-ons) are used to extend the
+  functionality of the IDE. Komodo is based upon the Mozilla framework, so it
+  has the same extension capabilities as Firefox does, which means the <a
+  href="https://developer.mozilla.org/en/Extensions">Mozilla extension
+  documentation</a> also applies to Komodo as well. These Mozilla resources are
+  a great place to begin understanding the fundamentals of extensions.</p>
+
+  <h3>Add-on Dialog</h3>
+
+  Use the <strong>Tools > Add-ons</strong> menu to open the Add-ons management
+  dialog. The <strong>Extensions</strong> tab will show you the currently
+  installed add-ons, most of which are included through the default Komodo
+  installation. Use the <strong>Get Add-ons</strong> tab to browse the
+  recommended Add-ons or use the filter field search for a particular extension.
+  Choose an extension and click on the download or Install links. You can also
+  read the <a href="tutorial/tourlet_extensions.html">add-on tutorial</a>
+  covering the add-on dialog features.
+
+  <h2 id="creating_an_extension">Creating an Extension</h2>
+
+  <p>
+  Extensions usually come in two flavours:
+  <ul>
+      <li><a href="#feature_extensions"><strong>Feature Extensions</strong></a>:
+      these add new interfaces, components and functionality to Komodo.</li>
+      <li><a href="#language_extensions"><strong>Language
+      Extensions</strong></a>: which adds (or improves) support for a particular
+      programming language in Komodo.</li>
+  </ul>
+  Note that the type of add-on you wish to create will affect how you go about
+  the creating process.
+  </p>
+
+  <h2 id="feature_extensions">Feature Extensions</h2>
+
+  <p>
+  The best way to start creating a new Komodo feature is by utilizing the <a href="macros.html#macros_writing">Komodo macro system</a>, which you can use to quickly and easily create new functionality for Komodo, such as adding user interfaces, responding to keypresses, opening files, or performing text manipulation in the Komodo editor.
+  </p>
+
+  <p>
+  You can see great <a href="http://code.activestate.com/recipes/langs/javascript/tags/macro/">examples of Komodo macros</a> on the ActiveState Code site. By the way, you can write macros in either JavaScript or Python - so you get to choose which language works best for you.
+  </p>
+
+  <p>
+  If you wish - you may then turn your macro into a Komodo add-on (so it's easily installable and will automatically update when you make changes to it). To get started, use the <em>Project -&gt; New -&gt; New Project from Template</em> and select the <em>Create Komodo Extension</em> project. When using a Komodo extension project, you'll find there is a "Build and Install" macro added to your Komodo toolbox, which you can use to create and install the extension <em>xpi</em> file.
+  </p>
+
+  <h2 id="language_extensions">Language Extensions</h2>
+
+  <p>
+  Language extensions are used to extend Komodo's knowledge of programming languages (like Java, Matlab, Mel). This can control things like Language Detection, Code Coloring, Editor Indentation, Syntax Checking, Code Intelligence (completions and calltips) and Debugging.
+  </p>
+
+  <p>
+  The easiest way to create a new Komodo language is to use the <em>Project -&gt; New -&gt; New Project from Template</em> and select the <em>Create Komodo Language</em> project. Fill out the add-on details, then you can customize the language details (like the comment styles, keywords and code intelligence) and create the project. You'll find there is a "Build and Install" macro added to your Komodo toolbox, which you can use to create and install the extension <em>xpi</em> file.
+  </p>
+
+  <h3 id="udl">User Defined Languages (UDL)</h3>
+  <p>
+  Komodo's system for defining multi-language syntax lexing (coloring) is called UDL (<a href="udl.html#udl_introduction">User Defined Languages</a>). UDL files are written in a language called Luddite, which then gets compiled into a Scintilla lexer package for use inside Komodo. All udl files are stored inside the "udl" folder of your extension.
+  </p>
+
+  <h3 id="linting">Syntax Checking</h3>
+  <p>
+  The Komodo <a href="linter-reference.html">documentation for linters</a> is quite extensive, and there is also a good article on <a href="http://www.activestate.com/blog/2012/02/diving-deep-komodos-syntax-checker">adding syntax checking to a Komodo extension</a> on the ActiveState blog.
+  </p>
+
+  <h3 id="codeintel">Code Intelligence</h3>
+  <p>
+  Code Intelligence is enabled in a Komodo language extension by adding a <em>pylib/codeintel_langname.py</em> file to your extension. It works by first triggering a completion event and then responding to an evalutation request.
+      <ul>
+        <li><strong>Trigger</strong> - whenever a keypress occurs in Komodo, the <em>trg_from_pos</em> Python method in your codeintel_language file will be called. It will be up to you to decide if you want to offer completions at that point - when you do, then you'll need to return a Trigger() instance.
+        </li>
+
+        <li><strong>Evaluation</strong> - handles the lookup for completion/calltips. The <em>async_eval_at_trg</em> method is called when the trg_from_pos method has returned a trigger. It's job is to provide the list of completions or the calltip string.
+        </li>
+
+        <li><strong>API Catalogs</strong> - are a collection of class/function/variable information. API Catalogs are only applicable for the default Komodo Code Intelligence languages (i.e. Python, JavaScript, PHP, ...). You can achieve the same affect as an API Catalog by defining/outlining a code file and then including that on the language search path.
+        </li>
+      </ul>
+  </p>
+
+
+  <h2 id="tools">Extension Development Tools and Useful Links</h2>
+
+  <ul>
+      <li><strong><a href="http://community.activestate.com/node/1824">Komodo Developer Add-on</a></strong>
+          <p>
+          This extension provides helper tools for working with JavaScript and Python inside of Komodo. If you want to play around with the JavaScript API, do some simple python coding tests, probe the Komodo API for an extension, or play with the internals of Komodo, then this is for you! When installed, you can use the <em>Tools > Extension Developer</em> menu to access the <strong>JavaScript Shell</strong> and  <strong>Python Shell</strong>, from which you can control and interact with Komodo.
+          </p>
+      </li>
+
+      <li><strong><a href="http://community.activestate.com/xpi/dom-inspector">DOM Inspector</a></strong>
+          <p>
+          The DOM Inspector is a tool that can be used to inspect and edit the UI structuring used by Komodo. The DOM can be navigated using a two-paned window displaying a variety of different views on the document and all nodes within. With this tool you can interact with the DOM Elements, JavaScript objects and the CSS styling. Once installed, use the <em>Tools > DOM Inspector</em> to launch and inspect Komodo. See the <a href="https://developer.mozilla.org/en/Introduction_to_DOM_Inspector">Mozilla Intro</a> here for using the DOM Inspector, or check out this <a href="http://www.youtube.com/watch?v=85Xg0Ag3lL0">DOM Inspector video</a>.
+          </p>
+      </li>
+
+      <li>
+          <strong><a href="http://grok.openkomodo.com/source/xref/openkomodo/trunk">OpenKomodo Grok</a></strong>
+          <p>
+          Grok provides a fast source code search engine. You can use this online search tool to find code examples for working with different parts of Komodo. For example, here is a list of hits for the Komodo <a href="http://grok.openkomodo.com/source/search?q=hyperlinks&path=%2Fopenkomodo%2Ftrunk%2Fsrc">hyperlinks</a> feature.
+          </p>
+      </li>
+
+      <li><strong>Error Console</strong>
+          <p>
+          You can use this one-line Komodo JavaScript macro to open the error console - which will bring up a dialog that will show page errors and JavaScript loading errors:
+          <pre>
+              window.openDialog("chrome://global/content/console.xul", "_blank");
+          </pre>
+          </p>
+      </li>
+
+      <li><strong><a href="https://developer.mozilla.org/en/Building_an_Extension">Mozilla Extension Development Documentation</a></strong>
+          <p>
+          Thanks to Komodo being based upon the Mozilla framework, Komodo has the same extension capabilities as the Firefox browser, making Komodo extension development a breeze - you can even re-purpose existing Firefox extensions to work within Komodo.
+          </p>
+      </li>
+
+      <li><strong><a href="http://svn.openkomodo.com/openkomodo/browse/openkomodo/trunk/src/modules/">Komodo Edit Add-Ons</a></strong>
+          <p>
+          These are Komodo Edit add-ons that are included in the regular Komodo Edit installers. You will also find these add-ons in the "extensions" directory of your Komodo installation.
+          </p>
+      </li>
+
+      <li><strong><a href="http://svn.openkomodo.com/openkomodo/browse/addons">OpenKomodo Add-Ons</a></strong>
+          <p>
+          These are Komodo add-ons that have been developed by ActiveState that are not included in the regular Komodo installers. A lot of these are hosted on the <a href="http://community.activestate.com/addons">ActiveState Community</a> site.
+          </p>
+      </li>
+  </ul>
+
+
+</div>
+</body>
+</html>

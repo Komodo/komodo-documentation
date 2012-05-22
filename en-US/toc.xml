@@ -911,6 +911,14 @@
     <node name="Sharing Key Binding Schemes" link="keybind.html#sharing_keybinding_schemes"/>
   </node>
 
+  <node name="Komodo Extensions" link="extensions.html">
+    <node name="Creating an Extension" link="extensions.html#creating_an_extension">
+      <node name="Feature Extensions" link="extensions.html#feature_extensions"/>
+      <node name="Language Extensions" link="extensions.html#feature_extensions"/>
+    </node>
+    <node name="Extension Tools" link="extensions.html#tools"/>
+  </node>
+
 <!-- #if defined('KOMODO_JS_API_TOC') -->
 <!-- #include KOMODO_JS_API_TOC -->
 <!-- #endif -->
