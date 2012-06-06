@@ -196,6 +196,93 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-7.1.0">7.1.0 Bug Fixes</h3>
+<ul>
+  <li>Allow Template Toolkit tags where attribute names could appear. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92843">92843</a>)</li>
+  <li>Browser Preview: Allow previewing of unicode file paths. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93767">93767</a>)</li>
+  <li>Browser Preview: Don't show nsIWebNavigation exception when attempting to save the current file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92875">92875</a>)</li>
+  <li>Code Intelligence: HTML: Ensure style type attribute has completion in XHTML. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93522">93522</a>)</li>
+  <li>Code Intelligence: JavaScript: Ensure local variables are included in three-character completions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93858">93858</a>)</li>
+  <li>Code Intelligence: JavaScript: Ensure prototype fields are correctly parsed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93496">93496</a>)</li>
+  <li>Code Intelligence: JavaScript: Show/update function calltip after typing a comma. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93864">93864</a>)</li>
+  <li>Code Intelligence: JavaScript: Support the "@extends" JSDoc property. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93261">93261</a>)</li>
+  <li>Code Intelligence: Node.js: Fix argument completions for "http.createServer". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94267">94267</a>)</li>
+  <li>Code Intelligence: Node.js: Update stdlib to 0.6.14. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93223">93223</a>)</li>
+  <li>Code Intelligence: PHP: Parse and provide completions for static class variable definitions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92813">92813</a>)</li>
+  <li>Code Intelligence: PHP: Support PHP 5.4. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93402">93402</a>)</li>
+  <li>Code Intelligence: Python: Ensure completions for similar-named package imports. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94009">94009</a>)</li>
+  <li>Code Intelligence: Ruby: Added Ruby 1.9.3 and 1.9.2 stdlib support. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91516">91516</a>)</li>
+  <li>Code Intelligence: Ruby: Show instance methods after a "." following a capitalized variable name.. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94237">94237</a>)</li>
+  <li>Code Profiling: Support Python 3. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93345">93345</a>)</li>
+  <li>Database Explorer: Make sure that right-clicks on the table view in the query tab return query-tab results, not full-table results. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93999">93999</a>)</li>
+  <li>Debugger: Make sure that tooltips never have more than the max # of characters specified in the tooltip max size preference. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93528">93528</a>)</li>
+  <li>Debugger: Options: Selecting "Simulate CGI Buffering" should automatically select "Use the CGI interpreter". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93478">93478</a>)</li>
+  <li>Debugger: Node.js: Make sure the correct property name is given for compound values in the variable table. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93301">93301</a>)</li>
+  <li>Debugger: Node.js: When starting to debug a JS file, offer to switch to Node.js, and provide a do-not-ask pref that will always switch the doc to Node.js. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93434">93434</a>)</li>
+  <li>Debugger: Perl: Make sure $_ is always in the local vars, if it has an associated value. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93962">93962</a>)</li>
+  <li>Debugger: Perl: Make sure dereferenced hash refs aren't displayed in the variable. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94051">94051</a>)</li>
+  <li>Debugger: Perl: Support variable names with high-bit characters in the Locals table. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93440">93440</a>)</li>
+  <li>Debugger: Python: Bring back support for Python 2.4 debugging. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93549">93549</a>)</li>
+  <li>Debugger: Python: Remove exception error message when python debugger fails to get a property object via getattr. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93374">93374</a>)</li>
+  <li>Debugger: Ruby: Make sure global variables are displayed in 1.9.*. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93802">93802</a>)</li>
+  <li>Debugger: Tcl: Make sure stdin works when debugging in a separate console. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93771">93771</a>)</li>
+  <li>Editor: Add keyword-based autoindent for Bash, Matlab/Octave, Basic, Lua, and Pascal. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93557">93557</a>)</li>
+  <li>Editor: Avoid buffer overrun when lexing diff files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93353">93353</a>)</li>
+  <li>Editor: CSS: Style numeric units like 'px' and 'em' as numbers. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93836">93836</a>)</li>
+  <li>Editor: CSS: Handling &lt;?php ... ?&gt; and &lt;?= ... ?&gt; statements embedded in a CSS string. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93836">93836</a>)</li>
+  <li>Editor: JavaScript: Handle files that are missing closing string quotes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93452">93452</a>)</li>
+  <li>Editor: PHP: Allow PHP block to start with '&lt;script language="php". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94167">94167</a>)</li>
+  <li>Editor: PHP: Allow PHP block after any occurrence of "&lt;?", even if it's followed by a letter and not "php".</li>
+  <li>Editor: PHP: Increase indentation after HTML start-tags inside PHP files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93387">93387</a>)</li>
+  <li>Editor: PHP: Support PHP escaped code in style attributes in elements. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92805">92805</a>)</li>
+  <li>Editor: CoffeeScript: Allow embedded CS expressions in strings using the #{...} notation, and allow for nested #{...} constructs. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93406">93406</a>)</li>
+  <li>Editor: Update Matlab syntax names and keyword list. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93547">93547</a>)</li>
+  <li>Editor: RHTML: Better styling of the "&lt;%" and "%&gt;" parts around "&lt;%# ... %&gt;". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93746">93746</a>)</li>
+  <li>Editor: Untabify: Ensure that the tabwidth setting is honored on untabify. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93623">93623</a>)</li>
+  <li>Editor: Stop adjusting caretX position after indenting on tab - restores the Komodo 6 behavior. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93681">93681</a>)</li>
+  <li>Fast Open: Allow recursing into symlinked directories. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93221">93221</a>)</li>
+  <li>Find: Mutli-line search non-RE now works correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88293">88293</a>)</li>
+  <li>Formatters: Allow use of project interpolation codes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93530">93530</a>)</li>
+  <li>History: Better dealing of views that arn't a koIScintillaView. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91059">91059</a>)</li>
+  <li>Hyperlinks: Allow filename jumping to work in remote files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93987">93987</a>)</li>
+  <li>Interpolation Codes: Use the view and project prefs when interpolating codes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93368">93368</a>)</li>
+  <li>New File Templates: Distinguish Node.js from JavaScript, and Python from Python3.</li>
+  <li>Performance: Speed up the time taken to close a file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93698">93698</a>)</li>
+  <li>Performance: Syntax Checking: Stop high CPU usage from mixed EOL warnings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92733">92733</a>)</li>
+  <li>Places: Added a refresh-view menu item to the top-level Place. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88141">88141</a>)</li>
+  <li>Places: Ensure new folders are inserted into the correct location. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93133">93133</a>)</li>
+  <li>Places: Correctly handle non-alphanumeric characters. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93336">93336</a>)</li>
+  <li>Places: Make sure the open project in the SPV view has an enabled SCC submenu. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93231">93231</a>)</li>
+  <li>Places: Preferences are now saved when Komodo shuts down. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93439">93439</a>)</li>
+  <li>Places: Ensure items don't appear twice when updated from filesystem notification events. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93474">93474</a>)</li>
+  <li>Places: Don't auto-sync when the current tab has no location that can be displayed in the places panel. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93450">93450</a>)</li>
+  <li>Projects: Allow the relative part of a project's target directory to contain spaces. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89468">89468</a>)</li>
+  <li>Preferences: Debugger: Added a sanity check to prevent invalid values for advanced debugging prefs. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93337">93337</a>)</li>
+  <li>Preferences: Node.js: Ensure the interpreter is properly detected. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91959">91959</a>)</li>
+  <li>Preferences: Perl: Move the "include current directory for syntax-checking" from the languages page to the syntax-checking page. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93511">93511</a>)</li>
+  <li>Preferences: Windows Integration: Write into the per-user registry settings and split IDE/Edit. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87809">87809</a>)</li>
+  <li>Python: Colourise "self" as a keyword. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94173">94173</a>)</li>
+  <li>Source Code Control: CVS: Ensure more repository formats are supported. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93569">93569</a>)</li>
+  <li>Startup: Fix startup crash on Ubuntu 32-bit Linux. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92707">92707</a>)</li>
+  <li>Syntax checking: Handle the "&lt;&lt;??&gt;?xml..." escape sequence used by. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93432">93432</a>)</li>
+  <li>Syntax Checking: Improve the way the last warning/error in the buffer is suppressed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93043">93043</a>)</li>
+  <li>Syntax Checking: Improve multi-language syntax checking, in particular interplay of CSS and JS in PHP-like documents. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93836">93836</a>)</li>
+  <li>Syntax Checking: JavaScript: Add a "predef" example. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93408">93408</a>)</li>
+  <li>Syntax Checking: JavaScript: List the unused variables that both jslint and jshint collect. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93407">93407</a>)</li>
+  <li>Syntax Checking: JavaScript: Update the jslint.js and jshint.js files that ship with Komodo and allow for multiple versions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93083">93083</a>)</li>
+  <li>Syntax Checking: JavaScript: Add UI for choosing the various jshint options instead of manually typing &lt;name&gt;=&lt;value&gt; in the options text box. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91631">91631</a>)</li>
+  <li>Syntax Checking: JavaScript: Make sure error display takes precedence over a warning display. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93326">93326</a>)</li>
+  <li>Syntax Checking: JavaScript: Give Node.js files the same syntax-checking options as JavaScript. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91631">91631</a>)</li>
+  <li>Syntax checking: Maintain separate syntax checking settings for JS and Node.js. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93285">93285</a>)</li>
+  <li>Syntax Checking: Perl: Prevent Perl from executing contents of BEGIN blocks during syntax checking. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92583">92583</a>)</li>
+  <li>Syntax checking: Added preference to clear all errors/warnings immediately when the editor text is modified. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93735">93735</a>)</li>
+  <li>Syntax checking: XHTML files now have XHTML syntax checking. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=83199">83199</a>)</li>
+  <li>User Interface: File deleted events work better when if the file was since recreated. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94121">94121</a>)</li>
+  <li>User Interface: Mac OS X: Allow dragging empty toolbar areas to move the window. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92672">92672</a>)</li>
+  <li>User Interface: Mac OS X: Disable full screen until we sort out SciMoz screen corruption. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92669">92669</a>)</li>
+  <li>User Interface: Remote Files: Don't clear the remote file dialog "filename" field when the dropdown changes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92099">92099</a>)</li>
+</ul>
+
 <h3 id="bug_fixes-7.0.2">7.0.2 Bug Fixes</h3>
 <ul>
   <li>Debugging: Node.js: Speed up Node.js debugging. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93159">93159</a>)</li>
