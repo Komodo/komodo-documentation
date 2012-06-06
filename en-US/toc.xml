@@ -231,6 +231,7 @@
       <node name="XSLT AutoComplete" link="editor.html#XSLT_AutoComplete"/>
       <node name="XML AutoComplete" link="editor.html#XML_AutoComplete"/>
     </node>
+    <node name="Variable Highlighting" link="editor.html#Variable_Highlighting"/>
     <node name="Soft Characters" link="editor.html#Soft_Char"/>
     <node name="Viewing File as Another Language" link="editor.html#View_as_Lang"/>
     <node name="Commenting Blocks of Code" link="editor.html#Code_Commenting"/>
@@ -730,6 +731,7 @@
       <node id="enable_soft_characters" name="Soft Characters" link="prefs.html#Soft_Chars"/>
       <node id="line_cut_copy" name="Line Cut/Copy" link="prefs.html#line_cut_copy"/>
       <node name="Configuring Folding" link="prefs.html#Folding"/>
+      <node name="Variable Highlighting Settings" link="prefs.html#Variable_Highlighting_Prefs"/>
     </node>
     <node name="Save Options" link="prefs.html#Save_Options"/>
   </node>
