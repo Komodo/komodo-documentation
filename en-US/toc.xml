@@ -183,7 +183,9 @@
 <node name="Stackato" link="stackato.html#stackato_top">
   <node name="Stackato Client Setup" link="stackato.html#stackato_client_setup"/>
   <node name="Connecting to Stackato" link="stackato.html#stackato_connecting">
-    <node name="Viewing Target Info" link="stackato.html#stackato_info"/>
+  <node name="Viewing Target Info" link="stackato.html#stackato_info"/>
+  <node name="Creating Applications" link="stackato.html#creating_applications" />
+  <node name="Debugging Applications" link="stackato.html#debugging_applications" />
   </node>
 </node>
   

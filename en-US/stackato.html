@@ -87,9 +87,82 @@
   <p>The Stackato Output pane (collapsible) show the console output of
   the various Stackato commands as they run.</p>
   
-  <!-- TODO: Document wizard and it's interaction with stackato.yml
+  <h2><a id="creating_applications"></a>Creating Applications</h2>
   
-  <h2><a name="stackato_push_wizard" id="stackato_push_wizard">New Stackato App Wizard</a></h2>
+  <p>New applications can be created by either right-clicking on an empty row in
+  the Applications table and selecting "Add...", or pressing the "Add a new app"
+  button in the toolbar above the Applications table (it's the one with the
+  blue right-pointing arrow). This will bring up the
+  <strong>New Stackato App Wizard</strong>, where you can set the properties on
+  the application. Most of the properties should be straightforward:
+  </p>
+  <dl>
+    <dt>Application Name</dt><dd>The name of the application. This should
+    consist of only letters and digits, as the URL the form suggests is
+    generated from the name. However the URL can be edited. Once it's edited,
+    changing the application name no longer modifies the suggested URL.</dd>
+    
+    <dt>Path</dt><dd>The path to the root folder containing the application to
+    push.</dd>
+    
+    <dt>URL</dt><dd>The URL of the application.</dd>
+    
+  </dl>
+  <p>The remaining options, except <a
+  href="#debugging_applications">debugging</a>,
+  should be straightforward. Note that on the next step of the wizard,
+  you are given an opportunity to bind a service to the new application.
+  </p>
+  <ul>
+    <li> Selecting <strong>No</strong> moves the wizard to the final
+    confirmation page.
+    <li>Selecting <strong>Use an existing provisioned service</strong> moves
+    the wizard to the service-selection page.
+    <li>Selecting <strong>Define a new provisioned service</strong> moves
+    the wizard to the service-definition page. When a service is added
+    on that page, the next move will go to the service-selection page.
+  </ul>
+  
+  <h2><a id="debugging_applications"></a>Debugging Applications</h2>
+  
+  <p>Stackato (versions 1.26 and higher) supports debugging of Rails, Sinatra,
+  Django, and PHP applications remotely via Komodo. These applications can be
+  debugged remotely in Komodo by checking the <strong>Debug App</strong> box
+  on the first page of the <strong>New Application</strong> wizard, and filling
+  in the host Komodo is running on, and the port it's watching. Normally
+  Komodo can figure out what these values should be, but if you have a
+  different scenario in mind, such as creating the Stackato app on one
+  machine, but debugging it from another, you'll need to adjust these fields
+  accordingly.
+  </p>
+  
+  <p>Each type of app is debugged in a slightly different way:</p>
+  
+  <ul>
+    <li>Debugging PHP Stackato applications is no different from
+    debugging other PHP programs remotely. Simply put
+    <strong>XDEBUG_SESSION_START=1</strong> at the end of the address bar,
+    prepending it with a "?" if it's the only parameter, or a "&" if there are
+    others. You can end debugging by either pressing Komodo's
+    <strong>Detach</strong> button, or with the URL parameter
+    <strong>XDEBUG_SESSION_STOP=1</strong>.</li>
+    
+    <li>Rails, Sinatra, and Django applications are debugged by appending a
+    <strong>STACKATO_DEBUG</strong> parameter to a request URI in the address
+    bar, prepending it with either "?" or "&" similar to triggering a
+    debugger session with PHP. In this case, once you start debugging an
+    application, the application will remain in debug mode until it's restarted.
+    </li>
+  </ul>
+  
+  <p>For all supported languages, debugging sessions work better if
+  the preference <strong>Debugger | Debugger/Editor Integration |
+  Try to find files on the local system when remote debugging</strong>
+  is checked. If you make changes to locally found files while debugging,
+  you can save your changes and push the changes to the server.
+  </p>
+  
+  <!-- TODO: Document wizard and it's interaction with stackato.yml
   
   TODO: Overview of misc commands
   
