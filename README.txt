@@ -36,7 +36,7 @@ How it works
 Also known as the "Why a separate project?" section. The Open Komodo
 source tree is huge and building a full Open Komodo build is not for
 the faint of heart. Having a separate project for the Komodo docs
-allows for an lower barrier to entry for working with and contributing
+allows for a lower barrier to entry for working with and contributing to
 the Komodo docs. Typical Komodo app builds will use this source tree (and
 use the "mozhelp" build target, see below) but you can do a full Komodo
 doc build without bothering with a full Komodo tree.
