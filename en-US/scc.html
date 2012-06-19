@@ -207,6 +207,10 @@
 
     <li><strong>Commit Changes</strong>: Submit the file back to
     the source code repository.</li>
+
+    <li><strong>Push Commits</strong>: Applicable to distributed
+    source control systems only; propagates local commits to
+    remote repositories.</li>
   </ul>
 
   <h3><a name="file_status" id="file_status">File Status
@@ -435,7 +439,59 @@
   <p>The <strong>Commit button</strong> starts the check-in. Command
   line output is displayed in the <strong>Notifications</strong> tab in the
   bottom pane.</p>
+
+  <h2><a name="push_dialog" id="push_dialog">Push Dialog</a></h2>
   
+  <p>Clicking the <strong>Source Code Control: Push</strong> button or
+  selecting <strong>Push</strong> from the SCC context
+  menu brings up the following dialog box.  Note that this dialog is only
+  available for supported distributed version control systems.</p>
+
+  <img alt="Push Dialog" src="img/scc_push_dialog.png"/>
+
+  <p>The <strong>Remote Repo</strong> text box at the top determines where the
+  push will go to; Komodo will attempt to determine the most appropriate remote
+  URL, and can also offer suggestions about known remote repositories via the
+  drop-down.</p>
+
+  <p>The <strong>Branches</strong> section (only available for git and
+  mercurial) determines which branches to push.  Selecting multiple branches
+  will result in pushing the selected branches to the remote repository.
+  Selecting no branches will push the default branch.</p>
+
+  <p>The <strong>Tags</strong> section (only available for git) determines
+  which tags to push.  By default no tags are pushed; selecting one or more
+  tags will add them to the set of things to transmit.</p>
+
+  <p>The <strong>Options</strong> section has additional parameters which
+  can be set, depending on the source control system in use:</p>
+  <ul>
+    <li><a href="http://bazaar-vcs.org/">bzr</a>:
+      <ul>
+        <li>--overwrite: If the local branch has diverged from the remote
+        branch, this forces the remote branch to be updated without merging.
+        Selecting this can cause you to lose commits; use with care.</li>
+      </ul>
+    <li><a href="http://git.or.cz/">git</a>:
+      <ul>
+        <li>--force: Forces pushing branches and tags which already exist
+        remotely but have diverged.  Selecting this can cause you to lose
+        commits; use with care.</li>
+        <li>--no-thin: Disables the use of thin packs.  Selecting this option
+        usually results in higher bandwidth usage, but may reduce CPU
+        consumption slightly.</li>
+      </ul>
+    <li><a href="http://www.selenic.com/mercurial/wiki/">hg</a>:
+      <ul>
+        <li>--force: This causes mercurial to allow creation of new heads on
+        the remote repository.  It is recommended to pull from the remote and
+        merge first instead.</li>
+      </ul>
+  </ul>
+
+  <p>A preview of the command line which will be executed can be seen in the
+  <strong>Command Line</strong> section.</p>
+
   <h2><a name="config" id="config">Configuring Source Code Control
   Integration</a></h2>
 
