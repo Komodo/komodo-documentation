@@ -237,6 +237,44 @@ Stackato and the Sections List only apply to Komodo IDE only.</p>
 
 <h3 id="bug_fixes-7.1.0">7.1.0 Bug Fixes</h3>
 <ul>
+  <li>Syntax Checking: CSS: Fix possible infinite loop exception when encountering EOF. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94621">94621</a>)</li>
+  <li>Syntax Checking: CSS: Verify that a unit suffix following a number is a recognized unit. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94652">94652</a>)</li>
+  <li>Syntax Checking: Clear syntax-checking squigglies when changing languages. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94342">94342</a>)</li>
+  <li>Syntax Checking: Errors get precedence when both a warning and an error occur on the same line. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93326">93326</a>)</li>
+  <li>Code Intelligence: PHP: Ensure proper namespace completions for use statements. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88736">88736</a>)</li>
+  <li>Code Intelligence: Node.js: Update stdlib to 0.8.0; support versioned stdlib. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94495">94495</a>)</li>
+  <li>Code Intelligence: Tcl: Don't insert duplicate text when an autocomplete choice is selected. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94416">94416</a>)</li>
+  <li>Database Explorer: Opening databases no longer causes high cpu usage. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94411">94411</a>)</li>
+  <li>Debugger: When starting with syntax errors, offer to show the syntax errors. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84160">84160</a>)</li>
+  <li>Debugging: CGI: Use url.unquote for the upload file path. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94308">94308</a>)</li>
+  <li>Editor: Allow separate folding of if/else blocks. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91882">91882</a>)</li>
+  <li>Editor: Add a save option to clean trailing whitespace only on modified lines. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90062">90062</a>)</li>
+  <li>Editor: Allow pasting of raw HTML clipboard. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94366">94366</a>)</li>
+  <li>Editor: Better comment /* continuation after a newline. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=84868">84868</a>)</li>
+  <li>Editor: CSS: End unterminated /*... comments at the first script end-tag in CSS blocks. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92367">92367</a>)</li>
+  <li>Editor: Fix forward slash "/" following a variable being treated as a regex, in embedded-Perl languages like epMojo. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94368">94368</a>)</li>
+  <li>Editor: Fix handling of multiplane Unicode characters (surrogate pairs).</li>
+  <li>Editor: Ignore document size thresholds when finding non-positive values. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89582">89582</a>)</li>
+  <li>Editor: Make sure that trying to comment/uncomment in a text file does nothing. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90001">90001</a>)</li>
+  <li>Editor: Ruby: Automatically dedent keywords like 'end' and 'else'. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93557">93557</a>)</li>
+  <li>Editor: TCL: Improve the way the Tcl lexer tracks braces, brackets, double-quotes, backslashes, and comments. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=85304">85304</a>)</li>
+  <li>Editor: JavaScript: Colorize regex in ES3 lambda-expression-type function expressions correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88546">88546</a>)</li>
+  <li>HTTP Inspector: Fix error when adding custom rules. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94478">94478</a>)</li>
+  <li>Komodo Language Template: Ensure a language extension can override an existing language. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94492">94492</a>)</li>
+  <li>Komodo Language Template: Only show completion items that match the typed prefix. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94489">94489</a>)</li>
+  <li>Places: Add a pref to disable the places tooltip. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93155">93155</a>)</li>
+  <li>Projects: When closing a project, close all opened files that are descendants of the project's own live folders. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93436">93436</a>)</li>
+  <li>Printing: Ensure Unicode characters are printed correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=65298">65298</a>)</li>
+  <li>Source Code Control: Bazaar: When reverting a Places folder, ensure only that folder is reverted. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94425">94425</a>)</li>
+  <li>Stackato: Provide ability to easily enable/disable debugging for an app. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94532">94532</a>)</li>
+  <li>Stackato: Make sure 'Show files' works, and provide a tooltip explaining why it's disabled when the app isn't running. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93303">93303</a>)</li>
+  <li>Stackato: When starting Stackato on a new system, don't put "S" in the user field. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92270">92270</a>)</li>
+  <li>Startup: Allow non-ASCII paths in the startup environment. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94439">94439</a>)</li>
+  <li>User Interface: Double-clicking on an editor tab toggles the visibility of the sidebars and bottom pane. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=81147">81147</a>)</li>
+</ul>
+
+<h3 id="bug_fixes-7.1.0b1">7.1.0b1 Bug Fixes</h3>
+<ul>
   <li>Allow Template Toolkit tags where attribute names could appear. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92843">92843</a>)</li>
   <li>Browser Preview: Allow previewing of unicode file paths. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93767">93767</a>)</li>
   <li>Browser Preview: Don't show nsIWebNavigation exception when attempting to save the current file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92875">92875</a>)</li>
