@@ -626,16 +626,6 @@
     Tab character</a></strong>: Number of spaces that are equal to
     a Tab character.</li>
 
-    <li><strong><a name="fold_style" id="fold_style">Fold mark
-    style</a></strong>: Use the drop-down list to select the style
-    of node used in <a class="doc" href=
-    "editor.html#Folding">code folding</a>.</li>
-
-    <li><strong><a name="horiz_line" id="horiz_line">Use horizontal
-    line on folds</a></strong>: Displays collapsed code with fold
-    marks; a thin line also spans the width of the <a href=
-    "workspace.html#Editor_Pane">Editor pane</a>.</li>
-
     <li><strong>'Backspace' decreases indentation in leading
     whitespace</strong>: If this option is enabled, pressing
     'Backspace' clears an entire indentation, rather than a single
@@ -646,11 +636,6 @@
     space; pressing 'Backspace' a second time clears four
     spaces.</li>
 
-    <li><strong>Restore fold state on document load (slows down
-    file opening)</strong>: If this option is enabled, the current
-    state of <a href="editor.html#Folding">code
-    folding</a> is remembered when a file is closed and reinstated
-    when the file is next opened.</li>
   </ul>
 
   <p>Options set through the Preferences dialog box are the default
@@ -763,8 +748,10 @@
 
   <ul>
     <li>
-      <strong>Fold mark style</strong>: Controls how the folding
-      will look.
+      <strong><a name="fold_style" id="fold_style">Fold mark
+    style</a></strong>: Use the drop-down list to select the style
+    of node used in <a class="doc" href=
+    "editor.html#Folding">code folding</a>:
 
       <ul>
         <li>Don't show fold marks (disables code folding)</li>
@@ -779,12 +766,23 @@
       </ul>
     </li>
 
-    <li><strong>Use horizontal line on folds</strong>: Draws a
-    horizontal line at the point of the code fold.</li>
+    <li><strong><a name="horiz_line" id="horiz_line">Use horizontal
+    line on folds</a></strong>: Displays collapsed code with fold
+    marks; a thin line also spans the width of the <a href=
+    "workspace.html#Editor_Pane">Editor pane</a>.</li>
 
-    <li><strong>Restore fold state on document load</strong>:
-    Preserves all folding from the previous editing session of a
-    file. Enabling this option may increase the loading time for
+    <li><strong><a name="fold_separate_block_parts" id="fold_separate_block_parts">
+    Fold separate block parts</a></strong>: Allows editor-margin fold-blocks
+    to be split at lines where one block ends, and a second block starts. This 
+    is most useful for brace-based languages like JavaScript, PHP, and Perl, and 
+    would be used to break a single large fold block at each inner "else" statement. </li>
+
+    <li><strong><a name="restore_fold_state" id="restore_fold_state">
+    Restore fold state on document load</a></strong>:
+    If this option is enabled, the current
+    state of <a href="editor.html#Folding">code
+    folding</a> is remembered when a file is closed and reinstated
+    when the file is next opened. Enabling this option may increase the loading time for
     larger files with numerous folds.</li>
   </ul>
 
