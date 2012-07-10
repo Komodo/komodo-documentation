@@ -136,6 +136,18 @@
   accordingly.
   </p>
   
+  <p>You can also switch an app into debug or non-debug mode by right-clicking
+  its row in the main table, and pressing the <strong>Configure Debugger...</strong>
+  menu item. This brings up a small dialog box which you can check the <strong>Debug
+  Application</strong> and modify the host and/or port Komodo will listen on
+  for debugging sessions. As with the application description wizard, the
+  interface will get the port number from Komodo, but may not be able to determine
+  the hostname. This is because the hostname field should contain the name or
+  IP address the debugging machine is known to the Stackato VM.</p>
+  
+  <p>Note that changing an application's debugging settings will cause the
+  Stackato client to restage it, which might cause a delay on some systems.</p>
+  
   <p>Each type of app is debugged in a slightly different way:</p>
   
   <ul>
