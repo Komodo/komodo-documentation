@@ -918,7 +918,7 @@
   <node name="Komodo Extensions" link="extensions.html">
     <node name="Creating an Extension" link="extensions.html#creating_an_extension">
       <node name="Feature Extensions" link="extensions.html#feature_extensions"/>
-      <node name="Language Extensions" link="extensions.html#feature_extensions"/>
+      <node name="Language Extensions" link="extensions.html#language_extensions"/>
     </node>
     <node name="Extension Tools" link="extensions.html#tools"/>
   </node>
