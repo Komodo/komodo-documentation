@@ -69,6 +69,37 @@
   The easiest way to create a new Komodo language is to use the <em>Project -&gt; New Project from Template</em> and select the <em>Create Komodo Language</em> project. Fill out the add-on details, then you can customize the language details (like the comment styles, keywords and code intelligence) and create the project. You'll find there is a "Build and Install" macro added to your Komodo toolbox, which you can use to create and install the extension <em>xpi</em> file.
   </p>
 
+  <p>
+  Once you've got the basics of the language down, you can further tweak the generated files to your liking and then re-build and re-install the add-on to test it out. Below is a description for the generated files and folders of the add-on:
+
+    <ul>
+      <li><strong>install.rdf, chrome.manifest</strong>
+        Registration information for the add-on (e.g. name, author, homepage) and the user interface to load for the add-on.
+      </li>
+
+      <li><strong>content</strong>
+        Contains the UI elements that are loaded into the Komodo UI, as well as loading any necessary JavaScript files.
+      </li>
+    
+      <li><strong>components</strong>
+        Controls the registration of the language within Komodo, provides information about the language (name, file extension, etc...).
+      </li>
+
+      <li><strong>pylib</strong>
+        Provides code intelligence facilities, for code completion popups, calltips and code browser information.
+      </li>
+
+      <li><strong>udl</strong>
+        The UDL files provide syntax highlighting (coloring) for your language, including keyword, strings, numbers and comment styling.
+      </li>
+
+      <li><strong>templates</strong>
+        The templates folder holds the custom language templates that will be availalbe in Komodo's New File from Template dialogs.
+      </li>
+    </ul>
+
+  </p>
+
   <h3 id="udl">User Defined Languages (UDL)</h3>
   <p>
   Komodo's system for defining multi-language syntax lexing (coloring) is called UDL (<a href="udl.html#udl_introduction">User Defined Languages</a>). UDL files are written in a language called Luddite, which then gets compiled into a Scintilla lexer package for use inside Komodo. All udl files are stored inside the "udl" folder of your extension.
