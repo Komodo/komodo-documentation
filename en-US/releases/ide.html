@@ -273,6 +273,29 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-7.1.1">7.1.1 Bug Fixes</h3>
+<ul>
+  <li>Code Intelligence: HTML: When a "&gt;", insert the correct matching end-tag. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94854">94854</a>)</li>
+  <li>Debugger: Perl: Don't display a bogus variable "$#" picked up from expressions like "$#{expn}". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94937">94937</a>)</li>
+  <li>Diff: Allow "Reveal position in editor" to work with remote files, not just local ones. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94842">94842</a>)</li>
+  <li>Editor: Allow pressing return at the end of a line containing high-bit characters - affected Ruby, Bash, Lua, Basic, Matlab and Pascal. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94942">94942</a>)</li>
+  <li>Editor: CoffeeScript: Fix colorizing so it knows when an interpolated #{...} sequence in a string ends. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94923">94923</a>)</li>
+  <li>Editor: CSS: Better brace handling for CSS, Less and SCSS.</li>
+  <li>Editor: HTML: When reopening a template-language file that's based on HTML5, use the file's original language, not HTML5. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94869">94869</a>)</li>
+  <li>Editor: PHP: Fix colorizing at the end of a file when there is no PHP end tag. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94944">94944</a>)</li>
+  <li>Find: Don't close the fastfind bar when caps-lock is pressed. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94987">94987</a>)</li>
+  <li>Find: Remember the pin setting between openings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94982">94982</a>)</li>
+  <li>Places: Set the show-full-path-tooltip setting at startup, not just when the pref changes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94871">94871</a>)</li>
+  <li>Projects: Better handling for project renaming. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94803">94803</a>)</li>
+  <li>Run Commands: Add shortcuts for Python3 and Node.js interpreters. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95070">95070</a>)</li>
+  <li>Source Code Control: Fix Python subprocess error that resulted in non-functioning SCC. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94990">94990</a>)</li>
+  <li>Syntax Checking: Clear errors and warnings when any lint preference changes. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91721">91721</a>)</li>
+  <li>Syntax Checking: CSS: Support CSS3 selector pattern-match substrings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91721">91721</a>)</li>
+  <li>Syntax Checking: JavaScript: For the purposes of syntax-checking prefs, treat Node.js and JavaScript as the same language. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=91631">91631</a>)</li>
+  <li>Syntax Checking: Python: Fix wrong line numbers report by PyLint. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94848">94848</a>)</li>
+  <li>Vi Emulation: Ensure ":wq" does not cause a newline in the next buffer. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94948">94948</a>)</li>
+</ul>
+
 <h3 id="bug_fixes-7.1.0">7.1.0 Bug Fixes</h3>
 <ul>
   <li>Syntax Checking: CSS: Fix possible infinite loop exception when encountering EOF. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94621">94621</a>)</li>
