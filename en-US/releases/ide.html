@@ -273,6 +273,20 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-7.1.2">7.1.2 Bug Fixes</h3>
+<ul>
+  <li>Debugger: PHP: Ensure php.ini parsing properly handles existing xdebug settings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95158">95158</a>)</li>
+  <li>Editor: After removing white-space while saving, make sure the selection is as close to how it was before the save started. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95153">95153</a>)</li>
+  <li>Language Detection: Ensure XML based languages can still be detected from their contents. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95308">95308</a>)</li>
+  <li>Remote Files: Switching tabs to a remote file caused remote status check. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95307">95307</a>)</li>
+  <li>Run Commands: Add %(python3) to run command shortcut list. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95070">95070</a>)</li>
+  <li>Startup: Ensure Komodo's PYTHONHOME variable does not leak into the startup environment. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=72449">72449</a>)</li>
+  <li>Startup: User's PYTHONPATH environment variable could cause Komodo startup problems. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95173">95173</a>)</li>
+  <li>Syntax Checking: Make sure the pref-panel that enables/disables linters like pylint and pyflakes use the correct interpreter. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95294">95294</a>)</li>
+  <li>Syntax Checking: Python: Make sure the syntax checker has a PYTHONPATH setting that includes any directories specified for the current file, project, or global settings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95300">95300</a>)</li>
+  <li>UDL: Django: Allow django tags to occur inside style and script blocks. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95246">95246</a>)</li>
+</ul>
+
 <h3 id="bug_fixes-7.1.1">7.1.1 Bug Fixes</h3>
 <ul>
   <li>Code Intelligence: HTML: When a "&gt;", insert the correct matching end-tag. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94854">94854</a>)</li>
