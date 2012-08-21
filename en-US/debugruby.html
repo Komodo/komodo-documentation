@@ -39,7 +39,7 @@
   <h2><a name="Configure_Ruby_Debugger" id=
   "Configure_Ruby_Debugger">Configuring the Ruby Debugger</a></h2>
 
-  <p>To specify which Ruby interpreter Komodo uses for debuging:</p>
+  <p>To specify which Ruby interpreter Komodo uses for debugging:</p>
 
   <ol>
     <li>Select <strong>Edit|Preferences</strong> (OS X:
@@ -86,22 +86,20 @@
     <em>/lib/support/dbgp/rubylib</em> beneath the Komodo
     installation directory
     (<em>/Contents/SharedSupport/dbgp/rubylib</em> on ac OS X).
-    Copy <em>rdbgp.rb</em> and the contents of the <em>DB</em>
+    Copy the contents of the <em>rubylib</em>
     directory to a convenient location on the remote machine.
     <strong>Note</strong>:Some of these files are shared library
     files (.so), which are platform specific. If your Komodo
-    installation is on a different platform, download the
-    <em>Komodo-PythonRemoteDebugging</em> package for the
-    appropriate platform and Komodo version from the <a class="doc"
-    target="_blank" href=
-    "http://code.activestate.com/komodo/remotedebugging/">
-    Komodo Remote Debugging</a> page.</li>
+    installation is on a different platform, the easiest step
+    is to download Komodo IDE for that platform, and pull
+    the Ruby debugger out of that installation.
+    </li>
 
     <li><a href="starting.html#starting_top">Start
     Komodo</a> on the local machine.</li>
 
     <li>On the remote machine, set the <code>dbgdir</code> variable
-    to specify the location of the remote mahcine directory where
+    to specify the location of the remote machine directory where
     you copied <em>rdbgp.rb</em> and its associated files.
 
       <p><strong>Windows</strong></p>
@@ -122,7 +120,7 @@ dbgdir=&lt;Path_To_rbdbgp.rb&gt;
 
       <p><strong>Windows</strong></p>
       <pre class="code">
-set RUBYDB_OPTS=remoteport=&lt;ServerName&gt;:&lt;Port&gt;
+set RUBYDB_OPTS=remote port=&lt;ServerName&gt;:&lt;Port&gt;
 set RUBYOPT=
 </pre>
 
@@ -242,10 +240,28 @@ end
   just like any other ruby application. However, since much of the
   Rails framework has to run within the debugger, the process is
   normally slower than with a standalone ruby program.</p>
+  
+  <p><strong>Note:</strong> If your app has a Gemfile, make sure
+  that the Gemfile isn't loading the ruby_debug or ruby_debug19 gems
+  (these are both present but commented out by default when a new Rails app
+  is created). If the appropriate line is active (ruby_debug for Ruby 1.8,
+  ruby_debug19 for Ruby 1.9), there will be an error message referring
+  to an "INTERNAL ERROR" where a null value was encountered.</p>
 
   <h3><a name="Local_Rails_Debugging" id=
   "Local_Rails_Debugging">Local Rails Debugging</a></h3>
 
+  <p>The complexity of the Rails environment increased by an
+  order of magnitude with version 3. Tools like <code>bundler</code>
+  and <code>rvm</code> help deal with the complexity, but Komodo
+  is currently unaware of them. If you find local Rails debugging,
+  as described below, doesn't work, you'll need to start a
+  remote debugging session (even on the same machine), described
+  in the next section. In particular, if you're using <code>rvm</code>,
+  or are using <code>bundle exec</code> to start the server, you'll
+  need to follow the "Remote Debugging" steps.
+  </p>
+  
   <ol>
     <li>Load the pertinent <em>app</em> or <em>controllers</em>
     files in Komodo.</li>
@@ -278,21 +294,28 @@ end
 
       <p><strong>Windows</strong></p>
       <pre class="code">
-ruby -I%dbgdir% -r %dbgdir%\rdbgp.rb script/server
+ruby -I%dbgdir% -r %dbgdir%\rdbgp.rb script/server webrick
 </pre>
 
       <p><strong>Linux/Mac OS X</strong></p>
       <pre class="code">
-ruby -I"$dbgdir" -r "$dbgdir"/rdbgp.rb script/server
+ruby -I"$dbgdir" -r "$dbgdir"/rdbgp.rb script/server webrick
 </pre>
     </li>
   </ol>
+  
+  <p><strong>Note:</strong>If you're using Rails 3, substitute
+  <code>script/rails server</code> for <code>script/server</code>
+  in the above code.</p>
 
   <p>The remote files will open in Komodo with the debugger stopped
   at the first line of executable code. A yellow arrow indicates
   the current position. You can now set breakpoints in this file,
   step through, and use other Komodo debugging features as if it
-  were a local file. However, you cannot modify the file.</p>
+  were a local file.  Typical use involves setting breakpoints
+  in controller and view files, pressing Continue, and then
+  interacting with the app via a browser. The debugger should
+  kick in and stop at the set breakpoints.</p>
   <hr />
 
 </div> <!-- content -->
