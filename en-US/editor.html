@@ -1390,6 +1390,17 @@ object.method(value)<span class="cursor">|</span>
     backward or forward from the current line enter "+" or "-" in
     front of the number. For example, enter "+5" to move five lines
     ahead.</li>
+    
+    <li>You can also specify a column to go to, by putting ",", an
+    optional "+" or "-", followed by a column count, after the target
+    line number.  For example, "+5,-3" will move five lines ahead, and
+    then five columns to the right of the starting column.
+    </li>
+    
+    <li>If you leave the initial line number off, you can move by column
+    on the current line.  For example, ",+40" will move 40 columns to the
+    right on the current line.
+    </li>
 
     <li>Click <strong>Goto Line</strong> or press
     <strong>Enter</strong>.</li>
