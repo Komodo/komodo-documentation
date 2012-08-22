@@ -242,10 +242,11 @@ end
   normally slower than with a standalone ruby program.</p>
   
   <p><strong>Note:</strong> If your app has a Gemfile, make sure
-  that the Gemfile isn't loading the ruby_debug or ruby_debug19 gems
+  that the Gemfile isn't loading the <code>ruby-debug</code> or
+  <code>ruby-debug19</code> gems
   (these are both present but commented out by default when a new Rails app
-  is created). If the appropriate line is active (ruby_debug for Ruby 1.8,
-  ruby_debug19 for Ruby 1.9), there will be an error message referring
+  is created). If the appropriate line is active (<code>ruby-debug</code> for Ruby 1.8,
+  <code>ruby-debug19</code> for Ruby 1.9), there will be an error message referring
   to an "INTERNAL ERROR" where a null value was encountered.</p>
 
   <h3><a name="Local_Rails_Debugging" id=
