@@ -7,7 +7,7 @@ documentation for use by all Komodo apps and support for building the doc
 set and necessary pieces for displaying these docs in the app and online.
 
 Currently user documentation for a Komodo application (e.g. Komodo IDE,
-Komodo Edit, Komodo Snapdragon) is provided in two forms:
+Komodo Edit) is provided in two forms:
 
 - Viewable/browsable/searchable in the Mozilla Help viewer that is
   included in a Komodo build. This is the help window the user gets when
@@ -41,12 +41,11 @@ the Komodo docs. Typical Komodo app builds will use this source tree (and
 use the "mozhelp" build target, see below) but you can do a full Komodo
 doc build without bothering with a full Komodo tree.
 
-The komododoc project includes documentation for all apps built using
-the Open Komodo framework. Currently this includes Komodo Snapdragon
-(code name), Komodo IDE and Komodo Edit. Keeping docs for all Komodo apps
-in one repository will help ensure that all Komodo projects best benefit
-from shared work on their docs. Time spent on documenting software is
-precious -- we want to make sure it is best used.
+The komododoc project includes documentation for all apps built using the Open
+Komodo framework. Currently this includes Komodo IDE and Komodo Edit. Keeping
+docs for all Komodo apps in one repository will help ensure that all Komodo
+projects best benefit from shared work on their docs. Time spent on documenting
+software is precious -- we want to make sure it is best used.
 
 The build system here provides simple mechanisms for
 including/excluding/marking only those parts of the docs that are relevant
@@ -110,4 +109,3 @@ Contributing: Translations
 ==========================
 
 TODO
-
