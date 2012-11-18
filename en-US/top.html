@@ -13,187 +13,44 @@
   <div class="app-editonly">
     <h2 class="first"><a href="releases/ide.html#whatsnew">What's new in Komodo Edit</a></h2>
 
-    <h3 id="whatsnew-edit-7.1">7.1</h3>
+    <h3 id="whatsnew-edit-8.0">8.0</h3>
 
     <ul>
 
-      <li><p><strong><a href="editor.html#Variable_Highlighting">
-      Variable Highlighting</a></strong>:
-      Komodo will automatically highlight any variables you click on - and all
-      other occurrences of this variable will also be highlighted. This is
-      extremely useful in distinguishing where you have used a particular
-      variable.
+      <li><p><strong>Cocoa 64-bit</strong>: Komodo on the Mac is now a full Cocoa
+      64-bit application. It also has initial support for Mac OS X Retina
+      displays.
         </p>
       </li>
-
-      <li><p><strong><a href="extensions.html#language_extensions">
-      Komodo Language Extension</a></strong>:
-      You can easily add support for a new language to Komodo (or improve on an
-      existing one). Within minutes, you can have your favourite language being
-      supported by Komodo, with code coloring, commenting and code intelligence
-      features!
-        </p>
-      </li>
-
-      <li><p><strong>PHP 5.4 Support</strong>
-      PHP 5.4 support is included. Code Intelligence supports the new
-      language features like Traits.
-        </p>
-      </li>
-
-      <li><p><strong>Node.js 0.8 Support</strong>
-      Node 0.8 support is included. Code Intelligence now supports both
-      Node 0.8 and Node 0.6 versions.
-        </p>
-      </li>
-
-      <li><p><strong>Python 3.3 Support</strong>
-      Python 3.3 support is included. Code Intelligence was updated for
-      this version.
-        </p>
-      </li>
-
-      <li><p><strong>Perl 5.16 Support</strong>
-      Perl 5.16 support is included. Code Intelligence was updated for this
-      version.
-        </p>
-      </li>
-
-      <li><p><strong>Ruby 1.9.3 Support</strong>
-      Ruby 1.9.3 support is included. Code Intelligence now supports both
-      the Ruby 1.9.2 and Ruby 1.9.3 standard library.
-        </p>
-      </li>
-
-      <li><p><strong>New Languages</strong>
-        <ul>
-          <li><strong>Twig</strong> - PHP template language added (Symfony2)</li>
-        </ul>
-        </p>
-      </li>
-
-    </ul>
-    <p>(Read the full <a href="releases/ide.html">Release Notes</a>.)</p>
-
-    <h3 id="whatsnew-edit-7.0">7.0</h3>
-
-    <ul>
-
-      <li><p><strong><a href="debugnode.html">Node.js</a></strong>:
-      Komodo now provides excellent code intelligence for
-      Node, with  support for the core Node.js
-      libraries, as well support for the CommonJS module specification,
-      which is used in Node for requiring (importing) JavaScript
-      modules.
-      </p>
-      </li>
-
-      <li><p><strong><a href="editor.html#Linting">Syntax Checking</a></strong>:
-      Komodo's syntax checking feature has been greatly improved in Komodo 7.
-      We've added:
+  
+      <li><p><strong>Updated Platform</strong>: Komodo has received a number of
+      updates to it's underlying code base. Komodo now uses Mozilla 17, Python 2.7
+      and Scintilla 3.2.1, as well as other updated internal components. All of
+      this means:
         <ul>
           <li>
-        Multi-language syntax checking - you'll now see errors and warnings
-        for JavaScript and CSS sections in an HTML document
+        Better performance - with faster startup times as well as using less
+        CPU and memory resources
           </li>
           <li>
-        A syntax checking tab in the bottom pane - you can see those errors
-        and warnings all in one place
-          </li>
-          <li>
-        A wider range of syntax checkers to choose from - including JSLint for
-        JavaScript and PyLint for Python
-          </li>
-          <li>
-        The ability to enable or disable syntax checkers on a per-file or
-        per-language level
-          </li>
-          <li>
-        Preferences - complete customization of syntax checking parameters
-          </li>
-        </ul>
-        </p>
-      </li>
-    
-      <li><p><strong><a href="search.html#search_incr">Fast Find</a></strong>:
-      A new interactive Find widget has been added which will
-      speed up searching for text within documents. Using Ctrl+F
-      (Cmd+F) now brings up a small textbox at the bottom of the editor view where
-      you can type the text you wish to search for. The searching is done
-      incrementally as you type, so you'll see your matches instantly.
-        </p>
-      </li>
-
-      <li><p><strong><a href="workspace.html#moveable_widgets">Moveable Side Pane Widgets</a></strong>:
-      Any of Komodo's side pane widgets can now be moved to different
-      panes. Move the Code Browser to the right side instead of the left
-      or move the DB Explorer to the bottom. Just right-click on the
-      side-pane tab choose the pane you want to move it to.
-        </p>
-      </li>
-
-      <li><p><strong>Project Preferences</strong>: There are now a wider range of
-      preferences that can be set on a per-project basis, such as the language
-      interpreter preferences, project-wide indentation settings,
-      environment variables and syntax checking options.
-        </p>
-      </li>
-
-      <li><p><strong>Preference Searching</strong>: A new filter box
-      in the Preferences dialog helps you quickly find the setting
-      you are looking for.
-        </p>
-      </li>
-    
-      <li><p><strong>Komodo Color Schemes</strong>:
-      There are now a lot more dark based color schemes included in Komodo by
-      default. Most of these new schemes were contributed by existing users of
-      Komodo - if you have your own favourite color scheme you want included in
-      Komodo then please send it in.
-        </p>
-      </li>
-
-      <li><p><strong>Notifications Pane</strong>: The new Notifications
-      panel in the bottom pane tracks events occurring in Komodo.
-      Statusbar messages, SCC actions and other events can be expanded
-      for more detail, filtered and copied.
-        </p>
-      </li>
-    
-      <li><p><strong>Customizable Main Toolbar</strong>: It's now possible to
-      select the individual toolbar items you wish to be shown in the main
-      Komodo toolbar. Use <strong>View &gt; Toolbars &gt; Customize...</strong> 
-      to start your tweaking.</p>
-      </li>
-    
-      <li><p><strong>Updated Mozilla Code Base</strong>: Komodo is now on the
-      Mozilla 7 code base, which means:
-        <ul>
-          <li>
-        Faster startup - no component registration, so the first startup and
-        restarts after add-on installation will be substantially faster.
+        Better hardware support - by detecting and supporting modern computer systems
           </li>
           <li>
         A better browser preview - supporting the lastest and greatest web
         technologies
           </li>
-          <li>
-        Stability - improvements to the underlying Mozilla code will make
-        Komodo itself more stable
-          </li>
         </ul>
         </p>
       </li>
     
-      <li><p><strong>New Languages</strong>
+      <li><p><strong>New Language Support</strong>
         <ul>
-          <li>Mojolicious - a Perl templating language</li>
-          <li>CoffeeScript - a JavaScript templating language</li>
-          <li>LESS and SCSS - CSS extension languages</li>
-          <li>EJS - a JavaScript templating language</li>
+          <li>Laravel Blade - a PHP templating language</li>
+          <li>Sass Syntax Checking added</li>
         </ul>
         </p>
       </li>
+
     </ul>
     <p>(Read the full <a href="releases/ide.html">Release Notes</a>.)</p>
 
@@ -202,250 +59,44 @@
   <div class="app-ideonly">
     <h2 class="first"><a href="releases/ide.html#whatsnew">What's new in Komodo IDE</a></h2>
 
-    <h3 id="whatsnew-ide-7.1">7.1</h3>
+    <h3 id="whatsnew-ide-8.0">8.0</h3>
 
     <ul>
 
-      <li><p><strong><a href="editor.html#Variable_Highlighting">
-      Variable Highlighting</a></strong>:
-      Komodo will automatically highlight any variables you click on - and all
-      other occurrences of this variable will also be highlighted. This is
-      extremely useful in distinguishing where you have used a particular
-      variable.
+      <li><p><strong>Cocoa 64-bit</strong>: Komodo on the Mac is now a full Cocoa
+      64-bit application. It also has initial support for Mac OS X Retina
+      displays.
         </p>
       </li>
-
-      <li><p><strong><a href="scc.html#push_dialog">SCC Push</a></strong>:
-      Komodo now has an interface to push changes for Distributed Source Code
-      Control systems like Git, Mercurial and Bazaar. You can customize where
-      to push to, as well as controlling the targeted branch or tag.
-        </p>
-      </li>
-
-      <li><p><strong><a href="stackato.html#debugging_applications">
-      Stackato Debugging</a></strong>:
-      You can now debug applications that are running in a Stackato Micro Cloud
-      instance... sweet - debug the cloud!
-        </p>
-      </li>
-
-      <li><p><strong><a href="extensions.html#language_extensions">
-      Komodo Language Extension</a></strong>:
-      You can easily add support for a new language to Komodo (or improve on an
-      existing one). Within minutes, you can have your favourite language being
-      supported by Komodo, with code coloring, commenting and code intelligence
-      features!
-        </p>
-      </li>
-
-      <li><p><strong>PHP 5.4 Support</strong>
-      Full PHP 5.4 support is included. Debugging (Xdebug) has been updated and
-      Code Intelligence supports the new language features like Traits.
-        </p>
-      </li>
-
-      <li><p><strong>Node.js 0.8 Support</strong>
-      Full Node 0.8 support is included. Debugging was updated and Code
-      Intelligence now supports both Node 0.8 and Node 0.6 versions.
-        </p>
-      </li>
-
-      <li><p><strong>Python 3.3 Support</strong>
-      Full Python 3.3 support is included. Debugging and Code Intelligence
-      were updated for this version.
-        </p>
-      </li>
-
-      <li><p><strong>Perl 5.16 Support</strong>
-      Full Perl 5.16 support is included. Debugging and Code Intelligence
-      were updated for this version.
-        </p>
-      </li>
-
-      <li><p><strong>Ruby 1.9.3 Support</strong>
-      Full Ruby 1.9.3 support is included. Debugging (ruby-debug-base) has been
-      updated and Code Intelligence supports both the 1.9.2 and 1.9.3 standard
-      library.
-        </p>
-      </li>
-
-      <li><p><strong>New Languages</strong>
-        <ul>
-          <li><strong>Twig</strong> - PHP template language added (Symfony2)</li>
-        </ul>
-        </p>
-      </li>
-
-    </ul>
-    <p>(Read the full <a href="releases/ide.html">Release Notes</a>.)</p>
-
-    <h3 id="whatsnew-ide-7.0">7.0</h3>
-
-    <ul>
-
-      <li><p><strong><a href="sync.html">Komodo Synchronization</a></strong>:
-      Synchronize your Komodo settings between multiple machines. Changes made
-      to the toolbox, remote server accounts or template files can be kept current
-      on all of your machines.
-        </p>
-      </li>
-    
-      <li><p><strong><a href="collab.html">Code Collaboration</a></strong>: Two or more
-      people can work on the same document in real time. Changes made each
-      individual user will be propagated to all other collaborators.
-        </p>
-      </li>
-    
-      <li><p><strong><a href="debugnode.html">Node.js</a></strong>:
-      Komodo now provides excellent code intelligence and debugging sup/port for
-      Node. Komodo's debugger can connect and interact with the Node V8 runtime,
-      to show variables, set breakpoints, modify objects or view the
-      call stack. Code intelligence provides support for the core Node.js
-      libraries, as well support for the CommonJS module specification,
-      which is used in Node for requiring (importing) JavaScript
-      modules.
-      </p>
-      </li>
-
-      <li><p><strong><a href="profiling.html">Code Profiling</a></strong>:
-      Easily examine Python and PHP applications to see where the
-      hotspots are. Supports the Cachegrind/Callgrind specification, so
-      you can open up generic cachegrind profile files and view them
-      with Komodo's code profiler interface.
-        </p>
-      </li>
-
-      <li><p><strong><a href="editor.html#Linting">Syntax Checking</a></strong>:
-      Komodo's syntax checking feature has been greatly improved in Komodo 7.
-      We've added:
+  
+      <li><p><strong>Updated Platform</strong>: Komodo has received a number of
+      updates to it's underlying code base. Komodo now uses Mozilla 17, Python 2.7
+      and Scintilla 3.2.1, as well as other updated internal components. All of
+      this means:
         <ul>
           <li>
-        Multi-language syntax checking - you'll now see errors and warnings
-        for JavaScript and CSS sections in an HTML document
+        Better performance - with faster startup times as well as using less
+        CPU and memory resources
           </li>
           <li>
-        A syntax checking tab in the bottom pane - you can see those errors
-        and warnings all in one place
-          </li>
-          <li>
-        A wider range of syntax checkers to choose from - including JSLint for
-        JavaScript and PyLint for Python
-          </li>
-          <li>
-        The ability to enable or disable syntax checkers on a per-file or
-        per-language level
-          </li>
-          <li>
-        Preferences - complete customization of syntax checking parameters
-          </li>
-        </ul>
-        </p>
-      </li>
-    
-      <li><p><strong><a href="stackato.html">Stackato
-      Integration</a></strong>: <a
-      href="http://activestate.com/cloud">Stackato</a> is ActiveState's
-      cloud hosting platform. Komodo provides tools that allow you
-      to easily develop, configure, deploy and manage applications on
-      Stackato. Use <strong>Tools &gt; Stackato</strong> to launch the
-      interface.
-        </p>
-      </li>
-
-      <li><p><strong><a href="search.html#search_incr">Fast Find</a></strong>:
-      A new interactive Find widget has been added which will
-      speed up searching for text within documents. Using Ctrl+F
-      (Cmd+F) now brings up a small textbox at the bottom of the editor view where
-      you can type the text you wish to search for. The searching is done
-      incrementally as you type, so you'll see your matches instantly.
-        </p>
-      </li>
-
-      <li><p><strong><a href="workspace.html#moveable_widgets">Moveable Side Pane Widgets</a></strong>:
-      Any of Komodo's side pane widgets can now be moved to different
-      panes. Move the Code Browser to the right side instead of the left
-      or move the DB Explorer to the bottom. Just right-click on the
-      side-pane tab choose the pane you want to move it to.
-        </p>
-      </li>
-
-      <li><p><strong><a href="codeintel.html#codeintel_codebrowser">Better Code Browsing</a></strong>:
-      The Code Browser can now be automatically synced with your current
-      editor position, updating it's context as you move around in the
-      file. A new preference setting allows you to toggle single or
-      multi-file views.
-        </p>
-      </li>
-
-      <li><p><strong>Project Preferences</strong>: There are now a wider range of
-      preferences that can be set on a per-project basis, such as the language
-      interpreter preferences, project-wide indentation settings,
-      environment variables and syntax checking options.
-        </p>
-      </li>
-
-      <li><p><strong>Preference Searching</strong>: A new filter box
-      in the Preferences dialog helps you quickly find the setting
-      you are looking for.
-        </p>
-      </li>
-    
-      <li><p><strong>Debugger - Highlight Changed Variables</strong>:
-      Variables are now highlighted in the Debugger tab when they change,
-      so as you step through your code, you can now spot the changes
-      more easily.
-        </p>
-      </li>
-
-      <li><p><strong>Komodo Color Schemes</strong>:
-      There are now a lot more dark based color schemes included in Komodo by
-      default. Most of these new schemes were contributed by existing users of
-      Komodo - if you have your own favourite color scheme you want included in
-      Komodo then please send it in.
-        </p>
-      </li>
-
-      <li><p><strong>Notifications Pane</strong>: The new Notifications
-      panel in the bottom pane tracks events occurring in Komodo.
-      Statusbar messages, SCC actions and other events can be expanded
-      for more detail, filtered and copied.
-        </p>
-      </li>
-    
-      <li><p><strong>Customizable Main Toolbar</strong>: It's now possible to
-      select the individual toolbar items you wish to be shown in the main
-      Komodo toolbar. Use <strong>View &gt; Toolbars &gt; Customize...</strong> 
-      to start your tweaking.</p>
-      </li>
-    
-      <li><p><strong>Updated Mozilla Code Base</strong>: Komodo is now on the
-      Mozilla 7 code base, which means:
-        <ul>
-          <li>
-        Faster startup - no component registration, so the first startup and
-        restarts after add-on installation will be substantially faster.
+        Better hardware support - by detecting and supporting modern computer systems
           </li>
           <li>
         A better browser preview - supporting the lastest and greatest web
         technologies
           </li>
-          <li>
-        Stability - improvements to the underlying Mozilla code will make
-        Komodo itself more stable
-          </li>
         </ul>
         </p>
       </li>
-    
-      <li><p><strong>New Languages</strong>
+
+      <li><p><strong>New Language Support</strong>
         <ul>
-          <li>Mojolicious - a Perl templating language</li>
-          <li>CoffeeScript - a JavaScript templating language</li>
-          <li>LESS and SCSS - CSS extension languages</li>
-          <li>EJS - a JavaScript templating language</li>
+          <li>Laravel Blade - a PHP templating language</li>
+          <li>Sass Syntax Checking added</li>
         </ul>
         </p>
       </li>
+
     </ul>
 
     <p>(Read the full <a href="releases/ide.html">Release Notes</a>.)</p>
