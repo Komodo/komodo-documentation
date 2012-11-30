@@ -160,7 +160,38 @@
       insensitive search; strings will match even if the case is
       different (e.g. "mystring" will match "myString").</li>
       <li><strong>Smart case</strong> (selected): Search strings
-      containing capital letters are automatically case sensitive.</li>
+      containing capital letters are automatically case sensitive. When doing
+      "Smart case" replacements, the case of the replaced strings will follow the
+      case of the matched text if the following conditions hold:
+      <ul>
+        <li>The "Regex" option is unchecked</li>
+        <li>The search-pattern is all lower-case</li>
+        <li>If the found text is all upper-case, the matched text is
+        upper-cased</li>
+        <li>If the found text starts with an upper-case character, the first
+        character of the matched text is upper-cased, but the rest of the text
+        is left as is</li>
+      </ul>
+      <p>For example, a smart-case replacement of "cat" to "dog" in the text
+      would work like the following:</p>
+      <table><tbody><tr>
+      <td>
+        cool cat<br/>
+        fat CAT<br/>
+        Top Cat
+      </td>
+      <td><br/>&#8594;</td>
+      <td>
+        cool dog<br/>
+        fat DOG<br/>
+        Top Dog
+      </td>
+      </tr></tbody></table>
+      <p>For those writing macros, you would set
+      <code>koIFindOptions.patternType</code> to
+      <code>koIFindOptions.FOT_SIMPLE</code> and
+      <code>koIFindOptions.caseSensitivity</code> to
+      <code>koIFindOptions.FOC_SMART</code></p></li>
     </ul>
 
   <h3><a name="search_word" id="search_word"></a>Match Whole Words</h3>
