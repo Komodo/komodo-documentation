@@ -334,6 +334,41 @@
 [[%(ask:Your Name:Trent Mick)       ]]
 [[  %(ask:Your Name:Trent Mick)   ]]
 </pre>
+  
+  <p>There are also two shortcuts that are available only in the bracketed
+  form:</p>
+  
+  
+  <table border="1" cellpadding="5">
+    <tr>
+      <td><b>Shortcut</b></td>
+
+      <td><b>Syntax</b></td>
+
+      <td><b>Description</b></td>
+    </tr>
+
+    <tr>
+      <td>tabstop</td>
+      <td>[[%tabstop&lt;number&gt;:&lt;default&gt;]]</td>
+      <td>Insert linked tabstop placeholders in the document. All tabstops with
+      the same number update simultaneously. Tabstop0 is the last position
+      pressing tab moves to. Both the &lt;number&gt; and &lt;default&gt; are
+      optional.</td>
+    </tr>
+    <tr>
+      <td>soft</td>
+      <td>[[%soft:&lt;characters&gt;]]</td>
+      <td>The specified characters are inserted as "soft" characters, meaning
+      that if the user types a soft character when it's at the cursor position,
+      the effect is the same as pressing the right-arrow key.</td>
+    </tr>
+  </table>
+  
+  <p>There are no escape characters in shortcuts. The shortcut
+  <code>[[%soft:]]]</code> will insert a soft "]", you can use. But to insert two
+  square brackets
+  ("]]"), two shortcuts are needed: <code>[[%soft:]]][[%soft:]]]</code>.</p>
 
   <h2><a name="options" id="options">Basic Interpolation 
   Options</a></h2>
