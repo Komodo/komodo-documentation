@@ -38,12 +38,11 @@
   and <a href=
   "shortcuts.html#shortcuts_top">Interpolation
   Shortcuts</a>, can be assigned to <a href=
-  "prefs.html#Config_Key_Bindings">Key Bindings</a>, and
-  allow for the specification of indentation context and cursor
+  "prefs.html#Config_Key_Bindings">Key Bindings</a> and associated with
+  abbreviations, and allow for the specification of indentation context and cursor
   position.</p>
 
-  <p>Snippets are stored in the <a href=
-  "project.html#project_top">Projects sidebar</a> or the
+  <p>Snippets are stored in the
   <a href="toolbox.html#toolbox_top">Toolbox</a>.</p>
 
   <h2><a name="snippets_creating" id="snippets_creating">Creating
@@ -51,15 +50,12 @@
 
   <p>To create a code snippet, select the desired block of text in
   the Editor Pane. Then drag and drop the selected section onto the
-  <a href="toolbox.html#toolbox_top">Toolbox</a> tab or
-  into a project on the <a href=
-  "project.html#project_top">Projects</a> tab.</p>
+  <a href="toolbox.html#toolbox_top">Toolbox</a> tab.</p>
 
   <p>Alternatively, select the desired text, then right-click and
   select <strong>Add as Snippet in the Toolbox</strong>.</p>
 
-  <p>Alternatively, right-click a folder in the Toolbox or on a
-  project or folder name in the <strong>Projects</strong> sidebar, and
+  <p>Alternatively, right-click a folder in the Toolbox, and
   select <strong>New Snippet</strong>. If you use this method, you
   must manually enter the contents of the snippet; text selected in
   the Editor Pane is not automatically added to the Snippet dialog
@@ -70,15 +66,13 @@
 
   <p>To configure snippet properties, right-click the snippet on
   either the <a class="doc" href=
-  "toolbox.html#toolbox_top">Toolbox</a> tab or the
-  <a class="doc" href=
-  "project.html#project_top">Projects</a> tab, and
+  "toolbox.html#toolbox_top">Toolbox</a> tab, and
   select <strong>Properties</strong>. The following configuration
   properties are available:</p>
 
   <ul>
     <li><strong>Snippet Name</strong>: Enter the text that should
-    display in the Projects or Toolbox sidebars for this code snippet.
+    display in the Toolbox for this code snippet.
     If the snippet was created by dragging a text selection from
     the Editor Pane, the snippet is named after the text in the
     snippet.</li>
@@ -87,7 +81,9 @@
     created by dragging a text selection from the Editor Pane, the
     contents of the selected text are displayed in the Snippet
     Contents field. Otherwise, enter the contents of the snippet
-    manually. Add or edit snippet content as desired.</li>
+    manually. Add or edit snippet content as desired.<p>Snippet contents can
+    also be edited in the standard Komodo editor by right-clicking on a snippet
+    and choosing the <code>Edit Snippet</code> menu item.</p></li>
 
     <li><strong>Snippet Shortcuts</strong>: Add <a class="doc"
     href="shortcuts.html#shortcuts_top">Interpolation
@@ -113,7 +109,121 @@
     this check box to use the indentation point as an indentation
     "prefix". The indentation structure of the snippet is preserved
     at the position of insertion.</li>
+    
+    <li><strong>Auto-Abbreviation</strong>: Check this if the snippet can be
+    inserted immediately after the name of the snippet is typed, followed by a
+    recognized trigger character (see <a
+    href="#snippets_auto_abbreviations">blahAuto-Abbreviations</a> for more
+    details).
   </ul>
+  
+  <h3><a name="conditional_snippets" id="conditional_snippets">Conditional
+  Snippets</h3>
+  
+  <p>Komodo supports the use of EJS (Embedded JavaScript) syntax to add a
+  further dynamic dimension to snippets, beyond those offered by the supplied
+  <a href= "shortcuts.html#shortcuts_top">Interpolation Shortcuts</a>. EJS is
+  similar to other template languages like PHP or RHTML, combining controlling
+  code (e.g. "if" tests), dynamic code (results of JavaScript expressions that
+  get inserted into the snippet), as well as the static part of the snippet.</p>
+  
+  <p>EJS syntax is very simple: Anything between "&lt;%" and "%&gt;" is
+  control code, to be evaluated to determine which code of a snippet is finally
+  inserted. Anything between "&lt;%=" and "%&gt;" is evaluated and inserted into
+  the snippet. If the EJS pass over a snippet throws an exception, either due to
+  a JavaScript syntax-error or having JS code deliberately throw an exception,
+  snippet insertion stops.</p>
+  
+  <p>This simple example might suffice. Suppose you want a snippet to insert
+  the current month (by 0-based number) if the current second is odd,
+  and the current date if it's even. Here's what the snippet would look
+  like:</p>
+  
+  <pre>
+Current date part: &lt;% var m = new Date();
+if (m.getSeconds() % 2) { /* It's odd */ %>
+Month: &lt;%= m.getMonth() %>
+&lt;% } else { %>
+Date: &lt;%= m.getDate() %>
+&lt;% } %>  </pre>
+  
+  <p>The first block of JavaScript declares the <code>m</code> variable, sets it
+  to the current date, and also tests to see if the current second count is
+  even. The second JS block inserts the date object's month into the text flow.
+  The third JS block starts the 'else' part. The fourth inserts the date
+  object's date. And the final JS block just ends the if-else block. You can
+  even have loops inside snippets, not just if-blocks.</p>
+  
+  <p>This feature makes snippets more "macro-like". But note that while you
+  could implement this snippet with a macro, the main difference between
+  snippets with EJS, and macros, is that with snippets there's no need to work
+  with the editor object, views, current positions, and
+  selections: snippets handle all that processing automatically.</p>
+  
+  <p>Conditional snippets are pickier about white-space than other template
+  languages that generate HTML, mainly because most such generated white-space
+  in HTML doesn't get rendered. But because here the snippets are generating
+  text for your editor, you might find extra whitespace in the expansion. Note
+  as well that it's better to use "/* ... */" comments in the JavaScript code,
+  because the evaluator does modify newlines, meaning that a comment might not
+  end where you think it should.</p>
+  
+  <h3><a name="snippet_helper_library" id="snippet_helper_library">Snippet
+  Helper Functions</h3>
+  <p>While rewriting some of the language service code as dynamic snippets, we
+  found we were using some code repeatedly. This code was refactored into
+  functions added to the <code>ko.snippets</code> namespace. These currently
+  include the following functions:</p>
+  
+  <dl>
+    <dt><code>RejectedSnippet(message, ex=null)</code></dt>
+    <dd>If a snippet throws an instance of
+    <code>ko.snippets.RejectedSnippet</code>, this signals to the code that the
+    EJS code deliberately suppressed inserting this snippet (see <a
+    href="#new_snippets">New Snippets</a> for an example).</dd>
+    
+    <dt><code>ko.snippets.rightOfFirstRubyKeyword()</code></dt>
+    <dd>In Ruby, keywords like "if" can start a block when they start an
+    expression, but not when used after an expression. This boolean
+    function makes that check.</dd>
+    
+    <dt><code>ko.snippets.inPythonClass()</code></dt>
+    <dd>This function returns true if we're currently defining a class in Python
+    code.
+    </dd>
+  </dl>
+  
+  <p>This list is expected to expand with time, or even get merged with other
+  high-level APIs. You can easily add more code to this namespace with a
+  startup-trigger macro (or less easily, by writing an extension).
+  
+  <h3><a name="linting_snippets" id="linting_snippets">Syntax-Checking
+  Snippets</h3>
+  
+  <p>Now that snippets can include code, it's natural to ask if Komodo can do
+  syntax-checking on snippets. The answer, of course, is "yes". When a snippet's
+  contents are edited in a regular window, Komodo assigns the snippet to the
+  "Komodo Snippet" language. This language colors the EJS and JavaScript parts
+  appropriately, treating the rest as plain text. And it looks for missing
+  "%&gt;" tag (EJS allows and ignores "%&gt;" sequences that don't occur after
+  a "&lt;%" tag, and similarly ignores any "&lt;%" sequences that occur after
+  a "&lt;%" tag but before a closing "%&gt;" tag.</p>
+  
+  <p>Any file ending with ".snippet" will also be treated as an instance of the
+  "Komodo Snippet" language by default.</p>
+  
+  <h3><a name="new_snippets" id="new_snippets">New Snippets</h3>
+  
+  <p>Many of the language folders in the <code>Abbreviations</code> folder in
+  the toolbox now have a folder called "keywords". Much of the smart processing
+  on those keywords has been moved from the language-service files written in
+  Python into these snippets. For example, all of the structural Ruby keywords
+  now have associated snippets in
+  <code>Samples/Abbreviations/Ruby/keywords</code>, and are set to be
+  auto-abbreviation, meaning they will be automatically triggered after their
+  name is typed in appropriate contexts (so no expansion occurs when, for
+  example, "if" is typed in a string or comment). These keywords are also a good
+  resource, to see how to write dynamic snippets by example.</p>
 
   <h2><a name="snippets_using" id="snippets_using">Using
   Snippets</a></h2>
@@ -131,11 +241,29 @@
   
   <h3><a name="snippets_abbreviations">Abbreviations</a></h3>
   
-  <p>Snippets saved in a toolbox or project folder called
+  <p>Snippets saved in a toolbox folder called
   "Abbreviations" (or a language-specific sub-directory) can be inserted
   by typing the snippet name in the buffer. See <a
   href="abbreviations.html">Abbreviations</a>.</p>
 
+  <h3><a name="snippets_auto_abbreviations">Auto-Abbreviations</a></h3>
+  <p>If a snippet is marked as an "Auto Abbreviation", then any occurrence of
+  its name will automatically be expanded after the name is followed by a valid
+  trigger character.</p>
+  
+  <p>The trigger characters are defined in <code>Preferences / Editor / Smart
+  Editing/ Auto-Abbreviations</code>. Use the standard JavaScript "\" escaping
+  to describe tabs, newlines and carriage returns (both work the same), and any
+  non-printable characters using standard "\x" and "\u" notation. Note that
+  auto-abbreviation can be controlled globally or per-snippet.</p>
+  
+  <h3><a name="abbreviation_case">Abbreviations and Case</a></h3>
+  <p>Auto-abbreviations much match the case of the snippet's name. Komodo
+  currently will ignore case when matching snippets during explicit abbreviation
+  expansion (invoked by default by the Ctrl-T sequence), but will favor matching
+  a snippet where the case does match over one where the match occurs only when
+  case is ignored.
+  
   <h2><a name="snippets_options" id="snippets_options">Snippet
   Options</a></h2>
 
@@ -151,7 +279,7 @@
     Snippets</a>.</li>
 
     <li><strong>Cut/Copy/Paste</strong>: Used to duplicate or move a
-    snippet when dragging is not convenient (e.g. to a project which is
+    snippet when dragging is not convenient (e.g. to a folder which is
     currently closed).</li>
 
     <li><strong>Show in File Manager</strong>: Shows the JSON file for
@@ -187,10 +315,9 @@
   <p>To assign a custom icon to a snippet:</p>
 
   <ol>
-    <li>In the Projects or Toolbox sidebar, right-click the desired
+    <li>In the Toolbox sidebar, right-click the desired
     snippet and select <strong>Properties</strong>. Alternatively,
-    click the icon in the Projects or Toolbox sidebar, then select
-    <strong>Projects|<em>snippet_name</em>|Properties</strong> or
+    click the icon in the Toolbox sidebar, then select
     <strong>Toolbox<em>snippet_name</em>|Properties</strong>.</li>
 
     <li>In the Properties dialog box, click <strong>Change
@@ -208,7 +335,7 @@
   <p>To revert to the default icon for a selected snippet:</p>
 
   <ol>
-    <li>In the Projects or Toolbox sidebar, right-click the desired
+    <li>In the Toolbox sidebar, right-click the desired
     snippet and select <strong>Properties</strong>.</li>
 
     <li>Click <strong>Reset</strong>, then click
