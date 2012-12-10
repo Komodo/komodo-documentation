@@ -166,7 +166,8 @@ Date: &lt;%= m.getDate() %>
   text for your editor, you might find extra whitespace in the expansion. Note
   as well that it's better to use "/* ... */" comments in the JavaScript code,
   because the evaluator does modify newlines, meaning that a comment might not
-  end where you think it should.</p>
+  end where you think it should. This is no different from how slash-star
+  comments are preferred in handler attribute values in HTML.</p>
   
   <h3><a name="snippet_helper_library" id="snippet_helper_library">Snippet
   Helper Functions</h3>
@@ -255,7 +256,10 @@ Date: &lt;%= m.getDate() %>
   Editing/ Auto-Abbreviations</code>. Use the standard JavaScript "\" escaping
   to describe tabs, newlines and carriage returns (both work the same), and any
   non-printable characters using standard "\x" and "\u" notation. Note that
-  auto-abbreviation can be controlled globally or per-snippet.</p>
+  auto-abbreviation can be controlled globally or per-snippet. Also, it's
+  usually convenient to include Space as a trigger character, but this isn't
+  always desired. Pressing
+  Shift-Space after an abbreviation suppresses its expansion.</p>
   
   <h3><a name="abbreviation_case">Abbreviations and Case</a></h3>
   <p>Auto-abbreviations much match the case of the snippet's name. Komodo
