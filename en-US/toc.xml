@@ -297,6 +297,7 @@
   <node name="Configuring Snippets" link="snippets.html#snippets_config"/>
   <node name="Using Snippets" link="snippets.html#snippets_using">
     <node name="Snippet Abbreviations" link="snippets.html#snippets_abbreviations"/>
+    <node name="Auto Abbreviations" link="snippets.html#snippets_auto_abbreviations"/>
   </node>
   <node name="Snippet Options" link="snippets.html#snippets_options">
     <node name="Snippet Properties" link="snippets.html#snippets_properties">
