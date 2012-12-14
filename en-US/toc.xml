@@ -299,6 +299,7 @@
     <node name="Snippet Abbreviations" link="snippets.html#snippets_abbreviations"/>
     <node name="Auto Abbreviations" link="snippets.html#snippets_auto_abbreviations"/>
   </node>
+  <node name="Conditional Snippets" link="snippets.html#conditional_snippets"/>
   <node name="Snippet Options" link="snippets.html#snippets_options">
     <node name="Snippet Properties" link="snippets.html#snippets_properties">
       <node name="Assigning Custom Icons to Snippets" link="snippets.html#snippets_Cust_Icons"/>
