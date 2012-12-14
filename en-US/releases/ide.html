@@ -25,6 +25,41 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
   <ul>
 
+    <li><p><strong>User Interface Styling</strong>: We've starting revamping the
+    Komodo user interface, you'll notice the toolbars, statusbars and side panes
+    have all been tweaked, and we'll continue to improve and modify the styling
+    throughout the Komodo 8 release series.
+      </p>
+    </li>
+
+    <li><p><strong><a href="../workspace.html#moveable_widgets">
+    Floating Side Panes</a></strong>: You now get the ability to detach
+    individual side pane tabs (Places, Code Browser, Debug, Find Results,
+    Breakpoints, etc...) into their own separate window, so you can now put
+    your debugging pane on a completely separate monitor screen (if your lucky
+    enough to have multiple monitors). Just use the mouse and right-click on
+    the tab/icon you wish to move and you'll get the appropriate context menu.
+      </p>
+    </li>
+
+    <li><p><strong><a href="../snippets.html#snippets_auto_abbreviations">
+    Auto Abbreviation Snippets</a></strong>: Komodo now provides automatic
+    triggering for a selected group of toolbox abbreviations (snippets). This
+    makes developing code faster, smarter and easier, with the user in complete
+    control of the content being inserted!
+      </p>
+    </li>
+
+    <li><p><strong><a href="../snippets.html#conditional_snippets">
+    Conditional Snippets</a></strong>: It's now possible to use JavaScript code
+    within a snippet, so you can programatically determine the snippet contents
+    at runtime. Komodo allows the use of Embedded JavaScript (EJS) inside of the
+    snippet text, which will be dynamically executed inside of Komodo's
+    JavaScript environment, and as such it has full access to the Komodo
+    JavaScript API.
+      </p>
+    </li>
+
     <li><p><strong>Cocoa 64-bit</strong>: Komodo on the Mac is now a full Cocoa
     64-bit application. It also has initial support for Mac OS X Retina
     displays.
@@ -66,6 +101,27 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-8.0.0a2">8.0.0a2 Bug Fixes</h3>
+<ul>
+  <li>Add 64-bit binaries for Ruby debugging on OSX. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96333">96333</a>)</li>
+  <li>Collaboration: Get it working on OSX again. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96223">96223</a>)</li>
+  <li>Command Output: Hide the unused left margin. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96314">96314</a>)</li>
+  <li>File Save: When stripping white-space of changed lines only, don't remove trailing newlines. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96101">96101</a>)</li>
+  <li>Editor: Linux: Stop special codes being inserted from Click+Ctrl events. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96299">96299</a>)</li>
+  <li>Editor: Mac: Ensure the vertical scrollbar behaves correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96347">96347</a>)</li>
+  <li>Languages: Twig: Add icon for the Twig language. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96214">96214</a>)</li>
+  <li>License: Ensure Komodo IDE alphas don't require an existing license. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96315">96315</a>)</li>
+  <li>Remote Files: When detecting changed files, be sure to persist the value after the dialog is shown. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95690">95690</a>)</li>
+  <li>Sections List: Use a wider popup results panel. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96297">96297</a>)</li>
+  <li>Source Code Control: Subversion: Show correct status inside symlinked directories. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96306">96306</a>)</li>
+  <li>Statusbar: Column numbers should start at 1. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96309">96309</a>)</li>
+  <li>Syntax Checking: Perl: Ensure non-ascii file paths work. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96303">96303</a>)</li>
+  <li>Syntax Checking: Perl: Allow specification of a .perlcriticrc file per file, project, or globally, similar to pylintrc. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96168">96168</a>)</li>
+  <li>Toolbox: Support editing and linting snippets in a regular editor view (same as macros). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96375">96375</a>)</li>
+  <li>Startup: Environment: Unset environment variables that could conflict with external applications. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96291">96291</a>)</li>
+</ul>
+
+
 <h3 id="bug_fixes-8.0.0a1">8.0.0a1 Bug Fixes</h3>
 <ul>
   <li>Browser Preview: Added a command to reload the browser preview. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95303">95303</a>)</li>
@@ -95,6 +151,7 @@ Stackato and the Sections List only apply to Komodo IDE only.</p>
   <li>Syntax Checking: PHP: Give better error messsages (and not too many) if Komodo can't find a PHP interpreter. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=46141">46141</a>)</li>
   <li>Syntax Checking: Rails: Support for the ERB variant. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95364">95364</a>)</li>
   <li>Syntax Checking: SCSS: When possible use the scss interpreter to syntax-check SCSS files, and fallback on the (limited) builtin checker supplied by Komodo to do basic SCSS checking. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=94285">94285</a>)</li>
+  <li>Toolbox: Add softchar shortcuts to snippets. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96399">96399</a>)</li>
 </ul>
 
 
