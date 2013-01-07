@@ -241,8 +241,8 @@
 
     <li style="list-style: none">
       <ul>
-        <li><strong><code>os</code></strong>: operating system
-        dependant helper routines</li>
+        <li><strong><code>os</code></strong>: operating system-
+        dependent helper routines</li>
 
         <li><strong><code>sys</code></strong>: functions for
         interacting with the Python interpreter</li>
@@ -664,26 +664,45 @@ filename -&gt; content type (i.e. "Makefile", a Makefile)
 
   <h3><a name="pythontut_run_command" id=
   "pythontut_run_command">Using a Run Command</a></h3>
-
-  <p>To start, generate simple output by running the program with
-  the <em>preprocess current file</em> run command, included in the
-  <em>python_tutorial</em> project toolbox.</p>
-
+  
+  <p>In this section you'll create a simple run command for
+  running the <em>preprocess.py</em> file.</p>
+  <!-- Implementation note: we used to include this run-command with
+  the tutorial project, but EP never persuaded cons to include
+  dot-directories, so it's just easier to have the diligent
+  tutorial-follower create the command.
+  -->
+  
   <ol>
     <li><strong>Open the Source File</strong>: In the
-    <strong>Projects</strong> sidebar, double-click the
+    <strong>Places</strong> sidebar, double-click the
     <strong>helloworld.html</strong> file. The file opens in the
     Editor Pane.</li>
 
     <li><strong>Run Command</strong>: In the
-    <strong>Toolbox</strong> sidebar under the
-    <strong>python_tutorial</strong> toolbox, double-click the
+    <strong>Toolbox</strong> sidebar, right-click on the
+    <strong>python_tutorial</strong> toolbox, click the <em>Add</em>
+    menu item, and then click the <em>Add New Command...</em>
+    menu item.
+    </li>
+    <li>Give the command a meaningful name by replacing the default
+    string <em>New Command</em> with <em>Preprocess Current File</em>.
+    </li>
+    <li>Set the command to <em>%(python) preprocess.py %(ask:Preprocessor Options:) "%F"</em>
+    </li>
+    <li>Set the <em>Start in:</em> field to <em>%(D:else)</em>.
+    </li>
+    <li>Leave the <em>Run in:</em> field to the default <em>Command Output Tab</em>
+    </li>
+    <li>Press <em>OK</em>. You should have a new <em>Run Command</em> entry
+    in the <em>python_tutorial</em> toolbox.</li>
+    <li>Double-click the
     <strong>preprocess current file</strong> command. A
     Preprocess Current File dialog box appears.</li>
 
-    <li><strong>Preprocess Current File</strong>: In the
+    <li>In the
     <strong>Preprocessor Options</strong> text area, enter:<br />
-    <code>-D SAY_BYE</code><br />
+    <code>-D SAY_BYE=1</code><br />
     Click <strong>OK</strong> to run the program.</li>
 
     <li><strong>View Output</strong>: The <em>helloworld.html</em>
@@ -695,6 +714,7 @@ filename -&gt; content type (i.e. "Makefile", a Makefile)
     &lt;/head&gt;<br />
     &lt;body&gt;<br />
     &lt;p&gt;Hello, World!&lt;/p&gt;<br />
+    &lt;p&gt;Bye!&lt;/p&gt;<br />
     &lt;/body&gt;<br />
     &lt;/html&gt;<br /></code></li>
   </ol>
@@ -713,7 +733,7 @@ filename -&gt; content type (i.e. "Makefile", a Makefile)
   <table align="center">
     <tr>
       <td class="startupBox">
-        <p><strong>Komodo Tip</strong>: For more infomation on
+        <p><strong>Komodo Tip</strong>: For more information on
         using run commands in Komodo, see the <a class="doc" href=
         "runcmdtut.html#runcmdtut_top">Run Command
         Tutorial</a>.</p>
@@ -1004,7 +1024,7 @@ defined, use '-D' option"
     This output changes as new lines are displayed.</li>
 
     <li><strong>Disable and Delete a breakpoint</strong>: Click on
-    the red breakpoint at line 197. The red beakpoint is now white
+    the red breakpoint at line 197. The red breakpoint is now white
     with a red outline. This breakpoint is now disabled. Click on
     the disabled white breakpoint. This removes the breakpoint, but
     does not stop the debugger.</li>
@@ -1052,7 +1072,7 @@ defined, use '-D' option"
     Python prompt in the interactive shell, enter: <code>import
     contenttype</code><br />
     Notice that another "&gt;&gt;&gt;" Python prompt appears after
-    the import statment. This indicates that the
+    the import statement. This indicates that the
     <code>contenttype</code> module imported successfully.</li>
 
     <li><strong>Get Help for a Module</strong>: At the prompt,
