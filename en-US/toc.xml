@@ -265,6 +265,7 @@
     <node name="Changing the Font Size" link="editor.html#font_size"/>
     <node name="Toggling Font Width" link="editor.html#Toggling_Font_Width"/>
     <node name="Code Folding" link="editor.html#Folding"/>
+    <node name="Minimap" link="editor.html#Minimap"/>
   </node>
   <node name="Navigating Within Files" link="editor.html#editor_nav">
     <node name="Moving to a Specific Line" link="editor.html#Moving_to_a_line"/>
