@@ -113,7 +113,7 @@
     <li><strong>Auto-Abbreviation</strong>: Check this if the snippet can be
     inserted immediately after the name of the snippet is typed, followed by a
     recognized trigger character (see <a
-    href="#snippets_auto_abbreviations">blahAuto-Abbreviations</a> for more
+    href="#snippets_auto_abbreviations">Auto-Abbreviations</a> for more
     details).
   </ul>
   
@@ -248,9 +248,10 @@ Date: &lt;%= m.getDate() %>
   href="abbreviations.html">Abbreviations</a>.</p>
 
   <h3><a name="snippets_auto_abbreviations">Auto-Abbreviations</a></h3>
-  <p>If a snippet is marked as an "Auto Abbreviation", then any occurrence of
-  its name will automatically be expanded after the name is followed by a valid
-  trigger character.</p>
+  <p>If a snippet is marked as an "Auto Abbreviation", then typing its
+  name at the end of a line, followed by a valid trigger character
+  (e.g. a space), will replace the name and trigger with the
+  contents of the snippet.</p>
   
   <p>The trigger characters are defined in <code>Preferences / Editor / Smart
   Editing/ Auto-Abbreviations</code>. Use the standard JavaScript "\" escaping
@@ -262,7 +263,7 @@ Date: &lt;%= m.getDate() %>
   Shift-Space after an abbreviation suppresses its expansion.</p>
   
   <h3><a name="abbreviation_case">Abbreviations and Case</a></h3>
-  <p>Auto-abbreviations much match the case of the snippet's name. Komodo
+  <p>Auto-abbreviations must match the case of the snippet's name. Komodo
   currently will ignore case when matching snippets during explicit abbreviation
   expansion (invoked by default by the Ctrl-T|Cmd-T sequence), but will favor matching
   a snippet where the case does match over one where the match occurs only when
