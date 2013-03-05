@@ -131,19 +131,23 @@ C:\Program Files\ActiveState Komodo [IDE|Edit]\
   schemes and other settings in a user-specific directory called
   the <strong>user data</strong> directory. The name and location
   of this directory varies depending on the operating system and
-  Komodo version:</p><strong>Windows 2000 and XP</strong>
-  <pre class="code">
-C:\Documents and Settings\&lt;user&gt;\Application Data\ActiveState\Komodo[IDE|Edit]\&lt;version&gt;
-</pre><strong>Windows Vista</strong>
+  Komodo version:</p>
+  <strong>Windows Vista and later</strong>
   <pre class="code">
 C:\Users\&lt;user&gt;\AppData\Roaming\ActiveState\Komodo[IDE|Edit]\&lt;version&gt;
-</pre><strong>Linux</strong>
+  </pre>
+  <strong>Windows XP and earlier</strong>
+  <pre class="code">
+C:\Documents and Settings\&lt;user&gt;\Application Data\ActiveState\Komodo[IDE|Edit]\&lt;version&gt;
+  </pre>
+  <strong>Linux</strong>
   <pre class="code">
 /home/&lt;user&gt;/.komodo[ide|edit]/&lt;version&gt;
-</pre><strong>Mac OS X</strong>
+  </pre>
+  <strong>Mac OS X</strong>
   <pre class="code">
 /Users/&lt;user&gt;/Library/Application Support/Komodo[IDE|Edit]/&lt;version&gt;
-</pre>
+  </pre>
 
   <p>The location of this directory can be overridden using the
   <code>KOMODO_USERDATADIR</code> environment variable.</p>
@@ -468,20 +472,7 @@ zend_extension=/php-5.3.2/extensions/php_xdebug.dll</pre></li>
     Debugging</a> instructions.</li>
   </ul><strong>Windows-Specific Configuration Issues</strong>
 
-  <ul>
-    <li><strong>Windows 2000 upgrade:</strong> if you upgraded to
-    Windows 2000 from an earlier version of Windows, check the
-    value of the "COMSPEC" variable in the "System variables" (as
-    described above). It should point to
-    <code>C:\WINNT\system32\cmd.exe</code>, and not
-    <code>command.com</code>. If you must change the variable,
-    reboot your system.</li>
-
-    <li>There are known issues regarding the installation of PHP on
-    Windows Millennium systems; please refer to the <a class="doc"
-    href="http://www.php.net">PHP site</a> for installation
-    information.</li>
-  </ul><strong>Version Error Messages</strong>
+  <strong>Version Error Messages</strong>
 
   <p>If you receive a dialog with the following text:</p>
   <pre class="code">
