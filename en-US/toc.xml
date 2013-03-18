@@ -110,6 +110,8 @@
   <node name="Views" link="places.html#places_views"/>
 </node>
 
+<node name="Open Files" link="openfiles.html#openfiles_top"/>
+
 <node name="Database Explorer" link="db_explorer.html#database_exp_top">
   <node name="Adding a Database Connection" link="db_explorer.html#database_exp_add"/>
   <node name="Examining Tables" link="db_explorer.html#database_exp_tables"/>
