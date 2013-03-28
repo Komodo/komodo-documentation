@@ -134,6 +134,13 @@
   a JavaScript syntax-error or having JS code deliberately throw an exception,
   snippet insertion stops.</p>
   
+  <p>As of Komodo 8.1, snippets will have a <code>Treat as EJS</code> checkbox,
+  off by default. Until then if you need to emit verbatim "&lt;%" and/or "%&gt;"
+  strings, for languages like RHTML or Mason, you can use the respective escape
+  sequences "&lt;%%" and "%%&gt;". These escape sequences can also be used in
+  any EJS blocks (usually in strings or comments).
+  </p>
+  
   <p>This simple example might suffice. Suppose you want a snippet to insert
   the current month (by 0-based number) if the current second is odd,
   and the current date if it's even. Here's what the snippet would look
