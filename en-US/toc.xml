@@ -512,6 +512,7 @@
       <node name="Rubygems and RUBYOPT" link="debugruby.html#Ruby_Debugging_and_Rubygems"/>
     </node>
     <node name="Debugging Rails Applications" link="debugruby.html#Remote_Rails_Debugging"/>
+    <node name="Troubleshooting Ruby Debugging" link="debugruby.html#Troubleshooting_Ruby"/>
   </node>
   <node name="Debugging Tcl" link="debugtcl.html">
     <node name="Configuring the Tcl Debugger" link="debugtcl.html#Configuring_Tcl_Debugger"/>
@@ -861,13 +862,16 @@
   <node name="Rails Tutorial" link="tutorial/railstut.html#rails_top"
         flags="ide">
     <node name="Rails Tutorial Overview" link="tutorial/railstut.html#rails_overview">
-      <node name="Rails Tutorial Prerequisites" link="tutorial/railstut.html#rails_prerequisites"/>
+      <node name="Rails Tutorial Prerequisites"
+      link="tutorial/railstut.html#rails_prerequisites"/>
       <node name="Rails Tutorial Scenario" link="tutorial/railstut.html#rails_scenario"/>
     </node>
     <node name="Creating the Rails Project" link="tutorial/railstut.html#rails_template_new"/>
     <node name="Creating the Database" link="tutorial/railstut.html#rails_create_db">
-      <node name="Editing the database.yml file" link="tutorial/railstut.html#rails_edit_database_yml"/>
-      <node name="Running the Create Databases Macro" link="tutorial/railstut.html#rails_create_databases_macro"/>
+      <node name="Editing the database.yml file"
+      link="tutorial/railstut.html#rails_edit_database_yml"/>
+      <node name="Running the Create Databases Macro"
+      link="tutorial/railstut.html#rails_create_databases_macro"/>
     </node>
     <node name="Creating a Scaffold" link="tutorial/railstut.html#rails_generate_scaffold"/>
     <node name="Migration" link="tutorial/railstut.html#rails_migration"/>
@@ -876,7 +880,8 @@
       <node name="Running Tests in Komodo Edit" link="tutorial/railstut.html#running_tests_in_komodo_edit"/>
       <node name="Running Controller Tests" link="tutorial/railstut.html#running_controller_tests"/>
     </node>
-    <node name="Starting the Rails Application Server" link="tutorial/railstut.html#rails_starting_app">
+    <node name="Starting the Rails Application Server"
+    link="tutorial/railstut.html#rails_starting_app">
       <node name="Mongrel Issues" link="tutorial/railstut.html#mongrel_issues"/>
       <node name="Testing the Application" link="tutorial/railstut.html#testing_app_1"/>
     </node>

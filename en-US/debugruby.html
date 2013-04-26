@@ -317,6 +317,17 @@ ruby -I"$dbgdir" -r "$dbgdir"/rdbgp.rb script/server webrick
   in controller and view files, pressing Continue, and then
   interacting with the app via a browser. The debugger should
   kick in and stop at the set breakpoints.</p>
+  
+  <h3><a name="Troubleshooting_Ruby" id=
+  "Troubleshooting_Ruby">Troubleshooting</a></h3>
+  
+  <p>On Linux the 1.x Ruby debugger expects to find libruby.so.1.[89]
+  on its search path. This is installed by <strong>rvm</strong>, but there have
+  been reports from other systems where this file wasn't found. A generic
+  "Failed to load file" error message at the start of debugging usually
+  indicates this. </p>
+  
+  <p>Ruby 2.0 debugging is supported beginning with Komodo 8.0.2.</p>
   <hr />
 
 </div> <!-- content -->
