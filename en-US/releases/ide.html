@@ -158,6 +158,45 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
 
+<h3 id="bug_fixes-8.0.2">8.0.2 Bug Fixes</h3>
+<ul>
+  <li>Code Intelligence: PHP: Allow completions for files that use the same base name. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93859">93859</a>)</li>
+  <li>Code Intelligence: PHP: Show completions for core PHP interfaces. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98831">98831</a>)</li>
+  <li>Code Intelligence: Python: Allow completions and calltips even when no Python interpreter is found/configured. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98174">98174</a>)</li>
+  <li>Debugger: Python: Report types of ints and bools correctly, not as "str". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98546">98546</a>)</li>
+  <li>Debugger: Tcl: Allow Tk programs to be launched with wish, not just tclsh. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98313">98313</a>)</li>
+  <li>Debugger: Python: Fix python2 remote debugging package. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98532">98532</a>)</li>
+  <li>Editor: Add a pref at editor/scrolling to control whether shift-ctrl-mouse-wheel changes the zoom level of the current view. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=89701">89701</a>)</li>
+  <li>Editor: Color &lt;%% and %%&gt; in EJS and komodo snippets as escape sequences. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98464">98464</a>)</li>
+  <li>Editor: Handle comment-continuations for languages that don't do auto-indent, like ini, diff, Makefile, and batch. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98467">98467</a>)</li>
+  <li>Editor: Make sure clicking in the line-number margin of a wrapped line selects that line. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98494">98494</a>)</li>
+  <li>Editor: Minimap: Don't allow pasting by clicking on the middle-button on Linux. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=97909">97909</a>)</li>
+  <li>Editor: Minimap: Disable drag/drop involving the minimap. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=97159">97159</a>)</li>
+  <li>Editor: Minimap: Update minimap context menu when buffer is first shown. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98512">98512</a>)</li>
+  <li>Editor: Prevent landing on buffers from moving to seemingly random positions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98716">98716</a>)</li>
+  <li>Editor: Recognize that '$' is part of a variable name for purposes of double-clicking and identifier highlighting. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98566">98566</a>)</li>
+  <li>Editor: Ruby 2.0 support: Color %i-strings as array of symbols for Ruby 2.0+. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=97711">97711</a>)</li>
+  <li>Editor: Upgraded Tcl colorizer and code-completion on keywords to Tcl 8.6. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98034">98034</a>)</li>
+  <li>Editor: Reinstate word-wrap for all scintilla objects. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98471">98471</a>)</li>
+  <li>Keybindings: Mac: Remove Ctrl+Y accesskey in the find toolbar. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98709">98709</a>)</li>
+  <li>Keybindings: Vi: Ensure "O" command works when used on a word-wrapped line. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98811">98811</a>)</li>
+  <li>Keybindings: Vi: Make sure "W" always moves either to the next. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98813">98813</a>)</li>
+  <li>Linux: Install: Better detection of the host architecture, to avoid false warnings. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98519">98519</a>)</li>
+  <li>Mac: Retina: Find Results: Fix disappearing results on Retina displays. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98230">98230</a>)</li>
+  <li>Mac: Retina: Icons: Edge-cases where icons would show at twice their size have been resolved. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98607">98607</a>)</li>
+  <li>Mac: SDK: Ensure the Komodo extension tools work correctly on a Mac. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98441">98441</a>)</li>
+  <li>Places: Confirm that files/folders should be dragged/dropped onto a folder. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98484">98484</a>)</li>
+  <li>Places: Expose the "Show in places" context-menu item in the Keybindings pref panel. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98572">98572</a>)</li>
+  <li>Places: You can now double click a folder to expand/collapse it (if "double click to make folder root" pref is turned off).</li>
+  <li>Prefs: Add an option to use pixel-mapped squigglies for better performance. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98440">98440</a>)</li>
+  <li>Remote Files: Enable select button for choosing the current folder location. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=97991">97991</a>)</li>
+  <li>Run Commands: Ensure the focus goes back to the editor after running a command. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98414">98414</a>)</li>
+  <li>Toolbox: Make sure undo/redo works after inserting snippets. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=92695">92695</a>)</li>
+  <li>Toolbox: Make first launch of a snippet does not get ignored. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98835">98835</a>)</li>
+  <li>Syntax Checking: Ensure the pylint and pyflakes files can find their config files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98461">98461</a>)</li>
+  <li>Windows: Startup: Allow starting Komodo on Windows 2003 machines. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98551">98551</a>)</li>
+</ul>
+
 <h3 id="bug_fixes-8.0.1">8.0.1 Bug Fixes</h3>
 <ul>
   <li>Abbreviations: Reinstate on-demand abbreviations inside comments. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98154">98154</a>)</li>
