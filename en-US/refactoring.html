@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Refactoring</title>
+</head>
+<body>
+<div id="content">
+<h1><a name="refactoring_top" id="refactoring_top">Refactoring</a></h1>
+
+<p>Komodo's refactoring facility is designed to make it easier to apply
+well-known operations described in refactoring catalogs such as
+<a href="http://refactoring.com/">http://refactoring.com/</a>.
+</p>
+
+<p>
+  Supported changes can be accessed via the <strong>Edit|Refactoring</strong>
+  menuitem or via the editor context menu <strong>Refactoring</strong>. You can
+  also assign command-keys via <strong>Edit|Preferences|Editor|Key Bindings</strong>,
+  type "Refactoring:" in the Search box to narrow the hits, and then assign key
+  bindings to the selected command.
+</p>
+
+ <h2><a name="refactoring_commands" id="refactoring_commands">Refactoring Commands</a></h2>
+ <p>This section documents the current supported refactoring commands.</p>
+ 
+ <h3><a name="refactoring_rename_variable" id="refactoring_rename_variable">Rename Variable</a></h3>
+ <p>
+  This command is similar to doing a <a href="search.html#search_actions">Search &amp; Replace</a>,
+  but is aware of the current scope. Additionally, the change is done interactively.  Each
+  instance of the specified variable is selected, and then Komodo uses multiple cursors to
+  let you change all the instances concurrently.  The edit action ends when the mouse is
+  clicked, or a control, alt, or command key is pressed (except backspace), or when
+  another window gets the focus. The standard way to end a concurrent edit action
+  is by pressing the ESC key.
+ </p>
+ <p>Codeintel is intended to work as well, with continuations applied to each cursor.</p>
+ 
+ <p>Undo commands should undo all concurrent edits at once.</p>
+ 
+ <p>The Notifications window states how many instances of the target variable
+ were found, and gives the range of lines they cover.</p>
+ 
+ <h3><a name="refactoring_extract_method" id="refactoring_extract_method">Extract Method</a></h3>
+ 
+ <p>Select a block of text, invoke the <strong>Extract Method</strong>, provide
+ a name of a method to write the text to, and Komodo will do the rest of the
+ work, moving the code to a separate method definition before the current one,
+ and leaving it selected to allow it to be easily moved.  The location of
+ the block is replaced with a call to the extracted method.</p>
+ 
+ <p>This operation is obviously language-dependent, and is currently
+ implemented for Python.</p>
+ 
+ <p>This kind of refactoring move is best done in unison with unit
+ tests, to validate that the change has introduced no changes in
+ the working of the code.  In particular, the code analysis doesn't
+ look at loops, and can't predict that the value of a variable set
+ in one run through a loop will be used in a subsequent one.  So if
+ you extract that kind of code to a method, you need to make sure
+ the changed variable is returned from the new method.</p>
+ 
+ <p>Method extraction is undoable in a single step.</p>
+ 
+ 
+ 
+ 

@@ -319,6 +319,13 @@
   <node name="Tabstop Examples" link="tabstops.html#tabstop_examples"/>
 </node>
 
+<node name="Refactoring" link="refactoring.html#refactoring_top" flags="ide">
+  <node name="Refactoring Commands" link="refactoring.html#refactoring_commands">
+    <node name="Rename Variable" link="refactoring.html#refactoring_rename_variable" />
+    <node name="Extract Method" link="refactoring.html#refactoring_extract_method" />
+  </node>
+</node>
+
 <node name="Macros" link="macros.html#macros_top">
   <node name="Creating Macros" link="macros.html#creating_macros">
     <node name="Recording Macros" link="macros.html#macros_recording"/>
