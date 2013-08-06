@@ -261,6 +261,7 @@
     <node name="Column Editing" link="editor.html#column_edit"/>
     <node name="Completing Words" link="editor.html#Complete_Word"/>
     <node name="Selecting Blocks of Code" link="editor.html#Select_Block"/>
+    <node name="Quickly Renaming Start- and End-Tags" link="editor.html#Rename_Tag"/>
   </node>
   <node name="Editor Display" link="editor.html#editor_dispchar">
     <node name="Toggling Whitespace Display" link="editor.html#whitespace"/>
