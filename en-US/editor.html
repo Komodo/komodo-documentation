@@ -733,6 +733,30 @@ object.method(value)<span class="cursor">|</span>
   <p>Cursor movement (e.g. moving over the soft character with the
   right-arrow) "hardens" soft characters.</p>
 
+  <h3><a name="Fast_Chars" id="Fast_Chars">Fast Characters: Hopping Over Soft Characters</a></h3>
+  
+  <p>When a line ends with soft characters, typing a supported <b>Fast Character</b>
+  will skip over them, and do the expected thing. Pressing <b>Tab</b>
+  always moves to the end of the line. In many languages, pressing
+  <b>;</b> moves over some of the soft characters, and deposits the
+  <b>;</b> on the right hand side of the run of soft characters.  For example,
+  in the following PHP code:
+  
+  <pre>    f(strlen(s<span class="cursor">|</span><span style=
+"color: red">))</span></pre>
+  
+  pressing <b>;</b> results in the following situation:
+  
+  <pre>    f(strlen(s));<span class="cursor">|</span></pre>
+  
+  <p>Notice that the right-hand closing parentheses are no longer soft.</p>
+  
+  <p>Komodo also doesn't hop when <b>;</b> is typed in <b>C</b>-style
+  <b>for</b> loops.</p>
+  
+  <p style="font-size: smaller">(Erlangers are welcome to
+  substitute <b>.</b> for <b>;</b> in the above discussion.)</p>
+
   <h3><a name="View_as_Lang" id="View_as_Lang">Viewing the Current
   File as Another Language</a></h3>
 

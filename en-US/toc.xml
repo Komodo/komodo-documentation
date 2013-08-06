@@ -239,6 +239,7 @@
     </node>
     <node name="Variable Highlighting" link="editor.html#Variable_Highlighting"/>
     <node name="Soft Characters" link="editor.html#Soft_Char"/>
+    <node name="Fast Characters" link="editor.html#Fast_Chars"/>
     <node name="Viewing File as Another Language" link="editor.html#View_as_Lang"/>
     <node name="Commenting Blocks of Code" link="editor.html#Code_Commenting"/>
   </node>
