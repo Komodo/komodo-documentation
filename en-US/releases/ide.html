@@ -27,6 +27,69 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
     <li>
       <p>
+        <strong>PHP 5.5 Support</strong>: We've added support for PHP 5.5, with
+        a new Xdebug module (for PHP debugging and Code Profiling), updates for
+        the two new keywords (yield, finally) and updates to code intelligence
+        to provide the latest API data for PHP 5.5.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Python Symbols</strong>: Due to popular demand, we've now added
+        two-character length triggering for Python symbols. For example, when
+        you type "im" you'll now see completions for "import" as well as any
+        local variables, functions, classes and builtins that are in scope and
+        have a name starting with "im".
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Code Refactoring</strong>: The new Komodo refactoring component
+        has these smart code-transformation capabilities:
+        <ul>
+          <li><strong>Rename Variable</strong>: quickly and easily rename
+          variables in the editor. It uses inline markers and multiple cursor
+          selections to easily change the name of a code variable.</li>
+          <li><strong>Rename Class Member</strong>: similar to rename variable,
+          but works on all instances and across multiple files.</li>
+          <li><strong>Method Extraction</strong>: move parts of your code into a
+          new function. Any variables used in the selected text are refactored
+          into function arguments and are then passed to the extracted
+          method.</li>
+        </ul>
+        Note that code refactoring will only work with languages that provide
+        code intelligence information (i.e. PHP, Perl, Python, Ruby, JavaScript,
+        Node.js).
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Breadcrumbs</strong>: A file and directory navigation bar has
+        been added to the Komodo statusbar. This bar shows the directory
+        ancestors relative to the current editor file, allowing you to easily
+        find and open related files. You can use mouse and/or keyboard to
+        navigate entries and filter down the list of files displayed.
+        <strong>Update:</strong> Moved into the statusbar (previously it was in
+        it's own separate box above the statusbar).
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Abyss theme</strong>: A new dark theme for the Komodo user
+        interface has been added. This theme affects all Komodo UI elements
+        (apart from the editor, as there are separate editor color schemes
+        already). You can enable Abyss in the Komodo <em>Appearance</em>
+        preferences. <strong>Update:</strong> Now applies to all Komodo dialogs
+        and windows.
+      </p>
+    </li>
+
+    <li>
+      <p>
         <strong>Multiple Carets</strong>: In addition to Komodo's rectangular
         (column) editing, you can now add multiple caret positions in the editor,
         so that any typing or editing commands will be reflected at all caret
@@ -73,44 +136,6 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
         component, leaving unwanted artefacts - this has now been fixed. Komodo
         can now work with the integrated graphics card - this can lead to
         improved battery life on laptops.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Code Refactoring</strong>: The new Komodo refactoring component
-        has these smart code-transformation capabilities:
-        <ul>
-          <li><strong>Variable Renaming</strong>: quickly and easily rename
-          variables in the editor. It uses inline markers and multiple cursor
-          selections to easily change the name of a code variable.</li>
-          <li><strong>Method Extraction</strong>: move parts of your code into a
-          new function. Any variables used in the selected text are refactored
-          into function arguments and are then passed to the extracted
-          method.</li>
-        </ul>
-        Note that code refactoring will only work with languages that provide
-        code intelligence information (i.e. PHP, Perl, Python, Ruby, JavaScript,
-        Node.js).
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Breadcrumbs</strong>: A new file and directory navigation bar
-        has been added to the Komodo window. This navigation bar allows you to
-        easily find and open related files. You can use mouse and/or keyboard
-        to navigate entries and easily filter down the list of files.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Abyss theme</strong>: A new dark theme for the Komodo user
-        interface has been added. This theme affects the Komodo UI elements
-        outside of the main editor (i.e. different from Komodo color schemes which
-        only affect the main editor colors). You can enable Abyss in the Komodo
-        <em>Appearance</em> preferences.
       </p>
     </li>
 
