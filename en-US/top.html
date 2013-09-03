@@ -19,6 +19,24 @@
 
     <li>
       <p>
+        <strong>PHP 5.5 Support</strong>: We've added support for PHP 5.5, with
+        two new keywords (yield, finally) and updates to code intelligence to
+        provide the latest API data for PHP 5.5.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Breadcrumbs</strong>: A file and directory navigation bar has
+        been added to the Komodo statusbar. This bar shows the directory
+        ancestors relative to the current editor file, allowing you to easily
+        find and open related files. You can use mouse and/or keyboard to
+        navigate entries and filter down the list of files displayed.
+      </p>
+    </li>
+
+    <li>
+      <p>
         <strong>Multiple Carets</strong>: In addition to Komodo's rectangular
         (column) editing, you can now add multiple caret positions in the editor,
         so that any typing or editing commands will be reflected at all caret
@@ -41,58 +59,11 @@
 
     <li>
       <p>
-        <strong>Sleek Scrollbars</strong>: Komodo's side pane scrollbars now
-        fade out when they are not in use. This creates more space for your
-        panes, and the scrollbars will become more visible and less transparent
-        once you start interacting with the pane.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Performance</strong>: Various performance tweaks were made to
-        Komodo 8.5 to improve the editing performance, as well as improving the
-        search speed, syntax checking times and general responsiveness of
-        Komodo.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Mac Improvements</strong>: Drawing is smoother and Komodo can
-        draw using the integrated graphics card. There were some edge cases on
-        Retina screens where drawing glitches could occur in the editor
-        component, leaving unwanted artefacts - this has now been fixed. Komodo
-        can now work with the integrated graphics card - this can lead to
-        improved battery life on laptops.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Breadcrumbs</strong>: A new file and directory navigation bar
-        has been added to the Komodo window. This navigation bar allows you to
-        easily find and open related files. You can use mouse and/or keyboard
-        to navigate entries and easily filter down the list of files.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Abyss theme</strong>: A new dark theme for the Komodo user
-        interface has been added. This theme affects the Komodo UI elements
-        outside of the main editor (i.e. different from Komodo color schemes which
-        only affect the main editor colors). You can enable Abyss in the Komodo
-        <em>Appearance</em> preferences.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Open Files</strong>: The Open Files widget (in the left Komodo
-        Pane) now includes additional sorting and grouping options. You can
-        group by language, file extension, directory, location and even group by
-        a custom regex pattern match.
+        <strong>Python Symbols</strong>: Due to popular demand, we've now added
+        two-character length triggering for Python symbols. For example, when
+        you type "im" you'll now see completions for "import" as well as any
+        local variables, functions, classes and builtins that are in scope and
+        have a name starting with "im".
       </p>
     </li>
 
@@ -108,11 +79,37 @@
 
     <li>
       <p>
-        <strong>Updated Platform</strong>: Komodo has received a number of
-        updates to its underlying code base. Komodo now uses Mozilla 24, Python
-        2.7.5 and Scintilla 3.34.
+        <strong>Mac Improvements</strong>: Drawing is smoother and Komodo can
+        draw using the integrated graphics card. There were some edge cases on
+        Retina screens where drawing glitches could occur in the editor
+        component, leaving unwanted artefacts - this has now been fixed. Komodo
+        can now work with the integrated graphics card - which can lead to
+        improved battery life on laptops.
       </p>
     </li>
+
+    <li>
+      <p>
+        <strong>Performance</strong>: Various performance tweaks were made to
+        Komodo 8.5 to improve the editing performance, as well as improving the
+        search speed, syntax checking times and general responsiveness of
+        Komodo.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Other Mentionables</strong>
+        <ul>
+          <li>Abyss skin will now apply to all Komodo windows</li>
+          <li>Side pane scrollbars now fade out when they are not in use</li>
+          <li>Open Files now includes additional sorting and grouping options</li>
+          <li>Font Quality (anti-aliasing) preferences were added (Windows and Mac OS X)</li>
+          <li>Komodo now updated to use the Mozilla 24, Scintilla 3.34 and Python 2.7.5</li>
+        </ul>
+      </p>
+    </li>
+
   </ul>
 
     <p>(Read the full <a href="releases/ide.html">Release Notes</a>.)</p>
@@ -128,6 +125,46 @@
 
     <li>
       <p>
+        <strong>Code Refactoring</strong>: The new Komodo refactoring component
+        has these smart code-transformation capabilities:
+        <ul>
+          <li><strong>Rename Variable</strong>: quickly and easily rename
+          variables in the editor. It uses inline markers and multiple cursor
+          selections to easily change the name of a code variable.</li>
+          <li><strong>Rename Class Member</strong>: similar to rename variable,
+          but works on all instances and across multiple files.</li>
+          <li><strong>Method Extraction</strong>: move parts of your code into a
+          new function. Any variables used in the selected text are refactored
+          into function arguments and are then passed to the extracted
+          method.</li>
+        </ul>
+        Note that code refactoring will only work with languages that provide
+        code intelligence information (i.e. PHP, Perl, Python, Ruby, JavaScript,
+        Node.js).
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>PHP 5.5 Support</strong>: We've added support for PHP 5.5, with
+        a new Xdebug module (for PHP debugging and Code Profiling), updates for
+        the two new keywords (yield, finally) and updates to code intelligence
+        to provide the latest API data for PHP 5.5.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Breadcrumbs</strong>: A file and directory navigation bar has
+        been added to the Komodo statusbar. This bar shows the directory
+        ancestors relative to the current editor file, allowing you to easily
+        find and open related files. You can use mouse and/or keyboard to
+        navigate entries and filter down the list of files displayed.
+      </p>
+    </li>
+
+    <li>
+      <p>
         <strong>Multiple Carets</strong>: In addition to Komodo's rectangular
         (column) editing, you can now add multiple caret positions in the editor,
         so that any typing or editing commands will be reflected at all caret
@@ -150,77 +187,11 @@
 
     <li>
       <p>
-        <strong>Sleek Scrollbars</strong>: Komodo's side pane scrollbars now
-        fade out when they are not in use. This creates more space for your
-        panes, and the scrollbars will become more visible and less transparent
-        once you start interacting with the pane.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Performance</strong>: Various performance tweaks were made to
-        Komodo 8.5 to improve the editing performance, as well as improving the
-        search speed, syntax checking times and general responsiveness of
-        Komodo.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Mac Improvements</strong>: Drawing is smoother and Komodo can
-        draw using the integrated graphics card. There were some edge cases on
-        Retina screens where drawing glitches could occur in the editor
-        component, leaving unwanted artefacts - this has now been fixed. Komodo
-        can now work with the integrated graphics card - this can lead to
-        improved battery life on laptops.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Code Refactoring</strong>: The new Komodo refactoring component
-        has these smart code-transformation capabilities:
-        <ul>
-          <li><strong>Variable Renaming</strong>: quickly and easily rename
-          variables in the editor. It uses inline markers and multiple cursor
-          selections to easily change the name of a code variable.</li>
-          <li><strong>Method Extraction</strong>: move parts of your code into a
-          new function. Any variables used in the selected text are refactored
-          into function arguments and are then passed to the extracted
-          method.</li>
-        </ul>
-        Note that code refactoring will only work with languages that provide
-        code intelligence information (i.e. PHP, Perl, Python, Ruby, JavaScript,
-        Node.js).
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Breadcrumbs</strong>: A new file and directory navigation bar
-        has been added to the Komodo window. This navigation bar allows you to
-        easily find and open related files. You can use mouse and/or keyboard
-        to navigate entries and easily filter down the list of files.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Abyss theme</strong>: A new dark theme for the Komodo user
-        interface has been added. This theme affects the Komodo UI elements
-        outside of the main editor (i.e. different from Komodo color schemes which
-        only affect the main editor colors). You can enable Abyss in the Komodo
-        <em>Appearance</em> preferences.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Open Files</strong>: The Open Files widget (in the left Komodo
-        Pane) now includes additional sorting and grouping options. You can
-        group by language, file extension, directory, location and even group by
-        a custom regex pattern match.
+        <strong>Python Symbols</strong>: Due to popular demand, we've now added
+        two-character length triggering for Python symbols. For example, when
+        you type "im" you'll now see completions for "import" as well as any
+        local variables, functions, classes and builtins that are in scope and
+        have a name starting with "im".
       </p>
     </li>
 
@@ -236,11 +207,37 @@
 
     <li>
       <p>
-        <strong>Updated Platform</strong>: Komodo has received a number of
-        updates to its underlying code base. Komodo now uses Mozilla 24, Python
-        2.7.5 and Scintilla 3.34.
+        <strong>Mac Improvements</strong>: Drawing is smoother and Komodo can
+        draw using the integrated graphics card. There were some edge cases on
+        Retina screens where drawing glitches could occur in the editor
+        component, leaving unwanted artefacts - this has now been fixed. Komodo
+        can now work with the integrated graphics card - which can lead to
+        improved battery life on laptops.
       </p>
     </li>
+
+    <li>
+      <p>
+        <strong>Performance</strong>: Various performance tweaks were made to
+        Komodo 8.5 to improve the editing performance, as well as improving the
+        search speed, syntax checking times and general responsiveness of
+        Komodo.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Other Mentionables</strong>
+        <ul>
+          <li>Abyss skin will now apply to all Komodo windows</li>
+          <li>Side pane scrollbars now fade out when they are not in use</li>
+          <li>Open Files now includes additional sorting and grouping options</li>
+          <li>Font Quality (anti-aliasing) preferences were added (Windows and Mac OS X)</li>
+          <li>Komodo now updated to use the Mozilla 24, Scintilla 3.34 and Python 2.7.5</li>
+        </ul>
+      </p>
+    </li>
+
   </ul>
 
     <p>(Read the full <a href="releases/ide.html">Release Notes</a>.)</p>
