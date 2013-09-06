@@ -260,6 +260,7 @@
     <node name="Rectangular Selection" link="editor.html#Column_Select"/>
     <node name="Column Editing" link="editor.html#column_edit"/>
     <node name="Completing Words" link="editor.html#Complete_Word"/>
+    <node name="Multiple Carets" link="editor.html#multiple_carets"/>
     <node name="Selecting Blocks of Code" link="editor.html#Select_Block"/>
     <node name="Quickly Renaming Start- and End-Tags" link="editor.html#Rename_Tag"/>
   </node>

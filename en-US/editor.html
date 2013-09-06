@@ -1201,6 +1201,30 @@ object.method(value)<span class="cursor">|</span>
   'Alt'+'Shift' with the direction keys to make the column selection,
   and 'Esc' to exit column editing mode.</p>
 
+  <h3><a name="multiple_carets" id="multiple_carets">Multiple Carets
+  </a></h3>
+  
+  <p>The Komodo editor lets you modify text at more than one point
+  in a document by setting multiple selections and/or <strong>carets</strong>
+  (zero-length selections). Multiple selections are edited
+  in <i>multi-caret sessions</i>. To start a session,
+  press <strong>Ctrl-K Ctrl-Y</strong> to include the current caret
+  or selection. Then subsequent <strong>Ctrl-Click</strong>
+  and <strong>Ctrl-Select</strong> presses (or <strong>Ctrl-K Ctrl-Y</strong>)
+  add new carets and selections to
+  the session, respectively.  Each new selection should be highlighted
+  with the <strong>Multiple-Caret Selection</strong> indicator,
+  configurable at <strong>Edit|Preferences|Fonts &amp; Colors|Indicators</strong>.</p>
+
+  <p>Inserting or deleting any characters
+  moves the session from <i>gathering mode</i> to <i>editing mode</i>.
+  At this point, all edits are applied to each caret in the selection,
+  similar to column editing mode.</p>
+
+  <p>Pressing 'Esc' exits the multi-caret session, returning to
+  standard editing mode. Additionally, in editing mode, pressing an
+  arrow key also exits the session.</p>
+
   <h3><a name="Complete_Word" id="Complete_Word">Completing
   Words</a></h3>
 
