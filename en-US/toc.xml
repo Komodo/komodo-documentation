@@ -326,6 +326,7 @@
   <node name="Refactoring Commands" link="refactoring.html#refactoring_commands">
     <node name="Rename Variable" link="refactoring.html#refactoring_rename_variable" />
     <node name="Extract Method" link="refactoring.html#refactoring_extract_method" />
+    <node name="Rename Class Member" link="refactoring.html#refactoring_rename_class_member" />
   </node>
 </node>
 

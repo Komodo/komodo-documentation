@@ -66,6 +66,28 @@ well-known operations described in refactoring catalogs such as
  
  <p>Method extraction is undoable in a single step.</p>
  
+ <h3><a name="refactoring_rename_class_member" id="refactoring_rename_class_member">Rename Class Member</a></h3>
+ 
+ <p>This function is a variation of the search and replace dialog that is optimized for searching
+ through a subdirectory of files with certain extensions. Its main difference is that it presents
+ its results in a <strong>Confirm Replacements</strong> dialog box that lets you interactively select which
+ occurrences to change, and gives you a preview of the results.</p>
+ 
+ <p>Start by clicking on an identifier in the source, right-click, choose <strong>Refactoring</strong>, and then choose
+ <strong>Rename Class Member</strong>.</p>
+ 
+ <p>In the <strong>Rename Class Member</strong> dialog, specify the name to replace
+ the original variable by.  The <strong>Directories</strong>, <strong>Include</strong>, and <strong>Exclude</strong> fields work the
+ same as in the <strong>Find/Replace</strong> dialog.</p>
+ 
+ <p>A second dialog box, <strong>Confirm Replacements</strong>, now lets you prevent
+ any occurrences of the original search text from being changed.  As with other
+ Confirmation dialogs, you can press the <strong>Show Changes</strong> button to
+ see what the current state of selected changes would give, <strong>Cancel</strong>
+ to end the replacement, or <strong>OK</strong> to apply them.  Also, changing the
+ checkbox status of a header row (one with no line number) sets all children to
+ the same value.</p>
+ 
  
  
  
