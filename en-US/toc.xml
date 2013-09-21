@@ -171,7 +171,6 @@
     <node name="Synchronizing your Data" link="sync.html#sync_data"/>
     <node name="Synchronizing Additional Machines" link="sync.html#sync_other_machines"/>
     <node name="Synchronizing between different Komodo versions" link="sync.html#sync_komodo_versions"/>
-    <node name="Synchronizing Additional Machines" link="sync.html#sync_other_machines"/>
   </node>
 </node>
 
