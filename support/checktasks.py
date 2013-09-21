@@ -56,6 +56,8 @@ class links(_KomodoDocTask):
             try:
                 if basename(path) == "toc.xml":
                     self._doc_from_path[path] = _TOCDocument(path, self.log)
+                elif path.endswith("html"):
+                    self._doc_from_path[path] = _HTMLDocument(path, self.log)
                 else:
                     self._doc_from_path[path] = _Document(path, self.log)
             except SyntaxError, ex:
@@ -65,7 +67,8 @@ class links(_KomodoDocTask):
         return self._doc_from_path[path]
 
     def src_path_from_htdocs_path(self, htdocs_path):
-        assert htdocs_path.startswith(self.htdocs_dir)
+        assert htdocs_path.startswith(self.htdocs_dir), \
+            "htdocs path %s should start with %s" % (htdocs_path, self.htdocs_dir)
         return join(self.cfg.lang, htdocs_path[len(self.htdocs_dir)+1:])
 
     def make(self):
@@ -204,10 +207,14 @@ class _Document(object):
         self.log = log
         self._gather_links_and_anchors(path)
 
+    def _get_tree_root(self, path):
+        with open(path) as f:
+            return ET.fromstring(self.fixentities(f.read()))
+
     def _gather_links_and_anchors(self, path):
         # Handle HTML entities as per:
         # http://trac.turbogears.org/ticket/242
-        root = ET.fromstring(self.fixentities(open(path).read()))
+        root = self._get_tree_root(path)
 
         # Gather links and anchors.
         self.anchors = set()
@@ -230,8 +237,8 @@ class _Document(object):
                     self.anchors.add(elem.get("name"))
                     weird = False
                 if weird:
-                    self.log.warn("<a> without href, id or name: %s",
-                        elem.attrib)
+                    self.log.warn("%s: <a> without href, id or name: %s",
+                        path, elem.attrib)
             elif elem.get("id"):
                 self.anchors.add(elem.get("id"))
 
@@ -254,6 +261,17 @@ class _Document(object):
                 return entity
         return re.sub("&(\w+);?", repl, html)
 
+class _HTMLDocument(_Document):
+    """HTML5 parsing"""
+
+    def _get_tree_root(self, path):
+        import html5lib
+        from html5lib import treebuilders
+        treebuilder = treebuilders.getTreeBuilder("etree", ET)
+        parser = html5lib.HTMLParser(tree=treebuilder)
+
+        with open(path, "r") as f:
+            return parser.parse(f)
 
 class _TOCDocument(_Document):
     """Wrapper for a toc.xml to provide convenience info for link
