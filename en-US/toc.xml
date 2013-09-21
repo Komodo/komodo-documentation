@@ -166,10 +166,11 @@
 </node>
 
 <node name="Komodo Sync" link="sync.html#sync_top">
-  <node name="Sync Account Setup" link="sync.html#sync_account"/>
+  <node name="Sync Setup" link="sync.html#set_up_sync"/>
   <node name="Synchronizing Komodo" link="sync.html#sync_sync">
-    <node name="Sync Setup" link="sync.html#sync_setup"/>
     <node name="Synchronizing your Data" link="sync.html#sync_data"/>
+    <node name="Synchronizing Additional Machines" link="sync.html#sync_other_machines"/>
+    <node name="Synchronizing between different Komodo versions" link="sync.html#sync_komodo_versions"/>
     <node name="Synchronizing Additional Machines" link="sync.html#sync_other_machines"/>
   </node>
 </node>
@@ -498,14 +499,12 @@
     </node>
   </node>
   <node name="Debugging PHP" link="debugphp.html">
-    <node name="Installing PHP" link="debugphp.html#install_PHP"/>
     <node name="Local PHP Debugging" link="debugphp.html#local_debug_PHP">
       <node name="Configuring PHP Local Debugging" link="debugphp.html#config_local_PHP"/>
-      <node name="Starting Local Debugging" link="debugphp.html#debugphp_start_stop_local_PHP"/>
     </node>
     <node name="Remote PHP Debugging" link="debugphp.html#remote_debug_PHP">
       <node name="Configuring PHP Remote Debugging" link="debugphp.html#config_remote_PHP"/>
-      <node name="Starting Remote Debugging" link="debugphp.html#debugphp_start_stop_remote_PHP"/>
+      <node name="Invoking the PHP Remote Debugger" link="debugphp.html#Invoking_the_PHP_Remote_Debugger"/>
       <node name="Using xdebug_break()" link="debugphp.html#using_xdebug_break"/>
       <node name="Xdebug Logging" link="debugphp.html#xdebug_logging"/>
       <node name="PHP Just-in-Time Debugging / Break on Exception" link="debugphp.html#php_just_in_time"/>

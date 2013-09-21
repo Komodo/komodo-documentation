@@ -188,7 +188,7 @@
   Xdebug</a> extension (to find out more information about the Xdebug
   project visit <a target="_blank" href="http://xdebug.org/">http://xdebug.org/</a>).
   Find the appropriate extension for the version of PHP your server is running at
-  <a class="doc" target="_blank"href="http://code.activestate.com/komodo/remotedebugging/">
+  <a class="doc" target="_blank" href="http://code.activestate.com/komodo/remotedebugging/">
   Komodo Remote Debugging</a>.  Manually copy it into a <strong>
   directory on the server </strong>that the PHP interpreter and web
   server can access.
@@ -250,7 +250,7 @@
   <h4><a name="debugphp_edit_php_ini" id=
   "debugphp_edit_php_ini">Step 2 - Edit php.ini on the Web Server</a></h4>
 
-  <p>Open the <em>php.ini<figuration file on the server. There
+  <p>Open the <em>php.ini</em> configuration file on the server. There
   may be multiple copies of this file, so check the value of "Loaded
   Configuration File" in the <code>phpinfo()</code> output to see which
   one is being used by the web server (e.g. create a
@@ -274,7 +274,6 @@
       </tr>
     </tbody>
   </table>
-  </br>
   <p><strong>Add Xdebug to php</strong></p>
   
   <p>In the "<code>Dynamic Extension</code>" section, add the
@@ -373,7 +372,7 @@ xdebug.idekey=&lt;idekey&gt;
 
   </dl>
     
-  <br/>
+  <br>
   <p><strong><a name="confirm_server_configuration">Confirm correct server
   configuration:</a></strong></p>
   
@@ -406,7 +405,8 @@ xdebug.idekey=&lt;idekey&gt;
   Refer to <a href="debugger.html#set_remote_debug">Komodo Listener section</a>
   to turning on and checking Komodo's debug listener status.</p>
   
-  <p>If Komodo is not listening on the correct port specified in <a h/a>,
+  <p>If Komodo is not listening on the correct port specified in
+  <a href="#debugphp_xdebug_settings"><code>xdebug.remote_port</code></a>,
   you can adjust the listening port in <a href="prefs.html#DebuggerConnection">
   Komodo deugger preferences</a>.  Once Komodo is listening properly you can
   move on and try to <a href="#Invoking_the_PHP_Remote_Debugger">
