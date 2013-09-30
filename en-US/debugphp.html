@@ -87,7 +87,7 @@
   <code>PATH</code>) and attempting to load the Xdebug extension
   (<code>php_xdebug.dll</code> or <code>xdebug.so</code>). If this
   is successful, a new copy of <code>php.ini</code> is created and
-  stored in Komodos user propfile.  See the <a href="http://community.activestate.com"
+  stored in Komodo's user profile.  See the <a href="http://community.activestate.com"
   >FAQ pages</a> for more information on Komodo file locations.
   
   <p>To specify which PHP interpreter Komodo should use to debug
@@ -241,7 +241,7 @@
   </ul>
 
   <p>In the downloadable packages, the extensions are found in
-  version-specific subdirectories of the unpacked archive.</p>
+  version-specific sub directories of the unpacked archive.</p>
   
   <p>The Xdebug extension does not have to be installed in the PHP
   <code>extension_dir</code> because its location is specified
@@ -380,14 +380,14 @@ xdebug.idekey=&lt;idekey&gt;
   Once the <em>php.ini</em> file is updated and the server has been
   restarted, verify that Xdebug is configured by checking the output of
   <code>phpinfo()</code> (described in <a href="#debugphp_edit_php_ini">
-  Step 2</a>). There should be an Xdebug section in the alpabetical list
+  Step 2</a>). There should be an Xdebug section in the alphabetical list
   of modules which shows all of the relevant settings.  If PHP
   is on your system PATH you can run <code>$ php -m</code> to see all
   currently installed modules.  Xdebug should be displayed if configuration
   worked as expected.</p>
   
   <p>If you find the Xdebug section in the output of <code>phpinfo()</code> or
-  see Xdebug in the output of <code>php -m</code> in commandline then you have
+  see Xdebug in the output of <code>php -m</code> in command line then you have
   successfully configured your server for remote debugging!  One more step now.</p>
 
   <p><strong>Note</strong>: Recent versions of PHP are set to
@@ -408,7 +408,7 @@ xdebug.idekey=&lt;idekey&gt;
   <p>If Komodo is not listening on the correct port specified in
   <a href="#debugphp_xdebug_settings"><code>xdebug.remote_port</code></a>,
   you can adjust the listening port in <a href="prefs.html#DebuggerConnection">
-  Komodo deugger preferences</a>.  Once Komodo is listening properly you can
+  Komodo debugger preferences</a>.  Once Komodo is listening properly you can
   move on and try to <a href="#Invoking_the_PHP_Remote_Debugger">
   Invoking the PHP Remote Debugger</a>.</p>
 
@@ -450,7 +450,7 @@ xdebug.idekey=&lt;idekey&gt;
 
     <li>In your browser, enter the URL of the script you want to debug. Append
     <code>?XDEBUG_SESSION_START=1</code> to the end of the URL (an HTTP GET with
-    a true boolean value). For example:<br />
+    a true Boolean value). For example:<br />
       <pre class="code">
 http://example.org/sample.php?XDEBUG_SESSION_START=1
 </pre>
@@ -608,7 +608,7 @@ xdebug.remote_log=/tmp/xdebug.log
 export XDEBUG_CONFIG="remote_port=9000 remote_enable=1 remote_log=/tmp/xdebug.org"</pre>
 
   <p>You can replace "<code>/tmp/xdebug.org</code>" with any
-  writable directory and the filename of your choice.</p>
+  writable directory and the file name of your choice.</p>
   
   
   <h3><a name="php_just_in_time" id="php_just_in_time">PHP Just-in-Time
