@@ -159,6 +159,50 @@ Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
 
 
+<h3 id="bug_fixes-8.5.3">8.5.3 Bug Fixes</h3>
+<ul>
+  <li>Code Intelligence: Fix case where codeintel startup could fail due to race condition. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101543">101543</a>)</li>
+  <li>Code Intelligence: Performance: Avoid rescanning dependent files on modification. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101312">101312</a>)</li>
+  <li>Code Intelligence: PHP: Allow goto definition on foreach variables. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100701">100701</a>)</li>
+  <li>Code Intelligence: Python: Ensure code scanning supports the "yield from" syntax. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101404">101404</a>)</li>
+  <li>Code Intelligence: Sections List: Ensure HTML/XML section lists are updated after editor modifications. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101442">101442</a>)</li>
+  <li>Code Intelligence: Sections List: Sometimes the list would not show due to a recursion error. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101280">101280</a>)</li>
+  <li>Crash Reports: Re-enable the crash report dialog. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101006">101006</a>)</li>
+  <li>Debugger: Make sure we can debug Python3 programs that contain non-ascii data in strings (and comments). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101268">101268</a>)</li>
+  <li>Debugger: PHP: Update Xdebug to version 2.2.3. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101265">101265</a>)</li>
+  <li>Debugger: Tcl: Include a Tcl debug engine for Win64, and choose it at runtime when the tclsh.exe or wish.exe interpreter is 64-bit. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101199">101199</a>)</li>
+  <li>Debugger: When starting a remote-debugging session, make sure the pref for stopping at the first breakpoint is respected. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100884">100884</a>)</li>
+  <li>Editor: Ensure caret is scrolled into view when opening files and jumping to definitions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98866">98866</a>)</li>
+  <li>Editor: Make sure cmd_addNextWordToCaretSet (default binding: Ctrl-D) works in presence of high-bit chars in the document. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100931">100931</a>)</li>
+  <li>Editor: Minimap: Don't change the first line in the screen when tabbing/shift-tabbing a block with the minimap visible. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101318">101318</a>)</li>
+  <li>Editor: Performance: Speed up UDL processing for files with very long lines (includes PHP, XML, HTML, Django, etc). (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101267">101267</a>)</li>
+  <li>Editor: Prefs: Increase the file size limits that control switching to a plain-text language. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101629">101629</a>)</li>
+  <li>Editor: Prevent repeatedly pressing Ctrl-D (Add next word to multiple selection) from crashing Komodo. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100955">100955</a>)</li>
+  <li>History: Make sure history db corruptions do not cause startup failures. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101551">101551</a>)</li>
+  <li>Hyperlinks: Ensure the PHP include handler works over the full include statement. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101505">101505</a>)</li>
+  <li>Languages: Support C++11 keywords. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101299">101299</a>)</li>
+  <li>Linux: Editor: Allow rectangular paste on Linux. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=82591">82591</a>)</li>
+  <li>Mac: Disable the scroll width preference, as it can mess up the editor display. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=88586">88586</a>)</li>
+  <li>Mac: Editor: Focus the editor when mouse clicking on the line number margin. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101290">101290</a>)</li>
+  <li>Mac: Editor: Make sure text is pasted into every selection when a multiple-selection/caret session is in effect. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101220">101220</a>)</li>
+  <li>Macros: Make sure macro and snippet contents are always up to date when editing them in the editor. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101263">101263</a>)</li>
+  <li>Macros: Show accurate macro line numbers for syntax errors and runtime errors when executing macros. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95519">95519</a>)</li>
+  <li>Preferences: Make sure project internationalization settings are correctly saved to project prefs. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101174">101174</a>)</li>
+  <li>Refactoring: Make sure undo (and other operations that end multi-caret editing sessions) don't corrupt the undo-stack. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100837">100837</a>)</li>
+  <li>Rx Toolkit: Don't throw an exception on startup when the regex field is empty. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100694">100694</a>)</li>
+  <li>Rx Toolkit: Clear errors when switching between different regex languages. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=97340">97340</a>)</li>
+  <li>Source Code Control: The Git push dialog no longer gets stuck at the end of a push. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=99920">99920</a>)</li>
+  <li>Syntax Checking: Make sure files are linted when they are first opened. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101552">101552</a>)</li>
+  <li>Syntax Checking: PyLint: Support pylint 1.0, which stopped supporting the -i argument. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100028">100028</a>)</li>
+  <li>Syntax Checking: PyLint: Support pylint for Python3 code. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=96733">96733</a>)</li>
+  <li>Syntax Checking: RHTML: Wrap &lt;%= ... %&gt; constructs with 'Proc.new {' ... '}.call;' to avoid bugus syntax errors. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100835">100835</a>)</li>
+  <li>UI: Added a Getting Started dialog to Komodo that helps new users get the basics of Komodo. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=98250">98250</a>)</li>
+  <li>UI: Button text in the toolbar will now properly show when using a hidpi (cupertino) icon set. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100933">100933</a>)</li>
+  <li>UI: Icons: Checkboxes and radio boxes were sometimes not showing in menu's under Abyss.</li>
+  <li>UI: Moved trial message out of statusbar and into notification, so that its not blocking breadcrumbs. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100548">100548</a>)</li>
+  <li>Windows: Support high DPI on Windows, for editor right-clicking and context menus. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100492">100492</a>)</li>
+</ul>
+
 <h3 id="bug_fixes-8.5.2">8.5.2 Bug Fixes</h3>
 <ul>
   <li>Code Intelligence: Reduce memory usage by properly clearing requests and working variables. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100994">100994</a>)</li>
