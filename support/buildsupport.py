@@ -2,7 +2,7 @@
 """Support functionality for the Komodo doc build."""
 
 import os
-from os.path import join, dirname, abspath
+from os.path import abspath, dirname, exists, join, normpath
 import posixpath
 import sys
 from ConfigParser import SafeConfigParser
@@ -28,11 +28,15 @@ except ImportError:
 
 html5lib_dir = join(dirname(dirname(abspath(__file__))),
                     "externals", "html5lib")
+if not exists(html5lib_dir):
+    # Try getting it from Komodo's contrib directory
+    html5lib_dir = normpath(join(dirname(abspath(__file__)), "..", "..",
+                                 "html5lib", "src"))
 sys.path.insert(0, html5lib_dir)
 import html5lib
 from html5lib import treebuilders, treewalkers
 from html5lib.serializer.xhtmlserializer import XHTMLSerializer
-sys.path.remove(html5lib_dir)        
+sys.path.remove(html5lib_dir)
 
 
 
