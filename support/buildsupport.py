@@ -28,16 +28,23 @@ except ImportError:
 
 html5lib_dir = join(dirname(dirname(abspath(__file__))),
                     "externals", "html5lib")
+six_dir = None
 if not exists(html5lib_dir):
     # Try getting it from Komodo's contrib directory
-    html5lib_dir = normpath(join(dirname(abspath(__file__)), "..", "..",
-                                 "html5lib", "src"))
+    html5lib_dir = normpath(join(dirname(abspath(__file__)), "..", "..", "..",
+                                 "..", "..", "contrib", "html5lib"))
+    six_dir = normpath(join(dirname(html5lib_dir), "six"))
+    sys.path.insert(0, six_dir)
 sys.path.insert(0, html5lib_dir)
-import html5lib
-from html5lib import treebuilders, treewalkers
-from html5lib.serializer.xhtmlserializer import XHTMLSerializer
-sys.path.remove(html5lib_dir)
 
+try:
+    import html5lib
+    from html5lib import treebuilders, treewalkers
+    from html5lib.serializer.htmlserializer import HTMLSerializer
+finally:
+    sys.path.remove(html5lib_dir)
+    if six_dir:
+        sys.path.remove(six_dir)
 
 
 class ManifestParser(SafeConfigParser):
@@ -77,7 +84,7 @@ def app_filter_html_path_inplace(path, filters, log=None):
 
     # Parse the HTML file.
     treebuilder = treebuilders.getTreeBuilder("etree", ET)
-    p = html5lib.XHTMLParser(tree=treebuilder)
+    p = html5lib.HTMLParser(tree=treebuilder)
     f = open(path)
     tree = p.parse(f)
     f.close()
@@ -107,12 +114,11 @@ def app_filter_html_path_inplace(path, filters, log=None):
     if filtered:
         walker = treewalkers.getTreeWalker("etree", ET)
         stream = walker(tree)
-        s = XHTMLSerializer()
+        s = HTMLSerializer()
         outputter = s.serialize(stream)
         content = ''.join(list(outputter))
         f = open(path, 'w')
-        f.write("""<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        f.write("""<!DOCTYPE html>
 """)
         try:
             f.write(content)
@@ -204,7 +210,7 @@ def independentize_html_path(src, dst, css_dir=None, log=None):
 
     # Parse the HTML file.
     treebuilder = treebuilders.getTreeBuilder("etree", ET)
-    p = html5lib.XHTMLParser(tree=treebuilder)
+    p = html5lib.HTMLParser(tree=treebuilder)
     f = open(src)
     tree = p.parse(f)
     f.close()
@@ -255,7 +261,7 @@ def independentize_html_path(src, dst, css_dir=None, log=None):
     # Write out massaged doc.
     walker = treewalkers.getTreeWalker("etree", ET)
     stream = walker(tree)
-    s = XHTMLSerializer()
+    s = HTMLSerializer()
     outputter = s.serialize(stream)
     content = ''.join(list(outputter))
     f = open(dst, 'w')
