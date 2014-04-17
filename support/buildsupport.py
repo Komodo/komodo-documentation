@@ -39,7 +39,7 @@ sys.path.insert(0, html5lib_dir)
 
 try:
     import html5lib
-    from html5lib import treebuilders, treewalkers
+    from html5lib import treewalkers
     from html5lib.serializer.htmlserializer import HTMLSerializer
 finally:
     sys.path.remove(html5lib_dir)
@@ -83,11 +83,8 @@ def app_filter_html_path_inplace(path, filters, log=None):
         log("app-filter `%s'", path)
 
     # Parse the HTML file.
-    treebuilder = treebuilders.getTreeBuilder("etree", ET)
-    p = html5lib.HTMLParser(tree=treebuilder)
-    f = open(path)
-    tree = p.parse(f)
-    f.close()
+    with open(path) as f:
+        tree = html5lib.parse(f, namespaceHTMLElements=False)
 
     # Filter out the unwanted elements.
     filtered = False
@@ -209,11 +206,8 @@ def independentize_html_path(src, dst, css_dir=None, log=None):
         log.info("independentize %s %s", src, dst)
 
     # Parse the HTML file.
-    treebuilder = treebuilders.getTreeBuilder("etree", ET)
-    p = html5lib.HTMLParser(tree=treebuilder)
-    f = open(src)
-    tree = p.parse(f)
-    f.close()
+    with open(src) as f:
+        tree = html5lib.parse(f, namespaceHTMLElements=False)
 
     # - Drop favicon links.
     # - Update or drop CSS links.
@@ -256,7 +250,7 @@ def independentize_html_path(src, dst, css_dir=None, log=None):
         if path:
             if log:
                 log.debug("%s: de-linkify <a href='%s'>", dst, href)
-            elem.tag = "span"  # de-linkify
+            elem.tag = u"span"  # de-linkify
     
     # Write out massaged doc.
     walker = treewalkers.getTreeWalker("etree", ET)
