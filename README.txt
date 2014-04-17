@@ -23,11 +23,11 @@ If you are reading this, you probably already have it, but for the record:
 The Komodo doc sources are kept in a Subversion repository hosted at the
 openkomodo.com site. Read-only public access is available via:
 
-    svn co http://svn.openkomodo.com/repos/komododoc/trunk komododoc
+    git clone https://github.com/Komodo/komodo-documentation.git
 
 Read/write developer access is available via:
 
-    svn co https://svn.openkomodo.com/repos/komododoc/trunk komododoc
+    git clone git@github.com:Komodo/komodo-documentation.git
 
 
 How it works
@@ -58,7 +58,7 @@ How to build it
 
 0. First you need the "mk" build tool:
 
-        svn co http://svn.openkomodo.com/repos/mk/trunk mk
+        git clone https://github.com/ActiveState/mk.git
 
    Then put the 'mk/bin' directory on your PATH:
    
