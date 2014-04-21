@@ -33,15 +33,15 @@ Read/write developer access is available via:
 How it works
 ============
 
-Also known as the "Why a separate project?" section. The Open Komodo
-source tree is huge and building a full Open Komodo build is not for
+Also known as the "Why a separate project?" section. The Komodo Edit
+source tree is huge and building a full Komodo Edit build is not for
 the faint of heart. Having a separate project for the Komodo docs
 allows for a lower barrier to entry for working with and contributing to
 the Komodo docs. Typical Komodo app builds will use this source tree (and
 use the "mozhelp" build target, see below) but you can do a full Komodo
 doc build without bothering with a full Komodo tree.
 
-The komododoc project includes documentation for all apps built using the Open
+The komododoc project includes documentation for all apps built using the
 Komodo framework. Currently this includes Komodo IDE and Komodo Edit. Keeping
 docs for all Komodo apps in one repository will help ensure that all Komodo
 projects best benefit from shared work on their docs. Time spent on documenting
@@ -100,7 +100,7 @@ directory and re-run `mk mozhelp` to update everything.
 Contributing: Editing/Typos
 ===========================
 
-<http://bugs.activestate.com/enter_bug.cgi?product=OpenKomodo&component=Documentation>
+<http://bugs.activestate.com/enter_bug.cgi?product=Komodo&component=Help>
 
 TODO
 
