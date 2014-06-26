@@ -13,96 +13,14 @@
   <div class="app-editonly">
     <h2 class="first"><a href="releases/ide.html#whatsnew">What's new in Komodo Edit</a></h2>
 
-    <h3 id="whatsnew-edit-8.5">8.5</h3>
+    <h3 id="whatsnew-edit">9.0</h3>
 
   <ul>
 
     <li>
       <p>
-        <strong>Abyss theme</strong>: A new dark theme for the Komodo user
-        interface has been added. This theme affects the Komodo UI elements
-        outside of the main editor (i.e. different from Komodo color schemes
-        which only affect the main editor colors). You can enable Abyss in the
-        Komodo <em>Appearance</em> preferences.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>PHP 5.5 Support</strong>: We've added support for PHP 5.5, with
-        two new keywords (yield, finally) and updates to code intelligence to
-        provide the latest API data for PHP 5.5.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Breadcrumbs</strong>: A file and directory navigation bar has
-        been added to the Komodo statusbar. This bar shows the directory
-        ancestors relative to the current editor file, allowing you to easily
-        find and open related files. You can use mouse and/or keyboard to
-        navigate entries and filter down the list of files displayed.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Multiple Selections</strong>: In addition to Komodo's
-        rectangular (column) editing, you can now have multiple caret positions
-        in the editor. Typing or editing commands will be reflected at all caret
-        locations. Use the editors right click contextual menu and choose the
-        '<em>Select > Multiple Selection - Add</em>', then you can use
-        Ctrl+Click (Cmd+Click on the Mac) to place additional carets and
-        selections.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Button Menu</strong>: Komodo can now be configured to use a
-        collapsed toolbar button menu, instead of a full menu bar (does not
-        apply to Mac OS X). This can be useful when you want to maximize your
-        vertical editing space. A bonus of this feature is that the last used
-        menu items will also be displayed in the top-level of the button menu,
-        making it quick and easy to run the same menu command again.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Python Symbols</strong>: Due to popular demand, we've now added
-        two-character length triggering for Python symbols. For example, when
-        you type "im" you'll now see completions for "import" as well as any
-        local variables, functions, classes and builtins that are in scope and
-        have a name starting with "im".
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Code Intelligence Out-Of-Process</strong>: Komodo's code
-        intelligence system (code scanning, calltips, completions, goto
-        definition, refactoring, etc...) is now handled by an external process.
-        Mostly you won't notice any changes in functionality, but this does boost
-        Komodo's responsiveness whilst editing.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Mac Improvements</strong>: Drawing is smoother and Komodo can
-        draw using the integrated graphics card. There were some edge cases on
-        Retina screens where drawing glitches could occur in the editor
-        component, leaving unwanted artefacts - this has now been fixed. Komodo
-        can now work with the integrated graphics card - which can lead to
-        improved battery life on laptops.
-      </p>
-    </li>
-
-    <li>
-      <p>
         <strong>Performance</strong>: Various performance tweaks were made to
-        Komodo 8.5 to improve the editing performance, as well as improving the
+        Komodo to improve the editing performance, as well as improving the
         search speed, syntax checking times and general responsiveness of
         Komodo.
       </p>
@@ -112,10 +30,8 @@
       <p>
         <strong>Other Mentionables</strong>
         <ul>
-          <li>Side pane scrollbars now fade out when they are not in use</li>
-          <li>Open Files now includes additional sorting and grouping options</li>
-          <li>Font Quality (anti-aliasing) preferences were added (Windows and Mac OS X)</li>
-          <li>Komodo now updated to use the Mozilla 24, Scintilla 3.34 and Python 2.7.5</li>
+          <li>Find results widget now has a toolbar command to copy the find results to the clipboard</li>
+          <li>Komodo now updated to use the Mozilla 31</li>
         </ul>
       </p>
     </li>
@@ -129,118 +45,14 @@
   <div class="app-ideonly">
     <h2 class="first"><a href="releases/ide.html#whatsnew">What's new in Komodo IDE</a></h2>
 
-    <h3 id="whatsnew-ide-8.5">8.5</h3>
+    <h3 id="whatsnew-ide">9.0</h3>
 
   <ul>
 
     <li>
       <p>
-        <strong>Code Refactoring</strong>: The new Komodo refactoring component
-        has these smart code-transformation capabilities:
-        <ul>
-          <li><strong>Rename Variable</strong>: quickly and easily rename
-          variables in the editor. It uses inline markers and multiple cursor
-          selections to easily change the name of a code variable.</li>
-          <li><strong>Rename Class Member</strong>: similar to rename variable,
-          but works on all instances and across multiple files.</li>
-          <li><strong>Method Extraction</strong>: move parts of your code into a
-          new function. Any variables used in the selected text are refactored
-          into function arguments and are then passed to the extracted
-          method.</li>
-        </ul>
-        Note that code refactoring will only work with languages that provide
-        code intelligence information (i.e. PHP, Perl, Python, Ruby, JavaScript,
-        Node.js).
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Abyss theme</strong>: A new dark theme for the Komodo user
-        interface has been added. This theme affects the Komodo UI elements
-        outside of the main editor (i.e. different from Komodo color schemes
-        which only affect the main editor colors). You can enable Abyss in the
-        Komodo <em>Appearance</em> preferences.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>PHP 5.5 Support</strong>: We've added support for PHP 5.5, with
-        a new Xdebug module (for PHP debugging and Code Profiling), updates for
-        the two new keywords (yield, finally) and updates to code intelligence
-        to provide the latest API data for PHP 5.5.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Breadcrumbs</strong>: A file and directory navigation bar has
-        been added to the Komodo statusbar. This bar shows the directory
-        ancestors relative to the current editor file, allowing you to easily
-        find and open related files. You can use mouse and/or keyboard to
-        navigate entries and filter down the list of files displayed.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Multiple Selections</strong>: In addition to Komodo's
-        rectangular (column) editing, you can now have multiple caret positions
-        in the editor. Typing or editing commands will be reflected at all caret
-        locations. Use the editors right click contextual menu and choose the
-        '<em>Select > Multiple Selection - Add</em>', then you can use
-        Ctrl+Click (Cmd+Click on the Mac) to place additional carets and
-        selections.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Button Menu</strong>: Komodo can now be configured to use a
-        collapsed toolbar button menu, instead of a full menu bar (does not
-        apply to Mac OS X). This can be useful when you want to maximize your
-        vertical editing space. A bonus of this feature is that the last used
-        menu items will also be displayed in the top-level of the button menu,
-        making it quick and easy to run the same menu command again.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Python Symbols</strong>: Due to popular demand, we've now added
-        two-character length triggering for Python symbols. For example, when
-        you type "im" you'll now see completions for "import" as well as any
-        local variables, functions, classes and builtins that are in scope and
-        have a name starting with "im".
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Code Intelligence Out-Of-Process</strong>: Komodo's code
-        intelligence system (code scanning, calltips, completions, goto
-        definition, refactoring, etc...) is now handled by an external process.
-        Mostly you won't notice any changes in functionality, but this does boost
-        Komodo's responsiveness whilst editing.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        <strong>Mac Improvements</strong>: Drawing is smoother and Komodo can
-        draw using the integrated graphics card. There were some edge cases on
-        Retina screens where drawing glitches could occur in the editor
-        component, leaving unwanted artefacts - this has now been fixed. Komodo
-        can now work with the integrated graphics card - which can lead to
-        improved battery life on laptops.
-      </p>
-    </li>
-
-    <li>
-      <p>
         <strong>Performance</strong>: Various performance tweaks were made to
-        Komodo 8.5 to improve the editing performance, as well as improving the
+        Komodo to improve the editing performance, as well as improving the
         search speed, syntax checking times and general responsiveness of
         Komodo.
       </p>
@@ -250,10 +62,8 @@
       <p>
         <strong>Other Mentionables</strong>
         <ul>
-          <li>Side pane scrollbars now fade out when they are not in use</li>
-          <li>Open Files now includes additional sorting and grouping options</li>
-          <li>Font Quality (anti-aliasing) preferences were added (Windows and Mac OS X)</li>
-          <li>Komodo now updated to use the Mozilla 24, Scintilla 3.34 and Python 2.7.5</li>
+          <li>Find results widget now has a toolbar command to copy the find results to the clipboard</li>
+          <li>Komodo now updated to use the Mozilla 31</li>
         </ul>
       </p>
     </li>
