@@ -25,14 +25,91 @@
         and you can also revert these individual changes.
       </p>
     </li>
-    
+
     <li>
       <p>
-        <strong>Commando (Fast Open 2)</strong>: "Fast Open" has been succeeded
-        by "Commando", which allows you to easily navigate Project Files, Open
-        Files, Bookmarks, Commands, Tools, etc. all at once or individually.
-        It also comes with an easy to use API so that you can easily add your
-        own "scopes".
+        <strong>Markdown Viewer</strong>: When a markdown file is open in
+        Komodo, you'll be able to easily HTML preview that markdown with a click
+        of a button. The Komodo markdown viewer uses GitHub markdown styling.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Go Lang</strong>: Initial support for the Go programming
+        language has been added to Komodo. It provides syntax coloring, code
+        folding, syntax checking (linting) and code intelligence with
+        completions, calltips, outline and goto definition.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Commando</strong>: This popup dialog is the combined successor
+        of the "Fast Open" dialog and "Invoke Tool" dialog. Commando provides
+        the following search tools and features:
+        <ul>
+          <li>fuzzy matching</li>
+          <li>string match highlighting in the results panel</li>
+          <li>find any file under a particular folder</li>
+          <li>tool (macro, run command, snippet, ...) search</li>
+          <li>bookmark integration</li>
+          <li>shortcuts (go-tool) integration</li>
+          <li>custom category filtering</li>
+        </ul>
+        Commando also comes with an easy to use API so that you can easily add
+        your own custom search "scopes".
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Notifications</strong>: Messages shown to the user now appear in
+        a separate popup panel that overlays the main Komodo editor window
+        (previously they appeared in the Komodo statusbar). There are
+        notification preferences which allows you to control which messages get
+        displayed in the popup panel.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Icons</strong>: Most of the Komodo UI icons have been updated -
+        here is a list of the most noticeable icon changes:
+        <ul>
+          <li>file icons</li>
+          <li>language icons</li>
+          <li>code intelligence icons (completions, sections list, code browser)</li>
+          <li>places icons</li>
+          <li>toolbox icons</li>
+        </ul>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Color Schemes</strong>: We've changed all the default Komodo
+        color schemes. All schemes included in Komodo are now Base16, that is,
+        they are based on a set of 16 different base colors, which are re-used
+        by different parts of the scheme.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Menu Bar</strong>: The Komodo main menu bar is now hidden by
+        default (Windows and Linux. You can use the Alt key to toggle the menu
+        visibility. Whilst the top-level menu is hidden, the unified button menu
+        will be visible in the toolbar. You can also control menu visibility
+        through the <em>View > Toolbars</em> menu.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>PHP 5.6 Support</strong>: We've added support for PHP 5.6, with
+        updates for keywords and updates to code intelligence to provide the
+        latest API data for PHP 5.6.
       </p>
     </li>
 
@@ -53,22 +130,18 @@
         Komodo.
       </p>
     </li>
-    
-    <li>
-      <p>
-        <strong>UI Updates</strong>: language icons have been replaced with
-        dynamically generated color coded icons. Source code control icons 
-        have been updated to be more consistent and less intrusive. Many
-        more miscellaneous polishing tweaks have been made to the UI.
-      </p>
-    </li>
 
     <li>
       <p>
         <strong>Other Mentionables</strong>
         <ul>
-          <li>Komodo now works with high DPI configurations on Windows - no blurred fonts</li>
-          <li>Find results widget now has a toolbar command to copy the find results to the clipboard</li>
+          <li>Statusbar has moved to be above the bottom pane (attached to the editor view)</li>
+          <li>Startpage has been removed - instead a <em>Quick Launch</em> page is shown when no views are opened</li>
+          <li>Workspaces can be saved and loaded on demand - see the <em>File &gt; Workspace</em> menu</li>
+          <li>High DPI configurations on Windows should work correctly - no blurred fonts</li>
+          <li>Tab Width indentation preference has changed from 8 spaces to 4 spaces</li>
+          <li>Find Results now has a toolbar command to copy the find results to the clipboard</li>
+          <li>SCC Commit dialog now displays the current branch name</li>
           <li>Komodo was updated to use the Mozilla 31 code base</li>
         </ul>
       </p>
@@ -98,6 +171,94 @@
 
     <li>
       <p>
+        <strong>Markdown Viewer</strong>: When a markdown file is open in
+        Komodo, you'll be able to easily HTML preview that markdown with a click
+        of a button. The Komodo markdown viewer uses GitHub markdown styling.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Go Lang</strong>: Initial support for the Go programming
+        language has been added to Komodo. It provides syntax coloring, code
+        folding, syntax checking (linting) and code intelligence with
+        completions, calltips, outline and goto definition.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Commando</strong>: This popup dialog is the combined successor
+        of the "Fast Open" dialog and "Invoke Tool" dialog. Commando provides
+        the following search tools and features:
+        <ul>
+          <li>fuzzy matching</li>
+          <li>string match highlighting in the results panel</li>
+          <li>find any file under a particular folder</li>
+          <li>tool (macro, run command, snippet, ...) search</li>
+          <li>bookmark integration</li>
+          <li>shortcuts (go-tool) integration</li>
+          <li>custom category filtering</li>
+        </ul>
+        Commando also comes with an easy to use API so that you can easily add
+        your own custom search "scopes".
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Notifications</strong>: Messages shown to the user now appear in
+        a separate popup panel that overlays the main Komodo editor window
+        (previously they appeared in the Komodo statusbar). There are
+        notification preferences which allows you to control which messages get
+        displayed in the popup panel.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Icons</strong>: Most of the Komodo UI icons have been updated -
+        here is a list of the most noticeable icon changes:
+        <ul>
+          <li>file icons</li>
+          <li>language icons</li>
+          <li>code intelligence icons (completions, sections list, code browser)</li>
+          <li>places icons</li>
+          <li>toolbox icons</li>
+        </ul>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Color Schemes</strong>: We've changed all the default Komodo
+        color schemes. All schemes included in Komodo are now Base16, that is,
+        they are based on a set of 16 different base colors, which are re-used
+        by different parts of the scheme.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>Menu Bar</strong>: The Komodo main menu bar is now hidden by
+        default (Windows and Linux. You can use the Alt key to toggle the menu
+        visibility. Whilst the top-level menu is hidden, the unified button menu
+        will be visible in the toolbar. You can also control menu visibility
+        through the <em>View > Toolbars</em> menu.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <strong>PHP 5.6 Support</strong>: We've added support for PHP 5.6, with
+        a new Xdebug module (for PHP debugging and Code Profiling), updates for
+        keyword changes and updates to code intelligence to provide the latest
+        API data for PHP 5.6.
+      </p>
+    </li>
+
+    <li>
+      <p>
         <strong>Python PEP 8 Syntax Checking</strong>: PEP 8 syntax checking has
         been added. You can turn it on by visiting the Python Syntax Checking
         preferences. For those that don't know - PEP 8 is the official style
@@ -118,8 +279,13 @@
       <p>
         <strong>Other Mentionables</strong>
         <ul>
-          <li>Komodo now works with high DPI configurations on Windows - no blurred fonts</li>
-          <li>Find results widget now has a toolbar command to copy the find results to the clipboard</li>
+          <li>Statusbar has moved to be above the bottom pane (attached to the editor view)</li>
+          <li>Startpage has been removed - instead a <em>Quick Launch</em> page is shown when no views are opened</li>
+          <li>Workspaces can be saved and loaded on demand - see the <em>File &gt; Workspace</em> menu</li>
+          <li>High DPI configurations on Windows should work correctly - no blurred fonts</li>
+          <li>Tab Width indentation preference has changed from 8 spaces to 4 spaces</li>
+          <li>Find Results now has a toolbar command to copy the find results to the clipboard</li>
+          <li>SCC Commit dialog now displays the current branch name</li>
           <li>Komodo was updated to use the Mozilla 31 code base</li>
         </ul>
       </p>
