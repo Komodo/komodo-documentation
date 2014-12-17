@@ -64,6 +64,16 @@
 
     <li>
       <p>
+        <strong>Kopy.io</strong>: This allows you to easily share snippets of
+        code with other people (like a pastebin) directly from Komodo. Simple
+        make a text selection and right-click and use the <em>Share Code via
+        Kopy.io</em>. Even better is that Kopy.io supports client side
+        encryption, so you can make those shared pastes more secure.
+      </p>
+    </li>
+
+    <li>
+      <p>
         <strong>Notifications</strong>: Messages shown to the user now appear in
         a separate popup panel that overlays the main Komodo editor window
         (previously they appeared in the Komodo statusbar). There are
@@ -79,9 +89,10 @@
         <ul>
           <li>file icons</li>
           <li>language icons</li>
-          <li>code intelligence icons (completions, sections list, code browser)</li>
           <li>places icons</li>
           <li>toolbox icons</li>
+          <li>preference page</li>
+          <li>code intelligence icons</li>
         </ul>
       </p>
     </li>
@@ -91,7 +102,8 @@
         <strong>Color Schemes</strong>: We've changed all the default Komodo
         color schemes. All schemes included in Komodo are now Base16, that is,
         they are based on a set of 16 different base colors, which are re-used
-        by different parts of the scheme.
+        by different parts of the scheme. You can also tweak the editor line
+        height spacing now directly in the color scheme preferences page.
       </p>
     </li>
 
@@ -124,6 +136,21 @@
 
     <li>
       <p>
+        <strong>Komodo Developer APIs</strong>: We've been overhauling the
+        Komodo APIs, to make it easier to load and access the methods inside
+        of Komodo. We're now making use of CommonJS (aka Node.js)
+        <em>require()</em> calls to load individual modules - you can see the
+        full list of supported modules in the
+        <a href="https://github.com/Komodo/KomodoEdit/tree/master/src/chrome/komodo/content/sdk">sdk directory</a>.
+        Examples and more information can be found in the
+        <a href="https://github.com/Komodo/KomodoEdit/wiki/Komodo-9-Require">Komodo wiki</a>.
+        We've also added convenient <em>console.log()</em> and friends support -
+        the messages show up in the Komodo Notifications pane.
+      </p>
+    </li>
+
+    <li>
+      <p>
         <strong>Performance</strong>: Various performance tweaks were made to
         Komodo to improve the editing performance, as well as improving the
         search speed, syntax checking times and general responsiveness of
@@ -136,12 +163,14 @@
         <strong>Other Mentionables</strong>
         <ul>
           <li>Statusbar has moved to be above the bottom pane (attached to the editor view)</li>
+          <li>Preference page now has a simple and advanced mode</li>
           <li>Startpage has been removed - instead a <em>Quick Launch</em> page is shown when no views are opened</li>
           <li>Workspaces can be saved and loaded on demand - see the <em>File &gt; Workspace</em> menu</li>
           <li>High DPI configurations on Windows should work correctly - no blurred fonts</li>
           <li>Tab Width indentation preference has changed from 8 spaces to 4 spaces</li>
           <li>Find Results now has a toolbar command to copy the find results to the clipboard</li>
           <li>SCC Commit dialog now displays the current branch name</li>
+          <li>Re-organised various menus, including tab and editor context menus</li>
           <li>Komodo was updated to use the Mozilla 31 code base</li>
         </ul>
       </p>
@@ -207,6 +236,16 @@
 
     <li>
       <p>
+        <strong>Kopy.io</strong>: This allows you to easily share snippets of
+        code with other people (like a pastebin) directly from Komodo. Simple
+        make a text selection and right-click and use the <em>Share Code via
+        Kopy.io</em>. Even better is that Kopy.io supports client side
+        encryption, so you can make those shared pastes more secure.
+      </p>
+    </li>
+
+    <li>
+      <p>
         <strong>Notifications</strong>: Messages shown to the user now appear in
         a separate popup panel that overlays the main Komodo editor window
         (previously they appeared in the Komodo statusbar). There are
@@ -222,9 +261,10 @@
         <ul>
           <li>file icons</li>
           <li>language icons</li>
-          <li>code intelligence icons (completions, sections list, code browser)</li>
           <li>places icons</li>
           <li>toolbox icons</li>
+          <li>preference page</li>
+          <li>code intelligence icons (completions, sections list, code browser)</li>
         </ul>
       </p>
     </li>
@@ -234,7 +274,8 @@
         <strong>Color Schemes</strong>: We've changed all the default Komodo
         color schemes. All schemes included in Komodo are now Base16, that is,
         they are based on a set of 16 different base colors, which are re-used
-        by different parts of the scheme.
+        by different parts of the scheme. You can also tweak the editor line
+        height spacing now directly in the color scheme preferences page.
       </p>
     </li>
 
@@ -268,6 +309,21 @@
 
     <li>
       <p>
+        <strong>Komodo Developer APIs</strong>: We've been overhauling the
+        Komodo APIs, to make it easier to load and access the methods inside
+        of Komodo. We're now making use of CommonJS (aka Node.js)
+        <em>require()</em> calls to load individual modules - you can see the
+        full list of supported modules in the
+        <a href="https://github.com/Komodo/KomodoEdit/tree/master/src/chrome/komodo/content/sdk">sdk directory</a>.
+        Examples and more information can be found in the
+        <a href="https://github.com/Komodo/KomodoEdit/wiki/Komodo-9-Require">Komodo wiki</a>.
+        We've also added convenient <em>console.log()</em> and friends support -
+        the messages show up in the Komodo Notifications pane.
+      </p>
+    </li>
+
+    <li>
+      <p>
         <strong>Performance</strong>: Various performance tweaks were made to
         Komodo to improve the editing performance, as well as improving the
         search speed, syntax checking times and general responsiveness of
@@ -280,12 +336,15 @@
         <strong>Other Mentionables</strong>
         <ul>
           <li>Statusbar has moved to be above the bottom pane (attached to the editor view)</li>
+          <li>Preference page now has a simple and advanced mode</li>
           <li>Startpage has been removed - instead a <em>Quick Launch</em> page is shown when no views are opened</li>
           <li>Workspaces can be saved and loaded on demand - see the <em>File &gt; Workspace</em> menu</li>
           <li>High DPI configurations on Windows should work correctly - no blurred fonts</li>
           <li>Tab Width indentation preference has changed from 8 spaces to 4 spaces</li>
           <li>Find Results now has a toolbar command to copy the find results to the clipboard</li>
           <li>SCC Commit dialog now displays the current branch name</li>
+          <li>Re-organised various menus, including tab and editor context menus</li>
+          <li>Sections list (IDE) has merged with breadcrumbs widget</li>
           <li>Komodo was updated to use the Mozilla 31 code base</li>
         </ul>
       </p>

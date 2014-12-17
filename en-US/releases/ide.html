@@ -72,6 +72,16 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
     <li>
       <p>
+        <strong>Kopy.io</strong>: This allows you to easily share snippets of
+        code with other people (like a pastebin) directly from Komodo. Simple
+        make a text selection and right-click and use the <em>Share Code via
+        Kopy.io</em>. Even better is that Kopy.io supports client side
+        encryption, so you can make those shared pastes more secure.
+      </p>
+    </li>
+
+    <li>
+      <p>
         <strong>Notifications</strong>: Messages shown to the user now appear in
         a separate popup panel that overlays the main Komodo editor window
         (previously they appeared in the Komodo statusbar). There are
@@ -87,9 +97,10 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
         <ul>
           <li>file icons</li>
           <li>language icons</li>
-          <li>code intelligence icons (completions, sections list, code browser)</li>
           <li>places icons</li>
           <li>toolbox icons</li>
+          <li>preference page</li>
+          <li>code intelligence icons (completions, sections list, code browser)</li>
         </ul>
       </p>
     </li>
@@ -99,7 +110,8 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
         <strong>Color Schemes</strong>: We've changed all the default Komodo
         color schemes. All schemes included in Komodo are now Base16, that is,
         they are based on a set of 16 different base colors, which are re-used
-        by different parts of the scheme.
+        by different parts of the scheme. You can also tweak the editor line
+        height spacing now directly in the color scheme preferences page.
       </p>
     </li>
 
@@ -133,6 +145,21 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 
     <li>
       <p>
+        <strong>Komodo Developer APIs</strong>: We've been overhauling the
+        Komodo APIs, to make it easier to load and access the methods inside
+        of Komodo. We're now making use of CommonJS (aka Node.js)
+        <em>require()</em> calls to load individual modules - you can see the
+        full list of supported modules in the
+        <a href="https://github.com/Komodo/KomodoEdit/tree/master/src/chrome/komodo/content/sdk">sdk directory</a>.
+        Examples and more information can be found in the
+        <a href="https://github.com/Komodo/KomodoEdit/wiki/Komodo-9-Require">Komodo wiki</a>.
+        We've also added convenient <em>console.log()</em> and friends support -
+        the messages show up in the Komodo Notifications pane.
+      </p>
+    </li>
+
+    <li>
+      <p>
         <strong>Performance</strong>: Various performance tweaks were made to
         Komodo to improve the editing performance, as well as improving the
         search speed, syntax checking times and general responsiveness of
@@ -145,12 +172,15 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
         <strong>Other Mentionables</strong>
         <ul>
           <li>Statusbar has moved to be above the bottom pane (attached to the editor view)</li>
+          <li>Preference page now has a simple and advanced mode</li>
           <li>Startpage has been removed - instead a <em>Quick Launch</em> page is shown when no views are opened</li>
           <li>Workspaces can be saved and loaded on demand - see the <em>File &gt; Workspace</em> menu</li>
           <li>High DPI configurations on Windows should work correctly - no blurred fonts</li>
           <li>Tab Width indentation preference has changed from 8 spaces to 4 spaces</li>
           <li>Find Results now has a toolbar command to copy the find results to the clipboard</li>
           <li>SCC Commit dialog now displays the current branch name</li>
+          <li>Re-organised various menus, including tab and editor context menus</li>
+          <li>Sections list (IDE) has merged with breadcrumbs widget</li>
           <li>Komodo was updated to use the Mozilla 31 code base</li>
         </ul>
       </p>
@@ -163,6 +193,42 @@ href="#knownissues">known issues</a> for Komodo IDE and Komodo Edit.</p>
 <p>Changes related to Debugging, Interactive Shells, Source Code
 Control, HTTP Inspector, Rx Toolkit, Code Browser, Database Explorer,
 Stackato and the Sections List only apply to Komodo IDE only.</p>
+
+
+<h3 id="bug_fixes-9.0.0b1">9.0.0b1 Bug Fixes</h3>
+<ul>
+  <!-- Git hashes 28b4fdca4ca244290e025cf8412595f2d4852ea1 .. 2b78c5028c47327505b99c1ca139f3962a715d78 -->
+  <li>Check Configuration: Ensure Git, hg and bzr show the correct status. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=97855">97855</a>)</li>
+  <li>Code Intelligence: CSS: Show pseudo completions after ":". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=104799">104799</a>)</li>
+  <li>Code Intelligence: PHP: Better detection of foreach variables. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=100701">100701</a>)</li>
+  <li>Code Intelligence: Perl: Add variable completions on "$". (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105007">105007</a>)</li>
+  <li>Code Intelligence: Perl: Correct parsing of perl assignment expressions. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105308">105308</a>)</li>
+  <li>Debugging: Node.js: Ensure stderr messages are relayed to Komodo. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105402">105402</a>)</li>
+  <li>Debugging: Perl: Fix mod_perl from skipping breakpoints. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105124">105124</a>)</li>
+  <li>Debugging: Tcl: Update appLaunch.tcl file. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101199">101199</a>)</li>
+  <li>Debugging: XSLT: Linux: Update binary for Linux x86 compatibility. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105706">105706</a>)</li>
+  <li>Editor: Django: Update list of django tags and filter names. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=104511">104511</a>)</li>
+  <li>Editor: Ensure goto line focuses the editor. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=104827">104827</a>)</li>
+  <li>Editor: Ensure tooltip positions are correct on high DPI monitors. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=104640">104640</a>)</li>
+  <li>Editor: Indentation: Catch when indentation is set to zero. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105905">105905</a>)</li>
+  <li>Find and Replace: Ensure find markers are not added more than once. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=104553">104553</a>)</li>
+  <li>Find and Replace: Handle unicode replacement correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105541">105541</a>)</li>
+  <li>Find and Replace: Mac: Show marked changes should not stop mouse. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=93333">93333</a>)</li>
+  <li>Installer: Linux: Use xdg-desktop scripts to install menu and icon. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101857">101857</a>)</li>
+  <li>Keybindings: Emacs: Ensure Ctrl+K (cut to end of line) works correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105506">105506</a>)</li>
+  <li>Keybindings: Vi: Ensure line up/down commands work in line wrap mode. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=87356">87356</a>)</li>
+  <li>Preferences: Added prefs to control HTML matching tag highlighting. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=95667">95667</a>)</li>
+  <li>Preferences: Better handling for corrupted pref files. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105385">105385</a>)</li>
+  <li>Preferences: Default file encoding is now UTF-8. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=90424">90424</a>)</li>
+  <li>Preferences: Ensure formatter preference sets are saved correctly. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105850">105850</a>)</li>
+  <li>Project Templates: Ensure prefs are saved as part of the template. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=104535">104535</a>)</li>
+  <li>Remote Files: Allow defining a SSH private key for SFTP/SCP connections. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=67948">67948</a>)</li>
+  <li>SDK: Ensure koext startlang works with --is-html-based argument. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=104551">104551</a>)</li>
+  <li>Startup: Linux: Ensure compatibility with different shell's. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105122">105122</a>)</li>
+  <li>Syntax Checking: Ensure working on latin-1 file encoding. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=105635">105635</a>)</li>
+  <li>Syntax Checking: Tcl: Correct variable scope check inside try block. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=101049">101049</a>)</li>
+  <li>Syntax Checking: Tcl: Pass version to syntax checking validator. (Bug <a href="http://bugs.activestate.com/show_bug.cgi?id=103533">103533</a>)</li>
+</ul>
 
 
 <h3 id="bug_fixes-9.0.0a1">9.0.0a1 Bug Fixes</h3>
