@@ -185,15 +185,6 @@
   <node name="Collaborative Editing" link="collab.html#collab_editing"/>
 </node>
 
-<node name="Stackato" link="stackato.html#stackato_top">
-  <node name="Stackato Client Setup" link="stackato.html#stackato_client_setup"/>
-  <node name="Connecting to Stackato" link="stackato.html#stackato_connecting">
-  <node name="Viewing Target Info" link="stackato.html#stackato_info"/>
-  <node name="Creating Applications" link="stackato.html#creating_applications" />
-  <node name="Debugging Applications" link="stackato.html#debugging_applications" />
-  </node>
-</node>
-  
 <node name="Publishing" link="publish.html#publish_top">
   <node name="Creating a Publishing Configuration" link="publish.html#publish_config"/>
   <node name="Synchronizing" link="publish.html#publish_sync"/>
@@ -800,7 +791,6 @@
     <node name="Perforce Integration" link="prefs.html#Perforce"/>
     <node name="Subversion Integration" link="prefs.html#Subversion"/>
   </node>
-  <node name="Stackato Preferences" link="prefs.html#stackato_prefs"/>
   <node name="Syntax Checking Preferences" link="prefs.html#syntax_checking"/>
   <node name="Test Plans" link="prefs.html#test_plan_prefs"/>
   <node name="Web and Browser" link="prefs.html#web"/>
