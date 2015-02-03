@@ -648,6 +648,17 @@ class KoException extends Exception
 throw new KoException('this is my exception!', 42);
 ?&gt;</pre>
 
+<h3><a name="build_xdebug_from_source" id="build_xdebug_from_source">
+  Building Xdebug from source</a></h3>
+
+  <p>
+    You can also <a href= "http://xdebug.org/install.php">compile Xdebug from
+    source</a> code, instead of using one of Komodo's pre-compiled xdebug.so
+    modules. The two are compatible in most regards, though Komodo's PHP Code
+    Profiling depends upon the prebuilt Komodo version and Code Profiling will
+    not work with the xdebug.org version.
+  </p>
+
   <h2><a name="config_PHP_problems" id="config_PHP_problems">Common
   PHP Debugging Problems</a></h2>
 
@@ -661,20 +672,7 @@ throw new KoException('this is my exception!', 42);
   loadable extension support or use binaries from <a href=
   "http://www.entropy.ch/software/macosx/php/">http://www.entropy.ch/software/macosx/php/</a>.</p>
 
-  <h3><a name="config_PHP_amd64" id="config_PHP_amd64">Debugging
-  PHP on 64-bit Linux</a></h3>
-
-  <p>The version of <code>xdebug.so</code> for Linux provided by
-  Komodo is not compatible with 64-bit versions of PHP. To
-  configure PHP debugging on 64-bit Linux systems, <a href=
-  "http://xdebug.org/install.php">compile Xdebug from source</a>,
-  replace
-  <em>Komodo-&lt;version&gt;/lib/support/php/debugging/&lt;PHP
-  version&gt;/xdebug.so</em> with the new 64-bit version, and re-check
-  the <strong>PHP Configuration Debugger status in Komodo's PHP
-  preferences.</strong>.</p>
-
-  <h3><a name="config_PHP_zend" id="config_PHP_zend">Zend Optimizer
+    <h3><a name="config_PHP_zend" id="config_PHP_zend">Zend Optimizer
   and Zend Studio Debugger</a></h3>
 
   <p>Xdebug is incompatible with the Zend Optimizer and Zend Studio

@@ -499,10 +499,10 @@
       <node name="Using xdebug_break()" link="debugphp.html#using_xdebug_break"/>
       <node name="Xdebug Logging" link="debugphp.html#xdebug_logging"/>
       <node name="PHP Just-in-Time Debugging / Break on Exception" link="debugphp.html#php_just_in_time"/>
+      <node name="Building Xdebug from source" link="debugphp.html#build_xdebug_from_source"/>
     </node>
     <node name="Common PHP Debugging Problems" link="debugphp.html#config_PHP_problems">
       <node name="Debugging PHP on OS X" link="debugphp.html#config_PHP_os_x"/>
-      <node name="Debugging PHP on 64-bit Linux" link="debugphp.html#config_PHP_amd64"/>
       <node name="Zend Optimizer and Zend Studio Debugger" link="debugphp.html#config_PHP_zend"/>
     </node>
   </node>
