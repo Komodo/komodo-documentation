@@ -117,7 +117,7 @@
   Functions</a> for full instructions on using Komodo's debugging
   functionality.</p>
   
-  <table align="center" width="60%">
+  <table id="php_remote_autostart_warning" align="center" width="60%">
     <tbody>
       <tr>
         <td class="startupBox">
@@ -302,8 +302,6 @@ xdebug.remote_mode=req
 xdebug.remote_host=127.0.0.1
 xdebug.remote_port=9000
 xdebug.idekey=&lt;idekey&gt;
-; You may also want this - to always start a remote debugging connection.
-;xdebug.remote_autostart=1
 </pre>
 
     </li>
@@ -319,8 +317,6 @@ xdebug.remote_mode=req
 xdebug.remote_host=127.0.0.1
 xdebug.remote_port=9000
 xdebug.idekey=&lt;idekey&gt;
-; You may also want this - to always start a remote debugging connection.
-;xdebug.remote_autostart=1
 </pre>
     </li>
   </ul>
@@ -366,7 +362,10 @@ xdebug.idekey=&lt;idekey&gt;
     <dt><code>xdebug.remote_autostart</code></dt>
     <dd>When this setting is set to 1, a Komodo/Xdebug session will be
     initiated on every request, even if the GET/POST/COOKIE variable
-    was not present.</dd>
+    was not present. Please do note that this setting can
+    <a href="php_remote_autostart_warning">interfere with</a> PHP local
+    debugging.
+    </dd>
 
   </dl>
     
