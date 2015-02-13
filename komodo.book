@@ -25,7 +25,6 @@ build/edit-ide-ideonly-en-US/htdocs/templates.html
 build/edit-ide-ideonly-en-US/htdocs/openshort.html
 build/edit-ide-ideonly-en-US/htdocs/urls.html
 build/edit-ide-ideonly-en-US/htdocs/run.html
-build/edit-ide-ideonly-en-US/htdocs/sync.html
 build/edit-ide-ideonly-en-US/htdocs/custtbi.html
 build/edit-ide-ideonly-en-US/htdocs/debugger.html
 build/edit-ide-ideonly-en-US/htdocs/debugjs.html
