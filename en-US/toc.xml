@@ -64,7 +64,6 @@
           flags="ide"/>
   </node>
   <node name="The Komodo Workspace" link="workspace.html#workspace_top">
-    <node name="Start Page" link="workspace.html#Get_Started_Page"/>
     <node name="Menus" link="workspace.html#Menus"/>
     <node name="Context Menus" link="workspace.html#Context_Menus"/>
     <node name="Toolbars" link="workspace.html#Toolbars"/>
