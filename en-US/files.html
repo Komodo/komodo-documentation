@@ -126,120 +126,12 @@
 
   </ul>
 
-  <h3><a name="files_go_to_file" id="files_go_to_file">Go to File</a> (Fast Open)</h3>
+  <h3><a name="files_go_to_file" id="files_go_to_file">Go to File</a> (Commando)</h3>
   
-  <p>The <strong>Go to File</strong> dialog is an alternative to the system
-  native "Open File" dialog. It typically makes it faster to find and open
-  files. File names are gathered from a number of sources. A filter box
-  allows you to quickly filter this list down to the file you are looking
-  for. You can then open an item by pressing 'Enter' or double-clicking
-  on the filename. File names sources are (configurable in the "Fast Open"
-  preferences panel):</p>
-  
-  <ul>
-    <li>currently open files</li>
-    <li>files in the current <a href="project.html">project</a> (if any)</li>
-    <li>files in the current directories of open files (excluding remote
-    directories)</li>
-    <li>configured shortcuts</li>
-    <li>the last 50 files in <a href="history.html">History</a></li>
-  </ul>
-  
-  <p>File name <em>filtering</em> works as follows:</p>
-  
-  <ul>
-    <li>Words in the filter box are used to match substrings in file basename.</li>
-    <li>Matching uses "Smart Case": case-insensitive if the filter words are
-    all lowercase, case-sensitive if uppercase letters are used.</li>
-    <li>You can also specify full and relative paths in the filter box.
-    E.g. "<code>~/myproject/Makefile</code>",
-    "<code>../relative/to/current/file.py</code>".</li>
-  </ul>
-
-  <h4><a name="files_go_to_file_shortcuts" id="files_go_to_file_shortcuts">Shortcuts</a></h4>
-  <p>Shortcuts may be created and updated using the button at the right end of
-  the filter box.  Select an item in the file list to choose which file or
-  directory you wish to set the shortcut of.  Shortcuts can be removed by
-  selecting the item in the file list, clicking on the shortcut editing button,
-  followed by clicking on the delete shortcut button.  Shortcuts are limited to
-  local files and directories only.
+  <p>
+    You can easily open Files via the Commando panel, see the
+    <a href="commando.html">Commando documentation</a> for more information.
   </p>
-  <p>You can also use these shortcuts from a command line shell (e.g. Windows
-  command prompt, GNU Bash) by installing the <a target="_blank"
-  href="http://code.google.com/p/go-tool/">go-tool</a>.</p>
-  
-  <h3><a name="files_openfindtoolbar" id=
-  "files_openfindtoolbar">Opening Files with the Open/Find
-  Toolbar</a></h3>
-
-  <p>The <a href=
-  "search.html#search_find_toolbar">Open/Find
-  Toolbar</a> provides quick access for opening files and finding
-  strings. The toolbar is displayed in Komodo by default. To hide
-  or show the toolbar, select
-  <strong>View|Toolbars|Open/Find</strong>.</p>
-
-  <p>Use the <strong>Open</strong> field on the <strong>Open/Find
-  Toolbar</strong> to open one or more files in the filesystem. The
-  <strong>Open</strong> field generates a drop-down list of files
-  and directories as you navigate the hierarchy. To open a file,
-  enter the file path and name, and then press 'Enter'.</p>
-
-  <p>For example, to open a file named "debug.txt" in the directory
-  <em>C:\temp\log</em> on a machine running Windows, enter
-  <em>C:\tmp\log\debug.txt</em> in the <strong>Open</strong> field
-  and then press 'Enter'. As you enter each backslash, a drop-down
-  list displays the files and directories beneath the current
-  directory.</p>
-
-  <p>Enter "./" or ".\" in the <strong>Open</strong> field to
-  display a list of files and directories in the "current"
-  directory. The current directory is determined as follows:</p>
-
-  <ol>
-    <li><strong>Current File</strong>: If a file is open in the
-    editor, the directory where the file is stored is the current
-    directory. If multiple files are open, the file that is
-    currently displayed is the current file.</li>
-
-    <li><strong>HOME Variable</strong>: If no files are open,
-    Komodo checks if the system has a defined <code>HOME</code>
-    environment variable. If so, the directory specified in that
-    variable's value is the current directory.</li>
-
-    <li><strong>Filesystem Root</strong>: If neither of the above
-    conditions is met, the system's root directory is used ("C:\"
-    is the default on Windows, and "/" is the default on Linux and
-    Mac OS X).</li>
-  </ol>
-
-  <p>To narrow the results in the list box, enter one or more
-  characters in the name of the file or directory you wish to open
-  or view. (The search is case-sensitive.) Alternatively, use the
-  arrow keys to navigate the drop-down list. The contents of the
-  <strong>Open</strong> field are updated as you move up and down
-  the list with the arrow keys.</p>
-
-  <p>Note that you can use standard directory navigation syntax to
-  change directories. For example, if the current directory is
-  <em>/home/fred/tmp/foo</em>, change to the
-  <em>/home/fred/tmp/bar</em> directory by entering
-  <em>../bar</em>.</p>
-
-  <p>To open a file, press 'Enter' when the file name is displayed
-  in the <strong>Open</strong> field. To continue navigating the
-  directory structure, append a frontslash or backslash to the
-  directory name displayed in the <strong>Open</strong> field; the
-  drop-down list is updated with the list of files and directories
-  that exist under the current location.</p>
-
-  <p>To open multiple files, specify a wildcard ("*" for a file
-  name segment, "?" for a specific character). For example, to open
-  all the files with the extension ".tcl" in the directory
-  <em>/home/fred/tmp</em>, enter <em>/home/fred/tmp/*.tcl</em>.</p>
-
-  <p>At any time, press the 'Escape' key to return focus to the
-  Komodo editor.</p>
 
   <h3><a name="Opening_Remote_Files" id=
   "Opening_Remote_Files">Opening Remote Files</a></h3>
