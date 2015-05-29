@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="css/screen.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type=
+  "image/x-icon" />
+
+  <title>Commando (Go To Anything)</title>
+</head>
+
+
+<body>
+<div id="content">
+  <h1><a name="commando_top">Commando (Go To Anything)</a></h1>
+    <p>
+        Commando is a primarily keyboard driven panel that can be accessed by
+        pressing <code>Ctrl+Shift+O</code> on Windows and Linux or
+        <code>Cmd+Shift+O</code> on Mac. You can also access it from your
+        toolbar by clicking the "Go To Anything" search field. It allows you to
+        easily access various parts of Komodo and your development workflow
+        without disrupting your thought process.
+    </p>
+    
+    <h2 id="scopes">Scopes</h2>
+    
+    <p>
+        A "scope" defines what you are searching for. By default you search for
+        items in all available scopes. Note that some scopes (such as the Shell
+        scope) are excluded from this "Search Everything" behaviour due to their
+        results being too disruptive when used out of context.
+    </p>
+    
+    <p>You can select a scope in various ways:</p>
+    
+    <ol>
+        <li>Select the relevant scope from the results when invoking Commando</li>
+    
+        <li>Click on the scope icon to the left of your search field</li>
+    
+        <li>Define a shortcut for your scope in your
+            <a href="prefs.html#Config_Key_Bindings">key bindings</a>, then use this
+            shortcut to open Commando with your scope already selected.</li>
+    </ol>
+    
+    <h2 id="searching">Searching</h2>
+    
+    <p>
+        To search, simply invoke Commando and start typing your search query.
+        Scopes are designed to handle your query intelligently, in most cases
+        you can simply type partial matches for your search query, which do not
+        even need to be in order. For example I could search for <code>filename
+        .txt mypath</code> and it would match
+        <code>/path/to/<strong>mypath</strong>/folder/<strong>filename</strong>_1<strong>.txt</strong></code>.
+    </p>
+    
+    <h2 id="selecting-results">Selecting Results</h2>
+    
+    <p>You can select results in various ways:</p>
+    
+    <ol>
+        <li>Select them by using your keyboard arrow keys and pressing enter<br>
+    
+            <ul>
+                <li>You can select multiple results by holding shift</li>
+            </ul>
+        </li>
+    
+        <li>Press the associated ALT+Number shortcut</li>
+    
+        <li>Double click on them with your mouse</li>
+    </ol>
+    
+    <h3 id="expanding-results">Expanding Results</h3>
+    
+    <p>
+        You can also "expand" some results. Expanding a result gives you the
+        option to perform contextual actions on them, such as marking them as a
+        Favourite. To do this simply highlight a result and press the right
+        arrow key.
+    </p>
+    
+    <h3 id="entering-subscopes">Entering Subscopes</h3>
+    
+    <p>
+        A subscope is a scope within a scope. For example when searching for
+        files you can select a folder to view its contents. The folder is a
+        subscope. To enter a subscope you simply select the result.
+    </p>
+    
+    <p>
+        Once in a subscope you can navigate back to the previous scope or subscope
+        by pressing Backspace or Escape.
+    </p>
+    
+    <h3 id="clearing-the-cache">Clearing the Cache</h3>
+    
+    <p>
+        Some of the Commando scope keep a cache of results. Although these are
+        designed to update when necessary it is possible that a cache becomes
+        out of sync. You can clear the cache manually by pressing the icon to
+        the left of the search field and selecting "Clear Cache".
+    </p>
+    
+    <h3 id="preferences">Preferences</h3>
+    
+    <p>You can alter some of Commando's behaviour under <a href="prefs.html#prefs_top">Preferences</a>.</p>
+    
+    <ul>
+        <li><strong>Max Results</strong> - this allows you to limit the number
+        of results shown at any given time, lowering this may improve
+        performance on slower systems, at the cost of less results.</li>
+    
+        <li><strong>Search Delay</strong> - defines how long after typing
+        Commando should start searching. Increasing this may improve performance
+        on slower systems, at the cost of slower results.</li>
+    
+        <li><strong>Result Render Delay</strong> - defines how long Commando
+        should wait before rendering results, allowing it to combine DOM writes.
+        Increasing this may improve performance on slower systems, at the cost
+        of slower results.</li>
+    
+        <li><strong>Peserve Previous Search Query</strong> - When enabled
+        Commando will return to your last search query when you reopen it.</li>
+    
+        <li><strong>Relative paths use the current file's directory</strong> -
+        When searching using relative paths this will use the currently opened
+        file as the path to search relative from. When unchecked your Project /
+        Places path is used.</li>
+    
+        <li><strong>Default Shell Output</strong> - Defines where to output
+        shell commands where relevant.</li>
+    </ul>
+    
+    <h2 id="everything-scope">Everything Scope</h2>
+    
+    <p>
+        The "Everything" scope allows you to, as the name implies, search for
+        everything. Ironically it does exclude one scope; the Shell scope. This
+        is done because the shell scope results are very disruptive when
+        accessed out of context.
+    </p>
+    
+    <h2 id="bookmarks-scope">Bookmarks Scope</h2>
+    
+    <p>
+        The bookmarks scope allows you to easily navigate to
+        <a href="editor.html#bookmarks">bookmarks</a> within the current file.
+    </p>
+    
+    <h2 id="commands-scope">Commands Scope</h2>
+    
+    <p>
+        The commands scope allows you to access all of Komodo's registered
+        commands. Basically anything that you can add a keybinding for you can
+        access from this scope.
+    </p>
+    
+    <h2 id="files-scope">Files Scope</h2>
+    
+    <p>
+        The files scope allows you to search for files within your currently
+        selected project or working directory. Commando uses the directory
+        defined in your Project preferences or otherwise falls back to the
+        directory selected in your <a href="places.html#places_top">Places
+        pane</a>.
+    </p>
+    
+    <h3 id="searching-1">Searching</h3>
+    
+    <p>The file scope allows for some advanced Search functionality;</p>
+    
+    <ul>
+        <li>You can search relative to the current file by typing a relative
+        path as your search query</li>
+    
+        <li>You can search using an absolute path simply by typing an absolute
+        path as your search query</li>
+    
+        <li>When searching using a relative or absolute path you can search
+        recursively by adding a space between the path and your search query. If
+        no space is present then the tail end of the path will be used as your
+        search query for a non-recursive search.</li>
+    
+        <li>You can use created shortcuts (including <a
+        href="https://code.google.com/p/go-tool/">go tool</a> shortcuts) by
+        typing your shortcut name and a trailing slash</li>
+    </ul>
+    
+    <h2 id="open-files-scope">Open Files Scope</h2>
+    
+    <p>
+        As the name implies this scope will allow you to quickly access your
+        opened files. It's a convenient alternative to the Open Files pane and
+        your editor tabs.
+    </p>
+    
+    <h2 id="sections-scope">Sections Scope</h2>
+    
+    <p>
+        The sections scope allows you to quickly access your file symbols. It
+        allows you to navigate to classes, functions within files or nodes
+        within XML/HTML files.
+    </p>
+    
+    <h2 id="tools">Tools</h2>
+    
+    <p>The tools scope gives easy access to your <a href="toolbox.html#toolbox_top">toolbox</a>.</p>
+    
+    <h2 id="tools-commands">Tools &amp; Commands</h2>
+    
+    <p>The Tools &amp; Commands scope combined the the Tools &amp; Commands scopes.</p>
+
+
+</div> <!-- content -->
+</body>
+</html>

@@ -112,6 +112,24 @@
 
 <node name="Open Files" link="openfiles.html#openfiles_top"/>
 
+<node name="Commando (Go To Anything)" link="commando.html#commando_top">
+    <node name="Scopes" link="commando.html#scopes"/>
+    <node name="Searching" link="commando.html#searching"/>
+    <node name="Selecting Results" link="commando.html#selecting-results"/>
+    <node name="Expanding Results" link="commando.html#expanding-results"/>
+    <node name="Entering Subscopes" link="commando.html#entering-subscopes"/>
+    <node name="Clearing the Cache" link="commando.html#clearing-the-cache"/>
+    <node name="Preferences" link="commando.html#preferences"/>
+    <node name="Everything Scope" link="commando.html#everything-scope"/>
+    <node name="Bookmarks Scope" link="commando.html#bookmarks-scope"/>
+    <node name="Commands Scope" link="commando.html#commands-scope"/>
+    <node name="Files Scope" link="commando.html#files-scope"/>
+    <node name="Open Files Scope" link="commando.html#open-files-scope"/>
+    <node name="Sections Scope" link="commando.html#sections-scope"/>
+    <node name="Tools Scope" link="commando.html#tools-scope"/>
+    <node name="Tools &amp; Commands Scope" link="commando.html#tools-commands-scope"/>
+</node>
+
 <node name="Database Explorer" link="db_explorer.html#database_exp_top">
   <node name="Adding a Database Connection" link="db_explorer.html#database_exp_add"/>
   <node name="Examining Tables" link="db_explorer.html#database_exp_tables"/>
