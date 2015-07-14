@@ -63,11 +63,13 @@
   $9.</p>
   
   <pre class="code">
+var pepUrl = "http://www.python.org/dev/peps/pep-";
 var PEPRegexHandler = new ko.hyperlinks.RegexHandler(
       "Python Enhancement Proposals",
       new RegExp("PEP:\\s(\\d{4})"),            /* pattern to match */
-      ko.browse.openUrlInDefaultBrowser,
-      "http://www.python.org/dev/peps/pep-$1",  /* replacement string */
+      /* action function - called as 'fn(regexmatch)' */
+      function(match) { ko.browse.openUrlInDefaultBrowser(pepUrl + match[1]); },
+      null,  /* replacement string */
       /* which languages the handler is active in - 'null' for all */
       ['Python', 'Text', 'HTML'],
       Components.interfaces.ISciMoz.INDIC_PLAIN,
